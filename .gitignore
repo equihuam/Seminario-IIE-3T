@@ -15,11 +15,14 @@ renv/sandbox/
 .quarto/
 _site/
 _freeze/
-blog/img/
 blog/**/*_files/
 blog/**/*.ipynb
 blog/**/*.html
 blog/**/*.pdf
+
+# Salida verificada para publicar desde GitHub en Netlify
+!/blog/_site/
+!/blog/_site/**
 
 # Registros internos y configuración de esta máquina
 PROMPTS.md

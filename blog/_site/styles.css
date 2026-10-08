@@ -1,0 +1,18 @@
+:root { --forest: #173f36; --sage: #eaf0e8; --clay: #9c542d; }
+body { color: #243a34; font-family: system-ui, sans-serif; }
+h1, h2, h3, .navbar-title { color: var(--forest); }
+.navbar { border-bottom: 3px solid #acc2a1; }
+a { color: #24664f; text-underline-offset: .18em; }
+.hero { padding: 2.6rem 2.8rem; background: var(--sage); border-left: 6px solid var(--forest); border-radius: 0 18px 18px 0; margin: 1rem 0 2rem; }
+.hero .eyebrow { color: var(--clay); text-transform: uppercase; letter-spacing: .12em; font-weight: 700; font-size: .8rem; }
+.hero h2 { font-size: clamp(1.8rem, 4vw, 3rem); max-width: 850px; border: 0; margin-top: .7rem; }
+.layer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.6rem 0; }
+.layer { padding: 1.3rem; border: 1px solid #ccd8cf; border-top: 5px solid #687957; border-radius: 8px; }
+.layer:nth-child(2) { border-top-color: #a26836; }
+.layer:nth-child(3) { border-top-color: #3f6e89; }
+.layer h3 { margin-top: 0; font-size: 1.2rem; }
+.quarto-title-meta { color: #52665c; }
+.callout { border-radius: 8px; }
+.btn-primary { background: var(--forest); border-color: var(--forest); color: white; }
+.btn-primary:hover { background: #285f50; border-color: #285f50; }
+@media (max-width: 700px) { .layer-grid { grid-template-columns: 1fr; } .hero { padding: 1.4rem; } }

@@ -12,3 +12,6 @@ img/*.svg -text
 renv/activate.R -whitespace
 *.png binary
 *.jpg binary
+
+# Salida Quarto: conservar formato generado, sin avisos de espacios finales.
+blog/_site/** -whitespace linguist-generated=true

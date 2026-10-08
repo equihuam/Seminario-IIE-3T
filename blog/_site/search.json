@@ -1,0 +1,296 @@
+[
+  {
+    "objectID": "recursos/comprobacion-r.html",
+    "href": "recursos/comprobacion-r.html",
+    "title": "Comprobación del entorno R",
+    "section": "",
+    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 &lt;U+00B7&gt; resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html",
+    "href": "recursos/cambio-climatico.html",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "",
+    "text": "Versión 0.1 · 2026-10-08 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, Lo Básico de Redes Bayesianas (2023), con asistencia de IA en la revisión y el código.\nObjetivo: distinguir lo que supone el grafo, lo que cuantifican sus tablas y lo que responde una consulta. Requisitos: nociones de probabilidad condicional y manejo elemental de R. Este recurso se incorpora cuando el grupo esté preparado; no fija una segunda sesión obligatoria."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#qué-recuperamos-y-qué-significa",
+    "href": "recursos/cambio-climatico.html#qué-recuperamos-y-qué-significa",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Qué recuperamos y qué significa",
+    "text": "Qué recuperamos y qué significa\nConservamos los ocho nodos, los ocho arcos y todas las probabilidades del ejemplo original para hacer su revisión reproducible. Son números hipotéticos, no estimaciones empíricas ni probabilidades científicamente calibradas del cambio climático. En particular, 0.99 no cuantifica aquí la evidencia sobre su existencia. Para una aplicación real habría que definir exposición climática local, periodo, unidades de observación y fuentes de estimación.\n\n\n\n\n\n\n\n\nNodo\nSignificado didáctico heredado\nEstados\n\n\n\n\naCC\nCambio climático, variable simplificada del ejemplo\npresente / ausente\n\n\nB\nInterés económico predominante\nmadera / paisaje\n\n\nE\nPérdida de especies\npresente / ausente\n\n\nU\nAprovechamiento forestal extractivo\npresente / ausente\n\n\nP\nDisfrute del paisaje\npresente / ausente\n\n\nEco\nTipo de cobertura\nplantacion / natural\n\n\nN\nEspecies nativas\nabundantes / escasas\n\n\nX\nEspecies exóticas\nabundantes / escasas\n\n\n\nLos nombres y umbrales requieren definición operacional antes de usar datos. Eco representa un tipo de cobertura: no mide integridad ecosistémica. Esta red tampoco implementa el modelo iie-3t. Sirve para aprender herramientas que luego se aplicarán a una red justificada para ese modelo."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#construir-y-examinar-el-grafo",
+    "href": "recursos/cambio-climatico.html#construir-y-examinar-el-grafo",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Construir y examinar el grafo",
+    "text": "Construir y examinar el grafo\nEl proyecto usa R y las bibliotecas bnlearn y dagitty, registradas en renv.lock. Para trabajar con el modelo por separado, descargar clima-modelo.R y cargarlo desde su carpeta con source(\"clima-modelo.R\"). En el proyecto, desde la raíz, se usa source(\"blog/recursos/clima-modelo.R\"). La compilación de esta página lo carga desde la carpeta de recursos.\n\nsource(\"clima-modelo.R\", encoding = \"UTF-8\")\nred &lt;- crear_clima()\ng &lt;- a_dagitty(red)\nbnlearn::modelstring(bnlearn::bn.net(red))\n\n[1] \"[B][aCC][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]\"\n\n\n\ndagitty::coordinates(g) &lt;- list(\n  x = c(aCC = 0, E = 0, B = 3, U = 2, P = 4, Eco = 1, X = 0, N = 3),\n  y = c(aCC = 0, E = 1, B = 0, U = 1, P = 1, Eco = 2, X = 3, N = 3)\n)\nplot(g)\n\n\n\n\n\n\n\nFigura 1: Grafo original recuperado; sus flechas son hipótesis a discutir.\n\n\n\n\n\nLa factorización es:\n\\[\np(aCC,B,E,U,P,Eco,N,X)=p(aCC)p(B)p(E\\mid aCC)p(U\\mid B)\np(P\\mid B)p(Eco\\mid E,U)p(N\\mid P,Eco)p(X\\mid Eco).\n\\]\nUna red bayesiana define una distribución mediante esta factorización. Interpretar sus arcos como mecanismos causales requiere justificación adicional. Por ejemplo, E → Eco y P → N requieren explicar mecanismos, orden temporal y causas omitidas. El consenso del grupo documenta hipótesis, pero no demuestra su validez."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#leer-las-tablas-sin-perder-los-supuestos",
+    "href": "recursos/cambio-climatico.html#leer-las-tablas-sin-perder-los-supuestos",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Leer las tablas sin perder los supuestos",
+    "text": "Leer las tablas sin perder los supuestos\ncustom.fit() asigna tablas propuestas; no las estima a partir de observaciones. En cada configuración de padres, las probabilidades de los estados del hijo deben sumar uno. Los nombres de las dimensiones evitan confundir el orden de padres.\n\nred$E$prob\n\n          aCC\nE          presente ausente\n  presente     0.99    0.95\n  ausente      0.01    0.05\n\nred$Eco$prob\n\n, , U = presente\n\n            E\nEco          presente ausente\n  plantacion        1       0\n  natural           0       1\n\n, , U = ausente\n\n            E\nEco          presente ausente\n  plantacion        0       0\n  natural           1       1\n\n\nLa tabla de E supone 0.99 frente a 0.95: la diferencia es 0.04, no 0.99 de efecto atribuible al clima. En U se supone aprovechamiento con probabilidad 0.99 bajo interés maderero y 0.90 bajo interés paisajístico. Estas elecciones no están calibradas y limitan el contraste didáctico.\nLa tabla de Eco es determinista: hay plantación si y solo si E y U están presentes. No es una ley ecológica; produce combinaciones imposibles y enseña por qué debemos revisar las tablas además del dibujo. Conservamos esa elección visible, sin reemplazarla silenciosamente por otra. Si el grupo propone una tabla no determinista, debe guardar la variante y justificar sus valores."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#separación-d-mirar-todas-las-rutas",
+    "href": "recursos/cambio-climatico.html#separación-d-mirar-todas-las-rutas",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Separación-d: mirar todas las rutas",
+    "text": "Separación-d: mirar todas las rutas\nLa ausencia de arco directo no implica independencia marginal. Hay que especificar las variables condicionadas y examinar todas las rutas. Bajo la propiedad de Markov del DAG, separación-d implica independencia condicional. Una ruta abierta permite dependencia; no la garantiza para toda elección de parámetros. No confundamos independencia con correlación cero: esta última puede coexistir con dependencia no lineal.\n\n\n\nEstructura aislada\nSin condicionar\nAl condicionar en M\n\n\n\n\nA → M → Y\nRuta abierta\nRuta bloqueada\n\n\nA ← M → Y\nRuta abierta\nRuta bloqueada\n\n\nA → M ← Y\nRuta bloqueada\nRuta abierta\n\n\n\nObservar un descendiente del colisionador también puede abrir la ruta. Estas reglas locales no eximen de revisar las otras rutas del grafo completo.\n\ndata.frame(\n  consulta = c(\"aCC y Eco\", \"aCC y Eco dado E\", \"E y U\", \"E y U dado Eco\"),\n  separados = c(\n    dagitty::dseparated(g, \"aCC\", \"Eco\"),\n    dagitty::dseparated(g, \"aCC\", \"Eco\", \"E\"),\n    dagitty::dseparated(g, \"E\", \"U\"),\n    dagitty::dseparated(g, \"E\", \"U\", \"Eco\")\n  )\n)\n\n          consulta separados\n1        aCC y Eco     FALSE\n2 aCC y Eco dado E      TRUE\n3            E y U      TRUE\n4   E y U dado Eco     FALSE\n\ndagitty::impliedConditionalIndependencies(g)\n\nB _||_ E\nB _||_ Eco | U\nB _||_ N | Eco, P\nB _||_ N | P, U\nB _||_ X | Eco\nB _||_ X | U\nB _||_ aCC\nE _||_ N | Eco, P\nE _||_ N | B, Eco\nE _||_ N | Eco, U\nE _||_ P\nE _||_ U\nE _||_ X | Eco\nEco _||_ P | B\nEco _||_ P | U\nEco _||_ aCC | E\nN _||_ U | B, Eco\nN _||_ U | Eco, P\nN _||_ X | Eco\nN _||_ aCC | E\nN _||_ aCC | Eco, U\nN _||_ aCC | B, Eco\nN _||_ aCC | Eco, P\nP _||_ U | B\nP _||_ X | Eco\nP _||_ X | U\nP _||_ X | B\nP _||_ aCC\nU _||_ X | Eco\nU _||_ aCC\nX _||_ aCC | E\nX _||_ aCC | Eco\n\n\naCC y Eco no tienen arco directo, pero la cadena a través de E está abierta. E y U están separados sin evidencia; al observar Eco deja de haber separación-d. Las independencias enumeradas son implicaciones del modelo, no hechos ecológicos ya comprobados."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#observar-no-es-intervenir",
+    "href": "recursos/cambio-climatico.html#observar-no-es-intervenir",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Observar no es intervenir",
+    "text": "Observar no es intervenir\nObservar Eco = natural selecciona casos de la distribución original: calculamos \\(p(E\\mid Eco=natural)\\). Intervenir idealmente sobre Eco reemplaza su mecanismo y elimina los arcos que llegan a ese nodo: calculamos \\(p(E\\mid do(Eco=natural))\\), si aceptamos para el ejercicio una interpretación causal del grafo. Ese supuesto no convierte el cálculo en una recomendación de manejo.\n\nj &lt;- conjunta(red) # Enumeración exacta de los 256 estados posibles.\ndo_red &lt;- bnlearn::intervention(red, evidence = list(Eco = \"natural\"))\nresultados &lt;- data.frame(\n  consulta = c(\"Sin evidencia\", \"Observando Eco = natural\", \"Interviniendo Eco = natural\"),\n  prob_E = c(\n    prob_exacta(j, list(E = \"presente\")),\n    prob_exacta(j, list(E = \"presente\"), list(Eco = \"natural\")),\n    prob_exacta(conjunta(do_red), list(E = \"presente\"))\n  )\n)\nknitr::kable(resultados, digits = 6)\n\n\n\n\nconsulta\nprob_E\n\n\n\n\nSin evidencia\n0.989600\n\n\nObservando Eco = natural\n0.839575\n\n\nInterviniendo Eco = natural\n0.989600\n\n\n\n\n\nPodemos comprobarlo a mano: \\(p(E)=0.99(0.99)+0.01(0.95)=0.9896\\) y \\(p(U)=0.945\\). Como son marginalmente independientes y plantación equivale a la coincidencia de ambos:\n\\[\np(E\\mid Eco=natural)=\\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\\approx0.839576.\n\\]\nIntervenir en Eco deja \\(p(E)=0.9896\\): no cambia el mecanismo de sus ancestros. Entre los casos naturales, la coincidencia E y U tiene probabilidad cero aunque ambos tienen marginales positivas: ahora son dependientes. Entre las plantaciones, en cambio, los dos quedan fijos en «presente»; la correlación no está definida por falta de variación. La conexión-d no garantiza correlación en cada estrato.\nEl original fijaba las probabilidades de dos raíces (aCC, B) en 1 para mostrar evidencia. En esta red, condicionar esas raíces e intervenir en ellas coincide numéricamente para el resto de variables. Es un caso particular que no permite generalizar el procedimiento a nodos con padres. Aquí conservamos el modelo observacional y formulamos cada consulta explícitamente.\nbnlearn también permite consultas aproximadas por simulación. El resultado varía con la muestra; la enumeración nos da una referencia exacta para esta red pequeña.\n\nset.seed(20261008)\nbnlearn::cpquery(red, event = (E == \"presente\"),\n                evidence = (Eco == \"natural\"), n = 200000)\n\n[1] 0.8365963"
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#simular-estimar-y-contrastar-en-r",
+    "href": "recursos/cambio-climatico.html#simular-estimar-y-contrastar-en-r",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Simular, estimar y contrastar en R",
+    "text": "Simular, estimar y contrastar en R\n\nset.seed(20261008)\ndatos &lt;- bnlearn::rbn(red, n = 10000)\najustada &lt;- bnlearn::bn.fit(bnlearn::bn.net(red), datos, method = \"bayes\", iss = 1)\najustada$E$prob\n\n          aCC\nE             presente     ausente\n  presente 0.991195318 0.920765027\n  ausente  0.008804682 0.079234973\n\nbnlearn::ci.test(\"E\", \"U\", data = datos, test = \"mi\")\n\n\n    Mutual Information (disc.)\n\ndata:  E ~ U  \nmi = 0.23647, df = 1, p-value = 0.6268\nalternative hypothesis: true value is greater than 0\n\n\nLos datos son simulados por el propio modelo. Este ejercicio verifica una mecánica de estimación; no valida ecológicamente el DAG. El ajuste bayesiano con iss = 1 añade suavizado, por lo que no conserva necesariamente sus ceros deterministas. Es una elección explícita del ejercicio, no un parámetro calibrado.\nUn contraste no significativo significa que no rechazamos la hipótesis nula con esa prueba y esos datos. No demuestra independencia: importan potencia, tamaño de muestra, supuestos y sensibilidad del contraste. Con datos reales, discrepancias pueden cuestionar el modelo o el procedimiento de observación; la ausencia de rechazo no certifica causalidad. Tampoco aprender una estructura con hc() demostraría una dirección causal única: pueden existir grafos observacionalmente equivalentes."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#cambiar-evidencia-no-hace-temporal-a-la-red",
+    "href": "recursos/cambio-climatico.html#cambiar-evidencia-no-hace-temporal-a-la-red",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Cambiar evidencia no hace temporal a la red",
+    "text": "Cambiar evidencia no hace temporal a la red\nEsta red es estática. Repetir consultas con valores distintos no especifica cómo evoluciona un sistema. Un modelo temporal necesita variables indexadas, una distribución inicial y transiciones, por ejemplo:\n\\[\np(S_0)\\prod_{t=1}^T p(S_t\\mid S_{t-1},A_{t-1})\n\\prod_{t=0}^T p(O_t\\mid S_t).\n\\]\nAquí \\(S_t\\) es el estado del sistema, \\(A_t\\) una entrada y \\(O_t\\) una observación. La expresión está condicionada a una secuencia de entradas; supone dependencia de primer orden. Si los mecanismos se comparten entre tiempos, se añade homogeneidad temporal. Una red dinámica puede ser predictiva sin ser causal; simular trayectorias no garantiza reproducir una serie observada. No incorporamos todavía una transición climática a este ejercicio."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#práctica-y-evidencia-de-aprendizaje",
+    "href": "recursos/cambio-climatico.html#práctica-y-evidencia-de-aprendizaje",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Práctica y evidencia de aprendizaje",
+    "text": "Práctica y evidencia de aprendizaje\n\nExplique por qué falta el arco aCC → Eco pero no hay independencia marginal. Indique qué condicionamiento bloquea sus rutas.\nCalcule y compare \\(p(E,U\\mid Eco=natural)\\) con el producto de sus marginales condicionales. Repita con intervención.\nIdentifique una relación del grafo que considere discutible. Documente mecanismo, escala temporal, evidencia y una estructura alternativa. El consenso no basta como validación.\nProponga una modificación de la tabla de Eco, compruebe normalización y documente cómo cambia el resultado. Distinga revisión del supuesto de ajuste con datos.\nRedacte una interpretación correcta del contraste y explique qué faltaría para convertir este caso en un modelo temporal.\n\nProducto: script ejecutable y una nota con supuestos, resultados y límites. Criterio: distinguir consulta observacional, intervención y transición sin atribuir evidencia empírica a la simulación."
+  },
+  {
+    "objectID": "recursos/cambio-climatico.html#procedencia-y-reproducción",
+    "href": "recursos/cambio-climatico.html#procedencia-y-reproducción",
+    "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
+    "section": "Procedencia y reproducción",
+    "text": "Procedencia y reproducción\nFuente: Equihua y Pérez Maqueo, Lo Básico de Redes Bayesianas, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.\nEn el repositorio, ejecutar desde una sesión nueva: Rscript tests/test-clima.R y Rscript scripts/clima-ejemplo.R. Restaurar primero el entorno con Rscript --vanilla scripts/setup-r.R. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.\nDocumentación técnica: tablas y ajuste, consultas condicionales, intervenciones y DAGitty. Consultadas el 2026-10-08.\n\n\nCódigo\nsessionInfo()\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26300)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] C\nsystem code page: 65001\n\ntime zone: America/Mexico_City\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.39   fastmap_1.2.0   xfun_0.61       knitr_1.52     \n [5] parallel_4.6.0  bnlearn_5.2.1   htmltools_0.5.9 rmarkdown_2.32 \n [9] cli_3.6.6       dagitty_0.3-4   renv_1.2.3      compiler_4.6.0 \n[13] boot_1.3-32     tools_4.6.0     curl_8.0.0      evaluate_1.0.5 \n[17] Rcpp_1.1.2      yaml_2.3.12     rlang_1.3.0     jsonlite_2.0.0 \n[21] V8_8.2.0        MASS_7.3-65"
+  },
+  {
+    "objectID": "reproducibilidad.html",
+    "href": "reproducibilidad.html",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "",
+    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
+  },
+  {
+    "objectID": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
+    "href": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "",
+    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
+  },
+  {
+    "objectID": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
+    "href": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Lo que acompañará cada ejercicio",
+    "text": "Lo que acompañará cada ejercicio\nPregunta y supuestos; datos con procedencia y condiciones de uso; código y entorno identificables; instrucciones; resultados esperados y tolerancias; evidencia de ejecución; interpretación y limitaciones.\nLa práctica de apertura comienza con una ficha sencilla. La exigencia técnica crecerá con el grupo. Reproducir un cálculo no demuestra que sus supuestos ecológicos sean correctos."
+  },
+  {
+    "objectID": "reproducibilidad.html#nuestra-ética-de-trabajo",
+    "href": "reproducibilidad.html#nuestra-ética-de-trabajo",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Nuestra ética de trabajo",
+    "text": "Nuestra ética de trabajo\nAtribuir las contribuciones, declarar la asistencia de IA, conservar resultados desfavorables, explicar correcciones y proteger información confidencial. Diferenciar exploración de confirmación y evitar que una conclusión deseada determine retrospectivamente los criterios de evaluación."
+  },
+  {
+    "objectID": "reproducibilidad.html#primeras-comprobaciones",
+    "href": "reproducibilidad.html#primeras-comprobaciones",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Primeras comprobaciones",
+    "text": "Primeras comprobaciones\nLas páginas de Python y R ejecutan un cálculo aritmético conocido. Comprueban la conexión entre código y documento; todavía no son ejercicios de estimación del IIE.\nVersión: 0.1. Las correcciones relevantes de los materiales se registrarán en la entrada afectada, conservando versiones mediante Git. Los materiales conceptuales iniciales requieren revisión docente antes de su uso formal."
+  },
+  {
+    "objectID": "sesiones.html",
+    "href": "sesiones.html",
+    "title": "Sesiones",
+    "section": "",
+    "text": "Las fechas indican incorporación del material al blog, no acreditan que una sesión se haya realizado. Cada entrada identifica su estado. El siguiente encuentro se preparará con las preguntas y aprendizajes del anterior.\n\n\n\n\n\n\n\n\n\n01 · Observar, contextualizar e inferir\n\n\n\niie-3t\n\nIntroducción\n\nReproducibilidad\n\n\n\nUna primera conversación sobre el modelo iie-3t y el camino hacia las redes bayesianas.\n\n\n\n\n\n8 oct 2026\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "",
+    "text": "Seminario / taller · Modelo de tres capas\n\n\n\nUn espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
+  },
+  {
+    "objectID": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
+    "href": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "",
+    "text": "Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
+  },
+  {
+    "objectID": "index.html#tres-preguntas-para-empezar",
+    "href": "index.html#tres-preguntas-para-empezar",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "Tres preguntas para empezar",
+    "text": "Tres preguntas para empezar\n\n\nContexto\n¿Qué condiciones permiten interpretar lo que observamos en este ecosistema?\n\n\nDetección\n¿Qué atributos podemos medir y qué limitaciones tienen esas mediciones?\n\n\nCondición latente\n¿Qué podemos inferir sobre la condición, dada la evidencia disponible?"
+  },
+  {
+    "objectID": "index.html#un-recorrido-que-se-construye-con-el-grupo",
+    "href": "index.html#un-recorrido-que-se-construye-con-el-grupo",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "Un recorrido que se construye con el grupo",
+    "text": "Un recorrido que se construye con el grupo\nPartimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.\n\nSesiones: encuentros y materiales en orden de incorporación.\nCatálogo temático: conceptos, guías y prácticas por tema.\nReproducibilidad: cómo documentamos y comprobamos lo que hacemos.\n\n\n\n\n\n\n\nNota\n\n\n\nEsta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado."
+  },
+  {
+    "objectID": "empieza-aqui.html",
+    "href": "empieza-aqui.html",
+    "title": "Empieza aquí",
+    "section": "",
+    "text": "Dos sitios muestran poca cobertura vegetal. ¿Significa lo mismo en ambos? Antes de atribuirlo a deterioro necesitamos conocer su contexto, las características medidas y cómo se obtuvieron. La condición del ecosistema requiere un diagnóstico apoyado en esa evidencia."
+  },
+  {
+    "objectID": "empieza-aqui.html#primero-una-pregunta-ecológica",
+    "href": "empieza-aqui.html#primero-una-pregunta-ecológica",
+    "title": "Empieza aquí",
+    "section": "",
+    "text": "Dos sitios muestran poca cobertura vegetal. ¿Significa lo mismo en ambos? Antes de atribuirlo a deterioro necesitamos conocer su contexto, las características medidas y cómo se obtuvieron. La condición del ecosistema requiere un diagnóstico apoyado en esa evidencia."
+  },
+  {
+    "objectID": "empieza-aqui.html#el-modelo-iie-3t",
+    "href": "empieza-aqui.html#el-modelo-iie-3t",
+    "title": "Empieza aquí",
+    "section": "El modelo iie-3t",
+    "text": "El modelo iie-3t\nEl modelo del equipo organiza el problema en tres capas: contextual, de detección y latente. Estructura, composición y función ayudan a describir los atributos del ecosistema; no son los nombres de las tres capas.\n\n\n\nEsquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.\n\n\n\n\n\n\n\n\n\nCapa\nPapel en el diagnóstico\n\n\n\n\nContextual\nDescribe condiciones fisicoquímicas y biogeográficas que ayudan a interpretar los atributos.\n\n\nDetección\nReúne señales y mediciones, con sus métodos y errores.\n\n\nLatente\nRepresenta la condición que buscamos inferir, sin observarla directamente de manera exhaustiva."
+  },
+  {
+    "objectID": "empieza-aqui.html#del-esquema-a-una-red",
+    "href": "empieza-aqui.html#del-esquema-a-una-red",
+    "title": "Empieza aquí",
+    "section": "Del esquema a una red",
+    "text": "Del esquema a una red\nElegimos variables, justificamos relaciones y preguntamos qué señales esperaríamos bajo diferentes condiciones. Esa descripción evoca un modelo gráfico: los nodos representan variables y los arcos expresan dependencias propuestas.\nPara convertirlo en una red bayesiana necesitamos precisar una estructura sin ciclos dirigidos y sus distribuciones de probabilidad. El dibujo inicia la discusión; los supuestos y la evidencia sostienen el modelo. Una flecha no prueba por sí misma una relación causal."
+  },
+  {
+    "objectID": "empieza-aqui.html#una-primera-práctica",
+    "href": "empieza-aqui.html#una-primera-práctica",
+    "title": "Empieza aquí",
+    "section": "Una primera práctica",
+    "text": "Una primera práctica\nConsulta la sesión de apertura. No requiere programar: reconoceremos las capas, distinguiremos datos de supuestos y construiremos preguntas de diagnóstico."
+  },
+  {
+    "objectID": "empieza-aqui.html#cómo-crecerá-el-recorrido",
+    "href": "empieza-aqui.html#cómo-crecerá-el-recorrido",
+    "title": "Empieza aquí",
+    "section": "Cómo crecerá el recorrido",
+    "text": "Cómo crecerá el recorrido\nIntroduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.\nProcedencia: esquema original del equipo y manuscrito de trabajo Modelo de tres capas para la integridad ecosistémica, secciones 3–5 y 21. Texto didáctico preparado con asistencia de IA; sujeto a revisión docente. Versión 0.1, 2026-10-08."
+  },
+  {
+    "objectID": "temas.html",
+    "href": "temas.html",
+    "title": "Catálogo temático",
+    "section": "",
+    "text": "Introducción accesible.\nSesión 01: observar, contextualizar e inferir."
+  },
+  {
+    "objectID": "temas.html#modelo-de-tres-capas",
+    "href": "temas.html#modelo-de-tres-capas",
+    "title": "Catálogo temático",
+    "section": "",
+    "text": "Introducción accesible.\nSesión 01: observar, contextualizar e inferir."
+  },
+  {
+    "objectID": "temas.html#redes-bayesianas",
+    "href": "temas.html#redes-bayesianas",
+    "title": "Catálogo temático",
+    "section": "Redes bayesianas",
+    "text": "Redes bayesianas\nEl primer puente conceptual está en Del esquema a una red. Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.\n\nCambio climático en R: grafo, tablas, separación-d e intervención. Ejemplo sintético recuperado y revisado, disponible para el momento adecuado del seminario."
+  },
+  {
+    "objectID": "temas.html#reproducibilidad-y-trabajo-científico",
+    "href": "temas.html#reproducibilidad-y-trabajo-científico",
+    "title": "Catálogo temático",
+    "section": "Reproducibilidad y trabajo científico",
+    "text": "Reproducibilidad y trabajo científico\n\nPrincipios y compromisos.\nComprobación del entorno Python.\nComprobación del entorno R."
+  },
+  {
+    "objectID": "temas.html#datos-y-guías",
+    "href": "temas.html#datos-y-guías",
+    "title": "Catálogo temático",
+    "section": "Datos y guías",
+    "text": "Datos y guías\n\nFicha de observación descargable: plantilla vacía; no contiene datos de campo.\nGuía de la primera práctica."
+  },
+  {
+    "objectID": "temas.html#ampliaciones-por-explorar",
+    "href": "temas.html#ampliaciones-por-explorar",
+    "title": "Catálogo temático",
+    "section": "Ampliaciones por explorar",
+    "text": "Ampliaciones por explorar\nIIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html",
+    "href": "posts/01-tres-capas/index.html",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "",
+    "text": "Estado: propuesta de apertura, pendiente de revisión docente. Realización: por acordar. Versión del material: 0.1."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#pregunta-central",
+    "href": "posts/01-tres-capas/index.html#pregunta-central",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Pregunta central",
+    "text": "Pregunta central\n¿Cómo inferir la condición de un ecosistema a partir de señales que dependen de su contexto?"
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
+    "href": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Al terminar esta primera aproximación",
+    "text": "Al terminar esta primera aproximación\n\nDistinguir las tres capas y explicar su función con un ejemplo.\nSeparar una medición de una interpretación y de un supuesto.\nProponer relaciones entre variables y reconocer por qué hace falta representar incertidumbre."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#materiales",
+    "href": "posts/01-tres-capas/index.html#materiales",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Materiales",
+    "text": "Materiales\n\nIntroducción y esquema del equipo.\nFicha de observación, vacía y editable.\nPrincipios de reproducibilidad."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#práctica",
+    "href": "posts/01-tres-capas/index.html#práctica",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Práctica",
+    "text": "Práctica\n\nElegir un ecosistema conocido por el grupo. Describirlo sin asignarle todavía una puntuación de integridad.\nProponer dos variables de contexto y dos atributos medibles. Registrar unidad, método y fuente o indicar que se trata de una propuesta sin datos.\nExplicar qué se querría inferir sobre su condición y qué evidencia falta.\nDibujar relaciones justificadas entre esas variables. Distinguir las señales que se observan de la condición que se busca inferir.\nImaginar una nueva observación: ¿cambiaría el diagnóstico?, ¿por qué? Conservar la primera versión y documentar el cambio.\n\nNo se requieren valores inventados ni código para esta actividad. Si el grupo utiliza un ejemplo hipotético, debe identificarlo como tal."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
+    "href": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Evidencia de aprendizaje",
+    "text": "Evidencia de aprendizaje\nUn diagrama anotado y una ficha con variables, procedencia y supuestos. Cada equipo explicará una incertidumbre que el dibujo todavía no resuelve."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
+    "href": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Para decidir la siguiente sesión",
+    "text": "Para decidir la siguiente sesión\nRecoger tres preguntas del grupo, un concepto que necesite aclaración y una valoración agregada de preparación para el trabajo computacional. Esto orientará la introducción de nodos, arcos y probabilidades condicionales."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#procedencia-y-cambios",
+    "href": "posts/01-tres-capas/index.html#procedencia-y-cambios",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Procedencia y cambios",
+    "text": "Procedencia y cambios\nVersión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA; aún no aplicada a participantes. La fecha de esta entrada registra su preparación."
+  },
+  {
+    "objectID": "recursos/comprobacion-python.html",
+    "href": "recursos/comprobacion-python.html",
+    "title": "Comprobación del entorno Python",
+    "section": "",
+    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nimport sys\nprobabilidades = [0.2, 0.3, 0.5]\nassert abs(sum(probabilidades) - 1.0) &lt; 1e-12\nresultado = sum(p * x for p, x in zip(probabilidades, [0, 1, 2]))\nassert abs(resultado - 1.3) &lt; 1e-12\nprint(f\"Python {sys.version.split()[0]} · resultado: {resultado:.1f}\")\n\nPython 3.12.14 · resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+  }
+]

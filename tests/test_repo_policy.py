@@ -17,6 +17,17 @@ class RepositoryPolicy(unittest.TestCase):
         self.assertTrue(issues("large.csv", b"x" * (MAX_BYTES + 1)))
         self.assertEqual(issues("blog/recursos/example.csv", b"a,b\n1,2\n"), [])
 
+    def test_public_output_keeps_private_file_protection(self):
+        self.assertEqual(issues("blog/_site/index.html", b"<html></html>"), [])
+        self.assertEqual(issues("blog/img/modelo.svg", b"<svg/>"), [])
+        for name in ("other/_site/index.html", "blog/_site/private/data.csv",
+                     "blog/_site/.env", "blog/_site/slides.pptx",
+                     "blog/_site/nested/_site/index.html"):
+            with self.subTest(name=name):
+                self.assertTrue(issues(name, b"x"))
+        self.assertTrue(issues("blog/_site/large.html", b"x" * (MAX_BYTES + 1)))
+        self.assertTrue(issues("blog/_site/index.html", b"gh" + b"p_" + b"a" * 36))
+
     def test_secret_patterns(self):
         sample = b"gh" + b"p_" + b"a" * 36
         self.assertTrue(issues("config.txt", sample))

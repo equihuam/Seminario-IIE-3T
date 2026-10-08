@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Recuperación crítica de un ejemplo socioecológico con bnlearn y dagitty.">
+
+<title>Cambio climático: leer, consultar y discutir una red bayesiana en R – iie-3t · Seminario</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-3be04e9191975886ffbbdc1e6b376307.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No se han encontrado resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">iie-3t · Seminario</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../empieza-aqui.html"> 
+<span class="menu-text">Empieza aquí</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sesiones.html"> 
+<span class="menu-text">Sesiones</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../temas.html"> 
+<span class="menu-text">Temas</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../reproducibilidad.html"> 
+<span class="menu-text">Reproducibilidad</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#qué-recuperamos-y-qué-significa" id="toc-qué-recuperamos-y-qué-significa" class="nav-link active" data-scroll-target="#qué-recuperamos-y-qué-significa">Qué recuperamos y qué significa</a></li>
+  <li><a href="#construir-y-examinar-el-grafo" id="toc-construir-y-examinar-el-grafo" class="nav-link" data-scroll-target="#construir-y-examinar-el-grafo">Construir y examinar el grafo</a></li>
+  <li><a href="#leer-las-tablas-sin-perder-los-supuestos" id="toc-leer-las-tablas-sin-perder-los-supuestos" class="nav-link" data-scroll-target="#leer-las-tablas-sin-perder-los-supuestos">Leer las tablas sin perder los supuestos</a></li>
+  <li><a href="#separación-d-mirar-todas-las-rutas" id="toc-separación-d-mirar-todas-las-rutas" class="nav-link" data-scroll-target="#separación-d-mirar-todas-las-rutas">Separación-d: mirar todas las rutas</a></li>
+  <li><a href="#observar-no-es-intervenir" id="toc-observar-no-es-intervenir" class="nav-link" data-scroll-target="#observar-no-es-intervenir">Observar no es intervenir</a></li>
+  <li><a href="#simular-estimar-y-contrastar-en-r" id="toc-simular-estimar-y-contrastar-en-r" class="nav-link" data-scroll-target="#simular-estimar-y-contrastar-en-r">Simular, estimar y contrastar en R</a></li>
+  <li><a href="#cambiar-evidencia-no-hace-temporal-a-la-red" id="toc-cambiar-evidencia-no-hace-temporal-a-la-red" class="nav-link" data-scroll-target="#cambiar-evidencia-no-hace-temporal-a-la-red">Cambiar evidencia no hace temporal a la red</a></li>
+  <li><a href="#práctica-y-evidencia-de-aprendizaje" id="toc-práctica-y-evidencia-de-aprendizaje" class="nav-link" data-scroll-target="#práctica-y-evidencia-de-aprendizaje">Práctica y evidencia de aprendizaje</a></li>
+  <li><a href="#procedencia-y-reproducción" id="toc-procedencia-y-reproducción" class="nav-link" data-scroll-target="#procedencia-y-reproducción">Procedencia y reproducción</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Cambio climático: leer, consultar y discutir una red bayesiana en R</h1>
+</div>
+
+<div>
+  <div class="description">
+    Recuperación crítica de un ejemplo socioecológico con bnlearn y dagitty.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Versión 0.1 · 2026-10-08 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, <em>Lo Básico de Redes Bayesianas</em> (2023), con asistencia de IA en la revisión y el código.</p>
+<p><strong>Objetivo:</strong> distinguir lo que supone el grafo, lo que cuantifican sus tablas y lo que responde una consulta. Requisitos: nociones de probabilidad condicional y manejo elemental de R. Este recurso se incorpora cuando el grupo esté preparado; no fija una segunda sesión obligatoria.</p>
+<section id="qué-recuperamos-y-qué-significa" class="level2">
+<h2 class="anchored" data-anchor-id="qué-recuperamos-y-qué-significa">Qué recuperamos y qué significa</h2>
+<p>Conservamos los ocho nodos, los ocho arcos y todas las probabilidades del ejemplo original para hacer su revisión reproducible. <strong>Son números hipotéticos, no estimaciones empíricas ni probabilidades científicamente calibradas del cambio climático.</strong> En particular, 0.99 no cuantifica aquí la evidencia sobre su existencia. Para una aplicación real habría que definir exposición climática local, periodo, unidades de observación y fuentes de estimación.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Nodo</th>
+<th>Significado didáctico heredado</th>
+<th>Estados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>aCC</td>
+<td>Cambio climático, variable simplificada del ejemplo</td>
+<td>presente / ausente</td>
+</tr>
+<tr class="even">
+<td>B</td>
+<td>Interés económico predominante</td>
+<td>madera / paisaje</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>Pérdida de especies</td>
+<td>presente / ausente</td>
+</tr>
+<tr class="even">
+<td>U</td>
+<td>Aprovechamiento forestal extractivo</td>
+<td>presente / ausente</td>
+</tr>
+<tr class="odd">
+<td>P</td>
+<td>Disfrute del paisaje</td>
+<td>presente / ausente</td>
+</tr>
+<tr class="even">
+<td>Eco</td>
+<td>Tipo de cobertura</td>
+<td>plantacion / natural</td>
+</tr>
+<tr class="odd">
+<td>N</td>
+<td>Especies nativas</td>
+<td>abundantes / escasas</td>
+</tr>
+<tr class="even">
+<td>X</td>
+<td>Especies exóticas</td>
+<td>abundantes / escasas</td>
+</tr>
+</tbody>
+</table>
+<p>Los nombres y umbrales requieren definición operacional antes de usar datos. <code>Eco</code> representa un tipo de cobertura: <strong>no mide integridad ecosistémica</strong>. Esta red tampoco implementa el modelo iie-3t. Sirve para aprender herramientas que luego se aplicarán a una red justificada para ese modelo.</p>
+</section>
+<section id="construir-y-examinar-el-grafo" class="level2">
+<h2 class="anchored" data-anchor-id="construir-y-examinar-el-grafo">Construir y examinar el grafo</h2>
+<p>El proyecto usa R y las bibliotecas <code>bnlearn</code> y <code>dagitty</code>, registradas en <code>renv.lock</code>. Para trabajar con el modelo por separado, descargar <a href="clima-modelo.R">clima-modelo.R</a> y cargarlo desde su carpeta con <code>source("clima-modelo.R")</code>. En el proyecto, desde la raíz, se usa <code>source("blog/recursos/clima-modelo.R")</code>. La compilación de esta página lo carga desde la carpeta de recursos.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"clima-modelo.R"</span>, <span class="at">encoding =</span> <span class="st">"UTF-8"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>red <span class="ot">&lt;-</span> <span class="fu">crear_clima</span>()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">a_dagitty</span>(red)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">modelstring</span>(bnlearn<span class="sc">::</span><span class="fu">bn.net</span>(red))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "[B][aCC][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dagitty<span class="sc">::</span><span class="fu">coordinates</span>(g) <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">c</span>(<span class="at">aCC =</span> <span class="dv">0</span>, <span class="at">E =</span> <span class="dv">0</span>, <span class="at">B =</span> <span class="dv">3</span>, <span class="at">U =</span> <span class="dv">2</span>, <span class="at">P =</span> <span class="dv">4</span>, <span class="at">Eco =</span> <span class="dv">1</span>, <span class="at">X =</span> <span class="dv">0</span>, <span class="at">N =</span> <span class="dv">3</span>),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">c</span>(<span class="at">aCC =</span> <span class="dv">0</span>, <span class="at">E =</span> <span class="dv">1</span>, <span class="at">B =</span> <span class="dv">0</span>, <span class="at">U =</span> <span class="dv">1</span>, <span class="at">P =</span> <span class="dv">1</span>, <span class="at">Eco =</span> <span class="dv">2</span>, <span class="at">X =</span> <span class="dv">3</span>, <span class="at">N =</span> <span class="dv">3</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-clima" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-clima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="cambio-climatico_files/figure-html/fig-clima-1.png" class="img-fluid figure-img" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-clima-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1: Grafo original recuperado; sus flechas son hipótesis a discutir.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>La factorización es:</p>
+<p><span class="math display">\[
+p(aCC,B,E,U,P,Eco,N,X)=p(aCC)p(B)p(E\mid aCC)p(U\mid B)
+p(P\mid B)p(Eco\mid E,U)p(N\mid P,Eco)p(X\mid Eco).
+\]</span></p>
+<p>Una red bayesiana define una distribución mediante esta factorización. Interpretar sus arcos como mecanismos causales requiere justificación adicional. Por ejemplo, <code>E → Eco</code> y <code>P → N</code> requieren explicar mecanismos, orden temporal y causas omitidas. El consenso del grupo documenta hipótesis, pero no demuestra su validez.</p>
+</section>
+<section id="leer-las-tablas-sin-perder-los-supuestos" class="level2">
+<h2 class="anchored" data-anchor-id="leer-las-tablas-sin-perder-los-supuestos">Leer las tablas sin perder los supuestos</h2>
+<p><code>custom.fit()</code> asigna tablas propuestas; no las estima a partir de observaciones. En cada configuración de padres, las probabilidades de los estados del hijo deben sumar uno. Los nombres de las dimensiones evitan confundir el orden de padres.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>red<span class="sc">$</span>E<span class="sc">$</span>prob</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          aCC
+E          presente ausente
+  presente     0.99    0.95
+  ausente      0.01    0.05</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>red<span class="sc">$</span>Eco<span class="sc">$</span>prob</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>, , U = presente
+
+            E
+Eco          presente ausente
+  plantacion        1       0
+  natural           0       1
+
+, , U = ausente
+
+            E
+Eco          presente ausente
+  plantacion        0       0
+  natural           1       1</code></pre>
+</div>
+</div>
+<p>La tabla de <code>E</code> supone 0.99 frente a 0.95: la diferencia es <strong>0.04</strong>, no 0.99 de efecto atribuible al clima. En <code>U</code> se supone aprovechamiento con probabilidad 0.99 bajo interés maderero y 0.90 bajo interés paisajístico. Estas elecciones no están calibradas y limitan el contraste didáctico.</p>
+<p>La tabla de <code>Eco</code> es determinista: hay plantación si y solo si <code>E</code> y <code>U</code> están presentes. No es una ley ecológica; produce combinaciones imposibles y enseña por qué debemos revisar las tablas además del dibujo. Conservamos esa elección visible, sin reemplazarla silenciosamente por otra. Si el grupo propone una tabla no determinista, debe guardar la variante y justificar sus valores.</p>
+</section>
+<section id="separación-d-mirar-todas-las-rutas" class="level2">
+<h2 class="anchored" data-anchor-id="separación-d-mirar-todas-las-rutas">Separación-d: mirar todas las rutas</h2>
+<p>La ausencia de arco directo <strong>no implica independencia marginal</strong>. Hay que especificar las variables condicionadas y examinar todas las rutas. Bajo la propiedad de Markov del DAG, separación-d implica independencia condicional. Una ruta abierta permite dependencia; no la garantiza para toda elección de parámetros. No confundamos independencia con correlación cero: esta última puede coexistir con dependencia no lineal.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Estructura aislada</th>
+<th>Sin condicionar</th>
+<th>Al condicionar en M</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A → M → Y</td>
+<td>Ruta abierta</td>
+<td>Ruta bloqueada</td>
+</tr>
+<tr class="even">
+<td>A ← M → Y</td>
+<td>Ruta abierta</td>
+<td>Ruta bloqueada</td>
+</tr>
+<tr class="odd">
+<td>A → M ← Y</td>
+<td>Ruta bloqueada</td>
+<td>Ruta abierta</td>
+</tr>
+</tbody>
+</table>
+<p>Observar un descendiente del colisionador también puede abrir la ruta. Estas reglas locales no eximen de revisar las otras rutas del grafo completo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">consulta =</span> <span class="fu">c</span>(<span class="st">"aCC y Eco"</span>, <span class="st">"aCC y Eco dado E"</span>, <span class="st">"E y U"</span>, <span class="st">"E y U dado Eco"</span>),</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">separados =</span> <span class="fu">c</span>(</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    dagitty<span class="sc">::</span><span class="fu">dseparated</span>(g, <span class="st">"aCC"</span>, <span class="st">"Eco"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    dagitty<span class="sc">::</span><span class="fu">dseparated</span>(g, <span class="st">"aCC"</span>, <span class="st">"Eco"</span>, <span class="st">"E"</span>),</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    dagitty<span class="sc">::</span><span class="fu">dseparated</span>(g, <span class="st">"E"</span>, <span class="st">"U"</span>),</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    dagitty<span class="sc">::</span><span class="fu">dseparated</span>(g, <span class="st">"E"</span>, <span class="st">"U"</span>, <span class="st">"Eco"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          consulta separados
+1        aCC y Eco     FALSE
+2 aCC y Eco dado E      TRUE
+3            E y U      TRUE
+4   E y U dado Eco     FALSE</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dagitty<span class="sc">::</span><span class="fu">impliedConditionalIndependencies</span>(g)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>B _||_ E
+B _||_ Eco | U
+B _||_ N | Eco, P
+B _||_ N | P, U
+B _||_ X | Eco
+B _||_ X | U
+B _||_ aCC
+E _||_ N | Eco, P
+E _||_ N | B, Eco
+E _||_ N | Eco, U
+E _||_ P
+E _||_ U
+E _||_ X | Eco
+Eco _||_ P | B
+Eco _||_ P | U
+Eco _||_ aCC | E
+N _||_ U | B, Eco
+N _||_ U | Eco, P
+N _||_ X | Eco
+N _||_ aCC | E
+N _||_ aCC | Eco, U
+N _||_ aCC | B, Eco
+N _||_ aCC | Eco, P
+P _||_ U | B
+P _||_ X | Eco
+P _||_ X | U
+P _||_ X | B
+P _||_ aCC
+U _||_ X | Eco
+U _||_ aCC
+X _||_ aCC | E
+X _||_ aCC | Eco</code></pre>
+</div>
+</div>
+<p><code>aCC</code> y <code>Eco</code> no tienen arco directo, pero la cadena a través de <code>E</code> está abierta. <code>E</code> y <code>U</code> están separados sin evidencia; al observar <code>Eco</code> deja de haber separación-d.&nbsp;Las independencias enumeradas son implicaciones del modelo, no hechos ecológicos ya comprobados.</p>
+</section>
+<section id="observar-no-es-intervenir" class="level2">
+<h2 class="anchored" data-anchor-id="observar-no-es-intervenir">Observar no es intervenir</h2>
+<p>Observar <code>Eco = natural</code> selecciona casos de la distribución original: calculamos <span class="math inline">\(p(E\mid Eco=natural)\)</span>. Intervenir idealmente sobre <code>Eco</code> reemplaza su mecanismo y elimina los arcos que llegan a ese nodo: calculamos <span class="math inline">\(p(E\mid do(Eco=natural))\)</span>, <strong>si aceptamos para el ejercicio una interpretación causal del grafo</strong>. Ese supuesto no convierte el cálculo en una recomendación de manejo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>j <span class="ot">&lt;-</span> <span class="fu">conjunta</span>(red) <span class="co"># Enumeración exacta de los 256 estados posibles.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>do_red <span class="ot">&lt;-</span> bnlearn<span class="sc">::</span><span class="fu">intervention</span>(red, <span class="at">evidence =</span> <span class="fu">list</span>(<span class="at">Eco =</span> <span class="st">"natural"</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>resultados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">consulta =</span> <span class="fu">c</span>(<span class="st">"Sin evidencia"</span>, <span class="st">"Observando Eco = natural"</span>, <span class="st">"Interviniendo Eco = natural"</span>),</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob_E =</span> <span class="fu">c</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prob_exacta</span>(j, <span class="fu">list</span>(<span class="at">E =</span> <span class="st">"presente"</span>)),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prob_exacta</span>(j, <span class="fu">list</span>(<span class="at">E =</span> <span class="st">"presente"</span>), <span class="fu">list</span>(<span class="at">Eco =</span> <span class="st">"natural"</span>)),</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">prob_exacta</span>(<span class="fu">conjunta</span>(do_red), <span class="fu">list</span>(<span class="at">E =</span> <span class="st">"presente"</span>))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(resultados, <span class="at">digits =</span> <span class="dv">6</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">consulta</th>
+<th style="text-align: right;">prob_E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sin evidencia</td>
+<td style="text-align: right;">0.989600</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Observando Eco = natural</td>
+<td style="text-align: right;">0.839575</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Interviniendo Eco = natural</td>
+<td style="text-align: right;">0.989600</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Podemos comprobarlo a mano: <span class="math inline">\(p(E)=0.99(0.99)+0.01(0.95)=0.9896\)</span> y <span class="math inline">\(p(U)=0.945\)</span>. Como son marginalmente independientes y plantación equivale a la coincidencia de ambos:</p>
+<p><span class="math display">\[
+p(E\mid Eco=natural)=\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\approx0.839576.
+\]</span></p>
+<p>Intervenir en <code>Eco</code> deja <span class="math inline">\(p(E)=0.9896\)</span>: no cambia el mecanismo de sus ancestros. Entre los casos naturales, la coincidencia <code>E</code> y <code>U</code> tiene probabilidad cero aunque ambos tienen marginales positivas: ahora son dependientes. Entre las plantaciones, en cambio, los dos quedan fijos en «presente»; la correlación no está definida por falta de variación. La conexión-d no garantiza correlación en cada estrato.</p>
+<p>El original fijaba las probabilidades de dos raíces (<code>aCC</code>, <code>B</code>) en 1 para mostrar evidencia. En esta red, condicionar esas raíces e intervenir en ellas coincide numéricamente para el resto de variables. Es un caso particular que <strong>no permite generalizar el procedimiento a nodos con padres</strong>. Aquí conservamos el modelo observacional y formulamos cada consulta explícitamente.</p>
+<p><code>bnlearn</code> también permite consultas aproximadas por simulación. El resultado varía con la muestra; la enumeración nos da una referencia exacta para esta red pequeña.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20261008</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">cpquery</span>(red, <span class="at">event =</span> (E <span class="sc">==</span> <span class="st">"presente"</span>),</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">evidence =</span> (Eco <span class="sc">==</span> <span class="st">"natural"</span>), <span class="at">n =</span> <span class="dv">200000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.8365963</code></pre>
+</div>
+</div>
+</section>
+<section id="simular-estimar-y-contrastar-en-r" class="level2">
+<h2 class="anchored" data-anchor-id="simular-estimar-y-contrastar-en-r">Simular, estimar y contrastar en R</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">20261008</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> bnlearn<span class="sc">::</span><span class="fu">rbn</span>(red, <span class="at">n =</span> <span class="dv">10000</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>ajustada <span class="ot">&lt;-</span> bnlearn<span class="sc">::</span><span class="fu">bn.fit</span>(bnlearn<span class="sc">::</span><span class="fu">bn.net</span>(red), datos, <span class="at">method =</span> <span class="st">"bayes"</span>, <span class="at">iss =</span> <span class="dv">1</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>ajustada<span class="sc">$</span>E<span class="sc">$</span>prob</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          aCC
+E             presente     ausente
+  presente 0.991195318 0.920765027
+  ausente  0.008804682 0.079234973</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">ci.test</span>(<span class="st">"E"</span>, <span class="st">"U"</span>, <span class="at">data =</span> datos, <span class="at">test =</span> <span class="st">"mi"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Mutual Information (disc.)
+
+data:  E ~ U  
+mi = 0.23647, df = 1, p-value = 0.6268
+alternative hypothesis: true value is greater than 0</code></pre>
+</div>
+</div>
+<p>Los datos son simulados por el propio modelo. Este ejercicio verifica una mecánica de estimación; no valida ecológicamente el DAG. El ajuste bayesiano con <code>iss = 1</code> añade suavizado, por lo que no conserva necesariamente sus ceros deterministas. Es una elección explícita del ejercicio, no un parámetro calibrado.</p>
+<p>Un contraste no significativo significa que <strong>no rechazamos la hipótesis nula con esa prueba y esos datos</strong>. No demuestra independencia: importan potencia, tamaño de muestra, supuestos y sensibilidad del contraste. Con datos reales, discrepancias pueden cuestionar el modelo o el procedimiento de observación; la ausencia de rechazo no certifica causalidad. Tampoco aprender una estructura con <code>hc()</code> demostraría una dirección causal única: pueden existir grafos observacionalmente equivalentes.</p>
+</section>
+<section id="cambiar-evidencia-no-hace-temporal-a-la-red" class="level2">
+<h2 class="anchored" data-anchor-id="cambiar-evidencia-no-hace-temporal-a-la-red">Cambiar evidencia no hace temporal a la red</h2>
+<p>Esta red es estática. Repetir consultas con valores distintos no especifica cómo evoluciona un sistema. Un modelo temporal necesita variables indexadas, una distribución inicial y transiciones, por ejemplo:</p>
+<p><span class="math display">\[
+p(S_0)\prod_{t=1}^T p(S_t\mid S_{t-1},A_{t-1})
+\prod_{t=0}^T p(O_t\mid S_t).
+\]</span></p>
+<p>Aquí <span class="math inline">\(S_t\)</span> es el estado del sistema, <span class="math inline">\(A_t\)</span> una entrada y <span class="math inline">\(O_t\)</span> una observación. La expresión está condicionada a una secuencia de entradas; supone dependencia de primer orden. Si los mecanismos se comparten entre tiempos, se añade homogeneidad temporal. Una red dinámica puede ser predictiva sin ser causal; simular trayectorias no garantiza reproducir una serie observada. No incorporamos todavía una transición climática a este ejercicio.</p>
+</section>
+<section id="práctica-y-evidencia-de-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="práctica-y-evidencia-de-aprendizaje">Práctica y evidencia de aprendizaje</h2>
+<ol type="1">
+<li>Explique por qué falta el arco <code>aCC → Eco</code> pero no hay independencia marginal. Indique qué condicionamiento bloquea sus rutas.</li>
+<li>Calcule y compare <span class="math inline">\(p(E,U\mid Eco=natural)\)</span> con el producto de sus marginales condicionales. Repita con intervención.</li>
+<li>Identifique una relación del grafo que considere discutible. Documente mecanismo, escala temporal, evidencia y una estructura alternativa. El consenso no basta como validación.</li>
+<li>Proponga una modificación de la tabla de <code>Eco</code>, compruebe normalización y documente cómo cambia el resultado. Distinga revisión del supuesto de ajuste con datos.</li>
+<li>Redacte una interpretación correcta del contraste y explique qué faltaría para convertir este caso en un modelo temporal.</li>
+</ol>
+<p>Producto: script ejecutable y una nota con supuestos, resultados y límites. Criterio: distinguir consulta observacional, intervención y transición sin atribuir evidencia empírica a la simulación.</p>
+</section>
+<section id="procedencia-y-reproducción" class="level2">
+<h2 class="anchored" data-anchor-id="procedencia-y-reproducción">Procedencia y reproducción</h2>
+<p>Fuente: Equihua y Pérez Maqueo, <a href="https://github.com/equihuam/Cafe-blog/blob/d025b97d8e27cb31f751a024505f0252c24f0a50/posts/redes-bayesianas-basico/index.qmd">Lo Básico de Redes Bayesianas</a>, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.</p>
+<p>En el repositorio, ejecutar desde una sesión nueva: <code>Rscript tests/test-clima.R</code> y <code>Rscript scripts/clima-ejemplo.R</code>. Restaurar primero el entorno con <code>Rscript --vanilla scripts/setup-r.R</code>. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.</p>
+<p>Documentación técnica: <a href="https://www.bnlearn.com/documentation/man/bn.fit.html">tablas y ajuste</a>, <a href="https://bnlearn.com/documentation/man/cpquery.html">consultas condicionales</a>, <a href="https://www.bnlearn.com/documentation/man/causal.inference.html">intervenciones</a> y <a href="https://dagitty.net/">DAGitty</a>. Consultadas el 2026-10-08.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>R version 4.6.0 (2026-04-24 ucrt)
+Platform: x86_64-w64-mingw32/x64
+Running under: Windows 11 x64 (build 26300)
+
+Matrix products: default
+  LAPACK version 3.12.1
+
+locale:
+[1] C
+system code page: 65001
+
+time zone: America/Mexico_City
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices datasets  utils     methods   base     
+
+loaded via a namespace (and not attached):
+ [1] digest_0.6.39   fastmap_1.2.0   xfun_0.61       knitr_1.52     
+ [5] parallel_4.6.0  bnlearn_5.2.1   htmltools_0.5.9 rmarkdown_2.32 
+ [9] cli_3.6.6       dagitty_0.3-4   renv_1.2.3      compiler_4.6.0 
+[13] boot_1.3-32     tools_4.6.0     curl_8.0.0      evaluate_1.0.5 
+[17] Rcpp_1.1.2      yaml_2.3.12     rlang_1.3.0     jsonlite_2.0.0 
+[21] V8_8.2.0        MASS_7.3-65    </code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiado");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiado");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>iie-3t · Aprender, modelar y documentar</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Material de trabajo · versión inicial 0.1</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

@@ -81,7 +81,7 @@ En esta máquina se usa el Quarto incluido en RStudio. Su lanzador presenta un p
 
 `check` comprueba las dependencias, consulta el estado de `renv`, renderiza todas las páginas reejecutando código y revisa enlaces locales y límites de publicación. `render` construye y revisa el sitio sin comprobar previamente el entorno. `preview` sirve solo en `127.0.0.1`; detener con Ctrl+C. Ninguno publica en Internet.
 
-El original se conserva en `img/Modelo de tres capas.svg`. El lanzador genera una copia en `blog/img/`, convirtiendo las etiquetas fluidas de Inkscape a texto SVG compatible con navegadores. Conserva el original sin cambios. La copia y `blog/_site/` son regenerables y están excluidas de Git. Modificar solo el original.
+El original se conserva en `img/Modelo de tres capas.svg`. El lanzador genera una copia en `blog/img/`, convirtiendo las etiquetas fluidas de Inkscape a texto SVG compatible con navegadores. Conserva el original sin cambios. La copia y `blog/_site/` son regenerables y se incluyen en Git para publicar el HTML verificado mediante Netlify. Modificar solo el original.
 
 La comprobación de R y la de Python deben producir **1.3** mediante operaciones conocidas. Este resultado verifica ambos motores editoriales, no la estimación del IIE. El documento conserva los números de versión usados al ejecutarlo.
 
@@ -96,7 +96,7 @@ git add <archivos-revisados>
 git commit -m "Descripción del cambio"
 ```
 
-Los hooks no se activan automáticamente al clonar. El control revisa el contenido del índice de Git, incluidas incorporaciones forzadas, y rechaza categorías excluidas, archivos mayores de 5 MiB y algunos patrones conocidos de credenciales. No sustituye la revisión humana de confidencialidad. No se configuró un remoto ni un destino de publicación.
+Los hooks no se activan automáticamente al clonar. El control revisa el contenido del índice de Git, incluidas incorporaciones forzadas, y rechaza categorías excluidas, archivos mayores de 5 MiB y algunos patrones conocidos de credenciales. No sustituye la revisión humana de confidencialidad. El usuario configuró GitHub; Netlify publica la salida versionada de `blog/_site/`.
 
 ## Materiales y registros internos
 

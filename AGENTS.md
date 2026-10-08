@@ -6,7 +6,7 @@ Leer primero `README.md`, `PLAN.md` y los documentos relevantes para la tarea. D
 
 Trabajar exclusivamente dentro de esta carpeta. No explorar ni modificar los proyectos hermanos salvo petición expresa del usuario. Preservar el SVG original.
 
-El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `blog/`; la copia de la imagen en `blog/img/` es regenerable. Consultar `ENVIRONMENT.md` y `docs/OPERACION-BLOG.md` antes de modificar la infraestructura editorial.
+El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `blog/`; la copia de la imagen en `blog/img/` es regenerable y se versiona junto con `blog/_site/` para publicar desde GitHub en Netlify. Regenerar y verificar el blog antes de incorporar su salida. Consultar `ENVIRONMENT.md` y `docs/OPERACION-BLOG.md` antes de modificar la infraestructura editorial.
 
 RStudio es el IDE habitual del usuario. Mantener `Seminario-IIE-3T.Rproj`, la activación de `renv` y las instrucciones para usar el blog desde RStudio. Evitar restaurar espacios de trabajo o depender de objetos guardados de sesiones anteriores; no modificar preferencias globales del IDE.
 

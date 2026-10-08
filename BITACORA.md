@@ -131,3 +131,12 @@ Fecha de registro: 2026-10-08. Prompt: P021.
 El log aportado informa una base inexistente antes de compilar. No había netlify.toml local; se añade configuración de rutas con base en la raíz y salida blog/_site. Se documenta que la salida está fuera de Git y que corregir la base no instala los entornos ni habilita compilación remota. Se plantea elegir entre generación local y automatización; se deja documentada la publicación manual del resultado verificado como opción inicial. No se accedió a Netlify ni se cambió su configuración remota.
 
 Validación: TOML leído con tomllib y rutas dentro del proyecto; scripts/site.py check terminó correctamente, con renv sincronizado, pip check correcto y nueve páginas reejecutadas y verificadas. Persisten advertencias regionales de R conocidas. Sin commit, push ni despliegue; elección del mecanismo de publicación pendiente.
+
+
+## B018 — HTML versionado para el vínculo GitHub–Netlify
+
+Registro: 2026-10-08. Prompt: P022.
+
+Se adopta la generación local y publicación del HTML desde GitHub. Se incluyen blog/_site y blog/img en Git, se ajusta el control de política con una excepción exclusiva para la salida pública y se conserva el bloqueo de secretos, archivos privados y tamaños superiores a 5 MiB. Netlify comprueba que exista la portada y sirve blog/_site sin ejecutar R/Python. Las cachés y entornos permanecen excluidos. Esta decisión reemplaza la exclusión histórica de la salida, no la exigencia de reproducción.
+
+Verificación: scripts/site.py check correcto para nueve páginas; cuatro pruebas Python correctas; los 35 archivos de salida (1.58 MiB en conjunto) pasan la política y ninguno está excluido de Git. Entornos consistentes; advertencias regionales de R conocidas. Se preparan los archivos en el índice para el próximo commit. No se ha realizado un despliegue remoto.

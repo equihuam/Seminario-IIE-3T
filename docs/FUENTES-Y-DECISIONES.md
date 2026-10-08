@@ -86,3 +86,8 @@ El anidamiento didáctico usa j para zona o clase, i para píxel dentro de j y n
 ## D16 — Carpeta editorial blog (P020)
 
 La carpeta editorial pasa de `site/` a `blog/`. Esta decisión actualiza la ruta histórica de D12; las entradas anteriores conservan su redacción como registro. Se mantienen los comandos `blog()` de RStudio y `scripts/site.py`, que ahora construyen desde `blog/` y verifican `blog/_site/`. Se actualizan rutas de ejercicios, documentación y exclusiones. El bloqueo de R incorpora las versiones de las herramientas de GitHub ya instaladas, conforme a la política existente de registrar toda la biblioteca del proyecto.
+
+
+## D17 — Publicación de HTML versionado (P022)
+
+El usuario elige incorporar blog/_site y los recursos necesarios al repositorio para que Netlify publique desde GitHub. Actualiza las exclusiones de D12/D16: fuentes y salida se conservan juntas; las cachés, entornos y datos privados permanecen excluidos. Se requiere reconstruir y verificar localmente antes de cada commit de materiales. Netlify sirve blog/_site; no se configura compilación científica remota.

@@ -19,11 +19,13 @@ SECRET_PATTERNS = [
 def issues(name, content):
     p = PurePosixPath(name.lower())
     errors = []
-    if (BLOCKED_PARTS.intersection(p.parts) or p.suffix in BLOCKED_SUFFIXES
+    # Only the designated public output may contain the _site component.
+    policy_parts = p.parts[2:] if p.parts[:2] == ("blog", "_site") else p.parts
+    if (BLOCKED_PARTS.intersection(policy_parts) or p.suffix in BLOCKED_SUFFIXES
             or p.name in {"prompts.md", ".renviron", ".rhistory", ".rdata"}
             or p.name == ".env" or (p.name.startswith(".env.") and p.name != ".env.example")
             or "credentials" in p.name or "secret" in p.name or ".local." in p.name
-            or str(p).startswith(("data/raw/", "data/original/", "data/private/", "renv/library/", "renv/cache/", "renv/sandbox/", "renv/staging/", "blog/img/"))):
+            or str(p).startswith(("data/raw/", "data/original/", "data/private/", "renv/library/", "renv/cache/", "renv/sandbox/", "renv/staging/"))):
         errors.append("archivo excluido por la política del proyecto")
     if len(content) > MAX_BYTES:
         errors.append("supera el límite de 5 MiB")
