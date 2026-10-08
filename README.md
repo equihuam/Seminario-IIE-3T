@@ -60,7 +60,7 @@ El cierre de cada sesión recogerá preguntas, dificultades y una evidencia brev
 
 Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario-IIE-3T.Rproj). La consola ofrece `blog("render")` y `blog("check")`; las instrucciones están en [Entornos y ejecución](ENVIRONMENT.md).
 
-- [Blog: fuentes de la portada](site/index.qmd): introducción común, sesiones y catálogo temático.
+- [Blog: fuentes de la portada](blog/index.qmd): introducción común, sesiones y catálogo temático.
 - [Entornos y ejecución](ENVIRONMENT.md): instalación, reproducción, vista previa y controles de Git.
 - [Operación del blog](docs/OPERACION-BLOG.md): incorporación de sesiones y revisión editorial.
 
@@ -75,6 +75,6 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 
 ## Alcance y estado
 
-Las copias locales de las dos fuentes ya fueron consultadas de forma selectiva para fundamentar esta configuración. El blog local contiene la propuesta de apertura, comprobaciones de ejecución R/Python y un [ejemplo climático sintético en R](site/recursos/cambio-climatico.qmd), recuperado con `bnlearn` y `dagitty`. Su [revisión conceptual](docs/REVISION-CONCEPTUAL-CLIMA.md) distingue supuestos, evidencia, intervención y dinámica. El programa detallado, la duración, el perfil de participantes, los datos y la variante operacional del IIE siguen pendientes. La plantilla para participantes continúa siendo documental; todavía no contiene una implementación de red bayesiana. La configuración de entornos actual pertenece al proyecto del seminario.
+Las copias locales de las dos fuentes ya fueron consultadas de forma selectiva para fundamentar esta configuración. El blog local contiene la propuesta de apertura, comprobaciones de ejecución R/Python y un [ejemplo climático sintético en R](blog/recursos/cambio-climatico.qmd), recuperado con `bnlearn` y `dagitty`. Su [revisión conceptual](docs/REVISION-CONCEPTUAL-CLIMA.md) distingue supuestos, evidencia, intervención y dinámica. El programa detallado, la duración, el perfil de participantes, los datos y la variante operacional del IIE siguen pendientes. La plantilla para participantes continúa siendo documental; todavía no contiene una implementación de red bayesiana. La configuración de entornos actual pertenece al proyecto del seminario.
 
 Todo el trabajo de este proyecto se mantiene en `Seminario-IIE-3T/`. Las carpetas hermanas pertenecen a otros proyectos.

@@ -15,7 +15,7 @@ class RepositoryPolicy(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertTrue(issues(name, b"x"))
         self.assertTrue(issues("large.csv", b"x" * (MAX_BYTES + 1)))
-        self.assertEqual(issues("site/recursos/example.csv", b"a,b\n1,2\n"), [])
+        self.assertEqual(issues("blog/recursos/example.csv", b"a,b\n1,2\n"), [])
 
     def test_secret_patterns(self):
         sample = b"gh" + b"p_" + b"a" * 36

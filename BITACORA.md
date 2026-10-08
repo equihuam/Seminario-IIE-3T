@@ -113,3 +113,12 @@ Fecha de registro: 2026-10-08. Prompt: P017.
 Se prepara el commit del avance acumulado: integración RStudio, roles, ejemplo climático y revisión conceptual, scripts de presentaciones y sus verificaciones, acuerdos didácticos y nueva frase de portada. Se excluye expresamente el mapa PNG de 9 602 021 bytes para respetar el límite de 5 MiB; permanece intacto localmente, con huella y requisito de recuperación documentados en presentaciones/README.md. Los PPTX, prompts y entornos continúan fuera de Git.
 
 Verificaciones previas correctas: tres pruebas Python, pruebas R del ejemplo climático, verificador de la presentación v3 (doce diapositivas), reconstrucción del blog de nueve páginas con comprobación de enlaces y publicación, y control del índice de 54 archivos. Persisten advertencias regionales de R sin impedir resultados. Se registra una consolidación local autorizada, sin subida a un remoto ni publicación del blog.
+
+
+## B016 — Carpeta editorial blog y verificación de dependencias
+
+Fecha de registro: 2026-10-08. Prompts: P019 y P020.
+
+El usuario confirma que completó el push a GitHub. Por su nueva indicación se renombra `site/` a `blog/`, incluidas las rutas de RStudio, ejercicios, verificadores, documentación y exclusiones de Git. Se conservan los nombres de los comandos existentes y el SVG original intacto. D16 actualiza la ruta histórica de D12 sin reescribir el registro.
+
+La primera comprobación detectó 23 paquetes de R instalados pero no registrados, asociados a las herramientas de GitHub y pak. Se incorporaron sus versiones a renv.lock mediante snapshot, sin instalar ni actualizar paquetes. La segunda ejecución desde R (`source("scripts/rstudio.R"); blog("check")`) terminó correctamente: entorno renv sincronizado, dependencias Python consistentes y nueve páginas reconstruidas con código R/Python, enlaces y límites de publicación verificados. Pasaron las tres pruebas Python, las pruebas R del ejemplo climático y el control de política sobre los 54 archivos actuales. Se verificó la ausencia de la carpeta antigua, las exclusiones de productos y la conservación exacta del SVG. Persisten las advertencias regionales de R ya conocidas. Sin commit ni push en este cambio.

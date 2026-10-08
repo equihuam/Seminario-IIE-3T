@@ -1,5 +1,5 @@
 # Ejecutar desde la raiz del proyecto: Rscript scripts/clima-ejemplo.R
-source("site/recursos/clima-modelo.R", encoding = "UTF-8")
+source("blog/recursos/clima-modelo.R", encoding = "UTF-8")
 red <- crear_clima()
 g <- a_dagitty(red)
 print(dagitty::impliedConditionalIndependencies(g))

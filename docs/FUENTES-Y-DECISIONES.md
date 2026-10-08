@@ -81,3 +81,8 @@ Reservar el contraste de modelos para una actividad posterior, documentada en `p
 El usuario describe una retícula nacional con vectores de variables por píxel y un único modelo entrenado aplicado a todos. La presentación v3 incorpora la imagen original `img/Mapa_México_Página_3.png`, rotulada 2018, sin modificar su leyenda ni inferir resolución o fórmula del índice.
 
 El anidamiento didáctico usa j para zona o clase, i para píxel dentro de j y nⱼ para su número de píxeles. Xⱼ es el componente contextual compartido; Yᵢⱼ y Zᵢⱼ representan detección y condición local. Cada píxel se supone asignado a una sola clase en esta simplificación. Una clase puede ser discontinua y otras covariables contextuales pueden variar dentro de ella. Particiones superpuestas podrían requerir índices cruzados. Compartir un valor observado no crea información independiente ni implica efectos aleatorios. El plate no modela por sí solo dependencia espacial. El esquema no pretende reconstruir el DAG operativo TAN. El arco contextual hacia condición permanece en evaluación.
+
+
+## D16 — Carpeta editorial blog (P020)
+
+La carpeta editorial pasa de `site/` a `blog/`. Esta decisión actualiza la ruta histórica de D12; las entradas anteriores conservan su redacción como registro. Se mantienen los comandos `blog()` de RStudio y `scripts/site.py`, que ahora construyen desde `blog/` y verifican `blog/_site/`. Se actualizan rutas de ejercicios, documentación y exclusiones. El bloqueo de R incorpora las versiones de las herramientas de GitHub ya instaladas, conforme a la política existente de registrar toda la biblioteca del proyecto.

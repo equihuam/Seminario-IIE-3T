@@ -4,7 +4,7 @@ Registro: 2026-10-08. Instrucción P007; hito B007. Alcance: lectura de fuentes 
 
 ## Dictamen y formulaciones de reemplazo
 
-El caso es recuperable y adecuado para enseñar R. Conservamos sus parámetros como una reconstrucción didáctica identificada, sin atribuirles calibración empírica. La versión corregida está en `site/recursos/cambio-climatico.qmd`; el modelo reutilizable en `site/recursos/clima-modelo.R`. No se corrige retrospectivamente Cafe-blog.
+El caso es recuperable y adecuado para enseñar R. Conservamos sus parámetros como una reconstrucción didáctica identificada, sin atribuirles calibración empírica. La versión corregida está en `blog/recursos/cambio-climatico.qmd`; el modelo reutilizable en `blog/recursos/clima-modelo.R`. No se corrige retrospectivamente Cafe-blog.
 
 | Fuente, localización | Valoración | Formulación adoptada |
 | --- | --- | --- |

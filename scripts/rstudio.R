@@ -20,7 +20,7 @@ blog <- local({
     status <- system2(python, c(shQuote(file.path(root, "scripts/site.py")), accion))
     if (status != 0L) stop("El blog no completó la operación; revise la salida anterior.", call. = FALSE)
     if (accion == "render" && interactive()) {
-      browseURL(file.path(root, "site/_site/index.html"))
+      browseURL(file.path(root, "blog/_site/index.html"))
     }
     invisible(status)
   }

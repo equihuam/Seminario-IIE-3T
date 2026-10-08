@@ -27,7 +27,7 @@ Los nombres y umbrales requieren definición operacional antes de usar datos. `E
 
 ## Construir y examinar el grafo
 
-El proyecto usa R y las bibliotecas `bnlearn` y `dagitty`, registradas en `renv.lock`. Para trabajar con el modelo por separado, descargar [clima-modelo.R](clima-modelo.R) y cargarlo desde su carpeta con `source("clima-modelo.R")`. En el proyecto, desde la raíz, se usa `source("site/recursos/clima-modelo.R")`. La compilación de esta página lo carga desde la carpeta de recursos.
+El proyecto usa R y las bibliotecas `bnlearn` y `dagitty`, registradas en `renv.lock`. Para trabajar con el modelo por separado, descargar [clima-modelo.R](clima-modelo.R) y cargarlo desde su carpeta con `source("clima-modelo.R")`. En el proyecto, desde la raíz, se usa `source("blog/recursos/clima-modelo.R")`. La compilación de esta página lo carga desde la carpeta de recursos.
 
 ```{r}
 source("clima-modelo.R", encoding = "UTF-8")

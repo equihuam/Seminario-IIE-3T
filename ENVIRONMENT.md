@@ -63,7 +63,7 @@ Rscript tests/test-clima.R
 Rscript scripts/clima-ejemplo.R
 ```
 
-La guía está en `site/recursos/cambio-climatico.qmd`; el único script R autorizado para descarga pública es `site/recursos/clima-modelo.R`. No usa Graphviz ni servicios externos. Las pruebas son técnicas; no validan una hipótesis climática.
+La guía está en `blog/recursos/cambio-climatico.qmd`; el único script R autorizado para descarga pública es `blog/recursos/clima-modelo.R`. No usa Graphviz ni servicios externos. Las pruebas son técnicas; no validan una hipótesis climática.
 
 ## Localizar Quarto y R
 
@@ -81,7 +81,7 @@ En esta máquina se usa el Quarto incluido en RStudio. Su lanzador presenta un p
 
 `check` comprueba las dependencias, consulta el estado de `renv`, renderiza todas las páginas reejecutando código y revisa enlaces locales y límites de publicación. `render` construye y revisa el sitio sin comprobar previamente el entorno. `preview` sirve solo en `127.0.0.1`; detener con Ctrl+C. Ninguno publica en Internet.
 
-El original se conserva en `img/Modelo de tres capas.svg`. El lanzador genera una copia en `site/img/`, convirtiendo las etiquetas fluidas de Inkscape a texto SVG compatible con navegadores. Conserva el original sin cambios. La copia y `site/_site/` son regenerables y están excluidas de Git. Modificar solo el original.
+El original se conserva en `img/Modelo de tres capas.svg`. El lanzador genera una copia en `blog/img/`, convirtiendo las etiquetas fluidas de Inkscape a texto SVG compatible con navegadores. Conserva el original sin cambios. La copia y `blog/_site/` son regenerables y están excluidas de Git. Modificar solo el original.
 
 La comprobación de R y la de Python deben producir **1.3** mediante operaciones conocidas. Este resultado verifica ambos motores editoriales, no la estimación del IIE. El documento conserva los números de versión usados al ejecutarlo.
 
@@ -100,6 +100,11 @@ Los hooks no se activan automáticamente al clonar. El control revisa el conteni
 
 ## Materiales y registros internos
 
-`site/` contiene únicamente material destinado al blog. Guías, ilustraciones y datos sintéticos pequeños aprobados pueden incorporarse allí. Los datos originales o restringidos van en `data/raw/`, `data/private/` o `private/`, siempre fuera de Git. Las presentaciones voluminosas se conservan fuera del repositorio; preferir fuentes editables y, cuando se autorice, enlaces a un almacén externo.
+`blog/` contiene únicamente material destinado al blog. Guías, ilustraciones y datos sintéticos pequeños aprobados pueden incorporarse allí. Los datos originales o restringidos van en `data/raw/`, `data/private/` o `private/`, siempre fuera de Git. Las presentaciones voluminosas se conservan fuera del repositorio; preferir fuentes editables y, cuando se autorice, enlaces a un almacén externo.
 
 `PROMPTS.md` se conserva localmente y está excluido de Git por contener instrucciones y rutas internas; requiere respaldo privado si se desea conservarlo fuera de esta máquina. `BITACORA.md` y la documentación del proyecto se versionan pero no forman parte del blog. Un futuro repositorio público también requiere revisar esa documentación antes de subirlo. No hay licencia pública de reutilización asignada: deberá acordarla el equipo.
+
+
+## Actualización del entorno — 2026-10-08
+
+`renv.lock` incluye también las herramientas de GitHub instaladas durante la configuración desde RStudio (`usethis`, `gitcreds`, `gh`, `gert` y sus dependencias, además de `pak`). Se registraron las versiones instaladas mediante `renv::snapshot(prompt = FALSE)`, siguiendo `snapshot.type = "all"`; no son requisitos didácticos del ejemplo climático.

@@ -23,7 +23,7 @@ def issues(name, content):
             or p.name in {"prompts.md", ".renviron", ".rhistory", ".rdata"}
             or p.name == ".env" or (p.name.startswith(".env.") and p.name != ".env.example")
             or "credentials" in p.name or "secret" in p.name or ".local." in p.name
-            or str(p).startswith(("data/raw/", "data/original/", "data/private/", "renv/library/", "renv/cache/", "renv/sandbox/", "renv/staging/", "site/img/"))):
+            or str(p).startswith(("data/raw/", "data/original/", "data/private/", "renv/library/", "renv/cache/", "renv/sandbox/", "renv/staging/", "blog/img/"))):
         errors.append("archivo excluido por la política del proyecto")
     if len(content) > MAX_BYTES:
         errors.append("supera el límite de 5 MiB")

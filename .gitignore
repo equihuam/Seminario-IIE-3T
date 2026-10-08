@@ -15,11 +15,11 @@ renv/sandbox/
 .quarto/
 _site/
 _freeze/
-site/img/
-site/**/*_files/
-site/**/*.ipynb
-site/**/*.html
-site/**/*.pdf
+blog/img/
+blog/**/*_files/
+blog/**/*.ipynb
+blog/**/*.html
+blog/**/*.pdf
 
 # Registros internos y configuración de esta máquina
 PROMPTS.md

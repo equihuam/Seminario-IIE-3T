@@ -6,7 +6,7 @@ Leer primero `README.md`, `PLAN.md` y los documentos relevantes para la tarea. D
 
 Trabajar exclusivamente dentro de esta carpeta. No explorar ni modificar los proyectos hermanos salvo petición expresa del usuario. Preservar el SVG original.
 
-El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `site/`; la copia de la imagen en `site/img/` es regenerable. Consultar `ENVIRONMENT.md` y `docs/OPERACION-BLOG.md` antes de modificar la infraestructura editorial.
+El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `blog/`; la copia de la imagen en `blog/img/` es regenerable. Consultar `ENVIRONMENT.md` y `docs/OPERACION-BLOG.md` antes de modificar la infraestructura editorial.
 
 RStudio es el IDE habitual del usuario. Mantener `Seminario-IIE-3T.Rproj`, la activación de `renv` y las instrucciones para usar el blog desde RStudio. Evitar restaurar espacios de trabajo o depender de objetos guardados de sesiones anteriores; no modificar preferencias globales del IDE.
 
@@ -83,7 +83,7 @@ Usar los ejemplos de DAG, tablas condicionales, separación-d y construcción co
 
 Mantener Miro y Netica como antecedentes u opciones, sin volverlos requisitos de participación. Los ejercicios centrales deben poder ejecutarse con archivos locales y el entorno R/Python elegido. Verificar compatibilidad y funcionamiento del código adaptado; no atribuir pruebas ejecutadas a una mera lectura del código fuente.
 
-La revisión concretada en `docs/REVISION-CONCEPTUAL-CLIMA.md` y la guía `site/recursos/cambio-climatico.qmd` reemplazan las formulaciones abreviadas para este taller. Mantener visibles el carácter hipotético de las CPTs, la diferencia entre conexión-d y dependencia efectiva, y el caso degenerado Eco=plantacion. No presentar esta red como implementación del IIE ni como modelo climático calibrado.
+La revisión concretada en `docs/REVISION-CONCEPTUAL-CLIMA.md` y la guía `blog/recursos/cambio-climatico.qmd` reemplazan las formulaciones abreviadas para este taller. Mantener visibles el carácter hipotético de las CPTs, la diferencia entre conexión-d y dependencia efectiva, y el caso degenerado Eco=plantacion. No presentar esta red como implementación del IIE ni como modelo climático calibrado.
 
 ## Didáctica y diseño
 
