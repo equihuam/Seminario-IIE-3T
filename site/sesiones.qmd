@@ -1,0 +1,12 @@
+---
+title: "Sesiones"
+description: "Materiales y preguntas de cada encuentro."
+listing:
+  contents: posts/*/index.qmd
+  type: default
+  sort: "date asc"
+  categories: true
+  fields: [title, description, date, categories]
+---
+
+Las fechas indican incorporación del material al blog, no acreditan que una sesión se haya realizado. Cada entrada identifica su estado. El siguiente encuentro se preparará con las preguntas y aprendizajes del anterior.

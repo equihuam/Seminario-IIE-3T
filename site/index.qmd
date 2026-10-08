@@ -1,0 +1,44 @@
+---
+title: "Integridad ecosistémica, paso a paso"
+toc: false
+---
+
+::: {.hero}
+::: {.eyebrow}
+Seminario / taller · Modelo de tres capas
+:::
+## De las señales del ecosistema a un diagnóstico con incertidumbre
+
+Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.
+
+[Comenzar el recorrido](empieza-aqui.qmd){.btn .btn-primary}
+:::
+
+## Tres preguntas para empezar
+
+::: {.layer-grid}
+::: {.layer}
+### Contexto
+¿Qué condiciones permiten interpretar lo que observamos en este ecosistema?
+:::
+::: {.layer}
+### Detección
+¿Qué atributos podemos medir y qué limitaciones tienen esas mediciones?
+:::
+::: {.layer}
+### Condición latente
+¿Qué podemos inferir sobre la condición, dada la evidencia disponible?
+:::
+:::
+
+## Un recorrido que se construye con el grupo
+
+Partimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.
+
+- [Sesiones](sesiones.qmd): encuentros y materiales en orden de incorporación.
+- [Catálogo temático](temas.qmd): conceptos, guías y prácticas por tema.
+- [Reproducibilidad](reproducibilidad.qmd): cómo documentamos y comprobamos lo que hacemos.
+
+::: {.callout-note}
+Esta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado.
+:::

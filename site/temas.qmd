@@ -1,0 +1,27 @@
+---
+title: "Catálogo temático"
+---
+
+## Modelo de tres capas
+
+- [Introducción accesible](empieza-aqui.qmd).
+- [Sesión 01: observar, contextualizar e inferir](posts/01-tres-capas/index.qmd).
+
+## Redes bayesianas
+
+El primer puente conceptual está en [Del esquema a una red](empieza-aqui.qmd#del-esquema-a-una-red). Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.
+
+## Reproducibilidad y trabajo científico
+
+- [Principios y compromisos](reproducibilidad.qmd).
+- [Comprobación del entorno Python](recursos/comprobacion-python.qmd).
+- [Comprobación del entorno R](recursos/comprobacion-r.qmd).
+
+## Datos y guías
+
+- [Ficha de observación descargable](recursos/guia-observacion.csv): plantilla vacía; no contiene datos de campo.
+- [Guía de la primera práctica](posts/01-tres-capas/index.qmd#práctica).
+
+## Ampliaciones por explorar
+
+IIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio.

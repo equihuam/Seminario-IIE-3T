@@ -1,0 +1,23 @@
+---
+title: "Ciencia que se puede examinar y reproducir"
+---
+
+## Un compromiso desde la primera sesión
+
+Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos **reproducción computacional** a obtener resultados concordantes con los mismos datos y procedimientos; **replicación**, al contraste con datos o estudios independientes.
+
+## Lo que acompañará cada ejercicio
+
+Pregunta y supuestos; datos con procedencia y condiciones de uso; código y entorno identificables; instrucciones; resultados esperados y tolerancias; evidencia de ejecución; interpretación y limitaciones.
+
+La práctica de apertura comienza con una ficha sencilla. La exigencia técnica crecerá con el grupo. Reproducir un cálculo no demuestra que sus supuestos ecológicos sean correctos.
+
+## Nuestra ética de trabajo
+
+Atribuir las contribuciones, declarar la asistencia de IA, conservar resultados desfavorables, explicar correcciones y proteger información confidencial. Diferenciar exploración de confirmación y evitar que una conclusión deseada determine retrospectivamente los criterios de evaluación.
+
+## Primeras comprobaciones
+
+Las páginas de [Python](recursos/comprobacion-python.qmd) y [R](recursos/comprobacion-r.qmd) ejecutan un cálculo aritmético conocido. Comprueban la conexión entre código y documento; todavía no son ejercicios de estimación del IIE.
+
+**Versión:** 0.1. Las correcciones relevantes de los materiales se registrarán en la entrada afectada, conservando versiones mediante Git. Los materiales conceptuales iniciales requieren revisión docente antes de su uso formal.

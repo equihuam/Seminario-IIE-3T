@@ -1,0 +1,17 @@
+---
+title: "Comprobación del entorno Python"
+jupyter: python3
+---
+
+Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.
+
+```{python}
+import sys
+probabilidades = [0.2, 0.3, 0.5]
+assert abs(sum(probabilidades) - 1.0) < 1e-12
+resultado = sum(p * x for p, x in zip(probabilidades, [0, 1, 2]))
+assert abs(resultado - 1.3) < 1e-12
+print(f"Python {sys.version.split()[0]} · resultado: {resultado:.1f}")
+```
+
+El resultado esperado es **1.3**. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE.

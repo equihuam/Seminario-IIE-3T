@@ -1,0 +1,46 @@
+---
+title: "01 · Observar, contextualizar e inferir"
+description: "Una primera conversación sobre el modelo iie-3t y el camino hacia las redes bayesianas."
+date: 2026-10-08
+categories: [iie-3t, Introducción, Reproducibilidad]
+---
+
+**Estado:** propuesta de apertura, pendiente de revisión docente. **Realización:** por acordar. **Versión del material:** 0.1.
+
+## Pregunta central
+
+¿Cómo inferir la condición de un ecosistema a partir de señales que dependen de su contexto?
+
+## Al terminar esta primera aproximación
+
+- Distinguir las tres capas y explicar su función con un ejemplo.
+- Separar una medición de una interpretación y de un supuesto.
+- Proponer relaciones entre variables y reconocer por qué hace falta representar incertidumbre.
+
+## Materiales
+
+- [Introducción y esquema del equipo](../../empieza-aqui.qmd).
+- [Ficha de observación](../../recursos/guia-observacion.csv), vacía y editable.
+- [Principios de reproducibilidad](../../reproducibilidad.qmd).
+
+## Práctica
+
+1. Elegir un ecosistema conocido por el grupo. Describirlo sin asignarle todavía una puntuación de integridad.
+2. Proponer dos variables de contexto y dos atributos medibles. Registrar unidad, método y fuente o indicar que se trata de una propuesta sin datos.
+3. Explicar qué se querría inferir sobre su condición y qué evidencia falta.
+4. Dibujar relaciones justificadas entre esas variables. Distinguir las señales que se observan de la condición que se busca inferir.
+5. Imaginar una nueva observación: ¿cambiaría el diagnóstico?, ¿por qué? Conservar la primera versión y documentar el cambio.
+
+No se requieren valores inventados ni código para esta actividad. Si el grupo utiliza un ejemplo hipotético, debe identificarlo como tal.
+
+## Evidencia de aprendizaje
+
+Un diagrama anotado y una ficha con variables, procedencia y supuestos. Cada equipo explicará una incertidumbre que el dibujo todavía no resuelve.
+
+## Para decidir la siguiente sesión
+
+Recoger tres preguntas del grupo, un concepto que necesite aclaración y una valoración agregada de preparación para el trabajo computacional. Esto orientará la introducción de nodos, arcos y probabilidades condicionales.
+
+## Procedencia y cambios
+
+Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA; aún no aplicada a participantes. La fecha de esta entrada registra su preparación.

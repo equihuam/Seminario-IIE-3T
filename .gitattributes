@@ -1,0 +1,14 @@
+* text=auto eol=lf
+*.md text eol=lf
+*.qmd text eol=lf
+*.yml text eol=lf
+*.py text eol=lf
+*.R text eol=lf
+*.sh text eol=lf
+.githooks/* text eol=lf
+*.svg text eol=lf
+img/*.svg -text
+# Generated bootstrap from renv: preserve upstream whitespace.
+renv/activate.R -whitespace
+*.png binary
+*.jpg binary

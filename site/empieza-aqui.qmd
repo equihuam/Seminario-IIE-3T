@@ -1,0 +1,36 @@
+---
+title: "Empieza aquí"
+description: "Un primer recorrido desde el ecosistema hacia su representación probabilística."
+---
+
+## Primero, una pregunta ecológica
+
+Dos sitios muestran poca cobertura vegetal. ¿Significa lo mismo en ambos? Antes de atribuirlo a deterioro necesitamos conocer su contexto, las características medidas y cómo se obtuvieron. La condición del ecosistema requiere un diagnóstico apoyado en esa evidencia.
+
+## El modelo iie-3t
+
+El modelo del equipo organiza el problema en tres capas: **contextual**, **de detección** y **latente**. Estructura, composición y función ayudan a describir los atributos del ecosistema; no son los nombres de las tres capas.
+
+![Esquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.](img/Modelo%20de%20tres%20capas.svg){fig-alt="Modelo de tres capas: las condiciones del contexto permiten interpretar atributos medibles de estructura, composición y función para inferir la condición ecosistémica."}
+
+| Capa | Papel en el diagnóstico |
+| --- | --- |
+| Contextual | Describe condiciones fisicoquímicas y biogeográficas que ayudan a interpretar los atributos. |
+| Detección | Reúne señales y mediciones, con sus métodos y errores. |
+| Latente | Representa la condición que buscamos inferir, sin observarla directamente de manera exhaustiva. |
+
+## Del esquema a una red
+
+Elegimos variables, justificamos relaciones y preguntamos qué señales esperaríamos bajo diferentes condiciones. Esa descripción evoca un modelo gráfico: los nodos representan variables y los arcos expresan dependencias propuestas.
+
+Para convertirlo en una **red bayesiana** necesitamos precisar una estructura sin ciclos dirigidos y sus distribuciones de probabilidad. El dibujo inicia la discusión; los supuestos y la evidencia sostienen el modelo. Una flecha no prueba por sí misma una relación causal.
+
+## Una primera práctica
+
+Consulta la [sesión de apertura](posts/01-tres-capas/index.qmd). No requiere programar: reconoceremos las capas, distinguiremos datos de supuestos y construiremos preguntas de diagnóstico.
+
+## Cómo crecerá el recorrido
+
+Introduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.
+
+**Procedencia:** esquema original del equipo y manuscrito de trabajo *Modelo de tres capas para la integridad ecosistémica*, secciones 3–5 y 21. Texto didáctico preparado con asistencia de IA; sujeto a revisión docente. Versión 0.1, 2026-10-08.

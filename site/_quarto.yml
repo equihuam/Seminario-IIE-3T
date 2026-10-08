@@ -1,0 +1,46 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - empieza-aqui.qmd
+    - sesiones.qmd
+    - temas.qmd
+    - reproducibilidad.qmd
+    - posts/**/*.qmd
+    - recursos/**/*.qmd
+  resources:
+    - img/Modelo de tres capas.svg
+    - recursos/guia-observacion.csv
+website:
+  title: "iie-3t · Seminario"
+  description: "Una experiencia formativa sobre integridad ecosistémica, redes bayesianas y ciencia reproducible."
+  navbar:
+    background: light
+    left:
+      - text: Empieza aquí
+        href: empieza-aqui.qmd
+      - text: Sesiones
+        href: sesiones.qmd
+      - text: Temas
+        href: temas.qmd
+      - text: Reproducibilidad
+        href: reproducibilidad.qmd
+  page-footer:
+    left: "iie-3t · Aprender, modelar y documentar"
+    right: "Material de trabajo · versión inicial 0.1"
+  search: true
+lang: es
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    link-external-newwindow: true
+    code-copy: true
+    code-fold: false
+execute:
+  freeze: false
+  cache: false
+  error: false
+  warning: true
