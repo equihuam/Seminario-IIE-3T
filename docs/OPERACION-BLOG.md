@@ -24,7 +24,19 @@ El blog se construye únicamente desde `blog/`. Los resultados se escriben en `b
 
 El proyecto usa ejecución sin congelación para esta base pequeña. Si más adelante se activa `freeze`, distinguir conservación editorial de regeneración científica. Antes de publicar una versión, ejecutar el flujo de verificación y revisar el contenido de salida; subir solo la salida autorizada, nunca la carpeta completa del proyecto. El destino y la publicación remota están pendientes de decisión.
 
-## Correcciones
+## Netlify: rutas y preparación de la publicación
+
+El archivo `netlify.toml` de la raíz fija `base = "."` y `publish = "blog/_site"`. La base es la raíz del repositorio: allí están los entornos, scripts y el SVG original. En el panel de Netlify, eliminar la base incorrecta (`..` o `/opt/build`), dejar Base directory vacío o `.` y Package directory vacío. La salida que se publica es `blog/_site`, nunca la raíz del proyecto ni las fuentes de `blog`.
+
+Esta configuración corrige las rutas, pero no constituye un sistema de compilación remota. `blog/_site` está excluido de Git; un clon nuevo no incluye HTML. Tampoco incluye `.venv`, la biblioteca de R ni Quarto. No basta con dejar vacío el comando de compilación y volver a desplegar desde GitHub.
+
+Para una primera publicación desde el equipo local, ejecutar `blog("check")` en RStudio y, cuando termine correctamente, subir únicamente la carpeta `blog/_site` al área de despliegue manual del sitio existente en Netlify. Mantener un solo mecanismo de publicación activo para evitar que una compilación automática posterior sustituya esa versión. La publicación automática desde cada push requiere configurar y probar por separado la instalación de Quarto, R, Python y sus dependencias, o generar el HTML en un servicio de integración continua. El bloqueo Python actual se verificó en Windows, no en Linux.
+
+El error de base proporcionado por el usuario ocurre antes de compilar; no permite concluir que los entornos o el blog hayan fallado. No se ha accedido al panel de Netlify ni verificado un despliegue remoto.
+
+Referencias: [configuración de Netlify](https://docs.netlify.com/build/configure-builds/overview/) y [publicación Quarto en Netlify](https://quarto.org/docs/publishing/netlify.html), consultadas el 2026-10-08.
+
+## Correcciones editoriales
 
 Actualizar la versión y describir cambios relevantes en la entrada afectada. Git conserva la historia de fuentes; identificar el commit del material utilizado en cada sesión. Guardar preguntas agregadas del grupo y motivos de adaptación en la bitácora del proyecto, sin copiar allí los prompts completos.
 

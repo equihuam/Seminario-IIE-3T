@@ -122,3 +122,12 @@ Fecha de registro: 2026-10-08. Prompts: P019 y P020.
 El usuario confirma que completó el push a GitHub. Por su nueva indicación se renombra `site/` a `blog/`, incluidas las rutas de RStudio, ejercicios, verificadores, documentación y exclusiones de Git. Se conservan los nombres de los comandos existentes y el SVG original intacto. D16 actualiza la ruta histórica de D12 sin reescribir el registro.
 
 La primera comprobación detectó 23 paquetes de R instalados pero no registrados, asociados a las herramientas de GitHub y pak. Se incorporaron sus versiones a renv.lock mediante snapshot, sin instalar ni actualizar paquetes. La segunda ejecución desde R (`source("scripts/rstudio.R"); blog("check")`) terminó correctamente: entorno renv sincronizado, dependencias Python consistentes y nueve páginas reconstruidas con código R/Python, enlaces y límites de publicación verificados. Pasaron las tres pruebas Python, las pruebas R del ejemplo climático y el control de política sobre los 54 archivos actuales. Se verificó la ausencia de la carpeta antigua, las exclusiones de productos y la conservación exacta del SVG. Persisten las advertencias regionales de R ya conocidas. Sin commit ni push en este cambio.
+
+
+## B017 — Diagnóstico del primer despliegue Netlify
+
+Fecha de registro: 2026-10-08. Prompt: P021.
+
+El log aportado informa una base inexistente antes de compilar. No había netlify.toml local; se añade configuración de rutas con base en la raíz y salida blog/_site. Se documenta que la salida está fuera de Git y que corregir la base no instala los entornos ni habilita compilación remota. Se plantea elegir entre generación local y automatización; se deja documentada la publicación manual del resultado verificado como opción inicial. No se accedió a Netlify ni se cambió su configuración remota.
+
+Validación: TOML leído con tomllib y rutas dentro del proyecto; scripts/site.py check terminó correctamente, con renv sincronizado, pip check correcto y nueve páginas reejecutadas y verificadas. Persisten advertencias regionales de R conocidas. Sin commit, push ni despliegue; elección del mecanismo de publicación pendiente.

@@ -1,0 +1,6 @@
+# Paths are relative to the repository root, not Netlify's filesystem.
+# This defines paths only; it does not install R/Python/Quarto or build the blog.
+# See docs/OPERACION-BLOG.md before enabling Git-based builds.
+[build]
+  base = "."
+  publish = "blog/_site"
