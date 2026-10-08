@@ -63,3 +63,21 @@ Consultadas el 2026-10-08: [Creating a Blog](https://quarto.org/docs/websites/we
 ## Aspectos por resolver para el primer ejercicio
 
 Elegir la variante concreta del IIE y el conjunto de datos; identificar estados, puntuaciones y orientación de las categorías expertas; fijar referencia, restricciones de estructura, tratamiento del contexto y procedimiento de entrenamiento. Las fuentes ofrecen alternativas, pero no establecen por sí mismas cuál se usará en el seminario. No se han auditado aquí los modelos entrenados originales ni reproducido sus resultados.
+
+## D13 — Recuperación y revisión del ejemplo climático (P007)
+
+Se concreta la advertencia de adaptación en [REVISION-CONCEPTUAL-CLIMA.md](REVISION-CONCEPTUAL-CLIMA.md), con localización de problemas y formulaciones de reemplazo. Se preservan ocho nodos, ocho arcos y CPTs del ejemplo de Cafe-blog, identificados como hipotéticos. La nueva guía y su código distinguen separación-d, no rechazo estadístico, observación, intervención y transición temporal; se conserva visible la degeneración de la tabla de Eco. La equivalencia numérica de fijar las raíces del original se reconoce como caso particular, no como error de cálculo.
+
+La implementación local usa bnlearn 5.2.1 y dagitty 0.3-4 bajo renv; sustituye la transferencia DOT por memoria y añade enumeración exacta para esta red pequeña. No modifica Cafe-blog, no valida el modelo causal ecológico ni implementa el IIE. La revisión de mecanismos y definiciones operacionales queda como actividad docente explícita, no como supuesto validado. Véase B007 para la evidencia de ejecución.
+
+## D14 — Dependencia contexto-condición en evaluación (P015)
+
+Se actualiza la propuesta de P012: no retirar X→Z como decisión resuelta ni presentarlo como vínculo establecido. Conservarlo con trazo discontinuo y leyenda explícita de incertidumbre estructural en el material introductorio. Hay argumentos conceptuales para omitirlo, pero falta contrastar y refinar el modelo. La línea discontinua es una anotación didáctica; cada modelo probabilístico que se calcule debe incluir o excluir el arco.
+
+Reservar el contraste de modelos para una actividad posterior, documentada en `presentaciones/ejercicio-posterior-arco-contexto-condicion.md`. Incorporar identificación de Z latente, posibles causas compartidas, referencia contextual y criterios de evidencia. Mantener una relación provisional no prueba su existencia; no rechazar una prueba tampoco demuestra independencia. La decisión no se reduce a aplicar mecánicamente «conservar hasta demostrar independencia».
+
+## D15 — Plates para cartografía por píxel (P016)
+
+El usuario describe una retícula nacional con vectores de variables por píxel y un único modelo entrenado aplicado a todos. La presentación v3 incorpora la imagen original `img/Mapa_México_Página_3.png`, rotulada 2018, sin modificar su leyenda ni inferir resolución o fórmula del índice.
+
+El anidamiento didáctico usa j para zona o clase, i para píxel dentro de j y nⱼ para su número de píxeles. Xⱼ es el componente contextual compartido; Yᵢⱼ y Zᵢⱼ representan detección y condición local. Cada píxel se supone asignado a una sola clase en esta simplificación. Una clase puede ser discontinua y otras covariables contextuales pueden variar dentro de ella. Particiones superpuestas podrían requerir índices cruzados. Compartir un valor observado no crea información independiente ni implica efectos aleatorios. El plate no modela por sí solo dependencia espacial. El esquema no pretende reconstruir el DAG operativo TAN. El arco contextual hacia condición permanece en evaluación.

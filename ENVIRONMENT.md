@@ -1,5 +1,33 @@
 # Entornos y reproducción local
 
+## Trabajo habitual en RStudio
+
+Abrir `Seminario-IIE-3T.Rproj` desde RStudio (File → Open Project) o con doble clic. El proyecto usa su carpeta como directorio de trabajo y activa `renv` mediante `.Rprofile`. Se desactiva restaurar/guardar `.RData` y guardar el historial de comandos, para evitar dependencias ocultas de sesiones anteriores. Los archivos se editan en UTF-8 con sangría de dos espacios. `.Rproj.user/` sigue excluido de Git.
+
+Al iniciar una sesión interactiva se carga la función `blog()` y se selecciona el Python de `.venv` para Quarto y para `reticulate` si se utiliza posteriormente. No se instala `reticulate` ni se agregan dependencias nuevas. Para editar Python se pueden abrir los archivos normalmente; la ejecución de documentos Python se realiza con Quarto/Jupyter.
+
+Desde la consola R:
+
+```r
+blog("render")  # construye, revisa y abre el HTML en el navegador
+blog("check")   # verifica los entornos, reconstruye y comprueba el sitio
+source("scripts/clima-ejemplo.R")  # ejemplo R disponible en el proyecto
+```
+
+Si la sesión ya estaba abierta antes de incorporar esta configuración, reiniciar R (Session → Restart R) o ejecutar `source("scripts/rstudio.R")`.
+
+Para vista previa con actualización al guardar, usar la pestaña **Terminal** de RStudio, desde la raíz:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/site.py preview
+```
+
+Abrir la URL local que aparece y detener con Ctrl+C. Así la consola R permanece disponible. También existe `blog("preview")`, pero ocupa la consola mientras se ejecuta. Preferir estos comandos al botón Render para la verificación completa: el lanzador prepara la copia web del SVG y aplica los controles del proyecto. `blog("render")` abre un HTML estático; para búsqueda y navegación servida usar la vista previa local.
+
+La pestaña Git de RStudio utiliza el repositorio existente y sus exclusiones. Revisar los cambios antes de seleccionar Stage/Commit. La configuración no modifica preferencias globales de RStudio ni cambia el intérprete R instalado; comprobar que la sesión utiliza R 4.6.0 mediante `R.version.string`.
+
+Referencia: [RStudio Projects](https://docs.posit.co/ide/user/ide/guide/code/projects.html).
+
 ## Línea base
 
 Configuración inicial: Windows, Python **3.12.14**, R **4.6.0**, Quarto **1.10.18**. Python usa `.venv/`; R usa una biblioteca privada de proyecto administrada por `renv`. `renv` aísla paquetes y registra la versión de R, pero no instala ni virtualiza el intérprete R. Los ejecutables de R y Quarto deben estar instalados previamente.
@@ -26,7 +54,16 @@ Desde la raíz, con R 4.6.0 y `Rscript` disponibles:
 Rscript --vanilla scripts/setup-r.R
 ```
 
-El script restaura `renv.lock` cuando existe. En una inicialización sin bloqueo instala únicamente infraestructura para Quarto (`knitr`, `rmarkdown`) y genera el bloqueo. La biblioteca de arranque y la biblioteca del proyecto son locales; no se instalan paquetes globales. No se incluyen todavía bibliotecas de entrenamiento de redes.
+El script restaura `renv.lock` cuando existe. En una inicialización sin bloqueo instala infraestructura Quarto y las bibliotecas del ejercicio (`bnlearn`, `dagitty`), y genera el bloqueo. La biblioteca de arranque y la biblioteca del proyecto son locales; no se instalan paquetes globales. El ejemplo climático usa `bnlearn` 5.2.1 y `dagitty` 0.3-4.
+
+Para el ejercicio climático, después de restaurar el entorno, ejecutar desde la raíz:
+
+```powershell
+Rscript tests/test-clima.R
+Rscript scripts/clima-ejemplo.R
+```
+
+La guía está en `site/recursos/cambio-climatico.qmd`; el único script R autorizado para descarga pública es `site/recursos/clima-modelo.R`. No usa Graphviz ni servicios externos. Las pruebas son técnicas; no validan una hipótesis climática.
 
 ## Localizar Quarto y R
 

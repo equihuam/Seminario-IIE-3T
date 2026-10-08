@@ -7,7 +7,7 @@ toc: false
 ::: {.eyebrow}
 Seminario / taller · Modelo de tres capas
 :::
-## De las señales del ecosistema a un diagnóstico con incertidumbre
+## De las señales del ecosistema a un diagnóstico que reconoce las incertidumbres
 
 Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.
 

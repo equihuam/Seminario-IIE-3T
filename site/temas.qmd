@@ -11,6 +11,8 @@ title: "Catálogo temático"
 
 El primer puente conceptual está en [Del esquema a una red](empieza-aqui.qmd#del-esquema-a-una-red). Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.
 
+- [Cambio climático en R: grafo, tablas, separación-d e intervención](recursos/cambio-climatico.qmd). Ejemplo sintético recuperado y revisado, disponible para el momento adecuado del seminario.
+
 ## Reproducibilidad y trabajo científico
 
 - [Principios y compromisos](reproducibilidad.qmd).

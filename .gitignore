@@ -36,6 +36,8 @@ credentials*
 *.pfx
 .DS_Store
 Thumbs.db
+# Original cartográfico voluminoso: conservar localmente (límite Git: 5 MiB).
+/img/Mapa_México_Página_3.png
 
 # Datos originales o privados y binarios pesados
 private/

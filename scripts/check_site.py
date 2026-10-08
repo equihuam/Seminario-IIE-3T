@@ -8,7 +8,9 @@ from check_repo import issues
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "site" / "_site"
 EXPECTED = {"index.html", "empieza-aqui.html", "sesiones.html", "temas.html", "reproducibilidad.html",
-            "posts/01-tres-capas/index.html", "recursos/comprobacion-python.html", "recursos/comprobacion-r.html"}
+            "posts/01-tres-capas/index.html", "recursos/comprobacion-python.html", "recursos/comprobacion-r.html",
+            "recursos/cambio-climatico.html"}
+PUBLIC_SOURCES = {"recursos/clima-modelo.R"}
 
 
 class Links(HTMLParser):
@@ -32,7 +34,7 @@ def main():
         content = path.read_bytes()
         # Output legitimately contains site libraries, but no private source material.
         errors.extend(f"{name}: {e}" for e in issues(name, content))
-        if path.suffix.lower() in (".md", ".qmd", ".r", ".py", ".lock"):
+        if path.suffix.lower() in (".md", ".qmd", ".r", ".py", ".lock") and name not in PUBLIC_SOURCES:
             errors.append(f"Fuente interna inesperada: {name}")
         if path.suffix in (".html", ".json", ".csv", ".svg"):
             text = content.decode("utf-8", errors="replace")
@@ -52,7 +54,7 @@ def main():
                 errors.append(f"{name}: enlace local no válido {link}")
     if errors:
         raise SystemExit("\n".join(errors))
-    print("Sitio verificado: 8 páginas esperadas, enlaces locales y límites de publicación.")
+    print(f"Sitio verificado: {len(EXPECTED)} páginas esperadas, enlaces locales y límites de publicación.")
 
 
 if __name__ == "__main__":

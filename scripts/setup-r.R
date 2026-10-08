@@ -11,7 +11,7 @@ if (file.exists("renv.lock")) {
 } else {
   renv::init(bare = TRUE, restart = FALSE)
   renv::settings$use.cache(FALSE)
-  renv::install(c("knitr", "rmarkdown"))
+  renv::install(c("knitr", "rmarkdown", "bnlearn", "dagitty"))
   renv::settings$snapshot.type("all")
   renv::snapshot(prompt = FALSE)
 }

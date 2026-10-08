@@ -39,3 +39,77 @@ Fecha de registro: 2026-10-08. Prompt: P006.
 Se implementa el blog con ocho páginas, propuesta de apertura, catálogo, ficha vacía y comprobaciones R/Python. El SVG se ubica en `img/`; una copia web convierte etiquetas de Inkscape sin alterar el original. Se inicializa Git en `main`, con exclusiones y control de índice para archivos privados, credenciales conocidas y tamaño máximo de 5 MiB. Python 3.12.14 usa `.venv`; R 4.6.0 usa `renv`; Quarto 1.10.18 genera el sitio. Versiones y operación se documentan en `ENVIRONMENT.md`. Los prompts permanecen locales, fuera de Git y del blog.
 
 Verificado: generación completa con ejecución nueva de ambos lenguajes (resultado esperado 1.3); consistencia de dependencias; ocho páginas y enlaces locales; tres pruebas del control de Git; navegación por sesiones y menú móvil; revisión visual de portada e introducción, sin desbordamiento horizontal a 1440 y 390 píxeles. Se corrigieron el lanzador Quarto con espacios, una opción innecesaria de caché y los textos SVG omitidos por el navegador. R emitió advertencias de configuración regional, sin impedir los resultados. Las verificaciones corresponden a esta máquina; no se declara reproducción independiente ni validación científica del IIE. Configuración lista para el primer commit local autorizado; publicación remota, licencia y revisión docente del material siguen pendientes.
+
+## B007 — Revisión conceptual y recuperación del caso climático
+
+Fecha de registro: 2026-10-08. Prompt: P007.
+
+Se recuperan el grafo y las CPTs de la entrada original de Cafe-blog (ocho nodos y ocho arcos), con autoría y huellas de fuentes. La revisión precisa ausencia de arco, separación-d, no rechazo estadístico, observación/intervención y dinámica; identifica la degeneración de Eco=plantacion y la coincidencia particular de condicionar/intervenir las raíces. Se incorporan guía Quarto, funciones reutilizables, guion R y pruebas. Los números se declaran hipotéticos; no se valida una interpretación causal ecológica ni se implementa el IIE. Cafe-blog permanece sin modificar.
+
+Verificación ejecutada con R 4.6.0, bnlearn 5.2.1 y dagitty 0.3-4, registrados en renv.lock: `Rscript tests/test-clima.R` finalizó correctamente (CPTs, transferencia, separación-d, enumeración, intervención, consultas inválidas y simulación/ajuste); `Rscript scripts/clima-ejemplo.R` produjo 0.9896000 / 0.8395755 / 0.9896000 para los tres escenarios de E. Prueba de independencia marginal sobre datos simulados: p=0.6268, interpretada como no rechazo. Se corrigió durante la prueba el manejo de la dimensión sin nombre que devuelve intervention() en el nodo intervenido.
+
+`.venv/Scripts/python.exe scripts/site.py check` completó consistencia del entorno, ejecución nueva de nueve páginas y revisión de enlaces y límites de publicación. Las tres pruebas Python del control del repositorio pasaron. Inspección visual del PNG del grafo: ocho nodos legibles, flechas sin cruces ni recortes; no se efectuó una revisión completa del diseño de la nueva página en navegador. R conserva advertencias de configuración regional sin afectar el resultado. Se permite explícitamente un solo recurso R descargable; los demás límites de publicación permanecen activos. Pendiente: revisión docente y eventual definición empírica de variables/mecanismos, no necesaria para usarlo como ejercicio sintético. Sin publicación remota ni commit en esta entrega.
+
+## B008 — Roles explícitos y encargos precisos
+
+Fecha de registro: 2026-10-08. Prompts: P008 y P009.
+
+A petición del usuario, se incorporan a AGENTS.md los roles de ilustrador científico, diseñador didáctico y revisor conceptual, con alias, responsabilidades, entregables y criterios de aceptación. Se añade una plantilla opcional de prompts y ejemplos, incluido un diagrama hipotético de plates. Se distingue adopción de rol de delegación explícita, revisión propia de independiente y diagnóstico de corrección autorizada. Las omisiones menores se resuelven con supuestos declarados; las decisiones científicas sustantivas se consultan. PLAN.md refleja esta incorporación.
+
+Verificación documental: lectura de las pautas y revisión de coherencia con los límites del proyecto; git diff --check terminó con código 0. No se ejecutaron pruebas de software ni se generó el diagrama del ejemplo: esta entrega configura la interacción. Se preservaron los cambios previos del proyecto. Sin commit ni publicación.
+
+## B009 — RStudio como punto de entrada
+
+Fecha de registro: 2026-10-08. Prompt: P011.
+
+Se crea Seminario-IIE-3T.Rproj con UTF-8, sangría de dos espacios y sin restauración/guardado de workspace o historial. La activación renv existente se conserva; las sesiones interactivas incorporan blog() y seleccionan .venv para Quarto/Python. ENVIRONMENT.md explica construcción, verificación, vista previa desde Terminal y uso del repositorio en RStudio. No se alteran preferencias globales ni se agregan paquetes.
+
+Verificación: arranque real de Rterm interactivo con renv y blog() disponibles; selección de Python comprobada; blog("check") desde R reconstruyó las nueve páginas y superó la comprobación de dependencias, enlaces y límites de publicación. Un primer intento con --interactive fue rechazado por R en Windows; se sustituyó por una sesión de terminal interactiva. No se automatizó la interfaz gráfica de RStudio. Se conservaron los cambios anteriores; no se hizo commit adicional.
+
+## B009 — Presentación introductoria con diagramas editables
+
+Fecha de registro: 2026-10-08. Prompt: P010.
+
+Se aplican en esta conversación los roles de didacta, ilustrador y revisor conceptual, según AGENTS.md. Se crea un PPTX de diez diapositivas en output/Introduccion-iie3t-redes-bayesianas-v1.pptx, con fuente reconstruible en presentaciones/. Secuencia: tres capas, grafo generativo, componentes gráfico/numérico, ejemplo climático progresivo, repetición por sitios y plates, leyenda y comprobación. Notas con fuentes y respuesta esperada. El archivo queda excluido de Git conforme a la política del proyecto; no se publica ni se añade al blog.
+
+Revisión conceptual: se distingue el esquema mínimo del manuscrito de la implementación escalar/TAN; θ designa parámetros de observación compartidos y fijados; el plate repite sitios sin implicar una transición temporal. Se conservan las probabilidades hipotéticas del caso climático y se comprueba normalización e inferencia. Revisión visual: diez diapositivas renderizadas desde el PPTX final reimportado. Se detectaron puntas de flecha invertidas en la primera exportación y se corrigieron con tail en los conectores; se revisaron nuevamente las cinco diapositivas con grafos. El borrador descartado queda en .local/.
+
+Evidencia: finalizador sin hallazgos de integridad o geometría, diez diapositivas, Arial y reimportación correcta; verificador XML adicional confirma 125 formas/cuadros de texto, 20 conectores adheridos a nodos, dos tablas nativas, cero imágenes y respuesta en notas. La suma de probabilidades pasa. La ejecución del generador produjo el recibo correcto y los diez PNG, pero el proceso Node devolvió código 1 sin diagnóstico adicional después del mensaje FINAL; no se toma ese código como éxito del proceso. La validación adicional del archivo se ejecutó por separado. No se probó en PowerPoint nativo. scripts/site.py check completó el sitio de nueve páginas y sus cálculos; advertencias regionales de R sin afectar resultados. Revisión conceptual propia, no independiente. Sin commit ni publicación remota.
+
+## B011 — Discusión del vínculo contexto-condición
+
+Registro: 2026-10-08. Prompt: P012. Revisión conceptual, sin modificación del PPTX en este turno.
+
+La observación del usuario orienta el esquema introductorio hacia X→Y←Z, separando proceso generativo de inferencia diagnóstica. El manuscrito §5.1 admite esta distinción y separa contexto, presiones e historia. Se señala que omitir X→Z en el grafo mínimo también supone un prior de Z independiente de X; un modelo ampliado puede representar causas compartidas. La trayectoria de declive y eventual reorganización bajo cambio climático se considera hipótesis plausible, no resultado garantizado. Se distingue referencia histórica de referencia ajustada al nuevo contexto, y sucesión temporal de actualización estática. No se afirma que observar Y cause Z.
+
+Nota de identificación por edición concurrente: B009 aparece dos veces en el registro. Para referencias futuras, B010 designa exclusivamente la entrada «Presentación introductoria con diagramas editables», vinculada a P010; B009 designa «RStudio como punto de entrada», vinculada a P011. Se conservan las entradas originales y esta nota resuelve la ambigüedad sin borrar historial. El prompt actual se registra como P012 para conservar unicidad.
+
+## B012 — Portada: reconocimiento de las incertidumbres
+
+Fecha de registro: 2026-10-08. Prompts: P013 y P014.
+
+Se adopta «De las señales del ecosistema a un diagnóstico que reconoce las incertidumbres» en la portada. La formulación destaca que el diagnóstico explicita y considera las incertidumbres. Se actualiza la fuente Quarto y se regenera el blog; el texto nuevo se comprueba en el HTML local. Sin publicación remota ni commit adicional.
+
+## B013 — Arco contexto-condición como hipótesis abierta
+
+Fecha de registro: 2026-10-08. Prompt: P015.
+
+Se conserva X→Z con trazo discontinuo y leyenda explícita de relación en evaluación en las diapositivas 3, 7 y 8. Las notas distinguen incertidumbre sobre la estructura de intensidad de dependencia: cada modelo formal debe incluir o excluir el arco. Se preserva v1 y se entrega v2 con diez diapositivas y objetos editables. Se guarda un ejercicio posterior para contrastar ambas estructuras, precisar referencia y escala temporal, discutir identificación de Z y valorar evidencia favorable, contraria o insuficiente. Un resultado no significativo no demuestra independencia. Se actualizan README, PLAN y decisión D14.
+
+Verificación: PPTX final reimportado, diez diapositivas renderizadas y revisadas visualmente; 125 formas/cuadros de texto, 20 conectores adheridos (cinco discontinuos), dos tablas nativas y cero imágenes. Verificador XML y probabilidades correcto. El generador produjo recibo de validación y renders, aunque Node devolvió código 1 después del mensaje final sin diagnóstico adicional; la validación separada sí terminó con código 0. No se probó en PowerPoint nativo. scripts/site.py check pasó para nueve páginas, con advertencias regionales de R sin afectar resultados. Sin commit ni publicación remota.
+
+## B014 — Plates anidados y mapa de México
+
+Fecha de registro: 2026-10-08. Prompt: P016.
+
+Se añade a v2 una extensión de dos diapositivas, conservando la comprobación al final. v3 contiene doce diapositivas, el mapa original de IIE 2018 y un diagrama editable con contexto por zona/clase y señales por píxel. Las notas distinguen índices, pertenencia, escala espacial, parámetros compartidos y alcance didáctico frente al modelo operativo. Se conserva X→Z discontinuo y una pregunta oral con respuesta esperada.
+
+Verificación: finalizador y reimportación correctos; doce renders revisados. Verificador XML separado con salida 0 confirma 149 formas, 24 conectores adheridos, seis discontinuos, dos tablas, una imagen cartográfica y probabilidades normalizadas. La primera ejecución falló al reordenar con identificadores internos; se corrigió usando los identificadores canónicos de inspect. La ejecución final produjo archivo, recibo y doce renders, aunque Node devolvió código 1 después de completar la salida, sin diagnóstico adicional. No se probó PowerPoint nativo. scripts/site.py check pasó para nueve páginas; advertencias regionales de R. Sin commit ni publicación.
+
+## B015 — Consolidación del avance en Git
+
+Fecha de registro: 2026-10-08. Prompt: P017.
+
+Se prepara el commit del avance acumulado: integración RStudio, roles, ejemplo climático y revisión conceptual, scripts de presentaciones y sus verificaciones, acuerdos didácticos y nueva frase de portada. Se excluye expresamente el mapa PNG de 9 602 021 bytes para respetar el límite de 5 MiB; permanece intacto localmente, con huella y requisito de recuperación documentados en presentaciones/README.md. Los PPTX, prompts y entornos continúan fuera de Git.
+
+Verificaciones previas correctas: tres pruebas Python, pruebas R del ejemplo climático, verificador de la presentación v3 (doce diapositivas), reconstrucción del blog de nueve páginas con comprobación de enlaces y publicación, y control del índice de 54 archivos. Persisten advertencias regionales de R sin impedir resultados. Se registra una consolidación local autorizada, sin subida a un remoto ni publicación del blog.

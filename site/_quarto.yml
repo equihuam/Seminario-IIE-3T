@@ -12,6 +12,7 @@ project:
   resources:
     - img/Modelo de tres capas.svg
     - recursos/guia-observacion.csv
+    - recursos/clima-modelo.R
 website:
   title: "iie-3t · Seminario"
   description: "Una experiencia formativa sobre integridad ecosistémica, redes bayesianas y ciencia reproducible."
