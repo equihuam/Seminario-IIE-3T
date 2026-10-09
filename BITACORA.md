@@ -233,6 +233,18 @@ Se inspecciona `output/Introduccion-iie3t-redes-bayesianas-v3.pptx` para contras
 1. **Representación visual:** Se mantiene el trazo discontinuo en las diapositivas 5, 9 y 11 ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$) y la leyenda explícita de relación en evaluación.
 2. **Notas del presentador:** Se integran literalmente en las notas de las diapositivas 5, 9 y 11 los argumentos conceptuales del acuerdo del equipo: la línea discontinua es incertidumbre estructural y no un tipo adicional de probabilidad; cada modelo formal debe decidir si lo incluye o excluye; y se reserva el contraste de modelos para la actividad posterior tras estudiar separación-d e identificabilidad.
 
+## B029 — Trazo discontinuo DrawingML, ajuste tipográfico y eliminación de puntos finales en títulos
+
+Fecha de registro: 2026-10-09. Prompt: P046 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se realizan los ajustes solicitados sobre `presentaciones/generar-presentacion-v4.py` y el deck final `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`:
+1. **Trazo discontinuo en DrawingML:** Se corrige el orden de serialización OpenXML en `add_arrow()`, insertando `<a:prstDash val="dash"/>` antes de `<a:tailEnd>`. Esto garantiza que PowerPoint interprete y dibuje con total claridad el trazo punteado/discontinuo en los arcos de hipótesis tentativa ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$) en las diapositivas 5, 9 y 11.
+2. **Eliminación de puntos finales en títulos y lemas:** Se revisan y limpian sistemáticamente todos los títulos de diapositivas, subtítulos, lemas y encabezados de tarjetas y recuadros en las 14 diapositivas, suprimiendo los puntos finales.
+3. **Control de desbordamiento de texto:** Se recalibran márgenes, interlineados (`space_before=Pt(3..6)`), alturas de tarjetas y tamaños de fuente en las diapositivas 2, 4, 6, 8, 10, 11, 13 y 14, asegurando que todo el contenido quede holgadamente contenido dentro de sus formas contenedoras.
+
+Verificación: `presentaciones/verificar-v4.py` completado con código 0 (14 diapositivas, 4 ilustraciones científicas en español, 88 formas nativas, 11 conectores vectoriales con 3 flechas discontinuas, 1 tabla CPT normalizada, 14 notas de orador). Verificación de políticas con `scripts/check_repo.py` exitosa (125 archivos verificados, código 0).
+
+
 
 
 

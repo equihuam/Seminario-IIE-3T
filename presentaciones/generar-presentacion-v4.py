@@ -1,7 +1,8 @@
 """Generador de la presentación v4 del Seminario IIE-3T con python-pptx.
 
-Incluye ilustraciones científicas en español, conectores vectoriales (arcos sólidos y discontinuos)
-en todos los grafos y cajas matemáticas estilizadas para las ecuaciones probabilísticas.
+Incluye ilustraciones científicas en español, conectores vectoriales (arcos sólidos y punteados/discontinuos)
+en todos los grafos, eliminación rigurosa de puntos finales en títulos y lemas, y cajas ajustadas
+para evitar cualquier desbordamiento de texto.
 """
 from pathlib import Path
 import pptx
@@ -35,12 +36,22 @@ FONT_MATH = "Cambria Math"
 
 
 def add_arrow(slide, x1, y1, x2, y2, dashed=False, color=LINE_COLOR, width=Pt(2.5)):
-    """Crea un conector recto con punta de flecha en el extremo de destino."""
+    """Crea un conector recto con punta de flecha en el extremo de destino.
+    
+    En DrawingML, los elementos hijos de <a:ln> deben seguir un orden estricto de esquema:
+    1. <a:prstDash> (estilo de trazo punteado/discontinuo)
+    2. <a:tailEnd> (punta de flecha)
+    """
     cxn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, x1, y1, x2, y2)
     cxn.line.color.rgb = color
     cxn.line.width = width
     spPr = cxn._element.spPr
     ln = spPr.find('{http://schemas.openxmlformats.org/drawingml/2006/main}ln')
+
+    if dashed:
+        dash = OxmlElement('a:prstDash')
+        dash.set('val', 'dash')
+        ln.append(dash)
 
     # En DrawingML, tailEnd es la punta de flecha en el punto final (x2, y2)
     tail = OxmlElement('a:tailEnd')
@@ -49,10 +60,6 @@ def add_arrow(slide, x1, y1, x2, y2, dashed=False, color=LINE_COLOR, width=Pt(2.
     tail.set('len', 'med')
     ln.append(tail)
 
-    if dashed:
-        dash = OxmlElement('a:prstDash')
-        dash.set('val', 'dash')
-        ln.append(dash)
     return cxn
 
 
@@ -70,14 +77,15 @@ def create_deck():
         bg.fill.fore_color.rgb = BG_COLOR
         bg.line.fill.background()
 
-        # Title
-        if title_text:
+        # Title (sin punto final)
+        clean_title = title_text.rstrip(".") if title_text else ""
+        if clean_title:
             tb = slide.shapes.add_textbox(Inches(0.8), Inches(0.4), Inches(11.5), Inches(0.9))
             tf = tb.text_frame
             tf.word_wrap = True
             tf.margin_left = tf.margin_top = tf.margin_right = tf.margin_bottom = 0
             p = tf.paragraphs[0]
-            p.text = title_text
+            p.text = clean_title
             p.font.name = FONT_MAIN
             p.font.size = Pt(28)
             p.font.bold = True
@@ -108,8 +116,8 @@ def create_deck():
         "ecosistémica (enfoque Ecosalud / Margulis / Equihua et al.) y el pensamiento sistémico (Forrester, Meadows) "
         "hacia el modelado probabilístico con Redes Bayesianas y el modelo en tres capas del equipo.")
 
-    # Header Box
-    tb1 = s1.shapes.add_textbox(Inches(0.8), Inches(0.6), Inches(11.7), Inches(1.8))
+    # Header Box (sin puntos en títulos ni subtítulos)
+    tb1 = s1.shapes.add_textbox(Inches(0.8), Inches(0.55), Inches(11.7), Inches(1.6))
     tf1 = tb1.text_frame
     tf1.word_wrap = True
     p1_1 = tf1.paragraphs[0]
@@ -124,7 +132,7 @@ def create_deck():
     p1_2.font.name = FONT_MAIN
     p1_2.font.size = Pt(18)
     p1_2.font.color.rgb = CONTEXT_COLOR
-    p1_2.space_before = Pt(8)
+    p1_2.space_before = Pt(6)
 
     # Hero Image en español
     img_portada = ROOT / "presentaciones/img/portada_integridad_redes_es.jpg"
@@ -144,7 +152,7 @@ def create_deck():
         "sino que se diagnostica mediante múltiples señales observables en contexto.")
 
     # Left Column: Analogías y Concepto
-    tb2_left = s2.shapes.add_textbox(Inches(0.8), Inches(1.5), Inches(5.6), Inches(5.0))
+    tb2_left = s2.shapes.add_textbox(Inches(0.8), Inches(1.45), Inches(5.6), Inches(5.2))
     tf2_l = tb2_left.text_frame
     tf2_l.word_wrap = True
 
@@ -157,31 +165,31 @@ def create_deck():
 
     p = tf2_l.add_paragraph()
     p.text = "• Un campo de golf es verde y un atleta hipertrofiado luce fuerte, pero ninguno garantiza salud funcional autorregulada."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf2_l.add_paragraph()
     p.text = "• La integridad ecosistémica describe la condición viva y autopoiética de la red ecológica completa."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf2_l.add_paragraph()
     p.text = "• No es un inventario estático de especies, sino la persistencia de procesos ecológicos coordinados."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     # Right Column: 3 Pilares
     box_w = Inches(5.6)
-    box_h = Inches(1.4)
+    box_h = Inches(1.5)
     for idx, (title_box, desc_box, col) in enumerate([
         ("1. Autopoiesis y metabolismo", "Capacidad intrínseca de regenerar componentes, fijar energía y reciclar nutrientes.", CONTEXT_COLOR),
         ("2. Autorregulación organísmica", "Amortiguamiento de perturbaciones y estabilidad funcional dinámica.", OBS_COLOR),
         ("3. Condición como estado latente", "La salud no se observa directamente: se diagnostica evaluando señales en contexto.", LATENT_COLOR),
     ]):
-        top_y = Inches(1.5 + idx * 1.65)
+        top_y = Inches(1.45 + idx * 1.65)
         rect = s2.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(6.8), top_y, box_w, box_h)
         rect.fill.solid()
         rect.fill.fore_color.rgb = WHITE
@@ -194,18 +202,18 @@ def create_deck():
         tf_box.margin_top = Inches(0.12)
 
         pb1 = tf_box.paragraphs[0]
-        pb1.text = title_box
+        pb1.text = title_box.rstrip(".")
         pb1.font.name = FONT_MAIN
-        pb1.font.size = Pt(17)
+        pb1.font.size = Pt(16.5)
         pb1.font.bold = True
         pb1.font.color.rgb = col
 
         pb2 = tf_box.add_paragraph()
         pb2.text = desc_box
         pb2.font.name = FONT_MAIN
-        pb2.font.size = Pt(14)
+        pb2.font.size = Pt(13.5)
         pb2.font.color.rgb = INK_COLOR
-        pb2.space_before = Pt(4)
+        pb2.space_before = Pt(3)
 
     # -------------------------------------------------------------
     # SLIDE 3: Pensamiento sistémico y el microcosmos viviente
@@ -275,7 +283,7 @@ def create_deck():
         "Permiten no confundir las condiciones de partida con las observaciones o el estado biótico subyacente.")
 
     card_w = Inches(3.6)
-    card_h = Inches(4.8)
+    card_h = Inches(4.85)
     cards_data = [
         ("Contexto (X)", CONTEXT_COLOR, [
             ("Lo que el ecosistema recibe", True),
@@ -305,7 +313,7 @@ def create_deck():
 
     for idx, (title_c, col, items) in enumerate(cards_data):
         pos_x = Inches(0.8 + idx * 4.05)
-        rect = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, pos_x, Inches(1.5), card_w, card_h)
+        rect = s4.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, pos_x, Inches(1.45), card_w, card_h)
         rect.fill.solid()
         rect.fill.fore_color.rgb = WHITE
         rect.line.color.rgb = col
@@ -313,31 +321,31 @@ def create_deck():
 
         tf = rect.text_frame
         tf.word_wrap = True
-        tf.margin_left = tf.margin_right = Inches(0.25)
-        tf.margin_top = Inches(0.2)
+        tf.margin_left = tf.margin_right = Inches(0.2)
+        tf.margin_top = Inches(0.18)
 
         p = tf.paragraphs[0]
-        p.text = title_c
+        p.text = title_c.rstrip(".")
         p.font.name = FONT_MAIN
-        p.font.size = Pt(22)
+        p.font.size = Pt(21)
         p.font.bold = True
         p.font.color.rgb = col
 
         for text_item, is_bold in items:
             p = tf.add_paragraph()
-            p.text = text_item
+            p.text = text_item.rstrip(".") if is_bold else text_item
             p.font.name = FONT_MAIN
-            p.font.size = Pt(15 if not is_bold else 16)
+            p.font.size = Pt(14 if not is_bold else 15)
             p.font.bold = is_bold
             p.font.color.rgb = INK_COLOR if not is_bold else col
-            p.space_before = Pt(8 if is_bold else 4)
+            p.space_before = Pt(6 if is_bold else 3)
 
-    # Footer note
+    # Footer note (sin punto final)
     tb4_foot = s4.shapes.add_textbox(Inches(0.8), Inches(6.45), Inches(11.7), Inches(0.4))
     p = tb4_foot.text_frame.paragraphs[0]
-    p.text = "Distinción crucial: El contexto no es degradación; las señales observables no son el estado de integridad en sí mismo."
+    p.text = "Distinción crucial: El contexto no es degradación; las señales observables no son el estado de integridad en sí mismo"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(14)
+    p.font.size = Pt(13.5)
     p.font.italic = True
     p.font.color.rgb = MUTED_COLOR
 
@@ -405,11 +413,11 @@ def create_deck():
     add_arrow(s5, Inches(2.9), Inches(2.3), Inches(4.7), Inches(3.4), dashed=False, color=CONTEXT_COLOR)
     # 2. Z -> Y (sólido)
     add_arrow(s5, Inches(2.9), Inches(4.9), Inches(4.7), Inches(4.2), dashed=False, color=LATENT_COLOR)
-    # 3. X -> Z (discontinuo, en evaluación)
+    # 3. X -> Z (discontinuo/punteado, en evaluación)
     add_arrow(s5, Inches(2.25), Inches(3.3), Inches(2.25), Inches(4.5), dashed=True, color=LINE_COLOR)
 
     # Right Box: Explicación y Leyenda
-    tb5_right = s5.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(5.7), Inches(5.0))
+    tb5_right = s5.shapes.add_textbox(Inches(6.8), Inches(1.4), Inches(5.7), Inches(5.2))
     tf5_r = tb5_right.text_frame
     tf5_r.word_wrap = True
 
@@ -422,32 +430,32 @@ def create_deck():
 
     p = tf5_r.add_paragraph()
     p.text = "• X → Y (Arco directo): El clima y el suelo modulan el tipo y magnitud de las señales observables."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf5_r.add_paragraph()
     p.text = "• Z → Y (Arco de emisión): El estado real de salud ecológica genera los síntomas observables."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf5_r.add_paragraph()
     p.text = "• X ⇢ Z (En evaluación): ¿El contexto determina directamente el potencial de salud o fija la referencia basal? Es una hipótesis abierta."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = MUTED_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf5_r.add_paragraph()
-    p.text = "Convención visual del grafo:"
+    p.text = "Convención visual del grafo"
     p.font.size = Pt(16)
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(12)
+    p.space_before = Pt(10)
 
     p = tf5_r.add_paragraph()
     p.text = "⚪ Gris = Variable observada   |   ⚪ Blanco = Variable latente\n⟶ Sólida = Dependencia fijada  |   ⇢ Discontinua = Hipótesis en evaluación"
-    p.font.size = Pt(13)
+    p.font.size = Pt(12.5)
     p.font.color.rgb = MUTED_COLOR
     p.space_before = Pt(4)
 
@@ -460,7 +468,7 @@ def create_deck():
         "para descomponer una distribución conjunta masiva en el producto de distribuciones condicionales locales.")
 
     # Top text
-    tb6_top = s6.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.2))
+    tb6_top = s6.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.1))
     tf6_t = tb6_top.text_frame
     tf6_t.word_wrap = True
     p = tf6_t.paragraphs[0]
@@ -472,12 +480,12 @@ def create_deck():
 
     p = tf6_t.add_paragraph()
     p.text = "Modelar un ecosistema con decenas de variables de forma conjunta sería intratable. La regla de factorización de un DAG simplifica la distribución conjunta global en factores locales condicionados únicamente a los padres:"
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
     # Box 1: Regla General de Factorización
-    f_box1 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.6), Inches(10.3), Inches(1.3))
+    f_box1 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.5), Inches(10.3), Inches(1.35))
     f_box1.fill.solid()
     f_box1.fill.fore_color.rgb = MATH_BG
     f_box1.line.color.rgb = CONTEXT_COLOR
@@ -485,9 +493,9 @@ def create_deck():
 
     tf_fb1 = f_box1.text_frame
     tf_fb1.word_wrap = True
-    tf_fb1.margin_top = Inches(0.15)
+    tf_fb1.margin_top = Inches(0.12)
     p = tf_fb1.paragraphs[0]
-    p.text = "Regla General de Factorización en un DAG:"
+    p.text = "Regla General de Factorización en un DAG"
     p.font.name = FONT_MAIN
     p.font.size = Pt(13)
     p.font.bold = True
@@ -497,14 +505,14 @@ def create_deck():
     p = tf_fb1.add_paragraph()
     p.text = "P( X₁, X₂, ..., Xₙ )  =  ∏ᵢ₌₁ⁿ  P( Xᵢ | Padres(Xᵢ) )"
     p.font.name = FONT_MATH
-    p.font.size = Pt(20)
+    p.font.size = Pt(19)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
     p.alignment = PP_ALIGN.CENTER
-    p.space_before = Pt(4)
+    p.space_before = Pt(3)
 
     # Box 2: Factorización para el Modelo IIE-3T
-    f_box2 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(4.1), Inches(10.3), Inches(1.3))
+    f_box2 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(4.0), Inches(10.3), Inches(1.35))
     f_box2.fill.solid()
     f_box2.fill.fore_color.rgb = MATH_BG
     f_box2.line.color.rgb = LATENT_COLOR
@@ -512,9 +520,9 @@ def create_deck():
 
     tf_fb2 = f_box2.text_frame
     tf_fb2.word_wrap = True
-    tf_fb2.margin_top = Inches(0.15)
+    tf_fb2.margin_top = Inches(0.12)
     p = tf_fb2.paragraphs[0]
-    p.text = "Factorización para el Modelo IIE-3T Mínimo (X, Y, Z):"
+    p.text = "Factorización para el Modelo IIE-3T Mínimo (X, Y, Z)"
     p.font.name = FONT_MAIN
     p.font.size = Pt(13)
     p.font.bold = True
@@ -524,23 +532,23 @@ def create_deck():
     p = tf_fb2.add_paragraph()
     p.text = "P( X, Y, Z )  =  P( X )  ·  P( Z | X )  ·  P( Y | X, Z )"
     p.font.name = FONT_MATH
-    p.font.size = Pt(20)
+    p.font.size = Pt(19)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
     p.alignment = PP_ALIGN.CENTER
-    p.space_before = Pt(4)
+    p.space_before = Pt(3)
 
     # Bottom explanatory bullets
-    tb6_bot = s6.shapes.add_textbox(Inches(0.8), Inches(5.6), Inches(11.7), Inches(1.4))
+    tb6_bot = s6.shapes.add_textbox(Inches(0.8), Inches(5.5), Inches(11.7), Inches(1.5))
     tf6_b = tb6_bot.text_frame
     tf6_b.word_wrap = True
     p = tf6_b.paragraphs[0]
     p.text = "• Cada nodo solo requiere una tabla local de probabilidades condicionada a sus antecedentes directos."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p = tf6_b.add_paragraph()
     p.text = "• Independencia condicional (separación-d): El grafo define formalmente qué variables quedan bloqueadas de influencia al conocer cierta evidencia."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
@@ -552,7 +560,7 @@ def create_deck():
         "Cada nodo del DAG posee una Tabla de Probabilidad Condicional (CPT). "
         "Aquí se muestra el caso climático adaptado: la distribución de Cobertura vegetal (Cob) condicionada a Árboles (A) y Cambio Climático (C).")
 
-    tb7_top = s7.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.0))
+    tb7_top = s7.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(0.9))
     tf7 = tb7_top.text_frame
     tf7.word_wrap = True
     p = tf7.paragraphs[0]
@@ -566,7 +574,7 @@ def create_deck():
     rows = 5
     cols = 4
     left = Inches(0.8)
-    top = Inches(2.4)
+    top = Inches(2.3)
     width = Inches(11.7)
     height = Inches(2.8)
 
@@ -609,16 +617,16 @@ def create_deck():
             p.font.color.rgb = INK_COLOR
             p.alignment = PP_ALIGN.CENTER
 
-    tb7_foot = s7.shapes.add_textbox(Inches(0.8), Inches(5.5), Inches(11.7), Inches(1.2))
+    tb7_foot = s7.shapes.add_textbox(Inches(0.8), Inches(5.45), Inches(11.7), Inches(1.3))
     tf7_f = tb7_foot.text_frame
     tf7_f.word_wrap = True
     p = tf7_f.paragraphs[0]
     p.text = "• Cada fila suma exactamente 1.0 (conservación de la probabilidad)."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p = tf7_f.add_paragraph()
     p.text = "• Las CPTs pueden derivarse de frecuencias empíricas, juicio experto calibrado o ecuaciones de proceso."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
@@ -631,7 +639,7 @@ def create_deck():
         "para inferir la distribución posterior de la condición latente Z. "
         "Una probabilidad posterior de integridad de 0.72 expresa certeza diagnóstica, no 72% de masa física conservada.")
 
-    tb8_top = s8.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.1))
+    tb8_top = s8.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.0))
     tf8_t = tb8_top.text_frame
     tf8_t.word_wrap = True
     p = tf8_t.paragraphs[0]
@@ -643,12 +651,12 @@ def create_deck():
 
     p = tf8_t.add_paragraph()
     p.text = "La naturaleza opera de la salud a los síntomas (Z → Y). El ecólogo trabaja en sentido inverso: a partir de las señales observables Y y el contexto X, diagnostica la condición latente Z mediante el Teorema de Bayes:"
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(4)
+    p.space_before = Pt(3)
 
     # Elegant Bayes Equation Card
-    bayes_card = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.5), Inches(10.3), Inches(1.8))
+    bayes_card = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.45), Inches(10.3), Inches(1.8))
     bayes_card.fill.solid()
     bayes_card.fill.fore_color.rgb = MATH_BG
     bayes_card.line.color.rgb = LATENT_COLOR
@@ -656,9 +664,9 @@ def create_deck():
 
     tf_bc = bayes_card.text_frame
     tf_bc.word_wrap = True
-    tf_bc.margin_top = Inches(0.15)
+    tf_bc.margin_top = Inches(0.12)
     p = tf_bc.paragraphs[0]
-    p.text = "Inversión Probabilística Diagnóstica:"
+    p.text = "Inversión Probabilística Diagnóstica"
     p.font.name = FONT_MAIN
     p.font.size = Pt(13)
     p.font.bold = True
@@ -669,7 +677,7 @@ def create_deck():
     p = tf_bc.add_paragraph()
     p.text = "                                       P( Y = y | Z, X )  ·  P( Z | X )"
     p.font.name = FONT_MATH
-    p.font.size = Pt(17)
+    p.font.size = Pt(16.5)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
     p.space_before = Pt(2)
@@ -677,39 +685,39 @@ def create_deck():
     p = tf_bc.add_paragraph()
     p.text = "P( Z | Y = y, X = x )  =  ──────────────────────────────────────────"
     p.font.name = FONT_MATH
-    p.font.size = Pt(17)
+    p.font.size = Pt(16.5)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
 
     p = tf_bc.add_paragraph()
     p.text = "                                                   P( Y = y | X )"
     p.font.name = FONT_MATH
-    p.font.size = Pt(17)
+    p.font.size = Pt(16.5)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
 
     # Bottom bullets
-    tb8_bot = s8.shapes.add_textbox(Inches(0.8), Inches(4.5), Inches(11.7), Inches(2.4))
+    tb8_bot = s8.shapes.add_textbox(Inches(0.8), Inches(4.45), Inches(11.7), Inches(2.5))
     tf8_b = tb8_bot.text_frame
     tf8_b.word_wrap = True
 
     p = tf8_b.paragraphs[0]
     p.text = "1. Distribución a priori P(Z | X): Conocimiento basal de la condición según el contexto ecológico."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
 
     p = tf8_b.add_paragraph()
     p.text = "2. Verosimilitud P(Y | Z, X): Qué tan compatibles son los datos observados bajo cada nivel de salud."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(5)
+    p.space_before = Pt(4)
 
     p = tf8_b.add_paragraph()
     p.text = "3. Distribución a posteriori P(Z | Y, X): El diagnóstico que cuantifica la certidumbre sin forzar un valor determinista falso."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(5)
+    p.space_before = Pt(4)
 
     # -------------------------------------------------------------
     # SLIDE 9: Notación compacta de plates (con arcos vectoriales)
@@ -795,7 +803,7 @@ def create_deck():
     add_arrow(s9, Inches(2.75), Inches(2.7), Inches(4.35), Inches(3.4), dashed=False, color=CONTEXT_COLOR)
     # 2. Zi -> Yi
     add_arrow(s9, Inches(2.75), Inches(4.8), Inches(4.35), Inches(4.0), dashed=False, color=LATENT_COLOR)
-    # 3. Xi -> Zi (discontinuo)
+    # 3. Xi -> Zi (discontinuo/punteado)
     add_arrow(s9, Inches(2.2), Inches(3.25), Inches(2.2), Inches(4.25), dashed=True, color=LINE_COLOR)
     # 4. Theta -> Yi
     add_arrow(s9, Inches(4.9), Inches(1.4), Inches(4.9), Inches(3.2), dashed=False, color=INK_COLOR)
@@ -814,19 +822,19 @@ def create_deck():
 
     p = tf9_r.add_paragraph()
     p.text = "• θ (Parámetros globales): Estructura de la red y CPTs fijas entrenadas. Fuera del plate porque se comparten en todo el análisis."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf9_r.add_paragraph()
     p.text = "• Xᵢ, Yᵢ, Zᵢ (Variables locales): Cada sitio o píxel i posee su propio valor de contexto, su medición instrumental y su condición inferida."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf9_r.add_paragraph()
     p.text = "• Supuesto de independencia condicional: Dados θ y X, los sitios son condicionalmente independientes en este modelo base."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = MUTED_COLOR
     p.space_before = Pt(8)
 
@@ -853,35 +861,35 @@ def create_deck():
     p = tf10.paragraphs[0]
     p.text = "En cada píxel i"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(22)
+    p.font.size = Pt(21)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
 
     p = tf10.add_paragraph()
     p.text = "Un vector reúne contexto Xᵢ (bioclima, suelo) y detección Yᵢ (sensores remotos)."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf10.add_paragraph()
     p.text = "El mismo modelo θ"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(22)
+    p.font.size = Pt(21)
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(16)
+    p.space_before = Pt(14)
 
     p = tf10.add_paragraph()
     p.text = "Los parámetros del modelo permanecen fijos. Cambian las entradas por píxel y se obtiene el diagnóstico de integridad nacional."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf10.add_paragraph()
     p.text = "Nota: La escala 0–1 del mapa refleja el índice sintético, no un porcentaje determinista ni una probabilidad escalar pura."
-    p.font.size = Pt(14)
+    p.font.size = Pt(13.5)
     p.font.color.rgb = MUTED_COLOR
-    p.space_before = Pt(16)
+    p.space_before = Pt(14)
 
     # -------------------------------------------------------------
     # SLIDE 11: Plates anidados (con arcos vectoriales)
@@ -971,7 +979,7 @@ def create_deck():
     p.alignment = PP_ALIGN.CENTER
 
     # ARCOS VECTORIALES
-    # 1. Xj -> Zij (discontinuo)
+    # 1. Xj -> Zij (discontinuo/punteado)
     add_arrow(s11, Inches(2.0), Inches(3.35), Inches(2.4), Inches(4.15), dashed=True, color=LINE_COLOR)
     # 2. Xj -> Yij (sólido)
     add_arrow(s11, Inches(2.45), Inches(2.9), Inches(4.95), Inches(4.2), dashed=False, color=CONTEXT_COLOR)
@@ -994,28 +1002,28 @@ def create_deck():
 
     p = tf11.add_paragraph()
     p.text = "• Xⱼ (Contexto compartido): Zona bioclimática o clase que engloba muchos píxeles."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf11.add_paragraph()
     p.text = "• Yᵢⱼ (Detección local): Señales de satélite y cobertura del píxel i dentro de la zona j."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf11.add_paragraph()
     p.text = "• Zᵢⱼ (Condición inferida): Diagnóstico específico del píxel."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(8)
+    p.space_before = Pt(6)
 
     p = tf11.add_paragraph()
     p.text = "Idea clave: Dos píxeles en la misma zona de Holdridge comparten Xⱼ pero pueden tener diferente diagnóstico si sus señales Yᵢⱼ difieren."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
-    p.space_before = Pt(12)
+    p.space_before = Pt(10)
 
     # -------------------------------------------------------------
     # SLIDE 12: Retroalimentación y tiempo: Redes Dinámicas (DBN en español)
@@ -1026,7 +1034,7 @@ def create_deck():
         "Desdoblando el tiempo: el estado en t0 influye sobre el estado en t1 (Z_t0 -> Z_t1). "
         "Esto modela la memoria ecológica y la resiliencia como persistencia temporal.")
 
-    tb12_top = s12.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.6))
+    tb12_top = s12.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.5))
     tf12 = tb12_top.text_frame
     tf12.word_wrap = True
 
@@ -1039,13 +1047,13 @@ def create_deck():
 
     p = tf12.add_paragraph()
     p.text = "• La dinámica de sistemas clásica enfatiza bucles de retroalimentación (feedback loops). En un DAG estático no puede haber ciclos."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
     p = tf12.add_paragraph()
     p.text = "• Solución natural: Redes Bayesianas Dinámicas (DBN). El estado en t₀ condiciona probabilísticamente la transición hacia t₁ [ Z(t₀) → Z(t₁) ]."
-    p.font.size = Pt(15)
+    p.font.size = Pt(14.5)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
@@ -1067,14 +1075,14 @@ def create_deck():
         "4. La resolución espacial no añade información independiente automáticamente.")
 
     box13_w = Inches(5.6)
-    box13_h = Inches(2.2)
+    box13_h = Inches(2.25)
     cards13 = [
         ("1. Arcos ≠ Causalidad demostrada",
          "Una flecha aprendida o trazada representa dependencia condicional. Las afirmaciones causales de intervención requieren supuestos experimentales adicionales.",
-         CONTEXT_COLOR, Inches(0.8), Inches(1.6)),
+         CONTEXT_COLOR, Inches(0.8), Inches(1.55)),
         ("2. Condicionar ≠ Intervenir",
          "Observar que Y = y actualiza nuestra creencia diagnóstica (inferencia pasiva). Intervenir sobre Y mediante manejo [do(Y)] modifica la estructura del sistema.",
-         OBS_COLOR, Inches(6.8), Inches(1.6)),
+         OBS_COLOR, Inches(6.8), Inches(1.55)),
         ("3. Naturaleza de la probabilidad",
          "P(Integridad=alta) = 0.72 no significa que el ecosistema tenga 72% de materia viva. Expresa el grado de certidumbre diagnóstica dado el modelo.",
          LATENT_COLOR, Inches(0.8), Inches(4.2)),
@@ -1093,21 +1101,21 @@ def create_deck():
         tf = rect.text_frame
         tf.word_wrap = True
         tf.margin_left = tf.margin_right = Inches(0.2)
-        tf.margin_top = Inches(0.15)
+        tf.margin_top = Inches(0.12)
 
         p = tf.paragraphs[0]
-        p.text = title_c
+        p.text = title_c.rstrip(".")
         p.font.name = FONT_MAIN
-        p.font.size = Pt(17)
+        p.font.size = Pt(16.5)
         p.font.bold = True
         p.font.color.rgb = col
 
         p = tf.add_paragraph()
         p.text = desc_c
         p.font.name = FONT_MAIN
-        p.font.size = Pt(14)
+        p.font.size = Pt(13.5)
         p.font.color.rgb = INK_COLOR
-        p.space_before = Pt(6)
+        p.space_before = Pt(4)
 
     # -------------------------------------------------------------
     # SLIDE 14: Comprobación conceptual
@@ -1120,10 +1128,10 @@ def create_deck():
         "no una simple suma aritmética de piezas verdes aisladas.")
 
     qbox_w = Inches(11.7)
-    qbox_h = Inches(2.2)
+    qbox_h = Inches(2.25)
 
     # Question 1 Box
-    q1 = s14.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.6), qbox_w, qbox_h)
+    q1 = s14.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(1.55), qbox_w, qbox_h)
     q1.fill.solid()
     q1.fill.fore_color.rgb = WHITE
     q1.line.color.rgb = CONTEXT_COLOR
@@ -1131,21 +1139,21 @@ def create_deck():
 
     tf_q1 = q1.text_frame
     tf_q1.word_wrap = True
-    tf_q1.margin_left = tf_q1.margin_right = Inches(0.3)
-    tf_q1.margin_top = Inches(0.18)
+    tf_q1.margin_left = tf_q1.margin_right = Inches(0.25)
+    tf_q1.margin_top = Inches(0.15)
 
     p = tf_q1.paragraphs[0]
-    p.text = "Pregunta 1 (Escala y diagnóstico):"
+    p.text = "Pregunta 1 (Escala y diagnóstico)"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(18)
+    p.font.size = Pt(17.5)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
 
     p = tf_q1.add_paragraph()
     p.text = "Si dos píxeles de México pertenecen a la misma zona de vida de Holdridge (mismo contexto Xⱼ) y se evalúan con el mismo modelo θ, ¿por qué pueden obtener diagnósticos de integridad (Zᵢⱼ) completamente diferentes?"
-    p.font.size = Pt(16)
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(6)
+    p.space_before = Pt(4)
 
     # Question 2 Box
     q2 = s14.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(4.2), qbox_w, qbox_h)
@@ -1156,21 +1164,21 @@ def create_deck():
 
     tf_q2 = q2.text_frame
     tf_q2.word_wrap = True
-    tf_q2.margin_left = tf_q2.margin_right = Inches(0.3)
-    tf_q2.margin_top = Inches(0.18)
+    tf_q2.margin_left = tf_q2.margin_right = Inches(0.25)
+    tf_q2.margin_top = Inches(0.15)
 
     p = tf_q2.paragraphs[0]
-    p.text = "Pregunta 2 (Metáfora de salud e integridad):"
+    p.text = "Pregunta 2 (Metáfora de salud e integridad)"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(18)
+    p.font.size = Pt(17.5)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
 
     p = tf_q2.add_paragraph()
     p.text = "¿Por qué la metáfora de la pecera y la salud organísmica nos advierten que no podemos calcular la integridad ecosistémica simplemente sumando o promediando piezas verdes aisladas?"
-    p.font.size = Pt(16)
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(6)
+    p.space_before = Pt(4)
 
     # Guardar presentación
     try:

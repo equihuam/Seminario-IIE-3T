@@ -157,6 +157,25 @@ Me gustaron mucho las ilustraciones, quiero conservarlas como estan, pero tener 
 El trabajo del ilustrador quedó muy bien con esas ilustraciones artísticas. En las otras noto que, en casi todas, faltan los arcos necesarios. También veo las ecuaciones algo desbordadas. Quizás convenga ponerlas en formato de ecuación windows/latex. para mejor control gráfico.
 ```
 
+## P045 — Tratamiento tentativo del arco X -> Z con nota explícita
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Puedes ver la presentación v3, que ya puse en output. Verás que optamos por dejar el arco x -> z como tentativo, con una nota. Debemos mantener ese tratamiento.
+```
+
+## P046 — Arco X -> Z punteado/discontinuo, ajuste de ajuste de texto y eliminación de puntos en títulos y lemas
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+No noté cambio en el arco x z. La idea es dejarlo punteado o algo semejante. También veo todavía algunos textos derramados. Verifica que quepan adecuadamente en las formas que los reciben.. No quiero puntos finales en los títulos o lemas.
+```
+
+
 
 
 
