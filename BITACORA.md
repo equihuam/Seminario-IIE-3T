@@ -149,3 +149,29 @@ Registro: 2026-10-08. Prompt: P023.
 El .Rproj tenía BuildType: Website y WebsitePath: blog, que invocan rmarkdown::render_site y explican el error aportado. Se configura BuildType: Custom con scripts/build-blog.cmd, un lanzador Windows del flujo existente scripts/site.py check. Conserva entornos, comprobaciones, preparación del SVG y propagación del código de salida. Se actualizan las instrucciones: reabrir el proyecto y utilizar Build All (Ctrl+Shift+B), o blog("check") desde la consola.
 
 Verificación: ejecución directa del mismo lanzador .cmd terminó con código 0, renv y pip consistentes, nueve páginas reejecutadas y enlaces/límites de publicación verificados. No se automatizó el botón en la interfaz de RStudio. Persisten advertencias regionales de R conocidas. Sin commit ni push.
+
+## B020 — Valoración conceptual y didáctica de cuatro ideas
+
+Fecha de registro: 2026-10-08. Prompt: P024.
+
+Se aplicaron los roles revisor y didacta en la conversación, sin revisión independiente. Lectura de README, PLAN, fuentes y decisiones, apertura del blog y revisión climática; consulta selectiva directa del manuscrito iie-teoria, especialmente §3.4, §§10–11 y §21.3. HEAD y SHA-256 coinciden con los registrados en FUENTES-Y-DECISIONES. Se contrastó la distinción entre condicionamiento e intervención con Graphical Causal Models de C. Shalizi (capítulo 22, https://stat.cmu.edu/~cshalizi/uADA/12/lectures/ch22.pdf).
+
+Recomendación entregada en conversación: analogía diagnóstica como entrada; núcleo IIE-3T y observación imperfecta; razonamiento diagnóstico y predictivo; independencia condicional aplicada a monitoreo, mediación y selección; extensión gradual a existencias, servicios, acceso y beneficios. Gestión como hilo conductor. Distinguir atributos reales de mediciones, contexto de presiones y manejo, e inferencia de intervención. Mantener el arco contexto-condición como cuestión abierta y los desarrollos socioecosistémicos como propuestas. Secuencia adaptativa, sin duración total ni perfil de participantes confirmados. No se modifican programa, blog o presentación; no se ejecutaron modelos ni se atribuye validación empírica a esta revisión.
+
+
+## B021 — Semillero de una página y espacio de exploraciones
+
+Fecha de registro: 2026-10-09. Prompts: P025–P027.
+
+Se implementan blog/semillero/ con registro único, cuatro fichas I001–I004 (202–229 palabras), plantilla y estilo de impresión; blog/exploraciones/ con guía y plantilla de desarrollo que recibe aportaciones y preguntas derivadas. Las fichas tienen valoración explícita por los roles revisor y didacta, aplicados en conversación, sin subagentes ni revisión independiente. Las recomendaciones siguen propuestas pendientes de decisión docente y prueba con participantes. Se preserva el original de las cuatro ideas en P024; las nuevas instrucciones se registran retrospectivamente cuando corresponde.
+
+El protocolo establece recepción, valoración antes del siguiente encuentro, decisión docente y retorno de resultados; incluye estados, IDs estables, atribución, fuentes, cambios y vínculos en ambos sentidos al abrir una exploración. Se integra navegación del blog y se actualizan README, PLAN, AGENTS, operación editorial y D18. El blog es estático: la coordinación recibe propuestas en sesión o como texto; no se creó un formulario ni una automatización programada.
+
+Verificación: scripts/site.py check terminó con código 0; renv y dependencias Python consistentes, 17 páginas generadas y enlaces/límites de publicación verificados. Cuatro pruebas de política del repositorio correctas. Impresión mediante Playwright/Edge y pdfinfo: cuatro fichas y plantilla, una página A4 cada una; se inspeccionaron las cinco imágenes renderizadas con Poppler y la captura del índice, sin recortes ni superposición. El intento inicial con el lanzador Edge directo no sincronizó bien las salidas; la verificación se realizó con Playwright esperando cada PDF. Productos de QA conservados en private/qa-semillero, fuera del blog y de Git. Persisten advertencias regionales conocidas de R. git diff --check sin errores de espacios (avisos de normalización CRLF). Sin commit, push ni despliegue remoto.
+
+
+## B022 — Preparación del commit y push autorizados
+
+Fecha de registro: 2026-10-09. Prompt: P028.
+
+Se prepara el hito del semillero con sus fuentes, pautas, registro y HTML generado. Verificación previa: 17 páginas, enlaces y límites de publicación correctos; las comprobaciones completas y visuales constan en B021. Tras fetch, main y origin/main coinciden en 218850f. Se revisaron los cambios de salida: navegación nueva y resultados regenerados de los ejemplos, con variación de simulación y advertencias regionales ya conocidas; no se modificaron sus fuentes científicas. PROMPTS y productos privados de QA permanecen excluidos. Se ejecutará el control del índice antes del commit y un push normal a origin/main; la confirmación final de Git se comunicará en la conversación.

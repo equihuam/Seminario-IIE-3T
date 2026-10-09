@@ -1,0 +1,19 @@
+---
+title: "I002 · Preguntas para gestionar"
+---
+
+**Autoría:** coordinador del seminario · **Registro:** 2026-10-09 · **Versión:** 0.1 · **Estado:** valorada.
+
+**Idea o pregunta.** Usar el marco como auxiliar para reflexionar sobre gestión ambiental. ¿Qué cambia al preguntar por la condición, por nueva información, por el efecto de una acción o por la opción preferible?
+
+**Por qué importa.** Ayuda a reconocer qué puede responder una red y qué requiere otros supuestos, datos o criterios de decisión.
+
+**Ejemplo hipotético.** Ante baja regeneración, distinguir «¿qué condición sugieren los datos?», «¿qué conviene medir?» y «¿qué ocurriría si reducimos la extracción?».
+
+**Dos miradas.** **Revisor:** condicionar en un manejo observado no equivale a intervenir. Estimar efectos requiere supuestos causales; elegir una acción añade objetivos, costos, restricciones y valores. **Didacta:** usar el mismo caso durante el seminario. En diez minutos, clasificar las tres preguntas y explicar qué información falta para responder cada una.
+
+**Siguiente paso propuesto.** Probar la clasificación después de introducir el diagnóstico. Comprobación: el grupo debe reconocer que el diagnóstico por sí solo no estima el efecto de reducir la extracción. **Desarrollo:** sin abrir; relacionado con [I001](I001-socioecosistema.qmd) e [I004](I004-independencia.qmd).
+
+**Procedencia.** Segunda idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§3.4 y 16.2; versión en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+
+[Volver al semillero](index.qmd)

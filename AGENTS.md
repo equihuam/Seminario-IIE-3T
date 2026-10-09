@@ -127,3 +127,10 @@ Conservar resultados desfavorables y correcciones relevantes, declarar decisione
 Usar `.venv` y `renv`; mantener sus bloqueos al cambiar dependencias. Antes de una entrega editorial ejecutar `scripts/site.py check` y las pruebas pertinentes; antes del commit revisar el índice con `scripts/check_repo.py`. No incorporar datos originales, credenciales, entornos, binarios pesados ni archivos mayores de 5 MiB. Los patrones automáticos no sustituyen la revisión de contenido sensible. Publicación y subida remota requieren una instrucción del usuario; la configuración actual es local.
 
 Definir objetivo y aceptación → implementar → verificar → revisar → documentar resultados y pendientes. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `PROMPTS.md`, las instrucciones originales. Evitar infraestructura de orquestación y duplicación de registros que no sean necesarias para el taller.
+
+
+## Cosecha y valoración de ideas
+
+Para nuevas propuestas del seminario, seguir blog/semillero/index.qmd. Recibir primero idea y motivación; asignar I### sin reutilizar IDs, conservar autoría y formulación original. Cada ficha tendrá como máximo una página legible (referencia: hasta 300 palabras), con las miradas explícitas del revisor y del didacta y un siguiente paso. Aplicar ambos roles en esta conversación salvo petición de revisión independiente. Registrar recomendaciones como propuestas hasta decisión docente.
+
+Cuando el desarrollo exceda la ficha, abrir E### en blog/exploraciones/ y enlazar en ambas direcciones. Conservar aportaciones, discrepancias y resultados de actividades con fecha y atribución acordada. Reevaluar con ambos roles ante cambios sustantivos o después de una prueba. Confirmar con participantes contenido y atribución antes de incorporar sus aportaciones al blog; mantener material privado fuera de blog.

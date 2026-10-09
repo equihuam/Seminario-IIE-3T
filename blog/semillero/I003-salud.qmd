@@ -1,0 +1,19 @@
+---
+title: "I003 · Salud como analogía"
+---
+
+**Autoría:** coordinador del seminario · **Registro:** 2026-10-09 · **Versión:** 0.1 · **Estado:** valorada.
+
+**Idea o pregunta.** Explorar la analogía de salud para explicar signos, observaciones y diagnóstico probabilístico de la condición ecosistémica.
+
+**Por qué importa.** Ofrece una entrada accesible para distinguir lo que observamos de la condición que inferimos y reconocer incertidumbre.
+
+**Ejemplo hipotético.** Dos bosques tienen cobertura semejante, pero distinta regeneración. ¿Basta una señal para afirmar que su condición es equivalente?
+
+**Dos miradas.** **Revisor:** la correspondencia es funcional, no literal. No presupone una normalidad universal, ni ausencia de deterioro cuando no hay daño visible. Diagnóstico, causa y pronóstico son preguntas distintas. **Didacta:** apertura de diez minutos, sin requisitos de programación. Clasificar contexto, observaciones y condición; pedir un ejemplo donde una señal admita distintas explicaciones.
+
+**Siguiente paso propuesto.** Probar la analogía al abrir el seminario y volver al vocabulario ecológico. Comprobación: el grupo explica por qué cobertura semejante no demuestra igual condición. **Desarrollo:** sin abrir; relacionado con [I002](I002-gestion.qmd).
+
+**Procedencia.** Tercera idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §3.4; versión en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+
+[Volver al semillero](index.qmd)

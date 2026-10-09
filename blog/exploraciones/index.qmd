@@ -1,0 +1,21 @@
+---
+title: "Exploraciones en desarrollo"
+---
+
+Aquí reuniremos el desarrollo que ya no cabe en una ficha del [semillero](../semillero/index.qmd): argumentos, fuentes, discrepancias, actividades y resultados. **Todavía no hay exploraciones abiertas.** Las cuatro fichas iniciales están valoradas y pendientes de prueba con participantes.
+
+## Cuándo abrir una exploración
+
+Cuando exista una hipótesis que contrastar, una discrepancia relevante, una actividad que probar o una aportación que amplíe la pregunta. La coordinación registra el motivo y asigna un ID `E###`; no es necesario que toda idea llegue a este espacio.
+
+Copiar la [plantilla de desarrollo](plantilla.qmd), enlazar las fichas de origen y añadir desde ellas el enlace de regreso. Una exploración puede reunir varias ideas. Si surge una pregunta distinta, abrir otra ficha y enlazarla como derivada.
+
+## Cosechar el enriquecimiento
+
+Registrar cada aportación con fecha, atribución acordada, pregunta o evidencia y efecto sobre la propuesta: la apoya, la modifica, la cuestiona o abre otra pregunta. Conservar desacuerdos y resultados desfavorables. Revisor y didacta vuelven a intervenir ante cambios sustantivos o después de una actividad; la coordinación registra la decisión, sin borrar versiones anteriores.
+
+## Fuentes {#fuentes}
+
+Las fichas iniciales se apoyan en la lectura selectiva del documento de trabajo `iie-teoria.qmd` del equipo, versión Git `2e3d3773b0f67a09a9f0935804ccf79d19450ca4`, fecha interna 2026-07-29: §3.4 (analogía diagnóstica), §§10–11 (existencias, servicios y beneficios), §16.2 (observación e intervención) y §21 (IIE operativo y ampliaciones). No es una validación empírica de las propuestas.
+
+El [ejemplo climático revisado](../recursos/cambio-climatico.qmd) ofrece un recurso sintético para separación-d e intervención; no constituye una implementación del IIE. Las fichas conservan abierta la relación contexto–condición y distinguen las extensiones propuestas del núcleo operativo.

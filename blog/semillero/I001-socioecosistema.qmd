@@ -1,0 +1,19 @@
+---
+title: "I001 · Del diagnóstico al bienestar"
+---
+
+**Autoría:** coordinador del seminario · **Registro:** 2026-10-09 · **Versión:** 0.1 · **Estado:** valorada.
+
+**Idea o pregunta.** ¿Cómo ampliar el marco IIE-3T para representar presiones, aprovechamiento y contribuciones al bienestar? Construir primero una representación sencilla y añadir relaciones cuando una pregunta lo requiera.
+
+**Por qué importa.** Permite conversar sobre conservación y uso sin confundir condición ecológica, cantidad disponible y beneficios humanos.
+
+**Ejemplo hipotético.** Un bosque mantiene una cosecha alta mientras disminuye su regeneración. La producción actual podría ocultar dificultades futuras.
+
+**Dos miradas.** **Revisor:** se cosechan existencias, como organismos o biomasa; las mediciones aportan evidencia sobre ellas. Separar contexto, presiones, condición, observación y beneficios. Los servicios son una extensión; no redefinen el IIE. **Didacta:** después del núcleo, dedicar quince minutos a distinguir existencias, cosecha y beneficio en el caso. Comprobación: una cosecha mayor no basta para concluir mejor condición.
+
+**Siguiente paso propuesto.** Dibujar la extensión mínima y justificar cada relación; añadir acceso y demanda antes de hablar de beneficios, y tiempo antes de evaluar reposición. **Desarrollo:** sin abrir; relacionado con [I002](I002-gestion.qmd).
+
+**Procedencia.** Primera idea del coordinador, reformulada con asistencia de IA; revisión conceptual y didáctica en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§10–11 y 21; versión identificada en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+
+[Volver al semillero](index.qmd)

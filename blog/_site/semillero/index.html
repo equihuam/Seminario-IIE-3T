@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Comprobación del entorno R – iie-3t · Seminario</title>
+<title>Semillero de ideas – iie-3t · Seminario</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -111,9 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="ficha.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed ficha-idea fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -143,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Temas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../semillero/index.html"> 
+    <a class="nav-link active" href="../semillero/index.html" aria-current="page"> 
 <span class="menu-text">Semillero</span></a>
   </li>  
   <li class="nav-item">
@@ -161,15 +127,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Comprobación del entorno R</h1>
+<h1 class="title">Semillero de ideas</h1>
 </div>
 
 
@@ -186,20 +150,69 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(<span class="fu">sum</span>(probabilidades) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilidades <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(resultado <span class="sc">-</span> <span class="fl">1.3</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"R %s · resultado: %.1f"</span>, <span class="fu">getRversion</span>(), resultado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>R 4.6.0 &lt;U+00B7&gt; resultado: 1.3</code></pre>
-</div>
-</div>
-<p>El resultado esperado es <strong>1.3</strong>. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE.</p>
+<p>Una pregunta basta para empezar: <strong>¿qué propones explorar y por qué importa?</strong> Comparte tu propuesta durante el cierre de una sesión o entrégala a la coordinación como texto, usando si quieres la <a href="../semillero/plantilla.html">plantilla de ficha</a>. Este sitio reúne las fichas; no recibe envíos mediante un formulario.</p>
+<section id="registro-de-ideas" class="level2">
+<h2 class="anchored" data-anchor-id="registro-de-ideas">Registro de ideas</h2>
+<p>Las primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación. Sus valoraciones son provisionales y no equivalen a validación científica o aprobación del programa.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>ID y ficha</th>
+<th>Estado</th>
+<th>Siguiente paso propuesto</th>
+<th>Desarrollo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="../semillero/I001-socioecosistema.html">I001 · Del diagnóstico al bienestar</a></td>
+<td>Valorada</td>
+<td>Dibujar una extensión mínima después del núcleo IIE-3T.</td>
+<td>Aún sin abrir</td>
+</tr>
+<tr class="even">
+<td><a href="../semillero/I002-gestion.html">I002 · Preguntas para gestionar</a></td>
+<td>Valorada</td>
+<td>Probar la clasificación de preguntas con un caso común.</td>
+<td>Aún sin abrir</td>
+</tr>
+<tr class="odd">
+<td><a href="../semillero/I003-salud.html">I003 · Salud como analogía</a></td>
+<td>Valorada</td>
+<td>Probar una apertura de diez minutos.</td>
+<td>Aún sin abrir</td>
+</tr>
+<tr class="even">
+<td><a href="../semillero/I004-independencia.html">I004 · Independencias que orientan preguntas</a></td>
+<td>Valorada</td>
+<td>Explorar una cadena antes de abordar selección y colisionadores.</td>
+<td>Aún sin abrir</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="de-una-pregunta-a-una-exploración" class="level2">
+<h2 class="anchored" data-anchor-id="de-una-pregunta-a-una-exploración">De una pregunta a una exploración</h2>
+<ol type="1">
+<li><strong>Recibir.</strong> La coordinación asigna el siguiente ID <code>I###</code>, registra fecha y autoría acordada y conserva la formulación original. No hace falta completar la valoración para recibir una idea.</li>
+<li><strong>Valorar.</strong> Antes del siguiente encuentro, aplicar los roles revisor y didacta a la misma versión: precisión conceptual principal y oportunidad de aprendizaje. Cada mirada ocupa dos o tres líneas; no se calcula una puntuación global.</li>
+<li><strong>Elegir.</strong> La coordinación acuerda con el grupo un siguiente paso: explorar ahora, probar una actividad, desarrollar después, solicitar aclaración o cerrar con una razón. Una recomendación de los roles no se registra como decisión docente ya tomada.</li>
+<li><strong>Aprender.</strong> Tras una actividad, anotar brevemente qué se observó y revisar la recomendación. Conservar fecha, versión y motivo del cambio.</li>
+</ol>
+<p>Los estados del registro son <strong>recibida, valorada, en prueba, en desarrollo y cerrada</strong>. Los estados describen el recorrido, no el mérito de la propuesta. Una idea puede retomarse.</p>
+</section>
+<section id="una-ficha-una-página" class="level2">
+<h2 class="anchored" data-anchor-id="una-ficha-una-página">Una ficha, una página</h2>
+<p>La ficha tiene seis componentes y un máximo orientativo de 300 palabras para facilitar su impresión en una página. El límite final es una página legible: si no cabe, sintetizar o abrir una exploración; no reducir la letra. No es necesario llenar el espacio. El historial extenso y las aportaciones sucesivas se conservan fuera de la ficha.</p>
+<p>El <a href="../exploraciones/index.html">espacio de exploraciones</a> recibe lo que ya necesita desarrollo: una hipótesis contrastable, un desacuerdo importante, una actividad que probar o aportaciones que amplían la pregunta. Cada exploración enlaza sus fichas de origen y estas enlazan el desarrollo, sin borrar la idea inicial.</p>
+</section>
+<section id="cómo-empezaremos" class="level2">
+<h2 class="anchored" data-anchor-id="cómo-empezaremos">Cómo empezaremos</h2>
+<p>Proponemos usar I003 como entrada, I002 como hilo conductor, I004 después de comprender diagnóstico y probabilidades condicionales, e I001 como ampliación. Es una secuencia adaptativa, no un compromiso de cobertura. Al cierre de cada sesión: cinco minutos para cosechar preguntas; antes de la siguiente: valorar las nuevas y seleccionar una o dos para conversar.</p>
+<p>La coordinación confirmará con cada participante la autoría y el contenido que puede compartirse antes de incorporarlo al blog. Las aportaciones privadas se conservan fuera de este sitio.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

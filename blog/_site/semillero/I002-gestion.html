@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Comprobación del entorno R – iie-3t · Seminario</title>
+<title>I002 · Preguntas para gestionar – iie-3t · Seminario</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +25,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -111,9 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="ficha.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed ficha-idea fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -161,15 +127,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Comprobación del entorno R</h1>
+<h1 class="title">I002 · Preguntas para gestionar</h1>
 </div>
 
 
@@ -186,18 +150,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(<span class="fu">sum</span>(probabilidades) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilidades <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(resultado <span class="sc">-</span> <span class="fl">1.3</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"R %s · resultado: %.1f"</span>, <span class="fu">getRversion</span>(), resultado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>R 4.6.0 &lt;U+00B7&gt; resultado: 1.3</code></pre>
-</div>
-</div>
-<p>El resultado esperado es <strong>1.3</strong>. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE.</p>
+<p><strong>Autoría:</strong> coordinador del seminario · <strong>Registro:</strong> 2026-10-09 · <strong>Versión:</strong> 0.1 · <strong>Estado:</strong> valorada.</p>
+<p><strong>Idea o pregunta.</strong> Usar el marco como auxiliar para reflexionar sobre gestión ambiental. ¿Qué cambia al preguntar por la condición, por nueva información, por el efecto de una acción o por la opción preferible?</p>
+<p><strong>Por qué importa.</strong> Ayuda a reconocer qué puede responder una red y qué requiere otros supuestos, datos o criterios de decisión.</p>
+<p><strong>Ejemplo hipotético.</strong> Ante baja regeneración, distinguir «¿qué condición sugieren los datos?», «¿qué conviene medir?» y «¿qué ocurriría si reducimos la extracción?».</p>
+<p><strong>Dos miradas.</strong> <strong>Revisor:</strong> condicionar en un manejo observado no equivale a intervenir. Estimar efectos requiere supuestos causales; elegir una acción añade objetivos, costos, restricciones y valores. <strong>Didacta:</strong> usar el mismo caso durante el seminario. En diez minutos, clasificar las tres preguntas y explicar qué información falta para responder cada una.</p>
+<p><strong>Siguiente paso propuesto.</strong> Probar la clasificación después de introducir el diagnóstico. Comprobación: el grupo debe reconocer que el diagnóstico por sí solo no estima el efecto de reducir la extracción. <strong>Desarrollo:</strong> sin abrir; relacionado con <a href="../semillero/I001-socioecosistema.html">I001</a> e <a href="../semillero/I004-independencia.html">I004</a>.</p>
+<p><strong>Procedencia.</strong> Segunda idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§3.4 y 16.2; versión en la <a href="../exploraciones/index.html#fuentes">guía de exploraciones</a>. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.</p>
+<p><a href="../semillero/index.html">Volver al semillero</a></p>
 
 
 

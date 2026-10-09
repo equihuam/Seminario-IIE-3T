@@ -91,3 +91,8 @@ La carpeta editorial pasa de `site/` a `blog/`. Esta decisión actualiza la ruta
 ## D17 — Publicación de HTML versionado (P022)
 
 El usuario elige incorporar blog/_site y los recursos necesarios al repositorio para que Netlify publique desde GitHub. Actualiza las exclusiones de D12/D16: fuentes y salida se conservan juntas; las cachés, entornos y datos privados permanecen excluidos. Se requiere reconstruir y verificar localmente antes de cada commit de materiales. Netlify sirve blog/_site; no se configura compilación científica remota.
+
+
+## D18 — Semillero conciso y exploraciones (P025–P027)
+
+Se implementa un piloto con fichas I### de hasta una página, registro único y valoración rutinaria explícita por revisor y didacta. Los desarrollos E### reciben ampliaciones, actividades y aportaciones con vínculos de ida y vuelta. Cuatro fichas iniciales reformulan P024, preservado en el registro interno; se identifican como propuestas y ejemplos hipotéticos. El manuscrito y las fuentes revisadas en B020 sustentan sus precisiones; no se añade evidencia empírica ni se decide el programa por anticipado. La publicación remota no forma parte de esta implementación local.

@@ -27,3 +27,8 @@ El primer puente conceptual está en [Del esquema a una red](empieza-aqui.qmd#de
 ## Ampliaciones por explorar
 
 IIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio.
+
+
+## Ideas del grupo
+
+[Semillero](semillero/index.qmd): cuatro fichas iniciales y una plantilla breve. [Exploraciones](exploraciones/index.qmd): desarrollo de preguntas, aportaciones y actividades cuando superen una página.

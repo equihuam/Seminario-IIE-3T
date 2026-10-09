@@ -9,6 +9,8 @@ project:
     - reproducibilidad.qmd
     - posts/**/*.qmd
     - recursos/**/*.qmd
+    - semillero/**/*.qmd
+    - exploraciones/**/*.qmd
   resources:
     - img/Modelo de tres capas.svg
     - recursos/guia-observacion.csv
@@ -25,6 +27,8 @@ website:
         href: sesiones.qmd
       - text: Temas
         href: temas.qmd
+      - text: Semillero
+        href: semillero/index.qmd
       - text: Reproducibilidad
         href: reproducibilidad.qmd
   page-footer:

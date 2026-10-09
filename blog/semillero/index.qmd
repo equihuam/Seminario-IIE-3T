@@ -1,0 +1,37 @@
+---
+title: "Semillero de ideas"
+---
+
+Una pregunta basta para empezar: **¿qué propones explorar y por qué importa?** Comparte tu propuesta durante el cierre de una sesión o entrégala a la coordinación como texto, usando si quieres la [plantilla de ficha](plantilla.qmd). Este sitio reúne las fichas; no recibe envíos mediante un formulario.
+
+## Registro de ideas
+
+Las primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación. Sus valoraciones son provisionales y no equivalen a validación científica o aprobación del programa.
+
+| ID y ficha | Estado | Siguiente paso propuesto | Desarrollo |
+| --- | --- | --- | --- |
+| [I001 · Del diagnóstico al bienestar](I001-socioecosistema.qmd) | Valorada | Dibujar una extensión mínima después del núcleo IIE-3T. | Aún sin abrir |
+| [I002 · Preguntas para gestionar](I002-gestion.qmd) | Valorada | Probar la clasificación de preguntas con un caso común. | Aún sin abrir |
+| [I003 · Salud como analogía](I003-salud.qmd) | Valorada | Probar una apertura de diez minutos. | Aún sin abrir |
+| [I004 · Independencias que orientan preguntas](I004-independencia.qmd) | Valorada | Explorar una cadena antes de abordar selección y colisionadores. | Aún sin abrir |
+
+## De una pregunta a una exploración
+
+1. **Recibir.** La coordinación asigna el siguiente ID `I###`, registra fecha y autoría acordada y conserva la formulación original. No hace falta completar la valoración para recibir una idea.
+2. **Valorar.** Antes del siguiente encuentro, aplicar los roles revisor y didacta a la misma versión: precisión conceptual principal y oportunidad de aprendizaje. Cada mirada ocupa dos o tres líneas; no se calcula una puntuación global.
+3. **Elegir.** La coordinación acuerda con el grupo un siguiente paso: explorar ahora, probar una actividad, desarrollar después, solicitar aclaración o cerrar con una razón. Una recomendación de los roles no se registra como decisión docente ya tomada.
+4. **Aprender.** Tras una actividad, anotar brevemente qué se observó y revisar la recomendación. Conservar fecha, versión y motivo del cambio.
+
+Los estados del registro son **recibida, valorada, en prueba, en desarrollo y cerrada**. Los estados describen el recorrido, no el mérito de la propuesta. Una idea puede retomarse.
+
+## Una ficha, una página
+
+La ficha tiene seis componentes y un máximo orientativo de 300 palabras para facilitar su impresión en una página. El límite final es una página legible: si no cabe, sintetizar o abrir una exploración; no reducir la letra. No es necesario llenar el espacio. El historial extenso y las aportaciones sucesivas se conservan fuera de la ficha.
+
+El [espacio de exploraciones](../exploraciones/index.qmd) recibe lo que ya necesita desarrollo: una hipótesis contrastable, un desacuerdo importante, una actividad que probar o aportaciones que amplían la pregunta. Cada exploración enlaza sus fichas de origen y estas enlazan el desarrollo, sin borrar la idea inicial.
+
+## Cómo empezaremos
+
+Proponemos usar I003 como entrada, I002 como hilo conductor, I004 después de comprender diagnóstico y probabilidades condicionales, e I001 como ampliación. Es una secuencia adaptativa, no un compromiso de cobertura. Al cierre de cada sesión: cinco minutos para cosechar preguntas; antes de la siguiente: valorar las nuevas y seleccionar una o dos para conversar.
+
+La coordinación confirmará con cada participante la autoría y el contenido que puede compartirse antes de incorporarlo al blog. Las aportaciones privadas se conservan fuera de este sitio.

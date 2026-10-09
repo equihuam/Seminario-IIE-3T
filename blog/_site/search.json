@@ -1,10 +1,80 @@
 [
   {
+    "objectID": "exploraciones/plantilla.html",
+    "href": "exploraciones/plantilla.html",
+    "title": "E___ · Título de la exploración",
+    "section": "",
+    "text": "Plantilla sin completar. Autoría y colaboradores: [atribución acordada]. Fecha: [registro]. Versión: [número]. Estado: [abierta/en prueba/cerrada]. Fichas de origen: [ID y enlace]."
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#pregunta-y-motivo-de-apertura",
+    "href": "exploraciones/plantilla.html#pregunta-y-motivo-de-apertura",
+    "title": "E___ · Título de la exploración",
+    "section": "Pregunta y motivo de apertura",
+    "text": "Pregunta y motivo de apertura\n[Qué se desarrollará y por qué ya no cabe en la ficha.]"
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#propuesta-y-sustento",
+    "href": "exploraciones/plantilla.html#propuesta-y-sustento",
+    "title": "E___ · Título de la exploración",
+    "section": "Propuesta y sustento",
+    "text": "Propuesta y sustento\n[Distinguir fuente, hipótesis y simplificación didáctica; registrar supuestos y alternativas.]"
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#aportaciones-y-preguntas-derivadas",
+    "href": "exploraciones/plantilla.html#aportaciones-y-preguntas-derivadas",
+    "title": "E___ · Título de la exploración",
+    "section": "Aportaciones y preguntas derivadas",
+    "text": "Aportaciones y preguntas derivadas\n\n\n\n\n\n\n\n\n\nFecha y autoría\nAportación o evidencia\nEfecto sobre la propuesta\nIdea derivada\n\n\n\n\n[Completar]\n[Completar]\n[Apoya/modifica/cuestiona/abre pregunta]\n[ID y enlace, si existe]"
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#actividad-o-contraste",
+    "href": "exploraciones/plantilla.html#actividad-o-contraste",
+    "title": "E___ · Título de la exploración",
+    "section": "Actividad o contraste",
+    "text": "Actividad o contraste\n[Objetivo, participantes/prerrequisitos, duración, instrucciones y evidencia esperada. Después registrar resultados observados y límites; no sustituirlos por expectativas.]"
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#valoración-y-decisión",
+    "href": "exploraciones/plantilla.html#valoración-y-decisión",
+    "title": "E___ · Título de la exploración",
+    "section": "Valoración y decisión",
+    "text": "Valoración y decisión\nRevisor, responsable y fecha: [hallazgos y cuestiones abiertas].\nDidacta, responsable y fecha: [aprendizaje, dificultades y adaptación].\nDecisión docente, responsable y fecha: [acción, motivo y siguiente revisión]."
+  },
+  {
+    "objectID": "exploraciones/plantilla.html#fuentes-e-historia-de-cambios",
+    "href": "exploraciones/plantilla.html#fuentes-e-historia-de-cambios",
+    "title": "E___ · Título de la exploración",
+    "section": "Fuentes e historia de cambios",
+    "text": "Fuentes e historia de cambios\n[Fuentes con sección/versión; fecha, autoría y motivo de cambios. Conservar aportaciones originales y resultados desfavorables.]\nVolver a exploraciones · Semillero"
+  },
+  {
+    "objectID": "semillero/plantilla.html",
+    "href": "semillero/plantilla.html",
+    "title": "I___ · Título de la idea",
+    "section": "",
+    "text": "Autoría: [nombre o atribución acordada] · Registro: [fecha] · Versión: 0.1 · Estado: recibida.\nIdea o pregunta. [Dos o tres frases. Conservar aquí la formulación inicial; si se reformula, conservar también el original en el registro de procedencia acordado.]\nPor qué importa. [Qué permitiría comprender, cuestionar o resolver.]\nEjemplo, si ayuda. [Un caso breve; indicar si es hipotético. Puede omitirse.]\nDos miradas. Revisor: [pendiente; precisión principal, supuesto o evidencia necesaria]. Didacta: [pendiente; qué aprender, cómo explorarlo y cómo reconocer comprensión]. Registrar quién aplicó los roles y cuándo; no afirmar revisión independiente si no ocurrió.\nSiguiente paso. [Acción y motivo; distinguir propuesta de decisión acordada]. Desarrollo: [sin abrir, o ID y enlace]. Procedencia/cambio: [fuente y sección, si existen; fecha y motivo de la última revisión].\nVolver al semillero. Máximo una página legible; referencia editorial: hasta 300 palabras. Para empezar basta completar la idea y su motivación. Copiar este texto en el medio disponible y entregarlo a la coordinación."
+  },
+  {
+    "objectID": "semillero/I004-independencia.html",
+    "href": "semillero/I004-independencia.html",
+    "title": "I004 · Independencias y gestión",
+    "section": "",
+    "text": "Autoría: coordinador del seminario · Registro: 2026-10-09 · Versión: 0.1 · Estado: valorada.\nIdea o pregunta. ¿Cómo ayudan las independencias condicionales a identificar información útil, interpretar asociaciones sorprendentes y formular mejores preguntas de gestión?\nPor qué importa. Permite examinar lo que suponemos al comparar sitios o agregar mediciones, sin convertir una asociación en una recomendación causal.\nEjemplo hipotético. En la cadena presión → proceso → respuesta, sin otras rutas, el modelo implica independencia de presión y respuesta dado el proceso. Eso no elimina un posible efecto mediado de la presión.\nDos miradas. Revisor: declarar el grafo completo y las variables condicionadas. Separación-d implica independencia bajo Markov; ausencia de arco o un contraste no significativo no la demuestran. Los arcos TAN no acreditan causalidad. Didacta: después de probabilidades condicionales, comparar en quince minutos la cadena antes y después de observar el proceso. Reservar colisionadores y selección para una exploración posterior.\nSiguiente paso propuesto. Preparar una actividad con la cadena. Comprobación: explicar por qué dejar de aportar información adicional no equivale a carecer de importancia para intervenir. Desarrollo: sin abrir; relacionado con I002.\nProcedencia. Cuarta idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito, §§16.2 y 21.21, y ejemplo climático revisado. Versión en la guía de exploraciones. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.\nVolver al semillero"
+  },
+  {
+    "objectID": "semillero/I002-gestion.html",
+    "href": "semillero/I002-gestion.html",
+    "title": "I002 · Preguntas para gestionar",
+    "section": "",
+    "text": "Autoría: coordinador del seminario · Registro: 2026-10-09 · Versión: 0.1 · Estado: valorada.\nIdea o pregunta. Usar el marco como auxiliar para reflexionar sobre gestión ambiental. ¿Qué cambia al preguntar por la condición, por nueva información, por el efecto de una acción o por la opción preferible?\nPor qué importa. Ayuda a reconocer qué puede responder una red y qué requiere otros supuestos, datos o criterios de decisión.\nEjemplo hipotético. Ante baja regeneración, distinguir «¿qué condición sugieren los datos?», «¿qué conviene medir?» y «¿qué ocurriría si reducimos la extracción?».\nDos miradas. Revisor: condicionar en un manejo observado no equivale a intervenir. Estimar efectos requiere supuestos causales; elegir una acción añade objetivos, costos, restricciones y valores. Didacta: usar el mismo caso durante el seminario. En diez minutos, clasificar las tres preguntas y explicar qué información falta para responder cada una.\nSiguiente paso propuesto. Probar la clasificación después de introducir el diagnóstico. Comprobación: el grupo debe reconocer que el diagnóstico por sí solo no estima el efecto de reducir la extracción. Desarrollo: sin abrir; relacionado con I001 e I004.\nProcedencia. Segunda idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§3.4 y 16.2; versión en la guía de exploraciones. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.\nVolver al semillero"
+  },
+  {
     "objectID": "recursos/comprobacion-r.html",
     "href": "recursos/comprobacion-r.html",
     "title": "Comprobación del entorno R",
     "section": "",
-    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 · resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 &lt;U+00B7&gt; resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
   },
   {
     "objectID": "recursos/cambio-climatico.html",
@@ -25,7 +95,7 @@
     "href": "recursos/cambio-climatico.html#construir-y-examinar-el-grafo",
     "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
     "section": "Construir y examinar el grafo",
-    "text": "Construir y examinar el grafo\nEl proyecto usa R y las bibliotecas bnlearn y dagitty, registradas en renv.lock. Para trabajar con el modelo por separado, descargar clima-modelo.R y cargarlo desde su carpeta con source(\"clima-modelo.R\"). En el proyecto, desde la raíz, se usa source(\"blog/recursos/clima-modelo.R\"). La compilación de esta página lo carga desde la carpeta de recursos.\n\nsource(\"clima-modelo.R\", encoding = \"UTF-8\")\nred &lt;- crear_clima()\ng &lt;- a_dagitty(red)\nbnlearn::modelstring(bnlearn::bn.net(red))\n\n[1] \"[aCC][B][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]\"\n\n\n\ndagitty::coordinates(g) &lt;- list(\n  x = c(aCC = 0, E = 0, B = 3, U = 2, P = 4, Eco = 1, X = 0, N = 3),\n  y = c(aCC = 0, E = 1, B = 0, U = 1, P = 1, Eco = 2, X = 3, N = 3)\n)\nplot(g)\n\n\n\n\n\n\n\nFigura 1: Grafo original recuperado; sus flechas son hipótesis a discutir.\n\n\n\n\n\nLa factorización es:\n\\[\np(aCC,B,E,U,P,Eco,N,X)=p(aCC)p(B)p(E\\mid aCC)p(U\\mid B)\np(P\\mid B)p(Eco\\mid E,U)p(N\\mid P,Eco)p(X\\mid Eco).\n\\]\nUna red bayesiana define una distribución mediante esta factorización. Interpretar sus arcos como mecanismos causales requiere justificación adicional. Por ejemplo, E → Eco y P → N requieren explicar mecanismos, orden temporal y causas omitidas. El consenso del grupo documenta hipótesis, pero no demuestra su validez."
+    "text": "Construir y examinar el grafo\nEl proyecto usa R y las bibliotecas bnlearn y dagitty, registradas en renv.lock. Para trabajar con el modelo por separado, descargar clima-modelo.R y cargarlo desde su carpeta con source(\"clima-modelo.R\"). En el proyecto, desde la raíz, se usa source(\"blog/recursos/clima-modelo.R\"). La compilación de esta página lo carga desde la carpeta de recursos.\n\nsource(\"clima-modelo.R\", encoding = \"UTF-8\")\nred &lt;- crear_clima()\ng &lt;- a_dagitty(red)\nbnlearn::modelstring(bnlearn::bn.net(red))\n\n[1] \"[B][aCC][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]\"\n\n\n\ndagitty::coordinates(g) &lt;- list(\n  x = c(aCC = 0, E = 0, B = 3, U = 2, P = 4, Eco = 1, X = 0, N = 3),\n  y = c(aCC = 0, E = 1, B = 0, U = 1, P = 1, Eco = 2, X = 3, N = 3)\n)\nplot(g)\n\n\n\n\n\n\n\nFigura 1: Grafo original recuperado; sus flechas son hipótesis a discutir.\n\n\n\n\n\nLa factorización es:\n\\[\np(aCC,B,E,U,P,Eco,N,X)=p(aCC)p(B)p(E\\mid aCC)p(U\\mid B)\np(P\\mid B)p(Eco\\mid E,U)p(N\\mid P,Eco)p(X\\mid Eco).\n\\]\nUna red bayesiana define una distribución mediante esta factorización. Interpretar sus arcos como mecanismos causales requiere justificación adicional. Por ejemplo, E → Eco y P → N requieren explicar mecanismos, orden temporal y causas omitidas. El consenso del grupo documenta hipótesis, pero no demuestra su validez."
   },
   {
     "objectID": "recursos/cambio-climatico.html#leer-las-tablas-sin-perder-los-supuestos",
@@ -46,14 +116,14 @@
     "href": "recursos/cambio-climatico.html#observar-no-es-intervenir",
     "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
     "section": "Observar no es intervenir",
-    "text": "Observar no es intervenir\nObservar Eco = natural selecciona casos de la distribución original: calculamos \\(p(E\\mid Eco=natural)\\). Intervenir idealmente sobre Eco reemplaza su mecanismo y elimina los arcos que llegan a ese nodo: calculamos \\(p(E\\mid do(Eco=natural))\\), si aceptamos para el ejercicio una interpretación causal del grafo. Ese supuesto no convierte el cálculo en una recomendación de manejo.\n\nj &lt;- conjunta(red) # Enumeración exacta de los 256 estados posibles.\ndo_red &lt;- bnlearn::intervention(red, evidence = list(Eco = \"natural\"))\nresultados &lt;- data.frame(\n  consulta = c(\"Sin evidencia\", \"Observando Eco = natural\", \"Interviniendo Eco = natural\"),\n  prob_E = c(\n    prob_exacta(j, list(E = \"presente\")),\n    prob_exacta(j, list(E = \"presente\"), list(Eco = \"natural\")),\n    prob_exacta(conjunta(do_red), list(E = \"presente\"))\n  )\n)\nknitr::kable(resultados, digits = 6)\n\n\n\n\nconsulta\nprob_E\n\n\n\n\nSin evidencia\n0.989600\n\n\nObservando Eco = natural\n0.839575\n\n\nInterviniendo Eco = natural\n0.989600\n\n\n\n\n\nPodemos comprobarlo a mano: \\(p(E)=0.99(0.99)+0.01(0.95)=0.9896\\) y \\(p(U)=0.945\\). Como son marginalmente independientes y plantación equivale a la coincidencia de ambos:\n\\[\np(E\\mid Eco=natural)=\\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\\approx0.839576.\n\\]\nIntervenir en Eco deja \\(p(E)=0.9896\\): no cambia el mecanismo de sus ancestros. Entre los casos naturales, la coincidencia E y U tiene probabilidad cero aunque ambos tienen marginales positivas: ahora son dependientes. Entre las plantaciones, en cambio, los dos quedan fijos en «presente»; la correlación no está definida por falta de variación. La conexión-d no garantiza correlación en cada estrato.\nEl original fijaba las probabilidades de dos raíces (aCC, B) en 1 para mostrar evidencia. En esta red, condicionar esas raíces e intervenir en ellas coincide numéricamente para el resto de variables. Es un caso particular que no permite generalizar el procedimiento a nodos con padres. Aquí conservamos el modelo observacional y formulamos cada consulta explícitamente.\nbnlearn también permite consultas aproximadas por simulación. El resultado varía con la muestra; la enumeración nos da una referencia exacta para esta red pequeña.\n\nset.seed(20261008)\nbnlearn::cpquery(red, event = (E == \"presente\"),\n                evidence = (Eco == \"natural\"), n = 200000)\n\n[1] 0.8433514"
+    "text": "Observar no es intervenir\nObservar Eco = natural selecciona casos de la distribución original: calculamos \\(p(E\\mid Eco=natural)\\). Intervenir idealmente sobre Eco reemplaza su mecanismo y elimina los arcos que llegan a ese nodo: calculamos \\(p(E\\mid do(Eco=natural))\\), si aceptamos para el ejercicio una interpretación causal del grafo. Ese supuesto no convierte el cálculo en una recomendación de manejo.\n\nj &lt;- conjunta(red) # Enumeración exacta de los 256 estados posibles.\ndo_red &lt;- bnlearn::intervention(red, evidence = list(Eco = \"natural\"))\nresultados &lt;- data.frame(\n  consulta = c(\"Sin evidencia\", \"Observando Eco = natural\", \"Interviniendo Eco = natural\"),\n  prob_E = c(\n    prob_exacta(j, list(E = \"presente\")),\n    prob_exacta(j, list(E = \"presente\"), list(Eco = \"natural\")),\n    prob_exacta(conjunta(do_red), list(E = \"presente\"))\n  )\n)\nknitr::kable(resultados, digits = 6)\n\n\n\n\nconsulta\nprob_E\n\n\n\n\nSin evidencia\n0.989600\n\n\nObservando Eco = natural\n0.839575\n\n\nInterviniendo Eco = natural\n0.989600\n\n\n\n\n\nPodemos comprobarlo a mano: \\(p(E)=0.99(0.99)+0.01(0.95)=0.9896\\) y \\(p(U)=0.945\\). Como son marginalmente independientes y plantación equivale a la coincidencia de ambos:\n\\[\np(E\\mid Eco=natural)=\\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\\approx0.839576.\n\\]\nIntervenir en Eco deja \\(p(E)=0.9896\\): no cambia el mecanismo de sus ancestros. Entre los casos naturales, la coincidencia E y U tiene probabilidad cero aunque ambos tienen marginales positivas: ahora son dependientes. Entre las plantaciones, en cambio, los dos quedan fijos en «presente»; la correlación no está definida por falta de variación. La conexión-d no garantiza correlación en cada estrato.\nEl original fijaba las probabilidades de dos raíces (aCC, B) en 1 para mostrar evidencia. En esta red, condicionar esas raíces e intervenir en ellas coincide numéricamente para el resto de variables. Es un caso particular que no permite generalizar el procedimiento a nodos con padres. Aquí conservamos el modelo observacional y formulamos cada consulta explícitamente.\nbnlearn también permite consultas aproximadas por simulación. El resultado varía con la muestra; la enumeración nos da una referencia exacta para esta red pequeña.\n\nset.seed(20261008)\nbnlearn::cpquery(red, event = (E == \"presente\"),\n                evidence = (Eco == \"natural\"), n = 200000)\n\n[1] 0.8365963"
   },
   {
     "objectID": "recursos/cambio-climatico.html#simular-estimar-y-contrastar-en-r",
     "href": "recursos/cambio-climatico.html#simular-estimar-y-contrastar-en-r",
     "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
     "section": "Simular, estimar y contrastar en R",
-    "text": "Simular, estimar y contrastar en R\n\nset.seed(20261008)\ndatos &lt;- bnlearn::rbn(red, n = 10000)\najustada &lt;- bnlearn::bn.fit(bnlearn::bn.net(red), datos, method = \"bayes\", iss = 1)\najustada$E$prob\n\n          aCC\nE             presente     ausente\n  presente 0.990680406 0.968292683\n  ausente  0.009319594 0.031707317\n\nbnlearn::ci.test(\"E\", \"U\", data = datos, test = \"mi\")\n\n\n    Mutual Information (disc.)\n\ndata:  E ~ U  \nmi = 0.00085258, df = 1, p-value = 0.9767\nalternative hypothesis: true value is greater than 0\n\n\nLos datos son simulados por el propio modelo. Este ejercicio verifica una mecánica de estimación; no valida ecológicamente el DAG. El ajuste bayesiano con iss = 1 añade suavizado, por lo que no conserva necesariamente sus ceros deterministas. Es una elección explícita del ejercicio, no un parámetro calibrado.\nUn contraste no significativo significa que no rechazamos la hipótesis nula con esa prueba y esos datos. No demuestra independencia: importan potencia, tamaño de muestra, supuestos y sensibilidad del contraste. Con datos reales, discrepancias pueden cuestionar el modelo o el procedimiento de observación; la ausencia de rechazo no certifica causalidad. Tampoco aprender una estructura con hc() demostraría una dirección causal única: pueden existir grafos observacionalmente equivalentes."
+    "text": "Simular, estimar y contrastar en R\n\nset.seed(20261008)\ndatos &lt;- bnlearn::rbn(red, n = 10000)\najustada &lt;- bnlearn::bn.fit(bnlearn::bn.net(red), datos, method = \"bayes\", iss = 1)\najustada$E$prob\n\n          aCC\nE             presente     ausente\n  presente 0.991195318 0.920765027\n  ausente  0.008804682 0.079234973\n\nbnlearn::ci.test(\"E\", \"U\", data = datos, test = \"mi\")\n\n\n    Mutual Information (disc.)\n\ndata:  E ~ U  \nmi = 0.23647, df = 1, p-value = 0.6268\nalternative hypothesis: true value is greater than 0\n\n\nLos datos son simulados por el propio modelo. Este ejercicio verifica una mecánica de estimación; no valida ecológicamente el DAG. El ajuste bayesiano con iss = 1 añade suavizado, por lo que no conserva necesariamente sus ceros deterministas. Es una elección explícita del ejercicio, no un parámetro calibrado.\nUn contraste no significativo significa que no rechazamos la hipótesis nula con esa prueba y esos datos. No demuestra independencia: importan potencia, tamaño de muestra, supuestos y sensibilidad del contraste. Con datos reales, discrepancias pueden cuestionar el modelo o el procedimiento de observación; la ausencia de rechazo no certifica causalidad. Tampoco aprender una estructura con hc() demostraría una dirección causal única: pueden existir grafos observacionalmente equivalentes."
   },
   {
     "objectID": "recursos/cambio-climatico.html#cambiar-evidencia-no-hace-temporal-a-la-red",
@@ -74,7 +144,7 @@
     "href": "recursos/cambio-climatico.html#procedencia-y-reproducción",
     "title": "Cambio climático: leer, consultar y discutir una red bayesiana en R",
     "section": "Procedencia y reproducción",
-    "text": "Procedencia y reproducción\nFuente: Equihua y Pérez Maqueo, Lo Básico de Redes Bayesianas, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.\nEn el repositorio, ejecutar desde una sesión nueva: Rscript tests/test-clima.R y Rscript scripts/clima-ejemplo.R. Restaurar primero el entorno con Rscript --vanilla scripts/setup-r.R. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.\nDocumentación técnica: tablas y ajuste, consultas condicionales, intervenciones y DAGitty. Consultadas el 2026-10-08.\n\n\nCódigo\nsessionInfo()\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26300)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] LC_COLLATE=Spanish_Mexico.utf8  LC_CTYPE=Spanish_Mexico.utf8   \n[3] LC_MONETARY=Spanish_Mexico.utf8 LC_NUMERIC=C                   \n[5] LC_TIME=Spanish_Mexico.utf8    \n\ntime zone: America/Mexico_City\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.39     fastmap_1.2.0     xfun_0.61         knitr_1.52       \n [5] parallel_4.6.0    bnlearn_5.2.1     htmltools_0.5.9   rmarkdown_2.32   \n [9] cli_3.6.6         dagitty_0.3-4     renv_1.2.3        compiler_4.6.0   \n[13] boot_1.3-32       rstudioapi_0.19.0 tools_4.6.0       curl_8.0.0       \n[17] evaluate_1.0.5    Rcpp_1.1.2        yaml_2.3.12       V8_8.2.0         \n[21] rlang_1.3.0       jsonlite_2.0.0    MASS_7.3-65"
+    "text": "Procedencia y reproducción\nFuente: Equihua y Pérez Maqueo, Lo Básico de Redes Bayesianas, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.\nEn el repositorio, ejecutar desde una sesión nueva: Rscript tests/test-clima.R y Rscript scripts/clima-ejemplo.R. Restaurar primero el entorno con Rscript --vanilla scripts/setup-r.R. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.\nDocumentación técnica: tablas y ajuste, consultas condicionales, intervenciones y DAGitty. Consultadas el 2026-10-08.\n\n\nCódigo\nsessionInfo()\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26300)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] C\nsystem code page: 65001\n\ntime zone: America/Mexico_City\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.39   fastmap_1.2.0   xfun_0.61       knitr_1.52     \n [5] parallel_4.6.0  bnlearn_5.2.1   htmltools_0.5.9 rmarkdown_2.32 \n [9] cli_3.6.6       dagitty_0.3-4   renv_1.2.3      compiler_4.6.0 \n[13] boot_1.3-32     tools_4.6.0     curl_8.0.0      evaluate_1.0.5 \n[17] Rcpp_1.1.2      yaml_2.3.12     rlang_1.3.0     jsonlite_2.0.0 \n[21] V8_8.2.0        MASS_7.3-65"
   },
   {
     "objectID": "reproducibilidad.html",
@@ -144,7 +214,7 @@
     "href": "index.html#un-recorrido-que-se-construye-con-el-grupo",
     "title": "Integridad ecosistémica, paso a paso",
     "section": "Un recorrido que se construye con el grupo",
-    "text": "Un recorrido que se construye con el grupo\nPartimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.\n\nSesiones: encuentros y materiales en orden de incorporación.\nCatálogo temático: conceptos, guías y prácticas por tema.\nReproducibilidad: cómo documentamos y comprobamos lo que hacemos.\n\n\n\n\n\n\n\nNota\n\n\n\nEsta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado."
+    "text": "Un recorrido que se construye con el grupo\nPartimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.\n\nSesiones: encuentros y materiales en orden de incorporación.\nSemillero de ideas: propuestas breves, valoración y exploraciones.\nCatálogo temático: conceptos, guías y prácticas por tema.\nReproducibilidad: cómo documentamos y comprobamos lo que hacemos.\n\n\n\n\n\n\n\nNota\n\n\n\nEsta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado."
   },
   {
     "objectID": "empieza-aqui.html",
@@ -231,6 +301,13 @@
     "text": "Ampliaciones por explorar\nIIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio."
   },
   {
+    "objectID": "temas.html#ideas-del-grupo",
+    "href": "temas.html#ideas-del-grupo",
+    "title": "Catálogo temático",
+    "section": "Ideas del grupo",
+    "text": "Ideas del grupo\nSemillero: cuatro fichas iniciales y una plantilla breve. Exploraciones: desarrollo de preguntas, aportaciones y actividades cuando superen una página."
+  },
+  {
     "objectID": "posts/01-tres-capas/index.html",
     "href": "posts/01-tres-capas/index.html",
     "title": "01 · Observar, contextualizar e inferir",
@@ -292,5 +369,82 @@
     "title": "Comprobación del entorno Python",
     "section": "",
     "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nimport sys\nprobabilidades = [0.2, 0.3, 0.5]\nassert abs(sum(probabilidades) - 1.0) &lt; 1e-12\nresultado = sum(p * x for p, x in zip(probabilidades, [0, 1, 2]))\nassert abs(resultado - 1.3) &lt; 1e-12\nprint(f\"Python {sys.version.split()[0]} · resultado: {resultado:.1f}\")\n\nPython 3.12.14 · resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+  },
+  {
+    "objectID": "semillero/I001-socioecosistema.html",
+    "href": "semillero/I001-socioecosistema.html",
+    "title": "I001 · Del diagnóstico al bienestar",
+    "section": "",
+    "text": "Autoría: coordinador del seminario · Registro: 2026-10-09 · Versión: 0.1 · Estado: valorada.\nIdea o pregunta. ¿Cómo ampliar el marco IIE-3T para representar presiones, aprovechamiento y contribuciones al bienestar? Construir primero una representación sencilla y añadir relaciones cuando una pregunta lo requiera.\nPor qué importa. Permite conversar sobre conservación y uso sin confundir condición ecológica, cantidad disponible y beneficios humanos.\nEjemplo hipotético. Un bosque mantiene una cosecha alta mientras disminuye su regeneración. La producción actual podría ocultar dificultades futuras.\nDos miradas. Revisor: se cosechan existencias, como organismos o biomasa; las mediciones aportan evidencia sobre ellas. Separar contexto, presiones, condición, observación y beneficios. Los servicios son una extensión; no redefinen el IIE. Didacta: después del núcleo, dedicar quince minutos a distinguir existencias, cosecha y beneficio en el caso. Comprobación: una cosecha mayor no basta para concluir mejor condición.\nSiguiente paso propuesto. Dibujar la extensión mínima y justificar cada relación; añadir acceso y demanda antes de hablar de beneficios, y tiempo antes de evaluar reposición. Desarrollo: sin abrir; relacionado con I002.\nProcedencia. Primera idea del coordinador, reformulada con asistencia de IA; revisión conceptual y didáctica en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§10–11 y 21; versión identificada en la guía de exploraciones. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.\nVolver al semillero"
+  },
+  {
+    "objectID": "semillero/I003-salud.html",
+    "href": "semillero/I003-salud.html",
+    "title": "I003 · Salud como analogía",
+    "section": "",
+    "text": "Autoría: coordinador del seminario · Registro: 2026-10-09 · Versión: 0.1 · Estado: valorada.\nIdea o pregunta. Explorar la analogía de salud para explicar signos, observaciones y diagnóstico probabilístico de la condición ecosistémica.\nPor qué importa. Ofrece una entrada accesible para distinguir lo que observamos de la condición que inferimos y reconocer incertidumbre.\nEjemplo hipotético. Dos bosques tienen cobertura semejante, pero distinta regeneración. ¿Basta una señal para afirmar que su condición es equivalente?\nDos miradas. Revisor: la correspondencia es funcional, no literal. No presupone una normalidad universal, ni ausencia de deterioro cuando no hay daño visible. Diagnóstico, causa y pronóstico son preguntas distintas. Didacta: apertura de diez minutos, sin requisitos de programación. Clasificar contexto, observaciones y condición; pedir un ejemplo donde una señal admita distintas explicaciones.\nSiguiente paso propuesto. Probar la analogía al abrir el seminario y volver al vocabulario ecológico. Comprobación: el grupo explica por qué cobertura semejante no demuestra igual condición. Desarrollo: sin abrir; relacionado con I002.\nProcedencia. Tercera idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §3.4; versión en la guía de exploraciones. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.\nVolver al semillero"
+  },
+  {
+    "objectID": "semillero/index.html",
+    "href": "semillero/index.html",
+    "title": "Semillero de ideas",
+    "section": "",
+    "text": "Una pregunta basta para empezar: ¿qué propones explorar y por qué importa? Comparte tu propuesta durante el cierre de una sesión o entrégala a la coordinación como texto, usando si quieres la plantilla de ficha. Este sitio reúne las fichas; no recibe envíos mediante un formulario."
+  },
+  {
+    "objectID": "semillero/index.html#registro-de-ideas",
+    "href": "semillero/index.html#registro-de-ideas",
+    "title": "Semillero de ideas",
+    "section": "Registro de ideas",
+    "text": "Registro de ideas\nLas primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación. Sus valoraciones son provisionales y no equivalen a validación científica o aprobación del programa.\n\n\n\nID y ficha\nEstado\nSiguiente paso propuesto\nDesarrollo\n\n\n\n\nI001 · Del diagnóstico al bienestar\nValorada\nDibujar una extensión mínima después del núcleo IIE-3T.\nAún sin abrir\n\n\nI002 · Preguntas para gestionar\nValorada\nProbar la clasificación de preguntas con un caso común.\nAún sin abrir\n\n\nI003 · Salud como analogía\nValorada\nProbar una apertura de diez minutos.\nAún sin abrir\n\n\nI004 · Independencias que orientan preguntas\nValorada\nExplorar una cadena antes de abordar selección y colisionadores.\nAún sin abrir"
+  },
+  {
+    "objectID": "semillero/index.html#de-una-pregunta-a-una-exploración",
+    "href": "semillero/index.html#de-una-pregunta-a-una-exploración",
+    "title": "Semillero de ideas",
+    "section": "De una pregunta a una exploración",
+    "text": "De una pregunta a una exploración\n\nRecibir. La coordinación asigna el siguiente ID I###, registra fecha y autoría acordada y conserva la formulación original. No hace falta completar la valoración para recibir una idea.\nValorar. Antes del siguiente encuentro, aplicar los roles revisor y didacta a la misma versión: precisión conceptual principal y oportunidad de aprendizaje. Cada mirada ocupa dos o tres líneas; no se calcula una puntuación global.\nElegir. La coordinación acuerda con el grupo un siguiente paso: explorar ahora, probar una actividad, desarrollar después, solicitar aclaración o cerrar con una razón. Una recomendación de los roles no se registra como decisión docente ya tomada.\nAprender. Tras una actividad, anotar brevemente qué se observó y revisar la recomendación. Conservar fecha, versión y motivo del cambio.\n\nLos estados del registro son recibida, valorada, en prueba, en desarrollo y cerrada. Los estados describen el recorrido, no el mérito de la propuesta. Una idea puede retomarse."
+  },
+  {
+    "objectID": "semillero/index.html#una-ficha-una-página",
+    "href": "semillero/index.html#una-ficha-una-página",
+    "title": "Semillero de ideas",
+    "section": "Una ficha, una página",
+    "text": "Una ficha, una página\nLa ficha tiene seis componentes y un máximo orientativo de 300 palabras para facilitar su impresión en una página. El límite final es una página legible: si no cabe, sintetizar o abrir una exploración; no reducir la letra. No es necesario llenar el espacio. El historial extenso y las aportaciones sucesivas se conservan fuera de la ficha.\nEl espacio de exploraciones recibe lo que ya necesita desarrollo: una hipótesis contrastable, un desacuerdo importante, una actividad que probar o aportaciones que amplían la pregunta. Cada exploración enlaza sus fichas de origen y estas enlazan el desarrollo, sin borrar la idea inicial."
+  },
+  {
+    "objectID": "semillero/index.html#cómo-empezaremos",
+    "href": "semillero/index.html#cómo-empezaremos",
+    "title": "Semillero de ideas",
+    "section": "Cómo empezaremos",
+    "text": "Cómo empezaremos\nProponemos usar I003 como entrada, I002 como hilo conductor, I004 después de comprender diagnóstico y probabilidades condicionales, e I001 como ampliación. Es una secuencia adaptativa, no un compromiso de cobertura. Al cierre de cada sesión: cinco minutos para cosechar preguntas; antes de la siguiente: valorar las nuevas y seleccionar una o dos para conversar.\nLa coordinación confirmará con cada participante la autoría y el contenido que puede compartirse antes de incorporarlo al blog. Las aportaciones privadas se conservan fuera de este sitio."
+  },
+  {
+    "objectID": "exploraciones/index.html",
+    "href": "exploraciones/index.html",
+    "title": "Exploraciones en desarrollo",
+    "section": "",
+    "text": "Aquí reuniremos el desarrollo que ya no cabe en una ficha del semillero: argumentos, fuentes, discrepancias, actividades y resultados. Todavía no hay exploraciones abiertas. Las cuatro fichas iniciales están valoradas y pendientes de prueba con participantes."
+  },
+  {
+    "objectID": "exploraciones/index.html#cuándo-abrir-una-exploración",
+    "href": "exploraciones/index.html#cuándo-abrir-una-exploración",
+    "title": "Exploraciones en desarrollo",
+    "section": "Cuándo abrir una exploración",
+    "text": "Cuándo abrir una exploración\nCuando exista una hipótesis que contrastar, una discrepancia relevante, una actividad que probar o una aportación que amplíe la pregunta. La coordinación registra el motivo y asigna un ID E###; no es necesario que toda idea llegue a este espacio.\nCopiar la plantilla de desarrollo, enlazar las fichas de origen y añadir desde ellas el enlace de regreso. Una exploración puede reunir varias ideas. Si surge una pregunta distinta, abrir otra ficha y enlazarla como derivada."
+  },
+  {
+    "objectID": "exploraciones/index.html#cosechar-el-enriquecimiento",
+    "href": "exploraciones/index.html#cosechar-el-enriquecimiento",
+    "title": "Exploraciones en desarrollo",
+    "section": "Cosechar el enriquecimiento",
+    "text": "Cosechar el enriquecimiento\nRegistrar cada aportación con fecha, atribución acordada, pregunta o evidencia y efecto sobre la propuesta: la apoya, la modifica, la cuestiona o abre otra pregunta. Conservar desacuerdos y resultados desfavorables. Revisor y didacta vuelven a intervenir ante cambios sustantivos o después de una actividad; la coordinación registra la decisión, sin borrar versiones anteriores."
+  },
+  {
+    "objectID": "exploraciones/index.html#fuentes",
+    "href": "exploraciones/index.html#fuentes",
+    "title": "Exploraciones en desarrollo",
+    "section": "Fuentes",
+    "text": "Fuentes\nLas fichas iniciales se apoyan en la lectura selectiva del documento de trabajo iie-teoria.qmd del equipo, versión Git 2e3d3773b0f67a09a9f0935804ccf79d19450ca4, fecha interna 2026-07-29: §3.4 (analogía diagnóstica), §§10–11 (existencias, servicios y beneficios), §16.2 (observación e intervención) y §21 (IIE operativo y ampliaciones). No es una validación empírica de las propuestas.\nEl ejemplo climático revisado ofrece un recurso sintético para separación-d e intervención; no constituye una implementación del IIE. Las fichas conservan abierta la relación contexto–condición y distinguen las extensiones propuestas del núcleo operativo."
   }
 ]

@@ -10,6 +10,10 @@ OUTPUT = ROOT / "blog" / "_site"
 EXPECTED = {"index.html", "empieza-aqui.html", "sesiones.html", "temas.html", "reproducibilidad.html",
             "posts/01-tres-capas/index.html", "recursos/comprobacion-python.html", "recursos/comprobacion-r.html",
             "recursos/cambio-climatico.html"}
+EXPECTED.update({"semillero/index.html", "semillero/plantilla.html",
+                 "semillero/I001-socioecosistema.html", "semillero/I002-gestion.html",
+                 "semillero/I003-salud.html", "semillero/I004-independencia.html",
+                 "exploraciones/index.html", "exploraciones/plantilla.html"})
 PUBLIC_SOURCES = {"recursos/clima-modelo.R"}
 
 

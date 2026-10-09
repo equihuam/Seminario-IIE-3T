@@ -1,0 +1,5 @@
+toc: false
+format:
+  html:
+    css: ficha.css
+    body-classes: ficha-idea

@@ -1,0 +1,19 @@
+---
+title: "I004 · Independencias y gestión"
+---
+
+**Autoría:** coordinador del seminario · **Registro:** 2026-10-09 · **Versión:** 0.1 · **Estado:** valorada.
+
+**Idea o pregunta.** ¿Cómo ayudan las independencias condicionales a identificar información útil, interpretar asociaciones sorprendentes y formular mejores preguntas de gestión?
+
+**Por qué importa.** Permite examinar lo que suponemos al comparar sitios o agregar mediciones, sin convertir una asociación en una recomendación causal.
+
+**Ejemplo hipotético.** En la cadena presión → proceso → respuesta, sin otras rutas, el modelo implica independencia de presión y respuesta dado el proceso. Eso no elimina un posible efecto mediado de la presión.
+
+**Dos miradas.** **Revisor:** declarar el grafo completo y las variables condicionadas. Separación-d implica independencia bajo Markov; ausencia de arco o un contraste no significativo no la demuestran. Los arcos TAN no acreditan causalidad. **Didacta:** después de probabilidades condicionales, comparar en quince minutos la cadena antes y después de observar el proceso. Reservar colisionadores y selección para una exploración posterior.
+
+**Siguiente paso propuesto.** Preparar una actividad con la cadena. Comprobación: explicar por qué dejar de aportar información adicional no equivale a carecer de importancia para intervenir. **Desarrollo:** sin abrir; relacionado con [I002](I002-gestion.qmd).
+
+**Procedencia.** Cuarta idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito, §§16.2 y 21.21, y [ejemplo climático revisado](../recursos/cambio-climatico.qmd). Versión en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+
+[Volver al semillero](index.qmd)

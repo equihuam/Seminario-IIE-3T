@@ -41,3 +41,8 @@ La presentación v2 conserva X→Z como relación en evaluación, marcada por tr
 ## Extensión cartográfica — 2026-10-08 (P016)
 
 Presentación v3 ampliada a doce diapositivas: mapa de IIE de México 2018 y plates anidados por zona/clase y píxel. Incluye contexto compartido, señales locales y parámetros globales, con pregunta oral en notas. Se conserva el debate X→Z como hipótesis abierta. Es un puente didáctico con el procedimiento descrito por el equipo, no una auditoría de la implementación operativa.
+
+
+## Semillero piloto — 2026-10-09 (P025–P027)
+
+Implementados el registro, cuatro fichas valoradas I001–I004, plantilla de una página y espacio de exploraciones con plantilla y registro de aportaciones. Pendiente: primera prueba con participantes y decisión docente sobre qué desarrollar. Propuesta de secuencia: I003 como entrada, I002 como hilo conductor, I004 tras diagnóstico y probabilidades, I001 como ampliación. No reemplaza el programa adaptativo.

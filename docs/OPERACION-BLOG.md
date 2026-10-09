@@ -41,3 +41,16 @@ Referencias: [configuración de Netlify](https://docs.netlify.com/build/configur
 Actualizar la versión y describir cambios relevantes en la entrada afectada. Git conserva la historia de fuentes; identificar el commit del material utilizado en cada sesión. Guardar preguntas agregadas del grupo y motivos de adaptación en la bitácora del proyecto, sin copiar allí los prompts completos.
 
 Referencias de configuración: [Quarto Blog](https://quarto.org/docs/websites/website-blog.html), [entornos virtuales](https://quarto.org/docs/projects/virtual-environments.html) y [renv](https://rstudio.github.io/renv/articles/renv.html), consultadas el 2026-10-08.
+
+
+## Semillero y exploraciones — piloto 2026-10-09
+
+El registro único es blog/semillero/index.qmd. Para recibir una idea, copiar blog/semillero/plantilla.qmd a I###-tema.qmd, asignando el siguiente ID libre sin reutilizar números, y añadir una fila al registro. Capturar idea y motivación basta; no inventar revisiones faltantes. El blog es estático: la coordinación recibe propuestas en sesión o como texto y las incorpora, no existe formulario de envío.
+
+Conservar la formulación original y la atribución acordada. Si se edita para difusión, mantener el original en un registro autorizado fuera de blog (private/ para aportaciones restringidas); no publicar datos personales no acordados. Las cuatro fichas iniciales remiten a P024 en el registro interno; los ID I001–I004 siguen el orden de las cuatro ideas originales.
+
+Antes del siguiente encuentro, aplicar revisor y didacta a cada nueva ficha, con fecha y responsable. La coordinación distingue su decisión de las recomendaciones de los roles. Estados: recibida, valorada, en prueba, en desarrollo, cerrada. Actualizar estado y siguiente paso tanto en ficha como en índice. Conservar una nota breve del último cambio; el historial extenso pasa a la exploración y las versiones se conservan en Git.
+
+Si surge una hipótesis, discrepancia, actividad o ampliación sustantiva, copiar blog/exploraciones/plantilla.qmd a E###-tema.qmd; añadirla al índice de exploraciones y enlazarla desde todas sus fichas de origen. Registrar aportaciones con fecha, autoría, evidencia y efecto sobre la propuesta. Nuevas preguntas pueden originar nuevas fichas. Repetir ambas valoraciones tras cambios sustantivos o una actividad. No abrir desarrollos vacíos solo para cambiar el estado.
+
+Las fichas usan ficha.css para impresión A4 con márgenes de 16 mm y letra de 11 puntos. Máximo una página; hasta 300 palabras es una referencia, no garantía geométrica. Comprobar vista de impresión; sintetizar si desborda, sin reducir tipografía. No aplicar el límite a índices ni exploraciones. Añadir nuevas páginas a EXPECTED en scripts/check_site.py; ejecutar blog("check") y revisar enlaces, atribución y contenido antes de publicar.

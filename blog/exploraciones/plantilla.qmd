@@ -1,0 +1,37 @@
+---
+title: "E___ · Título de la exploración"
+---
+
+**Plantilla sin completar.** Autoría y colaboradores: [atribución acordada]. Fecha: [registro]. Versión: [número]. Estado: [abierta/en prueba/cerrada]. Fichas de origen: [ID y enlace].
+
+## Pregunta y motivo de apertura
+
+[Qué se desarrollará y por qué ya no cabe en la ficha.]
+
+## Propuesta y sustento
+
+[Distinguir fuente, hipótesis y simplificación didáctica; registrar supuestos y alternativas.]
+
+## Aportaciones y preguntas derivadas
+
+| Fecha y autoría | Aportación o evidencia | Efecto sobre la propuesta | Idea derivada |
+| --- | --- | --- | --- |
+| [Completar] | [Completar] | [Apoya/modifica/cuestiona/abre pregunta] | [ID y enlace, si existe] |
+
+## Actividad o contraste
+
+[Objetivo, participantes/prerrequisitos, duración, instrucciones y evidencia esperada. Después registrar resultados observados y límites; no sustituirlos por expectativas.]
+
+## Valoración y decisión
+
+**Revisor, responsable y fecha:** [hallazgos y cuestiones abiertas].
+
+**Didacta, responsable y fecha:** [aprendizaje, dificultades y adaptación].
+
+**Decisión docente, responsable y fecha:** [acción, motivo y siguiente revisión].
+
+## Fuentes e historia de cambios
+
+[Fuentes con sección/versión; fecha, autoría y motivo de cambios. Conservar aportaciones originales y resultados desfavorables.]
+
+[Volver a exploraciones](index.qmd) · [Semillero](../semillero/index.qmd)

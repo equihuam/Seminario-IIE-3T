@@ -173,6 +173,10 @@ window.Quarto = {
 <span class="menu-text">Temas</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../semillero/index.html"> 
+<span class="menu-text">Semillero</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../reproducibilidad.html"> 
 <span class="menu-text">Reproducibilidad</span></a>
   </li>  
@@ -303,7 +307,7 @@ window.Quarto = {
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">a_dagitty</span>(red)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">modelstring</span>(bnlearn<span class="sc">::</span><span class="fu">bn.net</span>(red))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "[aCC][B][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]"</code></pre>
+<pre><code>[1] "[B][aCC][E|aCC][P|B][U|B][Eco|E:U][N|Eco:P][X|Eco]"</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -500,7 +504,7 @@ p(E\mid Eco=natural)=\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\approx0.839576.
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">cpquery</span>(red, <span class="at">event =</span> (E <span class="sc">==</span> <span class="st">"presente"</span>),</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">evidence =</span> (Eco <span class="sc">==</span> <span class="st">"natural"</span>), <span class="at">n =</span> <span class="dv">200000</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.8433514</code></pre>
+<pre><code>[1] 0.8365963</code></pre>
 </div>
 </div>
 </section>
@@ -514,8 +518,8 @@ p(E\mid Eco=natural)=\frac{0.9896(1-0.945)}{1-0.9896(0.945)}\approx0.839576.
 <div class="cell-output cell-output-stdout">
 <pre><code>          aCC
 E             presente     ausente
-  presente 0.990680406 0.968292683
-  ausente  0.009319594 0.031707317</code></pre>
+  presente 0.991195318 0.920765027
+  ausente  0.008804682 0.079234973</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>bnlearn<span class="sc">::</span><span class="fu">ci.test</span>(<span class="st">"E"</span>, <span class="st">"U"</span>, <span class="at">data =</span> datos, <span class="at">test =</span> <span class="st">"mi"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -523,7 +527,7 @@ E             presente     ausente
     Mutual Information (disc.)
 
 data:  E ~ U  
-mi = 0.00085258, df = 1, p-value = 0.9767
+mi = 0.23647, df = 1, p-value = 0.6268
 alternative hypothesis: true value is greater than 0</code></pre>
 </div>
 </div>
@@ -569,9 +573,8 @@ Matrix products: default
   LAPACK version 3.12.1
 
 locale:
-[1] LC_COLLATE=Spanish_Mexico.utf8  LC_CTYPE=Spanish_Mexico.utf8   
-[3] LC_MONETARY=Spanish_Mexico.utf8 LC_NUMERIC=C                   
-[5] LC_TIME=Spanish_Mexico.utf8    
+[1] C
+system code page: 65001
 
 time zone: America/Mexico_City
 tzcode source: internal
@@ -580,12 +583,12 @@ attached base packages:
 [1] stats     graphics  grDevices datasets  utils     methods   base     
 
 loaded via a namespace (and not attached):
- [1] digest_0.6.39     fastmap_1.2.0     xfun_0.61         knitr_1.52       
- [5] parallel_4.6.0    bnlearn_5.2.1     htmltools_0.5.9   rmarkdown_2.32   
- [9] cli_3.6.6         dagitty_0.3-4     renv_1.2.3        compiler_4.6.0   
-[13] boot_1.3-32       rstudioapi_0.19.0 tools_4.6.0       curl_8.0.0       
-[17] evaluate_1.0.5    Rcpp_1.1.2        yaml_2.3.12       V8_8.2.0         
-[21] rlang_1.3.0       jsonlite_2.0.0    MASS_7.3-65      </code></pre>
+ [1] digest_0.6.39   fastmap_1.2.0   xfun_0.61       knitr_1.52     
+ [5] parallel_4.6.0  bnlearn_5.2.1   htmltools_0.5.9 rmarkdown_2.32 
+ [9] cli_3.6.6       dagitty_0.3-4   renv_1.2.3      compiler_4.6.0 
+[13] boot_1.3-32     tools_4.6.0     curl_8.0.0      evaluate_1.0.5 
+[17] Rcpp_1.1.2      yaml_2.3.12     rlang_1.3.0     jsonlite_2.0.0 
+[21] V8_8.2.0        MASS_7.3-65    </code></pre>
 </div>
 </div>
 

@@ -36,6 +36,7 @@ Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprend
 Partimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.
 
 - [Sesiones](sesiones.qmd): encuentros y materiales en orden de incorporación.
+- [Semillero de ideas](semillero/index.qmd): propuestas breves, valoración y exploraciones.
 - [Catálogo temático](temas.qmd): conceptos, guías y prácticas por tema.
 - [Reproducibilidad](reproducibilidad.qmd): cómo documentamos y comprobamos lo que hacemos.
 

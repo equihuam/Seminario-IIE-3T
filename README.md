@@ -78,3 +78,8 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 Las copias locales de las dos fuentes ya fueron consultadas de forma selectiva para fundamentar esta configuración. El blog local contiene la propuesta de apertura, comprobaciones de ejecución R/Python y un [ejemplo climático sintético en R](blog/recursos/cambio-climatico.qmd), recuperado con `bnlearn` y `dagitty`. Su [revisión conceptual](docs/REVISION-CONCEPTUAL-CLIMA.md) distingue supuestos, evidencia, intervención y dinámica. El programa detallado, la duración, el perfil de participantes, los datos y la variante operacional del IIE siguen pendientes. La plantilla para participantes continúa siendo documental; todavía no contiene una implementación de red bayesiana. La configuración de entornos actual pertenece al proyecto del seminario.
 
 Todo el trabajo de este proyecto se mantiene en `Seminario-IIE-3T/`. Las carpetas hermanas pertenecen a otros proyectos.
+
+
+## Semillero de ideas
+
+Entrada y registro en [blog/semillero/index.qmd](blog/semillero/index.qmd). Cuatro fichas iniciales, plantilla de una página y valoración rutinaria por revisor y didacta. El [espacio de exploraciones](blog/exploraciones/index.qmd) conserva desarrollos y aportaciones vinculados. Protocolo editorial en [docs/OPERACION-BLOG.md](docs/OPERACION-BLOG.md).
