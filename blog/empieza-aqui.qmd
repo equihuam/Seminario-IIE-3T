@@ -1,29 +1,60 @@
 ---
 title: "Empieza aquí"
-description: "Un primer recorrido desde el ecosistema hacia su representación probabilística."
+description: "De la salud de los ecosistemas y el pensamiento sistémico al diagnóstico con redes bayesianas."
 ---
 
-## Primero, una pregunta ecológica
+## Más allá de la apariencia: la metáfora de la salud
 
-Dos sitios muestran poca cobertura vegetal. ¿Significa lo mismo en ambos? Antes de atribuirlo a deterioro necesitamos conocer su contexto, las características medidas y cómo se obtuvieron. La condición del ecosistema requiere un diagnóstico apoyado en esa evidencia.
+Cuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa: un atleta con gran masa muscular obtenida mediante sustancias nocivas puede lucir vigoroso y, sin embargo, esconder un daño funcional severo; en contraste, un cuerpo común bajo análisis clínicos puede revelar un estado óptimo. Con los ecosistemas ocurre lo mismo: un campo de golf verde, podado y fumigado parece impecable a simple vista, pero ha perdido la mayor parte de sus funciones ecológicas y su diversidad biológica nativa.
 
-## El modelo iie-3t
+La **integridad ecosistémica** funciona como la salud en un organismo vivo (en el sentido de Lynn Margulis y el enfoque de Ecosalud): no es un atributo directamente observable a simple vista ni un número aislado, sino una condición sistémica de **autoorganización, regulación interna y persistencia de las funciones vitales**. Para evaluarla, necesitamos superar la primera impresión y realizar un verdadero **diagnóstico**.
 
-El modelo del equipo organiza el problema en tres capas: **contextual**, **de detección** y **latente**. Estructura, composición y función ayudan a describir los atributos del ecosistema; no son los nombres de las tres capas.
+## Pensamiento sistémico: el ecosistema como un todo
+
+Como nos enseñaron Donella Meadows, Jay Forrester y John Sterman, un sistema no es una simple suma de componentes aislados, sino una red de interconexiones donde alterar un elemento repercute en los demás.
+
+Piensa en una **pecera casera**: para mantenerla viva no basta con alimentar a los peces; es indispensable vigilar el pH, la oxigenación, la temperatura, el ciclo de los desechos, el papel de las plantas y los descomponedores. Gestionar la pecera es gestionar la integridad de un sistema en equilibrio dinámico. Si aislamos una sola variable, el diagnóstico y el manejo fracasan.
+
+## El modelo iie-3t: ordenar el diagnóstico en tres capas
+
+Para llevar este pensamiento sistémico a una evaluación estructurada y reproducible, el equipo organiza el problema en tres capas analíticas:
+
+| Capa | Papel en el diagnóstico | Análogo clínico y sistémico |
+| --- | --- | --- |
+| **Contextual** | Describe condiciones fisicoquímicas, climáticas y de relieve. | Ambiente, edad, antecedentes e historia clínica. |
+| **Detección** | Reúne señales, sensores, imágenes de satélite y muestreos. | Signos vitales, análisis de laboratorio y biomarcadores. |
+| **Latente** | Representa la condición o integridad que buscamos inferir. | El estado de salud integral no observable directamente. |
 
 ![Esquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.](img/Modelo%20de%20tres%20capas.svg){fig-alt="Modelo de tres capas: las condiciones del contexto permiten interpretar atributos medibles de estructura, composición y función para inferir la condición ecosistémica."}
 
-| Capa | Papel en el diagnóstico |
-| --- | --- |
-| Contextual | Describe condiciones fisicoquímicas y biogeográficas que ayudan a interpretar los atributos. |
-| Detección | Reúne señales y mediciones, con sus métodos y errores. |
-| Latente | Representa la condición que buscamos inferir, sin observarla directamente de manera exhaustiva. |
+Estructura, composición y función ayudan a describir los atributos del ecosistema dentro de la capa de detección; no son los nombres de las tres capas.
 
-## Del esquema a una red
+## Del esquema a la red bayesiana: modelar la conjunta
 
-Elegimos variables, justificamos relaciones y preguntamos qué señales esperaríamos bajo diferentes condiciones. Esa descripción evoca un modelo gráfico: los nodos representan variables y los arcos expresan dependencias propuestas.
+¿Cómo formalizamos este pensamiento sistémico para razonar con datos y bajo incertidumbre?
 
-Para convertirlo en una **red bayesiana** necesitamos precisar una estructura sin ciclos dirigidos y sus distribuciones de probabilidad. El dibujo inicia la discusión; los supuestos y la evidencia sostienen el modelo. Una flecha no prueba por sí misma una relación causal.
+1. **Grafos Acíclicos Dirigidos (DAG):** Representamos los componentes del sistema como nodos y sus relaciones de dependencia como arcos dirigidos sin ciclos cerrados. El DAG hace explícitos nuestros supuestos ecológicos.
+2. **La distribución conjunta del sistema:** En lugar de tratar cada indicador por separado, una red bayesiana modela la **distribución de probabilidad conjunta** de todas las variables. Gracias a la estructura del DAG, esta distribución se descompone en factores locales manejables:
+   $$P(X_1, X_2, \dots, X_n) = \prod_{i=1}^n P(X_i \mid \text{padres}(X_i))$$
+3. **Inferencia y diagnóstico:** Al ingresar observaciones concretas (detección) en un entorno específico (contexto), la red propaga la evidencia probabilística para actualizar la distribución posterior de la **condición latente**.
+
+::: {.callout-note collapse="true"}
+#### Breve intuición: ¿Qué significa "razonar a la manera bayesiana"?
+
+En el día a día, un médico o un ecólogo no esperan certezas absolutas, sino que actualizan su juicio conforme obtienen nueva información:
+
+* **Antes de medir (*a priori*):** Es el conocimiento previo o la sospecha inicial sobre el ecosistema a partir de su contexto y su historia.
+* **Al observar (*evidencia*):** Son las señales concretas que captan nuestros instrumentos (imágenes de satélite, conteos en campo, sensores).
+* **Después de medir (*a posteriori*):** Es el **diagnóstico actualizado**. La probabilidad *a posteriori* nos dice qué tan verosímil es que el ecosistema se encuentre en excelente condición o degradado, considerando simultáneamente el contexto inicial y las evidencias observadas.
+
+La red bayesiana no adivina el futuro: formaliza matemáticamente este proceso de aprendizaje continuo reconociendo que nuestras observaciones siempre contienen incertidumbre.
+:::
+
+### ¿Y qué ocurre con los ciclos de retroalimentación?
+
+En el pensamiento sistémico tradicional (Forrester, Sterman, Meadows), los sistemas vivos operan con bucles continuos de retroalimentación. En una red bayesiana de diagnóstico evaluamos un momento dado en el tiempo, por lo que el grafo debe ser acíclico (DAG) para permitir el cálculo exacto de probabilidades.
+
+Sin embargo, la retroalimentación se recupera de manera natural cuando introducimos la dimensión temporal: las **Redes Bayesianas Dinámicas (DBN)** conectan el estado del sistema en $t_0$ con su evolución en $t_1$. Así, las influencias mutuas se despliegan como una secuencia temporal rigurosa ($t_0 \to t_1 \to t_2 \dots$), permitiendo evaluar procesos de degradación, persistencia o recuperación ante perturbaciones.
 
 ## Una primera práctica
 
@@ -33,4 +64,7 @@ Consulta la [sesión de apertura](posts/01-tres-capas/index.qmd). No requiere pr
 
 Introduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.
 
-**Procedencia:** esquema original del equipo y manuscrito de trabajo *Modelo de tres capas para la integridad ecosistémica*, secciones 3–5 y 21. Texto didáctico preparado con asistencia de IA; sujeto a revisión docente. Versión 0.1, 2026-10-08.
+**Procedencia y referencias:** 
+- Esquema original del equipo y manuscrito de trabajo *Modelo de tres capas para la integridad ecosistémica*, secciones 3–5 y 21.
+- Equihua, M., Maqueo, O., Equihua, J. et al. *Integridad ecosistémica: el tejido de la vida y la salud*, Colección Ecosalud, UNAM.
+- Conceptos de dinámica de sistemas inspirados en J. Forrester, D. Meadows, P. Senge y la visión simbiótica de L. Margulis.

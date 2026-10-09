@@ -175,3 +175,13 @@ Verificación: scripts/site.py check terminó con código 0; renv y dependencias
 Fecha de registro: 2026-10-09. Prompt: P028.
 
 Se prepara el hito del semillero con sus fuentes, pautas, registro y HTML generado. Verificación previa: 17 páginas, enlaces y límites de publicación correctos; las comprobaciones completas y visuales constan en B021. Tras fetch, main y origin/main coinciden en 218850f. Se revisaron los cambios de salida: navegación nueva y resultados regenerados de los ejemplos, con variación de simulación y advertencias regionales ya conocidas; no se modificaron sus fuentes científicas. PROMPTS y productos privados de QA permanecen excluidos. Se ejecutará el control del índice antes del commit y un push normal a origin/main; la confirmación final de Git se comunicará en la conversación.
+
+## B023 — Reestructuración de 'Empieza aquí': salud ecosistémica, pensamiento sistémico, DAGs y DBNs
+
+Fecha de registro: 2026-10-09. Prompts: P030–P035.
+
+Se reestructura la página inicial `blog/empieza-aqui.qmd` incorporando la metáfora de salud e integridad ecosistémica (enfoque de Ecosalud / Margulis / Equihua et al., analogías del atleta/campo de golf y de la pecera), los fundamentos de pensamiento sistémico (Forrester, Sterman, Senge, Meadows), el modelo iie-3t estructurado en tres capas analíticas y la formalización en grafos acíclicos dirigidos (DAG) para descomponer la distribución de probabilidad conjunta del sistema. Se aborda la aparente tensión con los ciclos de retroalimentación explicando su desdoblamiento temporal natural en Redes Bayesianas Dinámicas (DBN / $t_0 \to t_1$). Se incluye un recuadro colapsado con la intuición cualitativa del razonamiento bayesiano (*a priori*, evidencia, *a posteriori*) orientado a participantes sin formación numérica formal. Se acota el concepto de resiliencia como persistencia/transición temporal, reservándolo para modelos dinámicos y evitando la ambigüedad terminológica en la portada.
+
+Verificación ejecutada: `scripts/site.py check` completó la sincronización de dependencias (`renv` y `.venv`), la renderización completa de las 17 páginas del blog con ejecución de código R y Python, comprobación de enlaces y límites de publicación. Pruebas unitarias de política del repositorio (`test_repo_policy.py`) y pruebas del caso climático (`test-clima.R`) superadas con código 0.
+
+

@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Un primer recorrido desde el ecosistema hacia su representación probabilística.">
+<meta name="description" content="De la salud de los ecosistemas y el pensamiento sistémico al diagnóstico con redes bayesianas.">
 
 <title>Empieza aquí – iie-3t · Seminario</title>
 <style>
@@ -75,6 +75,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -132,9 +161,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#primero-una-pregunta-ecológica" id="toc-primero-una-pregunta-ecológica" class="nav-link active" data-scroll-target="#primero-una-pregunta-ecológica">Primero, una pregunta ecológica</a></li>
-  <li><a href="#el-modelo-iie-3t" id="toc-el-modelo-iie-3t" class="nav-link" data-scroll-target="#el-modelo-iie-3t">El modelo iie-3t</a></li>
-  <li><a href="#del-esquema-a-una-red" id="toc-del-esquema-a-una-red" class="nav-link" data-scroll-target="#del-esquema-a-una-red">Del esquema a una red</a></li>
+  <li><a href="#más-allá-de-la-apariencia-la-metáfora-de-la-salud" id="toc-más-allá-de-la-apariencia-la-metáfora-de-la-salud" class="nav-link active" data-scroll-target="#más-allá-de-la-apariencia-la-metáfora-de-la-salud">Más allá de la apariencia: la metáfora de la salud</a></li>
+  <li><a href="#pensamiento-sistémico-el-ecosistema-como-un-todo" id="toc-pensamiento-sistémico-el-ecosistema-como-un-todo" class="nav-link" data-scroll-target="#pensamiento-sistémico-el-ecosistema-como-un-todo">Pensamiento sistémico: el ecosistema como un todo</a></li>
+  <li><a href="#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas" id="toc-el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas" class="nav-link" data-scroll-target="#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas">El modelo iie-3t: ordenar el diagnóstico en tres capas</a></li>
+  <li><a href="#del-esquema-a-la-red-bayesiana-modelar-la-conjunta" id="toc-del-esquema-a-la-red-bayesiana-modelar-la-conjunta" class="nav-link" data-scroll-target="#del-esquema-a-la-red-bayesiana-modelar-la-conjunta">Del esquema a la red bayesiana: modelar la conjunta</a>
+  <ul class="collapse">
+  <li><a href="#y-qué-ocurre-con-los-ciclos-de-retroalimentación" id="toc-y-qué-ocurre-con-los-ciclos-de-retroalimentación" class="nav-link" data-scroll-target="#y-qué-ocurre-con-los-ciclos-de-retroalimentación">¿Y qué ocurre con los ciclos de retroalimentación?</a></li>
+  </ul></li>
   <li><a href="#una-primera-práctica" id="toc-una-primera-práctica" class="nav-link" data-scroll-target="#una-primera-práctica">Una primera práctica</a></li>
   <li><a href="#cómo-crecerá-el-recorrido" id="toc-cómo-crecerá-el-recorrido" class="nav-link" data-scroll-target="#cómo-crecerá-el-recorrido">Cómo crecerá el recorrido</a></li>
   </ul>
@@ -150,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Un primer recorrido desde el ecosistema hacia su representación probabilística.
+    De la salud de los ecosistemas y el pensamiento sistémico al diagnóstico con redes bayesianas.
   </div>
 </div>
 
@@ -167,50 +200,93 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="primero-una-pregunta-ecológica" class="level2">
-<h2 class="anchored" data-anchor-id="primero-una-pregunta-ecológica">Primero, una pregunta ecológica</h2>
-<p>Dos sitios muestran poca cobertura vegetal. ¿Significa lo mismo en ambos? Antes de atribuirlo a deterioro necesitamos conocer su contexto, las características medidas y cómo se obtuvieron. La condición del ecosistema requiere un diagnóstico apoyado en esa evidencia.</p>
+<section id="más-allá-de-la-apariencia-la-metáfora-de-la-salud" class="level2">
+<h2 class="anchored" data-anchor-id="más-allá-de-la-apariencia-la-metáfora-de-la-salud">Más allá de la apariencia: la metáfora de la salud</h2>
+<p>Cuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa: un atleta con gran masa muscular obtenida mediante sustancias nocivas puede lucir vigoroso y, sin embargo, esconder un daño funcional severo; en contraste, un cuerpo común bajo análisis clínicos puede revelar un estado óptimo. Con los ecosistemas ocurre lo mismo: un campo de golf verde, podado y fumigado parece impecable a simple vista, pero ha perdido la mayor parte de sus funciones ecológicas y su diversidad biológica nativa.</p>
+<p>La <strong>integridad ecosistémica</strong> funciona como la salud en un organismo vivo (en el sentido de Lynn Margulis y el enfoque de Ecosalud): no es un atributo directamente observable a simple vista ni un número aislado, sino una condición sistémica de <strong>autoorganización, regulación interna y persistencia de las funciones vitales</strong>. Para evaluarla, necesitamos superar la primera impresión y realizar un verdadero <strong>diagnóstico</strong>.</p>
 </section>
-<section id="el-modelo-iie-3t" class="level2">
-<h2 class="anchored" data-anchor-id="el-modelo-iie-3t">El modelo iie-3t</h2>
-<p>El modelo del equipo organiza el problema en tres capas: <strong>contextual</strong>, <strong>de detección</strong> y <strong>latente</strong>. Estructura, composición y función ayudan a describir los atributos del ecosistema; no son los nombres de las tres capas.</p>
+<section id="pensamiento-sistémico-el-ecosistema-como-un-todo" class="level2">
+<h2 class="anchored" data-anchor-id="pensamiento-sistémico-el-ecosistema-como-un-todo">Pensamiento sistémico: el ecosistema como un todo</h2>
+<p>Como nos enseñaron Donella Meadows, Jay Forrester y John Sterman, un sistema no es una simple suma de componentes aislados, sino una red de interconexiones donde alterar un elemento repercute en los demás.</p>
+<p>Piensa en una <strong>pecera casera</strong>: para mantenerla viva no basta con alimentar a los peces; es indispensable vigilar el pH, la oxigenación, la temperatura, el ciclo de los desechos, el papel de las plantas y los descomponedores. Gestionar la pecera es gestionar la integridad de un sistema en equilibrio dinámico. Si aislamos una sola variable, el diagnóstico y el manejo fracasan.</p>
+</section>
+<section id="el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas" class="level2">
+<h2 class="anchored" data-anchor-id="el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas">El modelo iie-3t: ordenar el diagnóstico en tres capas</h2>
+<p>Para llevar este pensamiento sistémico a una evaluación estructurada y reproducible, el equipo organiza el problema en tres capas analíticas:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capa</th>
+<th>Papel en el diagnóstico</th>
+<th>Análogo clínico y sistémico</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Contextual</strong></td>
+<td>Describe condiciones fisicoquímicas, climáticas y de relieve.</td>
+<td>Ambiente, edad, antecedentes e historia clínica.</td>
+</tr>
+<tr class="even">
+<td><strong>Detección</strong></td>
+<td>Reúne señales, sensores, imágenes de satélite y muestreos.</td>
+<td>Signos vitales, análisis de laboratorio y biomarcadores.</td>
+</tr>
+<tr class="odd">
+<td><strong>Latente</strong></td>
+<td>Representa la condición o integridad que buscamos inferir.</td>
+<td>El estado de salud integral no observable directamente.</td>
+</tr>
+</tbody>
+</table>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/Modelo de tres capas.svg" class="img-fluid figure-img" alt="Modelo de tres capas: las condiciones del contexto permiten interpretar atributos medibles de estructura, composición y función para inferir la condición ecosistémica."></p>
 <figcaption>Esquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.</figcaption>
 </figure>
 </div>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Capa</th>
-<th>Papel en el diagnóstico</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Contextual</td>
-<td>Describe condiciones fisicoquímicas y biogeográficas que ayudan a interpretar los atributos.</td>
-</tr>
-<tr class="even">
-<td>Detección</td>
-<td>Reúne señales y mediciones, con sus métodos y errores.</td>
-</tr>
-<tr class="odd">
-<td>Latente</td>
-<td>Representa la condición que buscamos inferir, sin observarla directamente de manera exhaustiva.</td>
-</tr>
-</tbody>
-</table>
+<p>Estructura, composición y función ayudan a describir los atributos del ecosistema dentro de la capa de detección; no son los nombres de las tres capas.</p>
 </section>
-<section id="del-esquema-a-una-red" class="level2">
-<h2 class="anchored" data-anchor-id="del-esquema-a-una-red">Del esquema a una red</h2>
-<p>Elegimos variables, justificamos relaciones y preguntamos qué señales esperaríamos bajo diferentes condiciones. Esa descripción evoca un modelo gráfico: los nodos representan variables y los arcos expresan dependencias propuestas.</p>
-<p>Para convertirlo en una <strong>red bayesiana</strong> necesitamos precisar una estructura sin ciclos dirigidos y sus distribuciones de probabilidad. El dibujo inicia la discusión; los supuestos y la evidencia sostienen el modelo. Una flecha no prueba por sí misma una relación causal.</p>
+<section id="del-esquema-a-la-red-bayesiana-modelar-la-conjunta" class="level2">
+<h2 class="anchored" data-anchor-id="del-esquema-a-la-red-bayesiana-modelar-la-conjunta">Del esquema a la red bayesiana: modelar la conjunta</h2>
+<p>¿Cómo formalizamos este pensamiento sistémico para razonar con datos y bajo incertidumbre?</p>
+<ol type="1">
+<li><strong>Grafos Acíclicos Dirigidos (DAG):</strong> Representamos los componentes del sistema como nodos y sus relaciones de dependencia como arcos dirigidos sin ciclos cerrados. El DAG hace explícitos nuestros supuestos ecológicos.</li>
+<li><strong>La distribución conjunta del sistema:</strong> En lugar de tratar cada indicador por separado, una red bayesiana modela la <strong>distribución de probabilidad conjunta</strong> de todas las variables. Gracias a la estructura del DAG, esta distribución se descompone en factores locales manejables: <span class="math display">\[P(X_1, X_2, \dots, X_n) = \prod_{i=1}^n P(X_i \mid \text{padres}(X_i))\]</span></li>
+<li><strong>Inferencia y diagnóstico:</strong> Al ingresar observaciones concretas (detección) en un entorno específico (contexto), la red propaga la evidencia probabilística para actualizar la distribución posterior de la <strong>condición latente</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Breve intuición: ¿Qué significa “razonar a la manera bayesiana”?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>En el día a día, un médico o un ecólogo no esperan certezas absolutas, sino que actualizan su juicio conforme obtienen nueva información:</p>
+<ul>
+<li><strong>Antes de medir (<em>a priori</em>):</strong> Es el conocimiento previo o la sospecha inicial sobre el ecosistema a partir de su contexto y su historia.</li>
+<li><strong>Al observar (<em>evidencia</em>):</strong> Son las señales concretas que captan nuestros instrumentos (imágenes de satélite, conteos en campo, sensores).</li>
+<li><strong>Después de medir (<em>a posteriori</em>):</strong> Es el <strong>diagnóstico actualizado</strong>. La probabilidad <em>a posteriori</em> nos dice qué tan verosímil es que el ecosistema se encuentre en excelente condición o degradado, considerando simultáneamente el contexto inicial y las evidencias observadas.</li>
+</ul>
+<p>La red bayesiana no adivina el futuro: formaliza matemáticamente este proceso de aprendizaje continuo reconociendo que nuestras observaciones siempre contienen incertidumbre.</p>
+</div>
+</div>
+</div>
+<section id="y-qué-ocurre-con-los-ciclos-de-retroalimentación" class="level3">
+<h3 class="anchored" data-anchor-id="y-qué-ocurre-con-los-ciclos-de-retroalimentación">¿Y qué ocurre con los ciclos de retroalimentación?</h3>
+<p>En el pensamiento sistémico tradicional (Forrester, Sterman, Meadows), los sistemas vivos operan con bucles continuos de retroalimentación. En una red bayesiana de diagnóstico evaluamos un momento dado en el tiempo, por lo que el grafo debe ser acíclico (DAG) para permitir el cálculo exacto de probabilidades.</p>
+<p>Sin embargo, la retroalimentación se recupera de manera natural cuando introducimos la dimensión temporal: las <strong>Redes Bayesianas Dinámicas (DBN)</strong> conectan el estado del sistema en <span class="math inline">\(t_0\)</span> con su evolución en <span class="math inline">\(t_1\)</span>. Así, las influencias mutuas se despliegan como una secuencia temporal rigurosa (<span class="math inline">\(t_0 \to t_1 \to t_2 \dots\)</span>), permitiendo evaluar procesos de degradación, persistencia o recuperación ante perturbaciones.</p>
+</section>
 </section>
 <section id="una-primera-práctica" class="level2">
 <h2 class="anchored" data-anchor-id="una-primera-práctica">Una primera práctica</h2>
@@ -219,7 +295,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="cómo-crecerá-el-recorrido" class="level2">
 <h2 class="anchored" data-anchor-id="cómo-crecerá-el-recorrido">Cómo crecerá el recorrido</h2>
 <p>Introduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.</p>
-<p><strong>Procedencia:</strong> esquema original del equipo y manuscrito de trabajo <em>Modelo de tres capas para la integridad ecosistémica</em>, secciones 3–5 y 21. Texto didáctico preparado con asistencia de IA; sujeto a revisión docente. Versión 0.1, 2026-10-08.</p>
+<p><strong>Procedencia y referencias:</strong> - Esquema original del equipo y manuscrito de trabajo <em>Modelo de tres capas para la integridad ecosistémica</em>, secciones 3–5 y 21. - Equihua, M., Maqueo, O., Equihua, J. et al.&nbsp;<em>Integridad ecosistémica: el tejido de la vida y la salud</em>, Colección Ecosalud, UNAM. - Conceptos de dinámica de sistemas inspirados en J. Forrester, D. Meadows, P. Senge y la visión simbiótica de L. Margulis.</p>
 
 
 </section>
