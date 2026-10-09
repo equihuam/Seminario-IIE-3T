@@ -219,6 +219,17 @@ Se generan y preservan versiones en español de las cuatro ilustraciones cientí
 
 Se actualiza `presentaciones/generar-presentacion-v4.py` para integrar estas figuras en español en `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`, conservando las versiones originales. Verificación: `presentaciones/verificar-v4.py` completado con código 0 (14 diapositivas, 4 figuras, 1 tabla CPT, 14 notas de orador).
 
+## B027 — Incorporación de arcos vectoriales y tipografía matemática estilizada
+
+Fecha de registro: 2026-10-09. Prompt: P044 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se perfeccionan los diagramas y expresiones matemáticas del deck v4:
+1. **Conectores y arcos en grafos (Diapositivas 5, 9 y 11):** Se implementa la función `add_arrow()` con DrawingML para trazar 11 conectores vectoriales con puntas triangulares; se distinguen 8 arcos sólidos de dependencia y 3 arcos discontinuos de hipótesis en evaluación ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$).
+2. **Cajas matemáticas estructuradas (Diapositivas 6 y 8):** Se encuadran las fórmulas de factorización del DAG y el Teorema de Bayes en tarjetas visuales dedicadas con tipografía `Cambria Math`, márgenes exactos y estructura de fracción clara, eliminando desbordamientos de texto.
+
+Verificación: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes, 88 formas, 11 conectores (3 discontinuos), tabla CPT y 14 notas con código 0.
+
+
 
 
 

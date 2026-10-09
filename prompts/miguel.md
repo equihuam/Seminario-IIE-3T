@@ -148,6 +148,16 @@ Sí, me parece bien. Adelante
 Me gustaron mucho las ilustraciones, quiero conservarlas como estan, pero tener una versión de ellas con los textos en español y ponerlas en ese idioma en el pptx.
 ```
 
+## P044 — Corrección de arcos en diagramas y ajuste de formato de ecuaciones
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+El trabajo del ilustrador quedó muy bien con esas ilustraciones artísticas. En las otras noto que, en casi todas, faltan los arcos necesarios. También veo las ecuaciones algo desbordadas. Quizás convenga ponerlas en formato de ecuación windows/latex. para mejor control gráfico.
+```
+
+
 
 
 

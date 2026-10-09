@@ -1,18 +1,23 @@
-"""Generador de la presentación v4 del Seminario IIE-3T con python-pptx."""
+"""Generador de la presentación v4 del Seminario IIE-3T con python-pptx.
+
+Incluye ilustraciones científicas en español, conectores vectoriales (arcos sólidos y discontinuos)
+en todos los grafos y cajas matemáticas estilizadas para las ecuaciones probabilísticas.
+"""
 from pathlib import Path
 import pptx
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
-from pptx.enum.text import PP_ALIGN, MSO_ANCHOR
-from pptx.enum.shapes import MSO_SHAPE
+from pptx.enum.text import PP_ALIGN
+from pptx.enum.shapes import MSO_SHAPE, MSO_CONNECTOR
+from pptx.oxml.xmlchemy import OxmlElement
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT_DIR = ROOT / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
 PPTX_PATH = OUTPUT_DIR / "Introduccion-iie3t-redes-bayesianas-v4.pptx"
 
-# Colores del seminario
+# Colores institucionales del seminario
 BG_COLOR = RGBColor(0xFA, 0xFA, 0xF7)       # Fondo cálido claro
 INK_COLOR = RGBColor(0x18, 0x34, 0x3A)      # Texto principal oscuro
 MUTED_COLOR = RGBColor(0x52, 0x65, 0x6A)    # Texto secundario
@@ -20,11 +25,35 @@ CONTEXT_COLOR = RGBColor(0x08, 0x7E, 0x86)  # Turquesa (Contexto X)
 OBS_COLOR = RGBColor(0xAA, 0x67, 0x17)      # Ocre (Detección Y)
 LATENT_COLOR = RGBColor(0x73, 0x52, 0x8C)   # Violeta (Condición Z)
 GRAY_BG = RGBColor(0xDD, 0xE5, 0xE6)        # Gris observado
+MATH_BG = RGBColor(0xEE, 0xF4, 0xF5)        # Fondo para cajas matemáticas
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 ACCENT_GREEN = RGBColor(0x2E, 0x7D, 0x32)
 LINE_COLOR = RGBColor(0x52, 0x65, 0x6A)
 
 FONT_MAIN = "Arial"
+FONT_MATH = "Cambria Math"
+
+
+def add_arrow(slide, x1, y1, x2, y2, dashed=False, color=LINE_COLOR, width=Pt(2.5)):
+    """Crea un conector recto con punta de flecha en el extremo de destino."""
+    cxn = slide.shapes.add_connector(MSO_CONNECTOR.STRAIGHT, x1, y1, x2, y2)
+    cxn.line.color.rgb = color
+    cxn.line.width = width
+    spPr = cxn._element.spPr
+    ln = spPr.find('{http://schemas.openxmlformats.org/drawingml/2006/main}ln')
+
+    # En DrawingML, tailEnd es la punta de flecha en el punto final (x2, y2)
+    tail = OxmlElement('a:tailEnd')
+    tail.set('type', 'triangle')
+    tail.set('w', 'med')
+    tail.set('len', 'med')
+    ln.append(tail)
+
+    if dashed:
+        dash = OxmlElement('a:prstDash')
+        dash.set('val', 'dash')
+        ln.append(dash)
+    return cxn
 
 
 def create_deck():
@@ -97,7 +126,7 @@ def create_deck():
     p1_2.font.color.rgb = CONTEXT_COLOR
     p1_2.space_before = Pt(8)
 
-    # Hero Image
+    # Hero Image en español
     img_portada = ROOT / "presentaciones/img/portada_integridad_redes_es.jpg"
     if not img_portada.exists():
         img_portada = ROOT / "presentaciones/img/portada_integridad_redes.jpg"
@@ -133,7 +162,7 @@ def create_deck():
     p.space_before = Pt(8)
 
     p = tf2_l.add_paragraph()
-    p.text = "• La integridad ecosistémica describe la condición viva y autopoietica de la red ecológica completa."
+    p.text = "• La integridad ecosistémica describe la condición viva y autopoiética de la red ecológica completa."
     p.font.size = Pt(16)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
@@ -230,7 +259,7 @@ def create_deck():
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
-    # Right Image: Microcosmos Pecera
+    # Right Image: Microcosmos Pecera en español
     img_pecera = ROOT / "presentaciones/img/sistemico_pecera_microcosmos_es.jpg"
     if not img_pecera.exists():
         img_pecera = ROOT / "presentaciones/img/sistemico_pecera_microcosmos.jpg"
@@ -313,7 +342,7 @@ def create_deck():
     p.font.color.rgb = MUTED_COLOR
 
     # -------------------------------------------------------------
-    # SLIDE 5: El grafo generativo mínimo
+    # SLIDE 5: El grafo generativo mínimo (con arcos vectoriales completos)
     # -------------------------------------------------------------
     s5 = add_base_slide("El proceso generativo: cómo la naturaleza produce señales", 5,
         "Fuente: iie-teoria/iie-teoria.qmd, §§3–5. "
@@ -322,7 +351,7 @@ def create_deck():
         "Nodos grises: observados; nodo blanco/violeta: latente.")
 
     # Left: Diagram of DAG
-    # Context X (top-left)
+    # Context X (top-left): centro en (2.25, 2.55)
     node_x = s5.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.5), Inches(1.8), Inches(1.5), Inches(1.5))
     node_x.fill.solid()
     node_x.fill.fore_color.rgb = GRAY_BG
@@ -337,7 +366,7 @@ def create_deck():
     p.font.color.rgb = CONTEXT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Latent Z (bottom-left)
+    # Latent Z (bottom-left): centro en (2.25, 5.25)
     node_z = s5.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.5), Inches(4.5), Inches(1.5), Inches(1.5))
     node_z.fill.solid()
     node_z.fill.fore_color.rgb = WHITE
@@ -352,8 +381,8 @@ def create_deck():
     p.font.color.rgb = LATENT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Observations Y (middle-right)
-    node_y = s5.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.5), Inches(3.15), Inches(1.5), Inches(1.5))
+    # Observations Y (middle-right): centro en (5.35, 3.90)
+    node_y = s5.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.6), Inches(3.15), Inches(1.5), Inches(1.5))
     node_y.fill.solid()
     node_y.fill.fore_color.rgb = GRAY_BG
     node_y.line.color.rgb = OBS_COLOR
@@ -366,6 +395,14 @@ def create_deck():
     p.font.bold = True
     p.font.color.rgb = OBS_COLOR
     p.alignment = PP_ALIGN.CENTER
+
+    # ARCOS VECTORIALES
+    # 1. X -> Y (sólido)
+    add_arrow(s5, Inches(2.9), Inches(2.3), Inches(4.7), Inches(3.4), dashed=False, color=CONTEXT_COLOR)
+    # 2. Z -> Y (sólido)
+    add_arrow(s5, Inches(2.9), Inches(4.9), Inches(4.7), Inches(4.2), dashed=False, color=LATENT_COLOR)
+    # 3. X -> Z (discontinuo, en evaluación)
+    add_arrow(s5, Inches(2.25), Inches(3.3), Inches(2.25), Inches(4.5), dashed=True, color=LINE_COLOR)
 
     # Right Box: Explicación y Leyenda
     tb5_right = s5.shapes.add_textbox(Inches(6.8), Inches(1.5), Inches(5.7), Inches(5.0))
@@ -380,98 +417,126 @@ def create_deck():
     p.font.color.rgb = INK_COLOR
 
     p = tf5_r.add_paragraph()
-    p.text = "• X → Y: El clima y el suelo modulan el tipo y magnitud de las señales observables."
-    p.font.size = Pt(16)
+    p.text = "• X → Y (Arco directo): El clima y el suelo modulan el tipo y magnitud de las señales observables."
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf5_r.add_paragraph()
-    p.text = "• Z → Y: El estado real de salud ecológica genera los síntomas observables."
-    p.font.size = Pt(16)
+    p.text = "• Z → Y (Arco de emisión): El estado real de salud ecológica genera los síntomas observables."
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(8)
 
     p = tf5_r.add_paragraph()
     p.text = "• X ⇢ Z (En evaluación): ¿El contexto determina directamente el potencial de salud o fija la referencia basal? Es una hipótesis abierta."
-    p.font.size = Pt(16)
+    p.font.size = Pt(15)
     p.font.color.rgb = MUTED_COLOR
     p.space_before = Pt(8)
 
     p = tf5_r.add_paragraph()
-    p.text = "Convención visual:"
-    p.font.size = Pt(17)
+    p.text = "Convención visual del grafo:"
+    p.font.size = Pt(16)
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(14)
+    p.space_before = Pt(12)
 
     p = tf5_r.add_paragraph()
-    p.text = "⚪ Gris = Variable observada | ⚪ Blanco = Variable latente | ⇢ Discontinua = En evaluación"
-    p.font.size = Pt(14)
+    p.text = "⚪ Gris = Variable observada   |   ⚪ Blanco = Variable latente\n⟶ Sólida = Dependencia fijada  |   ⇢ Discontinua = Hipótesis en evaluación"
+    p.font.size = Pt(13)
     p.font.color.rgb = MUTED_COLOR
     p.space_before = Pt(4)
 
     # -------------------------------------------------------------
-    # SLIDE 6: El DAG como mapa de la probabilidad conjunta
+    # SLIDE 6: El DAG como mapa de la probabilidad conjunta (Ecuaciones estilizadas)
     # -------------------------------------------------------------
     s6 = add_base_slide("El DAG: Factorización de la Probabilidad Conjunta", 6,
         "Fundamento matemático: Pearl (1988), Lauritzen (1996). "
         "Un Grafo Acíclico Dirigido no es solo un diagrama conceptual: es la regla matemática exacta "
         "para descomponer una distribución conjunta masiva en el producto de distribuciones condicionales locales.")
 
-    tb6_main = s6.shapes.add_textbox(Inches(0.8), Inches(1.4), Inches(11.7), Inches(5.2))
-    tf6 = tb6_main.text_frame
-    tf6.word_wrap = True
-
-    p = tf6.paragraphs[0]
+    # Top text
+    tb6_top = s6.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.2))
+    tf6_t = tb6_top.text_frame
+    tf6_t.word_wrap = True
+    p = tf6_t.paragraphs[0]
     p.text = "Descomposición de la complejidad del ecosistema"
     p.font.name = FONT_MAIN
     p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
 
-    p = tf6.add_paragraph()
-    p.text = "Modelar un ecosistema con decenas de variables de forma conjunta sería intratable. La regla de la cadena bayesiana simplifica la conjunta total utilizando la estructura del DAG:"
-    p.font.size = Pt(16)
+    p = tf6_t.add_paragraph()
+    p.text = "Modelar un ecosistema con decenas de variables de forma conjunta sería intratable. La regla de factorización de un DAG simplifica la distribución conjunta global en factores locales condicionados únicamente a los padres:"
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(6)
+    p.space_before = Pt(4)
 
-    # Math Box
-    p = tf6.add_paragraph()
-    p.text = "P(X₁, X₂, ..., Xₙ) = ∏ P( Xᵢ | Padres(Xᵢ) )"
-    p.font.name = "Consolas"
-    p.font.size = Pt(22)
+    # Box 1: Regla General de Factorización
+    f_box1 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.6), Inches(10.3), Inches(1.3))
+    f_box1.fill.solid()
+    f_box1.fill.fore_color.rgb = MATH_BG
+    f_box1.line.color.rgb = CONTEXT_COLOR
+    f_box1.line.width = Pt(1.5)
+
+    tf_fb1 = f_box1.text_frame
+    tf_fb1.word_wrap = True
+    tf_fb1.margin_top = Inches(0.15)
+    p = tf_fb1.paragraphs[0]
+    p.text = "Regla General de Factorización en un DAG:"
+    p.font.name = FONT_MAIN
+    p.font.size = Pt(13)
+    p.font.bold = True
+    p.font.color.rgb = MUTED_COLOR
+    p.alignment = PP_ALIGN.CENTER
+
+    p = tf_fb1.add_paragraph()
+    p.text = "P( X₁, X₂, ..., Xₙ )  =  ∏ᵢ₌₁ⁿ  P( Xᵢ | Padres(Xᵢ) )"
+    p.font.name = FONT_MATH
+    p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
     p.alignment = PP_ALIGN.CENTER
-    p.space_before = Pt(14)
-    p.space_after = Pt(14)
+    p.space_before = Pt(4)
 
-    p = tf6.add_paragraph()
-    p.text = "Para el modelo IIE-3T mínimo:"
+    # Box 2: Factorización para el Modelo IIE-3T
+    f_box2 = s6.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(4.1), Inches(10.3), Inches(1.3))
+    f_box2.fill.solid()
+    f_box2.fill.fore_color.rgb = MATH_BG
+    f_box2.line.color.rgb = LATENT_COLOR
+    f_box2.line.width = Pt(1.5)
+
+    tf_fb2 = f_box2.text_frame
+    tf_fb2.word_wrap = True
+    tf_fb2.margin_top = Inches(0.15)
+    p = tf_fb2.paragraphs[0]
+    p.text = "Factorización para el Modelo IIE-3T Mínimo (X, Y, Z):"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(18)
+    p.font.size = Pt(13)
     p.font.bold = True
-    p.font.color.rgb = INK_COLOR
+    p.font.color.rgb = MUTED_COLOR
+    p.alignment = PP_ALIGN.CENTER
 
-    p = tf6.add_paragraph()
-    p.text = "P(X, Y, Z) = P(X) · P(Z | X) · P(Y | X, Z)"
-    p.font.name = "Consolas"
+    p = tf_fb2.add_paragraph()
+    p.text = "P( X, Y, Z )  =  P( X )  ·  P( Z | X )  ·  P( Y | X, Z )"
+    p.font.name = FONT_MATH
     p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
     p.alignment = PP_ALIGN.CENTER
-    p.space_before = Pt(8)
-    p.space_after = Pt(12)
+    p.space_before = Pt(4)
 
-    p = tf6.add_paragraph()
-    p.text = "• Cada nodo solo necesita conocer la distribución de probabilidad condicionada a sus padres inmediatos."
-    p.font.size = Pt(16)
+    # Bottom explanatory bullets
+    tb6_bot = s6.shapes.add_textbox(Inches(0.8), Inches(5.6), Inches(11.7), Inches(1.4))
+    tf6_b = tb6_bot.text_frame
+    tf6_b.word_wrap = True
+    p = tf6_b.paragraphs[0]
+    p.text = "• Cada nodo solo requiere una tabla local de probabilidades condicionada a sus antecedentes directos."
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(6)
-
-    p = tf6.add_paragraph()
-    p.text = "• Independencia condicional (separación-d): Dados sus padres, un nodo es independiente del resto del sistema."
-    p.font.size = Pt(16)
+    p = tf6_b.add_paragraph()
+    p.text = "• Independencia condicional (separación-d): El grafo define formalmente qué variables quedan bloqueadas de influencia al conocer cierta evidencia."
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
@@ -554,7 +619,7 @@ def create_deck():
     p.space_before = Pt(4)
 
     # -------------------------------------------------------------
-    # SLIDE 8: Inferencia diagnóstica
+    # SLIDE 8: Inferencia diagnóstica (Ecuación estructurada de Bayes)
     # -------------------------------------------------------------
     s8 = add_base_slide("Inferencia diagnóstica: de las señales a la salud", 8,
         "Fuente: iie-teoria §5.1 y §21. "
@@ -562,55 +627,88 @@ def create_deck():
         "para inferir la distribución posterior de la condición latente Z. "
         "Una probabilidad posterior de integridad de 0.72 expresa certeza diagnóstica, no 72% de masa física conservada.")
 
-    tb8_main = s8.shapes.add_textbox(Inches(0.8), Inches(1.4), Inches(11.7), Inches(5.3))
-    tf8 = tb8_main.text_frame
-    tf8.word_wrap = True
-
-    p = tf8.paragraphs[0]
+    tb8_top = s8.shapes.add_textbox(Inches(0.8), Inches(1.3), Inches(11.7), Inches(1.1))
+    tf8_t = tb8_top.text_frame
+    tf8_t.word_wrap = True
+    p = tf8_t.paragraphs[0]
     p.text = "El razonamiento clínico en ecología"
     p.font.name = FONT_MAIN
     p.font.size = Pt(20)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
 
-    p = tf8.add_paragraph()
-    p.text = "El proceso generativo va de la salud a los síntomas (Z → Y). Pero el ecólogo trabaja en sentido inverso: observa señales y actualiza su creencia sobre el estado de salud no observado."
-    p.font.size = Pt(16)
+    p = tf8_t.add_paragraph()
+    p.text = "La naturaleza opera de la salud a los síntomas (Z → Y). El ecólogo trabaja en sentido inverso: a partir de las señales observables Y y el contexto X, diagnostica la condición latente Z mediante el Teorema de Bayes:"
+    p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(6)
+    p.space_before = Pt(4)
 
-    # Formula Box
-    p = tf8.add_paragraph()
-    p.text = "P( Z | Y = y, X = x ) = [ P( Y = y | Z, X ) · P( Z | X ) ] / P( Y = y | X )"
-    p.font.name = "Consolas"
-    p.font.size = Pt(19)
+    # Elegant Bayes Equation Card
+    bayes_card = s8.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.5), Inches(2.5), Inches(10.3), Inches(1.8))
+    bayes_card.fill.solid()
+    bayes_card.fill.fore_color.rgb = MATH_BG
+    bayes_card.line.color.rgb = LATENT_COLOR
+    bayes_card.line.width = Pt(1.5)
+
+    tf_bc = bayes_card.text_frame
+    tf_bc.word_wrap = True
+    tf_bc.margin_top = Inches(0.15)
+    p = tf_bc.paragraphs[0]
+    p.text = "Inversión Probabilística Diagnóstica:"
+    p.font.name = FONT_MAIN
+    p.font.size = Pt(13)
+    p.font.bold = True
+    p.font.color.rgb = MUTED_COLOR
+    p.alignment = PP_ALIGN.CENTER
+
+    # Fraction Display with clear numerator / denominator
+    p = tf_bc.add_paragraph()
+    p.text = "                                       P( Y = y | Z, X )  ·  P( Z | X )"
+    p.font.name = FONT_MATH
+    p.font.size = Pt(17)
     p.font.bold = True
     p.font.color.rgb = LATENT_COLOR
-    p.alignment = PP_ALIGN.CENTER
-    p.space_before = Pt(12)
-    p.space_after = Pt(12)
+    p.space_before = Pt(2)
 
-    p = tf8.add_paragraph()
-    p.text = "1. Distribución a priori P(Z | X): Lo que sabemos de la condición antes de ver las señales (anclaje contextual)."
+    p = tf_bc.add_paragraph()
+    p.text = "P( Z | Y = y, X = x )  =  ──────────────────────────────────────────"
+    p.font.name = FONT_MATH
+    p.font.size = Pt(17)
+    p.font.bold = True
+    p.font.color.rgb = LATENT_COLOR
+
+    p = tf_bc.add_paragraph()
+    p.text = "                                                   P( Y = y | X )"
+    p.font.name = FONT_MATH
+    p.font.size = Pt(17)
+    p.font.bold = True
+    p.font.color.rgb = LATENT_COLOR
+
+    # Bottom bullets
+    tb8_bot = s8.shapes.add_textbox(Inches(0.8), Inches(4.5), Inches(11.7), Inches(2.4))
+    tf8_b = tb8_bot.text_frame
+    tf8_b.word_wrap = True
+
+    p = tf8_b.paragraphs[0]
+    p.text = "1. Distribución a priori P(Z | X): Conocimiento basal de la condición según el contexto ecológico."
     p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(4)
 
-    p = tf8.add_paragraph()
-    p.text = "2. Verosimilitud P(Y | Z, X): Qué tan probables son las señales observadas bajo cada nivel de salud."
+    p = tf8_b.add_paragraph()
+    p.text = "2. Verosimilitud P(Y | Z, X): Qué tan compatibles son los datos observados bajo cada nivel de salud."
     p.font.size = Pt(15)
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(4)
+    p.space_before = Pt(5)
 
-    p = tf8.add_paragraph()
-    p.text = "3. Distribución a posteriori P(Z | Y, X): El diagnóstico final que preserva la incertidumbre y multimodalidad."
+    p = tf8_b.add_paragraph()
+    p.text = "3. Distribución a posteriori P(Z | Y, X): El diagnóstico que cuantifica la certidumbre sin forzar un valor determinista falso."
     p.font.size = Pt(15)
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
-    p.space_before = Pt(4)
+    p.space_before = Pt(5)
 
     # -------------------------------------------------------------
-    # SLIDE 9: Notación de plates
+    # SLIDE 9: Notación compacta de plates (con arcos vectoriales)
     # -------------------------------------------------------------
     s9 = add_base_slide("Múltiples sitios: Notación compacta de Plates", 9,
         "Referencia de notación: Blei & Lafferty (2009). "
@@ -618,23 +716,23 @@ def create_deck():
         "θ representa los parámetros globales del modelo que se comparten entre todos los sitios. "
         "El plate expresa repetición muestral, no relaciones causales ni dependencia espacial automática.")
 
-    # Plate Box
-    plate = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.2), Inches(1.8), Inches(4.8), Inches(4.5))
+    # Plate Box: left=1.0, top=1.8, width=5.2, height=4.7
+    plate = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.0), Inches(1.8), Inches(5.2), Inches(4.7))
     plate.fill.background()
     plate.line.color.rgb = MUTED_COLOR
     plate.line.width = Pt(2)
 
-    tb_plate_lbl = s9.shapes.add_textbox(Inches(1.4), Inches(5.8), Inches(4.4), Inches(0.4))
+    tb_plate_lbl = s9.shapes.add_textbox(Inches(1.2), Inches(5.95), Inches(4.8), Inches(0.4))
     p = tb_plate_lbl.text_frame.paragraphs[0]
     p.text = "Sitios de muestreo   i = 1, ..., N"
     p.font.name = FONT_MAIN
-    p.font.size = Pt(16)
+    p.font.size = Pt(15)
     p.font.bold = True
     p.font.color.rgb = MUTED_COLOR
 
     # Nodes inside plate
-    # Xi
-    nx = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.8), Inches(2.3), Inches(1.1), Inches(1.1))
+    # Xi: centro en (2.2, 2.7)
+    nx = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.65), Inches(2.15), Inches(1.1), Inches(1.1))
     nx.fill.solid()
     nx.fill.fore_color.rgb = GRAY_BG
     nx.line.color.rgb = CONTEXT_COLOR
@@ -646,8 +744,8 @@ def create_deck():
     p.font.color.rgb = CONTEXT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Zi
-    nz = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.8), Inches(4.3), Inches(1.1), Inches(1.1))
+    # Zi: centro en (2.2, 4.8)
+    nz = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.65), Inches(4.25), Inches(1.1), Inches(1.1))
     nz.fill.solid()
     nz.fill.fore_color.rgb = WHITE
     nz.line.color.rgb = LATENT_COLOR
@@ -659,8 +757,8 @@ def create_deck():
     p.font.color.rgb = LATENT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Yi
-    ny = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.2), Inches(3.3), Inches(1.1), Inches(1.1))
+    # Yi: centro en (4.9, 3.75)
+    ny = s9.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.35), Inches(3.2), Inches(1.1), Inches(1.1))
     ny.fill.solid()
     ny.fill.fore_color.rgb = GRAY_BG
     ny.line.color.rgb = OBS_COLOR
@@ -672,8 +770,8 @@ def create_deck():
     p.font.color.rgb = OBS_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Global Theta (outside plate)
-    ntheta = s9.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(4.2), Inches(0.8), Inches(1.1), Inches(0.7))
+    # Global Theta (outside plate): centro en (4.9, 1.0)
+    ntheta = s9.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(4.35), Inches(0.7), Inches(1.1), Inches(0.7))
     ntheta.fill.solid()
     ntheta.fill.fore_color.rgb = WHITE
     ntheta.line.color.rgb = INK_COLOR
@@ -684,6 +782,16 @@ def create_deck():
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
     p.alignment = PP_ALIGN.CENTER
+
+    # ARCOS VECTORIALES
+    # 1. Xi -> Yi
+    add_arrow(s9, Inches(2.75), Inches(2.7), Inches(4.35), Inches(3.4), dashed=False, color=CONTEXT_COLOR)
+    # 2. Zi -> Yi
+    add_arrow(s9, Inches(2.75), Inches(4.8), Inches(4.35), Inches(4.0), dashed=False, color=LATENT_COLOR)
+    # 3. Xi -> Zi (discontinuo)
+    add_arrow(s9, Inches(2.2), Inches(3.25), Inches(2.2), Inches(4.25), dashed=True, color=LINE_COLOR)
+    # 4. Theta -> Yi
+    add_arrow(s9, Inches(4.9), Inches(1.4), Inches(4.9), Inches(3.2), dashed=False, color=INK_COLOR)
 
     # Right side text
     tb9_r = s9.shapes.add_textbox(Inches(6.6), Inches(1.6), Inches(5.9), Inches(4.8))
@@ -716,11 +824,11 @@ def create_deck():
     p.space_before = Pt(8)
 
     # -------------------------------------------------------------
-    # SLIDE 10: Un modelo compartido para los píxeles de México
+    # SLIDE 10: Un modelo compartido para los píxeles de México (en español)
     # -------------------------------------------------------------
     s10 = add_base_slide("Un modelo compartido para los píxeles de México", 10,
         "Fuente: Descripción del procedimiento por el equipo (P016). "
-        "Imagen: Mapa nacional de Integridad Ecosistémica 2018 (img/Mapa_México_Página_3.png). "
+        "Imagen: Mapa nacional de Integridad Ecosistémica con malla de píxeles en español. "
         "El modelo entrenado con parámetros θ se aplica de manera homogénea sobre los vectores de cada píxel nacional.")
 
     img_mapa = ROOT / "presentaciones/img/mapa_mexico_pixeles_iie_es.jpg"
@@ -769,7 +877,7 @@ def create_deck():
     p.space_before = Pt(16)
 
     # -------------------------------------------------------------
-    # SLIDE 11: Plates anidados
+    # SLIDE 11: Plates anidados (con arcos vectoriales)
     # -------------------------------------------------------------
     s11 = add_base_slide("Plates anidados: contexto regional y señales locales", 11,
         "Fuente: P016. "
@@ -778,33 +886,33 @@ def create_deck():
         "Compartir contexto X_j no obliga a obtener el mismo IIE ni garantiza independencia espacial.")
 
     # Outer plate: Regions j
-    p_out = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(2.2), Inches(6.0), Inches(4.3))
+    p_out = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(2.2), Inches(6.0), Inches(4.5))
     p_out.fill.background()
     p_out.line.color.rgb = CONTEXT_COLOR
     p_out.line.width = Pt(2.5)
 
-    tb_pout = s11.shapes.add_textbox(Inches(1.0), Inches(5.95), Inches(5.6), Inches(0.4))
+    tb_pout = s11.shapes.add_textbox(Inches(1.0), Inches(6.25), Inches(5.6), Inches(0.35))
     p = tb_pout.text_frame.paragraphs[0]
     p.text = "Zonas o clases biogeográficas   j = 1, ..., J"
-    p.font.size = Pt(15)
+    p.font.size = Pt(14)
     p.font.bold = True
     p.font.color.rgb = CONTEXT_COLOR
 
     # Inner plate: Pixels i in j
-    p_in = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.2), Inches(3.4), Inches(5.2), Inches(2.4))
+    p_in = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.1), Inches(3.6), Inches(5.4), Inches(2.4))
     p_in.fill.background()
     p_in.line.color.rgb = MUTED_COLOR
     p_in.line.width = Pt(2)
 
-    tb_pin = s11.shapes.add_textbox(Inches(1.4), Inches(5.35), Inches(4.8), Inches(0.35))
+    tb_pin = s11.shapes.add_textbox(Inches(1.3), Inches(5.6), Inches(5.0), Inches(0.35))
     p = tb_pin.text_frame.paragraphs[0]
     p.text = "Píxeles locales   i = 1, ..., nⱼ"
-    p.font.size = Pt(14)
+    p.font.size = Pt(13)
     p.font.bold = True
     p.font.color.rgb = MUTED_COLOR
 
-    # Nodes: Xj (top inside outer plate)
-    nxj = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.6), Inches(2.4), Inches(0.9), Inches(0.9))
+    # Node: Xj (top inside outer plate) -> centro en (2.0, 2.9)
+    nxj = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.55), Inches(2.45), Inches(0.9), Inches(0.9))
     nxj.fill.solid()
     nxj.fill.fore_color.rgb = GRAY_BG
     nxj.line.color.rgb = CONTEXT_COLOR
@@ -816,8 +924,8 @@ def create_deck():
     p.font.color.rgb = CONTEXT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Nodes inside inner: Zij, Yij
-    nzij = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(2.0), Inches(3.8), Inches(0.9), Inches(0.9))
+    # Nodes inside inner: Zij (centro en 2.4, 4.6), Yij (centro en 5.4, 4.6)
+    nzij = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(1.95), Inches(4.15), Inches(0.9), Inches(0.9))
     nzij.fill.solid()
     nzij.fill.fore_color.rgb = WHITE
     nzij.line.color.rgb = LATENT_COLOR
@@ -829,7 +937,7 @@ def create_deck():
     p.font.color.rgb = LATENT_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    nyij = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.8), Inches(3.8), Inches(0.9), Inches(0.9))
+    nyij = s11.shapes.add_shape(MSO_SHAPE.OVAL, Inches(4.95), Inches(4.15), Inches(0.9), Inches(0.9))
     nyij.fill.solid()
     nyij.fill.fore_color.rgb = GRAY_BG
     nyij.line.color.rgb = OBS_COLOR
@@ -841,8 +949,8 @@ def create_deck():
     p.font.color.rgb = OBS_COLOR
     p.alignment = PP_ALIGN.CENTER
 
-    # Global theta
-    nth = s11.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(4.8), Inches(1.4), Inches(0.9), Inches(0.6))
+    # Global theta: centro en (5.4, 1.45)
+    nth = s11.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(4.95), Inches(1.15), Inches(0.9), Inches(0.6))
     nth.fill.solid()
     nth.fill.fore_color.rgb = WHITE
     nth.line.color.rgb = INK_COLOR
@@ -853,6 +961,16 @@ def create_deck():
     p.font.bold = True
     p.font.color.rgb = INK_COLOR
     p.alignment = PP_ALIGN.CENTER
+
+    # ARCOS VECTORIALES
+    # 1. Xj -> Zij (discontinuo)
+    add_arrow(s11, Inches(2.0), Inches(3.35), Inches(2.4), Inches(4.15), dashed=True, color=LINE_COLOR)
+    # 2. Xj -> Yij (sólido)
+    add_arrow(s11, Inches(2.45), Inches(2.9), Inches(4.95), Inches(4.2), dashed=False, color=CONTEXT_COLOR)
+    # 3. Zij -> Yij (sólido)
+    add_arrow(s11, Inches(2.85), Inches(4.6), Inches(4.95), Inches(4.6), dashed=False, color=LATENT_COLOR)
+    # 4. Theta -> Yij (sólido)
+    add_arrow(s11, Inches(5.4), Inches(1.75), Inches(5.4), Inches(4.15), dashed=False, color=INK_COLOR)
 
     # Right side text
     tb11_r = s11.shapes.add_textbox(Inches(7.2), Inches(1.5), Inches(5.3), Inches(5.1))
@@ -892,7 +1010,7 @@ def create_deck():
     p.space_before = Pt(12)
 
     # -------------------------------------------------------------
-    # SLIDE 12: Retroalimentación y tiempo: Redes Dinámicas (DBN)
+    # SLIDE 12: Retroalimentación y tiempo: Redes Dinámicas (DBN en español)
     # -------------------------------------------------------------
     s12 = add_base_slide("Retroalimentación y tiempo: Redes Dinámicas (DBN)", 12,
         "Fuentes: Dean & Kanazawa (1989), Murphy (2002), Cafe-blog/posts/dynamic-bayesian-network/index.qmd. "
@@ -923,7 +1041,7 @@ def create_deck():
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(4)
 
-    # Bottom Image: DBN Transition
+    # Bottom Image: DBN Transition en español
     img_dbn = ROOT / "presentaciones/img/dbn_temporal_transition_es.jpg"
     if not img_dbn.exists():
         img_dbn = ROOT / "presentaciones/img/dbn_temporal_transition.jpg"
@@ -1046,7 +1164,7 @@ def create_deck():
     p.font.color.rgb = INK_COLOR
     p.space_before = Pt(6)
 
-    # Save presentation
+    # Guardar presentación
     try:
         prs.save(str(PPTX_PATH))
         print(f"Presentación generada exitosamente en: {PPTX_PATH}")
@@ -1058,4 +1176,3 @@ def create_deck():
 
 if __name__ == "__main__":
     create_deck()
-

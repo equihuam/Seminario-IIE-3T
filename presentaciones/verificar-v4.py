@@ -27,6 +27,8 @@ with ZipFile(PPTX) as z:
     pictures = 0
     native_shapes = 0
     tables = 0
+    connectors = 0
+    dashed_connectors = 0
 
     for idx, sname in enumerate(slide_names, start=1):
         root = ET.fromstring(z.read(sname))
@@ -36,10 +38,20 @@ with ZipFile(PPTX) as z:
         native_shapes += len(shapes)
         tbls = root.findall(".//a:tbl", NS)
         tables += len(tbls)
+        cxns = root.findall(".//p:cxnSp", NS)
+        connectors += len(cxns)
+        for c in cxns:
+            dash = c.find(".//a:prstDash", NS)
+            if dash is not None and dash.get("val") not in (None, "solid"):
+                dashed_connectors += 1
 
         # Verificar imágenes esperadas en diapositivas específicas
         if idx in (1, 3, 10, 12):
             assert len(pics) >= 1, f"La diapositiva {idx} debe contener una imagen ilustrativa"
+
+    # Verificar conectores en diapositivas de grafos (5, 9, 11)
+    assert connectors == 11, f"Se esperaban 11 conectores/flechas, se encontraron {connectors}"
+    assert dashed_connectors == 3, f"Se esperaban 3 flechas discontinuas (en evaluación), se encontraron {dashed_connectors}"
 
     # Verificar tabla nativa en diapositiva 7
     s7_root = ET.fromstring(z.read(slide_names[6]))
@@ -72,6 +84,8 @@ with ZipFile(PPTX) as z:
         "pictures": pictures,
         "native_shapes": native_shapes,
         "tables": tables,
+        "attached_connectors": connectors,
+        "dashed_connectors": dashed_connectors,
         "cpt_sums_normalized": True,
         "speaker_notes_present": notes_count,
         "status": "VALIDADO OK"
