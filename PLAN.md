@@ -46,3 +46,10 @@ Presentación v3 ampliada a doce diapositivas: mapa de IIE de México 2018 y pla
 ## Semillero piloto — 2026-10-09 (P025–P027)
 
 Implementados el registro, cuatro fichas valoradas I001–I004, plantilla de una página y espacio de exploraciones con plantilla y registro de aportaciones. Pendiente: primera prueba con participantes y decisión docente sobre qué desarrollar. Propuesta de secuencia: I003 como entrada, I002 como hilo conductor, I004 tras diagnóstico y probabilidades, I001 como ampliación. No reemplaza el programa adaptativo.
+
+## Esquema de trabajo colaborativo y ramas — 2026-10-09 (P037–P038)
+
+Configurada la infraestructura para trabajo conjunto de Miguel y Octavio:
+- Prompts distribuidos versionados en `prompts/` (`miguel.md`, `octavio.md`, `README.md`).
+- Política de ramas: `main` como rama canónica de publicación y ramas de trabajo independientes `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`. Vertido a `main` únicamente tras validación y acuerdo.
+

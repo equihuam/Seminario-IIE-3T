@@ -11,10 +11,11 @@ from check_repo import MAX_BYTES, check_index, issues
 
 class RepositoryPolicy(unittest.TestCase):
     def test_private_and_large_files(self):
-        for name in ("PROMPTS.md", "data/raw/data.csv", ".env", "slides.pptx", "renv/library/pkg/file"):
+        for name in (".Renviron", "data/raw/data.csv", ".env", "slides.pptx", "renv/library/pkg/file"):
             with self.subTest(name=name):
                 self.assertTrue(issues(name, b"x"))
         self.assertTrue(issues("large.csv", b"x" * (MAX_BYTES + 1)))
+        self.assertEqual(issues("prompts/miguel.md", b"# Prompts"), [])
         self.assertEqual(issues("blog/recursos/example.csv", b"a,b\n1,2\n"), [])
 
     def test_public_output_keeps_private_file_protection(self):

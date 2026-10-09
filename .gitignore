@@ -25,7 +25,6 @@ blog/**/*.pdf
 !/blog/_site/**
 
 # Registros internos y configuración de esta máquina
-PROMPTS.md
 *.local.*
 .env
 .env.*

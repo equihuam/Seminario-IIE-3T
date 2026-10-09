@@ -96,3 +96,10 @@ El usuario elige incorporar blog/_site y los recursos necesarios al repositorio 
 ## D18 — Semillero conciso y exploraciones (P025–P027)
 
 Se implementa un piloto con fichas I### de hasta una página, registro único y valoración rutinaria explícita por revisor y didacta. Los desarrollos E### reciben ampliaciones, actividades y aportaciones con vínculos de ida y vuelta. Cuatro fichas iniciales reformulan P024, preservado en el registro interno; se identifican como propuestas y ejemplos hipotéticos. El manuscrito y las fuentes revisadas en B020 sustentan sus precisiones; no se añade evidencia empírica ni se decide el programa por anticipado. La publicación remota no forma parte de esta implementación local.
+
+## D19 — Prompts colaborativos versionados y estrategia de ramas en Git (P037–P038)
+
+Con la incorporación del trabajo colaborativo de Miguel y Octavio, se reconsidera la exclusión de prompts de D12. Se adopta la Opción A: los prompts se versionan en Git dentro del directorio `prompts/`, distribuidos por colaborador (`prompts/miguel.md` y `prompts/octavio.md`) con identificadores estables (`P-ME-###` / `P-OE-###`). Esto garantiza reproducibilidad y trazabilidad conjunta sin riesgo de colisiones (*merge conflicts*) en ramas paralelas.
+
+Se formaliza la mecánica de ramas: `main` permanece como rama canónica y de publicación limpia; todo desarrollo activo se realiza en ramas `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>` y solo se integra a `main` tras consenso, verificación de entornos y revisión conceptual/didáctica.
+

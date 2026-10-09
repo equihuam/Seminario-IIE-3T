@@ -115,18 +115,19 @@ Conservar resultados desfavorables y correcciones relevantes, declarar decisione
 ## Bitácora y registro de prompts
 
 - `BITACORA.md` registra hitos de desarrollo de la experiencia formativa: motivo, cambio, evidencia y pendientes, en entradas breves con identificador y referencia a los prompts pertinentes. No duplicar allí las conversaciones ni las salidas completas de herramientas.
-- `PROMPTS.md` conserva por orden los mensajes sustantivos del usuario que orientan el proyecto, con identificadores estables P001, P002, etc. Registrar literalmente el texto disponible, incluidos errores tipográficos; separar cualquier anotación editorial. Si se necesita ocultar un secreto o dato sensible, marcar la omisión expresamente.
-- `PROMPTS.md` es local y está excluido de Git y del blog; conservarlo sin borrarlo y no forzar su incorporación. La bitácora se versiona sin transcripciones sensibles. Si se requiere respaldo de prompts, acordar un destino privado.
+- El directorio `prompts/` conserva por orden y de forma versionada en Git los mensajes sustantivos de los usuarios que orientan el proyecto. Para prevenir conflictos de fusión (*merge conflicts*) en ramas concurrentes, cada colaborador mantiene su archivo: `prompts/miguel.md` (identificadores `P-ME-###` o histórico `P001`–`P038`) y `prompts/octavio.md` (identificadores `P-OE-###`).
+- Registrar literalmente el texto disponible, incluidos errores tipográficos; separar cualquier anotación editorial. Si se necesita ocultar un secreto, credencial o dato sensible, marcar la omisión expresamente (ej. `[REDACTADO]`).
 - Añadir el prompt al recibir una nueva instrucción sustantiva y completar el hito de bitácora al cerrar el trabajo. No inventar fechas u horas de emisión desconocidas: distinguir fecha de registro de fecha de emisión. Las entradas retrospectivas deben declararse como tales.
-- Si se usan prompts redactados por el equipo para generar materiales o código, guardarlos también, en una sección diferenciada con autoría y vínculo al artefacto. No registrar instrucciones internas del sistema ni transcripciones de herramientas como prompts del usuario.
+- Si se usan prompts redactados por el equipo para generar materiales o código, guardarlos también con autoría y vínculo al artefacto. No registrar instrucciones internas del sistema ni transcripciones de herramientas como prompts del usuario.
 - Mantener el historial por adición. Corregir mediante notas enlazadas, sin borrar decisiones superadas. Registrar solo verificaciones realmente realizadas.
 - La bitácora de la raíz documenta el diseño formativo; `plantilla-participantes/BITACORA.md` es una plantilla para el trabajo científico de cada participante. No mezclar sus funciones.
 
-## Flujo de trabajo simplificado
+## Flujo de trabajo colaborativo y ramas de Git
 
-Usar `.venv` y `renv`; mantener sus bloqueos al cambiar dependencias. Antes de una entrega editorial ejecutar `scripts/site.py check` y las pruebas pertinentes; antes del commit revisar el índice con `scripts/check_repo.py`. No incorporar datos originales, credenciales, entornos, binarios pesados ni archivos mayores de 5 MiB. Los patrones automáticos no sustituyen la revisión de contenido sensible. Publicación y subida remota requieren una instrucción del usuario; la configuración actual es local.
-
-Definir objetivo y aceptación → implementar → verificar → revisar → documentar resultados y pendientes. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `PROMPTS.md`, las instrucciones originales. Evitar infraestructura de orquestación y duplicación de registros que no sean necesarias para el taller.
+- **Estrategia de ramas:** `main` es la rama canónica, estable y lista para publicación (Netlify). Todo trabajo o exploración activa se desarrolla en ramas separadas con prefijo de autor o funcionalidad: `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`.
+- **Protocolo de integración:** Solo se vierte a `main` lo acordado y validado. El flujo es: crear rama desde `main` actualizado → trabajar iterativamente y registrar prompts → verificar localmente (`scripts/site.py check` y `scripts/check_repo.py`) → proponer integración (Pull Request o merge acordado) → fusionar a `main`.
+- Usar `.venv` y `renv`; mantener sus bloqueos al cambiar dependencias. Antes de un commit de entrega editorial ejecutar `scripts/site.py check` y las pruebas pertinentes; antes del commit revisar el índice con `scripts/check_repo.py`. No incorporar datos originales, credenciales, entornos, binarios pesados ni archivos mayores de 5 MiB.
+- Definir objetivo y aceptación → implementar en rama → verificar → revisar (didacta/revisor) → documentar resultados y pendientes → fusionar a `main`. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `prompts/`, las instrucciones originales.
 
 
 ## Cosecha y valoración de ideas

@@ -1,6 +1,6 @@
 # Bitácora del desarrollo de la experiencia formativa
 
-Registro breve de la evolución de la propuesta. Las instrucciones originales se conservan en `PROMPTS.md` (registro local excluido de Git); el estado vigente, en [PLAN.md](PLAN.md). Las entradas B001–B004 se reconstruyen retrospectivamente el 2026-10-08 a partir de la conversación, sin atribuirles horas ni fechas originales desconocidas. Nuevos hitos se añadirán sin borrar la historia.
+Registro breve de la evolución de la propuesta. Las instrucciones originales se conservan en la carpeta [`prompts/`](prompts/) (registro colaborativo versionado en Git); el estado vigente, en [PLAN.md](PLAN.md). Las entradas B001–B004 se reconstruyen retrospectivamente el 2026-10-08 a partir de la conversación, sin atribuirles horas ni fechas originales desconocidas. Nuevos hitos se añadirán sin borrar la historia.
 
 ## B001 — Planteamiento inicial
 
@@ -183,5 +183,18 @@ Fecha de registro: 2026-10-09. Prompts: P030–P035.
 Se reestructura la página inicial `blog/empieza-aqui.qmd` incorporando la metáfora de salud e integridad ecosistémica (enfoque de Ecosalud / Margulis / Equihua et al., analogías del atleta/campo de golf y de la pecera), los fundamentos de pensamiento sistémico (Forrester, Sterman, Senge, Meadows), el modelo iie-3t estructurado en tres capas analíticas y la formalización en grafos acíclicos dirigidos (DAG) para descomponer la distribución de probabilidad conjunta del sistema. Se aborda la aparente tensión con los ciclos de retroalimentación explicando su desdoblamiento temporal natural en Redes Bayesianas Dinámicas (DBN / $t_0 \to t_1$). Se incluye un recuadro colapsado con la intuición cualitativa del razonamiento bayesiano (*a priori*, evidencia, *a posteriori*) orientado a participantes sin formación numérica formal. Se acota el concepto de resiliencia como persistencia/transición temporal, reservándolo para modelos dinámicos y evitando la ambigüedad terminológica en la portada.
 
 Verificación ejecutada: `scripts/site.py check` completó la sincronización de dependencias (`renv` y `.venv`), la renderización completa de las 17 páginas del blog con ejecución de código R y Python, comprobación de enlaces y límites de publicación. Pruebas unitarias de política del repositorio (`test_repo_policy.py`) y pruebas del caso climático (`test-clima.R`) superadas con código 0.
+
+## B024 — Adopción de prompts colaborativos versionados y estrategia de ramas en Git
+
+Fecha de registro: 2026-10-09. Prompts: P037, P038, P039 (en `prompts/miguel.md`).
+
+Se adopta el esquema de trabajo colaborativo entre Miguel y Octavio:
+1. **Registro distribuido de prompts en Git:** Se sustituye el archivo único local por la carpeta `prompts/` versionada en Git, con archivos separados por colaborador (`prompts/miguel.md` y `prompts/octavio.md`) y un `README.md` con las directivas. Esto evita conflictos de fusión en Git y asegura la trazabilidad del trabajo asistido por IA.
+2. **Ajuste de políticas y scripts de control:** Se elimina `PROMPTS.md` de `.gitignore` y de las restricciones de `scripts/check_repo.py`; se actualiza `tests/test_repo_policy.py` para validar la admisión de la carpeta `prompts/`.
+3. **Formalización del flujo de ramas:** Se actualizan `AGENTS.md`, `docs/FUENTES-Y-DECISIONES.md` (D19) y `PLAN.md` para establecer la convención de ramas `miguel/<tema>`, `octavio/<tema>` y vertido a `main` únicamente tras acuerdo y verificación.
+
+Verificación: Pruebas unitarias `python -m unittest discover tests` ejecutadas con código 0; regeneración y enlaces del blog validados con `scripts/site.py check`. Commit y push a `origin/main` autorizados y ejecutados.
+
+
 
 
