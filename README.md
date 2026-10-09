@@ -58,7 +58,7 @@ El cierre de cada sesión recogerá preguntas, dificultades y una evidencia brev
 
 ## Organización
 
-Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario-IIE-3T.Rproj). La consola ofrece `blog("render")` y `blog("check")`; las instrucciones están en [Entornos y ejecución](ENVIRONMENT.md).
+Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario-IIE-3T.Rproj). El panel Build permite construir y verificar con Ctrl+Shift+B; la consola ofrece `blog("render")` y `blog("check")`; las instrucciones están en [Entornos y ejecución](ENVIRONMENT.md).
 
 - [Blog: fuentes de la portada](blog/index.qmd): introducción común, sesiones y catálogo temático.
 - [Entornos y ejecución](ENVIRONMENT.md): instalación, reproducción, vista previa y controles de Git.

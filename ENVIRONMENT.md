@@ -6,6 +6,8 @@ Abrir `Seminario-IIE-3T.Rproj` desde RStudio (File → Open Project) o con doble
 
 Al iniciar una sesión interactiva se carga la función `blog()` y se selecciona el Python de `.venv` para Quarto y para `reticulate` si se utiliza posteriormente. No se instala `reticulate` ni se agregan dependencias nuevas. Para editar Python se pueden abrir los archivos normalmente; la ejecución de documentos Python se realiza con Quarto/Jupyter.
 
+El panel **Build → Build All** (Ctrl+Shift+B) usa una construcción personalizada mediante `scripts/build-blog.cmd` en Windows. Ejecuta la comprobación completa y el render de Quarto con los entornos del proyecto. No seleccionar el tipo `Website`: esa opción invoca `rmarkdown::render_site()` y produce «No site generator found» en este proyecto. Tras modificar la configuración, cerrar y volver a abrir el proyecto para que RStudio recargue el panel Build. La vista previa se inicia aparte con `blog("preview")`.
+
 Desde la consola R:
 
 ```r

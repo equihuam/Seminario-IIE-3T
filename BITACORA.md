@@ -140,3 +140,12 @@ Registro: 2026-10-08. Prompt: P022.
 Se adopta la generación local y publicación del HTML desde GitHub. Se incluyen blog/_site y blog/img en Git, se ajusta el control de política con una excepción exclusiva para la salida pública y se conserva el bloqueo de secretos, archivos privados y tamaños superiores a 5 MiB. Netlify comprueba que exista la portada y sirve blog/_site sin ejecutar R/Python. Las cachés y entornos permanecen excluidos. Esta decisión reemplaza la exclusión histórica de la salida, no la exigencia de reproducción.
 
 Verificación: scripts/site.py check correcto para nueve páginas; cuatro pruebas Python correctas; los 35 archivos de salida (1.58 MiB en conjunto) pasan la política y ninguno está excluido de Git. Entornos consistentes; advertencias regionales de R conocidas. Se preparan los archivos en el índice para el próximo commit. No se ha realizado un despliegue remoto.
+
+
+## B019 — Construcción Quarto desde el panel Build de RStudio
+
+Registro: 2026-10-08. Prompt: P023.
+
+El .Rproj tenía BuildType: Website y WebsitePath: blog, que invocan rmarkdown::render_site y explican el error aportado. Se configura BuildType: Custom con scripts/build-blog.cmd, un lanzador Windows del flujo existente scripts/site.py check. Conserva entornos, comprobaciones, preparación del SVG y propagación del código de salida. Se actualizan las instrucciones: reabrir el proyecto y utilizar Build All (Ctrl+Shift+B), o blog("check") desde la consola.
+
+Verificación: ejecución directa del mismo lanzador .cmd terminó con código 0, renv y pip consistentes, nueve páginas reejecutadas y enlaces/límites de publicación verificados. No se automatizó el botón en la interfaz de RStudio. Persisten advertencias regionales de R conocidas. Sin commit ni push.
