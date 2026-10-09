@@ -223,11 +223,16 @@ Se actualiza `presentaciones/generar-presentacion-v4.py` para integrar estas fig
 
 Fecha de registro: 2026-10-09. Prompt: P044 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
 
-Se perfeccionan los diagramas y expresiones matemáticas del deck v4:
-1. **Conectores y arcos en grafos (Diapositivas 5, 9 y 11):** Se implementa la función `add_arrow()` con DrawingML para trazar 11 conectores vectoriales con puntas triangulares; se distinguen 8 arcos sólidos de dependencia y 3 arcos discontinuos de hipótesis en evaluación ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$).
-2. **Cajas matemáticas estructuradas (Diapositivas 6 y 8):** Se encuadran las fórmulas de factorización del DAG y el Teorema de Bayes en tarjetas visuales dedicadas con tipografía `Cambria Math`, márgenes exactos y estructura de fracción clara, eliminando desbordamientos de texto.
-
 Verificación: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes, 88 formas, 11 conectores (3 discontinuos), tabla CPT y 14 notas con código 0.
+
+## B028 — Homologación del tratamiento tentativo del arco X -> Z conforme a v3 (D14)
+
+Fecha de registro: 2026-10-09. Prompt: P045 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se inspecciona `output/Introduccion-iie3t-redes-bayesianas-v3.pptx` para contrastar y preservar el acuerdo didáctico sobre el arco contextual $X \to Z$:
+1. **Representación visual:** Se mantiene el trazo discontinuo en las diapositivas 5, 9 y 11 ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$) y la leyenda explícita de relación en evaluación.
+2. **Notas del presentador:** Se integran literalmente en las notas de las diapositivas 5, 9 y 11 los argumentos conceptuales del acuerdo del equipo: la línea discontinua es incertidumbre estructural y no un tipo adicional de probabilidad; cada modelo formal debe decidir si lo incluye o excluye; y se reserva el contraste de modelos para la actividad posterior tras estudiar separación-d e identificabilidad.
+
 
 
 

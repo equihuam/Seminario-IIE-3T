@@ -345,10 +345,14 @@ def create_deck():
     # SLIDE 5: El grafo generativo mínimo (con arcos vectoriales completos)
     # -------------------------------------------------------------
     s5 = add_base_slide("El proceso generativo: cómo la naturaleza produce señales", 5,
-        "Fuente: iie-teoria/iie-teoria.qmd, §§3–5. "
+        "Fuente: iie-teoria/iie-teoria.qmd, §§3–5 y 21. "
         "En la naturaleza, el contexto X y la condición biótica real Z determinan conjuntamente las observaciones Y. "
-        "El arco X -> Z permanece como relación en evaluación (línea punteada). "
-        "Nodos grises: observados; nodo blanco/violeta: latente.")
+        "Nodos grises: observados; nodo blanco/violeta: latente. "
+        "Acuerdo didáctico del equipo: existen argumentos conceptuales para omitir el arco X→Z, pero no una solución definitiva. "
+        "La línea discontinua es una anotación editorial de incertidumbre estructural, no una flecha débil ni un nuevo tipo de dependencia probabilística. "
+        "Para calcular, cada modelo debe incluir o excluir el arco de forma explícita. Las flechas continuas describen la estructura de trabajo y tampoco prueban causalidad. "
+        "Mencionar esta incertidumbre brevemente en la introducción. Reservar el contraste entre modelos para una actividad posterior, "
+        "tras estudiar separación-d, identificación de variables latentes y validación. No presentar un contraste no significativo como demostración de independencia.")
 
     # Left: Diagram of DAG
     # Context X (top-left): centro en (2.25, 2.55)
@@ -714,7 +718,10 @@ def create_deck():
         "Referencia de notación: Blei & Lafferty (2009). "
         "El rectángulo (plate) denota repetición para i = 1,...,N sitios de muestreo o píxeles. "
         "θ representa los parámetros globales del modelo que se comparten entre todos los sitios. "
-        "El plate expresa repetición muestral, no relaciones causales ni dependencia espacial automática.")
+        "El plate expresa repetición muestral, no relaciones causales ni dependencia espacial automática. "
+        "Acuerdo didáctico del equipo: Existen argumentos conceptuales para omitir el arco X→Z, pero no una solución definitiva. "
+        "La línea discontinua es una anotación editorial de incertidumbre estructural, no una flecha débil ni un nuevo tipo de dependencia probabilística. "
+        "Para calcular, cada modelo formal debe incluir o excluir el arco de forma explícita.")
 
     # Plate Box: left=1.0, top=1.8, width=5.2, height=4.7
     plate = s9.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(1.0), Inches(1.8), Inches(5.2), Inches(4.7))
@@ -883,7 +890,8 @@ def create_deck():
         "Fuente: P016. "
         "El plate exterior representa clases o zonas biogeográficas j = 1,...,J (ej. Zonas de Holdridge). "
         "El plate interior representa píxeles i = 1,...,n_j pertenecientes a la zona j. "
-        "Compartir contexto X_j no obliga a obtener el mismo IIE ni garantiza independencia espacial.")
+        "Compartir contexto X_j no obliga a obtener el mismo IIE ni garantiza independencia espacial. "
+        "El arco contextual hacia condición X_j -> Z_ij permanece en evaluación y se marca con trazo discontinuo como hipótesis abierta.")
 
     # Outer plate: Regions j
     p_out = s11.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(0.8), Inches(2.2), Inches(6.0), Inches(4.5))
