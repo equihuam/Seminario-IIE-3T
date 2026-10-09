@@ -195,6 +195,19 @@ Se adopta el esquema de trabajo colaborativo entre Miguel y Octavio:
 
 Verificación: Pruebas unitarias `python -m unittest discover tests` ejecutadas con código 0; regeneración y enlaces del blog validados con `scripts/site.py check`. Commit y push a `origin/main` autorizados y ejecutados.
 
+## B025 — Actualización de la presentación introductoria (v4, 14 diapositivas)
+
+Fecha de registro: 2026-10-09. Prompts: P040–P042 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se genera la versión v4 de la presentación introductoria (`output/Introduccion-iie3t-redes-bayesianas-v4.pptx`) con 14 diapositivas en formato 16:9, aplicando los roles de didacta, revisor conceptual e ilustrador científico:
+1. **Salud ecosistémica y microcosmos sistémico:** Se incorporan la metáfora organísmica (Margulis, Ecosalud) y la analogía del vivario/pecera (Forrester, Meadows), con ilustración científica generada para media diapositiva en la diapositiva 3.
+2. **Descomposición de la distribución conjunta:** Se formaliza el DAG como la regla de factorización $P(X,Y,Z) = P(X)P(Z|X)P(Y|X,Z)$, enlazando estructura gráfica y reducción de parámetros.
+3. **Redes Bayesianas Dinámicas (DBN):** Se ilustra el desdoblamiento temporal ($t_0 \to t_1$) para bucles de retroalimentación con figura evocativa en la diapositiva 12.
+4. **Infraestructura en Python:** Implementación del script generador `presentaciones/generar-presentacion-v4.py` en `python-pptx`, con paleta de colores institucional, formas vectoriales, tabla CPT nativa y notas completas para el facilitador.
+
+Verificación ejecutada: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes bajo límites de tamaño, 83 formas nativas, normalización de tabla CPT (sumas = 1.0) y presencia de notas y respuestas esperadas con código 0.
+
+
 
 
 

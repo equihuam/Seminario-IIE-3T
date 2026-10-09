@@ -111,3 +111,34 @@ Me gusta la Opción A
 Haz el commit & Push
 ```
 
+## P040 — Solicitud de propuesta de actualización de la presentación PPTX (Didacta y Revisor)
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Vamos a empezar a trabajar en la actualización de la presentación.
+Quiero usar al didacta y al revisor para que me ayuden a generar una nueva propuesta de la presentación pptx. Tienes en el registro como se hizo la que ya vi, pero no la estamos respaldando en git.
+```
+
+## P041 — Propuesta de figuras del Ilustrador para portada y diapositivas 3 y 12
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Me gustaría que el ilustrador nos proponga figuras atractivas para la portada, la diapositiva 3 y para la 12. Las dos últimas no como fondo de pantalla, sino como ilustración evocativa de media diapositiva.
+```
+
+## P042 — Aprobación de la propuesta visual y orden de construcción de la presentación v4
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Sí, me parece bien. Adelante
+```
+
+
+
+

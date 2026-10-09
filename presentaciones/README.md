@@ -38,10 +38,17 @@ X→Z se conserva con trazo discontinuo en las diapositivas 3, 7 y 8. La leyenda
 
 ## Extensión cartográfica v3 (P016)
 
-Versión actual: `output/Introduccion-iie3t-redes-bayesianas-v3.pptx`, doce diapositivas. Añade antes de la comprobación el mapa de 2018 proporcionado en `img/Mapa_México_Página_3.png` y un esquema editable de plates anidados. La imagen cartográfica se preserva como raster original; diagramas y texto son nativos.
+Versión previa: `output/Introduccion-iie3t-redes-bayesianas-v3.pptx`, doce diapositivas. Añade el mapa de 2018 y plates anidados.
 
-El PNG original (9 602 021 bytes) queda excluido de Git por superar el límite de 5 MiB, al igual que los PPTX. Para reconstruir v3 en otra máquina, proporcionar ese archivo localmente en la ruta indicada, respetando sus condiciones de uso. SHA-256: `F67C9D093B41A04D88D5129BD8D762AE11E6B7ABF95FADF2B271DA07825B56F3`. Clonar el repositorio por sí solo no recupera este insumo; no se asignó un almacén remoto para él.
+## Versión v4: Salud ecosistémica, pensamiento sistémico, DBNs y plates (P040–P042)
 
-Para reconstruir, después de v2 copiar `presentaciones/extender-plates-mexico.mjs` a `.local/slides-intro/` y ejecutarlo con el mismo Node y variables de entorno indicados arriba. El script importa v2, conserva las diapositivas y añade dos. Ejecutar luego `python presentaciones/verificar-introduccion.py` (v3 por defecto).
+Versión actual: `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`, catorce diapositivas.
 
-El esquema representa pertenencia de píxeles a zonas o clases, con un componente contextual compartido y señales locales. No reproduce el DAG operativo TAN ni impone continuidad geográfica, independencia espacial o efectos aleatorios. La escala 0–1 del mapa no se redefine como probabilidad.
+### Novedades didácticas y visuales
+1. **Salud e integridad ecosistémica (Diapositivas 2 y 3):** Incorpora el enfoque de Ecosalud, Margulis y Equihua et al. (analogías del atleta/campo de golf y de la pecera / vivario vivo como equilibrio emergente de procesos acoplados).
+2. **Pensamiento sistémico y DAGs (Diapositiva 6):** Formaliza el Grafo Acíclico Dirigido como la factorización de la distribución de probabilidad conjunta total del ecosistema $P(X, Y, Z) = P(X) P(Z|X) P(Y|X, Z)$.
+3. **Retroalimentación y DBNs (Diapositiva 12):** Ilustra cómo los bucles dinámicos se desdoblan temporalmente en Redes Bayesianas Dinámicas ($t_0 \to t_1$).
+4. **Ilustraciones científicas:** Generadas a la medida para la portada (trama viva y red), la pecera sistémica (diapositiva 3) y la transición temporal DBN (diapositiva 12).
+5. **Reconstrucción nativa en Python:** `presentaciones/generar-presentacion-v4.py` genera el deck completo de 14 diapositivas en formato 16:9 utilizando `python-pptx`, tipografía Arial, paleta de colores institucional (turquesa, ocre, violeta) y notas del presentador completas.
+6. **Verificación:** `presentaciones/verificar-v4.py` valida la integridad del XML, la presencia de figuras, la normalización de la tabla CPT (sumas = 1.0) y las 14 notas del presentador.
+

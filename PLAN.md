@@ -53,3 +53,8 @@ Configurada la infraestructura para trabajo conjunto de Miguel y Octavio:
 - Prompts distribuidos versionados en `prompts/` (`miguel.md`, `octavio.md`, `README.md`).
 - Política de ramas: `main` como rama canónica de publicación y ramas de trabajo independientes `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`. Vertido a `main` únicamente tras validación y acuerdo.
 
+## Presentación introductoria v4 — 2026-10-09 (P040–P042)
+
+Presentación v4 completada con 14 diapositivas en `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`. Incorpora la metáfora de salud e integridad ecosistémica, la analogía de la pecera, la factorización de la distribución conjunta en el DAG, Redes Bayesianas Dinámicas ($t_0 \to t_1$) y plates anidados nacionales, con ilustraciones generadas y script en `presentaciones/generar-presentacion-v4.py`.
+
+
