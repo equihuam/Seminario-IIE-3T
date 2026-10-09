@@ -139,6 +139,16 @@ Me gustaría que el ilustrador nos proponga figuras atractivas para la portada, 
 Sí, me parece bien. Adelante
 ```
 
+## P043 — Solicitud de versiones en español de las ilustraciones para el PPTX
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Me gustaron mucho las ilustraciones, quiero conservarlas como estan, pero tener una versión de ellas con los textos en español y ponerlas en ese idioma en el pptx.
+```
+
+
 
 
 

@@ -98,7 +98,9 @@ def create_deck():
     p1_2.space_before = Pt(8)
 
     # Hero Image
-    img_portada = ROOT / "presentaciones/img/portada_integridad_redes.jpg"
+    img_portada = ROOT / "presentaciones/img/portada_integridad_redes_es.jpg"
+    if not img_portada.exists():
+        img_portada = ROOT / "presentaciones/img/portada_integridad_redes.jpg"
     if img_portada.exists():
         s1.shapes.add_picture(str(img_portada), Inches(0.8), Inches(2.3), Inches(11.733), Inches(4.5))
 
@@ -229,7 +231,9 @@ def create_deck():
     p.space_before = Pt(4)
 
     # Right Image: Microcosmos Pecera
-    img_pecera = ROOT / "presentaciones/img/sistemico_pecera_microcosmos.jpg"
+    img_pecera = ROOT / "presentaciones/img/sistemico_pecera_microcosmos_es.jpg"
+    if not img_pecera.exists():
+        img_pecera = ROOT / "presentaciones/img/sistemico_pecera_microcosmos.jpg"
     if img_pecera.exists():
         s3.shapes.add_picture(str(img_pecera), Inches(6.8), Inches(1.4), Inches(5.7), Inches(5.2))
 
@@ -719,7 +723,9 @@ def create_deck():
         "Imagen: Mapa nacional de Integridad Ecosistémica 2018 (img/Mapa_México_Página_3.png). "
         "El modelo entrenado con parámetros θ se aplica de manera homogénea sobre los vectores de cada píxel nacional.")
 
-    img_mapa = ROOT / "presentaciones/img/mapa_mexico_pixeles_iie.jpg"
+    img_mapa = ROOT / "presentaciones/img/mapa_mexico_pixeles_iie_es.jpg"
+    if not img_mapa.exists():
+        img_mapa = ROOT / "presentaciones/img/mapa_mexico_pixeles_iie.jpg"
     if not img_mapa.exists():
         img_mapa = ROOT / "img/Mapa_México_Página_3.png"
     if img_mapa.exists():
@@ -918,7 +924,9 @@ def create_deck():
     p.space_before = Pt(4)
 
     # Bottom Image: DBN Transition
-    img_dbn = ROOT / "presentaciones/img/dbn_temporal_transition.jpg"
+    img_dbn = ROOT / "presentaciones/img/dbn_temporal_transition_es.jpg"
+    if not img_dbn.exists():
+        img_dbn = ROOT / "presentaciones/img/dbn_temporal_transition.jpg"
     if img_dbn.exists():
         s12.shapes.add_picture(str(img_dbn), Inches(0.8), Inches(3.0), Inches(11.733), Inches(3.8))
 
@@ -1039,9 +1047,15 @@ def create_deck():
     p.space_before = Pt(6)
 
     # Save presentation
-    prs.save(str(PPTX_PATH))
-    print(f"Presentación generada exitosamente en: {PPTX_PATH}")
+    try:
+        prs.save(str(PPTX_PATH))
+        print(f"Presentación generada exitosamente en: {PPTX_PATH}")
+    except PermissionError:
+        fallback_path = OUTPUT_DIR / "Introduccion-iie3t-redes-bayesianas-v4-es.pptx"
+        prs.save(str(fallback_path))
+        print(f"Nota: {PPTX_PATH.name} está abierto en PowerPoint. Se guardó copia en: {fallback_path}")
 
 
 if __name__ == "__main__":
     create_deck()
+

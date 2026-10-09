@@ -207,6 +207,19 @@ Se genera la versión v4 de la presentación introductoria (`output/Introduccion
 
 Verificación ejecutada: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes bajo límites de tamaño, 83 formas nativas, normalización de tabla CPT (sumas = 1.0) y presencia de notas y respuestas esperadas con código 0.
 
+## B026 — Ilustraciones científicas en español para la presentación v4
+
+Fecha de registro: 2026-10-09. Prompt: P043 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se generan y preservan versiones en español de las cuatro ilustraciones científicas del deck v4 en `presentaciones/img/`:
+1. **Portada (`portada_integridad_redes_es.jpg`):** Título y nodos rotulados en español con las señales y procesos ecosistémicos.
+2. **Pecera y microcosmos (`sistemico_pecera_microcosmos_es.jpg`):** Títulos, llamadas y ciclos de nutrientes (fotosíntesis, amonio, nitritos, nitratos, biofiltración) en español.
+3. **Mapa de México con malla ráster (`mapa_mexico_pixeles_iie_es.jpg`):** Leyenda de biomas y cuadrícula ampliada en español.
+4. **Redes dinámicas DBN (`dbn_temporal_transition_es.jpg`):** Estados temporales ($t_0 \to t_1$), arcos de transición y persistencia en español.
+
+Se actualiza `presentaciones/generar-presentacion-v4.py` para integrar estas figuras en español en `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`, conservando las versiones originales. Verificación: `presentaciones/verificar-v4.py` completado con código 0 (14 diapositivas, 4 figuras, 1 tabla CPT, 14 notas de orador).
+
+
 
 
 
