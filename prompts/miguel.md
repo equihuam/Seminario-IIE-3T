@@ -175,6 +175,16 @@ Puedes ver la presentación v3, que ya puse en output. Verás que optamos por de
 No noté cambio en el arco x z. La idea es dejarlo punteado o algo semejante. También veo todavía algunos textos derramados. Verifica que quepan adecuadamente en las formas que los reciben.. No quiero puntos finales en los títulos o lemas.
 ```
 
+## P047 — Solicitud de confirmación de commit y push
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+si se requiere haz el commit & push
+```
+
+
 
 
 
