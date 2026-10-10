@@ -7,7 +7,7 @@ from check_repo import issues
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "blog" / "_site"
-EXPECTED = {"index.html", "empieza-aqui.html", "sesiones.html", "temas.html", "reproducibilidad.html",
+EXPECTED = {"index.html", "empieza-aqui.html", "preparar-proyecto.html", "sesiones.html", "temas.html", "reproducibilidad.html",
             "posts/01-tres-capas/index.html", "recursos/comprobacion-python.html", "recursos/comprobacion-r.html",
             "recursos/cambio-climatico.html"}
 EXPECTED.update({"semillero/index.html", "semillero/plantilla.html",

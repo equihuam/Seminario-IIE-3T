@@ -9,7 +9,7 @@ const TMP=path.join(ROOT,'.local/slides-intro/v5-dbn-nueva');
 const SKILL=process.env.PRESENTATIONS_SKILL_DIR;
 const PYTHON=process.env.PRESENTATIONS_PYTHON;
 if(!SKILL || !PYTHON) throw Error('Configurar PRESENTATIONS_SKILL_DIR y PRESENTATIONS_PYTHON');
-const OUT=path.join(ROOT,'output',process.env.DECK_FILENAME || 'Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx');
+const OUT=path.join(ROOT,'output',process.env.DECK_FILENAME || 'Introduccion-iie3t-redes-bayesianas-v5.pptx');
 const p=Presentation.create({slideSize:{width:1280,height:720}});
 const C={bg:'#FAFAF7',ink:'#18343A',muted:'#52656A',x:'#087E86',y:'#AA6717',z:'#73528C',gray:'#E3E9E8',white:'#FFFFFF'};
 const FONT='Arial'; let serial=0;

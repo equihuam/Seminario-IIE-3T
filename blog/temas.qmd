@@ -4,6 +4,8 @@ title: "Catálogo temático"
 
 ## Modelo de tres capas
 
+Actividad previa: [Preparar tu proyecto](preparar-proyecto.qmd), un espacio propio para trabajar con un asistente y conservar decisiones y resultados.
+
 - [Introducción accesible](empieza-aqui.qmd).
 - [Sesión 01: observar, contextualizar e inferir](posts/01-tres-capas/index.qmd).
 

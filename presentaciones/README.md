@@ -1,6 +1,6 @@
 # Presentación introductoria iie-3t
 
-`crear-introduccion.mjs` conserva la construcción inicial. La propuesta más reciente para valoración es `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`; no sustituye automáticamente la selección docente entre versiones. Las secciones siguientes conservan la trayectoria v1–v5. Los PPTX permanecen excluidos de Git. No se incorporó v5 al blog ni se publicó remotamente.
+`crear-introduccion.mjs` conserva la construcción inicial. La propuesta más reciente para valoración es `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`; no sustituye automáticamente la selección docente entre versiones. Las secciones siguientes conservan la trayectoria v1–v5. Los PPTX permanecen excluidos de Git. No se incorporó v5 al blog ni se publicó remotamente.
 
 ## Diseño didáctico
 
@@ -90,3 +90,8 @@ Entregable actual: `output/Introduccion-iie3t-redes-bayesianas-v5-ilustrada-fina
 ### Nueva ilustración y composición temporal (P-ME-009)
 
 Entregable actual: `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`. Diapositiva 13 reorganizada: dos escenas del mismo bosque con suelo y raíces abajo; esquema temporal editable arriba. La nueva imagen `img/bosque-suelo-transicion-v5.png` contiene únicamente ilustración ecológica; símbolos y flechas son nativos. Prompt de generación conservado junto a la imagen. Se reemplaza en el deck la imagen temporal anterior, conservada en el repositorio. El nuevo esquema es un fragmento hipotético: no implica calibración, causalidad demostrada ni pronóstico visual. Quince renders coinciden byte a byte con la revisión anterior.
+
+
+### Nombre consolidado de v5 (P-ME-011)
+
+Miguel eliminó los archivos intermedios de v5 de `output/` y renombró la última entrega a `Introduccion-iie3t-redes-bayesianas-v5.pptx`. Este es el nombre actual para uso, generación y verificación. Las rutas anteriores se mantienen como historia; no indican archivos todavía disponibles. Los renders y recibos privados conservan sus nombres de construcción. Para reconstruir sin sobrescribir la copia vigente, usar `DECK_FILENAME` con otro nombre.

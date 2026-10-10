@@ -329,3 +329,21 @@ Entregable: `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`, SHA2
 Fecha de registro: 2026-10-09. Prompt: P-ME-010. Rama: `miguel/presentacion-v5`. Se reúne el trabajo desde B030: conciliación documental, apertura del blog revisada, fuentes de v5, ilustración nueva y registros. Se incluyen fuentes y salida HTML; PPTX y el histórico local PROMPTS.md quedan fuera conforme al alcance y las políticas ya documentados.
 
 Verificador v5 y cuatro pruebas de política pasan. Se ejecuta de nuevo `scripts/site.py check` antes del commit: dependencias consistentes y render completo. El render reejecuta resultados estocásticos del ejemplo climático; también aparecen diferencias de representación de caracteres asociadas a las advertencias regionales de R, sin cambio de fuentes científicas. El push solicitado se dirige a esta rama, sin integración a main. La comprobación del índice se ejecuta después de seleccionar los archivos.
+
+
+## B040 — Consolidación del nombre de v5
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-011. Miguel informa limpieza de variantes intermedias y renombrado a `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. El SHA256 coincide con B038 (`8a21e5d4d19fc525c479007626469bcbd77b2ec79c50253e99d7d7d9f5270821`): contenido idéntico a la entrega final. Se actualizan rutas predeterminadas de generador y verificador, guía y estado actual del plan; se preservan referencias históricas. Verificador v5 termina con código 0. No se genera, elimina ni modifica ningún PPTX. Sin nuevo commit ni push.
+
+
+## B041 — Actividad previa Preparar tu proyecto
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-012. Se desarrolla la propuesta de Octavio en `blog/preparar-proyecto.qmd`: copia de los tres documentos existentes, elección libre de base agéntica, primer encargo breve y comprobación de continuidad en conversación nueva. Se mantiene la preparación técnica de R/Python para cuando sea necesaria. Se añade navegación y enlaces desde portada, apertura, catálogo y primera sesión; README de la plantilla aclarado. El prompt didáctico fue redactado por Codex y queda conservado en la entrada pública.
+
+Render completo con `scripts/site.py render`, código 0: 18 páginas y límites de publicación verificados. Cuatro pruebas de política pasan. Prueba en Edge: menú abre la página, prompt presente, enlace a plantilla correcto; vista de 390 px sin desbordamiento horizontal. Inspección visual de cabecera y encargo. No se afirma prueba real con participantes ni compatibilidad de plataformas específicas. Registros D25 y PLAN actualizados. Sin cambios al PPTX, commit o push.
+
+## B042 — Verificación remota y preparación de integración a main
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-013. GitHub API muestra tres ramas (main y dos de Miguel), ningún pull request y la incorporación de Maqueo como colaborador, sin contribuciones publicadas suyas. Fetch y autores de commits remotos concuerdan. La comprobación no cubre trabajo local no publicado. Miguel autoriza excepcionalmente merge y push a main.
+
+Se reúnen B040–B041 y los registros de esta decisión en la rama miguel/presentacion-v5. scripts/site.py check termina con código 0: entorno consistente, render completo de 18 páginas, enlaces y límites de publicación correctos; R conserva advertencias regionales ya conocidas. Verificador v5 y cuatro pruebas de política pasan. Se prepara commit e integración; el resultado remoto quedará identificado por el historial Git. PPTX local e histórico PROMPTS.md permanecen fuera del índice. No se afirma despliegue Netlify comprobado ni validación con participantes.

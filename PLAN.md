@@ -82,3 +82,15 @@ Actualización P-ME-008: versión local actual `output/Introduccion-iie3t-redes-
 
 
 Actualización P-ME-009: el rol de ilustrador genera una nueva escena temporal, integrada en `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`, entregable actual. Sustituye la figura DBN problemática en la diapositiva 13. Fuentes gráficas originales y versiones previas conservadas.
+
+
+Actualización P-ME-011: el entregable actual se denomina `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. Miguel limpió las variantes intermedias de v5; generador, verificador y guía apuntan al nombre consolidado. Las entradas previas conservan las rutas históricas.
+
+
+## Preparación previa del proyecto — P-ME-012
+
+Entrada `blog/preparar-proyecto.qmd`, propuesta original de Octavio: copiar la plantilla documental a un espacio propio, usar la base agéntica elegida por cada participante, formular pregunta y primer resultado, y probar continuidad documental en una conversación nueva. Navegación integrada; guía de plantilla aclarada. No requiere instalación de R/Python ni convierte el borrador en modelo ejecutable. Pendiente prueba con participantes y ajuste del tiempo orientativo de 20–30 minutos.
+
+## Integración autorizada — P-ME-013
+
+Miguel autoriza por esta ocasión integrar a main y publicar tras comprobar actividad remota. La consulta de ramas, pull requests y eventos de GitHub, junto con fetch y autores de commits remotos, no muestra contribuciones publicadas de Octavio; aparece su incorporación como colaborador Maqueo. Esto no permite inferir ausencia de trabajo local. Se prepara la integración de la propuesta v5 y la actividad previa, con sus fuentes y blog renderizado; el PPTX permanece local según la política del repositorio. Continúan pendientes la discusión con Octavio y la prueba de la actividad con participantes.

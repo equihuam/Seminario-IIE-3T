@@ -302,3 +302,29 @@ Fecha de registro: 2026-10-09. Hora de emisión no disponible.
 ```text
 Quedó muy bien vamos a hacer un commit & push aquí
 ```
+
+
+## P-ME-011 — Nombre consolidado de v5
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Limpie output. Me quedé sólo con la última versión de v5 y la renombré a Introduccion-iie3t-redes-bayesianas-v5.pptx
+```
+
+
+## P-ME-012 — Actividad previa para preparar el proyecto agéntico
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Octavio propuso agregar una actividad previa al arranque, puede ser una sección herramientas o algo más preciso para referirse a la propuesta de preparar un proyecto agéntico para desarrollar el trabajo.Ya habíamos avanzado algo al respecto con la idea de la plantilla. Lo que sugiere Octavio es una entrada para explicar como usarla para preparar el espacio de trabajo. Les indicaremos que pueden usar la base agéntica de su preferencia.
+```
+
+## P-ME-013 — Integración excepcional a main
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Entiendo que Octavio no ha iniciado actividad por su lado. Verifica en github, si es así, entonces, por esta ocasión, hagamos el merge a main, comit & push
+```

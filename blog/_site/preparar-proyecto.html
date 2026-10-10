@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Actividad previa: un espacio de trabajo propio para colaborar con un asistente agéntico.">
 
-<title>Comprobación del entorno R – iie-3t · Seminario</title>
+<title>Preparar tu proyecto – iie-3t · Seminario</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -26,61 +27,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-3be04e9191975886ffbbdc1e6b376307.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-3be04e9191975886ffbbdc1e6b376307.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +76,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -120,7 +86,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">iie-3t · Seminario</span>
     </a>
   </div>
@@ -131,27 +97,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../preparar-proyecto.html"> 
+    <a class="nav-link active" href="./preparar-proyecto.html" aria-current="page"> 
 <span class="menu-text">Preparar proyecto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../empieza-aqui.html"> 
+    <a class="nav-link" href="./empieza-aqui.html"> 
 <span class="menu-text">Empieza aquí</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sesiones.html"> 
+    <a class="nav-link" href="./sesiones.html"> 
 <span class="menu-text">Sesiones</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../temas.html"> 
+    <a class="nav-link" href="./temas.html"> 
 <span class="menu-text">Temas</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../semillero/index.html"> 
+    <a class="nav-link" href="./semillero/index.html"> 
 <span class="menu-text">Semillero</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../reproducibilidad.html"> 
+    <a class="nav-link" href="./reproducibilidad.html"> 
 <span class="menu-text">Reproducibilidad</span></a>
   </li>  
 </ul>
@@ -165,17 +131,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#crea-una-carpeta-propia-y-copia-la-plantilla" id="toc-crea-una-carpeta-propia-y-copia-la-plantilla" class="nav-link active" data-scroll-target="#crea-una-carpeta-propia-y-copia-la-plantilla">1. Crea una carpeta propia y copia la plantilla</a></li>
+  <li><a href="#vincula-el-asistente-con-ese-espacio" id="toc-vincula-el-asistente-con-ese-espacio" class="nav-link" data-scroll-target="#vincula-el-asistente-con-ese-espacio">2. Vincula el asistente con ese espacio</a></li>
+  <li><a href="#haz-un-primer-encargo-pequeño" id="toc-haz-un-primer-encargo-pequeño" class="nav-link" data-scroll-target="#haz-un-primer-encargo-pequeño">3. Haz un primer encargo pequeño</a></li>
+  <li><a href="#comprueba-que-puedes-retomar-el-trabajo" id="toc-comprueba-que-puedes-retomar-el-trabajo" class="nav-link" data-scroll-target="#comprueba-que-puedes-retomar-el-trabajo">4. Comprueba que puedes retomar el trabajo</a></li>
+  <li><a href="#qué-traer-al-primer-encuentro" id="toc-qué-traer-al-primer-encuentro" class="nav-link" data-scroll-target="#qué-traer-al-primer-encuentro">Qué traer al primer encuentro</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Comprobación del entorno R</h1>
+<h1 class="title">Preparar tu proyecto</h1>
 </div>
 
+<div>
+  <div class="description">
+    Actividad previa: un espacio de trabajo propio para colaborar con un asistente agéntico.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -190,20 +171,89 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(<span class="fu">sum</span>(probabilidades) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">sum</span>(probabilidades <span class="sc">*</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>))</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">stopifnot</span>(<span class="fu">abs</span>(resultado <span class="sc">-</span> <span class="fl">1.3</span>) <span class="sc">&lt;</span> <span class="fl">1e-12</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">sprintf</span>(<span class="st">"R %s · resultado: %.1f"</span>, <span class="fu">getRversion</span>(), resultado))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>R 4.6.0 &lt;U+00B7&gt; resultado: 1.3</code></pre>
-</div>
-</div>
-<p>El resultado esperado es <strong>1.3</strong>. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE.</p>
+<p>Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar <strong>la base agéntica de tu preferencia</strong>: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.</p>
+<p><strong>Objetivo:</strong> poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar. Reserva unos <strong>20–30 minutos</strong>, como orientación. Esta preparación puede hacerse con acompañamiento si todavía no has elegido una herramienta.</p>
+<section id="crea-una-carpeta-propia-y-copia-la-plantilla" class="level2">
+<h2 class="anchored" data-anchor-id="crea-una-carpeta-propia-y-copia-la-plantilla">1. Crea una carpeta propia y copia la plantilla</h2>
+<p>Elige un nombre reconocible, por ejemplo <code>mi-proyecto-iie3t</code>, y una ubicación que puedas volver a encontrar. Allí reunirás el trabajo del seminario.</p>
+<p>Abre la <a href="https://github.com/equihuam/Seminario-IIE-3T/tree/main/plantilla-participantes">plantilla para participantes del seminario</a> y copia sus <strong>tres archivos</strong> a esa carpeta, conservando sus nombres. Puedes abrir cada archivo en el repositorio y copiar su contenido a un archivo de texto local con el mismo nombre. Si ya tienes una copia del repositorio del seminario, basta con copiar el contenido de su carpeta <code>plantilla-participantes</code>. También puedes solicitar los archivos a la coordinación.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Documento</th>
+<th>Para qué sirve ahora</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Guía de inicio (<code>README.md</code>)</td>
+<td>Explica la organización y lo que todavía falta preparar.</td>
+</tr>
+<tr class="even">
+<td>Definición del proyecto (<code>PROYECTO.md</code>)</td>
+<td>Conserva tu pregunta, alcance y primer resultado esperado.</td>
+</tr>
+<tr class="odd">
+<td>Bitácora de trabajo</td>
+<td>Registra lo que hiciste, cómo lo comprobaste y qué quedó pendiente.</td>
+</tr>
+</tbody>
+</table>
+<p>La plantilla es <strong>documental</strong>: todavía no contiene un modelo ejecutable. En esta actividad solo necesitas estos archivos; las carpetas para datos, código y resultados se crearán cuando hagan falta.</p>
+</section>
+<section id="vincula-el-asistente-con-ese-espacio" class="level2">
+<h2 class="anchored" data-anchor-id="vincula-el-asistente-con-ese-espacio">2. Vincula el asistente con ese espacio</h2>
+<p>Abre o selecciona la carpeta como proyecto en tu herramienta, si dispone de esa función. Comprueba qué archivos puede leer y modificar. Si trabajas con un asistente que solo recibe documentos adjuntos, comparte los tres archivos y guarda tú las versiones acordadas en la carpeta.</p>
+<p>Pídele que lea los documentos y explique qué encontró antes de proponer cambios. <strong>No presupongas que recuerda otra conversación o que lee automáticamente todos los archivos.</strong> Si tu plataforma admite instrucciones de proyecto, coloca allí los acuerdos de trabajo; conserva también una copia legible en tu carpeta.</p>
+</section>
+<section id="haz-un-primer-encargo-pequeño" class="level2">
+<h2 class="anchored" data-anchor-id="haz-un-primer-encargo-pequeño">3. Haz un primer encargo pequeño</h2>
+<p>Copia este mensaje y adapta lo que aparece entre corchetes:</p>
+<pre class="text"><code>Estoy preparando mi espacio de trabajo para el seminario IIE-3T.
+Mi carpeta o proyecto es [nombre]. Lee los tres documentos de la plantilla
+que he puesto a tu disposición y dime cuáles pudiste consultar.
+
+Ayúdame a completar solo el nombre, la pregunta inicial, el alcance
+y un primer resultado pequeño en la definición del proyecto.
+Mi interés inicial es [tema, ecosistema o pregunta; puede ser provisional].
+Deja por completar lo que todavía no hemos decidido. No inventes datos,
+fuentes ni resultados. Distingue mis decisiones de tus propuestas.
+Trabaja únicamente con este proyecto y conserva los datos originales.
+Antes de instalar programas, publicar o enviar archivos, explícame
+para qué hace falta y espera mi autorización.
+
+Registra en la bitácora lo que acordamos, lo que realmente comprobamos
+y el siguiente paso. Si no puedes escribir archivos, entrégame el texto
+y aclara que debo guardarlo yo.</code></pre>
+<p>Revisa el resultado antes de aceptarlo. Una pregunta suficiente para comenzar podría ser: «¿Qué observaciones necesitaría para comparar dos sitios del mismo tipo de bosque?». El primer resultado podría ser una lista breve de observaciones posibles y dudas sobre su interpretación. <strong>No necesitas definir aún una red, calcular el IIE ni completar las secciones técnicas de la plantilla.</strong></p>
+</section>
+<section id="comprueba-que-puedes-retomar-el-trabajo" class="level2">
+<h2 class="anchored" data-anchor-id="comprueba-que-puedes-retomar-el-trabajo">4. Comprueba que puedes retomar el trabajo</h2>
+<p>Guarda los documentos y abre una conversación nueva con acceso a esos archivos. Pide al asistente:</p>
+<blockquote class="blockquote">
+<p>Lee los documentos del proyecto. ¿Cuál es mi pregunta, qué sigue pendiente y cuál es el siguiente paso acordado? Señala en qué documento encontraste cada respuesta.</p>
+</blockquote>
+<p>Contrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario.</p>
+</section>
+<section id="qué-traer-al-primer-encuentro" class="level2">
+<h2 class="anchored" data-anchor-id="qué-traer-al-primer-encuentro">Qué traer al primer encuentro</h2>
+<ul>
+<li>Tu carpeta y los documentos que puedas volver a abrir.</li>
+<li>Una pregunta provisional y un primer resultado pequeño.</li>
+<li>Una entrada de bitácora con la comprobación realizada y el siguiente paso.</li>
+<li>Una dificultad o duda sobre el trabajo con el asistente, si apareció.</li>
+</ul>
+<p>No compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.</p>
+<p>Si no lograste configurar una herramienta, trae los documentos y la dificultad que encontraste: <strong>eso no impide participar en la apertura</strong>. R, Python, control de versiones y dependencias se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.</p>
+<p>Continúa con <a href="./empieza-aqui.html">Empieza aquí</a> y la <a href="./posts/01-tres-capas/index.html">sesión de apertura</a>. Los acuerdos para documentar y comprobar el trabajo están en <a href="./reproducibilidad.html">Reproducibilidad</a>.</p>
+<p><em>Actividad propuesta por Octavio y desarrollada para discusión del equipo. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

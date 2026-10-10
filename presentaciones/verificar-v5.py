@@ -9,7 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 PPTX = ROOT / (sys.argv[1] if len(sys.argv) > 1 else
-               "output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx")
+               "output/Introduccion-iie3t-redes-bayesianas-v5.pptx")
 NS = {"p": "http://schemas.openxmlformats.org/presentationml/2006/main",
       "a": "http://schemas.openxmlformats.org/drawingml/2006/main"}
 

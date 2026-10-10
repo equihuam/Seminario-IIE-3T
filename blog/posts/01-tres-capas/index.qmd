@@ -19,6 +19,7 @@ categories: [iie-3t, Introducción, Reproducibilidad]
 
 ## Materiales
 
+- [Actividad previa: preparar tu proyecto](../../preparar-proyecto.qmd), con la plantilla y el asistente de tu preferencia.
 - [Introducción y esquema del equipo](../../empieza-aqui.qmd).
 - [Ficha de observación](../../recursos/guia-observacion.csv), vacía y editable.
 - [Principios de reproducibilidad](../../reproducibilidad.qmd).

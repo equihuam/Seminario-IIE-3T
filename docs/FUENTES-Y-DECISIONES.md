@@ -147,3 +147,10 @@ Aplicación D23 autorizada en P-ME-007: el párrafo sobre simbiosis se incorpora
 ## D24 — Ilustración temporal y notación separadas (P-ME-009)
 
 Se reemplaza la figura temporal generada de v4 por una ilustración nueva sin rótulos ni flechas incrustadas. Los elementos formales se construyen como objetos editables: V_t→S_(t+1) y S_t→V_(t+1), sin nodo en el cruce. Las escenas son evocaciones del mismo bosque en momentos sucesivos, sin datos, degradación ni recuperación supuestas. La explicación puede prolongarse verbalmente a V_t→S_(t+1)→V_(t+2). Se mantiene el carácter hipotético del fragmento y la necesidad de distribuciones iniciales, transición y observación. Rol de ilustrador aplicado en esta conversación, sin subagente.
+
+
+## D25 — Preparar tu proyecto antes de la apertura (P-ME-012)
+
+Se acoge la propuesta de Octavio mediante una entrada propia y navegación «Preparar proyecto». Fuente: los tres archivos existentes de `plantilla-participantes/`, verificados también en el árbol de main. Se enlaza la carpeta pública del repositorio sin copiar registros internos al blog. No se impone plataforma, suscripción, programación ni lectura automática de instrucciones. Quien use un asistente sin escritura guarda personalmente los textos.
+
+Mirada del didacta: tarea pequeña con producto verificable, prompt inicial y prueba en conversación nueva; solo completar pregunta, alcance y primer resultado, dejando la definición formal para el seminario. Mirada del revisor: distinguir continuidad documental de reproducción científica, lectura real de supuesta memoria, y propuestas del asistente de decisiones del participante. No se afirma compatibilidad probada de plataformas específicas ni se atribuye entorno ejecutable a una plantilla documental. Roles aplicados en esta conversación. Tiempo orientativo, pendiente de prueba.

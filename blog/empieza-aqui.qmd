@@ -5,6 +5,8 @@ description: "De la salud de los ecosistemas y el pensamiento sistémico al diag
 
 ## Más allá de la apariencia: la metáfora de la salud
 
+Si estás preparando tu primer encuentro, puedes comenzar por [organizar tu proyecto y probar la plantilla](preparar-proyecto.qmd). Esta lectura conceptual también se puede seguir sin haber configurado herramientas.
+
 Cuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.
 
 En el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la **metáfora de la salud** ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el **diagnóstico**, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.
