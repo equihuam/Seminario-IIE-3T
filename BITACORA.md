@@ -195,6 +195,155 @@ Se adopta el esquema de trabajo colaborativo entre Miguel y Octavio:
 
 Verificación: Pruebas unitarias `python -m unittest discover tests` ejecutadas con código 0; regeneración y enlaces del blog validados con `scripts/site.py check`. Commit y push a `origin/main` autorizados y ejecutados.
 
+## B025 — Actualización de la presentación introductoria (v4, 14 diapositivas)
+
+Fecha de registro: 2026-10-09. Prompts: P040–P042 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se genera la versión v4 de la presentación introductoria (`output/Introduccion-iie3t-redes-bayesianas-v4.pptx`) con 14 diapositivas en formato 16:9, aplicando los roles de didacta, revisor conceptual e ilustrador científico:
+1. **Salud ecosistémica y microcosmos sistémico:** Se incorporan la metáfora organísmica (Margulis, Ecosalud) y la analogía del vivario/pecera (Forrester, Meadows), con ilustración científica generada para media diapositiva en la diapositiva 3.
+2. **Descomposición de la distribución conjunta:** Se formaliza el DAG como la regla de factorización $P(X,Y,Z) = P(X)P(Z|X)P(Y|X,Z)$, enlazando estructura gráfica y reducción de parámetros.
+3. **Redes Bayesianas Dinámicas (DBN):** Se ilustra el desdoblamiento temporal ($t_0 \to t_1$) para bucles de retroalimentación con figura evocativa en la diapositiva 12.
+4. **Infraestructura en Python:** Implementación del script generador `presentaciones/generar-presentacion-v4.py` en `python-pptx`, con paleta de colores institucional, formas vectoriales, tabla CPT nativa y notas completas para el facilitador.
+
+Verificación ejecutada: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes bajo límites de tamaño, 83 formas nativas, normalización de tabla CPT (sumas = 1.0) y presencia de notas y respuestas esperadas con código 0.
+
+## B026 — Ilustraciones científicas en español para la presentación v4
+
+Fecha de registro: 2026-10-09. Prompt: P043 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se generan y preservan versiones en español de las cuatro ilustraciones científicas del deck v4 en `presentaciones/img/`:
+1. **Portada (`portada_integridad_redes_es.jpg`):** Título y nodos rotulados en español con las señales y procesos ecosistémicos.
+2. **Pecera y microcosmos (`sistemico_pecera_microcosmos_es.jpg`):** Títulos, llamadas y ciclos de nutrientes (fotosíntesis, amonio, nitritos, nitratos, biofiltración) en español.
+3. **Mapa de México con malla ráster (`mapa_mexico_pixeles_iie_es.jpg`):** Leyenda de biomas y cuadrícula ampliada en español.
+4. **Redes dinámicas DBN (`dbn_temporal_transition_es.jpg`):** Estados temporales ($t_0 \to t_1$), arcos de transición y persistencia en español.
+
+Se actualiza `presentaciones/generar-presentacion-v4.py` para integrar estas figuras en español en `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`, conservando las versiones originales. Verificación: `presentaciones/verificar-v4.py` completado con código 0 (14 diapositivas, 4 figuras, 1 tabla CPT, 14 notas de orador).
+
+## B027 — Incorporación de arcos vectoriales y tipografía matemática estilizada
+
+Fecha de registro: 2026-10-09. Prompt: P044 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Verificación: `presentaciones/verificar-v4.py` validó 14 diapositivas, 4 imágenes, 88 formas, 11 conectores (3 discontinuos), tabla CPT y 14 notas con código 0.
+
+## B028 — Homologación del tratamiento tentativo del arco X -> Z conforme a v3 (D14)
+
+Fecha de registro: 2026-10-09. Prompt: P045 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se inspecciona `output/Introduccion-iie3t-redes-bayesianas-v3.pptx` para contrastar y preservar el acuerdo didáctico sobre el arco contextual $X \to Z$:
+1. **Representación visual:** Se mantiene el trazo discontinuo en las diapositivas 5, 9 y 11 ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$) y la leyenda explícita de relación en evaluación.
+2. **Notas del presentador:** Se integran literalmente en las notas de las diapositivas 5, 9 y 11 los argumentos conceptuales del acuerdo del equipo: la línea discontinua es incertidumbre estructural y no un tipo adicional de probabilidad; cada modelo formal debe decidir si lo incluye o excluye; y se reserva el contraste de modelos para la actividad posterior tras estudiar separación-d e identificabilidad.
+
+## B029 — Trazo discontinuo DrawingML, ajuste tipográfico y eliminación de puntos finales en títulos
+
+Fecha de registro: 2026-10-09. Prompt: P046 (en `prompts/miguel.md`). Rama: `miguel/actualizacion-presentacion`.
+
+Se realizan los ajustes solicitados sobre `presentaciones/generar-presentacion-v4.py` y el deck final `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`:
+1. **Trazo discontinuo en DrawingML:** Se corrige el orden de serialización OpenXML en `add_arrow()`, insertando `<a:prstDash val="dash"/>` antes de `<a:tailEnd>`. Esto garantiza que PowerPoint interprete y dibuje con total claridad el trazo punteado/discontinuo en los arcos de hipótesis tentativa ($X \dashrightarrow Z$, $X_i \dashrightarrow Z_i$, $X_j \dashrightarrow Z_{ij}$) en las diapositivas 5, 9 y 11.
+2. **Eliminación de puntos finales en títulos y lemas:** Se revisan y limpian sistemáticamente todos los títulos de diapositivas, subtítulos, lemas y encabezados de tarjetas y recuadros en las 14 diapositivas, suprimiendo los puntos finales.
+3. **Control de desbordamiento de texto:** Se recalibran márgenes, interlineados (`space_before=Pt(3..6)`), alturas de tarjetas y tamaños de fuente en las diapositivas 2, 4, 6, 8, 10, 11, 13 y 14, asegurando que todo el contenido quede holgadamente contenido dentro de sus formas contenedoras.
+
+Verificación: `presentaciones/verificar-v4.py` completado con código 0 (14 diapositivas, 4 ilustraciones científicas en español, 88 formas nativas, 11 conectores vectoriales con 3 flechas discontinuas, 1 tabla CPT normalizada, 14 notas de orador). Verificación de políticas con `scripts/check_repo.py` exitosa (125 archivos verificados, código 0).
 
 
 
+
+
+
+
+
+
+
+
+## B030 — Sincronización y conciliación de registros tras Antigravity
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-001 en prompts/miguel.md. Se reserva B025–B029 para los hitos ya existentes en la rama de presentación.
+
+Pull fast-forward correcto de 7fc828c a 2e485d3; se reciben 87fa876 (apertura del blog) y 2e485d3 (colaboración y ramas). Se consulta origin/miguel/actualizacion-presentacion en 6556556: v4, ilustraciones y registros propios. Los dos scripts y ocho imágenes locales coinciden con la rama remota; se preservan sin reemplazarlos ni incorporarlos a main. Se crea miguel/revision-registros desde main actualizado para este encargo, conforme a la política nueva.
+
+Se actualizan README, ENVIRONMENT, PLAN, guía de prompts y guía de presentación, y se añade D20. Se distingue contenido integrado, trabajo en rama y artefactos locales. El histórico P001–P028 permanece local, sin borrarlo ni duplicarlo en los prompts nuevos; se documenta que ahora aparece sin seguimiento porque la exclusión se retiró en el remoto. No se ejecuta migración indiscriminada de transcripciones privadas.
+
+Comprobaciones observadas: verificar-v4.py termina con código 0 (14 diapositivas, 4 imágenes, 88 formas, 11 conectores, 3 discontinuos, una tabla normalizada y 14 notas); check_site.py confirma 17 páginas y límites de publicación; cuatro pruebas unittest de política pasan. Un examen adicional de fragmentos HTML detecta un enlace roto en temas.html hacia la sección antigua de Empieza aquí. Se registran ese pendiente y los límites conceptuales/visuales en D20 y PLAN. No se reejecutó el render completo, el generador v4 ni las pruebas científicas R; las ejecuciones anteriores de B023–B029 no se presentan como propias. Sin cambios a fuentes docentes, PPTX o imágenes; sin commit, push ni fusión.
+
+
+## B031 — Pull de la rama de presentación y conservación de registros locales
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-002.
+
+Se actualiza miguel/revision-registros mediante git pull --ff-only origin miguel/actualizacion-presentacion, de 2e485d3 a bca5a48. El nuevo commit respecto de 6556556 registra P047. Quedan recibidos también los commits de v4, los registros B025–B029 y P040–P047. main permanece en 2e485d3; no se integra a la rama de publicación.
+
+Los cambios documentales locales se resguardaron en stash antes del pull y se recuperaron. Se resolvieron conflictos de adición en PLAN, guía de presentación y prompts/miguel conservando ambas series de entradas. Los scripts e imágenes antes sin seguimiento coinciden con los recibidos; se cotejó también la conservación del histórico local PROMPTS.md. Se mantiene el stash como respaldo. Sin commit ni push; no se repiten pruebas de presentación porque el commit nuevo solo añade un registro de prompt.
+
+## B032 — Propuesta propia de presentación v5
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-003. Rama: `miguel/presentacion-v5`, creada desde el estado sincronizado en bca5a48 y conservando los cambios documentales pendientes.
+
+Se produce `output/Introduccion-iie3t-redes-bayesianas-v5-final.pptx` con 16 diapositivas, fuente `presentaciones/crear-introduccion-v5.mjs` y verificador `presentaciones/verificar-v5.py`. Los roles didacta y revisor se aplican en esta conversación. La propuesta parte de v3, usa un caso conductor de dos bosques, muestra una actualización bayesiana hipotética y termina con actividad y cosecha de ideas. Se reutilizan portada existente y mapa original 2018; no se generan ilustraciones nuevas. Se documentan alcance y decisiones en D21 y en la guía de presentación.
+
+Se renderizan y revisan las 16 diapositivas. Se corrigen posición de etiquetas y puntas de flechas, se explicitan ambos pesos conjuntos de Bayes y se hace autocontenida la pregunta final; se reexporta y se inspeccionan las cinco diapositivas modificadas. El finalizador informa paquete y geometría sin hallazgos, Arial conforme y reimportación de 16 diapositivas. Node devuelve código 1 tras terminar recibo y renders, sin diagnóstico adicional; se registra esa anomalía de cierre. La verificación independiente termina con código 0: 13 conectores anclados, tres discontinuos, tres tablas, posterior [0.8, 0.2], imágenes originales preservadas y 16 notas. SHA256 final: `0fc6b2f891d64b9dc48326c0758cb44fd5da71046bbab4c9cec7a847f5baca46`. No se prueba en PowerPoint nativo ni se valida empíricamente el modelo. No se modifica v4 ni se publica el material; sin commit ni push.
+
+## B033 — Historia creativa y revisión de la apertura
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-004. Se incorpora como relato retrospectivo de Miguel la evolución de «Empieza aquí»: salud y pensamiento sistémico, conjunta y DAG, puente a DBNs, exclusión provisional de resiliencia y recordatorio bayesiano para principiantes.
+
+Se revisa la página con los roles didacta y revisor en esta conversación, se extraen los pasajes pertinentes del DOCX y se contrastan fuentes públicas de Oikos, Murphy y Donella Meadows Project. D22 registra fuentes y propuestas. Se conserva la secuencia principal, proponiendo precisiones de alcance, causalidad, transiciones temporales y actualización de probabilidades, con fórmula opcional. Se detectan además autoría bibliográfica incorrecta y la mención de resiliencia en v5, pendiente de retirar conforme al contexto nuevo. Se confirma el enlace antiguo en blog/temas.qmd ya señalado en D20. Solo se actualizan registros; blog y PPTX sin modificaciones, sin render ni pruebas de ejecución porque el encargo es una revisión de contenido. Sin commit ni push.
+
+## B034 — Blog y presentación revisados para discusión con Octavio
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-005. Rama: `miguel/presentacion-v5`. Se aplican los ajustes aceptados de D22 a `blog/empieza-aqui.qmd` y al generador v5; se corrige el enlace de `blog/temas.qmd`. Se conserva el PPTX anterior y se entrega `output/Introduccion-iie3t-redes-bayesianas-v5-revisada.pptx` (SHA256 `a245f321e9c2b3860ee91cb6779b9f1e08fc3a2c633c389b256dd9d8c1712309`).
+
+`scripts/site.py check` termina con código 0: renv consistente, dependencias Python sin conflictos y 17 páginas renderizadas con verificación de enlaces y límites de publicación. R emite advertencias de configuración regional sin impedir la ejecución. Se prueba el HTML servido solo en 127.0.0.1 con Edge automatizado: ambos desplegables comienzan cerrados, se abren y el enlace del catálogo llega a la sección correcta; se inspeccionan capturas de la apertura y los desplegables. La herramienta de navegador integrada no inició por un error local de recursos; se usó Edge instalado. Una comprobación HTML inicial asumió destinos por ID y contó el menú; se sustituyó por la prueba funcional de los desplegables reales, que usan selectores de clase.
+
+Se renderizan las 16 diapositivas; se inspeccionan las cuatro que cambiaron visualmente y se comprueba identidad de los otros doce PNG. Finalizador sin hallazgos y verificador independiente con código 0: tablas normalizadas, posterior [0.8, 0.2], 13 conectores anclados, tres discontinuos, imágenes originales y 16 notas. Persiste la anomalía Node de código 1 después de completar recibo y renders, sin error diagnóstico. No se prueba en PowerPoint nativo. Fuentes y HTML permanecen como cambios locales de la rama, sin commit, push ni publicación remota.
+
+
+## B035 — Valoración de referencias aportadas sobre Margulis
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-006. Se revisan las cuatro referencias con alcance de acceso explícito en D23. Se recomienda O’Malley para el legado conceptual y Koide para ejemplos ecológicos; Miller y colaboradores y Suárez quedan como lecturas de profundización. Se distingue apoyo a una perspectiva relacional de atribución directa a Margulis y de validación del modelo IIE. Solo registros actualizados, sin cambios al blog/PPTX ni nuevas comprobaciones de render.
+
+
+## B036 — Incorporación de Margulis con apoyo bibliográfico
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-007. Rama: `miguel/presentacion-v5`. Se añade al blog el párrafo acordado sobre asociaciones simbióticas, con O’Malley (2017) y Koide (2023), referencias completas y ajuste de la función de la reseña de Eguiarte. La diapositiva 3 y sus notas incorporan el mismo puente conceptual. Se conserva la portada y el total de 16 diapositivas.
+
+Entregable: `output/Introduccion-iie3t-redes-bayesianas-v5-revisada-margulis.pptx`, SHA256 `5b239b1bff5eacd671f3ddc38264231bb6af51dcdb2171af1c6bc8c29b3f9e2c`. Finalizador sin hallazgos; verificador independiente código 0; 16 renders, inspección visual de la diapositiva 3 e identidad binaria de los otros quince PNG respecto a la revisión anterior. Se mantiene el cierre Node con código 1 tras completar recibo y renders; no se afirma prueba en PowerPoint nativo.
+
+`scripts/site.py render` termina con código 0, reejecuta R/Python y verifica 17 páginas, enlaces locales y límites de publicación. Se reinicia el servidor local y se comprueban con Edge los desplegables y la navegación; se inspecciona la apertura renderizada. No se repite la auditoría del entorno porque no cambian dependencias. Registros actualizados; sin commit, push ni publicación remota.
+
+
+## B037 — Figuras de pecera y transición temporal
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-008. Rama: `miguel/presentacion-v5`. Se incorporan imágenes existentes a las diapositivas 5 (cuatro zonas) y 13 (esquema editable arriba, figura abajo). La ilustración temporal tiene rótulos y arcos inconsistentes con el acuerdo IIE-3T; se conserva por solicitud del usuario, con leyenda de ilustración y límites detallados en notas.
+
+Entregable: `output/Introduccion-iie3t-redes-bayesianas-v5-ilustrada-final.pptx`, SHA256 `cbca85a9329737d6789644f0c3156d5a40bd13addfe34662a653f86eac0c5bb0`. Se renderizan 16 diapositivas y revisan las dos modificadas; se corrige un salto de línea de subíndices en la 13. Finalizador sin hallazgos y verificador propio con código 0: cuatro imágenes preservadas, tres tablas, 13 conectores anclados, tres discontinuos y posterior correcta. Las otras catorce diapositivas no cambian visualmente respecto a v5 con Margulis. Se mantiene el cierre Node con código 1 tras completar productos; sin prueba en PowerPoint nativo. Blog sin cambios, no requiere render. Sin commit ni push.
+
+
+## B038 — Nueva ilustración temporal integrada
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-009. Rama: `miguel/presentacion-v5`. Se aplica el rol de ilustrador mediante image_gen y se conserva imagen y prompt en `presentaciones/img/`. Nueva diapositiva 13 con escenas ecológicas a todo el ancho y notación temporal nativa; se retira del deck la imagen anterior sin eliminarla del proyecto.
+
+Entregable: `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`, SHA256 `8a21e5d4d19fc525c479007626469bcbd77b2ec79c50253e99d7d7d9f5270821`. Se renderizan las 16 páginas, se inspecciona la 13 y se comprueba identidad binaria de los otros quince PNG. Finalizador sin hallazgos; verificador independiente termina con código 0: cuatro imágenes preservadas, tres tablas normalizadas y 13 conectores adheridos. Persiste el cierre Node con código 1 después de completar productos, sin diagnóstico adicional. No se prueba en PowerPoint nativo. Blog sin cambios; sin commit ni push.
+
+
+## B039 — Preparación de commit y push de la propuesta v5
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-010. Rama: `miguel/presentacion-v5`. Se reúne el trabajo desde B030: conciliación documental, apertura del blog revisada, fuentes de v5, ilustración nueva y registros. Se incluyen fuentes y salida HTML; PPTX y el histórico local PROMPTS.md quedan fuera conforme al alcance y las políticas ya documentados.
+
+Verificador v5 y cuatro pruebas de política pasan. Se ejecuta de nuevo `scripts/site.py check` antes del commit: dependencias consistentes y render completo. El render reejecuta resultados estocásticos del ejemplo climático; también aparecen diferencias de representación de caracteres asociadas a las advertencias regionales de R, sin cambio de fuentes científicas. El push solicitado se dirige a esta rama, sin integración a main. La comprobación del índice se ejecuta después de seleccionar los archivos.
+
+
+## B040 — Consolidación del nombre de v5
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-011. Miguel informa limpieza de variantes intermedias y renombrado a `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. El SHA256 coincide con B038 (`8a21e5d4d19fc525c479007626469bcbd77b2ec79c50253e99d7d7d9f5270821`): contenido idéntico a la entrega final. Se actualizan rutas predeterminadas de generador y verificador, guía y estado actual del plan; se preservan referencias históricas. Verificador v5 termina con código 0. No se genera, elimina ni modifica ningún PPTX. Sin nuevo commit ni push.
+
+
+## B041 — Actividad previa Preparar tu proyecto
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-012. Se desarrolla la propuesta de Octavio en `blog/preparar-proyecto.qmd`: copia de los tres documentos existentes, elección libre de base agéntica, primer encargo breve y comprobación de continuidad en conversación nueva. Se mantiene la preparación técnica de R/Python para cuando sea necesaria. Se añade navegación y enlaces desde portada, apertura, catálogo y primera sesión; README de la plantilla aclarado. El prompt didáctico fue redactado por Codex y queda conservado en la entrada pública.
+
+Render completo con `scripts/site.py render`, código 0: 18 páginas y límites de publicación verificados. Cuatro pruebas de política pasan. Prueba en Edge: menú abre la página, prompt presente, enlace a plantilla correcto; vista de 390 px sin desbordamiento horizontal. Inspección visual de cabecera y encargo. No se afirma prueba real con participantes ni compatibilidad de plataformas específicas. Registros D25 y PLAN actualizados. Sin cambios al PPTX, commit o push.
+
+## B042 — Verificación remota y preparación de integración a main
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-013. GitHub API muestra tres ramas (main y dos de Miguel), ningún pull request y la incorporación de Maqueo como colaborador, sin contribuciones publicadas suyas. Fetch y autores de commits remotos concuerdan. La comprobación no cubre trabajo local no publicado. Miguel autoriza excepcionalmente merge y push a main.
+
+Se reúnen B040–B041 y los registros de esta decisión en la rama miguel/presentacion-v5. scripts/site.py check termina con código 0: entorno consistente, render completo de 18 páginas, enlaces y límites de publicación correctos; R conserva advertencias regionales ya conocidas. Verificador v5 y cuatro pruebas de política pasan. Se prepara commit e integración; el resultado remoto quedará identificado por el historial Git. PPTX local e histórico PROMPTS.md permanecen fuera del índice. No se afirma despliegue Netlify comprobado ni validación con participantes.

@@ -103,3 +103,54 @@ Con la incorporación del trabajo colaborativo de Miguel y Octavio, se reconside
 
 Se formaliza la mecánica de ramas: `main` permanece como rama canónica y de publicación limpia; todo desarrollo activo se realiza en ramas `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>` y solo se integra a `main` tras consenso, verificación de entornos y revisión conceptual/didáctica.
 
+
+
+## D20 — Conciliación de ramas y alcance de revisión (P-ME-001)
+
+Consulta directa de commits y archivos el 2026-10-09: pull fast-forward de 7fc828c a 2e485d3 en main; rama remota miguel/actualizacion-presentacion en 6556556 consultada sin fusionarla. B025–B029 y P040–P046 pertenecen a esa rama y no se duplican aquí. Las verificaciones atribuidas a Antigravity se conservan como historia; B030 distingue las reejecutadas en esta revisión. No se auditó el DOCX de referencia ni se validaron de nuevo sus citas.
+
+Hallazgos pendientes de corrección editorial/conceptual: `blog/temas.qmd` conserva el fragmento `#del-esquema-a-una-red`, ausente en la nueva apertura; el verificador del sitio comprueba archivos pero no fragmentos. La explicación de DAG en `blog/empieza-aqui.qmd` vincula aciclicidad con cálculo exacto: precisar que la estructura define la factorización de la red y no garantiza inferencia exacta eficiente. En v4, revisar la equiparación de Z con estado biótico real en notas y no interpretar el conteo XML de conectores como validación de anclajes, geometría o legibilidad. Son hallazgos documentales, sin modificación del contenido docente en este encargo.
+
+## D21 — Interpretación didáctica v5 (P-ME-003)
+
+Se toma v3 como antecedente y el manuscrito `iie-teoria.qmd`, versión Git `2e3d3773b0f67a09a9f0935804ccf79d19450ca4`, como fuente conceptual (secciones 3–5, 8 y 21, precisadas en notas). Se aplica didacta y revisor en la conversación actual, sin revisión independiente. La propuesta comienza con un contraste hipotético entre bosques y presenta el cálculo bayesiano después de definir las capas. El ejemplo fija el contexto, usa prior [0.5, 0.5] y verosimilitudes [0.8, 0.2] para obtener posterior [0.8, 0.2]; no representa datos observados ni el cálculo operativo del índice.
+
+Se conservan las decisiones D14/D15: arco X→Z tentativo, parámetros compartidos y mapa original 2018. Una red factoriza la conjunta de las variables incluidas, sin prometer una descripción total del ecosistema o inferencia exacta eficiente. Se distingue condición de estado biótico real, diagnóstico de intervención y fragmento temporal de un modelo dinámico completo. Las extensiones socioecosistémicas y las paradojas de independencia condicional se reservan para exploración posterior; las limitaciones causales se introducen como puente. Las correcciones pertenecen a v5; no se modifican el blog ni v4 en este encargo.
+
+## D22 — Historia de la apertura y propuestas de precisión (P-ME-004)
+
+Contexto retrospectivo aportado por Miguel el 2026-10-09: la apertura surgió de su diálogo con Antigravity sobre DAGs, pensamiento sistémico, conjunta y metáfora de salud. El puente a DBNs respondió a su observación sobre retroalimentación temporal; se decidió posponer el término resiliencia y ofrecer un recordatorio bayesiano colapsable por la preparación del grupo. Este relato documenta la intención docente, sin reconstruir mensajes originales no disponibles.
+
+Lectura propia de `blog/empieza-aqui.qmd` y de los pasajes pertinentes del DOCX `referencias/Salud_e_integridad-entrrega-2.docx`: pecera en «¿Por qué hay ecosistemas distintos?» y contraste corporal/campo de golf en el tratamiento de salud humana y ecosistémica. La autoría declarada del DOCX es Miguel Equihua Zamora, Octavio Pérez-Maqueo y Ana Equihua Benítez; la referencia abreviada actual del blog contiene iniciales que requieren corrección. Se consultó la reseña de Luis E. Eguiarte en Oikos (17-12-2025), distinguiéndola del libro y de una fuente primaria de Margulis. La extracción de texto fue suficiente para esta revisión de contenido; no se auditó el diseño del DOCX.
+
+Contraste técnico: Kevin P. Murphy, «Dynamic Bayesian Networks», 12-11-2002, introducción y §2 (https://www.cs.ubc.ca/~murphyk/Papers/dbnchapter.pdf), y presentación del autor de su tesis (https://www.cs.ubc.ca/~murphyk/Thesis/thesis.html); recursos de pensamiento sistémico del Donella Meadows Project (https://donellameadows.org/systems-thinking-resources/). No se atribuye revisión integral a las obras de Forrester, Sterman, Senge o Margulis.
+
+Propuestas del revisor: retirar la justificación de aciclicidad por cálculo exacto; acotar conjunta a variables incluidas y distinguir DAG de red parametrizada; evitar causalidad automática; moderar afirmaciones absolutas sobre golf y fracaso de un indicador aislado; precisar señales frente a instrumentos en detección. Propuestas del didacta: conservar metáfora y pecera, introducir acumulaciones/retardos con lenguaje cotidiano, explicar conjunta sin fórmula en el recorrido principal, conservar el recordatorio y añadir la comparación de qué señales esperar bajo cada condición. Presentar DBN brevemente como extensión temporal que requiere transiciones; una actualización diagnóstica no equivale a cambio ecológico. Mantener resiliencia fuera de la apertura. Se detecta que la diapositiva 13 de v5 sí menciona el término: queda propuesta su retirada para alinearla con este contexto. Ninguna de estas propuestas se aplica todavía al blog o al PPTX.
+
+Aplicación autorizada en P-ME-005: estas precisiones quedan incorporadas al blog y a v5 revisada. La fórmula se conserva en un desplegable opcional con variables genéricas V; otro desplegable explica la actualización bayesiana. Se corrige autoría según el DOCX, se distingue reseña de fuente primaria y se enlazan fuentes públicas sin exponer el manuscrito local. La metáfora corporal conserva el contraste entre apariencia y diagnóstico sin depender de afirmaciones clínicas. Se mantiene el alcance de propuesta docente para discusión, sin validación empírica.
+
+
+## D23 — Referencias para el legado de Margulis (P-ME-006)
+
+Valoración del 2026-10-09. O’Malley (2017), *From endosymbiosis to holobionts: Evaluating a conceptual legacy*, DOI 10.1016/j.jtbi.2017.03.008: resumen y destacados editoriales localizados en ScienceDirect y resumen en PubMed (28302492); texto completo no consultado. Es la referencia más directamente vinculada al legado conceptual de Margulis y sus debates, sin tratarla como una adhesión incondicional a todas sus tesis.
+
+Koide (2023, publicación en línea 2022), *On Holobionts, Holospecies, and Holoniches*, DOI 10.1007/s00248-022-02005-9: texto abierto consultado. Apoya funciones ecológicas de las simbiosis con ejemplos y distingue relevancia funcional de unidad de selección. Recomendado como complemento ecológico de la apertura.
+
+Miller Jr, Baluška, Slijepčević y Reber (2026), *Collective Life: Holobionts and the Symbiotic Imperative*, DOI 10.1007/978-3-032-23779-8_8: resumen y bibliografía públicos consultados, no texto completo por suscripción. Su encuadre de selección cognitiva amplía el alcance; reservar para exploración posterior. Suárez (2023), *Una ontología parte-dependiente de la individualidad biológica para los consorcios de múltiples especies*, DOI 10.14201/art20231215578: resumen editorial y resumen del PDF consultados; propuesta de individualidad y dependencias asimétricas, adecuada para discusión posterior, no definición introductoria de salud.
+
+Recomendación: O’Malley y Koide para una frase breve sobre importancia funcional de asociaciones entre organismos y microorganismos y legado de Margulis. Son trabajos de otros autores sobre ese legado o su desarrollo, no textos escritos por Margulis. No derivar de ellos una identidad literal ecosistema-organismo ni la validez del IIE o del modelo bayesiano. Propuesta de texto: «El énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones». Se registra como propuesta; no se vuelve a modificar ni renderizar blog/PPTX en esta valoración bibliográfica.
+
+
+Aplicación D23 autorizada en P-ME-007: el párrafo sobre simbiosis se incorpora entre la metáfora de salud y el pensamiento sistémico en «Empieza aquí», con enlaces a O’Malley y Koide y referencias completas. La reseña de Eguiarte queda como contexto de Ecosalud. La diapositiva 3 y sus notas incorporan la conexión funcional y las mismas fuentes; no se añade un desarrollo de holobiontes ni se afirma validación del IIE.
+
+
+## D24 — Ilustración temporal y notación separadas (P-ME-009)
+
+Se reemplaza la figura temporal generada de v4 por una ilustración nueva sin rótulos ni flechas incrustadas. Los elementos formales se construyen como objetos editables: V_t→S_(t+1) y S_t→V_(t+1), sin nodo en el cruce. Las escenas son evocaciones del mismo bosque en momentos sucesivos, sin datos, degradación ni recuperación supuestas. La explicación puede prolongarse verbalmente a V_t→S_(t+1)→V_(t+2). Se mantiene el carácter hipotético del fragmento y la necesidad de distribuciones iniciales, transición y observación. Rol de ilustrador aplicado en esta conversación, sin subagente.
+
+
+## D25 — Preparar tu proyecto antes de la apertura (P-ME-012)
+
+Se acoge la propuesta de Octavio mediante una entrada propia y navegación «Preparar proyecto». Fuente: los tres archivos existentes de `plantilla-participantes/`, verificados también en el árbol de main. Se enlaza la carpeta pública del repositorio sin copiar registros internos al blog. No se impone plataforma, suscripción, programación ni lectura automática de instrucciones. Quien use un asistente sin escritura guarda personalmente los textos.
+
+Mirada del didacta: tarea pequeña con producto verificable, prompt inicial y prueba en conversación nueva; solo completar pregunta, alcance y primer resultado, dejando la definición formal para el seminario. Mirada del revisor: distinguir continuidad documental de reproducción científica, lectura real de supuesta memoria, y propuestas del asistente de decisiones del participante. No se afirma compatibilidad probada de plataformas específicas ni se atribuye entorno ejecutable a una plantilla documental. Roles aplicados en esta conversación. Tiempo orientativo, pendiente de prueba.

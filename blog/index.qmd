@@ -16,6 +16,8 @@ Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprend
 
 ## Tres preguntas para empezar
 
+Antes del primer encuentro: [prepara tu proyecto](preparar-proyecto.qmd) con la plantilla y el asistente agéntico de tu preferencia. La guía incluye una prueba breve para comprobar que puedes retomar el trabajo desde tus archivos.
+
 ::: {.layer-grid}
 ::: {.layer}
 ### Contexto

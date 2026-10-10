@@ -53,3 +53,44 @@ Configurada la infraestructura para trabajo conjunto de Miguel y Octavio:
 - Prompts distribuidos versionados en `prompts/` (`miguel.md`, `octavio.md`, `README.md`).
 - Política de ramas: `main` como rama canónica de publicación y ramas de trabajo independientes `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`. Vertido a `main` únicamente tras validación y acuerdo.
 
+## Presentación introductoria v4 — 2026-10-09 (P040–P042)
+
+Presentación v4 completada con 14 diapositivas en `output/Introduccion-iie3t-redes-bayesianas-v4.pptx`. Incorpora la metáfora de salud e integridad ecosistémica, la analogía de la pecera, la factorización de la distribución conjunta en el DAG, Redes Bayesianas Dinámicas ($t_0 \to t_1$) y plates anidados nacionales, con ilustraciones generadas y script en `presentaciones/generar-presentacion-v4.py`.
+
+## Estado reconciliado tras Antigravity — 2026-10-09 (P-ME-001)
+
+- **Integrado en main, 2e485d3:** nueva apertura del blog (salud, pensamiento sistémico, conjunta, DAG, DBN y recordatorio bayesiano colapsado); referencia DOCX; prompts por autor y política de ramas. Historial de cambios en B023–B024.
+- **En rama remota, no integrado:** miguel/actualizacion-presentacion, 6556556. Contiene v4, generador/verificador, ocho ilustraciones y registros B025–B029 / P040–P046. Las fuentes locales sin seguimiento coinciden con esa rama; no son pérdidas de respaldo. El PPTX local sigue excluido de Git.
+- **Verificado aquí:** paquete v4 con 14 diapositivas, 4 imágenes, 88 formas, 11 conectores (3 discontinuos), una CPT normalizada y 14 notas; cuatro pruebas de política; salida del blog con 17 páginas. No se reprodujo el generador ni se realizó revisión visual completa de v4.
+- **Pendientes concretos:** corregir enlace del catálogo a la sección renombrada de Empieza aquí; revisar distinción estado real/condición latente en notas de v4 y alcance de las afirmaciones sobre aciclicidad y cálculo exacto; comprobar visualmente v4 y procedencia/rotulado ilustrativo del mapa generado antes de integrar. El conteo de conectores no demuestra que estén adheridos a nodos.
+- **Registros:** README y ENVIRONMENT actualizados al esquema colaborativo; P001–P028 locales pendientes de migración revisada. Esta actualización documental se trabaja en miguel/revision-registros, sin fusionar ramas ni publicar.
+
+
+Actualización de sincronización (P-ME-002, 2026-10-09): miguel/revision-registros ahora incluye la rama de presentación hasta bca5a48, incluido P047. Sus fuentes v4 ya están seguidas en esta rama local; sigue pendiente la integración a main. Se conservan los cambios documentales de B030 sin commit.
+
+## Propuesta introductoria v5 — 2026-10-09 (P-ME-003)
+
+Preparada en `miguel/presentacion-v5`: `output/Introduccion-iie3t-redes-bayesianas-v5-final.pptx`, 16 diapositivas. Un caso de dos bosques guía el paso de señales a diagnóstico, probabilidades, cartografía y dinámica. Conserva portada existente, recupera el mapa original 2018 y añade una actividad con respuestas en notas y cierre hacia el semillero. Fuente y verificador en `presentaciones/`; revisión conceptual y visual registrada en B032/D21. Pendiente de valoración del usuario para elegir secuencia, ajustar duración y determinar si requiere ilustrador. No reemplaza v4 por decisión automática; sin integración a main, commit ni push.
+
+Actualización P-ME-005: ajustes D22 aceptados y aplicados a «Empieza aquí» y a `output/Introduccion-iie3t-redes-bayesianas-v5-revisada.pptx`. Blog completo renderizado y verificado, incluidos desplegables y navegación; PPTX renderizado y revisado. El enlace antiguo de temas queda corregido. Versión local funcional en `miguel/presentacion-v5` para discutir con Octavio; pendiente valoración conjunta e integración acordada. Sin commit, push ni publicación remota.
+
+
+Actualización P-ME-007: conexión con Margulis incorporada al blog y al PPTX `output/Introduccion-iie3t-redes-bayesianas-v5-revisada-margulis.pptx`, que pasa a ser el entregable local actual para discusión. Se conservan las versiones anteriores.
+
+
+Actualización P-ME-008: versión local actual `output/Introduccion-iie3t-redes-bayesianas-v5-ilustrada-final.pptx`, con las imágenes solicitadas en diapositivas 5 y 13. Se conserva el esquema nativo como referencia formal y se documentan inconsistencias de la figura temporal.
+
+
+Actualización P-ME-009: el rol de ilustrador genera una nueva escena temporal, integrada en `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx`, entregable actual. Sustituye la figura DBN problemática en la diapositiva 13. Fuentes gráficas originales y versiones previas conservadas.
+
+
+Actualización P-ME-011: el entregable actual se denomina `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. Miguel limpió las variantes intermedias de v5; generador, verificador y guía apuntan al nombre consolidado. Las entradas previas conservan las rutas históricas.
+
+
+## Preparación previa del proyecto — P-ME-012
+
+Entrada `blog/preparar-proyecto.qmd`, propuesta original de Octavio: copiar la plantilla documental a un espacio propio, usar la base agéntica elegida por cada participante, formular pregunta y primer resultado, y probar continuidad documental en una conversación nueva. Navegación integrada; guía de plantilla aclarada. No requiere instalación de R/Python ni convierte el borrador en modelo ejecutable. Pendiente prueba con participantes y ajuste del tiempo orientativo de 20–30 minutos.
+
+## Integración autorizada — P-ME-013
+
+Miguel autoriza por esta ocasión integrar a main y publicar tras comprobar actividad remota. La consulta de ramas, pull requests y eventos de GitHub, junto con fetch y autores de commits remotos, no muestra contribuciones publicadas de Octavio; aparece su incorporación como colaborador Maqueo. Esto no permite inferir ausencia de trabajo local. Se prepara la integración de la propuesta v5 y la actividad previa, con sus fuentes y blog renderizado; el PPTX permanece local según la política del repositorio. Continúan pendientes la discusión con Octavio y la prueba de la actividad con participantes.

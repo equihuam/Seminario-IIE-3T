@@ -1,0 +1,76 @@
+---
+title: "Preparar tu proyecto"
+description: "Actividad previa: un espacio de trabajo propio para colaborar con un asistente agéntico."
+---
+
+Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar **la base agéntica de tu preferencia**: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.
+
+**Objetivo:** poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar. Reserva unos **20–30 minutos**, como orientación. Esta preparación puede hacerse con acompañamiento si todavía no has elegido una herramienta.
+
+## 1. Crea una carpeta propia y copia la plantilla
+
+Elige un nombre reconocible, por ejemplo `mi-proyecto-iie3t`, y una ubicación que puedas volver a encontrar. Allí reunirás el trabajo del seminario.
+
+Abre la [plantilla para participantes del seminario](https://github.com/equihuam/Seminario-IIE-3T/tree/main/plantilla-participantes) y copia sus **tres archivos** a esa carpeta, conservando sus nombres. Puedes abrir cada archivo en el repositorio y copiar su contenido a un archivo de texto local con el mismo nombre. Si ya tienes una copia del repositorio del seminario, basta con copiar el contenido de su carpeta `plantilla-participantes`. También puedes solicitar los archivos a la coordinación.
+
+| Documento | Para qué sirve ahora |
+| --- | --- |
+| Guía de inicio (`README.md`) | Explica la organización y lo que todavía falta preparar. |
+| Definición del proyecto (`PROYECTO.md`) | Conserva tu pregunta, alcance y primer resultado esperado. |
+| Bitácora de trabajo | Registra lo que hiciste, cómo lo comprobaste y qué quedó pendiente. |
+
+La plantilla es **documental**: todavía no contiene un modelo ejecutable. En esta actividad solo necesitas estos archivos; las carpetas para datos, código y resultados se crearán cuando hagan falta.
+
+## 2. Vincula el asistente con ese espacio
+
+Abre o selecciona la carpeta como proyecto en tu herramienta, si dispone de esa función. Comprueba qué archivos puede leer y modificar. Si trabajas con un asistente que solo recibe documentos adjuntos, comparte los tres archivos y guarda tú las versiones acordadas en la carpeta.
+
+Pídele que lea los documentos y explique qué encontró antes de proponer cambios. **No presupongas que recuerda otra conversación o que lee automáticamente todos los archivos.** Si tu plataforma admite instrucciones de proyecto, coloca allí los acuerdos de trabajo; conserva también una copia legible en tu carpeta.
+
+## 3. Haz un primer encargo pequeño
+
+Copia este mensaje y adapta lo que aparece entre corchetes:
+
+```text
+Estoy preparando mi espacio de trabajo para el seminario IIE-3T.
+Mi carpeta o proyecto es [nombre]. Lee los tres documentos de la plantilla
+que he puesto a tu disposición y dime cuáles pudiste consultar.
+
+Ayúdame a completar solo el nombre, la pregunta inicial, el alcance
+y un primer resultado pequeño en la definición del proyecto.
+Mi interés inicial es [tema, ecosistema o pregunta; puede ser provisional].
+Deja por completar lo que todavía no hemos decidido. No inventes datos,
+fuentes ni resultados. Distingue mis decisiones de tus propuestas.
+Trabaja únicamente con este proyecto y conserva los datos originales.
+Antes de instalar programas, publicar o enviar archivos, explícame
+para qué hace falta y espera mi autorización.
+
+Registra en la bitácora lo que acordamos, lo que realmente comprobamos
+y el siguiente paso. Si no puedes escribir archivos, entrégame el texto
+y aclara que debo guardarlo yo.
+```
+
+Revisa el resultado antes de aceptarlo. Una pregunta suficiente para comenzar podría ser: «¿Qué observaciones necesitaría para comparar dos sitios del mismo tipo de bosque?». El primer resultado podría ser una lista breve de observaciones posibles y dudas sobre su interpretación. **No necesitas definir aún una red, calcular el IIE ni completar las secciones técnicas de la plantilla.**
+
+## 4. Comprueba que puedes retomar el trabajo
+
+Guarda los documentos y abre una conversación nueva con acceso a esos archivos. Pide al asistente:
+
+> Lee los documentos del proyecto. ¿Cuál es mi pregunta, qué sigue pendiente y cuál es el siguiente paso acordado? Señala en qué documento encontraste cada respuesta.
+
+Contrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario.
+
+## Qué traer al primer encuentro
+
+- Tu carpeta y los documentos que puedas volver a abrir.
+- Una pregunta provisional y un primer resultado pequeño.
+- Una entrada de bitácora con la comprobación realizada y el siguiente paso.
+- Una dificultad o duda sobre el trabajo con el asistente, si apareció.
+
+No compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.
+
+Si no lograste configurar una herramienta, trae los documentos y la dificultad que encontraste: **eso no impide participar en la apertura**. R, Python, control de versiones y dependencias se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.
+
+Continúa con [Empieza aquí](empieza-aqui.qmd) y la [sesión de apertura](posts/01-tres-capas/index.qmd). Los acuerdos para documentar y comprobar el trabajo están en [Reproducibilidad](reproducibilidad.qmd).
+
+*Actividad propuesta por Octavio y desarrollada para discusión del equipo. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.*

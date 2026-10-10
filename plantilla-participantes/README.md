@@ -4,6 +4,10 @@ Plantilla documental inicial para copiar a una carpeta propia. No contiene todav
 
 ## Inicio
 
+Para la actividad previa al seminario, completa solo el nombre, la pregunta provisional, el alcance y un primer resultado pequeño. Deja las secciones de modelo, datos y entorno por completar. Lee los archivos con el asistente de tu preferencia, revisa sus propuestas y registra una primera entrada en la bitácora. En una conversación nueva, comprueba que puede recuperar la pregunta y el siguiente paso desde los documentos guardados. Si no puede escribir archivos, guarda tú el texto acordado. No hace falta instalar R o Python para esta preparación.
+
+Los pasos siguientes corresponden al desarrollo posterior del proyecto:
+
 1. Dar nombre al proyecto y completar `PROYECTO.md`.
 2. Elegir R, Python o ambos según el ejercicio. Registrar versiones y dependencias al preparar el entorno.
 3. Documentar la procedencia y el significado de los datos antes de entrenar.

@@ -111,3 +111,220 @@ Me gusta la Opción A
 Haz el commit & Push
 ```
 
+## P040 — Solicitud de propuesta de actualización de la presentación PPTX (Didacta y Revisor)
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Vamos a empezar a trabajar en la actualización de la presentación.
+Quiero usar al didacta y al revisor para que me ayuden a generar una nueva propuesta de la presentación pptx. Tienes en el registro como se hizo la que ya vi, pero no la estamos respaldando en git.
+```
+
+## P041 — Propuesta de figuras del Ilustrador para portada y diapositivas 3 y 12
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Me gustaría que el ilustrador nos proponga figuras atractivas para la portada, la diapositiva 3 y para la 12. Las dos últimas no como fondo de pantalla, sino como ilustración evocativa de media diapositiva.
+```
+
+## P042 — Aprobación de la propuesta visual y orden de construcción de la presentación v4
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Sí, me parece bien. Adelante
+```
+
+## P043 — Solicitud de versiones en español de las ilustraciones para el PPTX
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Me gustaron mucho las ilustraciones, quiero conservarlas como estan, pero tener una versión de ellas con los textos en español y ponerlas en ese idioma en el pptx.
+```
+
+## P044 — Corrección de arcos en diagramas y ajuste de formato de ecuaciones
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+El trabajo del ilustrador quedó muy bien con esas ilustraciones artísticas. En las otras noto que, en casi todas, faltan los arcos necesarios. También veo las ecuaciones algo desbordadas. Quizás convenga ponerlas en formato de ecuación windows/latex. para mejor control gráfico.
+```
+
+## P045 — Tratamiento tentativo del arco X -> Z con nota explícita
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+Puedes ver la presentación v3, que ya puse en output. Verás que optamos por dejar el arco x -> z como tentativo, con una nota. Debemos mantener ese tratamiento.
+```
+
+## P046 — Arco X -> Z punteado/discontinuo, ajuste de ajuste de texto y eliminación de puntos en títulos y lemas
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+No noté cambio en el arco x z. La idea es dejarlo punteado o algo semejante. También veo todavía algunos textos derramados. Verifica que quepan adecuadamente en las formas que los reciben.. No quiero puntos finales en los títulos o lemas.
+```
+
+## P047 — Solicitud de confirmación de commit y push
+
+- **Fecha de registro:** 2026-10-09
+- **Texto original:**
+
+```text
+si se requiere haz el commit & push
+```
+
+## P-ME-001 — Sincronización y revisión de registros tras trabajo con Antigravity
+
+- **Fecha de registro:** 2026-10-09. Hora de emisión no disponible.
+- **Texto original:**
+
+```text
+Ponte al día, has un git pull. Hice algunas tareas con antigravity. Revisa y actualizalos registros
+```
+
+Nota de continuidad: P001–P028 permanecen en el archivo histórico local de la raíz, aún sin migrar; P029–P039 están en este archivo en main; P040–P046 están en la rama miguel/actualizacion-presentacion (6556556). Se inicia la numeración por autor sin reutilizar identificadores históricos. Las instrucciones de otra rama no se duplican ni se presentan como integradas.
+
+
+## P-ME-002 — Pull del nuevo commit de la rama de Miguel
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+hay un nuevo commit de mi rama, da pull
+```
+
+
+## P-ME-003 — Versión 5 con una interpretación propia de la presentación
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+La versión 4 del pptx respondió este prompt:
+
+"Vamos a empezar a trabajar en la actualización de la presentación.
+Quiero usar al didacta y al revisor para que me ayuden a generar una nueva propuesta de la presentación pptx. Tienes en el registro a la versión 3"
+
+Quiero que me hagas una versión 5 con tu interpretación de lo mismo. Usa la figura de portada que ya tenemos, por lo pronto, de acuerdo con tu propuesta te diré si necesitamos la intervención de un ilustrador.
+```
+
+## P-ME-004 — Historia creativa y revisión de Empieza aquí
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+No se si sea importante, pero quisiera darte este contexto de como he procedido. Le pedí a Antigravity que usara al didacta y al revisor para damre una opinión para incorporar a la págia "empieza aqui" del blog las siguientes ideas:
+
+1. Hablar sobre DAGs
+2. Un poco sobre pensamiento sistémico (al estilo de Jay Forrester y Sterman, Senge, Donela Meadows).
+3. Relacionar pensamiento sistémico con la noción de que una red Bayesiana, modela la conjunta del sistema.
+4. Introducir la metáfora de salud a la narrativa. Utilizar enfoque equihua, maqueo, equihua y Margulis
+
+Considera referencias como:
+[Integridad ecosistémica: el tejido de la vida y la salud Colección Ecosalud](https://publicaciones.ecologia.unam.mx/oikos4/index.php/en/component/content/article/integridad-ecosistemica-el-tejido-de-la-vida-y-la-salud-coleccion-ecosalud?catid=10:articulo&Itemid=101)
+
+En referencias/Salud_e_integridad-entrrega-2.docx considera el capítulo donde se presenta la analogía de la pecera y el caso del fisicoculturista.
+
+Así es como llegamos a ls propuesta acual de esa página. En el camino apareció este planteamiento:
+
+En la dinámica de sistemas clásica (Forrester, Sterman, Meadows), el núcleo son los bucles de retroalimentación cíclicos (feedback loops y ecuaciones diferenciales en el tiempo). Estoy de acuerdo con esta apreciación, pero eso tiene la contraparte natural en los redes bayesianas dinámicas, en donde con claridad el t0 tiene un patrón de influencia sobre el sistema en t1. La cuestión es para el didacta y el revisor, sobre la conveniencia de sugerir o tratar este aspecto de vinculación.
+
+En el diálogo aparecio el concepto resiliencia y le plantie mi Duda. El concepto de resiliencia es prevalente en ecología y afin a un pensamiento sistémico, pero no siempre bien definido. Veo que lo anotas, pero explicame que tratamiento tendría esto. Optamos por no usar el término por lo pronto.
+
+Finalmente le exprese la duda de si el lenguaje bayesiano (especificamente probabilidades a priori y posteriori) necesitarían un breve recordatorio. Los participantes no tienen formación numérica formal. Así llegamos al texto colapsable.
+
+Quiero que consideres este contexto como parte de la historia de la evolución del ejercicio creativo y que tengas elementos para revisar la página "empieza_aqui". Haz tu propio recorrido y dime si tienen alguna propuesta de ajuste a ese contenido.
+```
+
+## P-ME-005 — Aplicar ajustes y renderizar blog y PPTX en la rama
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Estoy de acuerdo con tus sugerencias. Aplícalas al blog y al pptx, renderiza en la rama para que tengamos una versión funcional que discutir con Octavio
+```
+
+
+## P-ME-006 — Referencias candidatas para la conexión con Margulis
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+La referencia en apoyo a margulis podría ser alguna de estas:
+[http://dx.doi.org/10.1016/j.jtbi.2017.03.008](http://dx.doi.org/10.1016/j.jtbi.2017.03.008)
+[https://link.springer.com/article/10.1007/s00248-022-02005-9](https://link.springer.com/article/10.1007/s00248-022-02005-9)
+[https://link.springer.com/chapter/10.1007/978-3-032-23779-8_8](https://link.springer.com/chapter/10.1007/978-3-032-23779-8_8)
+[https://doi.org/10.14201/art20231215578](https://doi.org/10.14201/art20231215578)
+```
+
+
+## P-ME-007 — Incorporar la conexión con Margulis
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+de acuerdo. Implementa lo que recomiendas.
+```
+
+
+## P-ME-008 — Incorporar pecera y figura temporal
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+en la diapo 5 podemos agregar la pecera, quizás dividiendo la diapo en cuartos y poniendo la figura en uno de ellos. En la 13 podríamos acomodar  dbn_temporal_transition_es.jpg. Quizas la diapo en medias verticales y la figura en la mitad inferior.
+```
+
+
+## P-ME-009 — Nueva ilustración temporal y composición
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Veo que encontraste la ilustración de red dinámica  un tanto forzada. Utiliza al ilustrador para generar un nueva propuesta para remplazar la que pusimos. Noto también que no se adecua estéticamente al lugar que escogimos. Te doy libertad para resolver tanto la ilustración como su acomodo.
+```
+
+
+## P-ME-010 — Commit y push de la propuesta revisada
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Quedó muy bien vamos a hacer un commit & push aquí
+```
+
+
+## P-ME-011 — Nombre consolidado de v5
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Limpie output. Me quedé sólo con la última versión de v5 y la renombré a Introduccion-iie3t-redes-bayesianas-v5.pptx
+```
+
+
+## P-ME-012 — Actividad previa para preparar el proyecto agéntico
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Octavio propuso agregar una actividad previa al arranque, puede ser una sección herramientas o algo más preciso para referirse a la propuesta de preparar un proyecto agéntico para desarrollar el trabajo.Ya habíamos avanzado algo al respecto con la idea de la plantilla. Lo que sugiere Octavio es una entrada para explicar como usarla para preparar el espacio de trabajo. Les indicaremos que pueden usar la base agéntica de su preferencia.
+```
+
+## P-ME-013 — Integración excepcional a main
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Entiendo que Octavio no ha iniciado actividad por su lado. Verifica en github, si es así, entonces, por esta ocasión, hagamos el merge a main, comit & push
+```
