@@ -56,3 +56,23 @@ Si surge una hipótesis, discrepancia, actividad o ampliación sustantiva, copia
 Las fichas usan ficha.css para impresión en carta con márgenes de 16 mm y letra de 11 puntos. Máximo una página; hasta 300 palabras es una referencia, no garantía geométrica. Comprobar vista de impresión; sintetizar si desborda, sin reducir tipografía. No aplicar el límite a índices ni exploraciones. Añadir nuevas páginas a EXPECTED en scripts/check_site.py; ejecutar blog("check") y revisar enlaces, atribución y contenido antes de publicar.
 
 Actualización editorial P-ME-044 (2026-10-10): se aplica carta en `ficha.css` y se usa la denominación breve «carta» en los materiales vigentes, según [Criterios de calidad](CRITERIOS-DE-CALIDAD.md#formato-de-los-materiales-imprimibles). El valor técnico CSS `letter` corresponde a 8.5 × 11 pulgadas. Verificar las fichas exportadas al cambiar su contenido.
+
+## Marcas temporales — P-ME-046
+
+Para estados editoriales pendientes de revisión, prueba o decisión, usar un callout visible, sin colapsar, ámbar, con ícono y título «Por acordar». No escribir «warning» como título; `callout-warning` es la clase técnica de Quarto. La clase `marca-temporal` y el ID `temporal-<tema>` permiten localizarlos; cada ID debe ser único en el blog.
+
+```markdown
+::: {#temporal-tema .callout-warning .marca-temporal title="Por acordar" icon="true"}
+[Qué falta decidir o probar; responsable y evidencia requerida cuando estén acordados.]
+:::
+```
+
+Rutina al preparar una sesión o cerrar una revisión:
+
+1. Buscar `marca-temporal` en las fuentes: `rg -n 'marca-temporal' blog --glob '*.qmd'`.
+2. Revisar cada aviso con el equipo. Si requiere trabajo, registrarlo en la lista de pendientes de PLAN.md con página e ID; no abrir un TODO por cada aviso automáticamente.
+3. Al decidir, registrar fecha, responsable, acuerdo y evidencia en la bitácora o ficha pertinente. Actualizar el contenido de la página y retirar el bloque temporal solo cuando se haya resuelto lo que declara. Una aprobación docente no sustituye una prueba con participantes.
+4. Conservar autoría, fuentes, historial y límites científicos fuera del bloque retirado. «Ejemplo hipotético», «sin validación empírica» o una limitación de acceso no son marcas temporales que desaparezcan por aprobar un material.
+5. Regenerar el blog, comprobar enlaces y revisar pantalla e impresión en carta de las fichas afectadas. Cerrar el pendiente y enlazar el commit o PR al integrar.
+
+Las plantillas incluyen el bloque: sustituir su ID al copiarlas y completar su contenido. Los callouts de ayuda, notas técnicas y consejos conservan su función y estilo propios.

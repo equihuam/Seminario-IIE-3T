@@ -42,6 +42,6 @@ Partimos de una introducción común. Después elegiremos temas y profundidad se
 - [Catálogo temático](temas.qmd): conceptos, guías y prácticas por tema.
 - [Reproducibilidad](reproducibilidad.qmd): cómo documentamos y comprobamos lo que hacemos.
 
-::: {.callout-note}
-Esta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado.
+::: {#temporal-apertura .callout-warning .marca-temporal title="Por acordar" icon="true"}
+La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado.
 :::

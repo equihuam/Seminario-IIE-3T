@@ -30,7 +30,9 @@ El primer puente conceptual está en [Del esquema a la red bayesiana](empieza-aq
 
 ## Ampliaciones por explorar
 
+::: {#temporal-ampliaciones .callout-warning .marca-temporal title="Por acordar" icon="true"}
 IIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio.
+:::
 
 
 ## Ideas del grupo

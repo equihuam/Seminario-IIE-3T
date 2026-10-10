@@ -2,7 +2,11 @@
 title: "Exploraciones en desarrollo"
 ---
 
-Aquí reuniremos el desarrollo que ya no cabe en una ficha del [semillero](../semillero/index.qmd): argumentos, fuentes, discrepancias, actividades y resultados. **Todavía no hay exploraciones abiertas.** Las cuatro fichas iniciales están valoradas y pendientes de prueba con participantes.
+Aquí reuniremos el desarrollo que ya no cabe en una ficha del [semillero](../semillero/index.qmd): argumentos, fuentes, discrepancias, actividades y resultados.
+
+::: {#temporal-exploraciones .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Todavía no hay exploraciones abiertas. Las cuatro fichas iniciales están valoradas y pendientes de prueba con participantes.
+:::
 
 ## Cuándo abrir una exploración
 

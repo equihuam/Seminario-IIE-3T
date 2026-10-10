@@ -14,6 +14,10 @@ title: "I001 · Del diagnóstico al bienestar"
 
 **Siguiente paso propuesto.** Dibujar la extensión mínima y justificar cada relación; añadir acceso y demanda antes de hablar de beneficios, y tiempo antes de evaluar reposición. **Desarrollo:** sin abrir; relacionado con [I002](I002-gestion.qmd).
 
-**Procedencia.** Primera idea del coordinador, reformulada con asistencia de IA; revisión conceptual y didáctica en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§10–11 y 21; versión identificada en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+**Procedencia.** Primera idea del coordinador, reformulada con asistencia de IA; revisión conceptual y didáctica en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§10–11 y 21; versión identificada en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09.
+
+::: {#temporal-i001 .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Valoración provisional; pendiente de prueba con participantes y de decisión docente sobre el siguiente paso.
+:::
 
 [Volver al semillero](index.qmd)
