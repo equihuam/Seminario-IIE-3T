@@ -393,3 +393,15 @@ Se reúne B043–B048: directivas, rol bibliotecario, preparación y plantilla, 
 ## B050 — Pull request de preparación bibliográfica
 
 Fecha de registro: 2026-10-10. Prompt: P-ME-024. Commit funcional b696750 publicado en miguel/zotero-preparacion. Tras fetch y consulta de GitHub, sin pull requests abiertos y con la rama adelantada respecto a main, se crea el PR #1: https://github.com/equihuam/Seminario-IIE-3T/pull/1. Incluye resumen, comprobaciones de B049 y límites del cliente y del catálogo. Se propone integrar a main; no se realiza la fusión. Esta actualización añade únicamente el registro de la solicitud y del resultado.
+
+## B051 — Aclaración sobre la API local y el navegador
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-025. Tras integrar el PR #1, se crea miguel/aclaracion-api-local desde origin/main. La guía de Zotero precisa que la dirección local se consulta con programas o herramientas del asistente, y que ERR_EMPTY_RESPONSE en el navegador no demuestra que la API esté caída. Se remite al encargo del paso 3 y a Zotero de escritorio o web para consulta visual. Diagnóstico previo en Zotero 9.0.3: GET normal devuelve 200; cambiar solo User-Agent a Mozilla/5.0 reproduce el cierre de conexión. No se modificaron preferencias ni biblioteca. Se actualiza fecha del material y se regenera el blog: scripts/site.py check termina correctamente, con 19 páginas, enlaces y límites de publicación verificados; persisten advertencias regionales conocidas de R. Cambio local, sin commit ni publicación.
+
+## B052 — Favicon de tres capas
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-026. Rol ilustrador aplicado en esta conversación. Se crea blog/img/favicon.svg: emblema vectorial de tres capas, verde, ocre y azul sobre verde oscuro, sin texto ni flechas. Es un identificador visual, no un diagrama causal; se preserva el SVG canónico del equipo. Diseño mediante SVG editable, sin generación raster ni dependencias adicionales. Se incorpora a website.favicon y a los recursos explícitos de Quarto. Revisión visual del SVG en navegador local; scripts/site.py check correcto (19 páginas), con enlace de favicon y archivo comprobados en todas ellas. Registros y salida renderizada actualizados en miguel/aclaracion-api-local, junto con B051; sin commit ni publicación.
+
+## B053 — Entrega de aclaración Zotero y favicon
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-027. Se prepara commit, push y PR de miguel/aclaracion-api-local hacia main con B051 y B052, fuentes, SVG y blog renderizado. Fetch confirma que la base sigue siendo fc70f82. Se conservan las verificaciones del último render correcto (19 páginas) y la comprobación de enlaces del favicon; desde entonces solo se añaden registros. El índice se revisa antes del commit. El histórico local PROMPTS.md permanece excluido. El commit y la solicitud de integración quedarán identificados en Git/GitHub; no se autoriza ni realiza la fusión en este encargo.

@@ -118,3 +118,9 @@ Actualización P-ME-022 (2026-10-10): referencias de Empieza aquí incorporadas 
 Se prepara commit y push de miguel/zotero-preparacion: directivas de Zotero y bibliotecario, guía de preparación, plantilla, cliente de lectura local, pruebas, blog renderizado y registros de la biblioteca compartida. Consulta de GitHub y fetch el 2026-10-10: sin ramas, commits ni solicitudes de integración abiertas de Octavio; solo consta su incorporación como colaborador. La comprobación no cubre trabajo local sin publicar. Esta entrega conserva main sin cambios; la autorización excepcional anterior de integración correspondió a P-ME-013.
 
 Actualización P-ME-024 (2026-10-10): commit b696750 publicado y PR #1 abierto desde miguel/zotero-preparacion hacia main: https://github.com/equihuam/Seminario-IIE-3T/pull/1. Pendiente revisión e integración; main permanece sin cambios.
+
+Actualización P-ME-025 (2026-10-10): PR #1 integrado por Miguel en main (fc70f82). Aclaración del acceso programático a la API local preparada y renderizada en miguel/aclaracion-api-local; verificación del sitio correcta. Pendiente commit y propuesta de integración de esta corrección.
+
+Actualización P-ME-026 (2026-10-10): favicon SVG de tres capas creado por el rol ilustrador y configurado para todo el blog. Sitio regenerado y enlaces del icono comprobados en las 19 páginas. Pendiente integración junto con la aclaración de la API local.
+
+Actualización P-ME-027 (2026-10-10): se entrega la aclaración de API local y el favicon mediante commit, push y PR desde miguel/aclaracion-api-local. Render y enlaces comprobados; integración a main pendiente de revisión.

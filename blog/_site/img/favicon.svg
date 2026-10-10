@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>iie-3t · Tres capas</title>
+  <desc>Emblema de tres capas superpuestas, sin representar relaciones causales.</desc>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#173f36"/>
+  <path d="M12 22 32 12 52 22 32 32Z" fill="#c4d6ac"/>
+  <path d="M12 30 32 40 52 30V37L32 47 12 37Z" fill="#dfaa76"/>
+  <path d="M12 42 32 52 52 42V49L32 59 12 49Z" fill="#99c6db" transform="translate(0 -3)"/>
+</svg>

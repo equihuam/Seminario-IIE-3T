@@ -19,6 +19,8 @@ En la definición de tu proyecto anota el nombre de la colección y si revisaste
 
 En Zotero, abre **Ajustes → Avanzado** y habilita la comunicación con otras aplicaciones del equipo. Mantén Zotero abierto. La API local atiende en `http://localhost:23119/api/`; sus lecturas no requieren clave. Evita exponer ese puerto fuera del equipo. [Documentación oficial](https://www.zotero.org/support/dev/web_api/v3/local_api).
 
+Esa dirección es para consultas desde programas o herramientas del asistente, **no para abrirla como una página web**. Zotero puede cerrar las solicitudes de un navegador y mostrar `ERR_EMPTY_RESPONSE`, aunque la API funcione correctamente. Comprueba la conexión con el encargo del paso 3; para ver tus referencias, usa Zotero de escritorio o tu biblioteca en zotero.org.
+
 Tu asistente necesita una herramienta capaz de hacer solicitudes locales **desde el mismo equipo**. Un chat en la nube no obtiene ese acceso por adjuntar documentos. Si tu entorno no lo permite, realiza ahora la revisión en Zotero y deja la prueba de API para el acompañamiento. No necesitas configurar la API web ni compartir credenciales para esta actividad.
 
 ## 3. Consulta y compara
@@ -58,4 +60,4 @@ La clave Zotero identifica un registro dentro de una biblioteca. La clave BibTeX
 
 Después aprenderemos a exportar referencias seleccionadas y citar con ellas. El catálogo del equipo se llevará en una biblioteca de grupo compartida. La coordinación facilitará el acceso cuando esté configurada; mientras tanto puedes practicar en tu colección personal. Las copias de una referencia en bibliotecas distintas no se actualizan como un único registro: revisaremos los metadatos en la biblioteca que use cada trabajo. Véase la [guía de grupos de Zotero](https://www.zotero.org/support/groups). Las dificultades de conexión no impiden participar en la apertura.
 
-*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.*
+*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; se aclara cómo comprobar la API local y el posible error al abrirla en un navegador. Pendiente de prueba con participantes.*
