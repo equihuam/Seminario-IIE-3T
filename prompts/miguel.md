@@ -408,3 +408,11 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Muy bien es momento de hacer commit and push. Verifica que octavio no tenga nada en camino
 ```
+
+## P-ME-024 — Crear el pull request
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Haz el pull request
+```

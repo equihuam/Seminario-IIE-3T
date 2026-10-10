@@ -116,3 +116,5 @@ Actualización P-ME-022 (2026-10-10): referencias de Empieza aquí incorporadas 
 ## Entrega de preparación bibliográfica — P-ME-023
 
 Se prepara commit y push de miguel/zotero-preparacion: directivas de Zotero y bibliotecario, guía de preparación, plantilla, cliente de lectura local, pruebas, blog renderizado y registros de la biblioteca compartida. Consulta de GitHub y fetch el 2026-10-10: sin ramas, commits ni solicitudes de integración abiertas de Octavio; solo consta su incorporación como colaborador. La comprobación no cubre trabajo local sin publicar. Esta entrega conserva main sin cambios; la autorización excepcional anterior de integración correspondió a P-ME-013.
+
+Actualización P-ME-024 (2026-10-10): commit b696750 publicado y PR #1 abierto desde miguel/zotero-preparacion hacia main: https://github.com/equihuam/Seminario-IIE-3T/pull/1. Pendiente revisión e integración; main permanece sin cambios.
