@@ -16,9 +16,9 @@ Sistema simple aprobado por Miguel en P-ME-043, con autorización de commit y pu
 
 ### T002 — Adaptar la impresión del semillero a carta
 
-- **Estado:** resuelto localmente en P-ME-044/B067; integración pendiente. Pendiente original recuperado de P-ME-040/B063 y mantenido en P-ME-041/B064.
+- **Estado:** cerrado; integrado mediante [PR #5](https://github.com/equihuam/Seminario-IIE-3T/pull/5), commit c449c76, el 2026-10-10. Pendiente original recuperado de P-ME-040/B063 y mantenido en P-ME-041/B064.
 - **Origen:** [seguimiento del formato Carta en el PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100499456).
-- **Siguiente paso:** integrar los cambios verificados de `miguel/formato-carta` y enlazar aquí su commit o PR.
+- **Resolución:** ajuste a carta integrado; rótulo público «carta» comprobado por HTTP en P-ME-048.
 - **Verificación:** cuatro fichas y plantilla exportadas desde el HTML regenerado a una página carta (612 × 792 puntos), texto dentro de límites y revisión visual sin recortes; blog de 19 páginas verificado. La ficha Zotero y sus copias ya tienen ese tamaño. No se realizó impresión física. Cierre definitivo al integrar y enlazar el commit o PR.
 
 ### T003 — Revisar desbordamiento móvil en la plantilla de exploraciones
@@ -175,3 +175,5 @@ Actualización P-ME-041 (2026-10-10): ficha Zotero v1.3 adaptada a Carta / US Le
 ## Marcas temporales — P-ME-046
 
 Convención aplicada localmente en 13 páginas: callout ámbar con ícono, título «Por acordar», clase marca-temporal e ID temporal-<tema>. Rutina de revisión y retiro en docs/OPERACION-BLOG.md; autoría, fuentes y límites científicos se conservan fuera de los avisos. Sitio y exportaciones en carta verificados (B069). Rama miguel/marcas-temporales basada en el ajuste a carta del PR #5; integración pendiente.
+
+Actualización P-ME-048: PR #5 integrado en main; PR #6 fusionado en miguel/formato-carta después, sin trasladar los avisos a main. Se prepara miguel/publicar-marcas desde main para integrar esa diferencia mediante un PR dirigido explícitamente a main. Netlify sirve el rótulo carta, pero no los avisos; coincide con el contenido de main.

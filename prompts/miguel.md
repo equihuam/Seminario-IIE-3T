@@ -653,3 +653,11 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Haz ahora el commit y PR
 ```
+
+## P-ME-048 — Diagnosticar ausencia de callouts después de fusionar
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Sí, me distraje, revise PR#5 y no lo fusioné. Ahora ya fusione los dos, pero no veo los callout. a lo mejor algo no funcionó en el flujo a Netlify
+```

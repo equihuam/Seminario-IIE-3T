@@ -517,3 +517,9 @@ Verificación: scripts/site.py check correcto, 19 páginas; advertencias regiona
 ## B070 — Entrega de las marcas temporales
 
 Fecha de registro: 2026-10-10. Prompt: P-ME-047. Se prepara commit y push de miguel/marcas-temporales y PR con base miguel/formato-carta: consulta de GitHub confirma que el PR #5 sigue abierto, por lo que esta base permite revisar únicamente las marcas temporales. Integrar primero el ajuste a carta y después dirigir esta propuesta a main. Se mantienen las verificaciones observadas en B069; no cambiaron fuentes ni salida del blog desde esas pruebas. Revisión de diferencias y control del índice antes del commit. T001 y T003 siguen pendientes.
+
+## B071 — Diagnóstico y corrección de la ruta de integración
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-048. API GitHub confirma PR #5 fusionado en main (c449c76, 18:52:44 UTC) y PR #6 fusionado en miguel/formato-carta (ce9097f, 18:53:32 UTC). Los callouts no están en origin/main. HTTP 200 de portada y guía Zotero: sin marca-temporal; la guía ya muestra carta. El estado observado corresponde a la rama publicada; no se encontró evidencia de fallo de Netlify. La base intermedia elegida para PR #6 hizo necesario un paso adicional que no quedó completado.
+
+Se crea miguel/publicar-marcas desde origin/main y se integra origin/miguel/formato-carta sin conflictos. Fuentes y salida de blog idénticas a las ya verificadas en B069; se comprueba el sitio generado sin repetir su render. Se prepara PR explícitamente hacia main, sin fusionarlo. T002 cerrado con enlace al PR #5; rutina editorial reforzada para comprobar la rama de destino. Revisión del índice antes de commit y entrega.

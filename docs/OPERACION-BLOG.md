@@ -76,3 +76,7 @@ Rutina al preparar una sesión o cerrar una revisión:
 5. Regenerar el blog, comprobar enlaces y revisar pantalla e impresión en carta de las fichas afectadas. Cerrar el pendiente y enlazar el commit o PR al integrar.
 
 Las plantillas incluyen el bloque: sustituir su ID al copiarlas y completar su contenido. Los callouts de ayuda, notas técnicas y consejos conservan su función y estilo propios.
+
+## Comprobación de la rama de publicación
+
+Antes de fusionar un PR de entrega, comprobar que su base sea `main`. Si una propuesta depende de otra rama, integrar primero la dependencia y cambiar explícitamente la base del PR restante a `main`. Fusionar en una rama de trabajo no publica en Netlify. Si ya ocurrió, abrir un PR desde los cambios pendientes hacia `main`; no repetir la generación cuando fuentes y salida ya están verificadas e idénticas. Tras integrar, comprobar que `main` contiene el HTML esperado y que la URL de producción lo sirve.
