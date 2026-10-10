@@ -64,6 +64,12 @@ Contrasta sus respuestas con los archivos. Si no puede acceder a ellos, compárt
 
 Usaremos Zotero como registro de fuentes y como primera práctica de consulta mediante una API. Sigue [Zotero y tu bibliografía](recursos/zotero.qmd): identifica una colección, revisa una referencia y compara su ficha con una consulta real del asistente. Anota colección, fuente y resultado de la prueba en la definición del proyecto. Si no hay conexión local, conserva la referencia y registra la dificultad para resolverla con acompañamiento.
 
+::: {.callout-tip}
+## Para seguir explorando Zotero
+
+Consulta la [ficha «Zotero + IA: del hallazgo a la cita»](recursos/zotero.qmd#ficha-de-consulta): siete tareas para pedir ayuda al bibliotecario y comprobar el resultado, desde registrar una referencia hasta revisar adjuntos y citas. Incluye una imagen ampliable y un PDF de una página para imprimir. Es un recurso opcional para después de tu primera consulta.
+:::
+
 ## Qué traer al primer encuentro
 
 - Tu carpeta y los documentos que puedas volver a abrir.

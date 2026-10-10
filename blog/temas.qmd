@@ -19,6 +19,7 @@ El primer puente conceptual está en [Del esquema a la red bayesiana](empieza-aq
 
 - [Principios y compromisos](reproducibilidad.qmd).
 - [Zotero y tu bibliografía](recursos/zotero.qmd): registro de fuentes y primera consulta API.
+- [Ficha Zotero + IA](recursos/zotero.qmd#ficha-de-consulta): siete casos de uso del bibliotecario, con imagen ampliable y PDF imprimible.
 - [Comprobación del entorno Python](recursos/comprobacion-python.qmd).
 - [Comprobación del entorno R](recursos/comprobacion-r.qmd).
 

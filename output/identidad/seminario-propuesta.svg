@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="480" viewBox="0 0 1040 480"><rect width="1040" height="480" fill="#F7F6F0"/><svg x="50" y="58" width="360" height="360" viewBox="0 0 512 512">
   <title>Seminario IIE-3T: probabilidad, sociedad y ecosistema</title>
   <desc>Propuesta de identificador: tres nodos enlazados, con una distribución de probabilidad, dos personas y una hoja. Los enlaces son simbólicos, no arcos causales del modelo.</desc>
   <rect width="512" height="512" rx="112" fill="#183D3A"/>
@@ -23,3 +23,4 @@
   <path d="M340 378 C324 340 350 322 396 322 C398 363 378 389 340 378 Z" fill="#183D3A"/>
   <path d="M338 386 L379 343 M354 369 L354 351 M363 360 L380 360" fill="none" stroke="#C4D6AC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
+<g font-family="Arial, sans-serif" fill="#183D3A"><text x="465" y="103" font-size="16" letter-spacing="2">PROPUESTA DE IDENTIDAD</text><text x="465" y="166" font-size="45" font-weight="bold">Seminario IIE-3T</text><text x="465" y="211" font-size="22">Matemáticas · Sociedad · Ecosistemas</text><text x="465" y="286" font-size="36" font-family="Georgia, serif" font-style="italic">p(θ | datos)</text><text x="465" y="324" font-size="19">Aprender de la evidencia,</text><text x="465" y="351" font-size="19">conservar la incertidumbre.</text><text x="465" y="418" font-size="13" fill="#4B625F">Una identidad visual; no un diagrama causal del modelo.</text></g></svg>

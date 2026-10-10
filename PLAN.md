@@ -124,3 +124,20 @@ Actualización P-ME-025 (2026-10-10): PR #1 integrado por Miguel en main (fc70f8
 Actualización P-ME-026 (2026-10-10): favicon SVG de tres capas creado por el rol ilustrador y configurado para todo el blog. Sitio regenerado y enlaces del icono comprobados en las 19 páginas. Pendiente integración junto con la aclaración de la API local.
 
 Actualización P-ME-027 (2026-10-10): se entrega la aclaración de API local y el favicon mediante commit, push y PR desde miguel/aclaracion-api-local. Render y enlaces comprobados; integración a main pendiente de revisión.
+
+
+## Ficha Zotero + IA — P-ME-033 (2026-10-10)
+
+Artefacto local listo: bibliografia/ficha-zotero/zotero-ia-ficha.svg editable y output/pdf/zotero-ia-ficha.pdf A4, con siete casos y encargo reutilizable. Generador, fuentes y alcance en bibliografia/ficha-zotero/README.md. PDF revisado visualmente; pendiente prueba con participantes y decisión de incorporación al blog.
+
+
+Actualización P-ME-035–P-ME-036 (2026-10-10): ícono aprobado aplicado al favicon y cabecera del blog y a la ficha Zotero v1.1. Se prepara la entrega de ficha, identidad y registros de las pruebas de anotación en miguel/ficha-zotero-identidad, desde origin/main 638a32a (PR #2 ya integrado). El PDF de la ficha sigue siendo entrega del repositorio, sin página pública de descarga agregada. La carga del ícono al grupo fue interrumpida por el control de aplicaciones; Miguel comunica «Listo», sin nueva verificación visual del asistente.
+
+
+Actualización P-ME-039 (2026-10-10): se incorpora la ficha v1.2 a la guía pública de Zotero con imagen SVG, PDF A4, resumen textual accesible y fuentes. Preparar proyecto y Temas enlazan a la sección. El pie de la ficha apunta a la guía pública. Se atiende en el mismo PR #3 la propuesta https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587; la integración a main queda expresamente pendiente.
+
+
+Actualización P-ME-040 (2026-10-10): Miguel confirma la vinculación pública y pide Carta / US Letter en el comentario https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518. Preferencia general documentada en CRITERIOS-DE-CALIDAD. Pendiente concreto del PR #3: adaptar la ficha Zotero desde A4 a Carta, regenerar SVG/PDF/PNG y copias públicas, actualizar rótulos y comprobar impresión sin recortes. Identificado además A4 en el CSS del semillero, pendiente de adecuación. Este registro no convierte los artefactos ni actualiza el PR.
+
+
+Actualización P-ME-041 (2026-10-10): ficha Zotero v1.3 adaptada a Carta / US Letter (612 × 792 puntos; SVG 8.5 × 11 pulgadas), redistribuyendo espacios sin reducir tipografía. PDF/PNG/SVG y copias públicas regenerados; descarga rotulada Carta. Se actualiza el PR #3 sin fusionar; la adecuación del semillero sigue pendiente por separado.

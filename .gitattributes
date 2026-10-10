@@ -10,6 +10,7 @@
 img/*.svg -text
 # Generated bootstrap from renv: preserve upstream whitespace.
 renv/activate.R -whitespace
+*.pdf binary
 *.png binary
 *.jpg binary
 

@@ -82,3 +82,8 @@ Incorporación autorizada en P-ME-022 al grupo `6712171`, colección `Seminario`
 Fuentes de cotejo: [catálogo UNAM del libro impreso](https://www.dgdc.unam.mx/libros/libros/libro/9786073096843), [Crossref O’Malley](https://api.crossref.org/works/10.1016/j.jtbi.2017.03.008), [Crossref Koide](https://api.crossref.org/works/10.1007/s00248-022-02005-9), páginas y PDF enlazados en `blog/empieza-aqui.qmd`, encabezado del manuscrito DOCX proporcionado y registro de fuentes del proyecto. Los DOI no pudieron abrirse mediante la herramienta web; sus metadatos sí se recuperaron de Crossref. El manuscrito iie-teoria no se volvió a localizar en la ruta relativa intentada: su procedencia se tomó del registro previo, sin declarar lectura nueva.
 
 No se exportó aún un archivo BibTeX ni se cambiaron las citas del blog. Estas son claves de ítem Zotero, no claves de cita BibTeX. La siguiente revisión podrá resolver los datos pendientes y elegir las versiones documentales que se citarán formalmente.
+
+
+## Prueba de anotaciones del grupo — 2026-10-10
+
+P-ME-030 / B056: API web recupera dos anotaciones del PDF UUYYWPBE y permite crear el resaltado rojo solicitado, V79697SC, verificado después mediante GET. La API local de Zotero 9.0.3 devolvió una lista de hijos vacía para ese adjunto; no usar esa respuesta como prueba de ausencia de anotaciones web. Pendiente visualizar el nuevo resaltado en el lector tras sincronización. El PDF contiene O’Malley (2017), pero está asociado al registro Koide 3EVAMBAP; discrepancia comunicada y no corregida automáticamente. La carga del adjunto fue realizada por Miguel; no se verificó nuevamente toda la configuración del grupo.

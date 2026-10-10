@@ -1,8 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <title>iie-3t · Tres capas</title>
-  <desc>Emblema de tres capas superpuestas, sin representar relaciones causales.</desc>
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="#173f36"/>
-  <path d="M12 22 32 12 52 22 32 32Z" fill="#c4d6ac"/>
-  <path d="M12 30 32 40 52 30V37L32 47 12 37Z" fill="#dfaa76"/>
-  <path d="M12 42 32 52 52 42V49L32 59 12 49Z" fill="#99c6db" transform="translate(0 -3)"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Seminario IIE-3T: probabilidad, sociedad y ecosistema</title>
+  <desc>Propuesta de identificador: tres nodos enlazados, con una distribución de probabilidad, dos personas y una hoja. Los enlaces son simbólicos, no arcos causales del modelo.</desc>
+  <rect width="512" height="512" rx="112" fill="#183D3A"/>
+  <g fill="none" stroke="#86AAA0" stroke-width="13" stroke-linecap="round">
+    <path d="M211 229 L166 301 M301 229 L346 301 M216 354 H296"/>
+  </g>
+  <!-- Distribución: incertidumbre y razonamiento probabilístico. -->
+  <circle cx="256" cy="160" r="91" fill="#DFAD67"/>
+  <path d="M196 186 C221 186 222 129 247 129 C273 129 270 176 290 181 C299 184 307 185 316 186 L316 196 H196 Z" fill="#183D3A"/>
+  <path d="M247 117 V204" fill="none" stroke="#FFF6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 11"/>
+  <!-- Comunidad: dos personas, no un individuo aislado. -->
+  <circle cx="146" cy="354" r="72" fill="#9DC8D5"/>
+  <g fill="#183D3A">
+    <circle cx="128" cy="337" r="13"/>
+    <circle cx="165" cy="337" r="13"/>
+    <path d="M105 384 V368 C105 347 151 347 151 368 V384 Z"/>
+    <path d="M143 384 V368 C143 347 188 347 188 368 V384 Z"/>
+  </g>
+  <path d="M146 366 V384" stroke="#9DC8D5" stroke-width="6"/>
+  <!-- Hoja: referencia al mundo vivo, no definición del ecosistema. -->
+  <circle cx="366" cy="354" r="72" fill="#C4D6AC"/>
+  <path d="M340 378 C324 340 350 322 396 322 C398 363 378 389 340 378 Z" fill="#183D3A"/>
+  <path d="M338 386 L379 343 M354 369 L354 351 M363 360 L380 360" fill="none" stroke="#C4D6AC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

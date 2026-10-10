@@ -19,6 +19,7 @@ blog/**/*_files/
 blog/**/*.ipynb
 blog/**/*.html
 blog/**/*.pdf
+!/blog/recursos/zotero-ia-ficha.pdf
 
 # Salida verificada para publicar desde GitHub en Netlify
 !/blog/_site/
