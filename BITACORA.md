@@ -483,3 +483,17 @@ Se registra Carta / US Letter como criterio editorial por defecto en docs/CRITER
 Fecha de registro: 2026-10-10. Prompt: P-ME-041. Atiende https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518 y continúa el criterio registrado en P-ME-040/B063. Generador adaptado a 612 × 792 puntos PDF y SVG 8.5 × 11 pulgadas; se amplían columnas y redistribuyen espacios verticales manteniendo los tamaños tipográficos. Ficha v1.3, copias públicas, PDF/PNG y documentación regenerados; enlace de descarga indica Carta / US Letter. La conversión del semillero permanece fuera de este ajuste y pendiente.
 
 Verificación observada: generar.py produce una página, valida dimensiones y límites de caracteres; revisión visual del PDF renderizado sin recortes. Comparación de tamaños tipográficos con el PDF de HEAD confirma el mismo conjunto de tamaños. pypdf y XML confirman Carta, enlace público y copias idénticas; la salida blog/_site contiene el mismo PDF. scripts/site.py check pasa: 19 páginas, enlaces y límites correctos, con advertencias regionales conocidas de R. Prueba funcional local con Playwright pasa: navegación, SVG, descarga HTTP 200 idéntica y ausencia de desbordamiento a 390 píxeles; capturas escritorio/móvil revisadas. No se realizó impresión física. Git diff --check correcto; control del índice mediante hook antes del commit. Se actualiza el mismo PR mediante commit y push, con respuesta vinculada al comentario, sin fusionar main.
+
+## B065 — Anotación del merge y seguimiento de pendientes
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-042. API de GitHub confirma PR #3 fusionado en eb48816e9b4ee11279f82d720a4383d77ae7186e. Consultados comentarios, revisiones, cronología y mensaje del commit: la anotación sobre textos repetitivos está en el mensaje del merge. Se conserva literalmente con su enlace en prompts/miguel.md y como TODO T001 en PLAN.md; no se infieren pasajes específicos ni se aplican recortes.
+
+Se inicia un control ligero en PLAN.md con identificador, estado, origen, siguiente paso y criterio de cierre. T002 recoge el pendiente ya conocido del formato Carta del semillero. El registro no pretende inventariar todos los pendientes históricos. Se propone mantener aquí el seguimiento por ahora y, si se necesita asignación o discusión entre colaboradores, trasladar cada tarea a un Issue de GitHub y conservar en PLAN solo su enlace para evitar estados duplicados.
+
+Cambios documentales locales en miguel/seguimiento-pendientes, creada desde origin/main actualizado. git diff --check correcto; no se modifica ni regenera el blog. Sin commit, push ni nuevas publicaciones en GitHub en este encargo.
+
+## B066 — Entrega del control simple de pendientes
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-043. Miguel aprueba el sistema de PLAN.md y autoriza excepcionalmente commit y push directo a main de este registro. T001 y T002 conservan estado TODO. La entrega incluye PLAN.md, BITACORA.md y prompts/miguel.md; el histórico local PROMPTS.md queda fuera.
+
+Verificación: fetch de origin completado; scripts/site.py check termina correctamente con las 19 páginas, enlaces locales y límites de publicación comprobados. Persisten las advertencias regionales conocidas de R. El control del índice se ejecuta mediante el hook antes del commit. Se prepara la integración por avance rápido y el push a main, sin abrir otro PR.

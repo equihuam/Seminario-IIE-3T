@@ -595,3 +595,29 @@ Para PR #3 conviene hacer la corrección de tamaño de página A4 -> US letter. 
 ```
 
 Da continuidad al comentario https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518 y al criterio general registrado en P-ME-040. Se conserva la instrucción de no fusionar el PR.
+
+## P-ME-042 — Recuperar anotación del merge y controlar pendientes
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Aprobé el merge, pero hice una anotación. Recupéralas y déjala como un TODO. No se exactamente como llevar ese control de pendientes. Sugiereme algo.
+```
+
+Anotación recuperada del mensaje del commit de integración del PR #3 (no de un comentario de revisión): https://github.com/equihuam/Seminario-IIE-3T/commit/eb48816e9b4ee11279f82d720a4383d77ae7186e
+
+```text
+En una revisión más detallada, veo textos que quizás convenga quitar, pues resultan repetitivos.
+```
+
+Registrada como T001 en PLAN.md. No identifica los pasajes; la localización y propuesta de recortes quedan pendientes.
+
+## P-ME-043 — Aprobar el control simple y publicar en main
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Muy bien con ese sistema simple. En este caso haz commit & push directo a main.
+```
+
+Autoriza para esta entrega la publicación directa del registro de pendientes en main.
