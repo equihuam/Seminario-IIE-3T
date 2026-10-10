@@ -1,5 +1,28 @@
 # Plan de trabajo
 
+## Control de pendientes — iniciado el 2026-10-10
+
+Cada pendiente concreto tendrá un identificador estable, estado (TODO, en curso o cerrado), fuente y criterio de cierre. Al resolverlo, conservar la entrada y enlazar el commit o PR y la verificación. Esta lista comienza con el seguimiento del PR #3; no constituye todavía una revisión exhaustiva de los pendientes históricos de este plan.
+
+Sistema simple aprobado por Miguel en P-ME-043, con autorización de commit y push directo a main para esta entrega.
+
+### T001 — Revisar textos repetitivos en los materiales del PR #3
+
+- **Estado:** TODO; revisión editorial pendiente, sin eliminar textos todavía.
+- **Origen:** anotación de Miguel en el [mensaje del merge del PR #3](https://github.com/equihuam/Seminario-IIE-3T/commit/eb48816e9b4ee11279f82d720a4383d77ae7186e), recuperada el 2026-10-10; encargo P-ME-042.
+- **Texto original:** «En una revisión más detallada, veo textos que quizás convenga quitar, pues resultan repetitivos.»
+- **Siguiente paso:** localizar repeticiones entre la ficha, la guía de Zotero y sus anuncios en el blog; proponer qué abreviar o retirar, distinguiendo redundancia de información necesaria para consultar cada recurso por separado y de la alternativa textual accesible a la imagen. La anotación no identifica pasajes concretos.
+- **Cierre:** propuestas revisadas y ajustes acordados aplicados; conservar instrucciones necesarias, accesibilidad y enlaces; regenerar y verificar el blog y enlazar aquí el PR o commit de resolución.
+
+### T002 — Adaptar la impresión del semillero a Carta / US Letter
+
+- **Estado:** TODO; pendiente anterior recuperado de P-ME-040/B063 y mantenido en P-ME-041/B064.
+- **Origen:** [seguimiento del formato Carta en el PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100499456).
+- **Siguiente paso:** ajustar `blog/semillero/ficha.css` y su documentación conforme a `docs/CRITERIOS-DE-CALIDAD.md`.
+- **Cierre:** impresión en Carta comprobada, fichas legibles sin recortes, blog regenerado y verificado; enlazar aquí el PR o commit de resolución.
+
+El PR #3 quedó integrado en `main` mediante `eb48816e9b4ee11279f82d720a4383d77ae7186e` el 2026-10-10 (comprobado en GitHub). Las entradas históricas que indican integración pendiente describen su estado anterior.
+
 ## Estado inicial — 2026-10-08
 
 - Completado: propósito, límites de carpeta y pautas del proyecto.
