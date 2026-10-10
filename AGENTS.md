@@ -151,6 +151,10 @@ Conservar resultados desfavorables y correcciones relevantes, declarar decisione
 - Definir objetivo y aceptación → implementar en rama → verificar → revisar (didacta/revisor) → documentar resultados y pendientes → fusionar a `main`. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `prompts/`, las instrucciones originales.
 
 
+### Cierre y limpieza de ramas
+
+Tras fusionar un PR hacia `main`, comprobar la publicación cuando afecte al blog. Actualizar `main` local por avance rápido y verificar que las ramas candidatas estén completamente integradas, sin PR abiertos que las usen como base o fuente y sin trabajo pendiente en otros worktrees. Eliminar entonces las ramas remotas de trabajo y sus ramas locales con `git branch -d`; ejecutar `git fetch --prune origin`. No usar borrado forzado para eludir trabajo sin integrar. Conservar `main` y las ramas activas. Crear cada nuevo encargo desde `main` actualizado; evitar ramas encadenadas salvo necesidad explícita. Si se usó squash o rebase y la comprobación de ancestros no confirma integración, revisar equivalencia y trabajo pendiente antes de borrar. Rutina aprobada por Miguel en P-ME-050; detalles en `docs/OPERACION-BLOG.md`.
+
 ## Cosecha y valoración de ideas
 
 Para nuevas propuestas del seminario, seguir blog/semillero/index.qmd. Recibir primero idea y motivación; asignar I### sin reutilizar IDs, conservar autoría y formulación original. Cada ficha tendrá como máximo una página legible (referencia: hasta 300 palabras), con las miradas explícitas del revisor y del didacta y un siguiente paso. Aplicar ambos roles en esta conversación salvo petición de revisión independiente. Registrar recomendaciones como propuestas hasta decisión docente.
