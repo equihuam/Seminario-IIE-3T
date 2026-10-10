@@ -507,3 +507,13 @@ Verificación observada: scripts/site.py check pasa con 19 páginas, enlaces y l
 ## B068 — Entrega del ajuste a carta
 
 Fecha de registro: 2026-10-10. Prompt: P-ME-045. Se entrega el ajuste P-ME-044/B067 mediante commit, push de miguel/formato-carta y PR a main. Se conservan las comprobaciones completas del sitio y las exportaciones revisadas en B067: no cambiaron fuentes editoriales desde esas pruebas. Se excluye el cambio incidental del identificador de celda generado al ejecutar la comprobación Python. Revisión de diferencias y control del índice antes del commit. T002 queda pendiente de integración; T001 continúa TODO.
+
+## B069 — Convención y rutina para marcas temporales
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-046. Se homogeneizan 13 avisos en portada, preparación, sesión, Zotero, catálogo, semillero y exploraciones, incluidas plantillas. Callout ámbar con ícono, título visible «Por acordar», clase marca-temporal e identificador temporal único. Se separa el estado pendiente de la atribución y las fuentes para poder retirar el aviso sin perder procedencia. OPERACION-BLOG documenta búsqueda, revisión con el equipo, registro del acuerdo, actualización del contenido, retiro y comprobación. No se retiran límites científicos por una aprobación editorial ni se declara tomada ninguna decisión pendiente.
+
+Verificación: scripts/site.py check correcto, 19 páginas; advertencias regionales conocidas de R. Playwright/Edge comprueba 13 IDs únicos, títulos e íconos, y cajas dentro del viewport móvil de 390 píxeles. El primer control del título incluyó la etiqueta accesible «Advertencia», oculta visualmente por Quarto; se ajustó la comprobación al título visible sin eliminar accesibilidad. Se detectó desbordamiento de la página de plantilla de exploraciones y se registró T003; no se afirma que toda esa página pase la comprobación móvil. Exportaciones PDF de I001–I004 y plantilla del semillero: una página carta cada una, caracteres dentro de límites, PNG revisados visualmente. Capturas del aviso en escritorio/móvil examinadas. Sin impresión física. Cambios locales en miguel/marcas-temporales, basada en el ajuste del PR #5, sin commit ni push.
+
+## B070 — Entrega de las marcas temporales
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-047. Se prepara commit y push de miguel/marcas-temporales y PR con base miguel/formato-carta: consulta de GitHub confirma que el PR #5 sigue abierto, por lo que esta base permite revisar únicamente las marcas temporales. Integrar primero el ajuste a carta y después dirigir esta propuesta a main. Se mantienen las verificaciones observadas en B069; no cambiaron fuentes ni salida del blog desde esas pruebas. Revisión de diferencias y control del índice antes del commit. T001 y T003 siguen pendientes.

@@ -35,3 +35,7 @@ title: "E___ · Título de la exploración"
 [Fuentes con sección/versión; fecha, autoría y motivo de cambios. Conservar aportaciones originales y resultados desfavorables.]
 
 [Volver a exploraciones](index.qmd) · [Semillero](../semillero/index.qmd)
+
+::: {#temporal-plantilla-exploracion .callout-warning .marca-temporal title="Por acordar" icon="true"}
+[Indicar qué está pendiente, quién debe decidir y qué evidencia permitirá resolverlo. Al copiar la plantilla, asignar un identificador temporal único.]
+:::

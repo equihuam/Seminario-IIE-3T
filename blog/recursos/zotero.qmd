@@ -86,4 +86,8 @@ La ficha orienta el trabajo; la ejecución depende del acceso, los permisos y la
 
 **Fuentes de apoyo:** [API local](https://www.zotero.org/support/dev/web_api/v3/local_api), [API web](https://www.zotero.org/support/dev/web_api/v3/basics), [lector PDF y notas](https://www.zotero.org/support/pdf_reader) e [integración con editores](https://www.zotero.org/support/word_processor_integration). La ficha es material del seminario, no documentación oficial de Zotero.
 
-*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; incluye la ficha de consulta v1.3, imagen ampliable y PDF imprimible. Pendiente de prueba con participantes.*
+Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; incluye la ficha de consulta v1.3, imagen ampliable y PDF imprimible.
+
+::: {#temporal-zotero .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Material pendiente de prueba con participantes.
+:::
