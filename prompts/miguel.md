@@ -637,3 +637,27 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Hagamos el commit and PR ahora
 ```
+
+## P-ME-046 — Homogeneizar marcas temporales de decisión
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Veo en varias páginas un pie que explica que el contenido es tentativo hasta decisiones definitivas e indica quién lo ha sugerido. Eso me parece. Quiero que tengamos una rutina para destacar esas marcas que son temporales y nos conviene una notación sencilla para quitarlas cuando haysmos tomado las decisiones definitivas. En algunos casos usas un marco callout, en otros no. Vamos ha hacer un uso homogeneo de callout en todos esos casos, quizás con colores e ícono de warning (no la palabra).
+```
+
+## P-ME-047 — Entregar las marcas temporales mediante commit y PR
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Haz ahora el commit y PR
+```
+
+## P-ME-048 — Diagnosticar ausencia de callouts después de fusionar
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Sí, me distraje, revise PR#5 y no lo fusioné. Ahora ya fusione los dos, pero no veo los callout. a lo mejor algo no funcionó en el flujo a Netlify
+```

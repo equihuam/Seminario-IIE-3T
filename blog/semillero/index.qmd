@@ -6,7 +6,11 @@ Una pregunta basta para empezar: **¿qué propones explorar y por qué importa?*
 
 ## Registro de ideas
 
-Las primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación. Sus valoraciones son provisionales y no equivalen a validación científica o aprobación del programa.
+Las primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación.
+
+::: {#temporal-semillero .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Las valoraciones de las cuatro fichas iniciales son provisionales y están pendientes de decisión docente. No equivalen a validación científica o aprobación del programa.
+:::
 
 | ID y ficha | Estado | Siguiente paso propuesto | Desarrollo |
 | --- | --- | --- | --- |

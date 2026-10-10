@@ -5,7 +5,11 @@ date: 2026-10-08
 categories: [iie-3t, Introducción, Reproducibilidad]
 ---
 
-**Estado:** propuesta de apertura, pendiente de revisión docente. **Realización:** por acordar. **Versión del material:** 0.1.
+::: {#temporal-sesion-01 .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Propuesta de apertura pendiente de revisión docente y de acordar la fecha de realización. Aún no aplicada a participantes.
+:::
+
+**Versión del material:** 0.1.
 
 ## Pregunta central
 
@@ -44,4 +48,4 @@ Recoger tres preguntas del grupo, un concepto que necesite aclaración y una val
 
 ## Procedencia y cambios
 
-Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA; aún no aplicada a participantes. La fecha de esta entrada registra su preparación.
+Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.

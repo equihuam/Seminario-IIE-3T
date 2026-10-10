@@ -18,3 +18,10 @@ a { color: #24664f; text-underline-offset: .18em; }
 @media (max-width: 700px) { .layer-grid { grid-template-columns: 1fr; } .hero { padding: 1.4rem; } }
 
 .navbar-logo { max-height: 44px; width: auto; }
+
+/* Avisos editoriales temporales: identificables también sin color. */
+div.callout-warning.marca-temporal { border-left-color: #946200; background-color: #fff8e8; }
+div.callout-warning.marca-temporal .callout-header { background-color: #fff0c7; color: #533900; }
+@media print {
+  .marca-temporal { break-inside: avoid; border: 1px solid #946200; }
+}
