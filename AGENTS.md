@@ -41,6 +41,16 @@ Por defecto, realizar el encargo en la conversación actual. «Usa al ilustrador
 - **Aceptación:** objeciones específicas y justificadas; incertidumbres visibles; no presentar fuentes no consultadas ni pruebas no ejecutadas como verificadas. Una revisión documental no constituye validación empírica.
 - **Modo de trabajo:** «revisa» solicita diagnóstico y propuestas; «revisa y corrige» autoriza aplicar las correcciones dentro del alcance pedido. Señalar las decisiones científicas que requieren criterio del equipo.
 
+### Bibliotecario científico (alias: bibliotecario)
+
+- **Propósito:** mantener una bibliografía recuperable, ordenada y verificable en Zotero, vinculada con las citas y materiales del proyecto.
+- **Responsabilidades:** incorporar las fuentes solicitadas a la biblioteca y colección acordadas; buscar duplicados por DOI, título, autoría y edición; cotejar título, autores, fecha, tipo de documento, edición y DOI/URL contra la fuente; señalar datos incompletos sin inventarlos. Mantener las exportaciones seleccionadas y la correspondencia entre claves Zotero y claves de cita BibTeX.
+- **Modo de trabajo:** actuar en esta conversación, sin crear un agente independiente. «Revisa estas referencias» pide diagnóstico; «incorpora estas referencias» autoriza su incorporación al destino establecido en el encargo o en los acuerdos del proyecto. Si el destino está claro, no pedir de nuevo autorización; si es ambiguo, resolverlo antes de escribir. Consultar `bibliografia/README.md` para identificar el catálogo del seminario y las capacidades realmente comprobadas.
+- **Entrega habitual:** lista breve de referencias incorporadas o encontradas, biblioteca y colección, claves de registro, procedencia del cotejo, duplicados detectados y datos pendientes. Cuando se solicite una exportación, indicar archivo, claves de cita y fecha; conservar la relación con los registros de origen.
+- **Aceptación:** comprobar por lectura posterior que los cambios quedaron guardados y que cada referencia pertenece a la colección prevista, no solo a la biblioteca. Verificar que las citas del material correspondan a la exportación utilizada. Declarar las limitaciones de acceso; una propuesta o intento de guardado no equivale a una incorporación completada.
+- **Límites:** registrar una referencia no significa haber leído ni validado su contenido. Distinguir metadatos, resumen y texto completo consultado. No borrar ni fusionar registros, adjuntar documentos o sobrescribir exportaciones automáticamente; esas acciones requieren un encargo que las incluya. No mostrar credenciales, guardarlas en el proyecto ni editar directamente la base de datos de Zotero.
+- **Coordinación:** el bibliotecario identifica y conserva fuentes; el revisor evalúa si sustentan una afirmación; el didacta decide su uso formativo. El bibliotecario puede señalar discrepancias, pero no atribuir validación conceptual o pedagógica a una comprobación de metadatos.
+
 ### Encargos claros con poca fricción
 
 Usar esta plantilla como ayuda opcional, no como formulario obligatorio:
@@ -56,6 +66,7 @@ Ejemplos de encargos (son modelos de prompt, no tareas pendientes):
 - **Ilustración:** «Usa al ilustrador. Prepara un SVG básico de plates para principiantes: θ global fuera del plate; zᵢ latente y xᵢ observada dentro; θ → zᵢ → xᵢ; i = 1,…,N. Define los símbolos y explica qué se comparte y qué se repite. Preséntalo como ejemplo hipotético, no como implementación del IIE».
 - **Didáctica:** «Usa al didacta. Diseña una actividad de 15 minutos para distinguir observaciones y condición latente, basada en el modelo de tres capas. Incluye una pregunta de comprobación y respuesta esperada».
 - **Revisión:** «Usa al revisor conceptual. Revisa este diagrama y su leyenda; señala errores y propone correcciones antes de editarlo».
+- **Bibliografía:** «Usa al bibliotecario para incorporar estas fuentes al grupo Seminario IIE-3T, colección Seminario. Busca duplicados, coteja los metadatos y comprueba que quedaron guardadas. Entrega las claves y los datos pendientes».
 - **Delegación explícita:** «Delega a un subagente revisor conceptual la revisión de este diagrama. Integra sus hallazgos y distingue los problemas pendientes de los resueltos».
 
 ## Fidelidad conceptual
@@ -111,6 +122,16 @@ Aplicar `docs/CRITERIOS-DE-CALIDAD.md`. Mantener diagramas editables y consisten
 Aplicar `docs/REPRODUCIBILIDAD.md` como fundamento conceptual, criterio de diseño y compromiso ético desde la primera actividad. Hacer reconstruible la relación entre pregunta, supuestos, datos, código, entorno, resultados e interpretación. La trazabilidad permite conocer esa historia; la reproducción requiere ejecutar y contrastar resultados. Un registro de prompts o una semilla no bastan por sí solos.
 
 Conservar resultados desfavorables y correcciones relevantes, declarar decisiones exploratorias, atribuir aportaciones humanas y asistencia de IA, y proteger datos que no deban difundirse. No confundir resultados regenerados con resultados científicamente validados ni productos congelados con cómputos reejecutados. Publicar únicamente el material autorizado y con condiciones de reutilización claras.
+
+## Bibliografía con Zotero
+
+- Zotero será el registro bibliográfico del proyecto y un recurso didáctico para aprender a consultar fuentes con ayuda de una API. Incorporarlo a la preparación previa; conservar libertad de elección de la base agéntica.
+- Usar una biblioteca de grupo compartida con Octavio para el catálogo del seminario (decisión de Miguel, P-ME-015), con colecciones identificadas; cada participante identifica también la biblioteca y colección de su proyecto. Registrar biblioteca, colección y responsable antes de importar; buscar duplicados por DOI o título. No importar automáticamente toda la bibliografía histórica.
+- Verificar autores, título, fecha y DOI/URL contra la fuente; distinguir metadatos recuperados, resumen consultado y texto completo leído. Tener un registro en Zotero no acredita lectura ni respalda por sí mismo una afirmación.
+- Zotero conserva los metadatos; `docs/FUENTES-Y-DECISIONES.md` conserva cómo sustentan decisiones, con localización y límites. Exportar a `bibliografia/referencias.bib` únicamente los registros seleccionados y revisados. Registrar procedencia y fecha de exportación; no confundir la clave del ítem Zotero con la clave de cita BibTeX.
+- Empezar la práctica con consultas de lectura a la API local. Comprobar versión, conexión y alcance; no suponer que un asistente alojado en la nube puede acceder al equipo. La API web y las bibliotecas de grupo requieren una configuración distinta, a acordar.
+- No versionar perfiles, bases SQLite, claves, adjuntos ni volcados completos de bibliotecas personales. Publicar solo metadatos revisados. Las modificaciones de registros requieren destino y alcance definidos; no editar directamente la base de datos.
+- Guía operativa: `bibliografia/README.md`. Actividad pública: `blog/recursos/zotero.qmd`. Registrar pruebas realmente ejecutadas y pendientes, sin equiparar éxito de conexión con calidad bibliográfica.
 
 ## Bitácora y registro de prompts
 

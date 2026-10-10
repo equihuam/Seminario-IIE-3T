@@ -8,6 +8,10 @@ El proyecto integrará fundamentos conceptuales, explicaciones matemáticas y pr
 
 La **reproducibilidad científica** será un concepto que se estudia, una condición de diseño de los materiales y una ética de trabajo. Se buscará que otra persona pueda reconstruir los supuestos y procedimientos, regenerar los resultados y examinar críticamente su interpretación, con límites y contribuciones explícitos. Véase el [marco de reproducibilidad](docs/REPRODUCIBILIDAD.md).
 
+## Registro bibliográfico
+
+Usaremos **Zotero** para conservar y revisar las referencias del proyecto. Su API será también un recurso didáctico: consultar una referencia, cotejar sus metadatos y distinguir recuperación bibliográfica de lectura crítica. La preparación previa incorpora esta práctica sin imponer una base agéntica. Véanse la [organización bibliográfica](bibliografia/README.md) y la [actividad para participantes](blog/recursos/zotero.qmd).
+
 ## Marco conceptual inicial
 
 El [SVG del equipo](img/Modelo%20de%20tres%20capas.svg) identifica tres capas:

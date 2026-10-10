@@ -18,6 +18,7 @@ El primer puente conceptual está en [Del esquema a la red bayesiana](empieza-aq
 ## Reproducibilidad y trabajo científico
 
 - [Principios y compromisos](reproducibilidad.qmd).
+- [Zotero y tu bibliografía](recursos/zotero.qmd): registro de fuentes y primera consulta API.
 - [Comprobación del entorno Python](recursos/comprobacion-python.qmd).
 - [Comprobación del entorno R](recursos/comprobacion-r.qmd).
 

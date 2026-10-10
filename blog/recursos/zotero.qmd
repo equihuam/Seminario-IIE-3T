@@ -1,0 +1,61 @@
+---
+title: "Zotero y tu bibliografía"
+description: "Prepara tus referencias y comprueba una consulta con ayuda del asistente."
+---
+
+Una referencia debe poder recuperarse y revisarse. Usaremos **Zotero para registrar la bibliografía** y aprenderemos a consultarla con ayuda de una **API**: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.
+
+Esta es la segunda parte de [Preparar tu proyecto](../preparar-proyecto.qmd). Reserva **15–20 minutos adicionales** si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste.
+
+## 1. Organiza una primera referencia
+
+Instala o abre [Zotero de escritorio](https://www.zotero.org/download/). Crea una colección con el nombre de tu proyecto, o identifica una existente. Una colección reúne referencias de una biblioteca; no equivale a una carpeta de archivos de tu proyecto.
+
+Elige una fuente que ya estés usando en tu pregunta. Busca primero si existe en tu biblioteca; si no, agrégala desde su DOI, su página editorial o mediante captura manual. Revisa **título, autores, año y DOI o URL** contra la fuente. No necesitas reunir todavía toda la bibliografía ni adjuntar el PDF.
+
+En la definición de tu proyecto anota el nombre de la colección y si revisaste solo los metadatos, el resumen o el texto completo. Agrega una frase: «Esta fuente me sirve para…». Si aún no elegiste una fuente, déjala como pendiente; no pidas al asistente que invente una referencia.
+
+## 2. Prepara la conexión local
+
+En Zotero, abre **Ajustes → Avanzado** y habilita la comunicación con otras aplicaciones del equipo. Mantén Zotero abierto. La API local atiende en `http://localhost:23119/api/`; sus lecturas no requieren clave. Evita exponer ese puerto fuera del equipo. [Documentación oficial](https://www.zotero.org/support/dev/web_api/v3/local_api).
+
+Tu asistente necesita una herramienta capaz de hacer solicitudes locales **desde el mismo equipo**. Un chat en la nube no obtiene ese acceso por adjuntar documentos. Si tu entorno no lo permite, realiza ahora la revisión en Zotero y deja la prueba de API para el acompañamiento. No necesitas configurar la API web ni compartir credenciales para esta actividad.
+
+## 3. Consulta y compara
+
+Copia y adapta este encargo:
+
+```text
+Quiero comprobar el acceso de lectura a Zotero para mi proyecto.
+Primero verifica la conexión local e informa la versión que responde.
+Mi biblioteca es [personal o nombre e ID del grupo].
+Mi colección se llama [nombre]. Identifícala sin elegir automáticamente
+si hay varias coincidencias. Busca dentro de ella [título o DOI].
+Devuelve título, autores, fecha, DOI o URL y clave Zotero del ítem.
+No crees ni modifiques registros ni recuperes adjuntos o texto completo.
+Si no tienes acceso local, explica qué falta; no simules la consulta.
+Ayúdame a comparar el resultado con la ficha que veo en Zotero y registra
+la prueba, su resultado y el siguiente paso en mis documentos.
+```
+
+Comprueba que se trata de **la misma obra y versión**. Si la búsqueda no devuelve nada, revisa colección y términos; el resultado no demuestra que la obra no exista.
+
+::: {.callout-note collapse="true"}
+## Para explorar qué hace la API
+
+Una solicitud `GET` pide información. Por ejemplo, `/api/users/0/collections` lista colecciones de la biblioteca personal local. En la copia del proyecto, `scripts/zotero_bibliografia.py` permite comprobar conexión, buscar en una colección y exportar ítems seleccionados a BibTeX. Las instrucciones están en `bibliografia/README.md`; la coordinación puede facilitar esta práctica cuando ya uses Python.
+
+La clave Zotero identifica un registro dentro de una biblioteca. La clave BibTeX identifica una cita en el archivo exportado: **no son intercambiables**. Al exportar, comprueba qué clave usarás en tu documento.
+:::
+
+## Qué queda listo
+
+- Una colección identificada y una referencia con metadatos cotejados, o la dificultad concreta pendiente.
+- Una breve explicación de para qué usarás esa fuente y qué parte consultaste.
+- Una comparación entre la ficha y la respuesta real de la API, o el registro de por qué no pudo ejecutarse.
+
+**Pregunta de comprobación:** si el asistente recuperó autores y título, ¿ya puede afirmar que leyó el artículo? **Respuesta esperada:** no; consultó metadatos. Cualquier interpretación del contenido debe apoyarse en el texto efectivamente leído.
+
+Después aprenderemos a exportar referencias seleccionadas y citar con ellas. El catálogo del equipo se llevará en una biblioteca de grupo compartida. La coordinación facilitará el acceso cuando esté configurada; mientras tanto puedes practicar en tu colección personal. Las copias de una referencia en bibliotecas distintas no se actualizan como un único registro: revisaremos los metadatos en la biblioteca que use cada trabajo. Véase la [guía de grupos de Zotero](https://www.zotero.org/support/groups). Las dificultades de conexión no impiden participar en la apertura.
+
+*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.*

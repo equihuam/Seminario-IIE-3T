@@ -328,3 +328,83 @@ Fecha de registro: 2026-10-09. Hora de emisión no disponible.
 ```text
 Entiendo que Octavio no ha iniciado actividad por su lado. Verifica en github, si es así, entonces, por esta ocasión, hagamos el merge a main, comit & push
 ```
+
+## P-ME-014 — Zotero como registro bibliográfico y recurso didáctico
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Quiero agregar a la directiva del proyecto que llevaremos registro de la bibliografía con ayuda de zotero. Además de su utilidad, esto servirá como recurso didáctico para hacerlo con la ayuda de la api. Lo incluiremos en la configuración previa que ya hemos iniciado. Organízalo y haz la preparación necesaria
+```
+
+## P-ME-015 — Biblioteca de grupo compartida
+
+Fecha de registro: 2026-10-09. Respuesta a la consulta sobre colección personal o biblioteca de grupo compartida con Octavio.
+
+```text
+Biblioteca de grupo compartida
+```
+
+## P-ME-016 — Invitación a Octavio enviada por Miguel
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+ya le envié una invitación a su correo
+```
+
+## P-ME-017 — Almacenamiento de una clave para Zotero web
+
+Fecha de registro: 2026-10-09. Registro retrospectivo del mensaje previo, cuya hora de emisión no está disponible.
+
+```text
+Hice una api key específicamente para esta colección web. Cómo la pongo en la colección segura?
+```
+
+## P-ME-018 — Prueba de credencial guardada en Windows
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Ya está en la alcancia de windows. La puedes probar?
+```
+
+## P-ME-019 — Nueva prueba tras ajustar permisos
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Hice el ajuste. Vuelve a probar. Hay una referencia
+```
+
+## P-ME-020 — Propuesta de rol bibliotecario
+
+Fecha de registro: 2026-10-09. Registro retrospectivo del mensaje previo; hora de emisión no disponible.
+
+```text
+Conviene agregar un agente bibliotecario?
+```
+
+## P-ME-021 — Definir el rol e incorporarlo a la plantilla
+
+Fecha de registro: 2026-10-09. Hora de emisión no disponible.
+
+```text
+Excelente. Entonces definamos ese rol y también pongámoslo en la plantilla con una breve explicación de uso
+```
+
+## P-ME-022 — Incorporar las referencias de la presentación conceptual
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Entonces podemos agregar las referencias que usamos en la página de presentación conceptual
+```
+
+## P-ME-023 — Commit y push con revisión del trabajo remoto
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Muy bien es momento de hacer commit and push. Verifica que octavio no tenga nada en camino
+```

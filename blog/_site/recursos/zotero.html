@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Prepara tus referencias y comprueba una consulta con ayuda del asistente.">
 
-<title>Comprobación del entorno Python – iie-3t · Seminario</title>
+<title>Zotero y tu bibliografía – iie-3t · Seminario</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -25,41 +26,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -165,17 +131,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">En esta página</h2>
+   
+  <ul>
+  <li><a href="#organiza-una-primera-referencia" id="toc-organiza-una-primera-referencia" class="nav-link active" data-scroll-target="#organiza-una-primera-referencia">1. Organiza una primera referencia</a></li>
+  <li><a href="#prepara-la-conexión-local" id="toc-prepara-la-conexión-local" class="nav-link" data-scroll-target="#prepara-la-conexión-local">2. Prepara la conexión local</a></li>
+  <li><a href="#consulta-y-compara" id="toc-consulta-y-compara" class="nav-link" data-scroll-target="#consulta-y-compara">3. Consulta y compara</a></li>
+  <li><a href="#qué-queda-listo" id="toc-qué-queda-listo" class="nav-link" data-scroll-target="#qué-queda-listo">Qué queda listo</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Comprobación del entorno Python</h1>
+<h1 class="title">Zotero y tu bibliografía</h1>
 </div>
 
+<div>
+  <div class="description">
+    Prepara tus referencias y comprueba una consulta con ayuda del asistente.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -190,21 +170,64 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.</p>
-<div id="b542d709" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(<span class="bu">sum</span>(probabilidades) <span class="op">-</span> <span class="fl">1.0</span>) <span class="op">&lt;</span> <span class="fl">1e-12</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>resultado <span class="op">=</span> <span class="bu">sum</span>(p <span class="op">*</span> x <span class="cf">for</span> p, x <span class="kw">in</span> <span class="bu">zip</span>(probabilidades, [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>]))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(resultado <span class="op">-</span> <span class="fl">1.3</span>) <span class="op">&lt;</span> <span class="fl">1e-12</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Python </span><span class="sc">{</span>sys<span class="sc">.</span>version<span class="sc">.</span>split()[<span class="dv">0</span>]<span class="sc">}</span><span class="ss"> · resultado: </span><span class="sc">{</span>resultado<span class="sc">:.1f}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Python 3.12.14 · resultado: 1.3</code></pre>
+<p>Una referencia debe poder recuperarse y revisarse. Usaremos <strong>Zotero para registrar la bibliografía</strong> y aprenderemos a consultarla con ayuda de una <strong>API</strong>: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.</p>
+<p>Esta es la segunda parte de <a href="../preparar-proyecto.html">Preparar tu proyecto</a>. Reserva <strong>15–20 minutos adicionales</strong> si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste.</p>
+<section id="organiza-una-primera-referencia" class="level2">
+<h2 class="anchored" data-anchor-id="organiza-una-primera-referencia">1. Organiza una primera referencia</h2>
+<p>Instala o abre <a href="https://www.zotero.org/download/">Zotero de escritorio</a>. Crea una colección con el nombre de tu proyecto, o identifica una existente. Una colección reúne referencias de una biblioteca; no equivale a una carpeta de archivos de tu proyecto.</p>
+<p>Elige una fuente que ya estés usando en tu pregunta. Busca primero si existe en tu biblioteca; si no, agrégala desde su DOI, su página editorial o mediante captura manual. Revisa <strong>título, autores, año y DOI o URL</strong> contra la fuente. No necesitas reunir todavía toda la bibliografía ni adjuntar el PDF.</p>
+<p>En la definición de tu proyecto anota el nombre de la colección y si revisaste solo los metadatos, el resumen o el texto completo. Agrega una frase: «Esta fuente me sirve para…». Si aún no elegiste una fuente, déjala como pendiente; no pidas al asistente que invente una referencia.</p>
+</section>
+<section id="prepara-la-conexión-local" class="level2">
+<h2 class="anchored" data-anchor-id="prepara-la-conexión-local">2. Prepara la conexión local</h2>
+<p>En Zotero, abre <strong>Ajustes → Avanzado</strong> y habilita la comunicación con otras aplicaciones del equipo. Mantén Zotero abierto. La API local atiende en <code>http://localhost:23119/api/</code>; sus lecturas no requieren clave. Evita exponer ese puerto fuera del equipo. <a href="https://www.zotero.org/support/dev/web_api/v3/local_api">Documentación oficial</a>.</p>
+<p>Tu asistente necesita una herramienta capaz de hacer solicitudes locales <strong>desde el mismo equipo</strong>. Un chat en la nube no obtiene ese acceso por adjuntar documentos. Si tu entorno no lo permite, realiza ahora la revisión en Zotero y deja la prueba de API para el acompañamiento. No necesitas configurar la API web ni compartir credenciales para esta actividad.</p>
+</section>
+<section id="consulta-y-compara" class="level2">
+<h2 class="anchored" data-anchor-id="consulta-y-compara">3. Consulta y compara</h2>
+<p>Copia y adapta este encargo:</p>
+<pre class="text"><code>Quiero comprobar el acceso de lectura a Zotero para mi proyecto.
+Primero verifica la conexión local e informa la versión que responde.
+Mi biblioteca es [personal o nombre e ID del grupo].
+Mi colección se llama [nombre]. Identifícala sin elegir automáticamente
+si hay varias coincidencias. Busca dentro de ella [título o DOI].
+Devuelve título, autores, fecha, DOI o URL y clave Zotero del ítem.
+No crees ni modifiques registros ni recuperes adjuntos o texto completo.
+Si no tienes acceso local, explica qué falta; no simules la consulta.
+Ayúdame a comparar el resultado con la ficha que veo en Zotero y registra
+la prueba, su resultado y el siguiente paso en mis documentos.</code></pre>
+<p>Comprueba que se trata de <strong>la misma obra y versión</strong>. Si la búsqueda no devuelve nada, revisa colección y términos; el resultado no demuestra que la obra no exista.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Para explorar qué hace la API
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Una solicitud <code>GET</code> pide información. Por ejemplo, <code>/api/users/0/collections</code> lista colecciones de la biblioteca personal local. En la copia del proyecto, <code>scripts/zotero_bibliografia.py</code> permite comprobar conexión, buscar en una colección y exportar ítems seleccionados a BibTeX. Las instrucciones están en <code>bibliografia/README.md</code>; la coordinación puede facilitar esta práctica cuando ya uses Python.</p>
+<p>La clave Zotero identifica un registro dentro de una biblioteca. La clave BibTeX identifica una cita en el archivo exportado: <strong>no son intercambiables</strong>. Al exportar, comprueba qué clave usarás en tu documento.</p>
 </div>
 </div>
-<p>El resultado esperado es <strong>1.3</strong>. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE.</p>
+</div>
+</section>
+<section id="qué-queda-listo" class="level2">
+<h2 class="anchored" data-anchor-id="qué-queda-listo">Qué queda listo</h2>
+<ul>
+<li>Una colección identificada y una referencia con metadatos cotejados, o la dificultad concreta pendiente.</li>
+<li>Una breve explicación de para qué usarás esa fuente y qué parte consultaste.</li>
+<li>Una comparación entre la ficha y la respuesta real de la API, o el registro de por qué no pudo ejecutarse.</li>
+</ul>
+<p><strong>Pregunta de comprobación:</strong> si el asistente recuperó autores y título, ¿ya puede afirmar que leyó el artículo? <strong>Respuesta esperada:</strong> no; consultó metadatos. Cualquier interpretación del contenido debe apoyarse en el texto efectivamente leído.</p>
+<p>Después aprenderemos a exportar referencias seleccionadas y citar con ellas. El catálogo del equipo se llevará en una biblioteca de grupo compartida. La coordinación facilitará el acceso cuando esté configurada; mientras tanto puedes practicar en tu colección personal. Las copias de una referencia en bibliotecas distintas no se actualizan como un único registro: revisaremos los metadatos en la biblioteca que use cada trabajo. Véase la <a href="https://www.zotero.org/support/groups">guía de grupos de Zotero</a>. Las dificultades de conexión no impiden participar en la apertura.</p>
+<p><em>Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
