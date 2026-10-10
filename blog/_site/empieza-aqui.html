@@ -202,13 +202,15 @@ window.Quarto = {
 
 <section id="más-allá-de-la-apariencia-la-metáfora-de-la-salud" class="level2">
 <h2 class="anchored" data-anchor-id="más-allá-de-la-apariencia-la-metáfora-de-la-salud">Más allá de la apariencia: la metáfora de la salud</h2>
-<p>Cuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa: un atleta con gran masa muscular obtenida mediante sustancias nocivas puede lucir vigoroso y, sin embargo, esconder un daño funcional severo; en contraste, un cuerpo común bajo análisis clínicos puede revelar un estado óptimo. Con los ecosistemas ocurre lo mismo: un campo de golf verde, podado y fumigado parece impecable a simple vista, pero ha perdido la mayor parte de sus funciones ecológicas y su diversidad biológica nativa.</p>
-<p>La <strong>integridad ecosistémica</strong> funciona como la salud en un organismo vivo (en el sentido de Lynn Margulis y el enfoque de Ecosalud): no es un atributo directamente observable a simple vista ni un número aislado, sino una condición sistémica de <strong>autoorganización, regulación interna y persistencia de las funciones vitales</strong>. Para evaluarla, necesitamos superar la primera impresión y realizar un verdadero <strong>diagnóstico</strong>.</p>
+<p>Cuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.</p>
+<p>En el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la <strong>metáfora de la salud</strong> ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el <strong>diagnóstico</strong>, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.</p>
+<p>El énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones (<a href="https://doi.org/10.1016/j.jtbi.2017.03.008">O’Malley, 2017</a>; <a href="https://doi.org/10.1007/s00248-022-02005-9">Koide, 2023</a>).</p>
 </section>
 <section id="pensamiento-sistémico-el-ecosistema-como-un-todo" class="level2">
 <h2 class="anchored" data-anchor-id="pensamiento-sistémico-el-ecosistema-como-un-todo">Pensamiento sistémico: el ecosistema como un todo</h2>
-<p>Como nos enseñaron Donella Meadows, Jay Forrester y John Sterman, un sistema no es una simple suma de componentes aislados, sino una red de interconexiones donde alterar un elemento repercute en los demás.</p>
-<p>Piensa en una <strong>pecera casera</strong>: para mantenerla viva no basta con alimentar a los peces; es indispensable vigilar el pH, la oxigenación, la temperatura, el ciclo de los desechos, el papel de las plantas y los descomponedores. Gestionar la pecera es gestionar la integridad de un sistema en equilibrio dinámico. Si aislamos una sola variable, el diagnóstico y el manejo fracasan.</p>
+<p>La tradición de pensamiento sistémico y dinámica de sistemas asociada con Jay Forrester, John Sterman, Peter Senge y Donella Meadows invita a estudiar las relaciones que producen el comportamiento de un sistema. Interesa reconocer qué se acumula, qué entra y sale, qué efectos tardan en aparecer y qué procesos se retroalimentan.</p>
+<p>Piensa en una <strong>pecera casera</strong>: para mantenerla viva no basta con alimentar a los peces; también importan el pH, la oxigenación, la temperatura, los desechos y el papel de plantas y descomponedores. Importa lo que se acumula y cuánto tardan en aparecer los efectos: una modificación en la alimentación puede tener consecuencias posteriores sobre la calidad del agua. Una sola variable puede resultar insuficiente o conducirnos a una interpretación equivocada del conjunto.</p>
+<p>La pecera permite reconocer procesos conectados. Representarlos en un modelo requiere elegir variables, explicitar relaciones y comprobar si esa representación responde a nuestra pregunta.</p>
 </section>
 <section id="el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas" class="level2">
 <h2 class="anchored" data-anchor-id="el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas">El modelo iie-3t: ordenar el diagnóstico en tres capas</h2>
@@ -234,8 +236,8 @@ window.Quarto = {
 </tr>
 <tr class="even">
 <td><strong>Detección</strong></td>
-<td>Reúne señales, sensores, imágenes de satélite y muestreos.</td>
-<td>Signos vitales, análisis de laboratorio y biomarcadores.</td>
+<td>Reúne atributos observados, como cobertura, composición o regeneración, medidos mediante sensores y muestreos.</td>
+<td>Signos vitales, resultados de análisis y biomarcadores.</td>
 </tr>
 <tr class="odd">
 <td><strong>Latente</strong></td>
@@ -256,12 +258,32 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="del-esquema-a-la-red-bayesiana-modelar-la-conjunta">Del esquema a la red bayesiana: modelar la conjunta</h2>
 <p>¿Cómo formalizamos este pensamiento sistémico para razonar con datos y bajo incertidumbre?</p>
 <ol type="1">
-<li><strong>Grafos Acíclicos Dirigidos (DAG):</strong> Representamos los componentes del sistema como nodos y sus relaciones de dependencia como arcos dirigidos sin ciclos cerrados. El DAG hace explícitos nuestros supuestos ecológicos.</li>
-<li><strong>La distribución conjunta del sistema:</strong> En lugar de tratar cada indicador por separado, una red bayesiana modela la <strong>distribución de probabilidad conjunta</strong> de todas las variables. Gracias a la estructura del DAG, esta distribución se descompone en factores locales manejables: <span class="math display">\[P(X_1, X_2, \dots, X_n) = \prod_{i=1}^n P(X_i \mid \text{padres}(X_i))\]</span></li>
+<li><strong>La distribución conjunta:</strong> Una red bayesiana representa qué combinaciones de valores de las variables incluidas consideramos posibles y con qué probabilidades. Así podemos interpretar varias señales conjuntamente. Su alcance depende de las variables y relaciones que elegimos; no representa automáticamente todo el ecosistema.</li>
+<li><strong>Grafos acíclicos dirigidos (DAG):</strong> Los nodos representan variables y los arcos dirigidos organizan las dependencias del modelo. Al seguir las flechas no podemos regresar al nodo de partida: no hay ciclos dirigidos. El grafo expresa supuestos de dependencia e independencia condicional; las probabilidades completan la especificación de la red. Las flechas no demuestran por sí solas relaciones causales.</li>
 <li><strong>Inferencia y diagnóstico:</strong> Al ingresar observaciones concretas (detección) en un entorno específico (contexto), la red propaga la evidencia probabilística para actualizar la distribución posterior de la <strong>condición latente</strong>.</li>
 </ol>
+<p>Actualizar el diagnóstico cambia nuestro conocimiento del ecosistema; no significa que el ecosistema haya cambiado.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Lectura opcional: ¿cómo se expresa la conjunta?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>El DAG permite escribir la conjunta como un producto de distribuciones locales:</p>
+<p><span class="math display">\[P(V_1, V_2, \dots, V_n) = \prod_{i=1}^n P(V_i \mid \operatorname{padres}(V_i))\]</span></p>
+<p>Aquí <span class="math inline">\(V_1,\dots,V_n\)</span> son las variables incluidas; los «padres» de una variable son los nodos con flechas que llegan a ella. Cada factor describe su distribución dados esos padres. Una variable sin padres tiene una distribución sin ese condicionamiento. Usamos <span class="math inline">\(V\)</span> como símbolo genérico para no confundirlo con la capa contextual <span class="math inline">\(X\)</span>.</p>
+<p>No necesitas utilizar esta fórmula para participar en la primera práctica.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -270,22 +292,23 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>En el día a día, un médico o un ecólogo no esperan certezas absolutas, sino que actualizan su juicio conforme obtienen nueva información:</p>
 <ul>
-<li><strong>Antes de medir (<em>a priori</em>):</strong> Es el conocimiento previo o la sospecha inicial sobre el ecosistema a partir de su contexto y su historia.</li>
-<li><strong>Al observar (<em>evidencia</em>):</strong> Son las señales concretas que captan nuestros instrumentos (imágenes de satélite, conteos en campo, sensores).</li>
-<li><strong>Después de medir (<em>a posteriori</em>):</strong> Es el <strong>diagnóstico actualizado</strong>. La probabilidad <em>a posteriori</em> nos dice qué tan verosímil es que el ecosistema se encuentre en excelente condición o degradado, considerando simultáneamente el contexto inicial y las evidencias observadas.</li>
+<li><strong>Antes de incorporar una observación (<em>a priori</em>):</strong> Tenemos una distribución de probabilidades basada en la información ya disponible. Puede incluir resultados de estudios anteriores; «previo» se refiere a la observación que vamos a incorporar.</li>
+<li><strong>Al observar (<em>evidencia</em>):</strong> Registramos una señal y comparamos qué tan esperable sería bajo cada condición posible. Por ejemplo, en un contexto determinado, una regeneración abundante podría ser más probable bajo una condición que bajo otra. Esa comparación requiere un modelo, no solo una impresión.</li>
+<li><strong>Después de incorporarla (<em>a posteriori</em>):</strong> Actualizamos las probabilidades de las condiciones consideradas, combinando la información previa con lo que la nueva evidencia aporta según el modelo.</li>
 </ul>
-<p>La red bayesiana no adivina el futuro: formaliza matemáticamente este proceso de aprendizaje continuo reconociendo que nuestras observaciones siempre contienen incertidumbre.</p>
+<p>Observar una señal no determina por sí solo la condición. El diagnóstico conserva incertidumbre y depende de los supuestos y de la calidad de la información.</p>
 </div>
 </div>
 </div>
 <section id="y-qué-ocurre-con-los-ciclos-de-retroalimentación" class="level3">
 <h3 class="anchored" data-anchor-id="y-qué-ocurre-con-los-ciclos-de-retroalimentación">¿Y qué ocurre con los ciclos de retroalimentación?</h3>
-<p>En el pensamiento sistémico tradicional (Forrester, Sterman, Meadows), los sistemas vivos operan con bucles continuos de retroalimentación. En una red bayesiana de diagnóstico evaluamos un momento dado en el tiempo, por lo que el grafo debe ser acíclico (DAG) para permitir el cálculo exacto de probabilidades.</p>
-<p>Sin embargo, la retroalimentación se recupera de manera natural cuando introducimos la dimensión temporal: las <strong>Redes Bayesianas Dinámicas (DBN)</strong> conectan el estado del sistema en <span class="math inline">\(t_0\)</span> con su evolución en <span class="math inline">\(t_1\)</span>. Así, las influencias mutuas se despliegan como una secuencia temporal rigurosa (<span class="math inline">\(t_0 \to t_1 \to t_2 \dots\)</span>), permitiendo evaluar procesos de degradación, persistencia o recuperación ante perturbaciones.</p>
+<p>Que una red bayesiana sea acíclica no significa que el ecosistema carezca de retroalimentaciones. Podemos representar influencias entre momentos sucesivos: por ejemplo, como hipótesis, la vegetación de hoy puede influir en la humedad del suelo de mañana, y esta en la vegetación posterior. El grafo desplegado en el tiempo sigue sin contener ciclos dirigidos.</p>
+<p>Una <strong>red bayesiana dinámica (DBN)</strong> hace explícitas esas relaciones temporales. Requiere una distribución inicial y distribuciones de transición que describan cómo puede cambiar el sistema, además de representar cómo lo observamos. Las relaciones y los intervalos de tiempo deben justificarse. Este es un puente hacia preguntas sobre cambio, persistencia o recuperación; lo desarrollaremos cuando las preguntas del grupo lo requieran. Actualizar evidencia en una red de diagnóstico no equivale a modelar una transición temporal.</p>
+<p>La aciclicidad permite esta factorización dirigida; no garantiza que la inferencia exacta sea sencilla. Según el modelo, se utilizan métodos de cálculo exactos o aproximados.</p>
 </section>
 </section>
 <section id="una-primera-práctica" class="level2">
@@ -295,7 +318,16 @@ window.Quarto = {
 <section id="cómo-crecerá-el-recorrido" class="level2">
 <h2 class="anchored" data-anchor-id="cómo-crecerá-el-recorrido">Cómo crecerá el recorrido</h2>
 <p>Introduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.</p>
-<p><strong>Procedencia y referencias:</strong> - Esquema original del equipo y manuscrito de trabajo <em>Modelo de tres capas para la integridad ecosistémica</em>, secciones 3–5 y 21. - Equihua, M., Maqueo, O., Equihua, J. et al.&nbsp;<em>Integridad ecosistémica: el tejido de la vida y la salud</em>, Colección Ecosalud, UNAM. - Conceptos de dinámica de sistemas inspirados en J. Forrester, D. Meadows, P. Senge y la visión simbiótica de L. Margulis.</p>
+<p><strong>Procedencia y referencias:</strong></p>
+<ul>
+<li>Esquema original del equipo y manuscrito de trabajo <em>Modelo de tres capas para la integridad ecosistémica</em>, secciones 3–5 y 21.</li>
+<li>Equihua Zamora, Miguel; Pérez-Maqueo, Octavio; Equihua Benítez, Ana. <em>Integridad ecosistémica: el tejido de la vida y la salud</em>, Colección Ecosalud. Analogías de la pecera y de la apariencia corporal consultadas en el manuscrito proporcionado por el equipo.</li>
+<li>Eguiarte, Luis E. (2025). <a href="https://publicaciones.ecologia.unam.mx/oikos4/index.php/en/component/content/article/integridad-ecosistemica-el-tejido-de-la-vida-y-la-salud-coleccion-ecosalud?catid=10:articulo&amp;Itemid=101">Reseña del libro en Oikos</a>. Contexto de la obra y su relación con Ecosalud.</li>
+<li>O’Malley, Maureen A. (2017). <a href="https://doi.org/10.1016/j.jtbi.2017.03.008">From endosymbiosis to holobionts: Evaluating a conceptual legacy</a>. <em>Journal of Theoretical Biology</em>, 434, 34–41. Análisis del legado conceptual de Margulis.</li>
+<li>Koide, Roger T. (2023; publicación en línea en 2022). <a href="https://doi.org/10.1007/s00248-022-02005-9">On Holobionts, Holospecies, and Holoniches: the Role of Microbial Symbioses in Ecology and Evolution</a>. <em>Microbial Ecology</em>, 85, 1143–1149. Funciones ecológicas de las asociaciones con microorganismos.</li>
+<li>Donella Meadows Project. <a href="https://donellameadows.org/systems-thinking-resources/">Recursos de pensamiento sistémico</a>: acumulaciones, flujos y comportamiento temporal.</li>
+<li>Murphy, Kevin P. (2002). <a href="https://www.cs.ubc.ca/~murphyk/Papers/dbnchapter.pdf">Dynamic Bayesian Networks</a>, introducción y sección 2: representación temporal y distribuciones iniciales, de transición y de observación.</li>
+</ul>
 
 
 </section>

@@ -9,7 +9,7 @@ title: "Catálogo temático"
 
 ## Redes bayesianas
 
-El primer puente conceptual está en [Del esquema a una red](empieza-aqui.qmd#del-esquema-a-una-red). Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.
+El primer puente conceptual está en [Del esquema a la red bayesiana](empieza-aqui.qmd#del-esquema-a-la-red-bayesiana-modelar-la-conjunta). Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.
 
 - [Cambio climático en R: grafo, tablas, separación-d e intervención](recursos/cambio-climatico.qmd). Ejemplo sintético recuperado y revisado, disponible para el momento adecuado del seminario.
 

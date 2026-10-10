@@ -70,7 +70,7 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 - [Criterios de calidad](docs/CRITERIOS-DE-CALIDAD.md): requisitos didácticos, gráficos y técnicos.
 - [Reproducibilidad científica](docs/REPRODUCIBILIDAD.md): fundamento conceptual, diseño y ética de trabajo.
 - [Bitácora del desarrollo](BITACORA.md): evolución sucinta de la propuesta formativa.
-- Registro de prompts: `PROMPTS.md`, conservado solo localmente y excluido de Git y del blog por contener información interna.
+- [Registro colaborativo de prompts](prompts/README.md): archivos versionados por autor, fuera del blog. El archivo histórico local `PROMPTS.md` conserva P001–P028 y está pendiente de migración revisada; desde 2e485d3 ya no está excluido automáticamente de Git.
 - [Plantilla para participantes](plantilla-participantes/README.md): borrador copiable para iniciar un proyecto.
 
 ## Alcance y estado

@@ -104,7 +104,7 @@ Los hooks no se activan automáticamente al clonar. El control revisa el conteni
 
 `blog/` contiene únicamente material destinado al blog. Guías, ilustraciones y datos sintéticos pequeños aprobados pueden incorporarse allí. Los datos originales o restringidos van en `data/raw/`, `data/private/` o `private/`, siempre fuera de Git. Las presentaciones voluminosas se conservan fuera del repositorio; preferir fuentes editables y, cuando se autorice, enlaces a un almacén externo.
 
-`PROMPTS.md` se conserva localmente y está excluido de Git por contener instrucciones y rutas internas; requiere respaldo privado si se desea conservarlo fuera de esta máquina. `BITACORA.md` y la documentación del proyecto se versionan pero no forman parte del blog. Un futuro repositorio público también requiere revisar esa documentación antes de subirlo. No hay licencia pública de reutilización asignada: deberá acordarla el equipo.
+Desde 2e485d3, los prompts nuevos se registran en `prompts/` por autor y se versionan previa revisión de contenido sensible (véase `prompts/README.md`). El archivo histórico `PROMPTS.md` conserva P001–P028 solo en esta máquina y ya no está excluido automáticamente: no incorporarlo sin revisar rutas y contenido privado; su migración sigue pendiente. Ninguno de estos registros forma parte del blog. `BITACORA.md` y la documentación del proyecto se versionan pero no forman parte del blog. Un futuro repositorio público también requiere revisar esa documentación antes de subirlo. No hay licencia pública de reutilización asignada: deberá acordarla el equipo.
 
 
 ## Actualización del entorno — 2026-10-08
