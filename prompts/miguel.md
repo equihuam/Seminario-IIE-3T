@@ -661,3 +661,19 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Sí, me distraje, revise PR#5 y no lo fusioné. Ahora ya fusione los dos, pero no veo los callout. a lo mejor algo no funcionó en el flujo a Netlify
 ```
+
+## P-ME-049 — Consultar rutina de limpieza de ramas
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible. Registro retrospectivo del mensaje disponible.
+
+```text
+Está hecho.  Veo muchas ramas previas. Conviene borrarlas o cual debería ser ls rutina?
+```
+
+## P-ME-050 — Aplicar la rutina de limpieza de ramas
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Me parece adecuada esa rutina. Implementa.
+```

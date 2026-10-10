@@ -80,3 +80,13 @@ Las plantillas incluyen el bloque: sustituir su ID al copiarlas y completar su c
 ## Comprobación de la rama de publicación
 
 Antes de fusionar un PR de entrega, comprobar que su base sea `main`. Si una propuesta depende de otra rama, integrar primero la dependencia y cambiar explícitamente la base del PR restante a `main`. Fusionar en una rama de trabajo no publica en Netlify. Si ya ocurrió, abrir un PR desde los cambios pendientes hacia `main`; no repetir la generación cuando fuentes y salida ya están verificadas e idénticas. Tras integrar, comprobar que `main` contiene el HTML esperado y que la URL de producción lo sirve.
+
+## Rutina de cierre y limpieza de ramas — P-ME-050
+
+1. Fusionar el PR hacia `main`; verificar explícitamente la base. Cuando cambie el blog, comprobar en producción el contenido esperado.
+2. Ejecutar `git fetch origin`, revisar el árbol de trabajo y actualizar `main` mediante `git switch main` y `git merge --ff-only origin/main`. Conservar cambios locales ajenos a la entrega.
+3. Consultar PR abiertos y worktrees. Borrar solo ramas completamente integradas en main, sin trabajo activo ni dependencias. `git merge-base --is-ancestor <rama-o-commit> main` debe confirmar cada candidata; si hubo squash/rebase, revisar la equivalencia por separado, sin forzar el borrado.
+4. Eliminar la rama remota con el botón de GitHub o `git push origin --delete <rama>`; borrar la local con `git branch -d <rama>` y ejecutar `git fetch --prune origin`. No borrar main ni ramas activas de colaboradores.
+5. Empezar el siguiente encargo desde main actualizado. Mantener solo main y las ramas en uso; no crear una rama o PR exclusivamente por cada limpieza rutinaria. Registrar la limpieza junto con el siguiente hito cuando corresponda.
+
+Los commits integrados y los PR conservan la trazabilidad aunque se eliminen las ramas. No activar borrado automático al fusionar: la rutina acordada comprueba antes la publicación y las dependencias entre ramas.
