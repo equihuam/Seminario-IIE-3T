@@ -569,3 +569,29 @@ Implementa en el PR #3 la estrategia propuesta en tu respuesta a mi comentario s
 ```
 
 Referencia de la estrategia autorizada en P-ME-039: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587. Comentario de revisión original de Miguel: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100235316. Ambos recuperados y comprobados en GitHub.
+
+
+## P-ME-040 — Registrar formato Carta como referencia general
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Encontré otro detalle. Lo comenté en github. Revísalo y anótalo pars referencia general.
+```
+
+Comentario de Miguel recuperado y revisado: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518
+
+```text
+Vinculación resuelta. Se ve muy bien en el blog. Hay que corregir el tamaño de la hoja A4. En México lo común es usar hojas tamaño US Letter. Hay que hacer ese ajuste.
+```
+
+
+## P-ME-041 — Convertir la ficha del PR #3 a US Letter
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Para PR #3 conviene hacer la corrección de tamaño de página A4 -> US letter. Haz los cambios necesarios
+```
+
+Da continuidad al comentario https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518 y al criterio general registrado en P-ME-040. Se conserva la instrucción de no fusionar el PR.

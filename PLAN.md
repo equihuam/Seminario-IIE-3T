@@ -135,3 +135,9 @@ Actualización P-ME-035–P-ME-036 (2026-10-10): ícono aprobado aplicado al fav
 
 
 Actualización P-ME-039 (2026-10-10): se incorpora la ficha v1.2 a la guía pública de Zotero con imagen SVG, PDF A4, resumen textual accesible y fuentes. Preparar proyecto y Temas enlazan a la sección. El pie de la ficha apunta a la guía pública. Se atiende en el mismo PR #3 la propuesta https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587; la integración a main queda expresamente pendiente.
+
+
+Actualización P-ME-040 (2026-10-10): Miguel confirma la vinculación pública y pide Carta / US Letter en el comentario https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518. Preferencia general documentada en CRITERIOS-DE-CALIDAD. Pendiente concreto del PR #3: adaptar la ficha Zotero desde A4 a Carta, regenerar SVG/PDF/PNG y copias públicas, actualizar rótulos y comprobar impresión sin recortes. Identificado además A4 en el CSS del semillero, pendiente de adecuación. Este registro no convierte los artefactos ni actualiza el PR.
+
+
+Actualización P-ME-041 (2026-10-10): ficha Zotero v1.3 adaptada a Carta / US Letter (612 × 792 puntos; SVG 8.5 × 11 pulgadas), redistribuyendo espacios sin reducir tipografía. PDF/PNG/SVG y copias públicas regenerados; descarga rotulada Carta. Se actualiza el PR #3 sin fusionar; la adecuación del semillero sigue pendiente por separado.

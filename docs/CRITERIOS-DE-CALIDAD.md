@@ -18,6 +18,14 @@ La apertura partirá de iie-3t y conducirá gradualmente a las redes bayesianas.
 
 Mantener una identidad académica sobria y atractiva: jerarquía tipográfica clara, espacio suficiente, contraste y etiquetas legibles. Asignar colores estables a las tres capas, acompañados por nombres o símbolos. La dirección de las flechas debe respetar la formulación documentada. Conservar fuentes editables y comprobar los archivos finales a tamaño de lectura.
 
+### Formato de los materiales imprimibles
+
+Usar **Carta / US Letter (8.5 × 11 pulgadas; 215.9 × 279.4 mm; 612 × 792 puntos PDF)** por defecto para fichas, guías y hojas de trabajo del seminario, salvo solicitud expresa de otro tamaño. Es una preferencia editorial de Miguel para el contexto de uso en México, registrada en P-ME-040 y en su [comentario del PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518), no una afirmación sobre todos los contextos de impresión.
+
+Al adaptar un material existente, ajustar su composición a Carta y revisar márgenes, legibilidad, número de páginas y ausencia de recortes a escala de impresión del 100 %. No basta cambiar la etiqueta «A4» ni depender del ajuste automático de la impresora. Mantener concordancia entre dimensiones del PDF, tamaño físico del SVG, reglas CSS de impresión, descripción del enlace de descarga y documentación. Conservar A4 solo como variante explícitamente solicitada o justificada.
+
+La adopción de este criterio no implica que todos los archivos históricos ya estén convertidos. La ficha Zotero v1.2 y el CSS del semillero se identificaron aún en A4; registrar su adaptación y verificación cuando se realice.
+
 ## Cumplimiento técnico de scripts futuros
 
 Antes de implementar cada script, definir entradas, salidas, errores esperados y criterios de aceptación. La verificación se elegirá según su responsabilidad:
@@ -52,3 +60,6 @@ Registrar versiones, comando ejecutado, cantidad de pruebas, resultado y limitac
 Las pruebas técnicas no demuestran validez ecológica. Evaluar por separado ajuste predictivo, calibración cuando sea evaluable, sensibilidad a supuestos, incertidumbre, interpretación de la variable latente y transferibilidad. Elegir particiones espaciales o temporales cuando la dependencia de los datos lo requiera. Los criterios concretos se fijarán con el caso de estudio y las fuentes del equipo.
 
 Separar reproducción de la clasificación experta y validación ecológica independiente. Justificar la referencia contextual; no atribuir degradación a diferencias naturales entre contextos. Evaluar el soporte espacial efectivo de los datos y la estabilidad de los resultados al cambiar escala. Los perfiles multidimensionales se reportarán solo cuando estén identificados; en otro caso se informará el soporte disponible por dimensión.
+
+
+Actualización P-ME-041 (2026-10-10): la ficha Zotero v1.3 se adapta a Carta con tamaños de letra conservados; el CSS del semillero sigue pendiente fuera de este cambio.

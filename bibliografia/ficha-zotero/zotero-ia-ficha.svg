@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 595.276 841.89">
+<svg xmlns="http://www.w3.org/2000/svg" width="8.5in" height="11in" viewBox="0 0 612 792">
 <title>Zotero + IA: del hallazgo a la cita</title>
 <desc>Ficha de siete casos de uso del rol bibliotecario, con encargos y comprobaciones.</desc>
-<rect x="0" y="0" width="595.276" height="841.89" rx="0" fill="#F7F6F0"/>
-<rect x="0" y="0" width="595.276" height="116" rx="0" fill="#183D3A"/>
-<g transform="translate(468 14) scale(0.171875)">
+<rect x="0" y="0" width="612" height="792" rx="0" fill="#F7F6F0"/>
+<rect x="0" y="0" width="612" height="106" rx="0" fill="#183D3A"/>
+<g transform="translate(484 9) scale(0.171875)">
   <title>Seminario IIE-3T: probabilidad, sociedad y ecosistema</title>
   <desc>Propuesta de identificador: tres nodos enlazados, con una distribución de probabilidad, dos personas y una hoja. Los enlaces son simbólicos, no arcos causales del modelo.</desc>
   <rect width="512" height="512" rx="112" fill="#183D3A"/>
@@ -28,79 +28,78 @@
   <path d="M340 378 C324 340 350 322 396 322 C398 363 378 389 340 378 Z" fill="#183D3A"/>
   <path d="M338 386 L379 343 M354 369 L354 351 M363 360 L380 360" fill="none" stroke="#C4D6AC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </g>
-<text x="30" y="28" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#B7DCD2">SEMINARIO IIE-3T  /  GUÍA DE BOLSILLO</text>
-<text x="30" y="63" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#FFFFFF">Zotero + IA</text>
-<text x="30" y="88" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#FFFFFF">Del hallazgo a la cita</text>
-<text x="30" y="105" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#DCECE6">Siete tareas para trabajar con tu bibliotecario científico.</text>
-<text x="30" y="139" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">UN ENCARGO QUE PUEDES ADAPTAR</text>
-<text x="30" y="157" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#183D3A">Actúa como bibliotecario. En [biblioteca y colección], realiza [tarea] con [fuentes] y entrega [producto].</text>
-<text x="30" y="172" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#183D3A">Comprueba tu acceso, declara qué consultaste y verifica los cambios guardados. Si hay ambigüedad,</text>
-<text x="30" y="187" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#183D3A">indícala.</text>
-<text x="30" y="218" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">ELIGE UNA TAREA · REVISA SU RESULTADO</text>
-<rect x="30" y="230" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="42" y="242" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="48" y="258" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">1</text>
-<text x="74" y="257" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Encontrar y registrar</text>
-<text x="42" y="279" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Busca sobre [pregunta]; coteja e incorpora las</text>
-<text x="42" y="291" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">fuentes seleccionadas, sin duplicados.</text>
-<text x="42" y="307" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Obra, versión y colección correctas. La</text>
-<text x="42" y="318.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">búsqueda externa precede al registro.</text>
-<rect x="305" y="230" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="317" y="242" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="323" y="258" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">2</text>
-<text x="349" y="257" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Organizar y etiquetar</text>
-<text x="317" y="279" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Propón etiquetas de tema y estado; aplica las</text>
-<text x="317" y="291" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">acordadas.</text>
-<text x="317" y="307" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Criterios consistentes. Metadatos</text>
-<text x="317" y="318.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">verificados no significa texto leído.</text>
-<rect x="30" y="349" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="42" y="361" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="48" y="377" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">3</text>
-<text x="74" y="376" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Leer y anotar</text>
-<text x="42" y="398" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Recupera mis comentarios y resalta [pasaje] en</text>
-<text x="42" y="410" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">[PDF] con [color].</text>
-<text x="42" y="426" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Texto y página exactos; anotación visible</text>
-<text x="42" y="437.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">en el lector tras sincronizar.</text>
-<rect x="305" y="349" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="317" y="361" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="323" y="377" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">4</text>
-<text x="349" y="376" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Sintetizar fuentes</text>
-<text x="317" y="398" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Compara estas obras sobre [pregunta]: argumentos,</text>
-<text x="317" y="410" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">métodos y límites.</text>
-<text x="317" y="426" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Cada afirmación tiene fuente. Distingue</text>
-<text x="317" y="437.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">resumen consultado y texto completo.</text>
-<rect x="30" y="468" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="42" y="480" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="48" y="496" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">5</text>
-<text x="74" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Citar al escribir</text>
-<text x="42" y="517" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Propón fuentes consultadas que sustenten [párrafo]</text>
-<text x="42" y="529" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">e incorpora las citas.</text>
-<text x="42" y="545" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Respaldo del pasaje y localización. Clave</text>
-<text x="42" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Zotero y clave de cita son distintas.</text>
-<rect x="305" y="468" width="260" height="109" rx="7" fill="#FFFFFF"/>
-<rect x="317" y="480" width="23" height="23" rx="5" fill="#167A71"/>
-<text x="323" y="496" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">6</text>
-<text x="349" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Generar bibliografías</text>
-<text x="317" y="517" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Genera la bibliografía de [documento] en [estilo o</text>
-<text x="317" y="529" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">formato].</text>
-<text x="317" y="545" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Citas y lista coinciden. Comprueba autores,</text>
-<text x="317" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">edición, DOI y claves exportadas.</text>
-<rect x="30" y="590" width="535" height="102" rx="7" fill="#E5EFE8"/>
-<rect x="42" y="602" width="23" height="23" rx="5" fill="#B77828"/>
-<text x="48" y="618" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">7</text>
-<text x="74" y="618" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#183D3A">Revisar y mantener la biblioteca</text>
-<text x="42" y="640" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Contrasta adjuntos con metadatos: título, autores, DOI, versión y función del anexo. Revisa también enlaces y</text>
-<text x="42" y="653" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">claves entre Zotero y mis documentos; propone correcciones.</text>
-<text x="42" y="674" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: un enlace válido puede llevar al PDF equivocado. Conserva la correspondencia entre claves anteriores y</text>
-<text x="42" y="685.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">actuales; no decidas solo por el nombre del archivo.</text>
-<text x="30" y="713" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">ANTES DE EMPEZAR</text>
-<text x="30" y="729" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#183D3A">La API conecta herramientas con Zotero. Verifica versión, acceso local o web y permisos según la tarea; un chat no accede</text>
-<text x="30" y="741" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#183D3A">por sí solo a tu biblioteca.</text>
-<text x="30" y="759" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#4B625F">Ensayado en el seminario: consulta, registro y anotaciones por API web. Síntesis y citas requieren revisión; el flujo depende del editor</text>
-<text x="30" y="770.5" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#4B625F">y las herramientas disponibles.</text>
+<text x="30" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#B7DCD2">SEMINARIO IIE-3T  /  GUÍA DE BOLSILLO</text>
+<text x="30" y="58" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" fill="#FFFFFF">Zotero + IA</text>
+<text x="30" y="81" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" fill="#FFFFFF">Del hallazgo a la cita</text>
+<text x="30" y="97" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#DCECE6">Siete tareas para trabajar con tu bibliotecario científico.</text>
+<text x="30" y="128" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">UN ENCARGO QUE PUEDES ADAPTAR</text>
+<text x="30" y="146" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#183D3A">Actúa como bibliotecario. En [biblioteca y colección], realiza [tarea] con [fuentes] y entrega [producto].</text>
+<text x="30" y="161" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" fill="#183D3A">Comprueba tu acceso, declara qué consultaste y verifica los cambios guardados. Si hay ambigüedad, indícala.</text>
+<text x="30" y="199" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">ELIGE UNA TAREA · REVISA SU RESULTADO</text>
+<rect x="30" y="211" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="42" y="223" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="48" y="239" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">1</text>
+<text x="74" y="238" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Encontrar y registrar</text>
+<text x="42" y="260" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Busca sobre [pregunta]; coteja e incorpora las fuentes</text>
+<text x="42" y="272" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">seleccionadas, sin duplicados.</text>
+<text x="42" y="288" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Obra, versión y colección correctas. La</text>
+<text x="42" y="299.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">búsqueda externa precede al registro.</text>
+<rect x="314" y="211" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="326" y="223" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="332" y="239" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">2</text>
+<text x="358" y="238" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Organizar y etiquetar</text>
+<text x="326" y="260" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Propón etiquetas de tema y estado; aplica las</text>
+<text x="326" y="272" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">acordadas.</text>
+<text x="326" y="288" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Criterios consistentes. Metadatos verificados</text>
+<text x="326" y="299.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">no significa texto leído.</text>
+<rect x="30" y="325" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="42" y="337" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="48" y="353" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">3</text>
+<text x="74" y="352" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Leer y anotar</text>
+<text x="42" y="374" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Recupera mis comentarios y resalta [pasaje] en [PDF]</text>
+<text x="42" y="386" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">con [color].</text>
+<text x="42" y="402" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Texto y página exactos; anotación visible en</text>
+<text x="42" y="413.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">el lector tras sincronizar.</text>
+<rect x="314" y="325" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="326" y="337" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="332" y="353" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">4</text>
+<text x="358" y="352" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Sintetizar fuentes</text>
+<text x="326" y="374" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Compara estas obras sobre [pregunta]: argumentos,</text>
+<text x="326" y="386" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">métodos y límites.</text>
+<text x="326" y="402" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Cada afirmación tiene fuente. Distingue</text>
+<text x="326" y="413.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">resumen consultado y texto completo.</text>
+<rect x="30" y="439" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="42" y="451" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="48" y="467" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">5</text>
+<text x="74" y="466" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Citar al escribir</text>
+<text x="42" y="488" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Propón fuentes consultadas que sustenten [párrafo] e</text>
+<text x="42" y="500" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">incorpora las citas.</text>
+<text x="42" y="516" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Respaldo del pasaje y localización. Clave</text>
+<text x="42" y="527.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Zotero y clave de cita son distintas.</text>
+<rect x="314" y="439" width="268" height="109" rx="7" fill="#FFFFFF"/>
+<rect x="326" y="451" width="23" height="23" rx="5" fill="#167A71"/>
+<text x="332" y="467" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">6</text>
+<text x="358" y="466" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" fill="#183D3A">Generar bibliografías</text>
+<text x="326" y="488" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Genera la bibliografía de [documento] en [estilo o</text>
+<text x="326" y="500" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">formato].</text>
+<text x="326" y="516" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: Citas y lista coinciden. Comprueba autores,</text>
+<text x="326" y="527.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">edición, DOI y claves exportadas.</text>
+<rect x="30" y="558" width="552" height="97" rx="7" fill="#E5EFE8"/>
+<rect x="42" y="570" width="23" height="23" rx="5" fill="#B77828"/>
+<text x="48" y="586" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" fill="#FFFFFF">7</text>
+<text x="74" y="586" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" fill="#183D3A">Revisar y mantener la biblioteca</text>
+<text x="42" y="608" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">Contrasta adjuntos con metadatos: título, autores, DOI, versión y función del anexo. Revisa también enlaces y claves</text>
+<text x="42" y="621" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" fill="#183D3A">entre Zotero y mis documentos; propone correcciones.</text>
+<text x="42" y="639" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">Comprueba: un enlace válido puede llevar al PDF equivocado. Conserva la correspondencia entre claves anteriores y</text>
+<text x="42" y="650.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" fill="#4B625F">actuales; no decidas solo por el nombre del archivo.</text>
+<text x="30" y="676" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" fill="#167A71">ANTES DE EMPEZAR</text>
+<text x="30" y="692" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#183D3A">La API conecta herramientas con Zotero. Verifica versión, acceso local o web y permisos según la tarea; un chat no accede por sí</text>
+<text x="30" y="704" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" fill="#183D3A">solo a tu biblioteca.</text>
+<text x="30" y="722" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#4B625F">Ensayado en el seminario: consulta, registro y anotaciones por API web. Síntesis y citas requieren revisión; el flujo depende del editor y</text>
+<text x="30" y="733.5" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" fill="#4B625F">las herramientas disponibles.</text>
 <a href="https://seminario-iie.netlify.app/recursos/zotero.html#ficha-de-consulta">
-<text x="30" y="798" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">Guía: seminario-iie.netlify.app/recursos/zotero.html</text>
+<text x="30" y="754" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">Guía: seminario-iie.netlify.app/recursos/zotero.html</text>
 </a>
-<text x="30" y="814" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">Propuesta de Miguel · Desarrollo con IA · 10 oct 2026 · v1.2</text>
-<text x="498" y="814" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">1 / 1</text>
+<text x="30" y="770" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">Propuesta de Miguel · Desarrollo con IA · 10 oct 2026 · v1.3</text>
+<text x="548" y="770" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" fill="#4B625F">1 / 1</text>
 </svg>
