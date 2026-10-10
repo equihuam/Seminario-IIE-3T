@@ -416,3 +416,33 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Haz el pull request
 ```
+
+## P-ME-025 — Precisar el acceso a la API local
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+La indicación en preparación requiere precisar esto:
+
+
+
+## 2. Prepara la conexión local
+
+En Zotero, abre **Ajustes → Avanzado** y habilita la comunicación con otras aplicaciones del equipo. Mantén Zotero abierto. La API local atiende en `http://localhost:23119/api/`; sus lecturas no requieren clave. Evita exponer ese puerto fuera del equipo. [Documentación oficial](https://www.zotero.org/support/dev/web_api/v3/local_api).
+```
+
+## P-ME-026 — Favicon del blog
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+También usa el ilustrador para crear un favicon y agrégalo a la configuración del blog
+```
+
+## P-ME-027 — Commit, push y pull request
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+hagamos el commit & push + pull request
+```

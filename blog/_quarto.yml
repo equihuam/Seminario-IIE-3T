@@ -14,10 +14,12 @@ project:
     - exploraciones/**/*.qmd
   resources:
     - img/Modelo de tres capas.svg
+    - img/favicon.svg
     - recursos/guia-observacion.csv
     - recursos/clima-modelo.R
 website:
   title: "iie-3t · Seminario"
+  favicon: img/favicon.svg
   description: "Una experiencia formativa sobre integridad ecosistémica, redes bayesianas y ciencia reproducible."
   navbar:
     background: light
