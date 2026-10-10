@@ -60,4 +60,30 @@ La clave Zotero identifica un registro dentro de una biblioteca. La clave BibTeX
 
 Después aprenderemos a exportar referencias seleccionadas y citar con ellas. El catálogo del equipo se llevará en una biblioteca de grupo compartida. La coordinación facilitará el acceso cuando esté configurada; mientras tanto puedes practicar en tu colección personal. Las copias de una referencia en bibliotecas distintas no se actualizan como un único registro: revisaremos los metadatos en la biblioteca que use cada trabajo. Véase la [guía de grupos de Zotero](https://www.zotero.org/support/groups). Las dificultades de conexión no impiden participar en la apertura.
 
-*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; se aclara cómo comprobar la API local y el posible error al abrirla en un navegador. Pendiente de prueba con participantes.*
+## Ficha de consulta: Zotero + IA {#ficha-de-consulta}
+
+¿Qué puedes pedirle al **bibliotecario científico** y cómo reconocer que la tarea quedó bien? Esta ficha de una página reúne siete casos de uso. Úsala cuando quieras ampliar la primera consulta de esta guía: elige una tarea, completa los campos del encargo y revisa la comprobación sugerida. No necesitas realizar todos los casos para participar en el seminario.
+
+[Descargar la ficha en PDF (A4, una página)](zotero-ia-ficha.pdf){.btn .btn-primary} · [Abrir la imagen SVG ampliable](zotero-ia-ficha.svg)
+
+![Ficha «Zotero + IA: del hallazgo a la cita», con siete tareas y sus comprobaciones. El resumen textual aparece a continuación.](zotero-ia-ficha.svg){width=100%}
+
+::: {.callout-note collapse="true"}
+## Los siete casos, en texto
+
+1. **Encontrar y registrar:** buscar fuentes y comprobar obra, versión y colección antes de incorporarlas.
+2. **Organizar y etiquetar:** aplicar criterios acordados; verificar metadatos no equivale a leer el texto.
+3. **Leer y anotar:** recuperar comentarios y marcar pasajes; comprobar texto, página y resultado en el lector.
+4. **Sintetizar fuentes:** comparar argumentos, métodos y límites, indicando qué partes se consultaron.
+5. **Citar al escribir:** vincular afirmaciones con fuentes y localizaciones que realmente las respalden.
+6. **Generar bibliografías:** cotejar la lista con las citas del documento y el formato solicitado.
+7. **Revisar y mantener la biblioteca:** contrastar adjuntos con metadatos y comprobar enlaces, versiones y claves de cita.
+
+**Encargo adaptable:** «Actúa como bibliotecario. En [biblioteca y colección], realiza [tarea] con [fuentes] y entrega [producto]. Comprueba tu acceso, declara qué consultaste y verifica los cambios guardados. Si hay ambigüedad, indícala».
+:::
+
+La ficha orienta el trabajo; la ejecución depende del acceso, los permisos y las herramientas disponibles. En el seminario se ensayaron consultas, incorporación de referencias y anotaciones mediante la API web. No se presenta cada caso como un flujo automático ya validado. Contrasta las interpretaciones con las fuentes y verifica los cambios en Zotero o en tu documento.
+
+**Fuentes de apoyo:** [API local](https://www.zotero.org/support/dev/web_api/v3/local_api), [API web](https://www.zotero.org/support/dev/web_api/v3/basics), [lector PDF y notas](https://www.zotero.org/support/pdf_reader) e [integración con editores](https://www.zotero.org/support/word_processor_integration). La ficha es material del seminario, no documentación oficial de Zotero.
+
+*Propuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; incluye la ficha de consulta v1.2, imagen ampliable y PDF imprimible. Pendiente de prueba con participantes.*

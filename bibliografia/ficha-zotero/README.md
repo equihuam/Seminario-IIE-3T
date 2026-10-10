@@ -1,12 +1,13 @@
 # Zotero + IA: del hallazgo a la cita
 
-Ficha de consulta A4 para participantes con Zotero y una biblioteca/colección identificadas. Objetivo: elegir un encargo bibliográfico y reconocer cómo comprobar su resultado. Siete tareas, un encargo común y distinción entre acceso, ejecución y revisión. Propuesta de Miguel desarrollada con asistencia de IA; versión 1.1, 10 de octubre de 2026.
+Ficha de consulta A4 para participantes con Zotero y una biblioteca/colección identificadas. Objetivo: elegir un encargo bibliográfico y reconocer cómo comprobar su resultado. Siete tareas, un encargo común y distinción entre acceso, ejecución y revisión. Propuesta de Miguel desarrollada con asistencia de IA; versión 1.2, 10 de octubre de 2026.
 
 ## Archivos
 
 - `zotero-ia-ficha.svg`: original vectorial con texto editable, generado desde el script. Si se edita directamente, conservar una variante para que la regeneración no la sobrescriba.
 - `../../output/pdf/zotero-ia-ficha.pdf`: una página A4 para imprimir.
 - `../../output/pdf/zotero-ia-ficha.png`: vista previa del PDF.
+- `../../blog/recursos/zotero-ia-ficha.svg` y `.pdf`: copias públicas, actualizadas por el generador.
 - `generar.py`: contenido, diseño y generación reproducible de los tres formatos. No consulta ni modifica Zotero. Incorpora el ícono aprobado desde `img/identidad/`: vector en el SVG y PNG en el PDF.
 
 Ejecutar `python bibliografia/ficha-zotero/generar.py` desde la raíz con ReportLab y pdfplumber (y su backend de render pypdfium2). También funciona desde otra carpeta. Se usó el runtime incluido de Codex 26.1007.11041; no se instalaron dependencias en `.venv`. Los textos de encargo son autoría asistida de Codex en respuesta a P-ME-028–P-ME-033 y se conservan literalmente en el generador. Cambiar allí el contenido para regenerar ambos formatos de manera consistente.
@@ -30,4 +31,4 @@ Fuentes internas: `bibliografia/README.md`, `blog/recursos/zotero.qmd`, `AGENTS.
 
 Revisión didáctica y conceptual propia, en esta conversación: tareas con resultado comprobable; metadatos separados de lectura; obras separadas de registros/adjuntos; mantenimiento sin decisiones automáticas ante ambigüedad. No hubo revisión independiente ni prueba de uso con participantes. PDF renderizado a PNG y revisado visualmente; comprobaciones de página única y límites de texto incorporadas al generador. La revisión visual corresponde al PDF; el SVG comparte las coordenadas y textos, pero puede variar al sustituir fuentes en otro editor.
 
-Entrega local; no se incorpora al blog ni se publica automáticamente. El SVG original del modelo de tres capas permanece intacto.
+Publicación autorizada en P-ME-039 para el PR #3: la guía del blog muestra la ficha y enlaza el PDF; preparación y temas anuncian el recurso. El generador copia únicamente SVG/PDF a blog/recursos; ejecutar después scripts/site.py check para regenerar y verificar el sitio. El pie enlaza a la guía pública, sin rutas internas. El SVG original del modelo de tres capas permanece intacto.

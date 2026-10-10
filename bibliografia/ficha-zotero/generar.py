@@ -6,6 +6,7 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.lib.colors import HexColor
 import pdfplumber
 import re
+import shutil
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / 'output' / 'pdf'
@@ -77,8 +78,12 @@ para(42,674,'Comprueba: un enlace válido puede llevar al PDF equivocado. Conser
 text(30,713,'ANTES DE EMPEZAR',9,TEAL,True)
 para(30,729,'La API conecta herramientas con Zotero. Verifica versión, acceso local o web y permisos según la tarea; un chat no accede por sí solo a tu biblioteca.',535,9.5,12)
 para(30,759,'Ensayado en el seminario: consulta, registro y anotaciones por API web. Síntesis y citas requieren revisión; el flujo depende del editor y las herramientas disponibles.',535,9,11.5,MUTED)
-text(30,798,'Guía y fuentes: bibliografia/ficha-zotero/README.md',8,MUTED)
-text(30,814,'Propuesta de Miguel · Desarrollo con IA · 10 oct 2026 · v1.1',8,MUTED)
+guide_url = 'https://seminario-iie.netlify.app/recursos/zotero.html#ficha-de-consulta'
+svg.append(f'<a href="{guide_url}">')
+text(30,798,'Guía: seminario-iie.netlify.app/recursos/zotero.html',8,MUTED)
+svg.append('</a>')
+pdf.linkURL(guide_url,(30,H-801,350,H-790),relative=0)
+text(30,814,'Propuesta de Miguel · Desarrollo con IA · 10 oct 2026 · v1.2',8,MUTED)
 text(498,814,'1 / 1',8,MUTED)
 pdf.showPage();pdf.save();svg.append('</svg>')
 (Path(__file__).parent/'zotero-ia-ficha.svg').write_text('\n'.join(svg),encoding='utf-8')
@@ -87,4 +92,7 @@ with pdfplumber.open(OUT/'zotero-ia-ficha.pdf') as doc:
     page=doc.pages[0]
     assert all(0<=c['x0']<c['x1']<=W and 0<=c['top']<c['bottom']<=H for c in page.chars)
     page.to_image(resolution=140).save(OUT/'zotero-ia-ficha.png')
-print('SVG, PDF de una página y PNG generados; texto dentro de los límites de página.')
+public = ROOT / 'blog' / 'recursos'
+shutil.copyfile(OUT/'zotero-ia-ficha.pdf',public/'zotero-ia-ficha.pdf')
+shutil.copyfile(Path(__file__).parent/'zotero-ia-ficha.svg',public/'zotero-ia-ficha.svg')
+print('SVG, PDF de una página y PNG generados; copias públicas SVG/PDF actualizadas; texto dentro de los límites de página.')

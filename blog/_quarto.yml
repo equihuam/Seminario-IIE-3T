@@ -18,6 +18,8 @@ project:
     - img/seminario-icono.svg
     - recursos/guia-observacion.csv
     - recursos/clima-modelo.R
+    - recursos/zotero-ia-ficha.svg
+    - recursos/zotero-ia-ficha.pdf
 website:
   title: "iie-3t · Seminario"
   favicon: img/favicon.svg

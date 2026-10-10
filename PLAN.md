@@ -132,3 +132,6 @@ Artefacto local listo: bibliografia/ficha-zotero/zotero-ia-ficha.svg editable y 
 
 
 Actualización P-ME-035–P-ME-036 (2026-10-10): ícono aprobado aplicado al favicon y cabecera del blog y a la ficha Zotero v1.1. Se prepara la entrega de ficha, identidad y registros de las pruebas de anotación en miguel/ficha-zotero-identidad, desde origin/main 638a32a (PR #2 ya integrado). El PDF de la ficha sigue siendo entrega del repositorio, sin página pública de descarga agregada. La carga del ícono al grupo fue interrumpida por el control de aplicaciones; Miguel comunica «Listo», sin nueva verificación visual del asistente.
+
+
+Actualización P-ME-039 (2026-10-10): se incorpora la ficha v1.2 a la guía pública de Zotero con imagen SVG, PDF A4, resumen textual accesible y fuentes. Preparar proyecto y Temas enlazan a la sección. El pie de la ficha apunta a la guía pública. Se atiende en el mismo PR #3 la propuesta https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587; la integración a main queda expresamente pendiente.

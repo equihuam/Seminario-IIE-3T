@@ -453,3 +453,19 @@ Fetch confirma PR #2 integrado en main 638a32a; se crea miguel/ficha-zotero-iden
 Verificación final de B060: scripts/site.py check termina con código 0, 19 páginas y enlaces/límites correctos; persisten advertencias regionales conocidas de R. Se comprueba presencia de logo y favicon en las 19 páginas. Captura local de portada examinada; la consulta adicional de Playwright con selector único falló porque Quarto genera variantes clara/oscura, sin fallo del render. La comprobación documental posterior de las 19 páginas pasó. Índice sujeto al control previo al commit.
 
 El bloqueo residual de Git se retiró tras finalizar las comprobaciones y confirmar que no había procesos Git activos. Se declara *.pdf como binario en .gitattributes para preservar el archivo generado y evitar normalización de finales de línea. El hook de pre-commit ejecuta scripts/check_repo.py sobre el índice definitivo.
+
+
+## B061 — Revisión del comentario sobre acceso público a la ficha
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-037. Se consulta PR #3 y el comentario de Miguel; revisión de preparar-proyecto, recursos/zotero y temas confirma que no enlazan la ficha. Se publica respuesta autorizada, verificada por GET: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587. Propone imagen y PDF en la guía de Zotero, anuncio desde preparación y catálogo, adaptación del pie interno para versión pública y render/verificación antes de integrar. Alcance de este turno: revisión y comentario, sin modificación del blog ni fusión. Registros locales sin commit.
+
+
+## B062 — Ficha pública y cierre de la revisión del PR #3
+
+Fecha de registro: 2026-10-10. Prompts: P-ME-038 (consulta de trazabilidad) y P-ME-039 (autorización). La respuesta https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587 sí quedó publicada; recuperada y cotejada antes de implementar. Atiende el comentario original de Miguel https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100235316.
+
+Se añade sección ficha-de-consulta en la guía Zotero con SVG visible, PDF A4 descargable, resumen textual, encargo adaptable y fuentes oficiales. Preparar proyecto y Temas anuncian el recurso. El generador produce v1.2 con pie y enlace a la guía pública; copia SVG/PDF a blog/recursos y Quarto los incorpora explícitamente. La excepción de .gitignore permite versionar solo el PDF público acordado. La publicación efectiva en producción sigue supeditada a integrar el PR; no se fusiona main.
+
+Verificaciones observadas: generar.py ejecutado con runtime Python Codex, PDF de una página y texto dentro de límites; imagen renderizada revisada visualmente. pypdf confirma enlace público y ausencia del pie interno; SVG válido y copias públicas idénticas a sus fuentes. scripts/site.py check termina con código 0: 19 páginas, enlaces y límites correctos, con advertencias regionales conocidas de R. Prueba funcional local .local/verificar-ficha-web.cjs con Playwright/Edge: navegación desde Preparar proyecto y Temas al ancla, imagen cargada, PDF HTTP 200 con bytes idénticos y sin desbordamiento horizontal a 390 píxeles. Capturas de escritorio/móvil examinadas. El primer selector auxiliar esperaba recursos/ sin el prefijo ./ que añade Quarto; ajustado el selector, la comprobación completa pasa sin modificar el sitio. No se añaden pruebas unitarias para enlaces editoriales; se ejecuta la comprobación funcional del resultado.
+
+Fuentes, salida renderizada, ficha regenerada y registros se entregan en el mismo PR #3 mediante commit y push. Control del índice mediante hook de pre-commit. Respuesta de cierre en GitHub enlazará el commit resultante y la vista previa. Sin credenciales, PDF de terceros ni histórico local PROMPTS.md en el índice.

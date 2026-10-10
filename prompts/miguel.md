@@ -534,3 +534,38 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Listo. hagamos el commit & push + pull
 ```
+
+
+## P-ME-037 — Revisar y responder comentario del PR #3
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Hice un comentario en Github en reacción al pull request, lo puedes revisar y comentar?
+```
+
+Comentario de Miguel recuperado de GitHub: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100235316
+
+```text
+Revisé la propuesta de inclusión. Todo se ve bien, salvo que la infografía de uso de Zotero no quedó anunciada ni sugerida en el blog. Hay que agregarla.
+```
+
+
+## P-ME-038 — Consulta sobre trazabilidad
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible. Registro retrospectivo del mensaje disponible.
+
+```text
+Excelente flujo para mi propio aprendizaje. Ahora, ¿qué será mejor?, ¿que te diga que hagas lo que aparece en tu respuesta en GitHub o que genere un nuevo encargo aquí, con la estrategia que sugieres?. Considera trazabilidad.
+```
+
+
+## P-ME-039 — Implementar la estrategia en el PR #3
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Implementa en el PR #3 la estrategia propuesta en tu respuesta a mi comentario sobre la infografía. Registra el vínculo al comentario, incorpora la ficha al blog, verifica el resultado y actualiza el mismo PR con commit y push. No lo fusiones todavía.
+```
+
+Referencia de la estrategia autorizada en P-ME-039: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100252587. Comentario de revisión original de Miguel: https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100235316. Ambos recuperados y comprobados en GitHub.
