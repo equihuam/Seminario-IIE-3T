@@ -405,3 +405,51 @@ Fecha de registro: 2026-10-10. Prompt: P-ME-026. Rol ilustrador aplicado en esta
 ## B053 — Entrega de aclaración Zotero y favicon
 
 Fecha de registro: 2026-10-10. Prompt: P-ME-027. Se prepara commit, push y PR de miguel/aclaracion-api-local hacia main con B051 y B052, fuentes, SVG y blog renderizado. Fetch confirma que la base sigue siendo fc70f82. Se conservan las verificaciones del último render correcto (19 páginas) y la comprobación de enlaces del favicon; desde entonces solo se añaden registros. El índice se revisa antes del commit. El histórico local PROMPTS.md permanece excluido. El commit y la solicitud de integración quedarán identificados en Git/GitHub; no se autoriza ni realiza la fusión en este encargo.
+
+## B054 — Recomendación de ficha de usos de Zotero con IA
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-028. Consulta documental de README, PLAN, guía bibliográfica, actividad de Zotero, criterios de calidad y protocolo del semillero; habilidad Zotero aplicada como referencia de capacidades, sin operar la biblioteca. Se recomienda en la conversación una ficha visual de una página con seis casos, un encargo común y comprobaciones de resultado. Valoración didáctica: organizar por tarea y producto, con detalles operativos en la guía. Valoración conceptual: separar descubrimiento externo de búsqueda en biblioteca, metadatos de lectura, notas de anotaciones y citas textuales de vínculos gestionados por un complemento.
+
+Documentación oficial consultada: https://www.zotero.org/support/pdf_reader, https://www.zotero.org/support/dev/web_api/v3/local_api y https://www.zotero.org/support/word_processor_integration. La documentación actual describe escritura local en Zotero 10+, sin acreditar esa versión ni esa capacidad en el equipo del participante. La incorporación web está documentada en B048; anotación asistida y flujo completo de citas quedan por probar. Propuesta pendiente de decisión docente, sin infografía generada, ficha publicada, cambios en Zotero ni nuevas pruebas de API. Solo se añaden estos registros; no se modifica ni regenera el blog.
+
+
+## B055 — Lectura de la colección personal y prueba de acceso a PDF/notas
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-029. Exploración autorizada de lectura mediante API local, sin usar la credencial web ni modificar permisos o registros. El helper Zotero status --json confirma Zotero 9.0.3, API v3 activa y HTTP 200. Colección personal Seminario IIE-3T, S8PYHUIY: ocho referencias. Se identificó el artículo de O’Malley (2017), L8KMZQZM, con PDF LVU9SDLC: texto indexado recuperable, 8/8 páginas y 58442 caracteres; solo se examinó una muestra inicial, sin declarar lectura completa. La consulta de hijos del PDF devuelve cero anotaciones. La nota M6DQ662D está asociada al manuscrito W8EYKPTV, no al artículo.
+
+Lectura estructural del PDF con pypdf del runtime incluido: ocho páginas, 319 enlaces y ningún comentario incrustado. pypdf no está instalado en .venv; no se cambiaron dependencias. No se copió el PDF ni el texto completo al repositorio. Recomendación: crear manualmente un resaltado con comentario en el lector de Zotero y verificar luego su recuperación, localización y síntesis asistida; guardar notas mediante API sería una prueba posterior con escritura explícitamente autorizada. Documentación oficial consultada: grupos y API web v3 de Zotero. Los permisos web personales no son necesarios para esta lectura local; los grupos públicos abiertos no comparten archivos, mientras que los privados y públicos cerrados pueden hacerlo según configuración. El grupo del seminario figura en los registros previos como privado sin almacenamiento; no se volvió a verificar su configuración web. Sin cambios al blog, commit ni push.
+
+
+## B056 — Anotaciones recuperadas y resaltado rojo creado en el grupo
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-030. Zotero 9.0.3 responde localmente. La API local devolvió cero hijos del adjunto, pero la API web recuperó dos anotaciones sincronizadas en UUYYWPBE: ZENZ29T4 (subrayado con comentario) y DUT3QAAB (nota en página 1). Esta discrepancia impide interpretar la lista local vacía como ausencia de anotaciones en la biblioteca web.
+
+El PDF del grupo contiene O’Malley (2017), aunque está adjunto al registro de Koide 3EVAMBAP y tiene su nombre. No se corrigió esa asociación fuera del encargo. pdfplumber encontró una coincidencia exacta de la frase solicitada en la página 1, encabezado de sección 2; coordenadas PDF [312.690,198.877,497.270,206.848]. Previsualización local renderizada y examinada: rectángulo sobre la frase correcta. Se obtuvo la plantilla oficial de annotation/highlight mediante API y se creó V79697SC, rojo #ff6666, mediante POST autorizado al grupo 6712171. GET individual posterior comprueba texto, tipo, color y adjunto; listado posterior contiene tres anotaciones y conserva las dos previas. Credencial del almacén Windows usada solo en memoria. No se alteró el PDF binario ni la biblioteca personal. Pendiente comprobar visualmente el resultado dentro del lector de escritorio tras sincronización; la previsualización local no equivale a esa comprobación. Sin commit ni push.
+
+
+## B057 — Confirmación visual humana y concordancia tras mover el adjunto
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-031. Miguel confirma que el resaltado se ve exactamente como lo solicitó y comunica que movió el PDF al registro correcto. Dos GET web verifican que UUYYWPBE conserva su clave y ahora depende de O’Malley 6MWQ9EI4; V79697SC conserva clave y vínculo al mismo adjunto. El nombre del archivo aún menciona Koide. No se modifica Zotero. Se propone mantenimiento bibliográfico de concordancia entre biblioteca, claves de ítem/adjunto/anotación, identificador de obra y claves de cita, con resolución explícita de coincidencias ambiguas. No se implementa automatización ni se autoriza una reparación general por esta consulta.
+
+
+## B058 — Ficha visual Zotero + IA
+
+Fecha de registro: 2026-10-10. Prompts: P-ME-028–P-ME-033. Se entrega una ficha A4 de siete casos con encargo común, tareas y comprobaciones, incorporando la revisión de adjuntos/metadatos y la concordancia de citas. Fuente editable y generador en bibliografia/ficha-zotero; PDF/PNG en output/pdf. Roles didacta, bibliotecario e ilustrador aplicados en esta conversación; revisión conceptual propia, no independiente. Habilidad PDF usada para generación y revisión.
+
+Ejecutado generar.py con Python del runtime Codex 26.1007.11041: PDF de una página, límites de todos los caracteres correctos, PNG renderizado con pdfplumber y examinado visualmente sin recortes ni superposiciones. SVG contiene texto editable y comparte coordenadas con PDF; su apariencia en otros editores depende de las fuentes disponibles. No se alteran dependencias de .venv ni Zotero. Fuentes y reconstrucción en README del artefacto. No se modifica el blog ni se ejecuta su render; sin commit, push ni publicación. Pendiente valoración con participantes.
+
+
+## B059 — Propuesta de ícono matemático-bayesiano-socioecosistémico
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-034. Rol ilustrador aplicado en esta conversación. Propuesta SVG editable en img/identidad/seminario-icono-propuesta.svg: distribución esquemática, comunidad humana y hoja en tres nodos vinculados sin flechas. Identidad temática, no DAG ni sustitución de las capas del modelo. Composición ampliada explica la posterior mediante p(θ | datos). PNG 512 y reducción 64, más presentación del concepto, en output/identidad; rasterización con Sharp del runtime incluido, sin dependencias nuevas. Vista ampliada y reducción 64 examinadas: motivos distinguibles y sin recortes. README documenta significado y límites. No se modifica el SVG canónico, el favicon, el blog ni el grupo Zotero. Propuesta pendiente de elección; sin commit ni push.
+
+
+## B060 — Aplicación de identidad y preparación de entrega
+
+Fecha de registro: 2026-10-10. Prompts: P-ME-035 y P-ME-036. Identidad aprobada aplicada en blog/_quarto.yml (cabecera), blog/img/favicon.svg y ficha Zotero v1.1. Se conserva el original científico. La ficha PDF con ícono fue revisada visualmente en esta entrega. El intento de carga al grupo se interrumpió por una limitación de control de aplicaciones; Miguel comunica «Listo» al pedir la entrega, sin que se declare verificación visual adicional del grupo.
+
+Fetch confirma PR #2 integrado en main 638a32a; se crea miguel/ficha-zotero-identidad desde esa base conservando los cambios. No hay PR abiertos en la consulta de GitHub. Diez pruebas de Python pasan. Se prepara commit de la ficha (fuente, generador, PDF y PNG), identidad, registros de exploración de Zotero y blog regenerado. PROMPTS.md histórico local y .local permanecen fuera de la entrega; no se incluyen PDFs de terceros ni credenciales. Se solicita integrar mediante PR, sin fusionar main.
+
+Verificación final de B060: scripts/site.py check termina con código 0, 19 páginas y enlaces/límites correctos; persisten advertencias regionales conocidas de R. Se comprueba presencia de logo y favicon en las 19 páginas. Captura local de portada examinada; la consulta adicional de Playwright con selector único falló porque Quarto genera variantes clara/oscura, sin fallo del render. La comprobación documental posterior de las 19 páginas pasó. Índice sujeto al control previo al commit.
+
+El bloqueo residual de Git se retiró tras finalizar las comprobaciones y confirmar que no había procesos Git activos. Se declara *.pdf como binario en .gitattributes para preservar el archivo generado y evitar normalización de finales de línea. El hook de pre-commit ejecuta scripts/check_repo.py sobre el índice definitivo.

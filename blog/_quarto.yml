@@ -15,6 +15,7 @@ project:
   resources:
     - img/Modelo de tres capas.svg
     - img/favicon.svg
+    - img/seminario-icono.svg
     - recursos/guia-observacion.csv
     - recursos/clima-modelo.R
 website:
@@ -22,6 +23,8 @@ website:
   favicon: img/favicon.svg
   description: "Una experiencia formativa sobre integridad ecosistémica, redes bayesianas y ciencia reproducible."
   navbar:
+    logo: img/seminario-icono.svg
+    logo-alt: "Seminario IIE-3T: probabilidad, sociedad y ecosistema"
     background: light
     left:
       - text: Preparar proyecto

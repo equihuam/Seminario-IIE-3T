@@ -446,3 +446,91 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 hagamos el commit & push + pull request
 ```
+
+## P-ME-028 — Recomendación de ficha de usos de Zotero con IA
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Para el consumo del participante interesado, convendría hacer una "cheat-sheet" de "casos de uso" con zotero mediado por API soportado por IA (rol bibliotecario). Imagino flujos clásicos: busqueda de referencias y registro en la colección, etiquetado de referencias, comentado de pdfs anexos (uso de lector interno de zotero), generación de resúmenes bibliográficos, inclusión de literartura en documentos, generación de bibliografías, etc. Si no es muy comolejo el resultado (demasiados prompts sugeridos u operaciones), a lo mejor se prests psrs hacer una infografía bonita con ayuda del ilustrador, escucho tu recomendación.
+```
+
+
+## P-ME-029 — Explorar colección personal, PDF y notas
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Para hacer pruebas: tenemos la api key registrada y segura en windows safe, acceso a Seminario IIE-3T grupo. Me pregunto si puedes acceder a la colección en mi biblioteca personal zotero que tiene el mismo nombre, sólo ahí puedo agregar PDF, no en grupos públicos. Puse un ejemplo con PDF y algunas notas para probsr. Explora y dime como continuar. Vi que existe un espacio para asignar permisos así, pero no asigné ninguno:
+
+Personal Library
+Allow library access
+     Allow third party to access your library.
+Allow notes access
+     Allow third party to access your notes.
+Allow write access
+     Allow third party to make changes to your library.
+```
+
+
+## P-ME-030 — Recuperar comentarios y resaltar una frase en el PDF del grupo
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Corregí lo que me indicaste. Agregué un pdf al grupo web. Puse algunos comentarios en ese documento PDF desde mi desktop zotero, sincronicé y espero puedas recuperarlas. Veamos si tu puedes poner un resaltsdo rojo en donde encuentres "Margulis’s basic ideas and how they developed"
+```
+
+
+## P-ME-031 — Concordancia entre registros, adjuntos y citas
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Eso funcionó muy bien. Tu reporte es exacto y yo veo tu resaltado exactamente como te lo solicité. Moví el pdf sl lugar correcto. Imagino que tu podrías haberlo hecho (sólo consulta). Un tema que he encontrado en la práctica es que las id de los documentos pueden cambiar y eso afecta la liga con los documentos que estas trabajando, imagino que una tarea del agente puede ser mantener esa concordancia limpia.
+```
+
+
+## P-ME-032 — Sanidad de adjuntos y metadatos
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible. Registro retrospectivo del mensaje disponible; incorporado al preparar el artefacto.
+
+```text
+Corregí manualmente la inconsistencia. Quizás es otra tarea que sería interesante: sanidad de la correspondencia entre pdfs (o en general de anexos) y los metadatos de ls referencia.
+```
+
+
+## P-ME-033 — Generar la ficha visual
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Excelente sugerencia. Entonces estamos listos para generar el artefacto.
+```
+
+
+## P-ME-034 — Propuesta de ícono del seminario
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Me gusta, clara, minimalista y elegante. Al verla noto que nos convendría un ícono identificador del seminario, que también me sugiere usar zotero group. Usando al ilustrador hazme una sugerencia de ícono identificador para el seminario, me gustarís que ressltsrs nuestro interés matemático-bayesiano-socioecosistémico
+```
+
+
+## P-ME-035 — Aplicar el ícono aprobado
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Está bien. Aplícalo.
+```
+
+
+## P-ME-036 — Commit, push y solicitud de integración
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Listo. hagamos el commit & push + pull
+```

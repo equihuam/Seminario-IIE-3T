@@ -16,3 +16,5 @@ a { color: #24664f; text-underline-offset: .18em; }
 .btn-primary { background: var(--forest); border-color: var(--forest); color: white; }
 .btn-primary:hover { background: #285f50; border-color: #285f50; }
 @media (max-width: 700px) { .layer-grid { grid-template-columns: 1fr; } .hero { padding: 1.4rem; } }
+
+.navbar-logo { max-height: 44px; width: auto; }

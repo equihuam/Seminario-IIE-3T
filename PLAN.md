@@ -124,3 +124,11 @@ Actualización P-ME-025 (2026-10-10): PR #1 integrado por Miguel en main (fc70f8
 Actualización P-ME-026 (2026-10-10): favicon SVG de tres capas creado por el rol ilustrador y configurado para todo el blog. Sitio regenerado y enlaces del icono comprobados en las 19 páginas. Pendiente integración junto con la aclaración de la API local.
 
 Actualización P-ME-027 (2026-10-10): se entrega la aclaración de API local y el favicon mediante commit, push y PR desde miguel/aclaracion-api-local. Render y enlaces comprobados; integración a main pendiente de revisión.
+
+
+## Ficha Zotero + IA — P-ME-033 (2026-10-10)
+
+Artefacto local listo: bibliografia/ficha-zotero/zotero-ia-ficha.svg editable y output/pdf/zotero-ia-ficha.pdf A4, con siete casos y encargo reutilizable. Generador, fuentes y alcance en bibliografia/ficha-zotero/README.md. PDF revisado visualmente; pendiente prueba con participantes y decisión de incorporación al blog.
+
+
+Actualización P-ME-035–P-ME-036 (2026-10-10): ícono aprobado aplicado al favicon y cabecera del blog y a la ficha Zotero v1.1. Se prepara la entrega de ficha, identidad y registros de las pruebas de anotación en miguel/ficha-zotero-identidad, desde origin/main 638a32a (PR #2 ya integrado). El PDF de la ficha sigue siendo entrega del repositorio, sin página pública de descarga agregada. La carga del ícono al grupo fue interrumpida por el control de aplicaciones; Miguel comunica «Listo», sin nueva verificación visual del asistente.
