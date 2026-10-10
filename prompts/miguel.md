@@ -621,3 +621,19 @@ Muy bien con ese sistema simple. En este caso haz commit & push directo a main.
 ```
 
 Autoriza para esta entrega la publicación directa del registro de pendientes en main.
+
+## P-ME-044 — Unificar impresión y denominación en carta
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Para dejar todo limpio revisa ahora el uso de hojas A4 y cambia a tamaño carta. También usa la forma breve "carta" y no carta/US letter, yo hice eso sólo para precisión contigo, no es necesario con la audiencia en el seminario
+```
+
+## P-ME-045 — Entregar formato carta mediante commit y PR
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Hagamos el commit and PR ahora
+```

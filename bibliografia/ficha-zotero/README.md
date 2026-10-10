@@ -1,11 +1,11 @@
 # Zotero + IA: del hallazgo a la cita
 
-Ficha de consulta Carta / US Letter para participantes con Zotero y una biblioteca/colección identificadas. Objetivo: elegir un encargo bibliográfico y reconocer cómo comprobar su resultado. Siete tareas, un encargo común y distinción entre acceso, ejecución y revisión. Propuesta de Miguel desarrollada con asistencia de IA; versión 1.3, 10 de octubre de 2026.
+Ficha de consulta carta para participantes con Zotero y una biblioteca/colección identificadas. Objetivo: elegir un encargo bibliográfico y reconocer cómo comprobar su resultado. Siete tareas, un encargo común y distinción entre acceso, ejecución y revisión. Propuesta de Miguel desarrollada con asistencia de IA; versión 1.3, 10 de octubre de 2026.
 
 ## Archivos
 
 - `zotero-ia-ficha.svg`: original vectorial con texto editable, generado desde el script. Si se edita directamente, conservar una variante para que la regeneración no la sobrescriba.
-- `../../output/pdf/zotero-ia-ficha.pdf`: una página Carta / US Letter para imprimir.
+- `../../output/pdf/zotero-ia-ficha.pdf`: una página carta para imprimir.
 - `../../output/pdf/zotero-ia-ficha.png`: vista previa del PDF.
 - `../../blog/recursos/zotero-ia-ficha.svg` y `.pdf`: copias públicas, actualizadas por el generador.
 - `generar.py`: contenido, diseño y generación reproducible de los tres formatos. No consulta ni modifica Zotero. Incorpora el ícono aprobado desde `img/identidad/`: vector en el SVG y PNG en el PDF.

@@ -1,4 +1,4 @@
-"""Genera una ficha Carta / US Letter en SVG editable y PDF; ejecutar desde cualquier carpeta."""
+"""Genera una ficha carta en SVG editable y PDF; ejecutar desde cualquier carpeta."""
 from pathlib import Path
 from html import escape
 from reportlab.pdfgen import canvas
@@ -90,7 +90,7 @@ pdf.showPage();pdf.save();svg.append('</svg>')
 with pdfplumber.open(OUT/'zotero-ia-ficha.pdf') as doc:
     assert len(doc.pages)==1
     page=doc.pages[0]
-    assert (page.width, page.height) == (612, 792), "El PDF debe ser Carta / US Letter"
+    assert (page.width, page.height) == (612, 792), "El PDF debe ser carta"
     assert all(0<=c['x0']<c['x1']<=W and 0<=c['top']<c['bottom']<=H for c in page.chars)
     page.to_image(resolution=140).save(OUT/'zotero-ia-ficha.png')
 public = ROOT / 'blog' / 'recursos'

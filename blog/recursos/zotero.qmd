@@ -64,7 +64,7 @@ Después aprenderemos a exportar referencias seleccionadas y citar con ellas. El
 
 ¿Qué puedes pedirle al **bibliotecario científico** y cómo reconocer que la tarea quedó bien? Esta ficha de una página reúne siete casos de uso. Úsala cuando quieras ampliar la primera consulta de esta guía: elige una tarea, completa los campos del encargo y revisa la comprobación sugerida. No necesitas realizar todos los casos para participar en el seminario.
 
-[Descargar la ficha en PDF (Carta / US Letter, una página)](zotero-ia-ficha.pdf){.btn .btn-primary} · [Abrir la imagen SVG ampliable](zotero-ia-ficha.svg)
+[Descargar la ficha en PDF (carta, una página)](zotero-ia-ficha.pdf){.btn .btn-primary} · [Abrir la imagen SVG ampliable](zotero-ia-ficha.svg)
 
 ![Ficha «Zotero + IA: del hallazgo a la cita», con siete tareas y sus comprobaciones. El resumen textual aparece a continuación.](zotero-ia-ficha.svg){width=100%}
 

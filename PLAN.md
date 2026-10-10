@@ -14,12 +14,12 @@ Sistema simple aprobado por Miguel en P-ME-043, con autorización de commit y pu
 - **Siguiente paso:** localizar repeticiones entre la ficha, la guía de Zotero y sus anuncios en el blog; proponer qué abreviar o retirar, distinguiendo redundancia de información necesaria para consultar cada recurso por separado y de la alternativa textual accesible a la imagen. La anotación no identifica pasajes concretos.
 - **Cierre:** propuestas revisadas y ajustes acordados aplicados; conservar instrucciones necesarias, accesibilidad y enlaces; regenerar y verificar el blog y enlazar aquí el PR o commit de resolución.
 
-### T002 — Adaptar la impresión del semillero a Carta / US Letter
+### T002 — Adaptar la impresión del semillero a carta
 
-- **Estado:** TODO; pendiente anterior recuperado de P-ME-040/B063 y mantenido en P-ME-041/B064.
+- **Estado:** resuelto localmente en P-ME-044/B067; integración pendiente. Pendiente original recuperado de P-ME-040/B063 y mantenido en P-ME-041/B064.
 - **Origen:** [seguimiento del formato Carta en el PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100499456).
-- **Siguiente paso:** ajustar `blog/semillero/ficha.css` y su documentación conforme a `docs/CRITERIOS-DE-CALIDAD.md`.
-- **Cierre:** impresión en Carta comprobada, fichas legibles sin recortes, blog regenerado y verificado; enlazar aquí el PR o commit de resolución.
+- **Siguiente paso:** integrar los cambios verificados de `miguel/formato-carta` y enlazar aquí su commit o PR.
+- **Verificación:** cuatro fichas y plantilla exportadas desde el HTML regenerado a una página carta (612 × 792 puntos), texto dentro de límites y revisión visual sin recortes; blog de 19 páginas verificado. La ficha Zotero y sus copias ya tienen ese tamaño. No se realizó impresión física. Cierre definitivo al integrar y enlazar el commit o PR.
 
 El PR #3 quedó integrado en `main` mediante `eb48816e9b4ee11279f82d720a4383d77ae7186e` el 2026-10-10 (comprobado en GitHub). Las entradas históricas que indican integración pendiente describen su estado anterior.
 
