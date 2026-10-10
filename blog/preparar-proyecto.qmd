@@ -84,4 +84,8 @@ Si no lograste configurar una herramienta, trae los documentos y la dificultad q
 
 Continúa con [Empieza aquí](empieza-aqui.qmd) y la [sesión de apertura](posts/01-tres-capas/index.qmd). Los acuerdos para documentar y comprobar el trabajo están en [Reproducibilidad](reproducibilidad.qmd).
 
-*Actividad propuesta por Octavio y desarrollada para discusión del equipo. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes.*
+Actividad propuesta por Octavio. Versión de trabajo: 9 de octubre de 2026.
+
+::: {#temporal-preparacion .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Actividad en discusión del equipo y pendiente de prueba con participantes.
+:::

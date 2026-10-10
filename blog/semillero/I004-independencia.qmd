@@ -14,6 +14,10 @@ title: "I004 · Independencias y gestión"
 
 **Siguiente paso propuesto.** Preparar una actividad con la cadena. Comprobación: explicar por qué dejar de aportar información adicional no equivale a carecer de importancia para intervenir. **Desarrollo:** sin abrir; relacionado con [I002](I002-gestion.qmd).
 
-**Procedencia.** Cuarta idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito, §§16.2 y 21.21, y [ejemplo climático revisado](../recursos/cambio-climatico.qmd). Versión en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09; pendiente de prueba con participantes.
+**Procedencia.** Cuarta idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito, §§16.2 y 21.21, y [ejemplo climático revisado](../recursos/cambio-climatico.qmd). Versión en la [guía de exploraciones](../exploraciones/index.qmd#fuentes). Valoración registrada el 2026-10-09.
+
+::: {#temporal-i004 .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Valoración provisional; pendiente de prueba con participantes y de decisión docente sobre el siguiente paso.
+:::
 
 [Volver al semillero](index.qmd)

@@ -15,3 +15,7 @@ title: "I___ · Título de la idea"
 **Siguiente paso.** [Acción y motivo; distinguir propuesta de decisión acordada]. **Desarrollo:** [sin abrir, o ID y enlace]. **Procedencia/cambio:** [fuente y sección, si existen; fecha y motivo de la última revisión].
 
 [Volver al semillero](index.qmd). Máximo una página legible; referencia editorial: hasta 300 palabras. Para empezar basta completar la idea y su motivación. Copiar este texto en el medio disponible y entregarlo a la coordinación.
+
+::: {#temporal-plantilla-idea .callout-warning .marca-temporal title="Por acordar" icon="true"}
+[Indicar qué está pendiente, quién debe decidir y qué evidencia permitirá resolverlo. Al copiar la plantilla, asignar un identificador temporal único.]
+:::
