@@ -1,7 +1,7 @@
 .ficha-idea main { max-width: 850px; }
 .ficha-idea main p { line-height: 1.5; }
 @media print {
-  @page { size: A4; margin: 16mm; }
+  @page { size: letter; margin: 16mm; }
   #quarto-header, #quarto-sidebar, #quarto-margin-sidebar, .nav-footer,
   .quarto-navigation-tool, .anchorjs-link { display: none !important; }
   body.ficha-idea { font-size: 11pt !important; color: #172b24; }

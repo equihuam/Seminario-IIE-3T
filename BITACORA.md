@@ -497,3 +497,13 @@ Cambios documentales locales en miguel/seguimiento-pendientes, creada desde orig
 Fecha de registro: 2026-10-10. Prompt: P-ME-043. Miguel aprueba el sistema de PLAN.md y autoriza excepcionalmente commit y push directo a main de este registro. T001 y T002 conservan estado TODO. La entrega incluye PLAN.md, BITACORA.md y prompts/miguel.md; el histórico local PROMPTS.md queda fuera.
 
 Verificación: fetch de origin completado; scripts/site.py check termina correctamente con las 19 páginas, enlaces locales y límites de publicación comprobados. Persisten las advertencias regionales conocidas de R. El control del índice se ejecuta mediante el hook antes del commit. Se prepara la integración por avance rápido y el push a main, sin abrir otro PR.
+
+## B067 — Carta como tamaño y denominación de los materiales vigentes
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-044. Revisión de configuraciones de impresión, fuentes y PDF versionados: A4 seguía activo en blog/semillero/ficha.css; se cambia a letter (carta), conservando márgenes de 16 mm y letra de 11 puntos. Se simplifica el rótulo público de descarga de Zotero a «carta» y se actualizan generador, guía de la ficha y criterios editoriales. Los PDF de Zotero ya tenían dimensiones correctas y no requieren regeneración. Se preservan los prompts literales y registros históricos. T002 queda resuelto localmente, pendiente de integración; T001 conserva su alcance.
+
+Verificación observada: scripts/site.py check pasa con 19 páginas, enlaces y límites de publicación (advertencias regionales conocidas de R). Playwright con Edge exporta I001–I004 y plantilla desde HTML regenerado usando preferCSSPageSize; pypdf y pdfplumber confirman una página de 612 × 792 puntos y texto dentro de límites en las cinco exportaciones y las tres copias versionadas del PDF Zotero. PNG de las cinco fichas examinados visualmente sin recortes ni superposiciones. Rótulo público breve comprobado en HTML. Búsqueda en fuentes SVG/QMD/Python/CSS/YAML sin configuraciones A4 ni denominación extensa restantes. No se realizó impresión física. Trabajo local en miguel/formato-carta, sin commit ni push en este encargo.
+
+## B068 — Entrega del ajuste a carta
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-045. Se entrega el ajuste P-ME-044/B067 mediante commit, push de miguel/formato-carta y PR a main. Se conservan las comprobaciones completas del sitio y las exportaciones revisadas en B067: no cambiaron fuentes editoriales desde esas pruebas. Se excluye el cambio incidental del identificador de celda generado al ejecutar la comprobación Python. Revisión de diferencias y control del índice antes del commit. T002 queda pendiente de integración; T001 continúa TODO.

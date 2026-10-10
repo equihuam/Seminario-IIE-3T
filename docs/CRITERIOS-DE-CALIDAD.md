@@ -20,11 +20,11 @@ Mantener una identidad académica sobria y atractiva: jerarquía tipográfica cl
 
 ### Formato de los materiales imprimibles
 
-Usar **Carta / US Letter (8.5 × 11 pulgadas; 215.9 × 279.4 mm; 612 × 792 puntos PDF)** por defecto para fichas, guías y hojas de trabajo del seminario, salvo solicitud expresa de otro tamaño. Es una preferencia editorial de Miguel para el contexto de uso en México, registrada en P-ME-040 y en su [comentario del PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518), no una afirmación sobre todos los contextos de impresión.
+Usar **carta (8.5 × 11 pulgadas; 215.9 × 279.4 mm; 612 × 792 puntos PDF)** por defecto para fichas, guías y hojas de trabajo del seminario, salvo solicitud expresa de otro tamaño. Es una preferencia editorial de Miguel para el contexto de uso en México, registrada en P-ME-040 y en su [comentario del PR #3](https://github.com/equihuam/Seminario-IIE-3T/pull/3#issuecomment-6100409518), no una afirmación sobre todos los contextos de impresión.
 
-Al adaptar un material existente, ajustar su composición a Carta y revisar márgenes, legibilidad, número de páginas y ausencia de recortes a escala de impresión del 100 %. No basta cambiar la etiqueta «A4» ni depender del ajuste automático de la impresora. Mantener concordancia entre dimensiones del PDF, tamaño físico del SVG, reglas CSS de impresión, descripción del enlace de descarga y documentación. Conservar A4 solo como variante explícitamente solicitada o justificada.
+Al adaptar un material existente, ajustar su composición a carta y revisar márgenes, legibilidad, número de páginas y ausencia de recortes a escala de impresión del 100 %. No basta cambiar la etiqueta «A4» ni depender del ajuste automático de la impresora. Mantener concordancia entre dimensiones del PDF, tamaño físico del SVG, reglas CSS de impresión, descripción del enlace de descarga y documentación. Conservar A4 solo como variante explícitamente solicitada o justificada.
 
-La adopción de este criterio no implica que todos los archivos históricos ya estén convertidos. La ficha Zotero v1.2 y el CSS del semillero se identificaron aún en A4; registrar su adaptación y verificación cuando se realice.
+P-ME-044 precisa la denominación para la audiencia: usar únicamente «carta». La ficha Zotero se adaptó en P-ME-041; la adecuación del semillero y la revisión general se registran en P-ME-044.
 
 ## Cumplimiento técnico de scripts futuros
 
@@ -62,4 +62,6 @@ Las pruebas técnicas no demuestran validez ecológica. Evaluar por separado aju
 Separar reproducción de la clasificación experta y validación ecológica independiente. Justificar la referencia contextual; no atribuir degradación a diferencias naturales entre contextos. Evaluar el soporte espacial efectivo de los datos y la estabilidad de los resultados al cambiar escala. Los perfiles multidimensionales se reportarán solo cuando estén identificados; en otro caso se informará el soporte disponible por dimensión.
 
 
-Actualización P-ME-041 (2026-10-10): la ficha Zotero v1.3 se adapta a Carta con tamaños de letra conservados; el CSS del semillero sigue pendiente fuera de este cambio.
+Actualización P-ME-041 (2026-10-10): la ficha Zotero v1.3 se adapta a carta con tamaños de letra conservados; el CSS del semillero sigue pendiente fuera de este cambio.
+
+Actualización P-ME-044 (2026-10-10): queda superado el pendiente anterior del CSS del semillero; adaptado a carta y comprobado mediante exportación PDF y revisión visual de las cuatro fichas y la plantilla.
