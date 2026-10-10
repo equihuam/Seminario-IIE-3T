@@ -90,3 +90,7 @@ Antes de fusionar un PR de entrega, comprobar que su base sea `main`. Si una pro
 5. Empezar el siguiente encargo desde main actualizado. Mantener solo main y las ramas en uso; no crear una rama o PR exclusivamente por cada limpieza rutinaria. Registrar la limpieza junto con el siguiente hito cuando corresponda.
 
 Los commits integrados y los PR conservan la trazabilidad aunque se eliminen las ramas. No activar borrado automático al fusionar: la rutina acordada comprueba antes la publicación y las dependencias entre ramas.
+
+## Tablas anchas en móvil
+
+La plantilla de exploraciones envuelve su tabla de aportaciones en `.tabla-desplazable`, una región con nombre accesible y `tabindex="0"`. En pantalla estrecha se desplaza solo la tabla, también mediante teclado; la página conserva su ancho y el tamaño de letra. La ayuda `.ayuda-tabla-movil` indica el gesto en móvil. Al imprimir, la tabla recupera el ancho disponible y permite partir cadenas largas. Conservar este bloque al copiar la plantilla; comprobar las cuatro columnas y ausencia de desbordamiento de página a 320 y 390 píxeles cuando se amplíe su contenido.

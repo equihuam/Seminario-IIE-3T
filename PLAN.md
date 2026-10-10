@@ -23,10 +23,10 @@ Sistema simple aprobado por Miguel en P-ME-043, con autorización de commit y pu
 
 ### T003 — Revisar desbordamiento móvil en la plantilla de exploraciones
 
-- **Estado:** TODO; detectado al verificar P-ME-046.
+- **Estado:** resuelto localmente en P-ME-051/B073; pendiente de integración. Detectado al verificar P-ME-046.
 - **Origen:** prueba local de `blog/exploraciones/plantilla.qmd` a 390 píxeles de ancho; la página presenta desbordamiento horizontal, aunque el nuevo callout queda dentro del viewport.
-- **Siguiente paso:** revisar la tabla de aportaciones y la composición de la plantilla en pantalla estrecha.
-- **Cierre:** plantilla utilizable a 390 píxeles sin desbordamiento de página; conservar legibilidad y acceso a todas las columnas.
+- **Siguiente paso:** integrar la corrección de miguel/t003-formato-movil y enlazar aquí el commit o PR.
+- **Verificación:** página sin desbordamiento a 320, 390, 768 y 1280 píxeles; cuatro columnas conservadas, desplazamiento limitado a la tabla, teclado y acceso a la última columna comprobados. Ayuda móvil y reglas de impresión verificadas; revisión visual en móvil y escritorio. Cierre al integrar.
 
 El PR #3 quedó integrado en `main` mediante `eb48816e9b4ee11279f82d720a4383d77ae7186e` el 2026-10-10 (comprobado en GitHub). Las entradas históricas que indican integración pendiente describen su estado anterior.
 

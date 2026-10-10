@@ -677,3 +677,19 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Me parece adecuada esa rutina. Implementa.
 ```
+
+## P-ME-051 — Resolver el formato móvil de T003
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Resolvamos T003 ahora, entiendo que es un asunto de formatos
+```
+
+## P-ME-052 — Entregar T003 mediante commit y PR
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+commit y PR ahora
+```
