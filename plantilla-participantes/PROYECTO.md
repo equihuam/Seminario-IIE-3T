@@ -7,6 +7,16 @@
 - Ecosistema, unidad de análisis y escala espacial/temporal: por completar.
 - Primer resultado alcanzable: por completar.
 
+## Bibliografía y primera consulta
+
+- Biblioteca Zotero y colección del proyecto: por completar; indicar responsable y si es personal o de grupo.
+- Fuente inicial: título, autores, año y DOI/URL por completar tras cotejo.
+- Clave del ítem Zotero y, cuando se exporte, clave de cita BibTeX: por completar; no son equivalentes.
+- Uso previsto de la fuente y sección/página pertinente: por completar.
+- Alcance de lectura: metadatos, resumen o texto completo; especificar lo realmente consultado.
+- Consulta API: fecha, versión disponible, consulta y coincidencia con la ficha; o dificultad pendiente.
+- Exportación seleccionada: archivo, fecha, colección y claves incluidas; pendiente hasta realizarla.
+
 ## Modelo
 
 - Fuente y versión del modelo de tres capas: por completar.

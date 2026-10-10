@@ -347,3 +347,49 @@ Render completo con `scripts/site.py render`, código 0: 18 páginas y límites 
 Fecha de registro: 2026-10-09. Prompt: P-ME-013. GitHub API muestra tres ramas (main y dos de Miguel), ningún pull request y la incorporación de Maqueo como colaborador, sin contribuciones publicadas suyas. Fetch y autores de commits remotos concuerdan. La comprobación no cubre trabajo local no publicado. Miguel autoriza excepcionalmente merge y push a main.
 
 Se reúnen B040–B041 y los registros de esta decisión en la rama miguel/presentacion-v5. scripts/site.py check termina con código 0: entorno consistente, render completo de 18 páginas, enlaces y límites de publicación correctos; R conserva advertencias regionales ya conocidas. Verificador v5 y cuatro pruebas de política pasan. Se prepara commit e integración; el resultado remoto quedará identificado por el historial Git. PPTX local e histórico PROMPTS.md permanecen fuera del índice. No se afirma despliegue Netlify comprobado ni validación con participantes.
+
+## B043 — Zotero en directivas, preparación y biblioteca compartida
+
+Fecha de registro: 2026-10-09. Prompts: P-ME-014 y P-ME-015. Rama: miguel/zotero-preparacion. Se añade el registro bibliográfico con Zotero a AGENTS, README y entorno; guía pública enlazada desde preparación, temas y reproducibilidad; campos bibliográficos en la plantilla. Cliente Python de lectura sin dependencias adicionales: estado, grupos, colecciones, búsqueda acotada y exportación seleccionada sin sobrescritura.
+
+Zotero 9.0.3 instalado. Se cerró la aplicación normalmente, habilitó la API mediante el helper del plugin con copia de seguridad de preferencias y volvió a abrir. El helper no conectaba por el proxy; la consulta directa de loopback responde con API 3. Se revisaron nombres de colecciones y grupos, sin adjuntos ni texto completo. Grupo privado Seminario IIE-3T creado en web (6712171), propietario Miguel, un miembro; edición de metadatos para miembros y almacenamiento de adjuntos desactivado. Colección Seminario (JGFMANF9) creada; grupo y colección recuperados por API local tras sincronización. Búsqueda real de integridad en esa colección vacía devuelve cero resultados; no constituye prueba con bibliografía poblada. Exportación verificada con respuestas simuladas, sin importar ni exportar fuentes personales reales.
+
+Validación: diez pruebas pasan; scripts/site.py check termina con código 0 y verifica 19 páginas. Se comprueba navegación desde preparación y apertura del desplegable; revisión visual detecta una línea larga en el prompt, corregida en la fuente y renderizada de nuevo con Quarto; check_site.py pasa tras ese ajuste. Advertencias regionales de R ya conocidas. No hay prueba con participantes. Pendientes: cuenta Zotero e incorporación de Octavio, selección y exportación bibliográfica inicial. Sin commit, push ni nueva integración a main.
+
+## B044 — Invitación a Octavio enviada
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-016. Miguel informa que ya envió al correo de Octavio la invitación al grupo Zotero. Se actualizan el estado bibliográfico y el plan: envío realizado por Miguel; aceptación y acceso pendientes de confirmación. No se consultó la membresía remota ni se envió otra invitación. Sin cambios al blog, commit o push.
+
+## B045 — Prueba de la clave de Zotero web
+
+Fecha de registro: 2026-10-09. Prompts: P-ME-017 y P-ME-018. Se recuperó exclusivamente la credencial genérica zotero/seminario-iie3t del almacén Windows mediante CredReadW, en memoria, sin imprimirla ni escribirla al repositorio. Prueba HTTPS GET con cabecera de autenticación y redirecciones rechazadas: keys/current, grupo 6712171, colección JGFMANF9 y listado acotado de ítems. Las cuatro respuestas fueron HTTP 200; colección Seminario vacía (Total-Results 0). No se ejecutaron escrituras remotas.
+
+El alcance devuelto por Zotero excede lo previsto: biblioteca personal con lectura, archivos, notas y escritura; todos los grupos con lectura/escritura; permiso individual adicional para 6712174, distinto del grupo del seminario 6712171. Se informa a Miguel; no se cambian permisos ni se consultan contenidos ajenos al seminario. Pendiente acotar la clave al grupo correcto. Esta prueba puntual no convierte el cliente local en cliente web ni acredita funcionamiento de escrituras. Sin commit o push.
+
+## B046 — Clave acotada al grupo y primera referencia visible
+
+Fecha de registro: 2026-10-09. Prompt: P-ME-019. Nueva recuperación de la credencial Windows en memoria y cinco consultas HTTPS GET, todas HTTP 200. keys/current devuelve únicamente acceso al grupo 6712171, con lectura y escritura; ya no devuelve permisos para biblioteca personal ni todos los grupos. No se probaron escrituras.
+
+La biblioteca del grupo contiene un registro de tipo book, clave 2YDDZ2NC: «La academia movilizada  en defensa de la vida (Una experiencia mexicana)». Se recuperaron solo metadatos. La lista de colecciones del registro está vacía: todavía no pertenece a Seminario (JGFMANF9), cuyo listado devuelve cero ítems. No se movió ni modificó la referencia, no se consultaron adjuntos y no se copió la clave a archivos. Comprobación bibliográfica de contenido y exportación siguen pendientes.
+
+## B047 — Rol bibliotecario y guía de uso en la plantilla
+
+Fecha de registro: 2026-10-09. Prompts: P-ME-020 y P-ME-021. Se define Bibliotecario científico en AGENTS, con propósito, responsabilidades, modo de invocación, entrega, aceptación y límites. Actúa por defecto en esta conversación; no se crea otro agente. Se distingue su comprobación bibliográfica del juicio conceptual del revisor y la decisión formativa del didacta. Los encargos de incorporación al destino ya definido no requieren confirmación repetida; se comprueba el resultado por lectura posterior.
+
+La guía de la plantilla conserva sus tres archivos y añade una explicación autocontenida con encargo breve adaptable a cualquier biblioteca y base agéntica. Distingue metadatos y lectura; exige declarar acceso real y no simular incorporaciones. Ejemplos de encargo redactados por Codex y conservados en AGENTS y plantilla-participantes/README.md. Revisión documental de coherencia y git diff --check; sin cambios al código, al blog renderizado ni a Zotero. No se ejecutan pruebas de software para este ajuste documental. Sin commit ni push.
+
+## B048 — Referencias de la apertura incorporadas a Zotero
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-022. Rol bibliotecario aplicado a blog/empieza-aqui.qmd. Se cotejan artículos con Crossref, reseña y recurso sistémico con sus sitios, Murphy con portada de PDF, y libro con catálogo UNAM y encabezado del DOCX proporcionado. No se atribuye lectura completa. Manuscrito de teoría y SVG se registran separadamente como materiales del equipo con datos pendientes explícitos.
+
+La consulta fresca de la biblioteca encontró el libro de Ecosalud EVEQAYRN ya incorporado por otra acción; se conservó su edición electrónica y se añadió únicamente la pertenencia a Seminario mediante PATCH con control de versión. Se crearon siete registros mediante POST con token de escritura, sin fallos individuales. GET posterior confirma los ocho registros y colección JGFMANF9 del grupo 6712171. Claves y procedencia en bibliografia/README.md. Clave API recuperada del almacén Windows solo en memoria; sin documentos adjuntos ni modificaciones a registros ajenos al encargo. No se exportó BibTeX ni se modificó el blog. Revisión de diferencias sin errores de espacios; sin commit o push.
+
+## B049 — Preparación de commit y push de Zotero y bibliotecario
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-023. Rama: miguel/zotero-preparacion. Git fetch y API de GitHub muestran main y dos ramas publicadas de Miguel, sin pull requests abiertos ni commits de otros autores en referencias remotas. Octavio (Maqueo) figura únicamente en el evento de incorporación al repositorio; no se infiere ausencia de trabajo local no publicado.
+
+Se reúne B043–B048: directivas, rol bibliotecario, preparación y plantilla, cliente de lectura local, pruebas y registro de referencias del grupo. scripts/site.py check termina con código 0: entorno consistente y 19 páginas verificadas; permanecen las advertencias regionales conocidas de R. Diez pruebas pasan. Se prepara el índice para control de tamaño y patrones de credenciales antes del commit. La entrega solicitada se dirige a la rama actual; main queda sin integración. El histórico local PROMPTS.md, los auxiliares de .local y las credenciales de Windows no se incorporan. El resultado del commit y push queda identificado en el historial Git.
+
+## B050 — Pull request de preparación bibliográfica
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-024. Commit funcional b696750 publicado en miguel/zotero-preparacion. Tras fetch y consulta de GitHub, sin pull requests abiertos y con la rama adelantada respecto a main, se crea el PR #1: https://github.com/equihuam/Seminario-IIE-3T/pull/1. Incluye resumen, comprobaciones de B049 y límites del cliente y del catálogo. Se propone integrar a main; no se realiza la fusión. Esta actualización añade únicamente el registro de la solicitud y del resultado.

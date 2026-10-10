@@ -70,11 +70,319 @@
     "text": "Autoría: coordinador del seminario · Registro: 2026-10-09 · Versión: 0.1 · Estado: valorada.\nIdea o pregunta. Usar el marco como auxiliar para reflexionar sobre gestión ambiental. ¿Qué cambia al preguntar por la condición, por nueva información, por el efecto de una acción o por la opción preferible?\nPor qué importa. Ayuda a reconocer qué puede responder una red y qué requiere otros supuestos, datos o criterios de decisión.\nEjemplo hipotético. Ante baja regeneración, distinguir «¿qué condición sugieren los datos?», «¿qué conviene medir?» y «¿qué ocurriría si reducimos la extracción?».\nDos miradas. Revisor: condicionar en un manejo observado no equivale a intervenir. Estimar efectos requiere supuestos causales; elegir una acción añade objetivos, costos, restricciones y valores. Didacta: usar el mismo caso durante el seminario. En diez minutos, clasificar las tres preguntas y explicar qué información falta para responder cada una.\nSiguiente paso propuesto. Probar la clasificación después de introducir el diagnóstico. Comprobación: el grupo debe reconocer que el diagnóstico por sí solo no estima el efecto de reducir la extracción. Desarrollo: sin abrir; relacionado con I001 e I004.\nProcedencia. Segunda idea del coordinador, reformulada con asistencia de IA. Roles revisor y didacta aplicados en esta conversación, sin revisión independiente. Base: manuscrito del equipo, §§3.4 y 16.2; versión en la guía de exploraciones. Valoración registrada el 2026-10-09; pendiente de prueba con participantes.\nVolver al semillero"
   },
   {
-    "objectID": "recursos/comprobacion-r.html",
-    "href": "recursos/comprobacion-r.html",
-    "title": "Comprobación del entorno R",
+    "objectID": "recursos/zotero.html",
+    "href": "recursos/zotero.html",
+    "title": "Zotero y tu bibliografía",
     "section": "",
-    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 &lt;U+00B7&gt; resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+    "text": "Una referencia debe poder recuperarse y revisarse. Usaremos Zotero para registrar la bibliografía y aprenderemos a consultarla con ayuda de una API: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.\nEsta es la segunda parte de Preparar tu proyecto. Reserva 15–20 minutos adicionales si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste."
+  },
+  {
+    "objectID": "recursos/zotero.html#organiza-una-primera-referencia",
+    "href": "recursos/zotero.html#organiza-una-primera-referencia",
+    "title": "Zotero y tu bibliografía",
+    "section": "1. Organiza una primera referencia",
+    "text": "1. Organiza una primera referencia\nInstala o abre Zotero de escritorio. Crea una colección con el nombre de tu proyecto, o identifica una existente. Una colección reúne referencias de una biblioteca; no equivale a una carpeta de archivos de tu proyecto.\nElige una fuente que ya estés usando en tu pregunta. Busca primero si existe en tu biblioteca; si no, agrégala desde su DOI, su página editorial o mediante captura manual. Revisa título, autores, año y DOI o URL contra la fuente. No necesitas reunir todavía toda la bibliografía ni adjuntar el PDF.\nEn la definición de tu proyecto anota el nombre de la colección y si revisaste solo los metadatos, el resumen o el texto completo. Agrega una frase: «Esta fuente me sirve para…». Si aún no elegiste una fuente, déjala como pendiente; no pidas al asistente que invente una referencia."
+  },
+  {
+    "objectID": "recursos/zotero.html#prepara-la-conexión-local",
+    "href": "recursos/zotero.html#prepara-la-conexión-local",
+    "title": "Zotero y tu bibliografía",
+    "section": "2. Prepara la conexión local",
+    "text": "2. Prepara la conexión local\nEn Zotero, abre Ajustes → Avanzado y habilita la comunicación con otras aplicaciones del equipo. Mantén Zotero abierto. La API local atiende en http://localhost:23119/api/; sus lecturas no requieren clave. Evita exponer ese puerto fuera del equipo. Documentación oficial.\nTu asistente necesita una herramienta capaz de hacer solicitudes locales desde el mismo equipo. Un chat en la nube no obtiene ese acceso por adjuntar documentos. Si tu entorno no lo permite, realiza ahora la revisión en Zotero y deja la prueba de API para el acompañamiento. No necesitas configurar la API web ni compartir credenciales para esta actividad."
+  },
+  {
+    "objectID": "recursos/zotero.html#consulta-y-compara",
+    "href": "recursos/zotero.html#consulta-y-compara",
+    "title": "Zotero y tu bibliografía",
+    "section": "3. Consulta y compara",
+    "text": "3. Consulta y compara\nCopia y adapta este encargo:\nQuiero comprobar el acceso de lectura a Zotero para mi proyecto.\nPrimero verifica la conexión local e informa la versión que responde.\nMi biblioteca es [personal o nombre e ID del grupo].\nMi colección se llama [nombre]. Identifícala sin elegir automáticamente\nsi hay varias coincidencias. Busca dentro de ella [título o DOI].\nDevuelve título, autores, fecha, DOI o URL y clave Zotero del ítem.\nNo crees ni modifiques registros ni recuperes adjuntos o texto completo.\nSi no tienes acceso local, explica qué falta; no simules la consulta.\nAyúdame a comparar el resultado con la ficha que veo en Zotero y registra\nla prueba, su resultado y el siguiente paso en mis documentos.\nComprueba que se trata de la misma obra y versión. Si la búsqueda no devuelve nada, revisa colección y términos; el resultado no demuestra que la obra no exista.\n\n\n\n\n\n\nNotaPara explorar qué hace la API\n\n\n\n\n\nUna solicitud GET pide información. Por ejemplo, /api/users/0/collections lista colecciones de la biblioteca personal local. En la copia del proyecto, scripts/zotero_bibliografia.py permite comprobar conexión, buscar en una colección y exportar ítems seleccionados a BibTeX. Las instrucciones están en bibliografia/README.md; la coordinación puede facilitar esta práctica cuando ya uses Python.\nLa clave Zotero identifica un registro dentro de una biblioteca. La clave BibTeX identifica una cita en el archivo exportado: no son intercambiables. Al exportar, comprueba qué clave usarás en tu documento."
+  },
+  {
+    "objectID": "recursos/zotero.html#qué-queda-listo",
+    "href": "recursos/zotero.html#qué-queda-listo",
+    "title": "Zotero y tu bibliografía",
+    "section": "Qué queda listo",
+    "text": "Qué queda listo\n\nUna colección identificada y una referencia con metadatos cotejados, o la dificultad concreta pendiente.\nUna breve explicación de para qué usarás esa fuente y qué parte consultaste.\nUna comparación entre la ficha y la respuesta real de la API, o el registro de por qué no pudo ejecutarse.\n\nPregunta de comprobación: si el asistente recuperó autores y título, ¿ya puede afirmar que leyó el artículo? Respuesta esperada: no; consultó metadatos. Cualquier interpretación del contenido debe apoyarse en el texto efectivamente leído.\nDespués aprenderemos a exportar referencias seleccionadas y citar con ellas. El catálogo del equipo se llevará en una biblioteca de grupo compartida. La coordinación facilitará el acceso cuando esté configurada; mientras tanto puedes practicar en tu colección personal. Las copias de una referencia en bibliotecas distintas no se actualizan como un único registro: revisaremos los metadatos en la biblioteca que use cada trabajo. Véase la guía de grupos de Zotero. Las dificultades de conexión no impiden participar en la apertura.\nPropuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes."
+  },
+  {
+    "objectID": "recursos/comprobacion-python.html",
+    "href": "recursos/comprobacion-python.html",
+    "title": "Comprobación del entorno Python",
+    "section": "",
+    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nimport sys\nprobabilidades = [0.2, 0.3, 0.5]\nassert abs(sum(probabilidades) - 1.0) &lt; 1e-12\nresultado = sum(p * x for p, x in zip(probabilidades, [0, 1, 2]))\nassert abs(resultado - 1.3) &lt; 1e-12\nprint(f\"Python {sys.version.split()[0]} · resultado: {resultado:.1f}\")\n\nPython 3.12.14 · resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html",
+    "href": "posts/01-tres-capas/index.html",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "",
+    "text": "Estado: propuesta de apertura, pendiente de revisión docente. Realización: por acordar. Versión del material: 0.1."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#pregunta-central",
+    "href": "posts/01-tres-capas/index.html#pregunta-central",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Pregunta central",
+    "text": "Pregunta central\n¿Cómo inferir la condición de un ecosistema a partir de señales que dependen de su contexto?"
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
+    "href": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Al terminar esta primera aproximación",
+    "text": "Al terminar esta primera aproximación\n\nDistinguir las tres capas y explicar su función con un ejemplo.\nSeparar una medición de una interpretación y de un supuesto.\nProponer relaciones entre variables y reconocer por qué hace falta representar incertidumbre."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#materiales",
+    "href": "posts/01-tres-capas/index.html#materiales",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Materiales",
+    "text": "Materiales\n\nActividad previa: preparar tu proyecto, con la plantilla y el asistente de tu preferencia.\nIntroducción y esquema del equipo.\nFicha de observación, vacía y editable.\nPrincipios de reproducibilidad."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#práctica",
+    "href": "posts/01-tres-capas/index.html#práctica",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Práctica",
+    "text": "Práctica\n\nElegir un ecosistema conocido por el grupo. Describirlo sin asignarle todavía una puntuación de integridad.\nProponer dos variables de contexto y dos atributos medibles. Registrar unidad, método y fuente o indicar que se trata de una propuesta sin datos.\nExplicar qué se querría inferir sobre su condición y qué evidencia falta.\nDibujar relaciones justificadas entre esas variables. Distinguir las señales que se observan de la condición que se busca inferir.\nImaginar una nueva observación: ¿cambiaría el diagnóstico?, ¿por qué? Conservar la primera versión y documentar el cambio.\n\nNo se requieren valores inventados ni código para esta actividad. Si el grupo utiliza un ejemplo hipotético, debe identificarlo como tal."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
+    "href": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Evidencia de aprendizaje",
+    "text": "Evidencia de aprendizaje\nUn diagrama anotado y una ficha con variables, procedencia y supuestos. Cada equipo explicará una incertidumbre que el dibujo todavía no resuelve."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
+    "href": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Para decidir la siguiente sesión",
+    "text": "Para decidir la siguiente sesión\nRecoger tres preguntas del grupo, un concepto que necesite aclaración y una valoración agregada de preparación para el trabajo computacional. Esto orientará la introducción de nodos, arcos y probabilidades condicionales."
+  },
+  {
+    "objectID": "posts/01-tres-capas/index.html#procedencia-y-cambios",
+    "href": "posts/01-tres-capas/index.html#procedencia-y-cambios",
+    "title": "01 · Observar, contextualizar e inferir",
+    "section": "Procedencia y cambios",
+    "text": "Procedencia y cambios\nVersión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA; aún no aplicada a participantes. La fecha de esta entrada registra su preparación."
+  },
+  {
+    "objectID": "temas.html",
+    "href": "temas.html",
+    "title": "Catálogo temático",
+    "section": "",
+    "text": "Actividad previa: Preparar tu proyecto, un espacio propio para trabajar con un asistente y conservar decisiones y resultados.\n\nIntroducción accesible.\nSesión 01: observar, contextualizar e inferir."
+  },
+  {
+    "objectID": "temas.html#modelo-de-tres-capas",
+    "href": "temas.html#modelo-de-tres-capas",
+    "title": "Catálogo temático",
+    "section": "",
+    "text": "Actividad previa: Preparar tu proyecto, un espacio propio para trabajar con un asistente y conservar decisiones y resultados.\n\nIntroducción accesible.\nSesión 01: observar, contextualizar e inferir."
+  },
+  {
+    "objectID": "temas.html#redes-bayesianas",
+    "href": "temas.html#redes-bayesianas",
+    "title": "Catálogo temático",
+    "section": "Redes bayesianas",
+    "text": "Redes bayesianas\nEl primer puente conceptual está en Del esquema a la red bayesiana. Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.\n\nCambio climático en R: grafo, tablas, separación-d e intervención. Ejemplo sintético recuperado y revisado, disponible para el momento adecuado del seminario."
+  },
+  {
+    "objectID": "temas.html#reproducibilidad-y-trabajo-científico",
+    "href": "temas.html#reproducibilidad-y-trabajo-científico",
+    "title": "Catálogo temático",
+    "section": "Reproducibilidad y trabajo científico",
+    "text": "Reproducibilidad y trabajo científico\n\nPrincipios y compromisos.\nZotero y tu bibliografía: registro de fuentes y primera consulta API.\nComprobación del entorno Python.\nComprobación del entorno R."
+  },
+  {
+    "objectID": "temas.html#datos-y-guías",
+    "href": "temas.html#datos-y-guías",
+    "title": "Catálogo temático",
+    "section": "Datos y guías",
+    "text": "Datos y guías\n\nFicha de observación descargable: plantilla vacía; no contiene datos de campo.\nGuía de la primera práctica."
+  },
+  {
+    "objectID": "temas.html#ampliaciones-por-explorar",
+    "href": "temas.html#ampliaciones-por-explorar",
+    "title": "Catálogo temático",
+    "section": "Ampliaciones por explorar",
+    "text": "Ampliaciones por explorar\nIIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio."
+  },
+  {
+    "objectID": "temas.html#ideas-del-grupo",
+    "href": "temas.html#ideas-del-grupo",
+    "title": "Catálogo temático",
+    "section": "Ideas del grupo",
+    "text": "Ideas del grupo\nSemillero: cuatro fichas iniciales y una plantilla breve. Exploraciones: desarrollo de preguntas, aportaciones y actividades cuando superen una página."
+  },
+  {
+    "objectID": "preparar-proyecto.html",
+    "href": "preparar-proyecto.html",
+    "title": "Preparar tu proyecto",
+    "section": "",
+    "text": "Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar la base agéntica de tu preferencia: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.\nObjetivo: poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos 20–30 minutos para el espacio de trabajo y 15–20 minutos adicionales para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento."
+  },
+  {
+    "objectID": "preparar-proyecto.html#crea-una-carpeta-propia-y-copia-la-plantilla",
+    "href": "preparar-proyecto.html#crea-una-carpeta-propia-y-copia-la-plantilla",
+    "title": "Preparar tu proyecto",
+    "section": "1. Crea una carpeta propia y copia la plantilla",
+    "text": "1. Crea una carpeta propia y copia la plantilla\nElige un nombre reconocible, por ejemplo mi-proyecto-iie3t, y una ubicación que puedas volver a encontrar. Allí reunirás el trabajo del seminario.\nAbre la plantilla para participantes del seminario y copia sus tres archivos a esa carpeta, conservando sus nombres. Puedes abrir cada archivo en el repositorio y copiar su contenido a un archivo de texto local con el mismo nombre. Si ya tienes una copia del repositorio del seminario, basta con copiar el contenido de su carpeta plantilla-participantes. También puedes solicitar los archivos a la coordinación.\n\n\n\n\n\n\n\nDocumento\nPara qué sirve ahora\n\n\n\n\nGuía de inicio (README.md)\nExplica la organización y lo que todavía falta preparar.\n\n\nDefinición del proyecto (PROYECTO.md)\nConserva tu pregunta, alcance y primer resultado esperado.\n\n\nBitácora de trabajo\nRegistra lo que hiciste, cómo lo comprobaste y qué quedó pendiente.\n\n\n\nLa plantilla es documental: todavía no contiene un modelo ejecutable. En esta actividad solo necesitas estos archivos; las carpetas para datos, código y resultados se crearán cuando hagan falta."
+  },
+  {
+    "objectID": "preparar-proyecto.html#vincula-el-asistente-con-ese-espacio",
+    "href": "preparar-proyecto.html#vincula-el-asistente-con-ese-espacio",
+    "title": "Preparar tu proyecto",
+    "section": "2. Vincula el asistente con ese espacio",
+    "text": "2. Vincula el asistente con ese espacio\nAbre o selecciona la carpeta como proyecto en tu herramienta, si dispone de esa función. Comprueba qué archivos puede leer y modificar. Si trabajas con un asistente que solo recibe documentos adjuntos, comparte los tres archivos y guarda tú las versiones acordadas en la carpeta.\nPídele que lea los documentos y explique qué encontró antes de proponer cambios. No presupongas que recuerda otra conversación o que lee automáticamente todos los archivos. Si tu plataforma admite instrucciones de proyecto, coloca allí los acuerdos de trabajo; conserva también una copia legible en tu carpeta."
+  },
+  {
+    "objectID": "preparar-proyecto.html#haz-un-primer-encargo-pequeño",
+    "href": "preparar-proyecto.html#haz-un-primer-encargo-pequeño",
+    "title": "Preparar tu proyecto",
+    "section": "3. Haz un primer encargo pequeño",
+    "text": "3. Haz un primer encargo pequeño\nCopia este mensaje y adapta lo que aparece entre corchetes:\nEstoy preparando mi espacio de trabajo para el seminario IIE-3T.\nMi carpeta o proyecto es [nombre]. Lee los tres documentos de la plantilla\nque he puesto a tu disposición y dime cuáles pudiste consultar.\n\nAyúdame a completar solo el nombre, la pregunta inicial, el alcance\ny un primer resultado pequeño en la definición del proyecto.\nMi interés inicial es [tema, ecosistema o pregunta; puede ser provisional].\nDeja por completar lo que todavía no hemos decidido. No inventes datos,\nfuentes ni resultados. Distingue mis decisiones de tus propuestas.\nTrabaja únicamente con este proyecto y conserva los datos originales.\nAntes de instalar programas, publicar o enviar archivos, explícame\npara qué hace falta y espera mi autorización.\n\nRegistra en la bitácora lo que acordamos, lo que realmente comprobamos\ny el siguiente paso. Si no puedes escribir archivos, entrégame el texto\ny aclara que debo guardarlo yo.\nRevisa el resultado antes de aceptarlo. Una pregunta suficiente para comenzar podría ser: «¿Qué observaciones necesitaría para comparar dos sitios del mismo tipo de bosque?». El primer resultado podría ser una lista breve de observaciones posibles y dudas sobre su interpretación. No necesitas definir aún una red, calcular el IIE ni completar las secciones técnicas de la plantilla."
+  },
+  {
+    "objectID": "preparar-proyecto.html#comprueba-que-puedes-retomar-el-trabajo",
+    "href": "preparar-proyecto.html#comprueba-que-puedes-retomar-el-trabajo",
+    "title": "Preparar tu proyecto",
+    "section": "4. Comprueba que puedes retomar el trabajo",
+    "text": "4. Comprueba que puedes retomar el trabajo\nGuarda los documentos y abre una conversación nueva con acceso a esos archivos. Pide al asistente:\n\nLee los documentos del proyecto. ¿Cuál es mi pregunta, qué sigue pendiente y cuál es el siguiente paso acordado? Señala en qué documento encontraste cada respuesta.\n\nContrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario."
+  },
+  {
+    "objectID": "preparar-proyecto.html#prepara-la-bibliografía-con-zotero",
+    "href": "preparar-proyecto.html#prepara-la-bibliografía-con-zotero",
+    "title": "Preparar tu proyecto",
+    "section": "5. Prepara la bibliografía con Zotero",
+    "text": "5. Prepara la bibliografía con Zotero\nUsaremos Zotero como registro de fuentes y como primera práctica de consulta mediante una API. Sigue Zotero y tu bibliografía: identifica una colección, revisa una referencia y compara su ficha con una consulta real del asistente. Anota colección, fuente y resultado de la prueba en la definición del proyecto. Si no hay conexión local, conserva la referencia y registra la dificultad para resolverla con acompañamiento."
+  },
+  {
+    "objectID": "preparar-proyecto.html#qué-traer-al-primer-encuentro",
+    "href": "preparar-proyecto.html#qué-traer-al-primer-encuentro",
+    "title": "Preparar tu proyecto",
+    "section": "Qué traer al primer encuentro",
+    "text": "Qué traer al primer encuentro\n\nTu carpeta y los documentos que puedas volver a abrir.\nUna pregunta provisional y un primer resultado pequeño.\nUna entrada de bitácora con la comprobación realizada y el siguiente paso.\nUna referencia revisada en Zotero y el resultado de la prueba de API, o el pendiente concreto.\nUna dificultad o duda sobre el trabajo con el asistente, si apareció.\n\nNo compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.\nSi no lograste configurar una herramienta, trae los documentos y la dificultad que encontraste: eso no impide participar en la apertura. R, Python, control de versiones y dependencias se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.\nContinúa con Empieza aquí y la sesión de apertura. Los acuerdos para documentar y comprobar el trabajo están en Reproducibilidad.\nActividad propuesta por Octavio y desarrollada para discusión del equipo. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "",
+    "text": "Seminario / taller · Modelo de tres capas\n\n\n\nUn espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
+  },
+  {
+    "objectID": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
+    "href": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "",
+    "text": "Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
+  },
+  {
+    "objectID": "index.html#tres-preguntas-para-empezar",
+    "href": "index.html#tres-preguntas-para-empezar",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "Tres preguntas para empezar",
+    "text": "Tres preguntas para empezar\nAntes del primer encuentro: prepara tu proyecto con la plantilla y el asistente agéntico de tu preferencia. La guía incluye una prueba breve para comprobar que puedes retomar el trabajo desde tus archivos.\n\n\nContexto\n¿Qué condiciones permiten interpretar lo que observamos en este ecosistema?\n\n\nDetección\n¿Qué atributos podemos medir y qué limitaciones tienen esas mediciones?\n\n\nCondición latente\n¿Qué podemos inferir sobre la condición, dada la evidencia disponible?"
+  },
+  {
+    "objectID": "index.html#un-recorrido-que-se-construye-con-el-grupo",
+    "href": "index.html#un-recorrido-que-se-construye-con-el-grupo",
+    "title": "Integridad ecosistémica, paso a paso",
+    "section": "Un recorrido que se construye con el grupo",
+    "text": "Un recorrido que se construye con el grupo\nPartimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.\n\nSesiones: encuentros y materiales en orden de incorporación.\nSemillero de ideas: propuestas breves, valoración y exploraciones.\nCatálogo temático: conceptos, guías y prácticas por tema.\nReproducibilidad: cómo documentamos y comprobamos lo que hacemos.\n\n\n\n\n\n\n\nNota\n\n\n\nEsta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado."
+  },
+  {
+    "objectID": "empieza-aqui.html",
+    "href": "empieza-aqui.html",
+    "title": "Empieza aquí",
+    "section": "",
+    "text": "Si estás preparando tu primer encuentro, puedes comenzar por organizar tu proyecto y probar la plantilla. Esta lectura conceptual también se puede seguir sin haber configurado herramientas.\nCuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.\nEn el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la metáfora de la salud ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el diagnóstico, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.\nEl énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones (O’Malley, 2017; Koide, 2023)."
+  },
+  {
+    "objectID": "empieza-aqui.html#más-allá-de-la-apariencia-la-metáfora-de-la-salud",
+    "href": "empieza-aqui.html#más-allá-de-la-apariencia-la-metáfora-de-la-salud",
+    "title": "Empieza aquí",
+    "section": "",
+    "text": "Si estás preparando tu primer encuentro, puedes comenzar por organizar tu proyecto y probar la plantilla. Esta lectura conceptual también se puede seguir sin haber configurado herramientas.\nCuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.\nEn el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la metáfora de la salud ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el diagnóstico, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.\nEl énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones (O’Malley, 2017; Koide, 2023)."
+  },
+  {
+    "objectID": "empieza-aqui.html#pensamiento-sistémico-el-ecosistema-como-un-todo",
+    "href": "empieza-aqui.html#pensamiento-sistémico-el-ecosistema-como-un-todo",
+    "title": "Empieza aquí",
+    "section": "Pensamiento sistémico: el ecosistema como un todo",
+    "text": "Pensamiento sistémico: el ecosistema como un todo\nLa tradición de pensamiento sistémico y dinámica de sistemas asociada con Jay Forrester, John Sterman, Peter Senge y Donella Meadows invita a estudiar las relaciones que producen el comportamiento de un sistema. Interesa reconocer qué se acumula, qué entra y sale, qué efectos tardan en aparecer y qué procesos se retroalimentan.\nPiensa en una pecera casera: para mantenerla viva no basta con alimentar a los peces; también importan el pH, la oxigenación, la temperatura, los desechos y el papel de plantas y descomponedores. Importa lo que se acumula y cuánto tardan en aparecer los efectos: una modificación en la alimentación puede tener consecuencias posteriores sobre la calidad del agua. Una sola variable puede resultar insuficiente o conducirnos a una interpretación equivocada del conjunto.\nLa pecera permite reconocer procesos conectados. Representarlos en un modelo requiere elegir variables, explicitar relaciones y comprobar si esa representación responde a nuestra pregunta."
+  },
+  {
+    "objectID": "empieza-aqui.html#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas",
+    "href": "empieza-aqui.html#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas",
+    "title": "Empieza aquí",
+    "section": "El modelo iie-3t: ordenar el diagnóstico en tres capas",
+    "text": "El modelo iie-3t: ordenar el diagnóstico en tres capas\nPara llevar este pensamiento sistémico a una evaluación estructurada y reproducible, el equipo organiza el problema en tres capas analíticas:\n\n\n\n\n\n\n\n\nCapa\nPapel en el diagnóstico\nAnálogo clínico y sistémico\n\n\n\n\nContextual\nDescribe condiciones fisicoquímicas, climáticas y de relieve.\nAmbiente, edad, antecedentes e historia clínica.\n\n\nDetección\nReúne atributos observados, como cobertura, composición o regeneración, medidos mediante sensores y muestreos.\nSignos vitales, resultados de análisis y biomarcadores.\n\n\nLatente\nRepresenta la condición o integridad que buscamos inferir.\nEl estado de salud integral no observable directamente.\n\n\n\n\n\n\nEsquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.\n\n\nEstructura, composición y función ayudan a describir los atributos del ecosistema dentro de la capa de detección; no son los nombres de las tres capas."
+  },
+  {
+    "objectID": "empieza-aqui.html#del-esquema-a-la-red-bayesiana-modelar-la-conjunta",
+    "href": "empieza-aqui.html#del-esquema-a-la-red-bayesiana-modelar-la-conjunta",
+    "title": "Empieza aquí",
+    "section": "Del esquema a la red bayesiana: modelar la conjunta",
+    "text": "Del esquema a la red bayesiana: modelar la conjunta\n¿Cómo formalizamos este pensamiento sistémico para razonar con datos y bajo incertidumbre?\n\nLa distribución conjunta: Una red bayesiana representa qué combinaciones de valores de las variables incluidas consideramos posibles y con qué probabilidades. Así podemos interpretar varias señales conjuntamente. Su alcance depende de las variables y relaciones que elegimos; no representa automáticamente todo el ecosistema.\nGrafos acíclicos dirigidos (DAG): Los nodos representan variables y los arcos dirigidos organizan las dependencias del modelo. Al seguir las flechas no podemos regresar al nodo de partida: no hay ciclos dirigidos. El grafo expresa supuestos de dependencia e independencia condicional; las probabilidades completan la especificación de la red. Las flechas no demuestran por sí solas relaciones causales.\nInferencia y diagnóstico: Al ingresar observaciones concretas (detección) en un entorno específico (contexto), la red propaga la evidencia probabilística para actualizar la distribución posterior de la condición latente.\n\nActualizar el diagnóstico cambia nuestro conocimiento del ecosistema; no significa que el ecosistema haya cambiado.\n\n\n\n\n\n\nNotaLectura opcional: ¿cómo se expresa la conjunta?\n\n\n\n\n\nEl DAG permite escribir la conjunta como un producto de distribuciones locales:\n\\[P(V_1, V_2, \\dots, V_n) = \\prod_{i=1}^n P(V_i \\mid \\operatorname{padres}(V_i))\\]\nAquí \\(V_1,\\dots,V_n\\) son las variables incluidas; los «padres» de una variable son los nodos con flechas que llegan a ella. Cada factor describe su distribución dados esos padres. Una variable sin padres tiene una distribución sin ese condicionamiento. Usamos \\(V\\) como símbolo genérico para no confundirlo con la capa contextual \\(X\\).\nNo necesitas utilizar esta fórmula para participar en la primera práctica.\n\n\n\n\n\n\n\n\n\nNotaBreve intuición: ¿Qué significa “razonar a la manera bayesiana”?\n\n\n\n\n\nEn el día a día, un médico o un ecólogo no esperan certezas absolutas, sino que actualizan su juicio conforme obtienen nueva información:\n\nAntes de incorporar una observación (a priori): Tenemos una distribución de probabilidades basada en la información ya disponible. Puede incluir resultados de estudios anteriores; «previo» se refiere a la observación que vamos a incorporar.\nAl observar (evidencia): Registramos una señal y comparamos qué tan esperable sería bajo cada condición posible. Por ejemplo, en un contexto determinado, una regeneración abundante podría ser más probable bajo una condición que bajo otra. Esa comparación requiere un modelo, no solo una impresión.\nDespués de incorporarla (a posteriori): Actualizamos las probabilidades de las condiciones consideradas, combinando la información previa con lo que la nueva evidencia aporta según el modelo.\n\nObservar una señal no determina por sí solo la condición. El diagnóstico conserva incertidumbre y depende de los supuestos y de la calidad de la información.\n\n\n\n\n¿Y qué ocurre con los ciclos de retroalimentación?\nQue una red bayesiana sea acíclica no significa que el ecosistema carezca de retroalimentaciones. Podemos representar influencias entre momentos sucesivos: por ejemplo, como hipótesis, la vegetación de hoy puede influir en la humedad del suelo de mañana, y esta en la vegetación posterior. El grafo desplegado en el tiempo sigue sin contener ciclos dirigidos.\nUna red bayesiana dinámica (DBN) hace explícitas esas relaciones temporales. Requiere una distribución inicial y distribuciones de transición que describan cómo puede cambiar el sistema, además de representar cómo lo observamos. Las relaciones y los intervalos de tiempo deben justificarse. Este es un puente hacia preguntas sobre cambio, persistencia o recuperación; lo desarrollaremos cuando las preguntas del grupo lo requieran. Actualizar evidencia en una red de diagnóstico no equivale a modelar una transición temporal.\nLa aciclicidad permite esta factorización dirigida; no garantiza que la inferencia exacta sea sencilla. Según el modelo, se utilizan métodos de cálculo exactos o aproximados."
+  },
+  {
+    "objectID": "empieza-aqui.html#una-primera-práctica",
+    "href": "empieza-aqui.html#una-primera-práctica",
+    "title": "Empieza aquí",
+    "section": "Una primera práctica",
+    "text": "Una primera práctica\nConsulta la sesión de apertura. No requiere programar: reconoceremos las capas, distinguiremos datos de supuestos y construiremos preguntas de diagnóstico."
+  },
+  {
+    "objectID": "empieza-aqui.html#cómo-crecerá-el-recorrido",
+    "href": "empieza-aqui.html#cómo-crecerá-el-recorrido",
+    "title": "Empieza aquí",
+    "section": "Cómo crecerá el recorrido",
+    "text": "Cómo crecerá el recorrido\nIntroduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.\nProcedencia y referencias:\n\nEsquema original del equipo y manuscrito de trabajo Modelo de tres capas para la integridad ecosistémica, secciones 3–5 y 21.\nEquihua Zamora, Miguel; Pérez-Maqueo, Octavio; Equihua Benítez, Ana. Integridad ecosistémica: el tejido de la vida y la salud, Colección Ecosalud. Analogías de la pecera y de la apariencia corporal consultadas en el manuscrito proporcionado por el equipo.\nEguiarte, Luis E. (2025). Reseña del libro en Oikos. Contexto de la obra y su relación con Ecosalud.\nO’Malley, Maureen A. (2017). From endosymbiosis to holobionts: Evaluating a conceptual legacy. Journal of Theoretical Biology, 434, 34–41. Análisis del legado conceptual de Margulis.\nKoide, Roger T. (2023; publicación en línea en 2022). On Holobionts, Holospecies, and Holoniches: the Role of Microbial Symbioses in Ecology and Evolution. Microbial Ecology, 85, 1143–1149. Funciones ecológicas de las asociaciones con microorganismos.\nDonella Meadows Project. Recursos de pensamiento sistémico: acumulaciones, flujos y comportamiento temporal.\nMurphy, Kevin P. (2002). Dynamic Bayesian Networks, introducción y sección 2: representación temporal y distribuciones iniciales, de transición y de observación."
+  },
+  {
+    "objectID": "sesiones.html",
+    "href": "sesiones.html",
+    "title": "Sesiones",
+    "section": "",
+    "text": "Las fechas indican incorporación del material al blog, no acreditan que una sesión se haya realizado. Cada entrada identifica su estado. El siguiente encuentro se preparará con las preguntas y aprendizajes del anterior.\n\n\n\n\n\n\n\n\n\n01 · Observar, contextualizar e inferir\n\n\n\niie-3t\n\nIntroducción\n\nReproducibilidad\n\n\n\nUna primera conversación sobre el modelo iie-3t y el camino hacia las redes bayesianas.\n\n\n\n\n\n8 oct 2026\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "reproducibilidad.html",
+    "href": "reproducibilidad.html",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "",
+    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
+  },
+  {
+    "objectID": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
+    "href": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "",
+    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
+  },
+  {
+    "objectID": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
+    "href": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Lo que acompañará cada ejercicio",
+    "text": "Lo que acompañará cada ejercicio\nPregunta y supuestos; datos con procedencia y condiciones de uso; código y entorno identificables; instrucciones; resultados esperados y tolerancias; evidencia de ejecución; interpretación y limitaciones.\nLa práctica de apertura comienza con una ficha sencilla. La exigencia técnica crecerá con el grupo. Reproducir un cálculo no demuestra que sus supuestos ecológicos sean correctos."
+  },
+  {
+    "objectID": "reproducibilidad.html#nuestra-ética-de-trabajo",
+    "href": "reproducibilidad.html#nuestra-ética-de-trabajo",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Nuestra ética de trabajo",
+    "text": "Nuestra ética de trabajo\nAtribuir las contribuciones, declarar la asistencia de IA, conservar resultados desfavorables, explicar correcciones y proteger información confidencial. Diferenciar exploración de confirmación y evitar que una conclusión deseada determine retrospectivamente los criterios de evaluación."
+  },
+  {
+    "objectID": "reproducibilidad.html#primeras-comprobaciones",
+    "href": "reproducibilidad.html#primeras-comprobaciones",
+    "title": "Ciencia que se puede examinar y reproducir",
+    "section": "Primeras comprobaciones",
+    "text": "Primeras comprobaciones\nConservaremos la bibliografía con Zotero y documentaremos qué parte de cada fuente hemos consultado. La actividad Zotero y tu bibliografía compara una ficha con una consulta API: comprueba recuperación de metadatos, no lectura ni validez de una interpretación.\nLas páginas de Python y R ejecutan un cálculo aritmético conocido. Comprueban la conexión entre código y documento; todavía no son ejercicios de estimación del IIE.\nVersión: 0.1. Las correcciones relevantes de los materiales se registrarán en la entrada afectada, conservando versiones mediante Git. Los materiales conceptuales iniciales requieren revisión docente antes de su uso formal."
   },
   {
     "objectID": "recursos/cambio-climatico.html",
@@ -147,277 +455,11 @@
     "text": "Procedencia y reproducción\nFuente: Equihua y Pérez Maqueo, Lo Básico de Redes Bayesianas, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.\nEn el repositorio, ejecutar desde una sesión nueva: Rscript tests/test-clima.R y Rscript scripts/clima-ejemplo.R. Restaurar primero el entorno con Rscript --vanilla scripts/setup-r.R. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.\nDocumentación técnica: tablas y ajuste, consultas condicionales, intervenciones y DAGitty. Consultadas el 2026-10-08.\n\n\nCódigo\nsessionInfo()\n\n\nR version 4.6.0 (2026-04-24 ucrt)\nPlatform: x86_64-w64-mingw32/x64\nRunning under: Windows 11 x64 (build 26300)\n\nMatrix products: default\n  LAPACK version 3.12.1\n\nlocale:\n[1] C\nsystem code page: 65001\n\ntime zone: America/Mexico_City\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices datasets  utils     methods   base     \n\nloaded via a namespace (and not attached):\n [1] digest_0.6.39   fastmap_1.2.0   xfun_0.61       knitr_1.52     \n [5] parallel_4.6.0  bnlearn_5.2.1   htmltools_0.5.9 rmarkdown_2.32 \n [9] cli_3.6.6       dagitty_0.3-4   renv_1.2.3      compiler_4.6.0 \n[13] boot_1.3-32     tools_4.6.0     curl_8.0.0      evaluate_1.0.5 \n[17] Rcpp_1.1.2      yaml_2.3.12     rlang_1.3.0     jsonlite_2.0.0 \n[21] V8_8.2.0        MASS_7.3-65"
   },
   {
-    "objectID": "reproducibilidad.html",
-    "href": "reproducibilidad.html",
-    "title": "Ciencia que se puede examinar y reproducir",
+    "objectID": "recursos/comprobacion-r.html",
+    "href": "recursos/comprobacion-r.html",
+    "title": "Comprobación del entorno R",
     "section": "",
-    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
-  },
-  {
-    "objectID": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
-    "href": "reproducibilidad.html#un-compromiso-desde-la-primera-sesión",
-    "title": "Ciencia que se puede examinar y reproducir",
-    "section": "",
-    "text": "Registraremos de dónde procede cada dato, qué suponemos y cómo llegamos a un resultado. Al programar, conservaremos código, versiones del entorno y comandos para regenerarlo. En este seminario llamamos reproducción computacional a obtener resultados concordantes con los mismos datos y procedimientos; replicación, al contraste con datos o estudios independientes."
-  },
-  {
-    "objectID": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
-    "href": "reproducibilidad.html#lo-que-acompañará-cada-ejercicio",
-    "title": "Ciencia que se puede examinar y reproducir",
-    "section": "Lo que acompañará cada ejercicio",
-    "text": "Lo que acompañará cada ejercicio\nPregunta y supuestos; datos con procedencia y condiciones de uso; código y entorno identificables; instrucciones; resultados esperados y tolerancias; evidencia de ejecución; interpretación y limitaciones.\nLa práctica de apertura comienza con una ficha sencilla. La exigencia técnica crecerá con el grupo. Reproducir un cálculo no demuestra que sus supuestos ecológicos sean correctos."
-  },
-  {
-    "objectID": "reproducibilidad.html#nuestra-ética-de-trabajo",
-    "href": "reproducibilidad.html#nuestra-ética-de-trabajo",
-    "title": "Ciencia que se puede examinar y reproducir",
-    "section": "Nuestra ética de trabajo",
-    "text": "Nuestra ética de trabajo\nAtribuir las contribuciones, declarar la asistencia de IA, conservar resultados desfavorables, explicar correcciones y proteger información confidencial. Diferenciar exploración de confirmación y evitar que una conclusión deseada determine retrospectivamente los criterios de evaluación."
-  },
-  {
-    "objectID": "reproducibilidad.html#primeras-comprobaciones",
-    "href": "reproducibilidad.html#primeras-comprobaciones",
-    "title": "Ciencia que se puede examinar y reproducir",
-    "section": "Primeras comprobaciones",
-    "text": "Primeras comprobaciones\nLas páginas de Python y R ejecutan un cálculo aritmético conocido. Comprueban la conexión entre código y documento; todavía no son ejercicios de estimación del IIE.\nVersión: 0.1. Las correcciones relevantes de los materiales se registrarán en la entrada afectada, conservando versiones mediante Git. Los materiales conceptuales iniciales requieren revisión docente antes de su uso formal."
-  },
-  {
-    "objectID": "sesiones.html",
-    "href": "sesiones.html",
-    "title": "Sesiones",
-    "section": "",
-    "text": "Las fechas indican incorporación del material al blog, no acreditan que una sesión se haya realizado. Cada entrada identifica su estado. El siguiente encuentro se preparará con las preguntas y aprendizajes del anterior.\n\n\n\n\n\n\n\n\n\n01 · Observar, contextualizar e inferir\n\n\n\niie-3t\n\nIntroducción\n\nReproducibilidad\n\n\n\nUna primera conversación sobre el modelo iie-3t y el camino hacia las redes bayesianas.\n\n\n\n\n\n8 oct 2026\n\n\n\n\n\nNo hay resultados"
-  },
-  {
-    "objectID": "empieza-aqui.html",
-    "href": "empieza-aqui.html",
-    "title": "Empieza aquí",
-    "section": "",
-    "text": "Si estás preparando tu primer encuentro, puedes comenzar por organizar tu proyecto y probar la plantilla. Esta lectura conceptual también se puede seguir sin haber configurado herramientas.\nCuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.\nEn el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la metáfora de la salud ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el diagnóstico, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.\nEl énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones (O’Malley, 2017; Koide, 2023)."
-  },
-  {
-    "objectID": "empieza-aqui.html#más-allá-de-la-apariencia-la-metáfora-de-la-salud",
-    "href": "empieza-aqui.html#más-allá-de-la-apariencia-la-metáfora-de-la-salud",
-    "title": "Empieza aquí",
-    "section": "",
-    "text": "Si estás preparando tu primer encuentro, puedes comenzar por organizar tu proyecto y probar la plantilla. Esta lectura conceptual también se puede seguir sin haber configurado herramientas.\nCuando evaluamos la salud de una persona, sabemos que la apariencia externa puede ser engañosa. Imaginemos dos personas de aspecto musculoso: esa apariencia no basta para conocer cómo funciona su organismo. Necesitamos otras señales y pruebas para elaborar un diagnóstico. Con los ecosistemas pasa algo parecido: un campo de golf puede parecer saludable por su verdor, aunque esa apariencia no permite conocer cuánto conserva de la composición y los procesos del ecosistema que reemplazó.\nEn el enfoque de Equihua Zamora, Pérez-Maqueo y Equihua Benítez, la metáfora de la salud ayuda a organizar preguntas sobre la integridad ecosistémica: qué observamos, qué condición inferimos y con qué incertidumbre. La analogía orienta el diagnóstico, sin convertir al ecosistema en un organismo literal ni suponer un estado saludable universal. Necesitamos interpretar las señales según el contexto y justificar la referencia ecológica de la evaluación.\nEl énfasis de Margulis en la simbiosis invita a considerar a los organismos junto con sus asociaciones con otros seres vivos. Las relaciones con microorganismos pueden contribuir a su nutrición y a su capacidad de vivir en determinados ambientes. Esta perspectiva ayuda a formular preguntas sobre funciones que dependen de relaciones (O’Malley, 2017; Koide, 2023)."
-  },
-  {
-    "objectID": "empieza-aqui.html#pensamiento-sistémico-el-ecosistema-como-un-todo",
-    "href": "empieza-aqui.html#pensamiento-sistémico-el-ecosistema-como-un-todo",
-    "title": "Empieza aquí",
-    "section": "Pensamiento sistémico: el ecosistema como un todo",
-    "text": "Pensamiento sistémico: el ecosistema como un todo\nLa tradición de pensamiento sistémico y dinámica de sistemas asociada con Jay Forrester, John Sterman, Peter Senge y Donella Meadows invita a estudiar las relaciones que producen el comportamiento de un sistema. Interesa reconocer qué se acumula, qué entra y sale, qué efectos tardan en aparecer y qué procesos se retroalimentan.\nPiensa en una pecera casera: para mantenerla viva no basta con alimentar a los peces; también importan el pH, la oxigenación, la temperatura, los desechos y el papel de plantas y descomponedores. Importa lo que se acumula y cuánto tardan en aparecer los efectos: una modificación en la alimentación puede tener consecuencias posteriores sobre la calidad del agua. Una sola variable puede resultar insuficiente o conducirnos a una interpretación equivocada del conjunto.\nLa pecera permite reconocer procesos conectados. Representarlos en un modelo requiere elegir variables, explicitar relaciones y comprobar si esa representación responde a nuestra pregunta."
-  },
-  {
-    "objectID": "empieza-aqui.html#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas",
-    "href": "empieza-aqui.html#el-modelo-iie-3t-ordenar-el-diagnóstico-en-tres-capas",
-    "title": "Empieza aquí",
-    "section": "El modelo iie-3t: ordenar el diagnóstico en tres capas",
-    "text": "El modelo iie-3t: ordenar el diagnóstico en tres capas\nPara llevar este pensamiento sistémico a una evaluación estructurada y reproducible, el equipo organiza el problema en tres capas analíticas:\n\n\n\n\n\n\n\n\nCapa\nPapel en el diagnóstico\nAnálogo clínico y sistémico\n\n\n\n\nContextual\nDescribe condiciones fisicoquímicas, climáticas y de relieve.\nAmbiente, edad, antecedentes e historia clínica.\n\n\nDetección\nReúne atributos observados, como cobertura, composición o regeneración, medidos mediante sensores y muestreos.\nSignos vitales, resultados de análisis y biomarcadores.\n\n\nLatente\nRepresenta la condición o integridad que buscamos inferir.\nEl estado de salud integral no observable directamente.\n\n\n\n\n\n\nEsquema del equipo: contexto fisicoquímico, atributos detectables y condición ecosistémica latente.\n\n\nEstructura, composición y función ayudan a describir los atributos del ecosistema dentro de la capa de detección; no son los nombres de las tres capas."
-  },
-  {
-    "objectID": "empieza-aqui.html#del-esquema-a-la-red-bayesiana-modelar-la-conjunta",
-    "href": "empieza-aqui.html#del-esquema-a-la-red-bayesiana-modelar-la-conjunta",
-    "title": "Empieza aquí",
-    "section": "Del esquema a la red bayesiana: modelar la conjunta",
-    "text": "Del esquema a la red bayesiana: modelar la conjunta\n¿Cómo formalizamos este pensamiento sistémico para razonar con datos y bajo incertidumbre?\n\nLa distribución conjunta: Una red bayesiana representa qué combinaciones de valores de las variables incluidas consideramos posibles y con qué probabilidades. Así podemos interpretar varias señales conjuntamente. Su alcance depende de las variables y relaciones que elegimos; no representa automáticamente todo el ecosistema.\nGrafos acíclicos dirigidos (DAG): Los nodos representan variables y los arcos dirigidos organizan las dependencias del modelo. Al seguir las flechas no podemos regresar al nodo de partida: no hay ciclos dirigidos. El grafo expresa supuestos de dependencia e independencia condicional; las probabilidades completan la especificación de la red. Las flechas no demuestran por sí solas relaciones causales.\nInferencia y diagnóstico: Al ingresar observaciones concretas (detección) en un entorno específico (contexto), la red propaga la evidencia probabilística para actualizar la distribución posterior de la condición latente.\n\nActualizar el diagnóstico cambia nuestro conocimiento del ecosistema; no significa que el ecosistema haya cambiado.\n\n\n\n\n\n\nNotaLectura opcional: ¿cómo se expresa la conjunta?\n\n\n\n\n\nEl DAG permite escribir la conjunta como un producto de distribuciones locales:\n\\[P(V_1, V_2, \\dots, V_n) = \\prod_{i=1}^n P(V_i \\mid \\operatorname{padres}(V_i))\\]\nAquí \\(V_1,\\dots,V_n\\) son las variables incluidas; los «padres» de una variable son los nodos con flechas que llegan a ella. Cada factor describe su distribución dados esos padres. Una variable sin padres tiene una distribución sin ese condicionamiento. Usamos \\(V\\) como símbolo genérico para no confundirlo con la capa contextual \\(X\\).\nNo necesitas utilizar esta fórmula para participar en la primera práctica.\n\n\n\n\n\n\n\n\n\nNotaBreve intuición: ¿Qué significa “razonar a la manera bayesiana”?\n\n\n\n\n\nEn el día a día, un médico o un ecólogo no esperan certezas absolutas, sino que actualizan su juicio conforme obtienen nueva información:\n\nAntes de incorporar una observación (a priori): Tenemos una distribución de probabilidades basada en la información ya disponible. Puede incluir resultados de estudios anteriores; «previo» se refiere a la observación que vamos a incorporar.\nAl observar (evidencia): Registramos una señal y comparamos qué tan esperable sería bajo cada condición posible. Por ejemplo, en un contexto determinado, una regeneración abundante podría ser más probable bajo una condición que bajo otra. Esa comparación requiere un modelo, no solo una impresión.\nDespués de incorporarla (a posteriori): Actualizamos las probabilidades de las condiciones consideradas, combinando la información previa con lo que la nueva evidencia aporta según el modelo.\n\nObservar una señal no determina por sí solo la condición. El diagnóstico conserva incertidumbre y depende de los supuestos y de la calidad de la información.\n\n\n\n\n¿Y qué ocurre con los ciclos de retroalimentación?\nQue una red bayesiana sea acíclica no significa que el ecosistema carezca de retroalimentaciones. Podemos representar influencias entre momentos sucesivos: por ejemplo, como hipótesis, la vegetación de hoy puede influir en la humedad del suelo de mañana, y esta en la vegetación posterior. El grafo desplegado en el tiempo sigue sin contener ciclos dirigidos.\nUna red bayesiana dinámica (DBN) hace explícitas esas relaciones temporales. Requiere una distribución inicial y distribuciones de transición que describan cómo puede cambiar el sistema, además de representar cómo lo observamos. Las relaciones y los intervalos de tiempo deben justificarse. Este es un puente hacia preguntas sobre cambio, persistencia o recuperación; lo desarrollaremos cuando las preguntas del grupo lo requieran. Actualizar evidencia en una red de diagnóstico no equivale a modelar una transición temporal.\nLa aciclicidad permite esta factorización dirigida; no garantiza que la inferencia exacta sea sencilla. Según el modelo, se utilizan métodos de cálculo exactos o aproximados."
-  },
-  {
-    "objectID": "empieza-aqui.html#una-primera-práctica",
-    "href": "empieza-aqui.html#una-primera-práctica",
-    "title": "Empieza aquí",
-    "section": "Una primera práctica",
-    "text": "Una primera práctica\nConsulta la sesión de apertura. No requiere programar: reconoceremos las capas, distinguiremos datos de supuestos y construiremos preguntas de diagnóstico."
-  },
-  {
-    "objectID": "empieza-aqui.html#cómo-crecerá-el-recorrido",
-    "href": "empieza-aqui.html#cómo-crecerá-el-recorrido",
-    "title": "Empieza aquí",
-    "section": "Cómo crecerá el recorrido",
-    "text": "Cómo crecerá el recorrido\nIntroduciremos probabilidades condicionales, inferencia y entrenamiento cuando las preguntas del grupo lo requieran. Más adelante abordaremos el IIE escalar operativo, TAN y sus alternativas. Las ampliaciones multidimensionales requieren evidencia suficiente para identificar cada dimensión.\nProcedencia y referencias:\n\nEsquema original del equipo y manuscrito de trabajo Modelo de tres capas para la integridad ecosistémica, secciones 3–5 y 21.\nEquihua Zamora, Miguel; Pérez-Maqueo, Octavio; Equihua Benítez, Ana. Integridad ecosistémica: el tejido de la vida y la salud, Colección Ecosalud. Analogías de la pecera y de la apariencia corporal consultadas en el manuscrito proporcionado por el equipo.\nEguiarte, Luis E. (2025). Reseña del libro en Oikos. Contexto de la obra y su relación con Ecosalud.\nO’Malley, Maureen A. (2017). From endosymbiosis to holobionts: Evaluating a conceptual legacy. Journal of Theoretical Biology, 434, 34–41. Análisis del legado conceptual de Margulis.\nKoide, Roger T. (2023; publicación en línea en 2022). On Holobionts, Holospecies, and Holoniches: the Role of Microbial Symbioses in Ecology and Evolution. Microbial Ecology, 85, 1143–1149. Funciones ecológicas de las asociaciones con microorganismos.\nDonella Meadows Project. Recursos de pensamiento sistémico: acumulaciones, flujos y comportamiento temporal.\nMurphy, Kevin P. (2002). Dynamic Bayesian Networks, introducción y sección 2: representación temporal y distribuciones iniciales, de transición y de observación."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Integridad ecosistémica, paso a paso",
-    "section": "",
-    "text": "Seminario / taller · Modelo de tres capas\n\n\n\nUn espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
-  },
-  {
-    "objectID": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
-    "href": "index.html#de-las-señales-del-ecosistema-a-un-diagnóstico-que-reconoce-las-incertidumbres",
-    "title": "Integridad ecosistémica, paso a paso",
-    "section": "",
-    "text": "Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprender a sostener cada resultado con datos, supuestos y procedimientos reproducibles.\nComenzar el recorrido"
-  },
-  {
-    "objectID": "index.html#tres-preguntas-para-empezar",
-    "href": "index.html#tres-preguntas-para-empezar",
-    "title": "Integridad ecosistémica, paso a paso",
-    "section": "Tres preguntas para empezar",
-    "text": "Tres preguntas para empezar\nAntes del primer encuentro: prepara tu proyecto con la plantilla y el asistente agéntico de tu preferencia. La guía incluye una prueba breve para comprobar que puedes retomar el trabajo desde tus archivos.\n\n\nContexto\n¿Qué condiciones permiten interpretar lo que observamos en este ecosistema?\n\n\nDetección\n¿Qué atributos podemos medir y qué limitaciones tienen esas mediciones?\n\n\nCondición latente\n¿Qué podemos inferir sobre la condición, dada la evidencia disponible?"
-  },
-  {
-    "objectID": "index.html#un-recorrido-que-se-construye-con-el-grupo",
-    "href": "index.html#un-recorrido-que-se-construye-con-el-grupo",
-    "title": "Integridad ecosistémica, paso a paso",
-    "section": "Un recorrido que se construye con el grupo",
-    "text": "Un recorrido que se construye con el grupo\nPartimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.\n\nSesiones: encuentros y materiales en orden de incorporación.\nSemillero de ideas: propuestas breves, valoración y exploraciones.\nCatálogo temático: conceptos, guías y prácticas por tema.\nReproducibilidad: cómo documentamos y comprobamos lo que hacemos.\n\n\n\n\n\n\n\nNota\n\n\n\nEsta es la edición inicial del espacio de trabajo. La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado."
-  },
-  {
-    "objectID": "preparar-proyecto.html",
-    "href": "preparar-proyecto.html",
-    "title": "Preparar tu proyecto",
-    "section": "",
-    "text": "Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar la base agéntica de tu preferencia: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.\nObjetivo: poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar. Reserva unos 20–30 minutos, como orientación. Esta preparación puede hacerse con acompañamiento si todavía no has elegido una herramienta."
-  },
-  {
-    "objectID": "preparar-proyecto.html#crea-una-carpeta-propia-y-copia-la-plantilla",
-    "href": "preparar-proyecto.html#crea-una-carpeta-propia-y-copia-la-plantilla",
-    "title": "Preparar tu proyecto",
-    "section": "1. Crea una carpeta propia y copia la plantilla",
-    "text": "1. Crea una carpeta propia y copia la plantilla\nElige un nombre reconocible, por ejemplo mi-proyecto-iie3t, y una ubicación que puedas volver a encontrar. Allí reunirás el trabajo del seminario.\nAbre la plantilla para participantes del seminario y copia sus tres archivos a esa carpeta, conservando sus nombres. Puedes abrir cada archivo en el repositorio y copiar su contenido a un archivo de texto local con el mismo nombre. Si ya tienes una copia del repositorio del seminario, basta con copiar el contenido de su carpeta plantilla-participantes. También puedes solicitar los archivos a la coordinación.\n\n\n\n\n\n\n\nDocumento\nPara qué sirve ahora\n\n\n\n\nGuía de inicio (README.md)\nExplica la organización y lo que todavía falta preparar.\n\n\nDefinición del proyecto (PROYECTO.md)\nConserva tu pregunta, alcance y primer resultado esperado.\n\n\nBitácora de trabajo\nRegistra lo que hiciste, cómo lo comprobaste y qué quedó pendiente.\n\n\n\nLa plantilla es documental: todavía no contiene un modelo ejecutable. En esta actividad solo necesitas estos archivos; las carpetas para datos, código y resultados se crearán cuando hagan falta."
-  },
-  {
-    "objectID": "preparar-proyecto.html#vincula-el-asistente-con-ese-espacio",
-    "href": "preparar-proyecto.html#vincula-el-asistente-con-ese-espacio",
-    "title": "Preparar tu proyecto",
-    "section": "2. Vincula el asistente con ese espacio",
-    "text": "2. Vincula el asistente con ese espacio\nAbre o selecciona la carpeta como proyecto en tu herramienta, si dispone de esa función. Comprueba qué archivos puede leer y modificar. Si trabajas con un asistente que solo recibe documentos adjuntos, comparte los tres archivos y guarda tú las versiones acordadas en la carpeta.\nPídele que lea los documentos y explique qué encontró antes de proponer cambios. No presupongas que recuerda otra conversación o que lee automáticamente todos los archivos. Si tu plataforma admite instrucciones de proyecto, coloca allí los acuerdos de trabajo; conserva también una copia legible en tu carpeta."
-  },
-  {
-    "objectID": "preparar-proyecto.html#haz-un-primer-encargo-pequeño",
-    "href": "preparar-proyecto.html#haz-un-primer-encargo-pequeño",
-    "title": "Preparar tu proyecto",
-    "section": "3. Haz un primer encargo pequeño",
-    "text": "3. Haz un primer encargo pequeño\nCopia este mensaje y adapta lo que aparece entre corchetes:\nEstoy preparando mi espacio de trabajo para el seminario IIE-3T.\nMi carpeta o proyecto es [nombre]. Lee los tres documentos de la plantilla\nque he puesto a tu disposición y dime cuáles pudiste consultar.\n\nAyúdame a completar solo el nombre, la pregunta inicial, el alcance\ny un primer resultado pequeño en la definición del proyecto.\nMi interés inicial es [tema, ecosistema o pregunta; puede ser provisional].\nDeja por completar lo que todavía no hemos decidido. No inventes datos,\nfuentes ni resultados. Distingue mis decisiones de tus propuestas.\nTrabaja únicamente con este proyecto y conserva los datos originales.\nAntes de instalar programas, publicar o enviar archivos, explícame\npara qué hace falta y espera mi autorización.\n\nRegistra en la bitácora lo que acordamos, lo que realmente comprobamos\ny el siguiente paso. Si no puedes escribir archivos, entrégame el texto\ny aclara que debo guardarlo yo.\nRevisa el resultado antes de aceptarlo. Una pregunta suficiente para comenzar podría ser: «¿Qué observaciones necesitaría para comparar dos sitios del mismo tipo de bosque?». El primer resultado podría ser una lista breve de observaciones posibles y dudas sobre su interpretación. No necesitas definir aún una red, calcular el IIE ni completar las secciones técnicas de la plantilla."
-  },
-  {
-    "objectID": "preparar-proyecto.html#comprueba-que-puedes-retomar-el-trabajo",
-    "href": "preparar-proyecto.html#comprueba-que-puedes-retomar-el-trabajo",
-    "title": "Preparar tu proyecto",
-    "section": "4. Comprueba que puedes retomar el trabajo",
-    "text": "4. Comprueba que puedes retomar el trabajo\nGuarda los documentos y abre una conversación nueva con acceso a esos archivos. Pide al asistente:\n\nLee los documentos del proyecto. ¿Cuál es mi pregunta, qué sigue pendiente y cuál es el siguiente paso acordado? Señala en qué documento encontraste cada respuesta.\n\nContrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario."
-  },
-  {
-    "objectID": "preparar-proyecto.html#qué-traer-al-primer-encuentro",
-    "href": "preparar-proyecto.html#qué-traer-al-primer-encuentro",
-    "title": "Preparar tu proyecto",
-    "section": "Qué traer al primer encuentro",
-    "text": "Qué traer al primer encuentro\n\nTu carpeta y los documentos que puedas volver a abrir.\nUna pregunta provisional y un primer resultado pequeño.\nUna entrada de bitácora con la comprobación realizada y el siguiente paso.\nUna dificultad o duda sobre el trabajo con el asistente, si apareció.\n\nNo compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.\nSi no lograste configurar una herramienta, trae los documentos y la dificultad que encontraste: eso no impide participar en la apertura. R, Python, control de versiones y dependencias se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.\nContinúa con Empieza aquí y la sesión de apertura. Los acuerdos para documentar y comprobar el trabajo están en Reproducibilidad.\nActividad propuesta por Octavio y desarrollada para discusión del equipo. Versión de trabajo: 9 de octubre de 2026; pendiente de prueba con participantes."
-  },
-  {
-    "objectID": "temas.html",
-    "href": "temas.html",
-    "title": "Catálogo temático",
-    "section": "",
-    "text": "Actividad previa: Preparar tu proyecto, un espacio propio para trabajar con un asistente y conservar decisiones y resultados.\n\nIntroducción accesible.\nSesión 01: observar, contextualizar e inferir."
-  },
-  {
-    "objectID": "temas.html#modelo-de-tres-capas",
-    "href": "temas.html#modelo-de-tres-capas",
-    "title": "Catálogo temático",
-    "section": "",
-    "text": "Actividad previa: Preparar tu proyecto, un espacio propio para trabajar con un asistente y conservar decisiones y resultados.\n\nIntroducción accesible.\nSesión 01: observar, contextualizar e inferir."
-  },
-  {
-    "objectID": "temas.html#redes-bayesianas",
-    "href": "temas.html#redes-bayesianas",
-    "title": "Catálogo temático",
-    "section": "Redes bayesianas",
-    "text": "Redes bayesianas\nEl primer puente conceptual está en Del esquema a la red bayesiana. Probabilidades condicionales, separación-d y entrenamiento se incorporarán conforme avance el grupo.\n\nCambio climático en R: grafo, tablas, separación-d e intervención. Ejemplo sintético recuperado y revisado, disponible para el momento adecuado del seminario."
-  },
-  {
-    "objectID": "temas.html#reproducibilidad-y-trabajo-científico",
-    "href": "temas.html#reproducibilidad-y-trabajo-científico",
-    "title": "Catálogo temático",
-    "section": "Reproducibilidad y trabajo científico",
-    "text": "Reproducibilidad y trabajo científico\n\nPrincipios y compromisos.\nComprobación del entorno Python.\nComprobación del entorno R."
-  },
-  {
-    "objectID": "temas.html#datos-y-guías",
-    "href": "temas.html#datos-y-guías",
-    "title": "Catálogo temático",
-    "section": "Datos y guías",
-    "text": "Datos y guías\n\nFicha de observación descargable: plantilla vacía; no contiene datos de campo.\nGuía de la primera práctica."
-  },
-  {
-    "objectID": "temas.html#ampliaciones-por-explorar",
-    "href": "temas.html#ampliaciones-por-explorar",
-    "title": "Catálogo temático",
-    "section": "Ampliaciones por explorar",
-    "text": "Ampliaciones por explorar\nIIE escalar y TAN; anclaje experto; incertidumbre y multimodalidad; validación independiente; condición multidimensional y dinámica. Son posibilidades para acordar, no un temario obligatorio."
-  },
-  {
-    "objectID": "temas.html#ideas-del-grupo",
-    "href": "temas.html#ideas-del-grupo",
-    "title": "Catálogo temático",
-    "section": "Ideas del grupo",
-    "text": "Ideas del grupo\nSemillero: cuatro fichas iniciales y una plantilla breve. Exploraciones: desarrollo de preguntas, aportaciones y actividades cuando superen una página."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html",
-    "href": "posts/01-tres-capas/index.html",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "",
-    "text": "Estado: propuesta de apertura, pendiente de revisión docente. Realización: por acordar. Versión del material: 0.1."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#pregunta-central",
-    "href": "posts/01-tres-capas/index.html#pregunta-central",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Pregunta central",
-    "text": "Pregunta central\n¿Cómo inferir la condición de un ecosistema a partir de señales que dependen de su contexto?"
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
-    "href": "posts/01-tres-capas/index.html#al-terminar-esta-primera-aproximación",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Al terminar esta primera aproximación",
-    "text": "Al terminar esta primera aproximación\n\nDistinguir las tres capas y explicar su función con un ejemplo.\nSeparar una medición de una interpretación y de un supuesto.\nProponer relaciones entre variables y reconocer por qué hace falta representar incertidumbre."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#materiales",
-    "href": "posts/01-tres-capas/index.html#materiales",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Materiales",
-    "text": "Materiales\n\nActividad previa: preparar tu proyecto, con la plantilla y el asistente de tu preferencia.\nIntroducción y esquema del equipo.\nFicha de observación, vacía y editable.\nPrincipios de reproducibilidad."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#práctica",
-    "href": "posts/01-tres-capas/index.html#práctica",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Práctica",
-    "text": "Práctica\n\nElegir un ecosistema conocido por el grupo. Describirlo sin asignarle todavía una puntuación de integridad.\nProponer dos variables de contexto y dos atributos medibles. Registrar unidad, método y fuente o indicar que se trata de una propuesta sin datos.\nExplicar qué se querría inferir sobre su condición y qué evidencia falta.\nDibujar relaciones justificadas entre esas variables. Distinguir las señales que se observan de la condición que se busca inferir.\nImaginar una nueva observación: ¿cambiaría el diagnóstico?, ¿por qué? Conservar la primera versión y documentar el cambio.\n\nNo se requieren valores inventados ni código para esta actividad. Si el grupo utiliza un ejemplo hipotético, debe identificarlo como tal."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
-    "href": "posts/01-tres-capas/index.html#evidencia-de-aprendizaje",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Evidencia de aprendizaje",
-    "text": "Evidencia de aprendizaje\nUn diagrama anotado y una ficha con variables, procedencia y supuestos. Cada equipo explicará una incertidumbre que el dibujo todavía no resuelve."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
-    "href": "posts/01-tres-capas/index.html#para-decidir-la-siguiente-sesión",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Para decidir la siguiente sesión",
-    "text": "Para decidir la siguiente sesión\nRecoger tres preguntas del grupo, un concepto que necesite aclaración y una valoración agregada de preparación para el trabajo computacional. Esto orientará la introducción de nodos, arcos y probabilidades condicionales."
-  },
-  {
-    "objectID": "posts/01-tres-capas/index.html#procedencia-y-cambios",
-    "href": "posts/01-tres-capas/index.html#procedencia-y-cambios",
-    "title": "01 · Observar, contextualizar e inferir",
-    "section": "Procedencia y cambios",
-    "text": "Procedencia y cambios\nVersión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del manuscrito iie-teoria. Preparada con asistencia de IA; aún no aplicada a participantes. La fecha de esta entrada registra su preparación."
-  },
-  {
-    "objectID": "recursos/comprobacion-python.html",
-    "href": "recursos/comprobacion-python.html",
-    "title": "Comprobación del entorno Python",
-    "section": "",
-    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nimport sys\nprobabilidades = [0.2, 0.3, 0.5]\nassert abs(sum(probabilidades) - 1.0) &lt; 1e-12\nresultado = sum(p * x for p, x in zip(probabilidades, [0, 1, 2]))\nassert abs(resultado - 1.3) &lt; 1e-12\nprint(f\"Python {sys.version.split()[0]} · resultado: {resultado:.1f}\")\n\nPython 3.12.14 · resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+    "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 &lt;U+00B7&gt; resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
   },
   {
     "objectID": "semillero/I001-socioecosistema.html",

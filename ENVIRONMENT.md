@@ -32,6 +32,8 @@ Referencia: [RStudio Projects](https://docs.posit.co/ide/user/ide/guide/code/pro
 
 ## Línea base
 
+La preparación bibliográfica se documenta en [bibliografia/README.md](bibliografia/README.md). El cliente `scripts/zotero_bibliografia.py` usa solo la biblioteca estándar de Python, sin nuevas dependencias. La API debe responder desde el equipo donde se ejecuta; no forma parte del render del blog ni de sus pruebas automatizadas. El sitio sigue siendo construible con Zotero cerrado. Usar `estado` para diagnosticar y `grupos` para identificar bibliotecas compartidas sincronizadas antes de consultar con `--grupo ID`.
+
 Configuración inicial: Windows, Python **3.12.14**, R **4.6.0**, Quarto **1.10.18**. Python usa `.venv/`; R usa una biblioteca privada de proyecto administrada por `renv`. `renv` aísla paquetes y registra la versión de R, pero no instala ni virtualiza el intérprete R. Los ejecutables de R y Quarto deben estar instalados previamente.
 
 Se versionan `requirements.lock.txt`, `renv.lock`, `.Rprofile`, `renv/activate.R` y `renv/settings.json`. Las bibliotecas y los ejecutables locales quedan fuera de Git. La línea base Python contiene dependencias de Windows; no se declara probada en otros sistemas.

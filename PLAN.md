@@ -94,3 +94,27 @@ Entrada `blog/preparar-proyecto.qmd`, propuesta original de Octavio: copiar la p
 ## Integración autorizada — P-ME-013
 
 Miguel autoriza por esta ocasión integrar a main y publicar tras comprobar actividad remota. La consulta de ramas, pull requests y eventos de GitHub, junto con fetch y autores de commits remotos, no muestra contribuciones publicadas de Octavio; aparece su incorporación como colaborador Maqueo. Esto no permite inferir ausencia de trabajo local. Se prepara la integración de la propuesta v5 y la actividad previa, con sus fuentes y blog renderizado; el PPTX permanece local según la política del repositorio. Continúan pendientes la discusión con Octavio y la prueba de la actividad con participantes.
+
+## Preparación bibliográfica con Zotero — P-ME-014 y P-ME-015
+
+Directiva incorporada, guía pública y plantilla actualizadas. Decisión: biblioteca de grupo compartida con Octavio; nombre propuesto Seminario IIE-3T. Cliente de lectura preparado para conexión, grupos, colecciones, búsqueda acotada y exportación seleccionada. API local habilitada y comprobada; no se exporta la biblioteca personal al repositorio. Pendientes: creación web del grupo tras inicio de sesión, identificación de cuenta de Octavio y encargo para invitarlo, sincronización, selección y exportación inicial. Trabajo en miguel/zotero-preparacion, sin integración a main ni publicación en este encargo.
+
+Actualización P-ME-015: grupo privado creado y sincronizado, ID 6712171; colección Seminario JGFMANF9. Propietario y único miembro actual: Miguel. Creación y conexión compartida comprobadas; permanecen pendientes incorporación de Octavio y bibliografía inicial. Guía operativa actualizada con comandos reales del grupo.
+
+Actualización P-ME-016 (2026-10-09): Miguel ya envió la invitación al correo de Octavio. Se da por resuelto el envío según su comunicación; queda confirmar aceptación y acceso al grupo. No hace falta repetir la invitación ni solicitar su cuenta para volver a enviarla.
+
+Actualización P-ME-018 (2026-10-09): credencial genérica de Windows recuperada y API web comprobada mediante cuatro GET (HTTP 200), incluido grupo 6712171 y colección JGFMANF9 vacía. Pendiente corregir alcance: la clave actualmente permite biblioteca personal y todos los grupos, con escritura, y su permiso individual adicional corresponde a otro ID. No se modificaron permisos ni se integró todavía autenticación web al cliente de lectura local.
+
+Actualización P-ME-019 (2026-10-09): alcance corregido y comprobado: la clave solo autoriza el grupo 6712171, con lectura y escritura. La biblioteca contiene la primera referencia (2YDDZ2NC), aún sin asignación a la colección Seminario, que permanece vacía. Cinco GET correctos; sin escrituras remotas. Queda superado el pendiente anterior de restringir el acceso a otras bibliotecas.
+
+## Rol bibliotecario — P-ME-021
+
+Definido en AGENTS y disponible en la guía de la plantilla con explicación y ejemplo de uso. Incluye identificación de biblioteca/colección, cotejo de metadatos, duplicados, citas y exportaciones, verificación posterior y coordinación con revisor/didacta. La plantilla sigue siendo copiable en tres archivos y no requiere otro agente. Cambio documental en miguel/zotero-preparacion, sin commit ni push.
+
+Actualización P-ME-022 (2026-10-10): referencias de Empieza aquí incorporadas y verificadas en Zotero, colección Seminario: siete registros nuevos y libro existente reutilizado, ocho en total. Primera escritura web comprobada. Dos registros internos tienen datos pendientes de autoría/fecha/título formal. La exportación BibTeX y la migración de citas siguen pendientes; el cliente Python versionable continúa siendo de lectura local.
+
+## Entrega de preparación bibliográfica — P-ME-023
+
+Se prepara commit y push de miguel/zotero-preparacion: directivas de Zotero y bibliotecario, guía de preparación, plantilla, cliente de lectura local, pruebas, blog renderizado y registros de la biblioteca compartida. Consulta de GitHub y fetch el 2026-10-10: sin ramas, commits ni solicitudes de integración abiertas de Octavio; solo consta su incorporación como colaborador. La comprobación no cubre trabajo local sin publicar. Esta entrega conserva main sin cambios; la autorización excepcional anterior de integración correspondió a P-ME-013.
+
+Actualización P-ME-024 (2026-10-10): commit b696750 publicado y PR #1 abierto desde miguel/zotero-preparacion hacia main: https://github.com/equihuam/Seminario-IIE-3T/pull/1. Pendiente revisión e integración; main permanece sin cambios.

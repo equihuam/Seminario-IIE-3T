@@ -18,6 +18,8 @@ Atribuir las contribuciones, declarar la asistencia de IA, conservar resultados 
 
 ## Primeras comprobaciones
 
+Conservaremos la bibliografía con Zotero y documentaremos qué parte de cada fuente hemos consultado. La actividad [Zotero y tu bibliografía](recursos/zotero.qmd) compara una ficha con una consulta API: comprueba recuperación de metadatos, no lectura ni validez de una interpretación.
+
 Las páginas de [Python](recursos/comprobacion-python.qmd) y [R](recursos/comprobacion-r.qmd) ejecutan un cálculo aritmético conocido. Comprueban la conexión entre código y documento; todavía no son ejercicios de estimación del IIE.
 
 **Versión:** 0.1. Las correcciones relevantes de los materiales se registrarán en la entrada afectada, conservando versiones mediante Git. Los materiales conceptuales iniciales requieren revisión docente antes de su uso formal.

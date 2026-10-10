@@ -5,7 +5,7 @@ description: "Actividad previa: un espacio de trabajo propio para colaborar con 
 
 Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar **la base agéntica de tu preferencia**: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.
 
-**Objetivo:** poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar. Reserva unos **20–30 minutos**, como orientación. Esta preparación puede hacerse con acompañamiento si todavía no has elegido una herramienta.
+**Objetivo:** poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos **20–30 minutos** para el espacio de trabajo y **15–20 minutos adicionales** para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento.
 
 ## 1. Crea una carpeta propia y copia la plantilla
 
@@ -60,11 +60,16 @@ Guarda los documentos y abre una conversación nueva con acceso a esos archivos.
 
 Contrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario.
 
+## 5. Prepara la bibliografía con Zotero
+
+Usaremos Zotero como registro de fuentes y como primera práctica de consulta mediante una API. Sigue [Zotero y tu bibliografía](recursos/zotero.qmd): identifica una colección, revisa una referencia y compara su ficha con una consulta real del asistente. Anota colección, fuente y resultado de la prueba en la definición del proyecto. Si no hay conexión local, conserva la referencia y registra la dificultad para resolverla con acompañamiento.
+
 ## Qué traer al primer encuentro
 
 - Tu carpeta y los documentos que puedas volver a abrir.
 - Una pregunta provisional y un primer resultado pequeño.
 - Una entrada de bitácora con la comprobación realizada y el siguiente paso.
+- Una referencia revisada en Zotero y el resultado de la prueba de API, o el pendiente concreto.
 - Una dificultad o duda sobre el trabajo con el asistente, si apareció.
 
 No compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.
