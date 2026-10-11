@@ -530,7 +530,52 @@ Fecha de registro: 2026-10-10. Prompts: P-ME-049/P-ME-050. main actualizado por 
 
 Se documenta la rutina en AGENTS.md y OPERACION-BLOG.md en miguel/rutina-ramas, desde main actualizado. Se conserva PROMPTS.md local sin incorporar. Solo cambian documentos internos: no se repite el render del blog ya verificado y publicado. Revisar diferencias e índice antes de entregar mediante commit, push y PR hacia main. La rutina exige comprobar publicación y dependencias antes de borrar; no se activa borrado automático en GitHub.
 
-## B073 — Aportaciones iniciales I005/I006 y exploración E001
+## B073 — Corrección del desbordamiento móvil T003
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-051. Diagnóstico con Edge: tabla de aportaciones de unos 558 píxeles y ancho de documento de 584 en viewport de 390. Se envuelve la tabla de exploraciones en una región desplazable con nombre accesible, foco por teclado e indicación móvil; conserva columnas, contenido y tamaño de letra. La impresión recupera ancho disponible y permite partir cadenas largas. Guía operativa actualizada. No se alteran contenidos científicos ni el SVG canónico.
+
+Verificación: scripts/site.py check correcto (19 páginas, enlaces y límites); advertencias regionales conocidas de R. Playwright/Edge confirma ancho de documento igual al viewport en 320, 390, 768 y 1280 píxeles, cuatro columnas, desplazamiento por teclado y acceso a la última celda. Ayuda visible solo en móvil, overflow visible y ancho mínimo cero de tabla bajo medio print; no se ejecutó impresión física ni exportación PDF en este encargo. Capturas móvil/escritorio examinadas. Una segunda comprobación auxiliar de retorno al inicio necesitó esperar el fin de la animación del desplazamiento por teclado antes de capturar; ajustado el script, vuelve a pasar. Se excluyen del cambio los identificadores y fechas incidentales regenerados en comprobacion-python.html y sesiones.html. T003 resuelto localmente, pendiente de integración, en miguel/t003-formato-movil; sin commit ni push.
+
+## B074 — Entrega de la corrección T003
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-052. Se entrega la corrección documentada en B073 mediante commit, push de miguel/t003-formato-movil y PR dirigido a main. Fetch sin novedades; fuentes y salida editorial no cambiaron desde el render completo y las verificaciones funcionales de B073. Se revisan diferencias e índice antes del commit. T003 queda pendiente de integración y comprobación de producción; no se fusiona en este encargo.
+
+## B075 — Referencia interna de colaboración mediante Git e IA
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-053. Búsqueda de fichas y guías existentes: las reglas estaban distribuidas en AGENTS.md, ENVIRONMENT.md y OPERACION-BLOG.md; no se encontró una ficha específica de Git. Se prepara guía ampliada y ficha carta de una página para Miguel y Octavio, tomando la ficha Zotero v1.3 como referencia de formato. Se conservan estrategia de ramas, permisos y rutina de cierre; se explican estado local, commit, push, PR, merge, publicación, conflictos y recuperación. Fuentes y revisión didáctica/operativa propia documentadas en la guía. README enlaza el material; no hay enlaces ni copias en blog.
+
+Rama miguel/guia-git-ia desde main actualizado, ea0a0c9. Fetch y avance rápido comprobados; PROMPTS.md local conservado sin incorporar. Generador ejecutado con Python del runtime incluido 26.1007.11041, ReportLab y pdfplumber: PDF de una página de 612 × 792 puntos, texto dentro de márgenes; PNG del PDF revisado visualmente sin recortes ni superposiciones. SVG editable conserva textos y coordenadas. Comprobación directa de política sobre ocho archivos de entrega: tamaños y patrones conocidos correctos; destinos locales de las guías existentes. git diff --check sin errores. No se ejecutó render del blog porque no se modificaron fuentes ni salida; no se ensayaron conflictos ni ciclo PR/merge ni impresión física. Sin commit, push o publicación en este encargo; pendiente prueba de uso por los colaboradores.
+
+## B076 — Identidad y recorrido de la ficha Git
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-054. Ficha v1.1: se incorpora el logo aprobado, el texto de recorrido propuesto por Miguel (inicio y cierre en main vigente, merge aprobado a main), flechas vectoriales y cursiva en términos ingleses. Se mantiene el recorrido en la guía ampliada y se aclara que crear una rama no exige copiar manualmente la carpeta. Nombres propios y comandos literales conservan su identificación. Generador, SVG, PDF y PNG actualizados fuera del blog.
+
+Verificación: generador ejecutado con el mismo runtime incluido; una página carta, controles de límites de texto correctos. PNG del PDF revisado visualmente: logo, flechas y cursivas legibles, sin recortes ni superposiciones. Sin impresión física ni regeneración del blog; sin commit o push.
+
+
+## B077 — Ajustes de lenguaje y acceso a main mediante PR
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-055. Ficha v1.2: texto de revisión, encabezado de reglas y párrafo final sustituidos por la formulación de Miguel. La guía ampliada y AGENTS.md recogen que toda incorporación a main requiere PR y que editar no autoriza fusionar. Se conservan los registros históricos de excepciones anteriores.
+
+Verificación: generador ejecutado con Python del runtime incluido; PDF de una página carta y texto dentro de márgenes. PNG revisado visualmente: pie completo legible, sin recortes ni superposiciones, conservando tamaño de letra, logo, flechas y cursivas. SVG/PDF/PNG regenerados fuera del blog. Sin impresión física, commit ni push.
+
+
+## B078 — URL confirmada y comprobaciones en producción
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-056. Miguel confirma https://seminario-iie.netlify.app/ como dirección de producción. Se registra en README, OPERACION-BLOG y guía interna Git + IA; se explicita el ciclo de comprobación local, PR aprobado, contenido en main, respuesta y contenido remoto, interacción cuando corresponda y evidencia de cierre. La URL ya figuraba en artefactos previos; esta entrada conserva la confirmación directa y su uso operativo.
+
+Verificación observada mediante urllib.request con Python de .venv: HTTP 200 y títulos correspondientes en portada, recursos/zotero.html y exploraciones/plantilla.html; presentes temporal-zotero y tabla-desplazable en sus respectivos HTML. La herramienta web no pudo acceder a la URL; la consulta HTTP directa sí. Es una comprobación de disponibilidad y contenido, no una nueva prueba visual/móvil ni una auditoría completa de enlaces o del despliegue. No se consultó el panel de Netlify ni se acreditó su commit de despliegue. Documentación interna únicamente; sin render, commit, push o publicación.
+
+
+## B079 — Entrega de la guía Git + IA mediante commit y PR
+
+Fecha de registro: 2026-10-10. Prompt: P-ME-057. Se prepara commit y push de miguel/guia-git-ia y PR dirigido a main con guía interna, ficha v1.2 editable/imprimible, reglas de integración y URL/procedimiento de verificación en producción. Fetch sin nuevos commits en main; no existe PR previo de esta rama. PROMPTS.md histórico local excluido de la selección. No se fusiona.
+
+Verificación de entrega: .venv/Scripts/python.exe scripts/site.py check completa correctamente las 19 páginas, entornos, enlaces locales y límites de publicación. Se observan advertencias regionales conocidas de R y de transporte TCP del kernel Jupyter; ejecución y controles concluyen correctamente. Se excluyen únicamente dos diferencias incidentales del render: ID de celda Python y fecha de modificación del listado de sesiones. No cambian fuentes ni contenido público. Enlaces locales de las guías existentes y SVG bien formado comprobados. PDF v1.2 conserva la revisión visual y geométrica de B077, sin cambios posteriores. scripts/check_repo.py revisó correctamente 163 archivos del índice antes del commit. El espacio final en el prompt P-ME-054 se conserva por fidelidad literal; no afecta a los artefactos.
+
+## B080 — Aportaciones iniciales I005/I006 y exploración E001
+
+Nota de identificación: esta entrada utilizó provisionalmente B073 en la rama de Octavio antes de integrar main; su identificador vigente es B080.
 
 Fecha de registro: 2026-10-11. Prompts: P-OE-001/P-OE-002. Trabajo exclusivo en octavio-desarrollo-curso. Verificados libres I005, I006 y E001 antes de asignarlos. Originales copiados íntegros a docs/aportaciones con nombres conservados y SHA256 coincidente con las fuentes autorizadas; atribución según metadatos: Nohemy Cardona y Daniel Germán Hernández Torres. README de procedencia y huellas, sin crear otro registro de ideas. E001 conserva los 17 y 10 párrafos no vacíos respectivos, cotejados automáticamente contra los DOCX, y distingue transcripción, análisis asistido por IA y decisiones pendientes.
 

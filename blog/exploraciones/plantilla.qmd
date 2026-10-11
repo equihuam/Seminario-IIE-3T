@@ -14,9 +14,15 @@ title: "E___ · Título de la exploración"
 
 ## Aportaciones y preguntas derivadas
 
+::: {.tabla-desplazable role="region" tabindex="0" aria-label="Tabla de aportaciones y preguntas derivadas"}
+
 | Fecha y autoría | Aportación o evidencia | Efecto sobre la propuesta | Idea derivada |
 | --- | --- | --- | --- |
 | [Completar] | [Completar] | [Apoya/modifica/cuestiona/abre pregunta] | [ID y enlace, si existe] |
+
+:::
+
+[Desliza la tabla horizontalmente para ver todas las columnas.]{.ayuda-tabla-movil}
 
 ## Actividad o contraste
 
