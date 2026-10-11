@@ -26,6 +26,8 @@ El proyecto usa ejecución sin congelación para esta base pequeña. Si más ade
 
 ## Netlify: rutas y preparación de la publicación
 
+Dirección de producción confirmada por Miguel en P-ME-056: **[https://seminario-iie.netlify.app/](https://seminario-iie.netlify.app/)**. Es el destino para las comprobaciones posteriores a la integración de un PR en `main`.
+
 El archivo `netlify.toml` de la raíz fija `base = "."` y `publish = "blog/_site"`. La base es la raíz del repositorio: allí están los entornos, scripts y el SVG original. En el panel de Netlify, eliminar la base incorrecta (`..` o `/opt/build`), dejar Base directory vacío o `.` y Package directory vacío. La salida que se publica es `blog/_site`, nunca la raíz del proyecto ni las fuentes de `blog`.
 
 Por indicación del usuario (P022), se versionan las fuentes, `blog/img/` y la salida completa `blog/_site/`, incluidos HTML, estilos, JavaScript, fuentes tipográficas, imágenes y búsqueda. Netlify no ejecuta R ni Python: el comando `test -f blog/_site/index.html` comprueba que existe la portada y se publica esa carpeta. Las cachés `.quarto`, los cuadernos temporales, entornos, credenciales y archivos voluminosos siguen excluidos.
@@ -82,6 +84,20 @@ Las plantillas incluyen el bloque: sustituir su ID al copiarlas y completar su c
 Antes de fusionar un PR de entrega, comprobar que su base sea `main`. Si una propuesta depende de otra rama, integrar primero la dependencia y cambiar explícitamente la base del PR restante a `main`. Fusionar en una rama de trabajo no publica en Netlify. Si ya ocurrió, abrir un PR desde los cambios pendientes hacia `main`; no repetir la generación cuando fuentes y salida ya están verificadas e idénticas. Tras integrar, comprobar que `main` contiene el HTML esperado y que la URL de producción lo sirve.
 
 ## Rutina de cierre y limpieza de ramas — P-ME-050
+
+### Verificación en producción
+
+Para cerrar una entrega que afecte al blog:
+
+1. Antes de integrar, conservar el resultado de `scripts/site.py check`, las pruebas pertinentes y la revisión de las fuentes y de `blog/_site/` que se incluirán en el PR.
+2. Tras fusionar el PR aprobado, comprobar su base `main` y el commit integrado. Confirmar que `main` contiene la salida esperada.
+3. Consultar [la portada de producción](https://seminario-iie.netlify.app/) y las rutas afectadas. Comprobar respuesta HTTP satisfactoria y un contenido específico del cambio (texto, identificador, enlace o recurso). Una respuesta 200 por sí sola no acredita que se desplegó la versión esperada. Si existe acceso al panel o API de Netlify, contrastar además el estado del despliegue y su commit; si no, declarar ese límite.
+4. Comprobar enlaces y descargas afectados. Para cambios de formato o interacción, revisar también en navegador los tamaños de pantalla, acciones o exportaciones pertinentes; recibir el HTML no acredita el funcionamiento visual.
+5. Registrar fecha, PR/commit, URLs, contenido esperado y observado, resultado y límites en la bitácora. Si aún se sirve una versión anterior, mantener pendiente la comprobación de publicación y diagnosticar antes de cerrar o limpiar ramas.
+
+Esta verificación remota complementa las pruebas locales; no sustituye la reproducción de cálculos ni la revisión científica. La disponibilidad de la URL no concede permiso para fusionar o publicar. La ficha interna Git + IA permanece fuera del blog.
+
+### Limpieza después de comprobar la entrega
 
 1. Fusionar el PR hacia `main`; verificar explícitamente la base. Cuando cambie el blog, comprobar en producción el contenido esperado.
 2. Ejecutar `git fetch origin`, revisar el árbol de trabajo y actualizar `main` mediante `git switch main` y `git merge --ff-only origin/main`. Conservar cambios locales ajenos a la entrega.

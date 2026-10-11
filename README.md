@@ -62,6 +62,8 @@ El cierre de cada sesión recogerá preguntas, dificultades y una evidencia brev
 
 ## Organización
 
+Blog en producción: [seminario-iie.netlify.app](https://seminario-iie.netlify.app/), dirección confirmada por Miguel en P-ME-056. Procedimiento de comprobación después de publicar en [Operación del blog](docs/OPERACION-BLOG.md#verificación-en-producción).
+
 Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario-IIE-3T.Rproj). El panel Build permite construir y verificar con Ctrl+Shift+B; la consola ofrece `blog("render")` y `blog("check")`; las instrucciones están en [Entornos y ejecución](ENVIRONMENT.md).
 
 - [Blog: fuentes de la portada](blog/index.qmd): introducción común, sesiones y catálogo temático.
@@ -69,6 +71,7 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 - [Operación del blog](docs/OPERACION-BLOG.md): incorporación de sesiones y revisión editorial.
 
 - [AGENTS.md](AGENTS.md): pautas para el trabajo asistido dentro de este proyecto.
+- [Git + IA: colaboración de Miguel y Octavio](docs/COLABORACION-GIT-IA.md): reglas, encargos y ficha imprimible de consulta, fuera del blog.
 - [Plan de trabajo](PLAN.md): estado y próximos entregables.
 - [Fuentes y decisiones](docs/FUENTES-Y-DECISIONES.md): evidencia consultada y asuntos pendientes.
 - [Criterios de calidad](docs/CRITERIOS-DE-CALIDAD.md): requisitos didácticos, gráficos y técnicos.
