@@ -14,6 +14,9 @@ EXPECTED.update({"semillero/index.html", "semillero/plantilla.html",
                  "semillero/I001-socioecosistema.html", "semillero/I002-gestion.html",
                  "semillero/I003-salud.html", "semillero/I004-independencia.html",
                  "exploraciones/index.html", "exploraciones/plantilla.html"})
+EXPECTED.update({"semillero/I005-pino-encino-hongos.html",
+                 "semillero/I006-integridad-servicios-dinamica-ia.html",
+                 "exploraciones/E001-intereses-participantes.html"})
 PUBLIC_SOURCES = {"recursos/clima-modelo.R"}
 
 

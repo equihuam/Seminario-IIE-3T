@@ -19,6 +19,17 @@ Las valoraciones de las cuatro fichas iniciales son provisionales y están pendi
 | [I003 · Salud como analogía](I003-salud.qmd) | Valorada | Probar una apertura de diez minutos. | Aún sin abrir |
 | [I004 · Independencias que orientan preguntas](I004-independencia.qmd) | Valorada | Explorar una cadena antes de abordar selección y colisionadores. | Aún sin abrir |
 
+## Nuevas aportaciones de participantes
+
+Documentos recibidos para uso colectivo, con conservación íntegra de los originales y atribución tomada de sus metadatos. Son aportaciones iniciales que pueden evolucionar; «valorada» indica revisión documental, no aprobación de un proyecto o actividad.
+
+| ID y ficha | Estado | Siguiente paso propuesto | Desarrollo |
+| --- | --- | --- | --- |
+| [I005 · Integridad, observación y hongos en pino-encino](I005-pino-encino-hongos.qmd) | Valorada | Devolver la síntesis y priorizar una pregunta con Nohemy Cardona. | [E001](../exploraciones/E001-intereses-participantes.qmd) |
+| [I006 · Integridad, servicios, dinámica e IA](I006-integridad-servicios-dinamica-ia.qmd) | Valorada | Devolver la síntesis y priorizar una pregunta con Daniel Germán Hernández Torres. | [E001](../exploraciones/E001-intereses-participantes.qmd) |
+
+Las oportunidades de aprendizaje reunidas en E001 son propuestas candidatas; no modifican el programa. La correspondencia con las 13 cuestiones de diseño permanece abierta a discusión docente.
+
 ## De una pregunta a una exploración
 
 1. **Recibir.** La coordinación asigna el siguiente ID `I###`, registra fecha y autoría acordada y conserva la formulación original. No hace falta completar la valoración para recibir una idea.

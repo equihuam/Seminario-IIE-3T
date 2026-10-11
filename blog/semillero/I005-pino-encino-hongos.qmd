@@ -1,0 +1,21 @@
+---
+title: "I005 · Integridad, observación y hongos en pino-encino"
+---
+
+**Autoría:** Nohemy Cardona (metadatos del original) · **Registro:** 2026-10-11 · **Versión:** 0.2 · **Estado:** valorada.
+
+**Idea o pregunta.** Aportación inicial sobre integridad de bosques de pino-encino asociados a 12 hongos ectomicorrízicos comestibles en México y redes bayesianas. Pregunta por causalidad, indicadores, compatibilidad de escalas y soportes, referencia, DAG, incertidumbre y sesgos. ¿Cuánto explicarían las variables usadas para evaluar integridad la presencia de hongos? La relación entre integridad y provisión es otra pregunta.
+
+**Por qué importa.** Ofrece un caso para aprender a separar procesos ecológicos y observación, justificar variables e interpretar diagnósticos. También plantea investigación que requeriría datos y validación propios.
+
+**Dos miradas.** **Revisor:** distinguir presencia real, registro, existencias, cosecha, aprovechamiento y servicio de provisión; no son equivalentes. Los sesgos sistemáticos no se corrigen automáticamente ampliando la incertidumbre. Las flechas no demuestran causalidad. **Didacta:** detección imperfecta e inferencia ofrecen ejercicios candidatos; explicitar qué variable se infiere y diferenciar consultas predictivas, diagnósticas y de intervención. E001 propone versiones básicas y ampliaciones, sin duraciones definitivas.
+
+**Siguiente paso propuesto.** Devolver la síntesis y elegir con la participante una pregunta prioritaria, sin limitar la evolución de su aportación. **Desarrollo:** [E001](../exploraciones/E001-intereses-participantes.qmd#aportacion-nohemy). Relacionada con [I001](I001-socioecosistema.qmd) e [I002](I002-gestion.qmd).
+
+**Procedencia/cambio:** `ParaSeminario_CNC.docx`, conservado íntegro en el archivo documental del proyecto; extracción literal en E001. Síntesis y valoraciones asistidas por IA, roles didacta y revisor aplicados en esta conversación el 2026-10-11, sin revisión independiente. Revisión didáctica 0.2: observaciones 1–8 aplicadas; 9–12 pendientes en E001. Sin prueba con participantes ni validación empírica.
+
+::: {#temporal-i005 .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Aportación inicial que puede enriquecerse durante el seminario. No es un proyecto aprobado; las actividades son candidatas y la selección académica sigue pendiente.
+:::
+
+[Volver al semillero](index.qmd).
