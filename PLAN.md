@@ -1,5 +1,17 @@
 # Plan de trabajo
 
+## Referencia interna Git + IA — P-ME-053 (2026-10-10)
+
+Preparadas la guía `docs/COLABORACION-GIT-IA.md` y una ficha carta de una página en `output/pdf/git-ia-ficha.pdf`, con SVG y generador en `docs/ficha-git/`. Consolidan reglas existentes para Miguel y Octavio, con encargos reutilizables, comprobaciones y manejo de conflictos. Fuera del blog. PDF generado y revisado visualmente; detalles en B075. Trabajo local en `miguel/guia-git-ia`, pendiente de commit e integración y de prueba de uso por los colaboradores.
+
+Actualización P-ME-054/B076: v1.1 con logo, recorrido propuesto por Miguel, flechas y términos ingleses en cursiva; PDF carta revisado visualmente.
+
+Actualización P-ME-055/B077: v1.2 con correcciones de lenguaje y requisito explícito de PR para incorporar cambios a main, también recogido en AGENTS.md. PDF carta revisado visualmente.
+
+Actualización P-ME-056/B078: URL de producción confirmada y registrada en README y OPERACION-BLOG; procedimiento de verificación remota documentado. Portada y dos páginas de referencia responden HTTP 200 con contenido esperado; alcance y límites en B078.
+
+Actualización P-ME-057/B079: entrega mediante commit y PR hacia main en preparación; verificación completa del sitio correcta (19 páginas). Integración pendiente.
+
 ## Control de pendientes — iniciado el 2026-10-10
 
 Cada pendiente concreto tendrá un identificador estable, estado (TODO, en curso o cerrado), fuente y criterio de cierre. Al resolverlo, conservar la entrada y enlazar el commit o PR y la verificación. Esta lista comienza con el seguimiento del PR #3; no constituye todavía una revisión exhaustiva de los pendientes históricos de este plan.

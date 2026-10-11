@@ -693,3 +693,70 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 commit y PR ahora
 ```
+
+## P-ME-053 — Referencia de colaboración con Git mediado por IA
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+No recuerdo si hicimos una cheat-sheet de uso de git mediado por IA, semejante a la que hicimos para zotero, pero convendría. Revisa y si ni la tenemos hazla. No la podríamos en el blog, será más ien como material de referencia para Octavio y yo: Reglas y procedimiento de colaboración mediante git o algo semejante.
+```
+
+Anotación editorial: se interpreta «No la podríamos en el blog» como indicación de mantener el material fuera del blog, para consulta de Miguel y Octavio.
+
+## P-ME-054 — Logo, recorrido y tipografía de la ficha Git
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Falto el logo
+
+El encabezado dice:
+EL RECORRIDO
+main actualizado > rama propia > cambios y pruebas > commit > push > PR a main > revisión y acuerdo >
+merge > comprobación y limpieza
+
+Sugiero cambiar a:
+EL RECORRIDO
+Cualquier cambio inicia con una copia de main a una rama de trabajo nueva. Así, el recorrido usual es:
+main vigente > nueva rama propia > cambios y pruebas > commit > push > PR a main > revisión y acuerdo >
+merge aprobado a main > comprobación y limpieza > main vigente 
+¿puedes poner verdaderas flechas en lugar de >?
+
+palabras en inglés ponlas en cursiva.
+```
+
+## P-ME-055 — Correcciones de lenguaje y requisito de PR
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Hay unos poco detalles de lenguaje:
+
+Corrije
+4. Revisar al otro
+Revisa el PR [número] sin editar: base, diferencias,
+pruebas y conflictos. Separa problemas que impiden
+integración de sugerencias.
+
+REGLAS QUE NOS CUIDAN EL TRABAJO              debe ser  REGLAS QUE CUIDAN NUESTRO TRABAJO CONJUNTO
+
+La integración en main puede publicar el blog: Te corresponde comprobar Netlify cuando sea el caso. La IA ejecuta exclusivamente lo autorizado; no tiene permiso de fusionar nada al recibir un encargo de edición. El único camino a main es mediante un PR.
+```
+
+## P-ME-056 — Confirmar URL de producción y verificación remota
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Me parece que no te he compartido la url del blog, es esta: [https://seminario-iie.netlify.app/](https://seminario-iie.netlify.app/) para tus registros y para hacer posbile el ciclo completo de pruebas y verificaciones
+```
+
+
+## P-ME-057 — Entregar guía Git mediante commit y PR
+
+Fecha de registro: 2026-10-10. Hora de emisión no disponible.
+
+```text
+Estoy liso para haer commit y PR
+```
