@@ -1,0 +1,21 @@
+---
+title: "I006 · Integridad, servicios, dinámica e IA"
+---
+
+**Autoría:** Daniel Germán Hernández Torres (metadatos del original) · **Registro:** 2026-10-11 · **Versión:** 0.2 · **Estado:** valorada.
+
+**Idea o pregunta.** Aportación inicial sobre diferencias entre integridad ecosistémica y ecológica, énfasis en servicios culturales y simbólicos, efectos climáticos en escenarios temporales, estresores periféricos, redes bayesianas dinámicas y uso de IA y expertos para evaluar atributos e interpretar mapas e indicadores.
+
+**Por qué importa.** Permite precisar qué pregunta responde un diagnóstico y qué exige modelos temporales, supuestos causales o una extensión sobre servicios. Invita a examinar críticamente el análisis asistido por IA.
+
+**Dos miradas.** **Revisor:** el documento citado `Integridad_servicios_v0_5` no fue consultado; sus motivos no pueden darse por verificados. Servicios culturales no equivalen a condición ecológica y actualizar evidencia no modela una transición. **Didacta:** auditar mapas es una actividad candidata de interpretación; distinguir diagnóstico y transición prepara la comprensión de DBN, sin enseñar por sí solo su implementación. E001 separa versiones básicas y ampliaciones de los ejercicios de redes, sin duraciones definitivas.
+
+**Siguiente paso propuesto.** Devolver la síntesis y elegir con el participante una pregunta prioritaria, conservando las demás abiertas a enriquecimiento. **Desarrollo:** [E001](../exploraciones/E001-intereses-participantes.qmd#aportacion-daniel). Relacionada con [I001](I001-socioecosistema.qmd) e [I002](I002-gestion.qmd).
+
+**Procedencia/cambio:** `Seminario sobre Integridad Ecosistémica.docx`, conservado íntegro en el archivo documental del proyecto; extracción literal en E001. Síntesis y valoraciones asistidas por IA, roles didacta y revisor aplicados en esta conversación el 2026-10-11, sin revisión independiente. Revisión didáctica 0.2: observaciones 1–8 aplicadas; preguntas 9–12 abiertas en E001. Sin actividad aplicada ni validación empírica.
+
+::: {#temporal-i006 .callout-warning .marca-temporal title="Por acordar" icon="true"}
+Aportación inicial que puede enriquecerse durante el seminario. No es un proyecto aprobado; las actividades son candidatas y la selección académica sigue pendiente.
+:::
+
+[Volver al semillero](index.qmd).

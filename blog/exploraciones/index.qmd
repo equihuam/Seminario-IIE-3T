@@ -5,8 +5,14 @@ title: "Exploraciones en desarrollo"
 Aquí reuniremos el desarrollo que ya no cabe en una ficha del [semillero](../semillero/index.qmd): argumentos, fuentes, discrepancias, actividades y resultados.
 
 ::: {#temporal-exploraciones .callout-warning .marca-temporal title="Por acordar" icon="true"}
-Todavía no hay exploraciones abiertas. Las cuatro fichas iniciales están valoradas y pendientes de prueba con participantes.
+E001 reúne dos aportaciones iniciales de participantes y propuestas didácticas candidatas. La selección de actividades y cualquier cambio académico siguen pendientes; las cuatro fichas iniciales también conservan su valoración provisional.
 :::
+
+## Registro de exploraciones
+
+| ID y exploración | Fichas de origen | Estado y siguiente paso |
+| --- | --- | --- |
+| [E001 · Intereses de participantes y oportunidades de aprendizaje](E001-intereses-participantes.qmd) | [I005](../semillero/I005-pino-encino-hongos.qmd), [I006](../semillero/I006-integridad-servicios-dinamica-ia.qmd) | Abierta; devolver el análisis, enriquecer preguntas y discutir propuestas con Miguel y Octavio. No es aprobación de proyectos. |
 
 ## Cuándo abrir una exploración
 
