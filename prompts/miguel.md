@@ -795,3 +795,11 @@ Fecha de registro: 2026-10-12. Hora de emisión no disponible.
 ```text
 de acuerdo. Hagamos ahora el commit y PR
 ```
+
+## P-ME-061 — Contexto del proyecto en la copia de otro equipo
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Revisa el contenido de este proyecto y asimila las directivas y contexto. Estoy haciendo copia de este proyecto desde mi LapTop con ayuda de github
+```
