@@ -606,3 +606,61 @@ Render con Quarto 1.10.18 del entorno local: se conservan las cuatro páginas af
 Fecha de registro: 2026-10-12. Prompt: P-ME-060. Se prepara commit y push de miguel/urls-lectura y PR dirigido a main, con el registro de las tres URL y su aplicación al blog. Fetch confirma main sin novedades respecto de a64249c; API GitHub confirma ausencia de PR abierto de esta rama. Se conserva PROMPTS.md histórico local fuera de la entrega. No se fusiona ni se publica en este encargo.
 
 Se mantiene la verificación completa de scripts/site.py check registrada en B082: fuentes y salida editorial no cambiaron desde esas comprobaciones. Comparación semántica de search.json: sin altas ni bajas, solo cuatro registros afectados por el encargo; el resto de la diferencia corresponde al orden del índice regenerado. Revisión de diferencias y control del índice de entrega antes del commit; integración y verificación de producción pendientes.
+
+## B084 — Lectura de contexto y diagnóstico de la copia local
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-061. Consultados README, PLAN, AGENTS, fuentes y decisiones, entornos, operación editorial, calidad, reproducibilidad, colaboración Git, registros y documentación bibliográfica; lectura selectiva de apertura, semillero, exploraciones, diseño pedagógico y presentaciones. Revisión de orientación y continuidad, no auditoría exhaustiva ni validación científica. Sin consulta de proyectos hermanos ni modificación del SVG o del blog.
+
+Git: árbol inicialmente limpio en main, commit 92a6880 (PR #12). Tras git fetch origin, git rev-list --left-right --count main...origin/main devuelve 0/0. Rama local miguel/contexto-copia-equipo creada para estos registros; sin commit, push, fusión ni publicación. PLAN conserva estados históricos de integración pendiente superados por el historial Git; no se reconciliaron en este encargo.
+
+Diagnóstico: .venv/Scripts/python.exe --version falla al intentar iniciar el intérprete referenciado en la instalación Python312 del usuario. pyvenv.cfg declara Python 3.12.3, distinto de la línea base documentada 3.12.14. Rscript --version responde R 4.6.0; quarto --version responde 1.10.18. Existen renv/library y .venv, sin verificar paquetes; faltan tools.local.json, PROMPTS.md histórico y el mapa img/Mapa_México_Página_3.png excluido de Git. git config --get core.hooksPath no devuelve configuración. No se restauraron entornos, instalaron dependencias, ejecutaron pruebas ni reconstruyó el blog. La copia versionada está sincronizada; la reproducción completa en este equipo queda pendiente de preparar y verificar Python/R y recursos locales necesarios.
+
+## B085 — Calendario, Git local y componente de presentaciones (<20 MiB)
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-062. Trabajo en rama `miguel/preparacion-git-presentaciones` a partir de `main` actualizado (92a6880, PR #12).
+
+1. **Página de preparación (`preparar-proyecto.qmd`):** retirado el callout de aviso `#temporal-preparacion` y la nota de versión preliminar. Incorporado el acuerdo formal del calendario: inicio el 14 de octubre de 2026, 16 sesiones semanales de una hora los viernes de 14:00 a 15:00 hrs, con flexibilidad acordada entre participantes.
+2. **Control de versiones local con Git:** añadido paso 2 e instrucciones en `preparar-proyecto.qmd` para inicializar Git en el espacio de trabajo local (`git init`, `git add .`, `git commit`), explicitando que no se requiere respaldo en GitHub ni en servicios en la nube en esta etapa. Actualizada la directiva correspondiente en `plantilla-participantes/README.md` y `plantilla-participantes/PROYECTO.md`.
+3. **Presentaciones en el blog (<20 MiB):** se autoriza la excepción para presentaciones consolidadas en formato `.pptx` de hasta 20 MiB en `blog/presentaciones/`, manteniendo excluidos borradores y versiones intermedias fuera del blog. Actualizados `.gitignore`, `scripts/check_repo.py`, `scripts/check_site.py` y `blog/_quarto.yml`. Creada la página `blog/presentaciones/index.qmd` y copiada `output/Introduccion-iie3t-redes-bayesianas-v5.pptx` (17.2 MB) para descarga pública. Actualizadas directivas en `AGENTS.md`, `docs/COLABORACION-GIT-IA.md` y `presentaciones/README.md`.
+
+## B086 — Criterios de llenado, ejemplo de ficha y consolidación de la sesión 01
+
+Fecha de registro: 2026-10-13. Prompts: P-ME-063–P-ME-067.
+
+Se clarifica el enfoque didáctico de la sesión 01 («Observar, contextualizar e inferir») y la lógica de los 5 pasos prácticos de la sección `## Práctica`. A solicitud de Miguel, se integra en `blog/posts/01-tres-capas/index.qmd`, bajo la sección de materiales, un bloque colapsable (`::: {.callout-note collapse="true"}`) con los criterios para llenar cada una de las 7 columnas de la [Ficha de observación](blog/recursos/guia-observacion.csv) y una tabla de ejemplo ilustrativo de bosque templado alojada dentro del contenedor accesible `.tabla-desplazable` con soporte para foco por teclado y ayuda visual en dispositivos móviles.
+
+Con base en la resolución del contenido (P-ME-067), se retira el callout de aviso temporal `#temporal-sesion-01` («Por acordar») y se actualiza la sección de procedencia para atribuir la propuesta didáctica al esquema y desarrollo conceptual del equipo, omitiendo el enlace al manuscrito en desarrollo por no estar listo para difusión pública.
+
+Verificación: Quarto 1.10.18 generó `_site/posts/01-tres-capas/index.html` sin incidencias; `python scripts/check_site.py` reportó las 23 páginas esperadas, enlaces locales íntegros y límites de publicación respetados; `python scripts/check_repo.py` completó el control de políticas sobre 176 archivos sin hallazgos.
+
+## B087 — Entrega de preparación, presentaciones y consolidación de sesión 01
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-068.
+
+Se reúnen los hitos B085 y B086 para entrega hacia `main` mediante la rama `miguel/preparacion-git-presentaciones`. Incluye: 1) formalización de fechas y horarios de inicio del seminario, inicialización de Git local en la preparación y plantillas de participantes; 2) componente de presentaciones con descarga pública de la presentación v5 (<20 MiB) y ajuste de políticas de repositorio; 3) consolidación didáctica de la sesión 01 (desplegable de guía de observación y ejemplo accesible, retiro de marca temporal y atribución conceptual sin enlace público); 4) reconstrucción completa del blog (23 páginas en `blog/_site/`).
+
+Se comprueba el índice de entrega antes del commit con `scripts/check_repo.py` y `scripts/check_site.py`. Commit funcional `7cd67fe` publicado en `miguel/preparacion-git-presentaciones`. Se crea el PR #13: https://github.com/equihuam/Seminario-IIE-3T/pull/13 dirigido a `main` para habilitar el *deploy preview* de Netlify y la revisión docente. No se realiza la fusión directa a `main`.
+
+
+
+
+
+## B088 — Acuerdo de calendario en la portada y contexto del PR #13
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-069. Revisados README, PLAN, ENVIRONMENT, operación del blog, colaboración Git, fuentes y decisiones (D28), registros recientes y diferencia local respecto de origin/main. La rama actual `miguel/preparacion-git-presentaciones`, commit ee99548, contiene la entrega del PR #13 documentada en B087; un único worktree. No se logró verificar el estado remoto: fetch no pudo escribir FETCH_HEAD en el sandbox; la consulta HTTPS a la API falló y la apertura web del PR no recuperó contenido. El PR se adjuntó a esta conversación. Esta revisión es de contexto y alcance local, no una revisión independiente ni una auditoría completa del PR.
+
+Retirado el bloque temporal de portada y añadido literalmente el calendario acordado por Miguel. Conservadas ambas indicaciones: inicio el 14 de octubre y reuniones los viernes. Quarto 1.10.18 regeneró únicamente la portada y el índice de búsqueda; requirió acceso a su caché local mediante ejecución aprobada. `python scripts/check_site.py`: 23 páginas esperadas, enlaces y límites correctos. Texto comprobado en fuente y HTML; ausencia de temporal-apertura comprobada. `git diff --check`: sin errores. `python scripts/check_repo.py`: índice existente de 179 archivos correcto; no verifica los nuevos cambios sin seleccionar. No se realizó inspección visual en navegador. `.venv/Scripts/python.exe scripts/site.py check` no pudo iniciar el intérprete de Python312, por lo que la comprobación completa del entorno y reejecución del sitio queda pendiente. SVG original y DOCX sin seguimiento conservados. Sin commit, push, fusión ni publicación; cambios locales preparados para la entrega en evaluación.
+
+## B089 — Entrega del calendario de portada al PR #13
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-070. Autorizados commit y actualización del PR existente. Fetch completado y API GitHub consultada: PR #13 abierto, rama fuente miguel/preparacion-git-presentaciones y base main; sin commits remotos nuevos en la rama fuente. Se prepara la entrega del acuerdo literal y salida regenerada de B088, con sus registros. Se conserva la limitación del check completo por el intérprete no disponible en .venv. Verificación editorial e índice de entrega requeridos antes del commit. No se autoriza ni realiza fusión.
+
+## B090 — Reparación local de la descarga PPTX
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-071. PR #13 confirmado abierto por API GitHub; fetch completado. Solicitudes HEAD al archivo en producción y deploy-preview-13 devuelven HTTP 404. Diagnóstico local: Git conserva el PPTX fuente, pero .gitignore excluye su copia en blog/_site/presentaciones; check_repo también rechazaba esa copia en el índice. Corregidas ambas reglas para la carpeta autorizada conservando el máximo de 20 MiB. Añadido atributo download al botón y una indicación de apertura en aplicación compatible. Cinco pruebas de política pasan, incluida regresión de la copia publicable y límite de tamaño. SHA256 de fuente y salida idénticos: 0611DA2377F2D3E21DBCFFC031D7B38DE6018C65CB7490F8FEE3CACFCC209303.
+
+Comprobación completa .venv/Scripts/python.exe scripts/site.py check ejecutada fuera del sandbox: renv consistente, pip sin dependencias rotas, R/Python reejecutados y 23 páginas verificadas. El fallo anterior al iniciar Python corresponde al aislamiento de ejecución; no acredita un entorno dañado. R emitió advertencias de configuración regional sin interrumpir el proceso. Retiradas diferencias incidentales de las páginas de comprobación y bibliotecas no editadas; check_site vuelve a pasar. Botón download comprobado en HTML. Sin prueba de descarga en navegador ni publicación de esta corrección; pendiente incorporar al PR la copia del PPTX. No se añadió iframe ni PDF. SVG canónico intacto.
+
+## B091 — Entrega de la copia publicable del PPTX al PR #13
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-072. Autorizados nuevo commit y actualización del PR #13. Fetch y API confirman PR abierto hacia main, rama fuente miguel/preparacion-git-presentaciones sin nuevos commits remotos. Entrega de la corrección de B090: copia PPTX en la salida pública, excepciones limitadas de Git y control del índice, botón download, búsqueda regenerada y prueba de regresión. Se conserva la comprobación completa del blog y las cinco pruebas observadas en B090; revisión del índice seleccionado antes de commit. Sin fusión; la descarga remota se comprueba después del push y depende de la actualización de la vista previa de Netlify.

@@ -42,6 +42,4 @@ Partimos de una introducción común. Después elegiremos temas y profundidad se
 - [Catálogo temático](temas.qmd): conceptos, guías y prácticas por tema.
 - [Reproducibilidad](reproducibilidad.qmd): cómo documentamos y comprobamos lo que hacemos.
 
-::: {#temporal-apertura .callout-warning .marca-temporal title="Por acordar" icon="true"}
-La sesión de apertura está preparada como propuesta; su fecha de realización aún no se ha fijado.
-:::
+Iniciamos el 14 de octubre 2026. Trabajaremos durante 16 sesiones una vez a la semana los viernes de 14 a 15hrs (con flexibilidad previo acuerdo del grupo)

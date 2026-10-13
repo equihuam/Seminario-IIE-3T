@@ -1,0 +1,40 @@
+---
+title: "Presentaciones"
+description: "Diapositivas y apoyos visuales seleccionados del seminario."
+---
+
+En este espacio se reúnen las versiones seleccionadas y consolidadas de las presentaciones del seminario. 
+
+La exploración, diseño visual y generación técnica de los materiales se realiza en el directorio de trabajo `presentaciones/` fuera del blog; aquí se publican únicamente las entregas aprobadas para descarga y consulta de los participantes.
+
+## Presentación introductoria v5: Tres capas y redes bayesianas
+
+Material visual de apoyo para la sesión de apertura y la comprensión inicial del modelo **iie-3t**.
+
+[Descargar presentación v5 (PPTX, 17.2 MiB)](Introduccion-iie3t-redes-bayesianas-v5.pptx){.btn .btn-primary download="Introduccion-iie3t-redes-bayesianas-v5.pptx"}
+
+Guarda el archivo y ábrelo con PowerPoint u otra aplicación compatible con PPTX.
+
+### Características del material
+
+- **Formato:** PowerPoint (16:9), editable con figuras vectoriales nativas, tipografía Arial y notas completas para el presentador.
+- **Extensión:** 16 diapositivas.
+- **Duración orientativa:** 20–25 minutos.
+- **Público:** participantes del seminario / taller, desde nivel introductorio.
+
+### Contenido y recorrido conceptual
+
+1. **El reto ecológico:** inferir la condición de un ecosistema a partir de señales imperfectas y contextualizadas.
+2. **Salud e integridad ecosistémica:** analogía del equilibrio emergente y pensamiento sistémico (Ecosalud, Margulis y Equihua et al.).
+3. **El modelo de tres capas:** contextual, detección y condición latente.
+4. **Del concepto al grafo:** el Grafo Acíclico Dirigido (DAG) como factorización de la distribución conjunta:
+   $$P(X, Y, Z) = P(X) P(Z|X) P(Y|X, Z)$$
+5. **Caso didáctico de dos bosques:** cómo dos ecosistemas con diferente historia generan distintas señales observadas.
+6. **Inferencia y diagnóstico:** actualización de probabilidades ante nueva evidencia; distinción entre observación e intervención.
+7. **Dinámica temporal:** desdoblamiento de bucles y procesos de retroalimentación mediante Redes Bayesianas Dinámicas (DBN $t_0 \to t_1$).
+8. **Extensión espacial y cartografía:** notación de plates, parámetros compartidos y mapa nacional de integridad (2018).
+
+::: {.callout-note}
+## Procedencia y código de generación
+La trayectoria de diseño de las versiones v1 a v5 y los scripts generadores y verificadores se documentan en `presentaciones/README.md`.
+:::

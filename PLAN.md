@@ -196,4 +196,26 @@ Actualización P-ME-049/P-ME-050 (2026-10-10): PR #7 integrado en main (3108485)
 
 Registradas las tres URL de lectura y aplicada la preferencia al blog en miguel/urls-lectura. El artículo de café se enlaza en su versión renderizada, con enlace separado al código de la versión utilizada; tres menciones de iie-teoría incorporan su dirección de lectura. Se conserva el repositorio de la plantilla por su función de descarga. No había enlaces a iie-elementals que corregir. Verificaciones y alcance en B082; integración y publicación pendientes.
 
-Actualización P-ME-060/B083: entrega mediante commit y PR hacia main; conserva la verificación completa de B082. Pendientes revisión, integración autorizada y comprobación en producción.
+Actualización P-ME-060/B083: entrega mediante commit y PR hacia main; conserva la verificación completa de B082. Integrado en main mediante PR #12 (commit 92a6880).
+
+## Diagnóstico de copia local — P-ME-061 (2026-10-13)
+
+Revisión de sincronización y diagnóstico de entornos desde la copia local en el equipo de Miguel (B084).
+
+## Preparación, Git local y componente de presentaciones (<20 MB) — P-ME-062 (2026-10-13)
+
+1. **Página de preparación (`preparar-proyecto.qmd`):** retirado el aviso temporal `#temporal-preparacion` y la nota de versión preliminar. Incorporado el calendario acordado: inicio el 14 de octubre de 2026, 16 sesiones de una hora (viernes de 14:00 a 15:00 hrs) con flexibilidad acordada entre participantes.
+2. **Control de versiones local con Git:** añadido paso e instrucciones en `preparar-proyecto.qmd` para inicializar Git localmente (`git init`), aclarando que no se requiere respaldo en GitHub ni en la nube en esta fase. Actualizada la directiva en `plantilla-participantes/README.md` y `plantilla-participantes/PROYECTO.md`.
+3. **Presentaciones en el blog (<20 MiB):** autorizada la excepción para presentaciones consolidadas en formato `.pptx` de hasta 20 MiB en `blog/presentaciones/`. Actualizados `.gitignore`, `scripts/check_repo.py`, `scripts/check_site.py` y `blog/_quarto.yml`. Creado el componente `blog/presentaciones/index.qmd` y copiado `output/Introduccion-iie3t-redes-bayesianas-v5.pptx` (17.2 MB) para descarga pública. Actualizadas directivas en `AGENTS.md` y `docs/COLABORACION-GIT-IA.md`.
+
+## Calendario acordado en portada — P-ME-069 (2026-10-13)
+
+Retirado `#temporal-apertura` de `blog/index.qmd` y sustituido por el acuerdo literal de Miguel sobre inicio, 16 sesiones, horario y flexibilidad. Portada y búsqueda regeneradas con Quarto; `scripts/check_site.py` verifica 23 páginas. Complemento local de la rama del PR #13, sin commit, push ni fusión. La comprobación completa `scripts/site.py check` sigue pendiente porque el Python de `.venv` no arranca. Véase B088.
+
+Actualización P-ME-070/B089: entrega del calendario de portada mediante commit y actualización del PR #13, confirmado abierto hacia main. Se conserva la verificación editorial de B088 y la limitación pendiente del entorno Python. Integración y publicación pendientes.
+
+## Descarga de presentación — P-ME-071/B090
+
+Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
+
+Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.

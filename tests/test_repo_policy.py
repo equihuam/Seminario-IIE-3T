@@ -6,10 +6,19 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from check_repo import MAX_BYTES, check_index, issues
+from check_repo import MAX_BYTES, MAX_PRESENTATION_BYTES, check_index, issues
 
 
 class RepositoryPolicy(unittest.TestCase):
+    def test_selected_presentations_can_be_published_and_staged(self):
+        for name in ("blog/presentaciones/selected.pptx",
+                     "blog/_site/presentaciones/selected.pptx"):
+            with self.subTest(name=name):
+                self.assertEqual(issues(name, b"x" * (MAX_BYTES + 1), in_index=True), [])
+                self.assertTrue(issues(name, b"x" * (MAX_PRESENTATION_BYTES + 1), in_index=True))
+        self.assertTrue(issues("output/draft.pptx", b"x", in_index=True))
+        self.assertTrue(issues("blog/_site/draft.pptx", b"x", in_index=True))
+
     def test_private_and_large_files(self):
         for name in (".Renviron", "data/raw/data.csv", ".env", "slides.pptx", "renv/library/pkg/file"):
             with self.subTest(name=name):

@@ -5,10 +5,6 @@ date: 2026-10-08
 categories: [iie-3t, Introducción, Reproducibilidad]
 ---
 
-::: {#temporal-sesion-01 .callout-warning .marca-temporal title="Por acordar" icon="true"}
-Propuesta de apertura pendiente de revisión docente y de acordar la fecha de realización. Aún no aplicada a participantes.
-:::
-
 **Versión del material:** 0.1.
 
 ## Pregunta central
@@ -25,8 +21,37 @@ Propuesta de apertura pendiente de revisión docente y de acordar la fecha de re
 
 - [Actividad previa: preparar tu proyecto](../../preparar-proyecto.qmd), con la plantilla y el asistente de tu preferencia.
 - [Introducción y esquema del equipo](../../empieza-aqui.qmd).
-- [Ficha de observación](../../recursos/guia-observacion.csv), vacía y editable.
+- [Ficha de observación](../../recursos/guia-observacion.csv): plantilla vacía y editable (formato CSV).
 - [Principios de reproducibilidad](../../reproducibilidad.qmd).
+
+::: {.callout-note collapse="true" title="¿Cómo llenar la ficha de observación? Criterios y ejemplo"}
+### Significado de los campos
+
+1. **`variable`:** Nombre concreto y operativo del atributo o nodo (evitar nombres abstractos o valorativos como «salud» o «degradación»).
+2. **`capa_o_funcion`:** Clasificación en el modelo: `Contextual`, `Detección - Estructura`, `Detección - Composición`, `Detección - Función`, o `Latente`. Estructura, composición y función describen dimensiones dentro de la detección, no son los nombres de las tres capas.
+3. **`unidad`:** Escala física de medición o categorías ordinales discretas (ej. `mm/año`, `%`, `[Baja, Media, Alta]`).
+4. **`metodo`:** Protocolo técnico o procedimiento de captura/estimación.
+5. **`fuente`:** Origen concreto de los datos (institución, sensor satelital, muestreo de campo o literatura).
+6. **`observado_o_propuesto`:** Declarar si se cuenta con mediciones reales disponibles (`observado`) o si es hipotética/aspiracional (`propuesto`).
+7. **`incertidumbre`:** Fuentes de error de medición, variabilidad natural, desfase de soporte espacial/temporal o límites de la señal.
+
+### Ejemplo ilustrativo (bosque templado)
+
+[Desplaza horizontalmente para ver todas las columnas.]{.ayuda-tabla-movil}
+
+::: {.tabla-desplazable role="region" tabindex="0" aria-label="Ejemplo ilustrativo de llenado de la ficha de observación"}
+
+| variable | capa_o_funcion | unidad | metodo | fuente | observado_o_propuesto | incertidumbre |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| `precipitacion_anual` | Contextual | mm/año | Interpolación spline multianual | WorldClim v2.1 | observado | Desfase microclimático en laderas escarpadas |
+| `pendiente_terreno` | Contextual | grados | Modelo digital de elevación (MDE 15m) | INEGI Continuo de Elevaciones | observado | Error de remuestreo topográfico |
+| `cobertura_dosel` | Detección - Estructura | % | Densiometro hemisférico en parcelas | Muestreo de campo (sitio piloto) | observado | Variabilidad fenológica estacional |
+| `riqueza_hongos_ectomicorrizicos` | Detección - Composición | especies | Muestreo en transectos y ADN ambiental | Estudio local / Literatura | propuesto | Detección imperfecta ligada a temporada de lluvias |
+| `tasa_regeneracion_pinos` | Detección - Función | ind/m² | Conteo de renuevos en subparcelas de 4 m² | Muestreo de campo (sitio piloto) | observado | Heterogeneidad espacial del banco de semillas |
+| `condicion_bosque` | Latente | [Baja, Media, Alta] | Inferencia con red bayesiana | Modelo del equipo | propuesto | Incertidumbre posterior por soporte espacial dispar |
+
+:::
+:::
 
 ## Práctica
 
@@ -48,4 +73,4 @@ Recoger tres preguntas del grupo, un concepto que necesite aclaración y una val
 
 ## Procedencia y cambios
 
-Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del [manuscrito iie-teoría](https://iie-teoria.netlify.app/). Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.
+Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema y desarrollo conceptual del equipo. Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.
