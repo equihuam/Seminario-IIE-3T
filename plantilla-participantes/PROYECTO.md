@@ -50,7 +50,8 @@
 
 ## Entorno y uso
 
-Lenguaje y versión, dependencias, semillas, comandos de ejecución, comandos de pruebas y salidas esperadas: por completar al implementar el primer ejercicio.
+- Control de versiones: Git inicializado localmente (respaldo remoto opcional o posterior).
+- Lenguaje y versión, dependencias, semillas, comandos de ejecución, comandos de pruebas y salidas esperadas: por completar al implementar el primer ejercicio.
 
 ## Reproducción científica y responsabilidad
 

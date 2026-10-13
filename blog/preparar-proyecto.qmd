@@ -5,6 +5,13 @@ description: "Actividad previa: un espacio de trabajo propio para colaborar con 
 
 Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar **la base agéntica de tu preferencia**: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.
 
+::: {.callout-note}
+## Calendario y dinámica del seminario
+**Inicio:** 14 de octubre de 2026.
+
+Tendremos **16 sesiones de una hora**, una por semana, los **viernes de 14:00 a 15:00 hrs**, manteniendo la flexibilidad necesaria (previo acuerdo entre todos).
+:::
+
 **Objetivo:** poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos **20–30 minutos** para el espacio de trabajo y **15–20 minutos adicionales** para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento.
 
 ## 1. Crea una carpeta propia y copia la plantilla
@@ -21,13 +28,27 @@ Abre la [plantilla para participantes del seminario](https://github.com/equihuam
 
 La plantilla es **documental**: todavía no contiene un modelo ejecutable. En esta actividad solo necesitas estos archivos; las carpetas para datos, código y resultados se crearán cuando hagan falta.
 
-## 2. Vincula el asistente con ese espacio
+## 2. Inicia el control de versiones local con Git
+
+Te recomendamos inicializar Git en tu carpeta para llevar un control seguro y ordenado de tus avances, decisiones y puntos de recuperación. En esta etapa **no se requiere respaldar en GitHub ni en servicios en la nube**: el propósito es familiarizarse con el control de versiones en tu propia máquina.
+
+Basta con abrir una terminal en tu carpeta y ejecutar:
+
+```bash
+git init
+git add .
+git commit -m "Inicio: plantilla documental del proyecto"
+```
+
+Si trabajas desde RStudio, VS Code u otro entorno, puedes utilizar su panel visual de Git o pedirle a tu asistente que te ayude a registrar confirmaciones (*commits*) cada vez que completes un paso o acuerdes un cambio.
+
+## 3. Vincula el asistente con ese espacio
 
 Abre o selecciona la carpeta como proyecto en tu herramienta, si dispone de esa función. Comprueba qué archivos puede leer y modificar. Si trabajas con un asistente que solo recibe documentos adjuntos, comparte los tres archivos y guarda tú las versiones acordadas en la carpeta.
 
 Pídele que lea los documentos y explique qué encontró antes de proponer cambios. **No presupongas que recuerda otra conversación o que lee automáticamente todos los archivos.** Si tu plataforma admite instrucciones de proyecto, coloca allí los acuerdos de trabajo; conserva también una copia legible en tu carpeta.
 
-## 3. Haz un primer encargo pequeño
+## 4. Haz un primer encargo pequeño
 
 Copia este mensaje y adapta lo que aparece entre corchetes:
 
@@ -52,7 +73,7 @@ y aclara que debo guardarlo yo.
 
 Revisa el resultado antes de aceptarlo. Una pregunta suficiente para comenzar podría ser: «¿Qué observaciones necesitaría para comparar dos sitios del mismo tipo de bosque?». El primer resultado podría ser una lista breve de observaciones posibles y dudas sobre su interpretación. **No necesitas definir aún una red, calcular el IIE ni completar las secciones técnicas de la plantilla.**
 
-## 4. Comprueba que puedes retomar el trabajo
+## 5. Comprueba que puedes retomar el trabajo
 
 Guarda los documentos y abre una conversación nueva con acceso a esos archivos. Pide al asistente:
 
@@ -60,7 +81,7 @@ Guarda los documentos y abre una conversación nueva con acceso a esos archivos.
 
 Contrasta sus respuestas con los archivos. Si no puede acceder a ellos, compártelos de nuevo o revisa la configuración. Si rellena un vacío con una suposición, corrígelo y deja ese punto como pendiente. Esta prueba comprueba la continuidad documental; la validez científica de las respuestas se revisará durante el seminario.
 
-## 5. Prepara la bibliografía con Zotero
+## 6. Prepara la bibliografía con Zotero
 
 Usaremos Zotero como registro de fuentes y como primera práctica de consulta mediante una API. Sigue [Zotero y tu bibliografía](recursos/zotero.qmd): identifica una colección, revisa una referencia y compara su ficha con una consulta real del asistente. Anota colección, fuente y resultado de la prueba en la definición del proyecto. Si no hay conexión local, conserva la referencia y registra la dificultad para resolverla con acompañamiento.
 
@@ -73,6 +94,7 @@ Consulta la [ficha «Zotero + IA: del hallazgo a la cita»](recursos/zotero.qmd#
 ## Qué traer al primer encuentro
 
 - Tu carpeta y los documentos que puedas volver a abrir.
+- Tu repositorio Git local inicializado (o las dudas surgidas al intentarlo).
 - Una pregunta provisional y un primer resultado pequeño.
 - Una entrada de bitácora con la comprobación realizada y el siguiente paso.
 - Una referencia revisada en Zotero y el resultado de la prueba de API, o el pendiente concreto.
@@ -80,12 +102,6 @@ Consulta la [ficha «Zotero + IA: del hallazgo a la cita»](recursos/zotero.qmd#
 
 No compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.
 
-Si no lograste configurar una herramienta, trae los documentos y la dificultad que encontraste: **eso no impide participar en la apertura**. R, Python, control de versiones y dependencias se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.
+Si no lograste configurar alguna herramienta (Git, Zotero o el asistente), trae los documentos y la dificultad que encontraste: **eso no impide participar en la apertura**. R, Python, dependencias y la colaboración remota en la nube se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.
 
 Continúa con [Empieza aquí](empieza-aqui.qmd) y la [sesión de apertura](posts/01-tres-capas/index.qmd). Los acuerdos para documentar y comprobar el trabajo están en [Reproducibilidad](reproducibilidad.qmd).
-
-Actividad propuesta por Octavio. Versión de trabajo: 9 de octubre de 2026.
-
-::: {#temporal-preparacion .callout-warning .marca-temporal title="Por acordar" icon="true"}
-Actividad en discusión del equipo y pendiente de prueba con participantes.
-:::

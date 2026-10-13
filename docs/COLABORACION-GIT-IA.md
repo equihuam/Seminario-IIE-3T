@@ -36,7 +36,7 @@ Aquí «copia» significa crear una rama desde la versión vigente de *main*; no
 3. **Conservar cambios ajenos.** Antes de editar: revisar rama, cambios, archivos sin seguimiento y *worktrees*. No añadir todo a ciegas ni borrar archivos para obtener un estado limpio. El histórico local `PROMPTS.md` no se incorpora automáticamente.
 4. **La IA ejecuta exclusivamente lo autorizado.** «Revisa» solicita diagnóstico; «revisa y corrige» autoriza cambios. La IA no tiene permiso de fusionar nada al recibir un encargo de edición. El único camino a *main* es mediante un *PR* (P-ME-055). Si *commit*, *push*, apertura de *PR* o fusión del *PR* ya están autorizados para ese alcance, ejecutarlos sin pedir otra vez lo mismo.
 5. **Registrar motivos y evidencia.** Prompt literal en `prompts/miguel.md` (P-ME) o `prompts/octavio.md` (P-OE); hito breve en `BITACORA.md`; estado vigente en `PLAN.md`. Leer los últimos IDs antes de asignar nuevos. Conservar el historial por adición.
-6. **Revisar lo que se comparte.** Excluir credenciales, entornos, datos originales/restringidos y archivos mayores de 5 MiB. Los controles automáticos complementan la revisión humana. Preservar el SVG canónico del modelo.
+6. **Revisar lo que se comparte.** Excluir credenciales, entornos, datos originales/restringidos y archivos mayores de 5 MiB (salvo presentaciones seleccionadas en `blog/presentaciones/` en formato `.pptx`, con límite de hasta 20 MiB). Los controles automáticos complementan la revisión humana. Preservar el SVG canónico del modelo.
 
 ## Encargos listos para adaptar
 

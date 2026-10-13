@@ -1,6 +1,6 @@
 # Presentación introductoria iie-3t
 
-`crear-introduccion.mjs` conserva la construcción inicial. La propuesta más reciente para valoración es `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`; no sustituye automáticamente la selección docente entre versiones. Las secciones siguientes conservan la trayectoria v1–v5. Los PPTX permanecen excluidos de Git. No se incorporó v5 al blog ni se publicó remotamente.
+`crear-introduccion.mjs` conserva la construcción inicial. La versión consolidada para el seminario es `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`, incorporada al blog en `blog/presentaciones/` (P-ME-062). Las secciones siguientes conservan la trayectoria v1–v5. Los PPTX de trabajo fuera del blog permanecen excluidos de Git.
 
 ## Diseño didáctico
 

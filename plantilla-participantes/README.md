@@ -6,7 +6,20 @@ Plantilla documental inicial para copiar a una carpeta propia. No contiene todav
 
 Para la actividad previa al seminario, completa solo el nombre, la pregunta provisional, el alcance y un primer resultado pequeño. Deja las secciones de modelo, datos y entorno por completar. Lee los archivos con el asistente de tu preferencia, revisa sus propuestas y registra una primera entrada en la bitácora. En una conversación nueva, comprueba que puede recuperar la pregunta y el siguiente paso desde los documentos guardados. Si no puede escribir archivos, guarda tú el texto acordado. No hace falta instalar R o Python para esta preparación.
 
+Inicia también el control de versiones local con Git en tu carpeta (`git init`, `git add .`, `git commit -m "Inicio: plantilla documental"`). En esta fase no se requiere respaldar en GitHub ni en servicios en la nube: el propósito es registrar tus avances, cambios y decisiones localmente.
+
 Completa también la preparación bibliográfica: identifica una colección propia en Zotero, coteja los metadatos de una fuente y registra para qué la usarás. Comprueba una consulta API de lectura con el asistente si dispone de acceso local; si no, documenta la dificultad. Los campos están en `PROYECTO.md`. Tener una ficha no significa haber leído el texto. La elección de la base agéntica sigue siendo libre.
+
+## Control de versiones local con Git
+
+Usa Git localmente desde tu máquina para registrar tus cambios y conservar puntos de restauración:
+
+1. Abre una terminal en tu carpeta y ejecuta `git init`.
+2. Prepara tus archivos con `git add .`.
+3. Registra tu confirmación inicial con `git commit -m "Inicio: plantilla documental del proyecto"`.
+4. Conforme avances, haz confirmaciones (*commits*) pequeñas y frecuentes cada vez que completes un paso con tu asistente.
+
+No se requiere en esta etapa crear cuentas remotas ni respaldar en GitHub o la nube; el trabajo se resguarda en tu propio equipo.
 
 Los pasos siguientes corresponden al desarrollo posterior del proyecto:
 

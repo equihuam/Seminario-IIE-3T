@@ -50,6 +50,7 @@ data/original/
 data/private/
 *.ppt
 *.pptx
+!/blog/presentaciones/*.pptx
 *.rds
 *.RDS
 *.rda

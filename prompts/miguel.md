@@ -803,3 +803,72 @@ Fecha de registro: 2026-10-13. Hora de emisión no disponible.
 ```text
 Revisa el contenido de este proyecto y asimila las directivas y contexto. Estoy haciendo copia de este proyecto desde mi LapTop con ayuda de github
 ```
+
+## P-ME-062 — Preparación, Git local y componente de presentaciones (<20 MB)
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+1. En la página de preparación hay que remover la advertencia "por acordar". El acuerdo será: Empezamos el 14/oct/2026 y tendremos 16 sesiones de una hora a la semana los viernes de 14 a 15 hrs. Aunque mantendremos la flexibilidad necesaria (previo acuerdo entre todos). También podemos quitar el texto "Actividad propuesta por Octavio. Versión de trabajo: 9 de octubre de 2026."
+2. En la misma página agregar un párrafo para introducir  a git como control de versiones (no requerirán en este momento respaldar en github o nube). Por lo mismo revisar que el texto sea congruente con esta adición de la preparación. También agregar la directiva en la plantilla para participantes.
+3. Hemos visto que los pptx que están resultando son de unos 20 megas, que es posible manejar dentro de los estandares de github y a menos que recomiendes otra cosa, modifiquemos la directiva que prohibe subir pptx en general para permitirlo cuando sean menores a 20 megas. La idea sería agregar un componente de presentaciones al blog con las versiones seleccionadas de la producción que hagamos en otros directorios fuera del blog. En este caso agregaremos la presentación que está en outpu/Introduccion-iie3t-redes-bayesianas-v5.pptx
+```
+
+## P-ME-063 — Consulta sobre enfoque didáctico de 'Observar, contextualizar e inferir' y llenado de la guía de observación
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Explica el enfoque didáctico para desarrollar lo propuesto en "Observar, contextualizar e inferir". También explica la forma de llenar la guía de observación.
+```
+
+## P-ME-064 — Consulta sobre ubicación de la secuencia de 5 pasos prácticos en el blog
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+La que llamas "Secuencia didáctica de los 5 pasos prácticos" no la veo enunciada en el blog. Ayudame a identificarla o se trata sólo de un resultado de la explicación que te pedí y que aclara como propones trabajar con los participantes.
+```
+
+## P-ME-065 — Consulta sobre integración de la guía y ejemplo en la sesión 01 (link, desplegable o modal)
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Me queda claro. En la sesión 01, queremos agregar la guía de observación y el ejemplo que me acabas de dar  asociado al renglón respectivo:  [Ficha de observación](https://seminario-iie.netlify.app/recursos/guia-observacion.csv), vacía y editable. Sugiere si sería preferible un link que labra ese texto o un desplegable o una ventana modal.
+```
+
+## P-ME-066 — Incorporación del callout explicativo y ejemplo de la ficha en la sesión 01
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Aplica la solución callout
+```
+
+## P-ME-067 — Retiro de advertencia 'por acordar' y ajuste de procedencia en sesión 01
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Procedencia y cambios
+Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del [manuscrito iie-teoría](https://iie-teoria.netlify.app/). Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.
+
+Dado que el documento https://iie-teoria.netlify.app/ es una propuesta en desarrollo por Octavio y mía, todavía no está lista para presentar a todos. Por lo tanto podemos decir sólo, basada en desarrollo conceptual del equipo, pero no dar la referencia consultable.
+
+Con lo resuelot, podemos eliminar la advertencia de "por acordar" en 01 · Observar, contextualizar e inferir
+```
+
+## P-ME-068 — Commit y PR de la preparación, presentaciones y sesión 01
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+hagamos ahora un commit & PR para ver la versión preliminar del blog también.
+```
+
+
+
+
+
+

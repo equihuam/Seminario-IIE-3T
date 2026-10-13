@@ -614,3 +614,32 @@ Fecha de registro: 2026-10-13. Prompt: P-ME-061. Consultados README, PLAN, AGENT
 Git: árbol inicialmente limpio en main, commit 92a6880 (PR #12). Tras git fetch origin, git rev-list --left-right --count main...origin/main devuelve 0/0. Rama local miguel/contexto-copia-equipo creada para estos registros; sin commit, push, fusión ni publicación. PLAN conserva estados históricos de integración pendiente superados por el historial Git; no se reconciliaron en este encargo.
 
 Diagnóstico: .venv/Scripts/python.exe --version falla al intentar iniciar el intérprete referenciado en la instalación Python312 del usuario. pyvenv.cfg declara Python 3.12.3, distinto de la línea base documentada 3.12.14. Rscript --version responde R 4.6.0; quarto --version responde 1.10.18. Existen renv/library y .venv, sin verificar paquetes; faltan tools.local.json, PROMPTS.md histórico y el mapa img/Mapa_México_Página_3.png excluido de Git. git config --get core.hooksPath no devuelve configuración. No se restauraron entornos, instalaron dependencias, ejecutaron pruebas ni reconstruyó el blog. La copia versionada está sincronizada; la reproducción completa en este equipo queda pendiente de preparar y verificar Python/R y recursos locales necesarios.
+
+## B085 — Calendario, Git local y componente de presentaciones (<20 MiB)
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-062. Trabajo en rama `miguel/preparacion-git-presentaciones` a partir de `main` actualizado (92a6880, PR #12).
+
+1. **Página de preparación (`preparar-proyecto.qmd`):** retirado el callout de aviso `#temporal-preparacion` y la nota de versión preliminar. Incorporado el acuerdo formal del calendario: inicio el 14 de octubre de 2026, 16 sesiones semanales de una hora los viernes de 14:00 a 15:00 hrs, con flexibilidad acordada entre participantes.
+2. **Control de versiones local con Git:** añadido paso 2 e instrucciones en `preparar-proyecto.qmd` para inicializar Git en el espacio de trabajo local (`git init`, `git add .`, `git commit`), explicitando que no se requiere respaldo en GitHub ni en servicios en la nube en esta etapa. Actualizada la directiva correspondiente en `plantilla-participantes/README.md` y `plantilla-participantes/PROYECTO.md`.
+3. **Presentaciones en el blog (<20 MiB):** se autoriza la excepción para presentaciones consolidadas en formato `.pptx` de hasta 20 MiB en `blog/presentaciones/`, manteniendo excluidos borradores y versiones intermedias fuera del blog. Actualizados `.gitignore`, `scripts/check_repo.py`, `scripts/check_site.py` y `blog/_quarto.yml`. Creada la página `blog/presentaciones/index.qmd` y copiada `output/Introduccion-iie3t-redes-bayesianas-v5.pptx` (17.2 MB) para descarga pública. Actualizadas directivas en `AGENTS.md`, `docs/COLABORACION-GIT-IA.md` y `presentaciones/README.md`.
+
+## B086 — Criterios de llenado, ejemplo de ficha y consolidación de la sesión 01
+
+Fecha de registro: 2026-10-13. Prompts: P-ME-063–P-ME-067.
+
+Se clarifica el enfoque didáctico de la sesión 01 («Observar, contextualizar e inferir») y la lógica de los 5 pasos prácticos de la sección `## Práctica`. A solicitud de Miguel, se integra en `blog/posts/01-tres-capas/index.qmd`, bajo la sección de materiales, un bloque colapsable (`::: {.callout-note collapse="true"}`) con los criterios para llenar cada una de las 7 columnas de la [Ficha de observación](blog/recursos/guia-observacion.csv) y una tabla de ejemplo ilustrativo de bosque templado alojada dentro del contenedor accesible `.tabla-desplazable` con soporte para foco por teclado y ayuda visual en dispositivos móviles.
+
+Con base en la resolución del contenido (P-ME-067), se retira el callout de aviso temporal `#temporal-sesion-01` («Por acordar») y se actualiza la sección de procedencia para atribuir la propuesta didáctica al esquema y desarrollo conceptual del equipo, omitiendo el enlace al manuscrito en desarrollo por no estar listo para difusión pública.
+
+Verificación: Quarto 1.10.18 generó `_site/posts/01-tres-capas/index.html` sin incidencias; `python scripts/check_site.py` reportó las 23 páginas esperadas, enlaces locales íntegros y límites de publicación respetados; `python scripts/check_repo.py` completó el control de políticas sobre 176 archivos sin hallazgos.
+
+## B087 — Entrega de preparación, presentaciones y consolidación de sesión 01
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-068.
+
+Se reúnen los hitos B085 y B086 para entrega hacia `main` mediante la rama `miguel/preparacion-git-presentaciones`. Incluye: 1) formalización de fechas y horarios de inicio del seminario, inicialización de Git local en la preparación y plantillas de participantes; 2) componente de presentaciones con descarga pública de la presentación v5 (<20 MiB) y ajuste de políticas de repositorio; 3) consolidación didáctica de la sesión 01 (desplegable de guía de observación y ejemplo accesible, retiro de marca temporal y atribución conceptual sin enlace público); 4) reconstrucción completa del blog (23 páginas en `blog/_site/`).
+
+Se comprueba el índice de entrega antes del commit con `scripts/check_repo.py` y `scripts/check_site.py`. Se realiza push a origin y apertura de Pull Request dirigido a `main` para habilitar el *deploy preview* de Netlify y la revisión docente. No se realiza la fusión directa a `main`.
+
+
+

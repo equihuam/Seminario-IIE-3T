@@ -12,6 +12,7 @@ project:
     - recursos/**/*.qmd
     - semillero/**/*.qmd
     - exploraciones/**/*.qmd
+    - presentaciones/**/*.qmd
   resources:
     - img/Modelo de tres capas.svg
     - img/favicon.svg
@@ -20,6 +21,7 @@ project:
     - recursos/clima-modelo.R
     - recursos/zotero-ia-ficha.svg
     - recursos/zotero-ia-ficha.pdf
+    - presentaciones/Introduccion-iie3t-redes-bayesianas-v5.pptx
 website:
   title: "iie-3t · Seminario"
   favicon: img/favicon.svg
@@ -35,6 +37,8 @@ website:
         href: empieza-aqui.qmd
       - text: Sesiones
         href: sesiones.qmd
+      - text: Presentaciones
+        href: presentaciones/index.qmd
       - text: Temas
         href: temas.qmd
       - text: Semillero

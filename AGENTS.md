@@ -6,7 +6,7 @@ Leer primero `README.md`, `PLAN.md` y los documentos relevantes para la tarea. D
 
 Trabajar exclusivamente dentro de esta carpeta. No explorar ni modificar los proyectos hermanos salvo petición expresa del usuario. Preservar el SVG original.
 
-El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `blog/`; la copia de la imagen en `blog/img/` es regenerable y se versiona junto con `blog/_site/` para publicar desde GitHub en Netlify. Regenerar y verificar el blog antes de incorporar su salida. Consultar `ENVIRONMENT.md` y `docs/OPERACION-BLOG.md` antes de modificar la infraestructura editorial.
+El SVG canónico está en `img/Modelo de tres capas.svg`. El blog se construye desde `blog/`; la copia de la imagen en `blog/img/` es regenerable y se versiona junto con `blog/_site/` para publicar desde GitHub en Netlify (producción: `https://seminario-iie.netlify.app/`). Regenerar y verificar el blog antes de incorporar su salida. Tras integrar cambios a `main` que afecten al blog, comprobar la publicación remota en producción según `docs/OPERACION-BLOG.md`. Consultar `ENVIRONMENT.md`, `docs/OPERACION-BLOG.md` y `docs/COLABORACION-GIT-IA.md` antes de modificar la infraestructura editorial o el flujo de trabajo colaborativo.
 
 RStudio es el IDE habitual del usuario. Mantener `Seminario-IIE-3T.Rproj`, la activación de `renv` y las instrucciones para usar el blog desde RStudio. Evitar restaurar espacios de trabajo o depender de objetos guardados de sesiones anteriores; no modificar preferencias globales del IDE.
 
@@ -104,7 +104,11 @@ El programa es adaptativo. Elegir profundidad, temas y ritmo según intereses ex
 
 Al cierre de cada sesión, registrar de manera agregada preguntas emergentes, dificultades y evidencia de aprendizaje; proponer el siguiente tema con su justificación. Distinguir cambios didácticos de cambios analíticos: adaptar el temario no autoriza a redefinir retrospectivamente criterios de validación para favorecer resultados.
 
-Aplicar `docs/CRITERIOS-DE-CALIDAD.md`. Mantener diagramas editables y consistencia visual; usar etiquetas además del color. Revisar legibilidad y ausencia de recortes en los materiales exportados.
+Articular los intereses y dudas de los participantes con las 13 cuestiones de diseño pedagógico (`docs/PREGUNTAS-DISENO-PEDAGOGICO.md`, `E001`). Diferenciar las inquietudes que pueden convertirse en ejercicios formativos sobre redes bayesianas durante el seminario de aquellas que corresponden a proyectos o investigaciones posteriores (P-OE-001, P-OE-002).
+
+Aplicar `docs/CRITERIOS-DE-CALIDAD.md`. Mantener diagramas editables y consistencia visual; usar etiquetas además del color. Revisar legibilidad y ausencia de recortes en los materiales exportados. Para fichas, guías y hojas de trabajo imprimibles, usar formato **carta** (8.5 × 11 pulgadas / 612 × 792 pt PDF) por defecto; denominarlo únicamente «carta» para la audiencia (P-ME-040, P-ME-044). En páginas públicas, presentar tablas con múltiples columnas dentro de regiones desplazables accesibles (`.tabla-desplazable-contenedor`) con foco por teclado y ayuda visual móvil (P-ME-051).
+
+El calendario acordado establece el inicio el **14 de octubre de 2026**, con **16 sesiones de una hora** (viernes de 14:00 a 15:00 hrs) y flexibilidad pactada entre participantes (P-ME-062). En la preparación previa, los participantes configuran su carpeta documental e inicializan Git localmente (`git init`) para control de versiones en su máquina, sin requerir en esa etapa respaldo en GitHub o en la nube.
 
 ## Ingeniería de software
 
@@ -116,6 +120,10 @@ Aplicar `docs/CRITERIOS-DE-CALIDAD.md`. Mantener diagramas editables y consisten
 - Probar comportamientos relevantes, casos límite y una ejecución completa desde una sesión nueva. Cero pruebas descubiertas no equivale a éxito.
 - No afirmar que una prueba pasó sin haber observado su resultado. Registrar comando, entorno, resultado y limitaciones.
 - Distinguir cumplimiento del software de validación científica y pedagógica.
+
+## Presentaciones en el blog
+
+Las presentaciones visuales se diseñan, refinan y verifican en directorios de trabajo fuera del blog (`presentaciones/`, `output/`). Únicamente las versiones consolidadas y seleccionadas por el equipo docente se incorporan al componente del blog (`blog/presentaciones/`) con un límite de hasta **20 MiB** por archivo PPTX para su descarga pública (P-ME-062). Los borradores y versiones intermedias continúan excluidos de Git.
 
 ## Reproducibilidad científica y ética de trabajo
 
@@ -133,6 +141,10 @@ Conservar resultados desfavorables y correcciones relevantes, declarar decisione
 - No versionar perfiles, bases SQLite, claves, adjuntos ni volcados completos de bibliotecas personales. Publicar solo metadatos revisados. Las modificaciones de registros requieren destino y alcance definidos; no editar directamente la base de datos.
 - Guía operativa: `bibliografia/README.md`. Actividad pública: `blog/recursos/zotero.qmd`. Registrar pruebas realmente ejecutadas y pendientes, sin equiparar éxito de conexión con calidad bibliográfica.
 
+## Marcas temporales de decisión
+
+Para contenidos provisionales, tentativos o pendientes de acuerdo docente (Miguel y Octavio), emplear la convención homogénea establecida en P-ME-046: callout ámbar (`caution`/`warning`), clase CSS `.marca-temporal`, identificador único `#temporal-<tema>` y encabezado explicativo (por defecto: «Por acordar»). Conservar autoría, fuentes y límites científicos fuera del aviso. Retirar las marcas únicamente tras la decisión formal del equipo docente, siguiendo `docs/OPERACION-BLOG.md`.
+
 ## Bitácora y registro de prompts
 
 - `BITACORA.md` registra hitos de desarrollo de la experiencia formativa: motivo, cambio, evidencia y pendientes, en entradas breves con identificador y referencia a los prompts pertinentes. No duplicar allí las conversaciones ni las salidas completas de herramientas.
@@ -145,18 +157,20 @@ Conservar resultados desfavorables y correcciones relevantes, declarar decisione
 
 ## Flujo de trabajo colaborativo y ramas de Git
 
-- **Estrategia de ramas:** `main` es la rama canónica, estable y lista para publicación (Netlify). Todo trabajo o exploración activa se desarrolla en ramas separadas con prefijo de autor o funcionalidad: `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`.
-- **Protocolo de integración:** Solo se vierte a `main` lo acordado y validado, mediante un PR (P-ME-055). El flujo es: crear rama desde `main` actualizado → trabajar iterativamente y registrar prompts → verificar localmente (`scripts/site.py check` y `scripts/check_repo.py`) → proponer integración mediante PR → fusionar el PR aprobado a `main`. Un encargo de edición no autoriza ninguna fusión; no incorporar cambios directamente a `main`.
-- Usar `.venv` y `renv`; mantener sus bloqueos al cambiar dependencias. Antes de un commit de entrega editorial ejecutar `scripts/site.py check` y las pruebas pertinentes; antes del commit revisar el índice con `scripts/check_repo.py`. No incorporar datos originales, credenciales, entornos, binarios pesados ni archivos mayores de 5 MiB.
-- Definir objetivo y aceptación → implementar en rama → verificar → revisar (didacta/revisor) → documentar resultados y pendientes → fusionar a `main`. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `prompts/`, las instrucciones originales.
-
+- **Referencia del equipo:** seguir `docs/COLABORACION-GIT-IA.md` (ficha carta: `output/pdf/git-ia-ficha.pdf`).
+- **Estrategia de ramas:** `main` es la rama canónica, estable y lista para publicación (Netlify: `https://seminario-iie.netlify.app/`). Todo trabajo o exploración activa se desarrolla en ramas separadas con prefijo de autor o funcionalidad: `miguel/<tema>`, `octavio/<tema>` o `feature/<tema>`.
+- **Protocolo de integración estricto:** solo se vierte a `main` lo acordado y validado, exclusivamente mediante un Pull Request (P-ME-055). El flujo es: crear rama desde `main` actualizado → trabajar iterativamente y registrar prompts → verificar localmente (`scripts/site.py check` y `scripts/check_repo.py`) → proponer integración mediante PR hacia `main` → revisar y aprobar → fusionar el PR en `main` → verificar en producción si afectó al blog → rutina de cierre y limpieza. Un encargo de edición no autoriza ninguna fusión; no incorporar cambios directamente a `main`.
+- **Cuidado del trabajo compartido:** conservar los cambios del otro colaborador; inspeccionar rama, worktrees y commits ajenos antes de editar. No usar comandos destructivos (`reset --hard`, `clean -fd`, `push --force`, `branch -D`) sin análisis previo y acuerdo expreso del equipo.
+- **Entornos y exclusiones:** usar `.venv` y `renv`; mantener sus bloqueos al cambiar dependencias. Antes de un commit de entrega editorial ejecutar `scripts/site.py check` y las pruebas pertinentes; antes del commit revisar el índice con `scripts/check_repo.py`. No incorporar datos originales, credenciales, entornos, binarios pesados ni archivos mayores de 5 MiB, salvo presentaciones seleccionadas en `blog/presentaciones/` en formato `.pptx`, cuyo límite autorizado es de hasta **20 MiB** (P-ME-062).
+- **Trazabilidad:** definir objetivo y aceptación → implementar en rama → verificar → revisar (didacta/revisor) → documentar resultados y pendientes → proponer integración. `PLAN.md` concentra el estado actual; `docs/FUENTES-Y-DECISIONES.md`, las fuentes y decisiones; `BITACORA.md`, la evolución resumida; `prompts/`, las instrucciones originales.
 
 ### Cierre y limpieza de ramas
 
-Tras fusionar un PR hacia `main`, comprobar la publicación cuando afecte al blog. Actualizar `main` local por avance rápido y verificar que las ramas candidatas estén completamente integradas, sin PR abiertos que las usen como base o fuente y sin trabajo pendiente en otros worktrees. Eliminar entonces las ramas remotas de trabajo y sus ramas locales con `git branch -d`; ejecutar `git fetch --prune origin`. No usar borrado forzado para eludir trabajo sin integrar. Conservar `main` y las ramas activas. Crear cada nuevo encargo desde `main` actualizado; evitar ramas encadenadas salvo necesidad explícita. Si se usó squash o rebase y la comprobación de ancestros no confirma integración, revisar equivalencia y trabajo pendiente antes de borrar. Rutina aprobada por Miguel en P-ME-050; detalles en `docs/OPERACION-BLOG.md`.
+Tras fusionar un PR hacia `main`, comprobar la publicación en producción (`https://seminario-iie.netlify.app/`) cuando afecte al blog. Actualizar `main` local por avance rápido (`--ff-only`) y verificar que las ramas candidatas estén completamente integradas, sin PR abiertos que las usen como base o fuente y sin trabajo pendiente en otros worktrees. Eliminar entonces las ramas remotas de trabajo y sus ramas locales con `git branch -d`; ejecutar `git fetch --prune origin`. No usar borrado forzado para eludir trabajo sin integrar. Conservar `main` y las ramas activas. Crear cada nuevo encargo desde `main` actualizado; evitar ramas encadenadas salvo necesidad explícita. Si se usó squash o rebase y la comprobación de ancestros no confirma integración, revisar equivalencia y trabajo pendiente antes de borrar. Rutina aprobada por Miguel en P-ME-050; detalles en `docs/OPERACION-BLOG.md`.
 
 ## Cosecha y valoración de ideas
 
-Para nuevas propuestas del seminario, seguir blog/semillero/index.qmd. Recibir primero idea y motivación; asignar I### sin reutilizar IDs, conservar autoría y formulación original. Cada ficha tendrá como máximo una página legible (referencia: hasta 300 palabras), con las miradas explícitas del revisor y del didacta y un siguiente paso. Aplicar ambos roles en esta conversación salvo petición de revisión independiente. Registrar recomendaciones como propuestas hasta decisión docente.
-
-Cuando el desarrollo exceda la ficha, abrir E### en blog/exploraciones/ y enlazar en ambas direcciones. Conservar aportaciones, discrepancias y resultados de actividades con fecha y atribución acordada. Reevaluar con ambos roles ante cambios sustantivos o después de una prueba. Confirmar con participantes contenido y atribución antes de incorporar sus aportaciones al blog; mantener material privado fuera de blog.
+- **Propuestas iniciales en el Semillero:** para nuevas propuestas del seminario, seguir `blog/semillero/index.qmd`. Recibir primero idea y motivación; asignar `I###` sin reutilizar IDs, conservando autoría y formulación original. Cada ficha tendrá como máximo una página legible en formato carta (referencia: hasta 300 palabras), con las miradas explícitas del revisor y del didacta y un siguiente paso. Aplicar ambos roles en esta conversación salvo petición de revisión independiente. Las fichas del Semillero conservan el carácter de aportaciones vivas e iniciales para enriquecerse durante el seminario; no constituyen proyectos aprobados ni cerrados hasta decisión docente (P-OE-001, P-OE-002).
+- **Resguardo de aportaciones originales:** los documentos de trabajo y textos aportados por participantes se conservan íntegros en `docs/aportaciones/` manteniendo nombres originales y autoría, con huella criptográfica SHA256 documentada en su `README.md`.
+- **Triple distinción epistemológica:** en todo análisis y material derivado, distinguir nítidamente: (1) aportaciones y transcripciones originales de participantes, (2) análisis, estructuración y propuestas didácticas candidatas asistidas por IA, y (3) acuerdos y decisiones académicas del equipo docente.
+- **Exploraciones y actividades derivadas:** cuando el desarrollo exceda la ficha, abrir `E###` en `blog/exploraciones/` y enlazar en ambas direcciones. Las actividades pedagógicas sugeridas a partir de inquietudes de participantes se formulan como propuestas candidatas, articuladas con las 13 cuestiones clave de diseño pedagógico (`docs/PREGUNTAS-DISENO-PEDAGOGICO.md`) y diferenciando el aprendizaje formativo introductorio de redes bayesianas de posibles proyectos de investigación a largo plazo. Conservar aportaciones, discrepancias y resultados con fecha y atribución acordada. Reevaluar con ambos roles ante cambios sustantivos. Confirmar con participantes contenido y atribución antes de incorporar sus aportaciones al blog público; mantener material privado o de trabajo fuera de `blog/`.

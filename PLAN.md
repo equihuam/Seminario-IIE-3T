@@ -196,4 +196,14 @@ Actualización P-ME-049/P-ME-050 (2026-10-10): PR #7 integrado en main (3108485)
 
 Registradas las tres URL de lectura y aplicada la preferencia al blog en miguel/urls-lectura. El artículo de café se enlaza en su versión renderizada, con enlace separado al código de la versión utilizada; tres menciones de iie-teoría incorporan su dirección de lectura. Se conserva el repositorio de la plantilla por su función de descarga. No había enlaces a iie-elementals que corregir. Verificaciones y alcance en B082; integración y publicación pendientes.
 
-Actualización P-ME-060/B083: entrega mediante commit y PR hacia main; conserva la verificación completa de B082. Pendientes revisión, integración autorizada y comprobación en producción.
+Actualización P-ME-060/B083: entrega mediante commit y PR hacia main; conserva la verificación completa de B082. Integrado en main mediante PR #12 (commit 92a6880).
+
+## Diagnóstico de copia local — P-ME-061 (2026-10-13)
+
+Revisión de sincronización y diagnóstico de entornos desde la copia local en el equipo de Miguel (B084).
+
+## Preparación, Git local y componente de presentaciones (<20 MB) — P-ME-062 (2026-10-13)
+
+1. **Página de preparación (`preparar-proyecto.qmd`):** retirado el aviso temporal `#temporal-preparacion` y la nota de versión preliminar. Incorporado el calendario acordado: inicio el 14 de octubre de 2026, 16 sesiones de una hora (viernes de 14:00 a 15:00 hrs) con flexibilidad acordada entre participantes.
+2. **Control de versiones local con Git:** añadido paso e instrucciones en `preparar-proyecto.qmd` para inicializar Git localmente (`git init`), aclarando que no se requiere respaldo en GitHub ni en la nube en esta fase. Actualizada la directiva en `plantilla-participantes/README.md` y `plantilla-participantes/PROYECTO.md`.
+3. **Presentaciones en el blog (<20 MiB):** autorizada la excepción para presentaciones consolidadas en formato `.pptx` de hasta 20 MiB en `blog/presentaciones/`. Actualizados `.gitignore`, `scripts/check_repo.py`, `scripts/check_site.py` y `blog/_quarto.yml`. Creado el componente `blog/presentaciones/index.qmd` y copiado `output/Introduccion-iie3t-redes-bayesianas-v5.pptx` (17.2 MB) para descarga pública. Actualizadas directivas en `AGENTS.md` y `docs/COLABORACION-GIT-IA.md`.

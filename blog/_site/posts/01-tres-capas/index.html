@@ -114,6 +114,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Sesiones</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../presentaciones/index.html"> 
+<span class="menu-text">Presentaciones</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../temas.html"> 
 <span class="menu-text">Temas</span></a>
   </li>  
@@ -189,19 +193,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div id="temporal-sesion-01" class="marca-temporal callout callout-style-default callout-warning callout-titled" title="Por acordar">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Advertencia</span>Por acordar
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Propuesta de apertura pendiente de revisión docente y de acordar la fecha de realización. Aún no aplicada a participantes.</p>
-</div>
-</div>
 <p><strong>Versión del material:</strong> 0.1.</p>
 <section id="pregunta-central" class="level2">
 <h2 class="anchored" data-anchor-id="pregunta-central">Pregunta central</h2>
@@ -220,9 +211,120 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="../../preparar-proyecto.html">Actividad previa: preparar tu proyecto</a>, con la plantilla y el asistente de tu preferencia.</li>
 <li><a href="../../empieza-aqui.html">Introducción y esquema del equipo</a>.</li>
-<li><a href="../../recursos/guia-observacion.csv">Ficha de observación</a>, vacía y editable.</li>
+<li><a href="../../recursos/guia-observacion.csv">Ficha de observación</a>: plantilla vacía y editable (formato CSV).</li>
 <li><a href="../../reproducibilidad.html">Principios de reproducibilidad</a>.</li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled" title="¿Cómo llenar la ficha de observación? Criterios y ejemplo">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>¿Cómo llenar la ficha de observación? Criterios y ejemplo
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<section id="significado-de-los-campos" class="level3">
+<h3 class="anchored" data-anchor-id="significado-de-los-campos">Significado de los campos</h3>
+<ol type="1">
+<li><strong><code>variable</code>:</strong> Nombre concreto y operativo del atributo o nodo (evitar nombres abstractos o valorativos como «salud» o «degradación»).</li>
+<li><strong><code>capa_o_funcion</code>:</strong> Clasificación en el modelo: <code>Contextual</code>, <code>Detección - Estructura</code>, <code>Detección - Composición</code>, <code>Detección - Función</code>, o <code>Latente</code>. Estructura, composición y función describen dimensiones dentro de la detección, no son los nombres de las tres capas.</li>
+<li><strong><code>unidad</code>:</strong> Escala física de medición o categorías ordinales discretas (ej. <code>mm/año</code>, <code>%</code>, <code>[Baja, Media, Alta]</code>).</li>
+<li><strong><code>metodo</code>:</strong> Protocolo técnico o procedimiento de captura/estimación.</li>
+<li><strong><code>fuente</code>:</strong> Origen concreto de los datos (institución, sensor satelital, muestreo de campo o literatura).</li>
+<li><strong><code>observado_o_propuesto</code>:</strong> Declarar si se cuenta con mediciones reales disponibles (<code>observado</code>) o si es hipotética/aspiracional (<code>propuesto</code>).</li>
+<li><strong><code>incertidumbre</code>:</strong> Fuentes de error de medición, variabilidad natural, desfase de soporte espacial/temporal o límites de la señal.</li>
+</ol>
+</section>
+<section id="ejemplo-ilustrativo-bosque-templado" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-ilustrativo-bosque-templado">Ejemplo ilustrativo (bosque templado)</h3>
+<p><span class="ayuda-tabla-movil">Desplaza horizontalmente para ver todas las columnas.</span></p>
+<div class="tabla-desplazable" role="region" tabindex="0" aria-label="Ejemplo ilustrativo de llenado de la ficha de observación">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">variable</th>
+<th style="text-align: left;">capa_o_funcion</th>
+<th style="text-align: left;">unidad</th>
+<th style="text-align: left;">metodo</th>
+<th style="text-align: left;">fuente</th>
+<th style="text-align: left;">observado_o_propuesto</th>
+<th style="text-align: left;">incertidumbre</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>precipitacion_anual</code></td>
+<td style="text-align: left;">Contextual</td>
+<td style="text-align: left;">mm/año</td>
+<td style="text-align: left;">Interpolación spline multianual</td>
+<td style="text-align: left;">WorldClim v2.1</td>
+<td style="text-align: left;">observado</td>
+<td style="text-align: left;">Desfase microclimático en laderas escarpadas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>pendiente_terreno</code></td>
+<td style="text-align: left;">Contextual</td>
+<td style="text-align: left;">grados</td>
+<td style="text-align: left;">Modelo digital de elevación (MDE 15m)</td>
+<td style="text-align: left;">INEGI Continuo de Elevaciones</td>
+<td style="text-align: left;">observado</td>
+<td style="text-align: left;">Error de remuestreo topográfico</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>cobertura_dosel</code></td>
+<td style="text-align: left;">Detección - Estructura</td>
+<td style="text-align: left;">%</td>
+<td style="text-align: left;">Densiometro hemisférico en parcelas</td>
+<td style="text-align: left;">Muestreo de campo (sitio piloto)</td>
+<td style="text-align: left;">observado</td>
+<td style="text-align: left;">Variabilidad fenológica estacional</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>riqueza_hongos_ectomicorrizicos</code></td>
+<td style="text-align: left;">Detección - Composición</td>
+<td style="text-align: left;">especies</td>
+<td style="text-align: left;">Muestreo en transectos y ADN ambiental</td>
+<td style="text-align: left;">Estudio local / Literatura</td>
+<td style="text-align: left;">propuesto</td>
+<td style="text-align: left;">Detección imperfecta ligada a temporada de lluvias</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>tasa_regeneracion_pinos</code></td>
+<td style="text-align: left;">Detección - Función</td>
+<td style="text-align: left;">ind/m²</td>
+<td style="text-align: left;">Conteo de renuevos en subparcelas de 4 m²</td>
+<td style="text-align: left;">Muestreo de campo (sitio piloto)</td>
+<td style="text-align: left;">observado</td>
+<td style="text-align: left;">Heterogeneidad espacial del banco de semillas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>condicion_bosque</code></td>
+<td style="text-align: left;">Latente</td>
+<td style="text-align: left;">[Baja, Media, Alta]</td>
+<td style="text-align: left;">Inferencia con red bayesiana</td>
+<td style="text-align: left;">Modelo del equipo</td>
+<td style="text-align: left;">propuesto</td>
+<td style="text-align: left;">Incertidumbre posterior por soporte espacial dispar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</div>
 </section>
 <section id="práctica" class="level2">
 <h2 class="anchored" data-anchor-id="práctica">Práctica</h2>
@@ -245,7 +347,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="procedencia-y-cambios" class="level2">
 <h2 class="anchored" data-anchor-id="procedencia-y-cambios">Procedencia y cambios</h2>
-<p>Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema del equipo y las secciones 3–5 del <a href="https://iie-teoria.netlify.app/">manuscrito iie-teoría</a>. Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.</p>
+<p>Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema y desarrollo conceptual del equipo. Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.</p>
 
 
 </section>
