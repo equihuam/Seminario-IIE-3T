@@ -760,3 +760,38 @@ Fecha de registro: 2026-10-10. Hora de emisión no disponible.
 ```text
 Estoy liso para haer commit y PR
 ```
+
+## P-ME-058 — URL de referencia y uso preferente para lectura
+
+Fecha de registro: 2026-10-12. Hora de emisión no disponible.
+
+```text
+No recuerdo que url te dí para el blog del café. Seguramente el repositorio, lo que está bien para nuestro análisis de contenido detallado. Sin embargo, pars fines de lectura será mejor compartir el render. Te doy los que recuerdo hemos estado usando:
+
+
+
+1. café: [https://cafe-sustentable-blog.netlify.app/](https://cafe-sustentable-blog.netlify.app/)
+2. iie-teoría: [https://iie-teoria.netlify.app/](https://iie-teoria.netlify.app/)
+
+1) iie-elementals: [https://rb-x-ia.netlify.app/](https://rb-x-ia.netlify.app/)
+
+
+
+haz registro de estos datos y anota el uso preferente
+```
+
+## P-ME-059 — Revisar enlaces de lectura del blog
+
+Fecha de registro: 2026-10-12. Hora de emisión no disponible.
+
+```text
+Hay que revisar el blog para corregir las url que pudieran no cumplir con la nueva directiva.
+```
+
+## P-ME-060 — Commit y PR de los enlaces de lectura
+
+Fecha de registro: 2026-10-12. Hora de emisión no disponible.
+
+```text
+de acuerdo. Hagamos ahora el commit y PR
+```

@@ -191,3 +191,9 @@ Convención aplicada localmente en 13 páginas: callout ámbar con ícono, títu
 Actualización P-ME-048: PR #5 integrado en main; PR #6 fusionado en miguel/formato-carta después, sin trasladar los avisos a main. Se prepara miguel/publicar-marcas desde main para integrar esa diferencia mediante un PR dirigido explícitamente a main. Netlify sirve el rótulo carta, pero no los avisos; coincide con el contenido de main.
 
 Actualización P-ME-049/P-ME-050 (2026-10-10): PR #7 integrado en main (3108485); callout Zotero comprobado en producción. Nueve ramas remotas y nueve locales integradas eliminadas tras comprobar ancestros y ausencia de PR abiertos. Rutina de cierre incorporada en AGENTS.md y OPERACION-BLOG; únicamente main y la rama activa de esta documentación deben permanecer.
+
+## Enlaces de lectura — P-ME-058/P-ME-059 (2026-10-12)
+
+Registradas las tres URL de lectura y aplicada la preferencia al blog en miguel/urls-lectura. El artículo de café se enlaza en su versión renderizada, con enlace separado al código de la versión utilizada; tres menciones de iie-teoría incorporan su dirección de lectura. Se conserva el repositorio de la plantilla por su función de descarga. No había enlaces a iie-elementals que corregir. Verificaciones y alcance en B082; integración y publicación pendientes.
+
+Actualización P-ME-060/B083: entrega mediante commit y PR hacia main; conserva la verificación completa de B082. Pendientes revisión, integración autorizada y comprobación en producción.

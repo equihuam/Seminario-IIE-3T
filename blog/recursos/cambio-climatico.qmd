@@ -4,9 +4,11 @@ description: "Recuperación crítica de un ejemplo socioecológico con bnlearn y
 toc: true
 ---
 
-Versión 0.1 · 2026-10-08 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, *Lo Básico de Redes Bayesianas* (2023), con asistencia de IA en la revisión y el código.
+Versión 0.2 · 2026-10-12 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, *Lo Básico de Redes Bayesianas* (2023), con asistencia de IA en la revisión y el código.
 
 **Objetivo:** distinguir lo que supone el grafo, lo que cuantifican sus tablas y lo que responde una consulta. Requisitos: nociones de probabilidad condicional y manejo elemental de R. Este recurso se incorpora cuando el grupo esté preparado; no fija una segunda sesión obligatoria.
+
+Actualización editorial 0.2: enlace de lectura al artículo publicado y enlace separado a la versión fuente utilizada.
 
 ## Qué recuperamos y qué significa
 
@@ -170,7 +172,7 @@ Producto: script ejecutable y una nota con supuestos, resultados y límites. Cri
 
 ## Procedencia y reproducción
 
-Fuente: Equihua y Pérez Maqueo, [Lo Básico de Redes Bayesianas](https://github.com/equihuam/Cafe-blog/blob/d025b97d8e27cb31f751a024505f0252c24f0a50/posts/redes-bayesianas-basico/index.qmd), copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.
+Fuente: Equihua y Pérez Maqueo, [Lo Básico de Redes Bayesianas](https://cafe-sustentable-blog.netlify.app/posts/redes-bayesianas-basico/) (lectura). Para examinar el código y la procedencia de esta adaptación: [versión fuente utilizada](https://github.com/equihuam/Cafe-blog/blob/d025b97d8e27cb31f751a024505f0252c24f0a50/posts/redes-bayesianas-basico/index.qmd), copia local consultada el 2026-10-08. El artículo publicado puede evolucionar respecto de esa versión. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.
 
 En el repositorio, ejecutar desde una sesión nueva: `Rscript tests/test-clima.R` y `Rscript scripts/clima-ejemplo.R`. Restaurar primero el entorno con `Rscript --vanilla scripts/setup-r.R`. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.
 

@@ -60,6 +60,10 @@ El cierre de cada sesión recogerá preguntas, dificultades y una evidencia brev
 - Scripts de entrenamiento, inferencia y evaluación con sus pruebas.
 - Una plantilla simplificada para los proyectos de participantes.
 
+## Lecturas de referencia
+
+Para lectura y para compartir con participantes, usar preferentemente las versiones renderizadas indicadas por Miguel (P-ME-058): [café](https://cafe-sustentable-blog.netlify.app/), [iie-teoría](https://iie-teoria.netlify.app/) e [iie-elementals](https://rb-x-ia.netlify.app/). Para análisis detallado, revisión de código y trazabilidad de versiones, consultar los archivos fuente y repositorios autorizados. Véase [el registro de uso y procedencia](docs/FUENTES-Y-DECISIONES.md#d28--versiones-renderizadas-para-lectura-p-me-058).
+
 ## Organización
 
 Blog en producción: [seminario-iie.netlify.app](https://seminario-iie.netlify.app/), dirección confirmada por Miguel en P-ME-056. Procedimiento de comprobación después de publicar en [Operación del blog](docs/OPERACION-BLOG.md#verificación-en-producción).

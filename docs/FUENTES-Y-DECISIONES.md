@@ -168,3 +168,17 @@ Actualización D26: el acceso web pudo completarse con el formulario de inicio d
 ## D27 — Alcance del primer registro bibliográfico (P-ME-022)
 
 Se registra la bibliografía explícita de blog/empieza-aqui.qmd, separando diagrama y manuscrito del equipo, libro, reseña y fuentes de simbiosis, pensamiento sistémico y DBN. No se agregan títulos supuestos de autores meramente mencionados. Murphy se registra como borrador de capítulo según el documento de 2002; los materiales del equipo conservan datos pendientes. Se reutiliza la ficha electrónica existente del libro de Ecosalud sin sustituirla por datos de la edición impresa ni atribuir equivalencia con el manuscrito consultado. El cotejo bibliográfico no constituye nueva revisión conceptual ni lectura completa. Destino, claves, fuentes y pendientes detallados en bibliografia/README.md.
+
+## D28 — Versiones renderizadas para lectura (P-ME-058)
+
+Fecha de registro: 2026-10-12. Fuente: URL y preferencia comunicadas directamente por Miguel.
+
+| Recurso | URL preferente para lectura |
+| --- | --- |
+| café | [cafe-sustentable-blog.netlify.app](https://cafe-sustentable-blog.netlify.app/) |
+| iie-teoría | [iie-teoria.netlify.app](https://iie-teoria.netlify.app/) |
+| iie-elementals | [rb-x-ia.netlify.app](https://rb-x-ia.netlify.app/) |
+
+Usar preferentemente estas versiones renderizadas para leer y compartir lecturas. Para análisis detallado del contenido, revisión de código y trazabilidad, conservar la consulta de los archivos fuente y repositorios autorizados: Cafe-blog e iie-teoria ya están identificados en este documento. El repositorio fuente de iie-elementals no queda establecido por este mensaje; no se infiere a partir del dominio.
+
+Este registro no acredita una nueva lectura, disponibilidad remota ni correspondencia de versiones entre cada render y su repositorio. Al sustentar una decisión conceptual, identificar el archivo, sección y versión efectivamente consultados. Se mantienen las precisiones conceptuales y los límites de uso registrados previamente.

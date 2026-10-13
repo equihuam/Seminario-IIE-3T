@@ -244,8 +244,9 @@ window.Quarto = {
 </header>
 
 
-<p>Versión 0.1 · 2026-10-08 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, <em>Lo Básico de Redes Bayesianas</em> (2023), con asistencia de IA en la revisión y el código.</p>
+<p>Versión 0.2 · 2026-10-12 · Material didáctico para revisión docente. Adaptación del ejemplo de Miguel Equihua y Octavio Pérez Maqueo, <em>Lo Básico de Redes Bayesianas</em> (2023), con asistencia de IA en la revisión y el código.</p>
 <p><strong>Objetivo:</strong> distinguir lo que supone el grafo, lo que cuantifican sus tablas y lo que responde una consulta. Requisitos: nociones de probabilidad condicional y manejo elemental de R. Este recurso se incorpora cuando el grupo esté preparado; no fija una segunda sesión obligatoria.</p>
+<p>Actualización editorial 0.2: enlace de lectura al artículo publicado y enlace separado a la versión fuente utilizada.</p>
 <section id="qué-recuperamos-y-qué-significa" class="level2">
 <h2 class="anchored" data-anchor-id="qué-recuperamos-y-qué-significa">Qué recuperamos y qué significa</h2>
 <p>Conservamos los ocho nodos, los ocho arcos y todas las probabilidades del ejemplo original para hacer su revisión reproducible. <strong>Son números hipotéticos, no estimaciones empíricas ni probabilidades científicamente calibradas del cambio climático.</strong> En particular, 0.99 no cuantifica aquí la evidencia sobre su existencia. Para una aplicación real habría que definir exposición climática local, periodo, unidades de observación y fuentes de estimación.</p>
@@ -565,7 +566,7 @@ p(S_0)\prod_{t=1}^T p(S_t\mid S_{t-1},A_{t-1})
 </section>
 <section id="procedencia-y-reproducción" class="level2">
 <h2 class="anchored" data-anchor-id="procedencia-y-reproducción">Procedencia y reproducción</h2>
-<p>Fuente: Equihua y Pérez Maqueo, <a href="https://github.com/equihuam/Cafe-blog/blob/d025b97d8e27cb31f751a024505f0252c24f0a50/posts/redes-bayesianas-basico/index.qmd">Lo Básico de Redes Bayesianas</a>, copia local consultada el 2026-10-08. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.</p>
+<p>Fuente: Equihua y Pérez Maqueo, <a href="https://cafe-sustentable-blog.netlify.app/posts/redes-bayesianas-basico/">Lo Básico de Redes Bayesianas</a> (lectura). Para examinar el código y la procedencia de esta adaptación: <a href="https://github.com/equihuam/Cafe-blog/blob/d025b97d8e27cb31f751a024505f0252c24f0a50/posts/redes-bayesianas-basico/index.qmd">versión fuente utilizada</a>, copia local consultada el 2026-10-08. El artículo publicado puede evolucionar respecto de esa versión. Adaptación: transferencia del grafo en memoria, representación con R base, inferencia exacta pequeña y contraste observación/intervención; sin dependencia de Miro, Netica o Graphviz. La revisión técnica no equivale a validación científica ni a una licencia pública de reutilización.</p>
 <p>En el repositorio, ejecutar desde una sesión nueva: <code>Rscript tests/test-clima.R</code> y <code>Rscript scripts/clima-ejemplo.R</code>. Restaurar primero el entorno con <code>Rscript --vanilla scripts/setup-r.R</code>. Las pruebas contrastan normalización, rutas, cálculos manuales, intervenciones y errores de consulta. La aproximación Monte Carlo admite error absoluto menor que 0.02 frente a la enumeración.</p>
 <p>Documentación técnica: <a href="https://www.bnlearn.com/documentation/man/bn.fit.html">tablas y ajuste</a>, <a href="https://bnlearn.com/documentation/man/cpquery.html">consultas condicionales</a>, <a href="https://www.bnlearn.com/documentation/man/causal.inference.html">intervenciones</a> y <a href="https://dagitty.net/">DAGitty</a>. Consultadas el 2026-10-08.</p>
 <div class="cell">

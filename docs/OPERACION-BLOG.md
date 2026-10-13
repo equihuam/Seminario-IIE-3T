@@ -110,3 +110,7 @@ Los commits integrados y los PR conservan la trazabilidad aunque se eliminen las
 ## Tablas anchas en móvil
 
 La plantilla de exploraciones envuelve su tabla de aportaciones en `.tabla-desplazable`, una región con nombre accesible y `tabindex="0"`. En pantalla estrecha se desplaza solo la tabla, también mediante teclado; la página conserva su ancho y el tamaño de letra. La ayuda `.ayuda-tabla-movil` indica el gesto en móvil. Al imprimir, la tabla recupera el ancho disponible y permite partir cadenas largas. Conservar este bloque al copiar la plantilla; comprobar las cuatro columnas y ausencia de desbordamiento de página a 320 y 390 píxeles cuando se amplíe su contenido.
+
+## Enlaces de lectura y fuentes de análisis — P-ME-058/P-ME-059
+
+Al enlazar café, iie-teoría o iie-elementals para lectura, usar sus versiones renderizadas: https://cafe-sustentable-blog.netlify.app/, https://iie-teoria.netlify.app/ y https://rb-x-ia.netlify.app/. Preferir la página concreta del artículo cuando se haya comprobado su destino. Para código, descarga de archivos o trazabilidad, conservar el enlace al repositorio y rotular su finalidad; si se cita una versión utilizada, mantener el commit. La página publicada puede evolucionar respecto de la versión analizada. Tras cambiar enlaces, regenerar el blog y comprobar tanto los href generados como la respuesta y el contenido de los destinos afectados.
