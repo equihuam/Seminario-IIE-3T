@@ -644,3 +644,13 @@ Se comprueba el índice de entrega antes del commit con `scripts/check_repo.py` 
 
 
 
+
+## B088 — Acuerdo de calendario en la portada y contexto del PR #13
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-069. Revisados README, PLAN, ENVIRONMENT, operación del blog, colaboración Git, fuentes y decisiones (D28), registros recientes y diferencia local respecto de origin/main. La rama actual `miguel/preparacion-git-presentaciones`, commit ee99548, contiene la entrega del PR #13 documentada en B087; un único worktree. No se logró verificar el estado remoto: fetch no pudo escribir FETCH_HEAD en el sandbox; la consulta HTTPS a la API falló y la apertura web del PR no recuperó contenido. El PR se adjuntó a esta conversación. Esta revisión es de contexto y alcance local, no una revisión independiente ni una auditoría completa del PR.
+
+Retirado el bloque temporal de portada y añadido literalmente el calendario acordado por Miguel. Conservadas ambas indicaciones: inicio el 14 de octubre y reuniones los viernes. Quarto 1.10.18 regeneró únicamente la portada y el índice de búsqueda; requirió acceso a su caché local mediante ejecución aprobada. `python scripts/check_site.py`: 23 páginas esperadas, enlaces y límites correctos. Texto comprobado en fuente y HTML; ausencia de temporal-apertura comprobada. `git diff --check`: sin errores. `python scripts/check_repo.py`: índice existente de 179 archivos correcto; no verifica los nuevos cambios sin seleccionar. No se realizó inspección visual en navegador. `.venv/Scripts/python.exe scripts/site.py check` no pudo iniciar el intérprete de Python312, por lo que la comprobación completa del entorno y reejecución del sitio queda pendiente. SVG original y DOCX sin seguimiento conservados. Sin commit, push, fusión ni publicación; cambios locales preparados para la entrega en evaluación.
+
+## B089 — Entrega del calendario de portada al PR #13
+
+Fecha de registro: 2026-10-13. Prompt: P-ME-070. Autorizados commit y actualización del PR existente. Fetch completado y API GitHub consultada: PR #13 abierto, rama fuente miguel/preparacion-git-presentaciones y base main; sin commits remotos nuevos en la rama fuente. Se prepara la entrega del acuerdo literal y salida regenerada de B088, con sus registros. Se conserva la limitación del check completo por el intérprete no disponible en .venv. Verificación editorial e índice de entrega requeridos antes del commit. No se autoriza ni realiza fusión.

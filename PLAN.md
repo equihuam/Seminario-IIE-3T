@@ -207,3 +207,9 @@ Revisión de sincronización y diagnóstico de entornos desde la copia local en 
 1. **Página de preparación (`preparar-proyecto.qmd`):** retirado el aviso temporal `#temporal-preparacion` y la nota de versión preliminar. Incorporado el calendario acordado: inicio el 14 de octubre de 2026, 16 sesiones de una hora (viernes de 14:00 a 15:00 hrs) con flexibilidad acordada entre participantes.
 2. **Control de versiones local con Git:** añadido paso e instrucciones en `preparar-proyecto.qmd` para inicializar Git localmente (`git init`), aclarando que no se requiere respaldo en GitHub ni en la nube en esta fase. Actualizada la directiva en `plantilla-participantes/README.md` y `plantilla-participantes/PROYECTO.md`.
 3. **Presentaciones en el blog (<20 MiB):** autorizada la excepción para presentaciones consolidadas en formato `.pptx` de hasta 20 MiB en `blog/presentaciones/`. Actualizados `.gitignore`, `scripts/check_repo.py`, `scripts/check_site.py` y `blog/_quarto.yml`. Creado el componente `blog/presentaciones/index.qmd` y copiado `output/Introduccion-iie3t-redes-bayesianas-v5.pptx` (17.2 MB) para descarga pública. Actualizadas directivas en `AGENTS.md` y `docs/COLABORACION-GIT-IA.md`.
+
+## Calendario acordado en portada — P-ME-069 (2026-10-13)
+
+Retirado `#temporal-apertura` de `blog/index.qmd` y sustituido por el acuerdo literal de Miguel sobre inicio, 16 sesiones, horario y flexibilidad. Portada y búsqueda regeneradas con Quarto; `scripts/check_site.py` verifica 23 páginas. Complemento local de la rama del PR #13, sin commit, push ni fusión. La comprobación completa `scripts/site.py check` sigue pendiente porque el Python de `.venv` no arranca. Véase B088.
+
+Actualización P-ME-070/B089: entrega del calendario de portada mediante commit y actualización del PR #13, confirmado abierto hacia main. Se conserva la verificación editorial de B088 y la limitación pendiente del entorno Python. Integración y publicación pendientes.

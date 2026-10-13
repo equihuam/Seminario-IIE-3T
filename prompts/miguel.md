@@ -872,3 +872,23 @@ hagamos ahora un commit & PR para ver la versión preliminar del blog también.
 
 
 
+
+## P-ME-069 — Revisión del PR y calendario acordado en portada
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Hice un PR que está en evaluación. Revisa y ponte al día.
+
+
+
+# En "Integridad ecosistémica, paso a paso" ya hay que quitar la advertencia de "por acordar". El acuerdo que hay que poner es "Iniciamos el 14 de octubre 2026. Trabajaremos durante 16 sesiones una vez a la semana los viernes de 14 a 15hrs (con flexibilidad previo acuerdo del grupo)"
+```
+
+## P-ME-070 — Commit y actualización del PR
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+haz el commit y actualiza el PR
+```
