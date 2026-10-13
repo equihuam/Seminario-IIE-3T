@@ -639,7 +639,8 @@ Fecha de registro: 2026-10-13. Prompt: P-ME-068.
 
 Se reúnen los hitos B085 y B086 para entrega hacia `main` mediante la rama `miguel/preparacion-git-presentaciones`. Incluye: 1) formalización de fechas y horarios de inicio del seminario, inicialización de Git local en la preparación y plantillas de participantes; 2) componente de presentaciones con descarga pública de la presentación v5 (<20 MiB) y ajuste de políticas de repositorio; 3) consolidación didáctica de la sesión 01 (desplegable de guía de observación y ejemplo accesible, retiro de marca temporal y atribución conceptual sin enlace público); 4) reconstrucción completa del blog (23 páginas en `blog/_site/`).
 
-Se comprueba el índice de entrega antes del commit con `scripts/check_repo.py` y `scripts/check_site.py`. Se realiza push a origin y apertura de Pull Request dirigido a `main` para habilitar el *deploy preview* de Netlify y la revisión docente. No se realiza la fusión directa a `main`.
+Se comprueba el índice de entrega antes del commit con `scripts/check_repo.py` y `scripts/check_site.py`. Commit funcional `7cd67fe` publicado en `miguel/preparacion-git-presentaciones`. Se crea el PR #13: https://github.com/equihuam/Seminario-IIE-3T/pull/13 dirigido a `main` para habilitar el *deploy preview* de Netlify y la revisión docente. No se realiza la fusión directa a `main`.
+
 
 
 
