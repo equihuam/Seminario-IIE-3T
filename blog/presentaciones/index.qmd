@@ -11,7 +11,9 @@ La exploración, diseño visual y generación técnica de los materiales se real
 
 Material visual de apoyo para la sesión de apertura y la comprensión inicial del modelo **iie-3t**.
 
-[Descargar presentación v5 (PPTX, 17.2 MB)](Introduccion-iie3t-redes-bayesianas-v5.pptx){.btn .btn-primary}
+[Descargar presentación v5 (PPTX, 17.2 MiB)](Introduccion-iie3t-redes-bayesianas-v5.pptx){.btn .btn-primary download="Introduccion-iie3t-redes-bayesianas-v5.pptx"}
+
+Guarda el archivo y ábrelo con PowerPoint u otra aplicación compatible con PPTX.
 
 ### Características del material
 

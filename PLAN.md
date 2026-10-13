@@ -213,3 +213,9 @@ Revisión de sincronización y diagnóstico de entornos desde la copia local en 
 Retirado `#temporal-apertura` de `blog/index.qmd` y sustituido por el acuerdo literal de Miguel sobre inicio, 16 sesiones, horario y flexibilidad. Portada y búsqueda regeneradas con Quarto; `scripts/check_site.py` verifica 23 páginas. Complemento local de la rama del PR #13, sin commit, push ni fusión. La comprobación completa `scripts/site.py check` sigue pendiente porque el Python de `.venv` no arranca. Véase B088.
 
 Actualización P-ME-070/B089: entrega del calendario de portada mediante commit y actualización del PR #13, confirmado abierto hacia main. Se conserva la verificación editorial de B088 y la limitación pendiente del entorno Python. Integración y publicación pendientes.
+
+## Descarga de presentación — P-ME-071/B090
+
+Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
+
+Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.

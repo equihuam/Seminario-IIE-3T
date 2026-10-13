@@ -51,6 +51,7 @@ data/private/
 *.ppt
 *.pptx
 !/blog/presentaciones/*.pptx
+!/blog/_site/presentaciones/*.pptx
 *.rds
 *.RDS
 *.rda

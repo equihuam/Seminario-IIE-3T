@@ -892,3 +892,19 @@ Fecha de registro: 2026-10-13. Hora de emisión no disponible.
 ```text
 haz el commit y actualiza el PR
 ```
+
+## P-ME-071 — Diagnóstico y sugerencias para la descarga de presentación
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+El enlace a la presentación "Introduccion-iie3t-redes-bayesianas-v5.pptx" no despliega o descarga el pptx.  Una solución podría ser abrirlo como iframe, pero escucho tus sugerencias
+```
+
+## P-ME-072 — Entrega de la corrección de descarga al PR
+
+Fecha de registro: 2026-10-13. Hora de emisión no disponible.
+
+```text
+Si ya está resuelto, actualiza el PR con un nuevo commit
+```

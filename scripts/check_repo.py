@@ -21,7 +21,8 @@ def is_approved_presentation(p, in_index=False):
     if p.suffix != ".pptx":
         return False
     if in_index:
-        return p.parts[:2] == ("blog", "presentaciones")
+        return (p.parts[:2] == ("blog", "presentaciones") or
+                p.parts[:3] == ("blog", "_site", "presentaciones"))
     return (p.parts[:2] == ("blog", "presentaciones") or
             p.parts[:3] == ("blog", "_site", "presentaciones") or
             p.parts[:1] == ("presentaciones",))
