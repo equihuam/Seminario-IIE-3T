@@ -87,7 +87,7 @@ Introduciremos probabilidades condicionales, inferencia y entrenamiento cuando l
 
 **Procedencia y referencias:** 
 
-- Esquema original del equipo y manuscrito de trabajo *Modelo de tres capas para la integridad ecosistémica*, secciones 3–5 y 21.
+- Esquema original del equipo y manuscrito de trabajo [*Modelo de tres capas para la integridad ecosistémica*](https://iie-teoria.netlify.app/), secciones 3–5 y 21.
 - Equihua Zamora, Miguel; Pérez-Maqueo, Octavio; Equihua Benítez, Ana. *Integridad ecosistémica: el tejido de la vida y la salud*, Colección Ecosalud. Analogías de la pecera y de la apariencia corporal consultadas en el manuscrito proporcionado por el equipo.
 - Eguiarte, Luis E. (2025). [Reseña del libro en Oikos](https://publicaciones.ecologia.unam.mx/oikos4/index.php/en/component/content/article/integridad-ecosistemica-el-tejido-de-la-vida-y-la-salud-coleccion-ecosalud?catid=10:articulo&Itemid=101). Contexto de la obra y su relación con Ecosalud.
 - O’Malley, Maureen A. (2017). [From endosymbiosis to holobionts: Evaluating a conceptual legacy](https://doi.org/10.1016/j.jtbi.2017.03.008). *Journal of Theoretical Biology*, 434, 34–41. Análisis del legado conceptual de Margulis.

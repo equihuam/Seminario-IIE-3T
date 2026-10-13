@@ -26,6 +26,6 @@ Registrar cada aportación con fecha, atribución acordada, pregunta o evidencia
 
 ## Fuentes {#fuentes}
 
-Las fichas iniciales se apoyan en la lectura selectiva del documento de trabajo `iie-teoria.qmd` del equipo, versión Git `2e3d3773b0f67a09a9f0935804ccf79d19450ca4`, fecha interna 2026-07-29: §3.4 (analogía diagnóstica), §§10–11 (existencias, servicios y beneficios), §16.2 (observación e intervención) y §21 (IIE operativo y ampliaciones). No es una validación empírica de las propuestas.
+Las fichas iniciales se apoyan en la lectura selectiva del [documento de trabajo iie-teoría](https://iie-teoria.netlify.app/) del equipo (fuente consultada: `iie-teoria.qmd`), versión Git `2e3d3773b0f67a09a9f0935804ccf79d19450ca4`, fecha interna 2026-07-29: §3.4 (analogía diagnóstica), §§10–11 (existencias, servicios y beneficios), §16.2 (observación e intervención) y §21 (IIE operativo y ampliaciones). No es una validación empírica de las propuestas.
 
 El [ejemplo climático revisado](../recursos/cambio-climatico.qmd) ofrece un recurso sintético para separación-d e intervención; no constituye una implementación del IIE. Las fichas conservan abierta la relación contexto–condición y distinguen las extensiones propuestas del núcleo operativo.
