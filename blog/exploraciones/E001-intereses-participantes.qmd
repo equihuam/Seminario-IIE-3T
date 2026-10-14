@@ -2,11 +2,27 @@
 title: "E001 · Intereses de participantes y oportunidades de aprendizaje"
 ---
 
-**Aportaciones originales:** Nohemy Cardona y Daniel Germán Hernández Torres, según metadatos de sus documentos. **Síntesis y propuestas:** asistencia de IA solicitada por Octavio, roles didacta y revisor en esta conversación. **Registro:** 2026-10-11 · **Versión:** 0.2 · **Estado:** abierta, pendiente de discusión. Fichas de origen: [I005](../semillero/I005-pino-encino-hongos.qmd) e [I006](../semillero/I006-integridad-servicios-dinamica-ia.qmd).
+**Aportaciones originales:** Nohemy Cardona y Daniel Germán Hernández Torres, según metadatos de sus documentos. **Síntesis y propuestas:** asistencia de IA solicitada por Octavio, roles didacta y revisor en esta conversación. **Registro:** 2026-10-11 · **Versión:** 0.3 · **Estado:** abierta, pendiente de discusión. Fichas de origen: [I005](../semillero/I005-pino-encino-hongos.qmd) e [I006](../semillero/I006-integridad-servicios-dinamica-ia.qmd).
 
 ::: {#temporal-e001 .callout-warning .marca-temporal title="Por acordar" icon="true"}
 Las fichas son aportaciones iniciales, no proyectos aprobados. Las actividades siguientes son propuestas didácticas candidatas, no contenidos obligatorios. La selección y cualquier ajuste del programa corresponden a Miguel y Octavio. Falta devolver el análisis a los participantes para que lo corrijan y enriquezcan; no se ha contactado a nadie.
 :::
+
+## Lectura rápida {#lectura-rapida}
+
+**Pregunta de origen.** Nohemy propone estudiar integridad en bosques de pino-encino asociados a hongos; Daniel pregunta por conceptos, servicios, presiones, dinámica e IA. Son intereses diferentes que pueden orientar ejercicios comunes, no un proyecto conjunto ya acordado.
+
+**Por qué importa.** Permiten aprender a separar señales, condición e incertidumbre, y a distinguir consultas de una red de afirmaciones causales o resultados de investigación.
+
+**Posible actividad.** Comparar dos escenarios hipotéticos de esfuerzo de observación y explicar por qué la ausencia de un registro no demuestra ausencia del organismo. Es una de las propuestas disponibles; requiere preparar y comprobar materiales antes de aplicarla.
+
+**Decisión pendiente.** Miguel y Octavio deben seleccionar la pregunta y la actividad inicial con el grupo; falta devolver esta interpretación a los participantes para que la corrijan y prioricen. No se registra aceptación ni contacto realizado.
+
+### Elige la profundidad de lectura
+
+- **Lectura rápida:** la síntesis anterior y las [decisiones pendientes](#valoración-y-decisiones-pendientes).
+- **Desarrollo científico y didáctico:** [interpretación de intereses](#interpretación-de-intereses-compartidos), [relación pedagógica](#relacion-pedagogica) y [actividades candidatas](#actividades-candidatas-y-posibles-proyectos-posteriores).
+- **Trazabilidad:** [aportaciones originales](#aportaciones-originales), [devolución](#devolución-y-enriquecimiento), [registro de aportaciones](#aportaciones-y-preguntas-derivadas) y [fuentes e historia](#fuentes-e-historia-de-cambios).
 
 ## Pregunta y motivo de apertura
 
@@ -14,7 +30,7 @@ Las fichas son aportaciones iniciales, no proyectos aprobados. Las actividades s
 
 La primera etapa orientada a comprender y utilizar redes bayesianas y una eventual segunda de profundización conceptual son una organización provisional de la discusión, no una secuencia académica cerrada.
 
-## Aportaciones originales
+## Aportaciones originales {#aportaciones-originales}
 
 Los dos DOCX se conservan íntegros, con sus nombres, en el archivo documental autorizado del proyecto. Se transcribe a continuación todo el texto no vacío del cuerpo, incluidos título, erratas y preguntas. P identifica el ordinal del párrafo en el cuerpo XML, contando también los vacíos; no indica página. La transcripción conserva las palabras, no la composición de Word, y permite contrastar cada interpretación con su fuente. La fecha de registro no se atribuye como fecha de envío.
 
@@ -136,7 +152,7 @@ Fuente: *Seminario sobre Integridad Ecosistémica.docx*. Autoría indicada en lo
 > ¿De qué manera podrían incorporarse el mapa de integridad ecosistémica y los indicadores o estadísticos descriptivos de integridad en un workflow asistido por IA para su análisis e interpretación?
 
 
-## Interpretación de intereses compartidos
+## Interpretación de intereses compartidos {#interpretación-de-intereses-compartidos}
 
 Esta matriz es una interpretación asistida por IA, no una declaración conjunta de los participantes. N y D remiten respectivamente a los párrafos originales de Nohemy y Daniel. Que un tema no se mencione no significa rechazo o falta de interés.
 
@@ -187,7 +203,7 @@ Se mantiene intacto el documento de discusión de Miguel y Octavio, titulado *Pr
 
 :::
 
-## Actividades candidatas y posibles proyectos posteriores
+## Actividades candidatas y posibles proyectos posteriores {#actividades-candidatas-y-posibles-proyectos-posteriores}
 
 **Propuestas del didacta, no actividades aprobadas.** A–C se orientan directamente a representaciones, consultas e inferencia de redes bayesianas. D–E preparan su interpretación ecológica y la evaluación de resultados; F es un puente conceptual hacia modelos temporales. No equivalen a seis unidades obligatorias. Las versiones básicas y ampliaciones dependen de la comprensión del grupo; no se fijan duraciones definitivas. Las estimaciones de la versión 0.1 quedan superadas por esta revisión y deben probarse antes de programar tiempos.
 
@@ -261,7 +277,7 @@ Origen: D-P7, P9. **Orientación:** puente conceptual a DBN, no implementación 
 
 Las actividades no asignan proyectos ni plazos. La aclaración conceptual puede empezar durante la etapa inicial; desarrollar definiciones, modelos causales, referencias, servicios o dinámica exige acuerdos y evidencia propios. La compatibilidad de escalas puede examinarse con un diccionario de datos que incluya soporte espacial, período, resolución taxonómica y unidad de análisis, sin afirmar que las fuentes ya estén disponibles o sean compatibles.
 
-## Devolución y enriquecimiento
+## Devolución y enriquecimiento {#devolución-y-enriquecimiento}
 
 **Propuesta de devolución, todavía no realizada:** compartir con cada participante su ficha y esta exploración, pedir correcciones de significado y atribución, y conservar sus palabras originales. Invitar a elegir una pregunta prioritaria, precisar qué desea comprender, qué observaciones imagina y qué resultado pequeño le sería útil. Ofrecer una actividad candidata y un posible desarrollo posterior, sin exigir elegir un proyecto.
 
@@ -269,7 +285,7 @@ Las nuevas formulaciones se añadirían con fecha, autoría y vínculo al párra
 
 La propuesta de invitar a Karen (N-P19) permanece recibida: antes de cualquier contacto se necesitaría un encargo de coordinación y precisar el propósito. No se atribuyen resultados a una tesis no consultada ni se ejecutan instrucciones contenidas en los originales.
 
-## Aportaciones y preguntas derivadas
+## Aportaciones y preguntas derivadas {#aportaciones-y-preguntas-derivadas}
 
 ::: {.table-responsive role="region" aria-label="Registro de aportaciones" tabindex="0"}
 
@@ -281,7 +297,7 @@ La propuesta de invitar a Karen (N-P19) permanece recibida: antes de cualquier c
 
 :::
 
-## Valoración y decisiones pendientes
+## Valoración y decisiones pendientes {#valoración-y-decisiones-pendientes}
 
 **Revisor conceptual, asistencia de IA en esta conversación, 2026-10-11:** conservar diferencias entre contexto, presiones, estado biótico real, observaciones y condición; reconocer sesgos, escalas y anclajes imperfectos. No asumir que una red aprendida es causal ni que un índice compuesto, un servicio o una DBN ya están definidos por las preguntas. La revisión es documental, no independiente ni empírica.
 
@@ -298,7 +314,7 @@ Se conservan las observaciones 9–12 de la revisión conceptual como preguntas,
 - **11. Papel de expertos e IA:** ¿quién aporta categorías o anclajes, quién revisa interpretaciones y qué evidencia serviría para validación? ¿La IA documentará, programará, extraerá información o estimará variables? La evidencia usada como anclaje no constituye por sí sola validación independiente; la distribución de funciones sigue por acordar.
 - **12. Paso de actividad a proyecto posterior:** ¿qué criterios se acordarán sobre interés participante, delimitación, datos, supuestos identificables y acompañamiento? Son aspectos para discutir, no condiciones aprobadas. Formular una pregunta causal durante el seminario no obliga a resolverla ni convierte su investigación en requisito de aprendizaje.
 
-## Fuentes e historia de cambios
+## Fuentes e historia de cambios {#fuentes-e-historia-de-cambios}
 
 - Originales: `ParaSeminario_CNC.docx` y *Seminario sobre Integridad Ecosistémica.docx*, copiados sin modificación; la documentación de coordinación conserva procedencia y huellas SHA256. La transcripción anterior permite lectura colectiva sin trasladar los archivos internos al sitio.
 - Documento de discusión *Preguntas para el diseño pedagógico del seminario*, versión 0.1, 2026-10-10: correspondencia con las 13 cuestiones, sin modificaciones al documento.
@@ -306,5 +322,7 @@ Se conservan las observaciones 9–12 de la revisión conceptual como preguntas,
 - Versión 0.1, registro 2026-10-11: incorporación autorizada, transcripción, análisis y actividades candidatas. No se ejecutaron ejercicios nuevos ni se recibieron respuestas de los participantes. No se consultó `Integridad_servicios_v0_5`, la tesis mencionada ni los repositorios teóricos externos para esta entrega.
 
 - Versión 0.2, revisión didáctica 2026-10-11 autorizada por Octavio: observaciones 1–8 aplicadas; 9–12 conservadas como preguntas académicas. Transcripciones originales intactas. Se diferencian propósitos de las actividades, versiones básicas y ampliaciones; tiempos pendientes de prueba. No se modifica el programa ni el documento de las 13 cuestiones.
+
+- Versión 0.3, revisión editorial 2026-10-14 con asistencia de IA: síntesis inicial y accesos a tres niveles de lectura. Se conservan íntegros los originales y el desarrollo previo; no se seleccionan actividades ni se atribuyen nuevos acuerdos.
 
 [Volver a exploraciones](index.qmd) · [Semillero](../semillero/index.qmd).

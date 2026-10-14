@@ -42,6 +42,47 @@ Sistema simple aprobado por Miguel en P-ME-043, con autorización de commit y pu
 
 El PR #3 quedó integrado en `main` mediante `eb48816e9b4ee11279f82d720a4383d77ae7186e` el 2026-10-10 (comprobado en GitHub). Las entradas históricas que indican integración pendiente describen su estado anterior.
 
+## Atención de revisión del blog — P-ME-073 (2026-10-14)
+
+Contraste y acciones en [REVISION-BLOG-OCTAVIO-V1](docs/REVISION-BLOG-OCTAVIO-V1.md). Aplicados localmente: identificación hipotética de la tabla de sesión 01 (v0.2), corrección de densidad/tasa, entrada breve en preparación, progresión en Inicio y síntesis con niveles de lectura en E001 (v0.3). La revisión recibida no constituye aprobación docente ni prueba con participantes.
+
+### T004 — Resolver la discrepancia del calendario
+
+- **Estado:** resuelto localmente por confirmación de Miguel en P-ME-074; integración y comprobación de publicación pendientes en T008.
+- **Fuente:** reporte §4.A; portada y preparación en 85cc267; acuerdos P-ME-062 y P-ME-069 de main.
+- **Acción:** Miguel y Octavio deben precisar si el miércoles 14 de octubre es una apertura excepcional o si debe corregirse la fecha, y aclarar horario de apertura y cómputo de las 16 sesiones. No se presume una primera sesión celebrada.
+- **Cierre:** acuerdo fechado y atribuido, concordante en Inicio, Preparar tu proyecto y documentación vigente del calendario (incluido AGENTS); render y comprobación posterior a publicación. Los registros históricos se conservan por adición.
+
+**Actualización P-ME-074 (registro 2026-10-14):** Miguel confirma la apertura excepcional el miércoles 14 de octubre de 2026 a las 9:00 h y la rutina posterior los viernes de 14:00 a 15:00 h. Queda superada la necesidad de decidir entre error de fecha y apertura excepcional. Inicio, Preparar tu proyecto y AGENTS reflejan el acuerdo; se conservan las 16 sesiones y la flexibilidad pactada. Se utiliza fecha absoluta, sin trasladar «mañana» al contenido. La sesión no se registra como celebrada.
+
+### T005 — Acordar y probar la carga de preparación
+
+- **Estado:** TODO; mejora editorial aplicada, decisión didáctica y prueba pendientes.
+- **Fuente:** reporte §4.B y §6; preparación vigente; cuestiones pedagógicas 2, 3 y 10.
+- **Acción:** coordinación por confirmar; decidir si Git/API se aplazan o conservan antes del encuentro. Probar la ruta con participantes principiantes y recoger tiempo, obstáculos y autonomía de forma agregada; no inventar un tiempo mínimo.
+- **Cierre:** requisitos y apoyos acordados, coherentes con plantilla y directivas, más evidencia de una prueba y ajustes justificados. La entrada breve añadida no demuestra reducción efectiva de carga.
+
+### T006 — Precisar el papel formativo de la IA
+
+- **Estado:** TODO; decisión docente.
+- **Fuente:** reporte §6; README, propósito y resultados; cuestiones pedagógicas 1, 10 y 11.
+- **Acción:** Miguel y Octavio deben distinguir objetivos sobre IIE/redes bayesianas de objetivos sobre trabajo científico asistido por IA; acordar productos, tiempo y evidencias personales de aprendizaje, y si se estudiará esta práctica como objeto de investigación.
+- **Cierre:** acuerdo explícito reflejado en objetivos y actividades, con criterios de evaluación propios y sin desplazar implícitamente el núcleo ecológico/estadístico. No basta una nueva frase promocional.
+
+### T007 — Devolver E001 y seleccionar una actividad
+
+- **Estado:** TODO; antecedente pendiente, ahora identificado para seguimiento.
+- **Fuente:** reporte §3 y §4.E; E001, Devolución y decisiones pendientes.
+- **Acción:** la coordinación debe devolver la síntesis a participantes, recoger correcciones y prioridades, confirmar atribución y escoger una actividad viable con materiales comprobados. No se contacta a terceros como parte de esta edición.
+- **Cierre:** devolución y acuerdo registrados con fecha; correcciones incorporadas conservando originales; actividad seleccionada o aplazamiento justificado, con evidencia de aprendizaje prevista. La síntesis editorial no acredita consentimiento nuevo.
+
+### T008 — Integrar y comprobar la publicación de esta revisión
+
+- **Estado:** en curso; entrega mediante commit y PR autorizada en P-ME-075 desde `miguel/revision-blog-octavio`. Revisión, integración y publicación pendientes.
+- **Fuente:** P-ME-073, reporte de atención y B092.
+- **Acción:** revisar el diff y las verificaciones, entregar mediante PR hacia main y fusionar solo tras aprobación. Comprobar en producción Inicio, Preparación, sesión 01 y E001; enlazar PR/commit y evidencia.
+- **Cierre:** integración aprobada y contenidos esperados servidos, con enlaces y comportamiento afectados comprobados. Las decisiones T004–T007 conservan su estado hasta resolverse por separado.
+
 ## Estado inicial — 2026-10-08
 
 - Completado: propósito, límites de carpeta y pautas del proyecto.

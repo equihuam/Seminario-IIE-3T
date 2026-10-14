@@ -7,12 +7,20 @@ Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, d
 
 ::: {.callout-note}
 ## Calendario y dinámica del seminario
-**Inicio:** 14 de octubre de 2026.
+**Apertura:** miércoles **14 de octubre de 2026 a las 9:00 h**, en un horario excepcional acordado por el grupo.
 
-Tendremos **16 sesiones de una hora**, una por semana, los **viernes de 14:00 a 15:00 hrs**, manteniendo la flexibilidad necesaria (previo acuerdo entre todos).
+El seminario contempla **16 sesiones de una hora**. Después de la apertura, la rutina será reunirnos los **viernes de 14:00 a 15:00 h**, con flexibilidad previo acuerdo del grupo.
 :::
 
 **Objetivo:** poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos **20–30 minutos** para el espacio de trabajo y **15–20 minutos adicionales** para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento.
+
+::: {.callout-tip title="Si estás comenzando: un punto de entrada sencillo"}
+Para participar aun si necesitas ayuda técnica, trae una **pregunta científica provisional**, una **carpeta que puedas volver a abrir** y una **primera nota de bitácora**: qué quieres averiguar, qué hiciste y qué falta. Puedes escribirla sin asistente.
+
+Git local, la continuidad con el asistente y Zotero forman parte de la preparación propuesta más abajo. Si alguna configuración te detiene, anota la dificultad y continúa con tu pregunta; no necesitas resolverla para participar. La ficha ampliada de Zotero es opcional; R, Python y la colaboración en la nube se incorporarán cuando el ejercicio los requiera.
+:::
+
+Los tiempos anteriores son estimaciones para la preparación completa, no un plazo de admisión ni tiempos comprobados con participantes.
 
 ## 1. Crea una carpeta propia y copia la plantilla
 
@@ -93,11 +101,16 @@ Consulta la [ficha «Zotero + IA: del hallazgo a la cita»](recursos/zotero.qmd#
 
 ## Qué traer al primer encuentro
 
+**Para comenzar la conversación:**
+
 - Tu carpeta y los documentos que puedas volver a abrir.
-- Tu repositorio Git local inicializado (o las dudas surgidas al intentarlo).
-- Una pregunta provisional y un primer resultado pequeño.
-- Una entrada de bitácora con la comprobación realizada y el siguiente paso.
-- Una referencia revisada en Zotero y el resultado de la prueba de API, o el pendiente concreto.
+- Una pregunta provisional y una primera nota de bitácora con lo realizado y el siguiente paso.
+
+**Para revisar la preparación técnica y organizar apoyos:**
+
+- Tu repositorio Git local inicializado, o la dificultad pendiente.
+- El primer resultado del encargo y la comprobación de continuidad, si pudiste realizarlos.
+- Una referencia revisada en Zotero y el resultado de la prueba de API, o el pendiente concreto. Si todavía no configuraste Zotero, conserva los datos de una referencia que quieras revisar.
 - Una dificultad o duda sobre el trabajo con el asistente, si apareció.
 
 No compartas credenciales ni datos cuya distribución no esté autorizada. Puedes realizar toda esta preparación con ejemplos hipotéticos y compartir únicamente lo necesario para discutir tu pregunta.
@@ -105,3 +118,5 @@ No compartas credenciales ni datos cuya distribución no esté autorizada. Puede
 Si no lograste configurar alguna herramienta (Git, Zotero o el asistente), trae los documentos y la dificultad que encontraste: **eso no impide participar en la apertura**. R, Python, dependencias y la colaboración remota en la nube se prepararán cuando el trabajo los requiera, con instrucciones verificadas para el ejercicio elegido.
 
 Continúa con [Empieza aquí](empieza-aqui.qmd) y la [sesión de apertura](posts/01-tres-capas/index.qmd). Los acuerdos para documentar y comprobar el trabajo están en [Reproducibilidad](reproducibilidad.qmd).
+
+Revisión editorial, 14 de octubre de 2026: se distingue el punto de entrada con acompañamiento de la preparación técnica; se conserva el recorrido acordado. La carga real queda pendiente de prueba con participantes.
