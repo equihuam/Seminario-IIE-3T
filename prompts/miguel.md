@@ -937,3 +937,27 @@ Fecha de registro: 2026-10-14. Hora de emisión no disponible.
 ```text
 haz el commit & PR
 ```
+
+## P-ME-076 — Objetivos, habilidades y autoevaluación del aprendizaje
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+Necesitamos hacer explícitos los objetivos de aprendizaje. Quizás incluso las habilidades que se busca desarrollar. Usando al didacta y al pedagogo valora una posibilidad semejante a la que hice en este blog: [https://2025-ciencia-reproducible.netlify.app/posts/2025-05-16-que-aprendi/](https://2025-ciencia-reproducible.netlify.app/posts/2025-05-16-que-aprendi/)
+```
+
+## P-ME-077 — Propuesta de guía y captura de evidencias
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+Me parece adecuado lo que propones. Hazme una propuesta de la guía y de la forma de captura de la evidencia para que la revise
+```
+
+## P-ME-078 — Commit y push de objetivos sin PR
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+podríamos hacer un commit & push sin pr todavía, para que Octavio pueda ver los documentos directamente desde github, todavía en su rama. Necesito darle una breve indicación de como descargarlos.
+```

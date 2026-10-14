@@ -260,3 +260,11 @@ Actualización P-ME-070/B089: entrega del calendario de portada mediante commit 
 Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
 
 Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.
+
+## Objetivos y seguimiento del aprendizaje — P-ME-076 (2026-10-14)
+
+Valoración didáctica y pedagógica entregada en conversación (B095): concretar los seis resultados propuestos del README mediante habilidades observables, evidencia breve y autovaloración de autonomía. Tomar como antecedente la entrada de Miguel «Evaluar la experiencia» de Ciencia Abierta (16-05-2025). Vincular con cuestiones 1, 4 y 11 de PREGUNTAS-DISENO-PEDAGOGICO. Pendiente de acuerdo docente: seleccionar objetivos comunes, alcance técnico, descriptores y momentos de revisión; preparar y probar un instrumento breve. No se aprobó ni publicó un cuestionario; no se cambió el programa.
+
+Actualización P-ME-077/B096: borradores v0.1 en docs/GUIA-APRENDIZAJE-PROPUESTA.md y docs/CAPTURA-EVIDENCIAS-PROPUESTA.md. Preparados para revisión, con ficha, devolución y ejemplo hipotético. Pendientes acuerdo sobre metas y alcance técnico, recepción y responsables; después prueba breve con participantes. Sin incorporación al blog.
+
+Actualización P-ME-078/B097: autorizada entrega de ambos borradores y registros mediante commit y push a miguel/objetivos-aprendizaje, sin PR. Revisión docente y prueba de uso siguen pendientes.
