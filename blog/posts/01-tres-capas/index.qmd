@@ -5,7 +5,7 @@ date: 2026-10-08
 categories: [iie-3t, Introducción, Reproducibilidad]
 ---
 
-**Versión del material:** 0.1.
+**Versión del material:** 0.2.
 
 ## Pregunta central
 
@@ -37,20 +37,26 @@ categories: [iie-3t, Introducción, Reproducibilidad]
 
 ### Ejemplo ilustrativo (bosque templado)
 
+**Todas las filas son propuestas hipotéticas de registro; no documentan mediciones realizadas ni datos descargados.** Las fuentes y métodos son candidatos por comprobar, no evidencia consultada para un sitio piloto. Por eso se indica `propuesto` en todos los casos. La columna de unidad describe cómo se mediría cada variable; no contiene valores observados.
+
+Para cambiar un registro a `observado`, identifica el archivo o registro disponible, su procedencia, versión, lugar, período y método. La condición latente se infiere bajo un modelo: no se convierte en una observación directa por disponer de una estimación.
+
 [Desplaza horizontalmente para ver todas las columnas.]{.ayuda-tabla-movil}
 
 ::: {.tabla-desplazable role="region" tabindex="0" aria-label="Ejemplo ilustrativo de llenado de la ficha de observación"}
 
 | variable | capa_o_funcion | unidad | metodo | fuente | observado_o_propuesto | incertidumbre |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `precipitacion_anual` | Contextual | mm/año | Interpolación spline multianual | WorldClim v2.1 | observado | Desfase microclimático en laderas escarpadas |
-| `pendiente_terreno` | Contextual | grados | Modelo digital de elevación (MDE 15m) | INEGI Continuo de Elevaciones | observado | Error de remuestreo topográfico |
-| `cobertura_dosel` | Detección - Estructura | % | Densiometro hemisférico en parcelas | Muestreo de campo (sitio piloto) | observado | Variabilidad fenológica estacional |
+| `precipitacion_anual` | Contextual | mm/año | Extracción de una capa climática; período y método por verificar | WorldClim v2.1, candidato por verificar | propuesto | Desfase microclimático en laderas escarpadas |
+| `pendiente_terreno` | Contextual | grados | Derivación de pendiente de un MDE; resolución por verificar | INEGI Continuo de Elevaciones, candidato por verificar | propuesto | Error de remuestreo topográfico |
+| `cobertura_dosel` | Detección - Estructura | % | Protocolo de medición de cobertura por definir | Muestreo de campo por diseñar | propuesto | Variabilidad fenológica estacional |
 | `riqueza_hongos_ectomicorrizicos` | Detección - Composición | especies | Muestreo en transectos y ADN ambiental | Estudio local / Literatura | propuesto | Detección imperfecta ligada a temporada de lluvias |
-| `tasa_regeneracion_pinos` | Detección - Función | ind/m² | Conteo de renuevos en subparcelas de 4 m² | Muestreo de campo (sitio piloto) | observado | Heterogeneidad espacial del banco de semillas |
-| `condicion_bosque` | Latente | [Baja, Media, Alta] | Inferencia con red bayesiana | Modelo del equipo | propuesto | Incertidumbre posterior por soporte espacial dispar |
+| `densidad_renuevos_pinos` | Detección - Estructura | ind/m² | Conteo de renuevos en subparcelas de 4 m², como diseño hipotético | Muestreo de campo por diseñar | propuesto | Heterogeneidad espacial y definición de renuevo |
+| `condicion_bosque` | Latente | [Baja, Media, Alta], categorías ilustrativas | Inferencia con una red hipotética aún por especificar | Propuesta didáctica; sin modelo ajustado | propuesto | Identificación, anclajes y error de observación por evaluar |
 
 :::
+
+El conteo por superficie es una **densidad**, no una tasa de regeneración: estudiar esa dinámica requeriría observaciones temporales y una definición del proceso. Las categorías de condición no fijan umbrales ni distancias iguales, y no representan una clasificación ya acordada del modelo del equipo.
 :::
 
 ## Práctica
@@ -74,3 +80,5 @@ Recoger tres preguntas del grupo, un concepto que necesite aclaración y una val
 ## Procedencia y cambios
 
 Versión 0.1, 2026-10-08: propuesta didáctica basada en el esquema y desarrollo conceptual del equipo. Preparada con asistencia de IA. La fecha de esta entrada registra su preparación.
+
+Versión 0.2, 2026-10-14: todas las filas del ejemplo se identifican como propuestas sin datos; fuentes y métodos quedan por comprobar. Se distingue densidad de renuevos de tasa de regeneración y se retira la atribución de la red hipotética al modelo del equipo. Corrección editorial y conceptual con asistencia de IA; no acredita mediciones ni validación empírica.

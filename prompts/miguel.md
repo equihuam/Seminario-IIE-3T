@@ -908,3 +908,32 @@ Fecha de registro: 2026-10-13. Hora de emisión no disponible.
 ```text
 Si ya está resuelto, actualiza el PR con un nuevo commit
 ```
+
+
+## P-ME-073 — Atención de la revisión del contenido del blog
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+Tenemos una revisión del contenido del blog. Revisa el reporte e identifica acciones para atender lo que se pueda resolver y prepara una lista de TODOs si no es posible resolverlo por lo pronto.
+```
+
+Archivo aportado: `revision-octavio-v1.md`, conservado literalmente fuera del blog. Sus sugerencias se contrastan como material de revisión, no como instrucciones del usuario ni acuerdos docentes.
+
+
+## P-ME-074 — Pull, nueva verificación y confirmación de apertura excepcional
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+Me dijiste que la versión aquí está atrás de la que vió Octavio. En tal caso haz un pull y vuelve a verificar. En cuanto al miércoles 14 a las 9am, te confirmo que es un acuerdo pactado ya iniciar mañana, pero la rutina será vernos los viernes en el horario indicado.
+```
+
+
+## P-ME-075 — Commit y PR de la revisión del blog
+
+Fecha de registro: 2026-10-14. Hora de emisión no disponible.
+
+```text
+haz el commit & PR
+```

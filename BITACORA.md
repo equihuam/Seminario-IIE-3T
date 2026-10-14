@@ -664,3 +664,32 @@ Comprobación completa .venv/Scripts/python.exe scripts/site.py check ejecutada 
 ## B091 — Entrega de la copia publicable del PPTX al PR #13
 
 Fecha de registro: 2026-10-13. Prompt: P-ME-072. Autorizados nuevo commit y actualización del PR #13. Fetch y API confirman PR abierto hacia main, rama fuente miguel/preparacion-git-presentaciones sin nuevos commits remotos. Entrega de la corrección de B090: copia PPTX en la salida pública, excepciones limitadas de Git y control del índice, botón download, búsqueda regenerada y prueba de regresión. Se conserva la comprobación completa del blog y las cinco pruebas observadas en B090; revisión del índice seleccionado antes de commit. Sin fusión; la descarga remota se comprueba después del push y depende de la actualización de la vista previa de Netlify.
+
+
+## B092 — Atención de revisión del blog de Octavio v1
+
+Fecha de registro: 2026-10-14. Prompt: P-ME-073. Reporte original conservado fuera del blog; diagnóstico y disposición de cada hallazgo en docs/REVISION-BLOG-OCTAVIO-V1.md. Contraste con main 85cc267 actualizado mediante fetch. Para no mezclar cambios previos de presentación y registros en miguel/mapa-iie-pixeles, se crea miguel/revision-blog-octavio con worktree dentro del proyecto (.worktrees/revision-blog-octavio); exclusión local del contenedor en .git/info/exclude. Sin modificación de los cambios previos ni del SVG canónico.
+
+Aplicados: tabla enteramente hipotética y corrección densidad/tasa en sesión 01 v0.2; entrada breve y separación de preparación documental/técnica; cinco hitos orientativos en Inicio; síntesis y navegación por niveles en E001 v0.3, preservando citas originales y anclas preexistentes. Roles didacta y revisor en esta conversación, sin revisión independiente. El calendario contradictorio reproduce un acuerdo explícito: no se inventa una apertura extraordinaria. T004–T008 registran calendario, carga, objetivos IA, devolución a participantes e integración/publicación.
+
+Verificación: Python 3.12.14 de .venv, R 4.6.0 y Quarto configurado por el proyecto; bibliotecas locales reutilizadas mediante junctions del worktree, sin instalaciones. `.venv/Scripts/python.exe scripts/site.py check`: renv consistente, pip correcto, ejecución R/Python y 23 páginas verificadas. R emite avisos de locale C.UTF-8, sin fallo; se descartan cambios incidentales de las tres páginas de recursos no editadas y se restauran bibliotecas de salida ajenas a la corrección. E001 se vuelve a renderizar después de conservar sus anclas históricas; posterior `scripts/check_site.py` requerido para la salida final.
+
+Comprobaciones puntuales Python: texto citado de E001 idéntico a HEAD, reporte copiado byte por byte, SVG canónico idéntico, seis filas propuestas, enlaces internos de E001 válidos y todos sus IDs previos conservados. Navegador local: Inicio, Preparación y E001 sin desbordamiento de página a 390 y 1280 px; sesión 01 a 390 px abre el desplegable y limita el ancho de tabla a una región desplazable (303 px, contenido 975 px). Capturas inspeccionadas de Inicio, Preparación, E001 y desplegable; no auditoría visual exhaustiva, impresión ni prueba con participantes. No se probaron descargas externas ni producción. Índice de esta entrega seleccionado para check_repo; sin commit, push, PR, fusión ni publicación.
+
+Cierre de comprobaciones B092: `scripts/check_site.py` vuelve a pasar con 23 páginas y `scripts/check_repo.py` revisa 182 archivos del índice sin incidencias de tamaño ni patrones conocidos. `git diff --cached --check` solo señala un espacio final ya presente en la última línea truncada del reporte recibido; se conserva para mantenerlo literal. El mismo control excluyendo ese original pasa sin incidencias. Las copias web del SVG no presentan diferencias de contenido tras normalizar finales de línea en Git.
+
+
+## B093 — Sincronización y calendario de apertura confirmado
+
+Fecha de registro: 2026-10-14. Prompt: P-ME-074. `git pull --ff-only origin main` ejecutado en miguel/revision-blog-octavio: ya actualizado, HEAD/origin/main 85cc267. La revisión B092 ya utilizaba ese commit. `git fetch origin main:main` avanza main local desde 92a6880 a 85cc267; conserva intacta la rama y cambios de presentación de la carpeta principal. No se integra trabajo editorial en main.
+
+Miguel confirma apertura excepcional el miércoles 14 de octubre de 2026 a las 9:00 h y rutina posterior los viernes de 14:00 a 15:00 h. Actualizados Inicio, Preparar tu proyecto, AGENTS, informe y T004 (resuelto localmente; publicación en T008). Se mantienen 16 sesiones y flexibilidad. El prompt conserva «mañana» literalmente; las páginas usan la fecha explícita, sin atribuir celebración de la sesión.
+
+Nueva ejecución de `.venv/Scripts/python.exe scripts/site.py check`: renv consistente, pip sin dependencias rotas, código R/Python reejecutado y 23 páginas verificadas. Mismo entorno local de B092; avisos de locale de R no detienen la ejecución. Tras descartar diferencias incidentales de recursos no editados y bibliotecas de salida, `scripts/check_site.py` comprueba la salida final. Comprobación de HTML: fecha, 9:00 h, viernes 14:00–15:00 h y 16 sesiones presentes en ambas páginas. Se vuelven a contrastar las seis filas propuestas y las citas originales de E001. No se repite la revisión visual de B092 para este cambio textual ni se comprueba producción. Sin commit, push, fusión o publicación.
+
+
+## B094 — Entrega de revisión del blog mediante commit y PR
+
+Fecha de registro: 2026-10-14. Prompt: P-ME-075. Autorizados commit, push y apertura de PR hacia main desde miguel/revision-blog-octavio. Fetch confirma base 85cc267 sin nuevos commits; API de GitHub confirma que no hay un PR abierto de esta rama. Se entrega la revisión documentada en B092/B093: calendario excepcional confirmado, ejemplo hipotético corregido, preparación accesible, progresión y niveles de lectura, informe original y TODOs T004–T008.
+
+Se conserva la comprobación completa ejecutada en B093 (23 páginas, R/Python, renv y pip correctos) y la revisión visual acotada de B092. El sitio no cambió desde esa verificación. Antes del commit se seleccionan los registros de esta autorización y se comprueba el índice con scripts/check_repo.py. El espacio final en la última línea del reporte original se conserva para mantener su literalidad; diff --check excluyendo ese original no presenta incidencias. No se autoriza fusión; el PR y el commit remoto permitirán revisar la entrega. El trabajo local de presentación en la carpeta principal permanece separado.

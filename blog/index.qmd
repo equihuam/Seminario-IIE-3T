@@ -18,6 +18,8 @@ Un espacio para comprender el modelo iie-3t, construir redes bayesianas y aprend
 
 Antes del primer encuentro: [prepara tu proyecto](preparar-proyecto.qmd) con la plantilla y el asistente agéntico de tu preferencia. La guía incluye una prueba breve para comprobar que puedes retomar el trabajo desde tus archivos.
 
+Si necesitas acompañamiento técnico, empieza por una pregunta, una carpeta y una primera nota de bitácora. La guía distingue ese punto de entrada de las comprobaciones con herramientas.
+
 ::: {.layer-grid}
 ::: {.layer}
 ### Contexto
@@ -37,9 +39,23 @@ Antes del primer encuentro: [prepara tu proyecto](preparar-proyecto.qmd) con la 
 
 Partimos de una introducción común. Después elegiremos temas y profundidad según las preguntas, intereses y preparación técnica de los participantes. Cada sesión reunirá sus materiales y dejará preguntas para continuar.
 
+### Qué podrás aprender y cómo reconocer el avance
+
+Este recorrido es orientativo: cada paso se retoma según lo que el grupo necesite; no corresponde a un calendario de sesiones ya asignadas.
+
+1. **Plantear una pregunta ecológica.** Describir qué quieres conocer y en qué ecosistema: [Empieza aquí](empieza-aqui.qmd).
+2. **Distinguir contexto, detección y condición latente.** Completar una ficha separando observaciones, propuestas y supuestos: [sesión de apertura](posts/01-tres-capas/index.qmd).
+3. **Representar variables y relaciones justificadas.** Explicar un dibujo con nodos y arcos, sin atribuir causalidad solo por su dirección.
+4. **Interpretar incertidumbre y diagnóstico.** Explicar cómo una observación modifica una distribución de probabilidades, sin confundir probabilidad de clase con porcentaje de integridad.
+5. **Ejecutar y revisar un ejemplo.** Reconstruir un cálculo desde archivos y discutir sus límites. Los recursos disponibles están en el [catálogo](temas.qmd); el ejercicio específico del IIE y su producto operativo siguen por definir.
+
+Al cierre de cada encuentro, una explicación, ficha o cálculo breve permitirá reconocer avances y elegir el siguiente paso. Las ampliaciones sobre servicios, dinámica o condición vectorial dependerán del interés del grupo y de la evidencia disponible.
+
 - [Sesiones](sesiones.qmd): encuentros y materiales en orden de incorporación.
 - [Semillero de ideas](semillero/index.qmd): propuestas breves, valoración y exploraciones.
 - [Catálogo temático](temas.qmd): conceptos, guías y prácticas por tema.
 - [Reproducibilidad](reproducibilidad.qmd): cómo documentamos y comprobamos lo que hacemos.
 
-Iniciamos el 14 de octubre 2026. Trabajaremos durante 16 sesiones una vez a la semana los viernes de 14 a 15hrs (con flexibilidad previo acuerdo del grupo)
+**Apertura:** miércoles **14 de octubre de 2026 a las 9:00 h**, en un horario excepcional acordado por el grupo.
+
+El seminario contempla **16 sesiones de una hora**. Después de la apertura, la rutina será reunirnos los **viernes de 14:00 a 15:00 h**, con flexibilidad previo acuerdo del grupo.
