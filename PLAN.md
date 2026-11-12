@@ -260,3 +260,15 @@ Actualización P-ME-070/B089: entrega del calendario de portada mediante commit 
 Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
 
 Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.
+## Semillero · versión 0 — P-ME-079 (2026-11-12)
+
+Implementación en `miguel/semillero-v0` desde origin/main 4db5bcf actualizado por fetch. PWA estática en `blog/app/`: formulario, borrador, exportación JSON/Markdown, OTP, recepción versionada, adjunto privado, acuse y consulta de avisos. Migración Supabase y pruebas SQL aisladas en PGlite; operación en `docs/SEMILLERO-V0.md`. El usuario identifica el proyecto existente `seminario-iie` en P-ME-080; configuración privada pendiente de aportar.
+
+### T009 — Conectar y probar el Semillero v0
+
+- **Estado:** en curso; implementación local, pendiente de conexión al proyecto existente y prueba remota.
+- **Origen:** P-ME-076–080.
+- **Cierre:** migración aplicada al proyecto verificado, dos cuentas de prueba aisladas, envío y reintento con mismo acuse, corrección con original preservado, documento privado cotejado, agenda reprogramable y respaldo verificable. Registrar evidencia real; PGlite no prueba Auth ni Storage remotos.
+- **Entrega:** integrar únicamente por PR aprobado; comprobar `/app/` y el enlace del Semillero en producción después de integrar. Prueba con participantes y elección del plan de servicio pendientes; no poblar calendario a partir de acuerdos históricos sin confirmación.
+
+**Actualización P-ME-081–085/B098:** conectado el proyecto real `seminario-iie` por pooler de sesión y TLS verificado; migración aplicada y prueba SQL transaccional remota correcta, sin datos sintéticos persistentes. API de avisos accesible y versiones privadas protegidas. Nueve tarjetas móviles comprobadas a 320×568, 360×640 y 390×844. Configuración pública preparada; acceso por correo deliberadamente pendiente de SMTP, plantilla OTP y cuentas habilitadas. P-ME-085 autoriza commit/push de la rama para continuar en laptop; no autoriza fusión. Guía de continuación y herramientas administrativas en `docs/SEMILLERO-V0.md`.

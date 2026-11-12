@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
+node_modules/
 .Rproj.user/
 .Rhistory
 .RData
@@ -18,6 +19,7 @@ _freeze/
 blog/**/*_files/
 blog/**/*.ipynb
 blog/**/*.html
+!/blog/app/index.html
 blog/**/*.pdf
 !/blog/recursos/zotero-ia-ficha.pdf
 
@@ -26,6 +28,7 @@ blog/**/*.pdf
 !/blog/_site/**
 
 # Registros internos y configuración de esta máquina
+.secrets/
 *.local.*
 .env
 .env.*
