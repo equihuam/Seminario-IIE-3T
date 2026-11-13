@@ -1068,3 +1068,15 @@ Fecha de emisión no especificada. Registro de la confirmación recibida en este
 ```text
 Ya está hecho. Lo hice en fragaria. Es el cierre  de la batería de pruebas
 ```
+
+## P-ME-091 — Protocolo utilizado para la prueba de acceso de Octavio
+
+Fecha de emisión no especificada. Texto compartido por Miguel como explicación del procedimiento de la batería cerrada en P-ME-090; no se interpreta como encargo de ejecutar pasos en nombre de Octavio.
+
+```text
+Esta es la idea 
+Para probar que un usuario no puede descargar semillas de otros estoy probando con tu cuenta. Yo subí una idea y ahora tu debes intentar bajarla..
+1. Re estoy envíando este zip para que, en tu equipo, hagas clic derecho en el ZIP y elija Extraer todo.
+2. En la carpeta extraída, abre Prueba-Octavio.html con doble clic y pulsa Enviar código a octavio.maqueo@inecol.mx.
+3. Recibirás un correo con un número de código y deberás ponerlo en el campo respectivo en esa página, pulsa Comprobar acceso al adjunto. Envíame copia solo del mensaje que te salga como resultado, incluido el estado HTTP.  El código clave que te llegó por correo no lo debes copiar pues hay que evitar divulgarlo.
+```

@@ -763,3 +763,11 @@ Prompt: P-ME-090. Miguel confirma que el trabajo ya se realizó en Fragaria y qu
 Procedencia: cierre comunicado por Miguel sobre la ejecución en Fragaria; no se atribuye a este equipo una nueva ejecución, revisión del ZIP ni cotejo HTTP que no se hayan realizado aquí. Fetch del remoto al recibir la confirmación no aporta commits nuevos con el artefacto privado; eso no invalida el cierre comunicado ni exige que el ZIP privado se publique. No se cambian indicadores de configuración ni código de la aplicación como consecuencia de este registro.
 
 La batería de pruebas queda cerrada según la confirmación del responsable. La revisión/aprobación del PR #15, su eventual integración y comprobación de publicación son pasos distintos; esta confirmación no autoriza una fusión. Las comprobaciones documentales del índice y la entrega de este registro no se presentan como pruebas adicionales de la PWA.
+
+## B103 — Alcance del protocolo de acceso cruzado aportado por Miguel
+
+Prompt P-ME-091. Miguel aporta el procedimiento enviado a Octavio: un adjunto de la idea de Miguel, página HTML distribuida en ZIP, autenticación con el correo propio de Octavio y comprobación de acceso al adjunto; se solicita compartir únicamente resultado y estado HTTP, excluyendo el código de acceso. Se vincula este protocolo con la captura P-ME-087 y el cierre confirmado en P-ME-090/B102.
+
+El resultado esperado es rechazo de la descarga del adjunto ajeno. La captura comunica ese resultado (HTTP 400, Object not found); el contraste de B101 respalda el aislamiento del metadato del objeto. Alcance documentado: adjunto privado concreto e identidad de Octavio. No se extiende automáticamente a todos los archivos, a la lectura del registro completo de semillas ni a todos los canales de acceso. La batería continúa cerrada conforme a Miguel; no se solicita repetirla ni se ejecutan autenticaciones o envíos en nombre de Octavio. No se guardan códigos de acceso ni se incorporan ZIPs privados al repositorio.
+
+Verificación documental B103: check_repo revisa 224 archivos sin incidencias. diff --check señala un espacio final en la primera línea del texto aportado en P-ME-091; se conserva deliberadamente para registrar literalmente el mensaje. Sin cambios de software ni nuevas pruebas de acceso.
