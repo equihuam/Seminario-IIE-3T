@@ -1034,3 +1034,29 @@ Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin
 ```text
 No lo terngo, pero puede ser gmail o outlook, creo que ambos están habilitados para hacerlo a mi nombre
 ```
+
+## P-ME-087 — Captura de la prueba de acceso de Octavio
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no especificada; la actualización del entorno recibida señala 2026-11-13.
+
+```text
+La prueba de octavio
+```
+
+Adjunto: captura de pantalla recibida en esta conversación, conservada por la aplicación fuera de Git. Muestra una página titulada «Prueba de acceso de Octavio» y el mensaje «Sesión verificada. Descarga ajena denegada. HTTP 400 · Object not found». La anotación describe la captura; no sustituye revisar el código ni verificar el archivo exacto.
+
+## P-ME-088 — Ubicación indicada del artefacto de prueba
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+es el zip que esta en private
+```
+
+## P-ME-089 — Aplazar revisión del ZIP hasta disponer de la laptop
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+laptop. Si no está disponible la info lo hago más tarde en Fragaria
+```
