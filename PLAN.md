@@ -260,3 +260,23 @@ Actualización P-ME-070/B089: entrega del calendario de portada mediante commit 
 Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
 
 Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.
+## Semillero · versión 0 — P-ME-079 (2026-11-12)
+
+Implementación en `miguel/semillero-v0` desde origin/main 4db5bcf actualizado por fetch. PWA estática en `blog/app/`: formulario, borrador, exportación JSON/Markdown, OTP, recepción versionada, adjunto privado, acuse y consulta de avisos. Migración Supabase y pruebas SQL aisladas en PGlite; operación en `docs/SEMILLERO-V0.md`. El usuario identifica el proyecto existente `seminario-iie` en P-ME-080; configuración privada pendiente de aportar.
+
+### T009 — Conectar y probar el Semillero v0
+
+- **Estado:** en curso; implementación local, pendiente de conexión al proyecto existente y prueba remota.
+- **Origen:** P-ME-076–080.
+- **Cierre:** migración aplicada al proyecto verificado, dos cuentas de prueba aisladas, envío y reintento con mismo acuse, corrección con original preservado, documento privado cotejado, agenda reprogramable y respaldo verificable. Registrar evidencia real; PGlite no prueba Auth ni Storage remotos.
+- **Entrega:** integrar únicamente por PR aprobado; comprobar `/app/` y el enlace del Semillero en producción después de integrar. Prueba con participantes y elección del plan de servicio pendientes; no poblar calendario a partir de acuerdos históricos sin confirmación.
+
+**Actualización P-ME-081–085/B098:** conectado el proyecto real `seminario-iie` por pooler de sesión y TLS verificado; migración aplicada y prueba SQL transaccional remota correcta, sin datos sintéticos persistentes. API de avisos accesible y versiones privadas protegidas. Nueve tarjetas móviles comprobadas a 320×568, 360×640 y 390×844. Configuración pública preparada; acceso por correo deliberadamente pendiente de SMTP, plantilla OTP y cuentas habilitadas. P-ME-085 autoriza commit/push de la rama para continuar en laptop; no autoriza fusión. Guía de continuación y herramientas administrativas en `docs/SEMILLERO-V0.md`.
+
+**Entrega P-ME-085/B099:** implementación publicada en `origin/miguel/semillero-v0`, commit `95d6058`, con [PR #15 en borrador](https://github.com/equihuam/Seminario-IIE-3T/pull/15) hacia main. Sin integración ni publicación. Continuación en laptop documentada en `docs/SEMILLERO-V0.md`; T009 conserva pendientes de correo, archivo HTTP, respaldo y prueba con participantes.
+
+**Evidencia P-ME-087–089/B101:** captura aportada por Miguel informa sesión de Octavio verificada y descarga ajena fallida (HTTP 400, Object not found). Contraste SQL de solo lectura: sobre el mismo objeto existente, propietario ve un registro y Octavio cero; bucket privado y política por carpeta de autor conservados. Esto respalda aislamiento del metadato, pero no acredita descarga HTTP del propietario ni lectura del código de prueba. El ZIP está en private de la laptop; Miguel aplaza su revisión para Fragaria. Conservar pendiente el control positivo y el cotejo de ruta/huella, sin cerrar T009.
+
+**Cierre de batería P-ME-090/B102:** Miguel confirma que ya realizó el trabajo en Fragaria y que la prueba de Octavio cierra la batería. Se da por cerrado ese bloque de pruebas por confirmación del responsable; no se vuelve a solicitar ni repetir el control pendiente de B101. Se conserva la distinción entre evidencia observada aquí y ejecución comunicada desde Fragaria. Este cierre no equivale a aprobar/fusionar el PR #15 ni a verificar publicación; tampoco acredita por sí mismo los demás compromisos operativos de T009 que no formen parte de esa batería.
+
+**Seguimiento documental P-ME-095/B105:** [issue #16 — revisión en Fragaria de la evidencia de Octavio](https://github.com/equihuam/Seminario-IIE-3T/issues/16), con copia en `docs/tickets/016-prueba-octavio-fragaria.md`. Reúne protocolo, captura, contraste observado y tareas para revisar el ZIP y conciliar los registros disponibles en la laptop. La batería permanece cerrada según Miguel; este ticket conserva la continuidad de la revisión sin publicar archivos privados ni solicitar repetir pruebas.

@@ -7,7 +7,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 MAX_BYTES = 5 * 1024 * 1024
 MAX_PRESENTATION_BYTES = 20 * 1024 * 1024
-BLOCKED_PARTS = {".venv", ".local", "private", "confidential", "_site", "_freeze", ".quarto", "__pycache__"}
+BLOCKED_PARTS = {".venv", ".local", ".secrets", "private", "confidential", "_site", "_freeze", ".quarto", "__pycache__"}
 BLOCKED_SUFFIXES = {".ppt", ".pptx", ".rds", ".rda", ".parquet", ".feather", ".tif", ".tiff", ".gpkg", ".sqlite", ".zip", ".7z", ".mp4", ".mov", ".pem", ".key", ".p12", ".pfx"}
 SECRET_PATTERNS = [
     rb"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",

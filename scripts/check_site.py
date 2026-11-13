@@ -19,6 +19,7 @@ EXPECTED.update({"semillero/I005-pino-encino-hongos.html",
                  "exploraciones/E001-intereses-participantes.html",
                  "presentaciones/index.html"})
 PUBLIC_SOURCES = {"recursos/clima-modelo.R"}
+EXPECTED.add("app/index.html")
 
 
 class Links(HTMLParser):

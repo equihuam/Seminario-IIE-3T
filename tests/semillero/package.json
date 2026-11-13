@@ -1,0 +1,7 @@
+{
+  "name": "semillero-v0-checks",
+  "private": true,
+  "type": "module",
+  "scripts": {"test": "node --test model.test.mjs database.test.mjs"},
+  "devDependencies": {"@electric-sql/pglite": "0.3.14"}
+}

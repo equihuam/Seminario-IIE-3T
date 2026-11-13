@@ -1,0 +1,2 @@
+# Optional icon generator only. Not required for application or blog rendering.
+Pillow==12.3.0

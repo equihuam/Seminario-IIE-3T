@@ -937,3 +937,178 @@ Fecha de registro: 2026-10-14. Hora de emisión no disponible.
 ```text
 haz el commit & PR
 ```
+
+## P-ME-076 — Registro local y canal colectivo de aportaciones al Semillero
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas. Se conservan las entidades HTML recibidas.
+
+```text
+Nos gustaría que en el proceso de registrar Aportaciones originales al Semillero ocurrieran dos cosas.&#x20;
+
+1. Llenar el formato de registro de inquietudes que tenemos previsto (cada quién en su repositorio).
+2. &#x20;Generar un canal de envío, quizás mediado por Google drive o como me sugieras, para capturar la propuesta en la base de datos de semillas general del seminario.
+
+
+
+Tuvimos una experiencia muy positiva con un taller en el que generamos un PWA desde Netlify para llenar un formulario individualmente que luego consolidamos en una colección general. Ese PWA incluso podría servir como anuncio de tareas, calendario de sesiones (que ya hemos visto es propensa a variar por coordinación de agendas) y quizás un colector de semillas. ¿Qué piensas?
+```
+
+## P-ME-077 — Recepción computacional y almacenamiento
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas. Registro retrospectivo del mensaje anterior.
+
+```text
+Veo que enriqueciste muy bien la idea y captaste con precisión la idea. El camino que seguimos en mi experiencia previa fue Formulario propio en la PWA → recepción central, que era necesario en ese caso porque no teníamos Internet, solo LAN. En este caso sí podemos considerar acceso a internet y quizás GSheets sea un punto de conciliación adecuado. Incluso podrían ser json o sqlite, pues no asumiríamos mayor interacción personal, podemos privilegiar la funcionalidad computacional.
+```
+
+## P-ME-078 — Consulta sobre Supabase
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas.
+
+```text
+Qué piensas de usar supabase o algo equivalente para hospedar la base de datos?
+```
+
+## P-ME-079 — Implementación del Semillero versión 0
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Estamos de acuerdo. Haz la implementación versión 0 por favor
+```
+
+## P-ME-080 — Proyecto Supabase existente y configuración privada
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible. Respuesta a la consulta sobre proyecto Supabase, URL y clave publicable.
+
+```text
+seminario-iie
+
+Tiene un password. Lo pondré en .secrets en un json. Proponme la estructura que te sirve.
+```
+
+## P-ME-081 — Verificar configuración y host de Supabase
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Está listo. No supe que poner en HOST_DE_CONEXION. Verifica
+```
+
+## P-ME-082 — Ubicación del archivo privado de Supabase
+
+Fecha de registro: 2026-11-12. Respuesta a la consulta de ruta exacta; no se registran credenciales.
+
+```text
+Muy lejos: C:\Users\equih\.secrets
+```
+
+## P-ME-083 — PWA para celular mediante tarjetas
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Pienso que la PWA hay que adecuarla principalmente para su uso con celular. Cuida que se despliegue bien y en forma atractiva en pantallas pequeñas. Considera un flujo que evite scroll, prefiero deslizamiento de tarjetas y/o rotación de cartones
+```
+
+## P-ME-084 — Cadena de conexión al pooler
+
+Fecha de registro: 2026-11-12. La cadena aportada contiene un marcador, no una contraseña.
+
+```text
+Será este el HOST?: postgresql://postgres.owqoinfndqzqwiiiexks:[YOUR-PASSWORD]@aws-1-us-east-1.pooler.supabase.com:5432/postgres
+```
+
+## P-ME-085 — Sincronización y entrega para continuar en laptop
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+al terminar esto haz un pull & push para que pueda retomar el avance en mi laptop.
+```
+
+## P-ME-086 — Opciones Gmail u Outlook para correo de acceso
+
+Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin credenciales.
+
+```text
+No lo terngo, pero puede ser gmail o outlook, creo que ambos están habilitados para hacerlo a mi nombre
+```
+
+## P-ME-087 — Captura de la prueba de acceso de Octavio
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no especificada; la actualización del entorno recibida señala 2026-11-13.
+
+```text
+La prueba de octavio
+```
+
+Adjunto: captura de pantalla recibida en esta conversación, conservada por la aplicación fuera de Git. Muestra una página titulada «Prueba de acceso de Octavio» y el mensaje «Sesión verificada. Descarga ajena denegada. HTTP 400 · Object not found». La anotación describe la captura; no sustituye revisar el código ni verificar el archivo exacto.
+
+## P-ME-088 — Ubicación indicada del artefacto de prueba
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+es el zip que esta en private
+```
+
+## P-ME-089 — Aplazar revisión del ZIP hasta disponer de la laptop
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+laptop. Si no está disponible la info lo hago más tarde en Fragaria
+```
+
+## P-ME-090 — Confirmación del cierre de la batería en Fragaria
+
+Fecha de emisión no especificada. Registro de la confirmación recibida en este intercambio; contexto de fecha del cliente y actualización del entorno conservados en P-ME-087.
+
+```text
+Ya está hecho. Lo hice en fragaria. Es el cierre  de la batería de pruebas
+```
+
+## P-ME-091 — Protocolo utilizado para la prueba de acceso de Octavio
+
+Fecha de emisión no especificada. Texto compartido por Miguel como explicación del procedimiento de la batería cerrada en P-ME-090; no se interpreta como encargo de ejecutar pasos en nombre de Octavio.
+
+```text
+Esta es la idea 
+Para probar que un usuario no puede descargar semillas de otros estoy probando con tu cuenta. Yo subí una idea y ahora tu debes intentar bajarla..
+1. Re estoy envíando este zip para que, en tu equipo, hagas clic derecho en el ZIP y elija Extraer todo.
+2. En la carpeta extraída, abre Prueba-Octavio.html con doble clic y pulsa Enviar código a octavio.maqueo@inecol.mx.
+3. Recibirás un correo con un número de código y deberás ponerlo en el campo respectivo en esa página, pulsa Comprobar acceso al adjunto. Envíame copia solo del mensaje que te salga como resultado, incluido el estado HTTP.  El código clave que te llegó por correo no lo debes copiar pues hay que evitar divulgarlo.
+```
+
+## P-ME-092 — Solicitud de pull para contextualizar el proceso
+
+Fecha de emisión no especificada.
+
+```text
+Haz un pul a ver si mejora la contextualización del proceso
+```
+
+## P-ME-093 — Aclaración sobre la rama de trabajo
+
+Fecha de emisión no especificada.
+
+```text
+Sí  pull,  perdón estoy trabajando en una rama alterna no en main
+```
+
+## P-ME-094 — Confirmación de la rama Semillero
+
+Fecha de emisión no especificada.
+
+```text
+Esa es la rama semillero
+```
+
+## P-ME-095 — Ticket para retomar la evidencia en Fragaria
+
+Fecha de emisión no especificada.
+
+```text
+Claro.  Esta bien haz un ticket aquí con la info de la prueba y lo subimos a github para que lo revises en fragaria más tarde
+```
