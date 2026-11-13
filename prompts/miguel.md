@@ -1080,3 +1080,35 @@ Para probar que un usuario no puede descargar semillas de otros estoy probando c
 2. En la carpeta extraída, abre Prueba-Octavio.html con doble clic y pulsa Enviar código a octavio.maqueo@inecol.mx.
 3. Recibirás un correo con un número de código y deberás ponerlo en el campo respectivo en esa página, pulsa Comprobar acceso al adjunto. Envíame copia solo del mensaje que te salga como resultado, incluido el estado HTTP.  El código clave que te llegó por correo no lo debes copiar pues hay que evitar divulgarlo.
 ```
+
+## P-ME-092 — Solicitud de pull para contextualizar el proceso
+
+Fecha de emisión no especificada.
+
+```text
+Haz un pul a ver si mejora la contextualización del proceso
+```
+
+## P-ME-093 — Aclaración sobre la rama de trabajo
+
+Fecha de emisión no especificada.
+
+```text
+Sí  pull,  perdón estoy trabajando en una rama alterna no en main
+```
+
+## P-ME-094 — Confirmación de la rama Semillero
+
+Fecha de emisión no especificada.
+
+```text
+Esa es la rama semillero
+```
+
+## P-ME-095 — Ticket para retomar la evidencia en Fragaria
+
+Fecha de emisión no especificada.
+
+```text
+Claro.  Esta bien haz un ticket aquí con la info de la prueba y lo subimos a github para que lo revises en fragaria más tarde
+```

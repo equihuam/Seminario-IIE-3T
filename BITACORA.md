@@ -771,3 +771,17 @@ Prompt P-ME-091. Miguel aporta el procedimiento enviado a Octavio: un adjunto de
 El resultado esperado es rechazo de la descarga del adjunto ajeno. La captura comunica ese resultado (HTTP 400, Object not found); el contraste de B101 respalda el aislamiento del metadato del objeto. Alcance documentado: adjunto privado concreto e identidad de Octavio. No se extiende automáticamente a todos los archivos, a la lectura del registro completo de semillas ni a todos los canales de acceso. La batería continúa cerrada conforme a Miguel; no se solicita repetirla ni se ejecutan autenticaciones o envíos en nombre de Octavio. No se guardan códigos de acceso ni se incorporan ZIPs privados al repositorio.
 
 Verificación documental B103: check_repo revisa 224 archivos sin incidencias. diff --check señala un espacio final en la primera línea del texto aportado en P-ME-091; se conserva deliberadamente para registrar literalmente el mensaje. Sin cambios de software ni nuevas pruebas de acceso.
+
+## B104 — Pull y comprobación de ramas remotas para recuperar contexto
+
+Prompts P-ME-092 y P-ME-093. Estado, ramas y worktrees inspeccionados; archivos ajenos sin seguimiento preservados. Ejecutados git fetch origin y git pull --ff-only origin miguel/semillero-v0: ya actualizado en c014a24. Refs remotas cotejadas directamente con git ls-remote --heads origin: solo main (4db5bcf), miguel/objetivos-aprendizaje (f14e07a) y miguel/semillero-v0 (c014a24). Refspec confirma seguimiento de todas las ramas remotas. No hay nuevos commits publicados que permitan recuperar el desarrollo referido desde Fragaria.
+
+Falta identificar la rama alterna y confirmar si ya se publicó en este remoto. No se presume que la ausencia remota implique ausencia de trabajo en la laptop. Sin fusiones, cambios de rama, pruebas nuevas ni modificación de main. Registro local de esta consulta, pendiente de conciliar con la rama que indique Miguel antes de crear otro commit documental.
+
+Actualización B104/P-ME-094: Miguel confirma que la rama alterna es miguel/semillero-v0. Nuevo fetch y pull --ff-only de esa rama: ya actualizada; HEAD y remoto en c014a24, divergencia 0/0. No se recibe contexto adicional desde Fragaria. Se mantiene la distinción entre cambios versionados/publicados y archivos de private excluidos de Git; no se vuelve a solicitar identificar la rama.
+
+## B105 — Ticket documental para retomar la prueba en Fragaria
+
+Prompt P-ME-095. Creado y devuelto por GitHub como abierto el issue #16: https://github.com/equihuam/Seminario-IIE-3T/issues/16. Copia local en docs/tickets/016-prueba-octavio-fragaria.md. Incluye protocolo, mensaje literal de la captura y estado HTTP, contraste SQL de permisos, ubicación del ZIP privado y tareas para conciliar la evidencia ya obtenida en Fragaria. Conserva el cierre de la batería confirmado por Miguel; el ticket es revisión documental posterior, no encargo de repetir pruebas ni de ejecutar una sesión de Octavio.
+
+Sin códigos de acceso, contraseñas, tokens, correos personales ni ZIPs adjuntos al issue. Se mantiene private fuera de Git. Relacionado con PR #15 y T009; no se autoriza fusión. Se incorporan al registro versionable las aclaraciones P-ME-092–094/B104 que estaban locales, junto con el nuevo ticket. No cambian el blog ni el software; solo se comprueba el índice de esta entrega documental.
