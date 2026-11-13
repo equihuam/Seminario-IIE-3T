@@ -755,3 +755,11 @@ Inspección remota exclusivamente de lectura en el proyecto Supabase ya autoriza
 Fuentes técnicas contrastadas: documentación oficial de errores Storage (https://supabase.com/docs/guides/storage/debugging/error-codes) y código de errores del servicio (https://github.com/supabase/storage/blob/master/src/internal/errors/codes.ts). Se conserva la distinción entre invisibilidad del metadato por RLS y descarga HTTP de bytes; no se probó la descarga del propietario en este encargo.
 
 Miguel identifica el artefacto como un ZIP en private, conservado en la laptop. Esta copia no contiene private ni ZIPs; se respetan las exclusiones y no se exploran proyectos hermanos. P-ME-089 aplaza la revisión del artefacto hasta disponer de él en Fragaria. Pendiente: revisar ruta y tratamiento de errores del ZIP, cotejar descarga HTTP y huella del mismo archivo para el propietario y confirmar el rechazo con la identidad de Octavio. No se cierra T009 ni se cambian los indicadores de acceso a partir de esta evidencia parcial. Cambio documental; no se repiten pruebas de software que no ha cambiado.
+
+## B102 — Batería de pruebas cerrada por confirmación de Miguel
+
+Prompt: P-ME-090. Miguel confirma que el trabajo ya se realizó en Fragaria y que la prueba de Octavio constituye el cierre de la batería. Se acepta este cierre y queda superado el pendiente de B101 de volver a solicitar o repetir esa revisión. Se conserva la captura recibida y el contraste de permisos observado directamente en B101.
+
+Procedencia: cierre comunicado por Miguel sobre la ejecución en Fragaria; no se atribuye a este equipo una nueva ejecución, revisión del ZIP ni cotejo HTTP que no se hayan realizado aquí. Fetch del remoto al recibir la confirmación no aporta commits nuevos con el artefacto privado; eso no invalida el cierre comunicado ni exige que el ZIP privado se publique. No se cambian indicadores de configuración ni código de la aplicación como consecuencia de este registro.
+
+La batería de pruebas queda cerrada según la confirmación del responsable. La revisión/aprobación del PR #15, su eventual integración y comprobación de publicación son pasos distintos; esta confirmación no autoriza una fusión. Las comprobaciones documentales del índice y la entrega de este registro no se presentan como pruebas adicionales de la PWA.

@@ -1060,3 +1060,11 @@ Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no 
 ```text
 laptop. Si no está disponible la info lo hago más tarde en Fragaria
 ```
+
+## P-ME-090 — Confirmación del cierre de la batería en Fragaria
+
+Fecha de emisión no especificada. Registro de la confirmación recibida en este intercambio; contexto de fecha del cliente y actualización del entorno conservados en P-ME-087.
+
+```text
+Ya está hecho. Lo hice en fragaria. Es el cierre  de la batería de pruebas
+```
