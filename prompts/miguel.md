@@ -1026,3 +1026,11 @@ Fecha de registro: 2026-11-12. Hora de emisión no disponible.
 ```text
 al terminar esto haz un pull & push para que pueda retomar el avance en mi laptop.
 ```
+
+## P-ME-086 — Opciones Gmail u Outlook para correo de acceso
+
+Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin credenciales.
+
+```text
+No lo terngo, pero puede ser gmail o outlook, creo que ambos están habilitados para hacerlo a mi nombre
+```

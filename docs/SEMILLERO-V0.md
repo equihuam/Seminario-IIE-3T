@@ -135,3 +135,13 @@ Nueve tarjetas recorridas en navegador a 320×568, 360×640 y 390×844. En la re
 ## Fuentes técnicas
 
 Documentación oficial consultada el 2026-11-12: [funciones SQL](https://supabase.com/docs/guides/database/functions), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [OTP](https://supabase.com/docs/guides/auth/auth-email-passwordless), [Storage](https://supabase.com/docs/guides/storage/security/access-control), [límites de correo](https://supabase.com/docs/guides/auth/rate-limits), [respaldos](https://supabase.com/docs/guides/platform/backups). Se utilizan para ingeniería del colector, sin atribuir validación conceptual o pedagógica.
+
+## Opción de correo para el piloto — P-ME-086
+
+Miguel propone Gmail u Outlook sin disponer aún de proveedor SMTP específico. Conectar el buzón al asistente no configura SMTP en Supabase ni transfiere sus permisos. Recomendación preliminar: probar Gmail para este piloto si la cuenta permite contraseña de aplicación y tiene verificación en dos pasos; no se ha elegido ni configurado todavía una cuenta remitente.
+
+Configuración propuesta: host smtp.gmail.com, puerto 465 (TLS), usuario y remitente iguales a la cuenta Gmail, nombre visible Seminario IIE-3T y contraseña de aplicación específica. La contraseña habitual de Google no se incorpora a Supabase. Generar la contraseña desde la cuenta de Google y guardarla solo en el archivo privado, en un objeto smtp separado de database. Campos sugeridos: host, port, user, password, senderEmail, senderName. No subir este objeto ni sus valores a Git o al navegador.
+
+La disponibilidad de contraseñas de aplicación depende de la cuenta y sus políticas; requieren verificación en dos pasos. Outlook.com requiere OAuth2/Modern Auth, por lo que no se presupone que su cuenta o el conector existente sean utilizables directamente con el formulario SMTP de Supabase. Si Gmail no ofrece esa opción, elegir un servicio transaccional en un encargo posterior, sin debilitar políticas de la cuenta. No se crean credenciales ni se envían mensajes como parte de esta recomendación.
+
+Fuentes oficiales consultadas 2026-11-12: https://support.google.com/accounts/answer/185833, https://supabase.com/docs/guides/auth/auth-smtp, https://supabase.com/kb/troubleshooting/using-google-smtp-with-supabase-custom-smtp-ZZzU4Y, https://support.microsoft.com/en-us/outlook/pop-imap-and-smtp-settings-for-outlook-com. Acceso y entrega deben probarse antes de emailAccessReady=true.
