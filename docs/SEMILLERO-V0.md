@@ -184,6 +184,8 @@ Usar Node 22 o posterior en una terminal privada, desde una copia que incluya `s
 
 El programa distingue una denegación de acceso o un objeto oculto de una sesión caducada, un error de red o un error de servidor. El ensayo conserva la semilla, el acuse y el adjunto sintéticos.
 
+Nota editorial (2026-11-17, P-ME-138): el P-ME-086 de esta sección de correo es ahora P-ME-139; véase [concordancia](../prompts/CONCORDANCIA-MIGUEL.md).
+
 ## Opción de correo para el piloto — P-ME-086
 
 Miguel propone Gmail u Outlook sin disponer aún de proveedor SMTP específico. Conectar el buzón al asistente no configura SMTP en Supabase ni transfiere sus permisos. Recomendación preliminar: probar Gmail para este piloto si la cuenta permite contraseña de aplicación y tiene verificación en dos pasos; no se ha elegido ni configurado todavía una cuenta remitente.

@@ -293,6 +293,8 @@ Actualización P-ME-115: recibido el correo de Daniel (I006). La carga sigue pen
 
 P-ME-117. Se mantiene Supabase para el acceso de los participantes al Semillero desde la PWA. MariaDB en el NAS queda como opción para uso particular o para grupos con acceso privado.
 
+Nota editorial (2026-11-17, P-ME-138): en las tres entradas siguientes de Octavio, P-ME-087–089 → P-ME-140–142, P-ME-090 → P-ME-143 y P-ME-095 → P-ME-148. Véase [concordancia](prompts/CONCORDANCIA-MIGUEL.md).
+
 **Evidencia P-ME-087–089/B101:** captura aportada por Miguel informa sesión de Octavio verificada y descarga ajena fallida (HTTP 400, Object not found). Contraste SQL de solo lectura: sobre el mismo objeto existente, propietario ve un registro y Octavio cero; bucket privado y política por carpeta de autor conservados. Esto respalda aislamiento del metadato, pero no acredita descarga HTTP del propietario ni lectura del código de prueba. El ZIP está en private de la laptop; Miguel aplaza su revisión para Fragaria. Conservar pendiente el control positivo y el cotejo de ruta/huella, sin cerrar T009.
 
 **Cierre de batería P-ME-090/B102:** Miguel confirma que ya realizó el trabajo en Fragaria y que la prueba de Octavio cierra la batería. Se da por cerrado ese bloque de pruebas por confirmación del responsable; no se vuelve a solicitar ni repetir el control pendiente de B101. Se conserva la distinción entre evidencia observada aquí y ejecución comunicada desde Fragaria. Este cierre no equivale a aprobar/fusionar el PR #15 ni a verificar publicación; tampoco acredita por sí mismo los demás compromisos operativos de T009 que no formen parte de esa batería.
