@@ -1318,7 +1318,7 @@ Fecha de registro: 2026-11-13.
 Ya veo la limitación. No le daremos tailscale a todo mundo, así que seguimos atrapados en una ip local para acceso amplio Mejor supabase. Creo que sólo tiene sentido mariaDB para mi uso particular, o situaciones muy limitadas
 ```
 
-## P-ME-086 — Opciones Gmail u Outlook para correo de acceso
+## P-ME-139 — Opciones Gmail u Outlook para correo de acceso
 
 Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin credenciales.
 
@@ -1326,7 +1326,10 @@ Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin
 No lo terngo, pero puede ser gmail o outlook, creo que ambos están habilitados para hacerlo a mi nombre
 ```
 
-## P-ME-087 — Captura de la prueba de acceso de Octavio
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-086`; su identificador único es `P-ME-139`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-140 — Captura de la prueba de acceso de Octavio
 
 Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no especificada; la actualización del entorno recibida señala 2026-11-13.
 
@@ -1336,7 +1339,10 @@ La prueba de octavio
 
 Adjunto: captura de pantalla recibida en esta conversación, conservada por la aplicación fuera de Git. Muestra una página titulada «Prueba de acceso de Octavio» y el mensaje «Sesión verificada. Descarga ajena denegada. HTTP 400 · Object not found». La anotación describe la captura; no sustituye revisar el código ni verificar el archivo exacto.
 
-## P-ME-088 — Ubicación indicada del artefacto de prueba
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-087`; su identificador único es `P-ME-140`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-141 — Ubicación indicada del artefacto de prueba
 
 Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
 
@@ -1344,7 +1350,10 @@ Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no 
 es el zip que esta en private
 ```
 
-## P-ME-089 — Aplazar revisión del ZIP hasta disponer de la laptop
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-088`; su identificador único es `P-ME-141`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-142 — Aplazar revisión del ZIP hasta disponer de la laptop
 
 Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
 
@@ -1352,7 +1361,10 @@ Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no 
 laptop. Si no está disponible la info lo hago más tarde en Fragaria
 ```
 
-## P-ME-090 — Confirmación del cierre de la batería en Fragaria
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-089`; su identificador único es `P-ME-142`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-143 — Confirmación del cierre de la batería en Fragaria
 
 Fecha de emisión no especificada. Registro de la confirmación recibida en este intercambio; contexto de fecha del cliente y actualización del entorno conservados en P-ME-087.
 
@@ -1360,7 +1372,10 @@ Fecha de emisión no especificada. Registro de la confirmación recibida en este
 Ya está hecho. Lo hice en fragaria. Es el cierre  de la batería de pruebas
 ```
 
-## P-ME-091 — Protocolo utilizado para la prueba de acceso de Octavio
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-090`; su identificador único es `P-ME-143`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-144 — Protocolo utilizado para la prueba de acceso de Octavio
 
 Fecha de emisión no especificada. Texto compartido por Miguel como explicación del procedimiento de la batería cerrada en P-ME-090; no se interpreta como encargo de ejecutar pasos en nombre de Octavio.
 
@@ -1372,7 +1387,10 @@ Para probar que un usuario no puede descargar semillas de otros estoy probando c
 3. Recibirás un correo con un número de código y deberás ponerlo en el campo respectivo en esa página, pulsa Comprobar acceso al adjunto. Envíame copia solo del mensaje que te salga como resultado, incluido el estado HTTP.  El código clave que te llegó por correo no lo debes copiar pues hay que evitar divulgarlo.
 ```
 
-## P-ME-092 — Solicitud de pull para contextualizar el proceso
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-091`; su identificador único es `P-ME-144`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-145 — Solicitud de pull para contextualizar el proceso
 
 Fecha de emisión no especificada.
 
@@ -1380,7 +1398,10 @@ Fecha de emisión no especificada.
 Haz un pul a ver si mejora la contextualización del proceso
 ```
 
-## P-ME-093 — Aclaración sobre la rama de trabajo
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-092`; su identificador único es `P-ME-145`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-146 — Aclaración sobre la rama de trabajo
 
 Fecha de emisión no especificada.
 
@@ -1388,7 +1409,10 @@ Fecha de emisión no especificada.
 Sí  pull,  perdón estoy trabajando en una rama alterna no en main
 ```
 
-## P-ME-094 — Confirmación de la rama Semillero
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-093`; su identificador único es `P-ME-146`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-147 — Confirmación de la rama Semillero
 
 Fecha de emisión no especificada.
 
@@ -1396,13 +1420,19 @@ Fecha de emisión no especificada.
 Esa es la rama semillero
 ```
 
-## P-ME-095 — Ticket para retomar la evidencia en Fragaria
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-094`; su identificador único es `P-ME-147`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
+
+## P-ME-148 — Ticket para retomar la evidencia en Fragaria
 
 Fecha de emisión no especificada.
 
 ```text
 Claro.  Esta bien haz un ticket aquí con la info de la prueba y lo subimos a github para que lo revises en fragaria más tarde
 ```
+
+
+Nota editorial de concordancia (2026-11-17, P-ME-138): este registro llevaba el identificador duplicado `P-ME-095`; su identificador único es `P-ME-148`. Las referencias históricas de este bloque se resuelven mediante [la concordancia](CONCORDANCIA-MIGUEL.md).
 
 ## P-ME-118 — Conciliación del ticket 16 en Fragaria
 
@@ -1555,4 +1585,36 @@ Fecha de registro: 2026-11-17.
 
 ```text
 Adelante, consolida todo en miguel/semillero-v0, conserva el trabajo del mapa y deja actualizada la carpeta habitual de Fragaria. Verifica y haz commit & push para sincronizar con Cazahuate. Yo hago el merge del PR.
+```
+
+## P-ME-137 — Verificar consistencia de prompts recientes
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Verifica que la secuencia de prompts recientes está consistente con lo registrado en el repositorio
+```
+
+## P-ME-138 — Resolver duplicaciones y sincronizar el registro
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Resuelve la duplicación de P-ME-086–095 conservando los textos originales y la trazabilidad de las referencias. Después haz commit & push para dejar el registro consistente en ambos equipos.
+```
+
+## P-ME-149 — Comprobación automática de identificadores de prompts
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Agrega una comprobación automática para evitar que volvamos a duplicar identificadores de prompts entre equipos. Intégrala a la revisión del repositorio y haz commit & push.
+```
+
+## P-ME-150 — Verificar Actions y entrega para Fragaria
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Verifica que la comprobación de identificadores haya pasado también en GitHub Actions y que la rama esté lista para retomarla en Fragaria.
 ```
