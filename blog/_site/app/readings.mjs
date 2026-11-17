@@ -1,4 +1,5 @@
 import {setView} from './wizard.mjs';
+import {filterReferences, readingProposal, loadReferences} from './reading-catalog.mjs';
 const groupPath = '/groups/6712171';
 const zoteroBase = 'https://www.zotero.org' + groupPath + '/seminario_iie-3t/items/';
 
@@ -38,7 +39,7 @@ export function initReadings(getApi, login) {
   access.onclick = login;
   const proposal = element('details');
   proposal.append(element('summary','Sugerir lectura'));
-  view.append(element('h1','Lecturas'), element('p','Propón una referencia, comenta su interés y acuerda cómo trabajarla con el grupo.'), access, upcoming, proposal, refresh, status, cards);
+  view.append(element('h1','Lecturas'), element('p','Elige una referencia ya registrada en Zotero y propone el asunto y la dinámica para trabajarla con el grupo.'), access, upcoming, proposal, refresh, status, cards);
   for (const part of [proposal, upcoming]) part.className = 'calendar-panel';
   tab.onclick = () => {setView('readings'); load();};
   refresh.onclick = () => load();
@@ -55,7 +56,6 @@ export function initReadings(getApi, login) {
       input.required = !label.includes('opcional');
       if ('maxLength' in input) input.maxLength = 2000;
       for (const option of options || []) input.append(element('option',option));
-      if (key === 'zotero_link') input.oninput = () => input.setCustomValidity('');
       wrapper.append(input);
       node.append(wrapper);
     }
@@ -75,14 +75,13 @@ export function initReadings(getApi, login) {
       event.preventDefault();
       const data = Object.fromEntries(new FormData(node));
       if (path === 'readings') {
-        try { data.zotero_key = zoteroItemKey(data.zotero_link); }
+        try { Object.assign(data, readingProposal(data, references)); }
         catch (error) {
-          const input = node.elements.zotero_link;
+          const input = node.elements.zotero_key;
           input.setCustomValidity(error.message);
           input.reportValidity();
           return;
         }
-        delete data.zotero_link;
       }
       if (id) data.reading_id = id;
       if (path !== 'agreements') data.id = submissionId;
@@ -99,12 +98,58 @@ export function initReadings(getApi, login) {
     };
     return node;
   }
-  proposal.append(form('readings','Guardar propuesta',[
-    ['title','Título'],['citation','Referencia bibliográfica'],
-    ['url','Enlace al artículo (opcional)','url'],
-    ['zotero_link','Enlace a la referencia en Zotero del grupo (opcional)','url'],['question','¿Qué pregunta del seminario ayudaría a trabajar?','textarea'],
-    ['excerpt','Fragmento sugerido (opcional)']
-  ]));
+  const suggestion = form('readings','Guardar propuesta',[
+    ['zotero_key','Referencia de Zotero','select'],
+    ['question','Asunto o pregunta propuestos','textarea'],
+    ['processing','Dinámica de procesamiento propuesta','textarea']
+  ]);
+  suggestion.className = 'reading-proposal';
+  suggestion.elements.zotero_key.setAttribute('aria-label','Referencia de Zotero');
+  const findLabel = element('label','Buscar por título');
+  const search = element('input');
+  search.type = 'search'; search.placeholder = 'Escribe palabras del título';
+  findLabel.append(search);
+  const catalogStatus = element('p'); catalogStatus.className = 'hint'; catalogStatus.setAttribute('role','status');
+  const preview = element('div'); preview.className = 'reading-reference-preview';
+  const source = element('p','Primero incorpora la referencia a Zotero del grupo. Si no aparece, solicita la sincronización del catálogo y pulsa Actualizar lecturas.');
+  source.className = 'hint';
+  suggestion.prepend(findLabel);
+  suggestion.elements.zotero_key.closest('label').after(catalogStatus,preview,source);
+  suggestion.elements.question.placeholder = '¿Qué asunto o pregunta del seminario ayudaría a trabajar?';
+  suggestion.elements.processing.placeholder = 'Por ejemplo: discusión guiada, preguntas previas o una actividad de contraste.';
+  suggestion.addEventListener('reset',()=>{search.value='';queueMicrotask(renderCatalog);});
+  search.oninput = () => renderCatalog();
+  suggestion.elements.zotero_key.onchange = () => {
+    suggestion.elements.zotero_key.setCustomValidity('');
+    renderReference();
+  };
+  proposal.append(suggestion);
+  let references = [];
+  function renderReference() {
+    preview.replaceChildren();
+    const row=references.find(row=>row.zotero_key===suggestion.elements.zotero_key.value);
+    if(!row)return;
+    const link=element('a','Abrir esta referencia en Zotero');
+    link.href=zoteroBase+row.zotero_key;link.target='_blank';link.rel='noopener';
+    preview.append(element('p',row.citation),link);
+  }
+  function renderCatalog() {
+    const select=suggestion.elements.zotero_key;
+    const selected=select.value;
+    const matches=filterReferences(references,search.value);
+    const empty=element('option',references.length?'Selecciona una referencia':'Catálogo sin referencias');empty.value='';
+    select.replaceChildren(empty,...matches.map(row=>{
+      const duplicate=references.some(other=>other.zotero_key!==row.zotero_key&&other.title===row.title);
+      const label=row.title+(duplicate?' — '+row.citation.slice(0,90)+(row.citation.length>90?'…':''):'');
+      const option=element('option',label);option.value=row.zotero_key;return option;
+    }));
+    select.value=matches.some(row=>row.zotero_key===selected)?selected:'';
+    select.disabled=!matches.length;
+    suggestion.querySelector('button[type=submit],button:not([type])').disabled=!matches.length;
+    const synced=references[0]?.synced_at;
+    catalogStatus.textContent=references.length ? `${matches.length} de ${references.length} referencias.${synced?' Catálogo sincronizado: '+new Date(synced).toLocaleString('es-MX',{timeZone:'America/Mexico_City'})+' (America/Mexico_City).':''}` : 'Todavía no hay referencias sincronizadas. La propuesta requiere un registro existente de Zotero.';
+    renderReference();
+  }
   function summary(row) {
     const a = row.agreement;
     return [a.kind, a.day, a.facilitator, a.plan].filter(Boolean).join(' · ');
@@ -129,8 +174,10 @@ export function initReadings(getApi, login) {
       line.append(link);
       node.append(line);
     }
-    node.append(element('p','Propuesta · '+row.author),element('h3',row.question),element('p',row.excerpt),
-                element('h3','Debate sobre su interés'));
+    node.append(element('p','Propuesta · '+row.author),element('h3','Asunto o pregunta propuestos'),element('p',row.question));
+    if(row.processing)node.append(element('h3','Dinámica de procesamiento propuesta'),element('p',row.processing));
+    if(row.excerpt)node.append(element('h3','Fragmento sugerido'),element('p',row.excerpt));
+    node.append(element('h3','Debate sobre su interés'));
     for (const comment of row.comments) node.append(element('p',comment.author+' · '+comment.body));
     if (!row.comments.length) node.append(element('p','Aún no hay aportaciones.'));
     node.append(form('comments','Añadir comentario',[['body','¿Para qué nos serviría leerla juntos?','textarea']], row.id));
@@ -151,9 +198,11 @@ export function initReadings(getApi, login) {
   function clear() {
     ++sequence;
     coordinator = false;
+    references = [];
     cards.replaceChildren(); agenda.replaceChildren(); upcoming.replaceChildren();
     proposal.open = false;
     proposal.querySelector('form').reset();
+    renderCatalog();
     proposal.hidden = refresh.hidden = upcoming.hidden = true;
     access.hidden = false;
     status.textContent = 'Entra con tu correo registrado para consultar las lecturas.';
@@ -165,14 +214,17 @@ export function initReadings(getApi, login) {
       if (!api?.session) {clear(); return;}
       access.hidden = true;
       const session = api.session;
-      const [members, readings] = await Promise.all([
+      const [members, readings, catalog] = await Promise.all([
         api.request('/rest/v1/reading_members?select=user_id,display_name,coordinator'),
-        api.request('/rest/v1/readings?select=*,comments:reading_comments(*),agreement:reading_agreements(*)&order=created_at.desc&comments.order=created_at.asc')
+        api.request('/rest/v1/readings?select=*,comments:reading_comments(*),agreement:reading_agreements(*)&order=created_at.desc&comments.order=created_at.asc'),
+        loadReferences(api)
       ]);
       if (token !== sequence || session !== api.session) return;
       const me = members.find(member => member.user_id === session.user.id);
       if (!me) {clear(); access.hidden = true; status.textContent = 'Tu cuenta aún no está habilitada para Lecturas.'; return;}
       coordinator = me.coordinator;
+      references = catalog;
+      renderCatalog();
       proposal.hidden = refresh.hidden = upcoming.hidden = false;
       const names = new Map(members.map(member => [member.user_id,member.display_name]));
       const rows = readings.map(row => ({...row,author:names.get(row.owner_id) || 'Ficha inicial del seminario',

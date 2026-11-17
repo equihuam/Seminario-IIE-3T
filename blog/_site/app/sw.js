@@ -1,5 +1,5 @@
-const CACHE='iie-semillero-v0-14';
-const SHELL=['./','./index.html','./app.css','./app.mjs','./install.mjs','./calendar.mjs','./session-card.mjs','./agenda-notes.mjs','./wizard.mjs','./navigation.mjs','./model.mjs','./readings.mjs','./api.mjs','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
+const CACHE='iie-semillero-v0-15';
+const SHELL=['./','./index.html','./app.css','./app.mjs','./install.mjs','./calendar.mjs','./session-card.mjs','./agenda-notes.mjs','./wizard.mjs','./navigation.mjs','./model.mjs','./readings.mjs','./reading-catalog.mjs','./api.mjs','./icon.svg','./icon-192.png','./icon-512.png','./manifest.webmanifest'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL))));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('iie-semillero-')&&k!==CACHE).map(k=>caches.delete(k))))));
 self.addEventListener('fetch',event=>{

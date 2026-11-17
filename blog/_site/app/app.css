@@ -89,3 +89,8 @@ button:not(.text-button):not(.tabs button){border:1px solid var(--green);border-
   .card { overflow: visible; }
   .horizontal-cards > .submission { max-height: none; }
 }
+.reading-proposal label{display:block;font-weight:650;margin:16px 0 6px}
+.reading-proposal input,.reading-proposal select,.reading-proposal textarea{margin-top:7px;min-width:0;width:100%}
+.reading-proposal textarea{min-height:105px}
+.reading-reference-preview{border-left:3px solid var(--gold);padding-left:12px;overflow-wrap:anywhere;font-size:14px}
+.reading-proposal select{max-width:100%;text-overflow:ellipsis}

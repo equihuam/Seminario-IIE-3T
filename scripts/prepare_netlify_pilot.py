@@ -12,7 +12,7 @@ BLOG = "https://seminario-iie.netlify.app"
 FILES = (
     "install.mjs agenda-notes.mjs api.mjs app.css app.mjs calendar.mjs config.json "
     "agenda.ics directiva-pwa.patch encuentros.json icon-192.png icon-512.png icon.svg "
-    "index.html manifest.webmanifest model.mjs navigation.mjs session-card.mjs readings.mjs sw.js wizard.mjs"
+    "index.html manifest.webmanifest model.mjs navigation.mjs session-card.mjs readings.mjs reading-catalog.mjs sw.js wizard.mjs"
 ).split()
 
 

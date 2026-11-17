@@ -1494,3 +1494,19 @@ Fecha de registro: 2026-11-17.
 ```text
 checa si es necesario actualizar git y el pr, si lo es da commit & push, yo hago el merge
 ```
+
+## P-ME-130 — Propuestas de lectura a partir de Zotero
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Ya vimos el registro de lecturas.  El flujo lo proponemos así:
+
+1. Cualquier sugerencia de lectura inicia a partir de un registro de referencia ya ingresada a Zotero.
+2. El proponente puede elegirla de un desplegable en donde localizarí la referencia por título
+3. Se mantienen los campos de propuesta de asunto y dinámica de procesamiento
+
+
+
+Actualiza el formato con esta estrategia.
+```

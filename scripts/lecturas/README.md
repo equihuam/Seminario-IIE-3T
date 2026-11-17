@@ -19,3 +19,30 @@ La versión conectada usa las tablas `readings`, `reading_comments`, `reading_ag
 Para probar desde dos equipos, cada persona abre el archivo portátil `Lecturas-IIE.html` en Edge o Chrome, elige Lecturas y entra con su correo registrado. La primera comenta la ficha y la segunda pulsa **Actualizar lecturas**. Tras guardar el acuerdo, abrir **Agenda** desde la otra cuenta. Ambas consultan el mismo proyecto Supabase.
 
 Para regenerar el archivo portátil desde la raíz de la rama: `python scripts/lecturas/portable.py RUTA_AL_PAQUETE/app Lecturas-IIE.html`. El paquete convencional se despliega en el sitio Netlify del piloto según el procedimiento de SEMILLERO-V0. La prueba SQLite anterior se ejecuta por separado.
+## Flujo vigente: referencias existentes en Zotero
+
+Desde P-ME-130 (2026-11-17), la PWA conectada propone lecturas así:
+
+1. Incorporar primero la referencia al grupo Zotero **Seminario IIE-3T**, biblioteca `6712171`.
+2. En **Lecturas → Sugerir lectura**, buscar palabras del título y elegir una referencia del desplegable. La cita completa y el enlace permiten comprobar la selección; títulos iguales se distinguen por su cita.
+3. Completar **Asunto o pregunta propuestos** y **Dinámica de procesamiento propuesta**. Ambos son obligatorios. Guardar una propuesta no constituye un acuerdo de coordinación ni acredita haber leído la fuente.
+
+El servidor exige una clave presente y activa en `reading_references`, y copia título, cita, URL y versión de Zotero desde ese catálogo. El navegador no recibe credenciales de Zotero. El catálogo solo es consultable por miembros habilitados de Lecturas. Las propuestas históricas, sus fragmentos y sus acuerdos se conservan; la dinámica nueva se guarda en `processing`, sin reinterpretar textos anteriores de `excerpt`.
+
+### Actualizar el catálogo
+
+El catálogo es una copia de metadatos del grupo, sincronizada por coordinación. No se actualiza automáticamente al añadir un registro en Zotero: **Actualizar lecturas** vuelve a consultar la copia del servidor. La interfaz muestra cuándo se sincronizó. Para incorporar referencias nuevas al desplegable:
+
+```powershell
+# Zotero Desktop abierto y sincronizado; solo se lee la biblioteca de grupo.
+.\.venv\Scripts\python.exe scripts/lecturas/export_zotero_catalog.py --local
+node supabase/sync-reading-catalog.mjs --config '<configuración-privada-supabase>' --host '<host>' --user '<usuario>' --ca '<certificado>' --catalog .local/lecturas/zotero-catalog.json
+```
+
+Como alternativa, el exportador sin `--local` consulta la API web con `ZOTERO_API_KEY` en el entorno privado o la credencial existente `zotero/seminario-iie3t` de Windows. No crea claves ni modifica Zotero. Solo consulta registros bibliográficos superiores del grupo; excluye notas, adjuntos y anotaciones. La instantánea queda bajo `.local/`, fuera de Git, y no reemplaza exportaciones bibliográficas revisadas.
+
+La primera instalación usa además `--migrate` en el sincronizador para aplicar `202611170001_lecturas_catalogo.sql`. Ya se aplicó al proyecto del seminario en este encargo. Las sincronizaciones siguientes se ejecutan sin ese indicador. Un registro que deje de aparecer se marca inactivo, conservando el histórico. Las pruebas SQL usan PGlite; la prueba remota de esta versión revierte sus propuestas sintéticas.
+
+### Antecedente de simulación local
+
+Los apartados iniciales describen el piloto SQLite anterior, con captura manual y roles simulados. Para comprobar el flujo Zotero vigente, usar la PWA conectada y las instrucciones de esta sección.
