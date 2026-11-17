@@ -1610,3 +1610,11 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 Agrega una comprobación automática para evitar que volvamos a duplicar identificadores de prompts entre equipos. Intégrala a la revisión del repositorio y haz commit & push.
 ```
+
+## P-ME-150 — Verificar Actions y entrega para Fragaria
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Verifica que la comprobación de identificadores haya pasado también en GitHub Actions y que la rama esté lista para retomarla en Fragaria.
+```
