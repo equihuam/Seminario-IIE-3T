@@ -1,0 +1,10 @@
+{
+  "prompt": "P-ME-062",
+  "author_of_visual_adjustment": "Miguel Equihua",
+  "registration_date": "2026-10-12",
+  "adjustment": "Cuña de ampliación, retirada de palabra Detalle y su línea. Edición manual; no regenerada desde Python.",
+  "approved_files": {
+    "presentaciones/img/iie-2018-pixeles-holdridge.png": "e565ad1595db3d89e865b5f9411b726c43e559e28944c728b49af8ad880e0d62",
+    "presentaciones/img/iie-2018-pixeles-holdridge.svg": "7f469e42f0b11b0575572046bd9735a347d9981e59d69d0fd3f4d8bfd1efc56c"
+  }
+}

@@ -1,3 +1,8 @@
 # Infraestructura editorial; las bibliotecas de modelación se elegirán después.
 jupyter
 PyYAML
+
+# Cartografía de los GeoTIFF aportados (sin recalcular el modelo IIE).
+rasterio
+matplotlib
+pillow

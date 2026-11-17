@@ -310,3 +310,19 @@ Actualización sobre `miguel/semillero-v0`, sincronizada por avance rápido hast
 Actualización de entrega P-ME-130: formato y catálogo completados; 17 pruebas Node/PGlite y 13 Python correctas, prueba SQL remota revertida y sitio completo de 24 páginas verificado. Paquete de Netlify y HTML portátil listos en output/lecturas-zotero/. El despliegue del piloto permanece pendiente; la rama y PR #15 se actualizan sin fusión.
 
 Entrega P-ME-130: implementación publicada en `origin/miguel/semillero-v0` mediante `6d3e771`; [PR #15](https://github.com/equihuam/Seminario-IIE-3T/pull/15) actualizado. Pendiente desplegar `output/lecturas-zotero/Tablero-Lecturas-Zotero.zip` en el piloto Netlify; el catálogo de Supabase ya está preparado. La actualización de nuevas referencias se documenta al comienzo de `scripts/lecturas/README.md`.
+
+
+## Antecedentes conservados de mapa-iie-pixeles
+
+Registro incorporado el 2026-11-17. Los IDs de esta sección se interpretan con prompts/miguel-mapa-iie-pixeles.md y la copia de Fragaria sobre 92a6880. El estado vigente de la consolidación se registra en P-ME-136.
+
+## Figura IIE por píxel — P-ME-061 (2026-10-12)
+
+Preparada en miguel/mapa-iie-pixeles desde main actualizado a 92a6880: SVG editable y PNG derivados de los GeoTIFF originales de IIE 2018 y Holdridge. Detalle con 64 valores reales; resolución y cruce espacial documentados. Generador, metadatos y alcance en presentaciones/figura-iie-pixeles.md. Verificación y revisión visual en B084. Pendientes: valoración docente, catálogo de nombres de clases y eventual incorporación a la presentación. Sin cambio de PPTX ni publicación.
+
+Actualización P-ME-062: figura ajustada por Miguel incorporada como diapositiva 12 en `output/Introduccion-iie3t-redes-bayesianas-v5-mapa-pixeles.pptx` (17 diapositivas). Conservados v5/v5mig originales y SVG/PNG aprobados; constructor y verificador actualizados. La integración al PPTX deja de estar pendiente. Continúan pendientes valoración docente y catálogo nominal de Holdridge. Detalles en B085.
+
+Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó el entregable de 17 diapositivas como `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. Constructor y verificador actualizados; utilidades de inserción marcadas como históricas con fuente de 16 diapositivas explícita. Los nombres anteriores quedan como registro histórico.
+
+## Estado vigente de la consolidación — P-ME-136
+2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.

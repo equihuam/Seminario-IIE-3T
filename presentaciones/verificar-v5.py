@@ -22,13 +22,17 @@ with ZipFile(PPTX) as archive:
     names = sorted((n for n in archive.namelist()
                     if re.fullmatch(r"ppt/slides/slide\d+\.xml", n)),
                    key=lambda n: int(re.search(r"(\d+)\.xml", n)[1]))
-    assert len(names) == 16
+    assert len(names) in (16, 17)
+    has_figure = len(names) == 17
+    def shifted(number):
+        return number + (has_figure and number >= 12)
     count_connectors = count_dashed = count_tables = count_pictures = 0
     for number, name in enumerate(names, 1):
         root = ET.fromstring(archive.read(name))
         shape_ids = {e.get("id") for e in root.findall(".//p:cNvPr", NS)}
         pics = root.findall(".//p:pic", NS)
-        assert len(pics) == (1 if number in (1, 5, 11, 13) else 0)
+        image_slides = (1, 5, 11, 12, 14) if has_figure else (1, 5, 11, 13)
+        assert len(pics) == (1 if number in image_slides else 0)
         count_pictures += len(pics)
         count_tables += len(root.findall(".//a:tbl", NS))
         dashed_here = 0
@@ -43,14 +47,14 @@ with ZipFile(PPTX) as archive:
             if dash is not None and dash.get("val") not in (None, "solid"):
                 count_dashed += 1
                 dashed_here += 1
-        assert dashed_here == (1 if number in (6, 10, 12) else 0)
+        assert dashed_here == (1 if number in (6, 10, shifted(12)) else 0)
         note = ET.fromstring(archive.read(f"ppt/notesSlides/notesSlide{number}.xml"))
         assert len(cell_text(note)) > 100
-        if number in (6, 10, 12):
+        if number in (6, 10, shifted(12)):
             assert "incertidumbre estructural" in cell_text(note)
 
     assert count_connectors == 13
-    assert count_dashed == 3 and count_tables == 3 and count_pictures == 4
+    assert count_dashed == 3 and count_tables == 3 and count_pictures == 4 + has_figure
     rows = {}
     for number in (7, 8):
         root = ET.fromstring(archive.read(names[number - 1]))
@@ -71,10 +75,17 @@ with ZipFile(PPTX) as archive:
     for asset in ("presentaciones/img/portada_integridad_redes_es.jpg",
                   "img/Mapa_México_Página_3.png", "presentaciones/img/sistemico_pecera_microcosmos_es.jpg", "presentaciones/img/bosque-suelo-transicion-v5.png"):
         assert hashlib.sha256((ROOT / asset).read_bytes()).hexdigest() in media_hashes
-    closing = ET.fromstring(archive.read("ppt/notesSlides/notesSlide15.xml"))
+    if has_figure:
+        approved = ROOT / "presentaciones/img/iie-2018-pixeles-holdridge.png"
+        assert hashlib.sha256(approved.read_bytes()).hexdigest() in media_hashes
+        figure_note = ET.fromstring(archive.read("ppt/notesSlides/notesSlide12.xml"))
+        assert "P-ME-062" in cell_text(figure_note)
+        assert "850" in cell_text(figure_note)
+    closing = ET.fromstring(archive.read(f"ppt/notesSlides/notesSlide{shifted(15)}.xml"))
     assert "Respuestas esperadas" in cell_text(closing)
 
-print(json.dumps({"slides": 16, "attached_connectors": count_connectors,
+print(json.dumps({"slides": len(names), "attached_connectors": count_connectors,
                   "dashed_connectors": count_dashed, "native_tables": count_tables,
                   "original_images_preserved": True, "bayes_from_tables": computed,
-                  "speaker_notes": 16, "status": "pass"}, ensure_ascii=False))
+                  "speaker_notes": len(names), "approved_figure_preserved": has_figure,
+                  "status": "pass"}, ensure_ascii=False))

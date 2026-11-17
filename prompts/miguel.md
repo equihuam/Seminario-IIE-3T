@@ -1542,3 +1542,17 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 haz un commit push para retomar la cabeza del repositorio en fragaria.
 ```
+
+## P-ME-135 — Diagnóstico de convergencia entre las copias de Fragaria y Cazahuate
+Fecha de registro: 2026-11-17.
+
+```text
+Hay algún desvío que hay que resolver.  Aquí en fragaria estoy trabajando en la rama miguel/mapa-iie-pixeles pero en cazahuate es miguel/semillero-v0   Ambas deben converger. Revisa por favor. Yo entiendo que mapa-iie-pixeles  podría tener sntecedentes que requiere incorporar semillero-v0, pero a lo mejor como no están en sync, algo no está en su lugar. Verifica y dsme una identificación de posibkes inconsistencias
+```
+
+## P-ME-136 — Consolidar el mapa y el tablero en la carpeta habitual de Fragaria
+Fecha de registro: 2026-11-17.
+
+```text
+Adelante, consolida todo en miguel/semillero-v0, conserva el trabajo del mapa y deja actualizada la carpeta habitual de Fragaria. Verifica y haz commit & push para sincronizar con Cazahuate. Yo hago el merge del PR.
+```

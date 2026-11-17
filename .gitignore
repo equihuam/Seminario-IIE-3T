@@ -69,3 +69,8 @@ data/private/
 *.7z
 *.mp4
 *.mov
+
+# Adjuntos recibidos y productos locales de la cartografía
+.codex-attachments/
+/presentaciones/img/Mapa_México_Página_3.png
+/presentaciones/img/iie-2018-pixeles-holdridge-base.*
