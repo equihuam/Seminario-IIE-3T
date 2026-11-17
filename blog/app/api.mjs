@@ -11,8 +11,58 @@ export class Api {
     }
     this.url=url.origin; this.key=config.publishableKey; this.fetcher=fetcher; this.session=null;
   }
-  async request(path, {method='GET',body,raw=false}={}) {
+  get storageKey() { return 'iie-auth:'+this.url; }
+  restore(storage) {
+    this.storage=storage;
+    let saved;
+    try { saved=JSON.parse(storage.getItem(this.storageKey)); } catch { return; }
+    if (saved?.user?.id && saved.access_token && saved.refresh_token && Number.isFinite(saved.expires_at)) {
+      this.session=saved;
+      this.remembered=true;
+    }
+  }
+  forget() {
+    if(this.remembered) this.storage.removeItem(this.storageKey);
+    this.remembered=false;
+    this.session=null;
+  }
+  async ready() {
+    const session=this.session;
+    if(!session?.refresh_token || session.expires_at>Date.now()/1000+60) return;
+    if(!this.refreshing) {
+      const renew=async()=>{
+        if(this.session!==session) throw Error('La sesión cambió. Vuelve a abrir el tablero.');
+        if(this.remembered) {
+          const saved=JSON.parse(this.storage.getItem(this.storageKey));
+          if(!saved || saved.user.id!==session.user.id) {
+            this.remembered=false;this.session=null;this.onExpired?.();
+            throw Error('Vuelve a entrar con tu cuenta.');
+          }
+          Object.assign(session,saved);
+          if(session.expires_at>Date.now()/1000+60) return;
+        }
+        try {
+          const next=await this.transport('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:session.refresh_token}});
+          if(this.session!==session) throw Error('La sesión cambió.');
+          Object.assign(session,next);
+          if(this.remembered) this.storage.setItem(this.storageKey,JSON.stringify(session));
+        } catch(error) {
+          if([400,401,403].includes(error.status) && this.session===session) {this.forget();this.onExpired?.();}
+          throw error;
+        }
+      };
+      const job=this.remembered && globalThis.navigator?.locks ? navigator.locks.request(this.storageKey,renew) : renew();
+      this.refreshing=job.finally(()=>{this.refreshing=null;});
+    }
+    await this.refreshing;
+  }
+  async request(path,options) {
+    if(!path.startsWith('/auth/')) await this.ready();
+    return this.transport(path,options);
+  }
+  async transport(path, {method='GET',body,raw=false,returnRows=false}={}) {
     const headers={apikey:this.key};
+    if(returnRows) headers.Prefer='return=representation';
     if(this.session) headers.Authorization=`Bearer ${this.session.access_token}`;
     if(body!==undefined) headers['Content-Type']=raw ? 'application/octet-stream' : 'application/json';
     const response=await this.fetcher(this.url+path,{method,headers,body:body===undefined?undefined:raw?body:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(20000)});
@@ -24,8 +74,15 @@ export class Api {
     return response.status===204?null:response.json();
   }
   otp(email) {return this.request('/auth/v1/otp',{method:'POST',body:{email,create_user:false}});}
-  async verify(email,token) {this.session=await this.request('/auth/v1/verify',{method:'POST',body:{email,token,type:'email'}});return this.session;}
-  async logout() {try {await this.request('/auth/v1/logout',{method:'POST'});} finally {this.session=null;}}
+  async verify(email,token,remember=false) {
+    this.session=await this.transport('/auth/v1/verify',{method:'POST',body:{email,token,type:'email'}});
+    if(remember) {
+      try {this.storage.setItem(this.storageKey,JSON.stringify(this.session));this.remembered=true;}
+      catch {this.remembered=false;}
+    }
+    return this.session;
+  }
+  async logout() {try {await this.ready();await this.transport('/auth/v1/logout?scope=local',{method:'POST'});} finally {this.forget();}}
   async upload(record,file) {
     const path=`${this.session.user.id}/${record.id}/${record.version}/${record.attachment.sha256}`;
     try {await this.request(`/storage/v1/object/originales/${path}`,{method:'POST',body:await file.arrayBuffer(),raw:true});}

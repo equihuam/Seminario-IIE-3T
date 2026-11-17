@@ -275,8 +275,30 @@ Implementación en `miguel/semillero-v0` desde origin/main 4db5bcf actualizado p
 
 **Entrega P-ME-085/B099:** implementación publicada en `origin/miguel/semillero-v0`, commit `95d6058`, con [PR #15 en borrador](https://github.com/equihuam/Seminario-IIE-3T/pull/15) hacia main. Sin integración ni publicación. Continuación en laptop documentada en `docs/SEMILLERO-V0.md`; T009 conserva pendientes de correo, archivo HTTP, respaldo y prueba con participantes.
 
+**Actualización P-ME-087:** coordinación mantiene las fichas pactadas en `blog/app/encuentros.json`. Primera ficha para el 18 de noviembre de 2026, 14:00–15:00 (Ciudad de México), con discusión de integridad ecosistémica, formato de variables de la tarea 0 y dudas operativas. La directiva para los proyectos individuales y su parche conectan la preparación, la sesión y la bitácora con la PWA. Pendientes la distribución a participantes y la prueba de uso con sus repositorios.
+
+**Prueba pendiente en iPhone (P-ME-097).** Octavio probará el tablero publicado. Anotar versión de iOS, navegador, opciones ofrecidas para agregarlo a Inicio y si desde el ícono abre en ventana propia o en una pestaña. Registrar los resultados cuando los comunique.
+
+**Avance de la prueba en iPhone (P-ME-101).** La captura muestra el ícono del tablero en Inicio. Queda por observar si al tocarlo la Agenda abre en una ventana propia o en una pestaña. La versión de iOS y el navegador utilizado siguen pendientes de registro.
+
+**Resultado de la apertura en iPhone (P-ME-102).** Según Octavio, al abrir el tablero desde Inicio se muestra sin apariencia de pestaña. Con la captura de P-ME-101, queda documentada la experiencia de apertura en su dispositivo. Versión de iOS y navegador utilizado para añadirlo a Inicio sin registrar.
+
+**T009 · P-ME-103 (2026-11-12).** Primer respaldo relacional de las cinco tablas del Semillero obtenido por TLS y restaurado en PGlite. Todas estaban vacías en la captura. Ensayo adicional con filas sintéticas en las cinco tablas y nueva comprobación SQL remota correctos (B117). Siguen pendientes el recorrido por correo con dos cuentas y la carga, recuperación y respaldo de los archivos de Storage.
+
+**P-ME-104 — Calendario del seminario.** La suscripción común se publica en `/app/agenda.ics`. La agenda usa las fichas públicas de encuentros del repositorio. Se conserva la descarga individual por ficha. Pendientes el despliegue y la primera suscripción con Google Calendar y Outlook.
+
+**T009 · P-ME-114.** Miguel completó su parte. Esperar el resultado de Octavio al intentar recuperar el adjunto de Miguel desde su propia sesión. Después de confirmar la denegación de Storage, identificar y limpiar los datos de prueba y cargar las semillas publicadas, cotejando cada ficha, su identificador y su autoría. Correo de Daniel pendiente. Contactos en el registro privado local.
+
+Actualización P-ME-115: recibido el correo de Daniel (I006). La carga sigue pendiente del resultado de Octavio.
+
+P-ME-117. Se mantiene Supabase para el acceso de los participantes al Semillero desde la PWA. MariaDB en el NAS queda como opción para uso particular o para grupos con acceso privado.
+
 **Evidencia P-ME-087–089/B101:** captura aportada por Miguel informa sesión de Octavio verificada y descarga ajena fallida (HTTP 400, Object not found). Contraste SQL de solo lectura: sobre el mismo objeto existente, propietario ve un registro y Octavio cero; bucket privado y política por carpeta de autor conservados. Esto respalda aislamiento del metadato, pero no acredita descarga HTTP del propietario ni lectura del código de prueba. El ZIP está en private de la laptop; Miguel aplaza su revisión para Fragaria. Conservar pendiente el control positivo y el cotejo de ruta/huella, sin cerrar T009.
 
 **Cierre de batería P-ME-090/B102:** Miguel confirma que ya realizó el trabajo en Fragaria y que la prueba de Octavio cierra la batería. Se da por cerrado ese bloque de pruebas por confirmación del responsable; no se vuelve a solicitar ni repetir el control pendiente de B101. Se conserva la distinción entre evidencia observada aquí y ejecución comunicada desde Fragaria. Este cierre no equivale a aprobar/fusionar el PR #15 ni a verificar publicación; tampoco acredita por sí mismo los demás compromisos operativos de T009 que no formen parte de esa batería.
 
 **Seguimiento documental P-ME-095/B105:** [issue #16 — revisión en Fragaria de la evidencia de Octavio](https://github.com/equihuam/Seminario-IIE-3T/issues/16), con copia en `docs/tickets/016-prueba-octavio-fragaria.md`. Reúne protocolo, captura, contraste observado y tareas para revisar el ZIP y conciliar los registros disponibles en la laptop. La batería permanece cerrada según Miguel; este ticket conserva la continuidad de la revisión sin publicar archivos privados ni solicitar repetir pruebas.
+
+2026-11-13 · P-ME-118 · GitHub #16. Cerrada la batería de acceso cruzado de T009 para el adjunto probado. Fragaria conserva el acuse de la versión 1 con descarga del propietario verificada por SHA256. El HTML del ZIP de navegador usa la misma ruta y verifica la cuenta distinta. El ticket de oficina documenta la captura de Octavio (HTTP 400 · Object not found) y el contraste RLS sobre el objeto existente. Nombre y huellas en private/t009/conciliacion-16.txt. Próximo paso: respaldo de tablas y adjuntos antes de la limpieza y carga. Las referencias históricas P-ME-086–095 y B100 en adelante se interpretan por procedencia y título cuando sus números coinciden entre oficina y Fragaria.
+
+2026-11-17 · P-ME-129 · El tablero publicado permite sugerir lecturas, debatirlas, registrar acuerdos en Agenda y enlazar la referencia del grupo Zotero. Miguel y Octavio tienen acceso a la ficha de Saltelli. En el piloto se comprobó la casilla «Recordar este equipo» con acceso simulado y el destino de Zotero; la prueba con las cuentas personales queda a los participantes. La rama de entrega al PR #15 es miguel/semillero-v0.

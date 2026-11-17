@@ -1,7 +1,7 @@
 {
   "id": "/app/",
-  "name": "Seminario IIE-3T · Semillero",
-  "short_name": "IIE Semillero",
+  "name": "Tablero de Trabajo",
+  "short_name": "Tablero de Trabajo",
   "lang": "es",
   "start_url": "./",
   "scope": "./",

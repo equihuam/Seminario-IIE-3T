@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//IIE-3T//Tablero//ES
+CALSCALE:GREGORIAN
+NAME:Agenda del Seminario IIE-3T
+X-WR-CALNAME:Agenda del Seminario IIE-3T
+BEGIN:VEVENT
+UID:2026-11-18-integridad@seminario-iie
+DTSTAMP:20261113T044620Z
+LAST-MODIFIED:20261113T044620Z
+DTSTART:20261118T200000Z
+DTEND:20261118T210000Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Primera discusión del concepto de integridad ecosistémica
+DESCRIPTION:Temas a tratar: ¿Qué entendemos por integridad ecosistémica?
+ \nDinámica o actividad prevista:\n14:00–14:45 · Discutir el concepto c
+ on apoyo de la presentación introductoria.\n14:45–14:55 · Revisar cóm
+ o llenar el formato con las variables propuestas en la tarea 0.\n14:55–1
+ 5:00 · Atender dudas operativas\, incluido el uso de la PWA.
+END:VEVENT
+END:VCALENDAR

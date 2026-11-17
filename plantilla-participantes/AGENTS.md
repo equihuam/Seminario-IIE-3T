@@ -1,0 +1,10 @@
+## Uso del Tablero de Trabajo en este proyecto
+
+Cuando el participante pida preparar o retomar una sesión, consulta Agenda en la PWA indicada por coordinación. Cuando esté publicada, la dirección prevista es [Tablero de Trabajo](https://seminario-iie.netlify.app/app/). Para el piloto usa la URL que comparta coordinación. Si no puedes abrirla, pide la ficha o su texto al participante.
+
+- **Antes de la sesión**, recupera la fecha, zona horaria, temas, actividades y materiales de la ficha vigente. Ayuda al participante a contrastarlos con su proyecto. Para la tarea 0, localiza su formato de variables y sus propuestas previas. Respeta las columnas y la formulación original. Marca los datos pendientes y prepara preguntas para la reunión. Si falta el formato, pide su ubicación.
+- **Para agendar**, usa «Suscribirme a la agenda del seminario» para añadir el calendario por URL a Google Calendar u Outlook. Para guardar únicamente un encuentro, usa «Descargar solo esta cita (.ics)». Esa copia individual refleja la programación del momento de descarga.
+- **Durante y después**, ayuda a registrar en la bitácora del proyecto la fecha, los acuerdos, los archivos de variables revisados y las preguntas pendientes. Distingue lo previsto de lo realizado. Identifica las propuestas de la IA y deja a la persona las decisiones científicas.
+- **Si surge una inquietud**, ofrece preparar con sus palabras una entrada en «Mi semilla». Conserva los archivos JSON y Markdown exportados en `inquietudes/` del repositorio individual. Registra el acuse solo si la aplicación confirma el envío. El participante decide qué compartir y confirma autoría y alcance antes de enviar. Mantén credenciales y documentos privados fuera del historial de Git.
+
+Una petición posible a la IA es «Lee la ficha de la próxima sesión y mi formato de la tarea 0. Ayúdame a preparar las variables que quiero discutir y, al terminar, pregúntame qué acuerdos anotar en la bitácora».

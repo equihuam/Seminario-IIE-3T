@@ -40,3 +40,36 @@ test('lost upload response: identical private object is verified before retrying
  assert.equal(calls.length,3);
  await assert.rejects(a.submit(r,{arrayBuffer:async()=>new TextEncoder().encode('different').buffer}),/Selecciona de nuevo/);
 });
+test('remembered session restores, rotates once on concurrent use, and forgets on local logout',async()=>{
+ const values=new Map();
+ const storage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
+ const initial={user:{id:'A'},access_token:'old',refresh_token:'first',expires_at:1};
+ let refreshes=0;
+ const fetcher=async(url,opts)=>{
+   if(url.endsWith('/verify'))return Response.json(initial);
+   if(url.includes('grant_type=refresh_token')){
+     refreshes++;assert.equal(JSON.parse(opts.body).refresh_token,'first');
+     return Response.json({...initial,refresh_token:'second',access_token:'new',expires_at:Math.floor(Date.now()/1000)+3600});
+   }
+   assert.equal(opts.headers.Authorization,'Bearer new');
+   if(url.includes('/logout'))assert.ok(url.endsWith('scope=local'));
+   return Response.json([]);
+ };
+ const open=()=>{const api=new Api({supabaseUrl:'https://example.org',publishableKey:'public'},fetcher);api.restore(storage);return api;};
+ const first=open();await first.verify('a','123');assert.equal(values.size,0);
+ await first.verify('a','123',true);
+ const second=open();await Promise.all([second.events(),second.mine()]);assert.equal(refreshes,1);
+ assert.equal(open().session.refresh_token,'second');
+ await second.logout();assert.equal(open().session,null);
+});
+test('network failure keeps remembered access for retry, revoked refresh clears it',async()=>{
+ const values=new Map();const storage={getItem:k=>values.get(k)??null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
+ const api=new Api({supabaseUrl:'https://example.org',publishableKey:'public'});
+ api.restore(storage);
+ api.fetcher=async()=>Response.json({user:{id:'A'},access_token:'access',refresh_token:'refresh',expires_at:1});
+ await api.verify('a','123',true);
+ api.fetcher=async()=>{throw Error('offline');};
+ await assert.rejects(api.ready(),/offline/);assert.equal(values.size,1);
+ api.fetcher=async()=>Response.json({message:'revoked'},{status:400});
+ await assert.rejects(api.ready());assert.equal(values.size,0);assert.equal(api.session,null);
+});

@@ -1,26 +1,16 @@
+import {verifyRestore} from './restore.mjs';
+import {snapshot} from '../../supabase/snapshot.mjs';
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFile} from 'node:fs/promises';
+import {createSchema} from './schema.mjs';
 import {PGlite} from '@electric-sql/pglite';
 const alice='11111111-1111-4111-8111-111111111111',bob='22222222-2222-4222-8222-222222222222';
 const seed='33333333-3333-4333-8333-333333333333';
 const record={schema:'iie-semilla/0',id:seed,version:1,created_at:'2026-11-12T12:00:00Z',author:'Prueba sintética',title:'Pregunta',question:'¿Qué se observa?',motivation:'Aprender',example:'',sharing:'coordination',attachment:null};
 test('SQL migration: isolation, immutable reception, idempotency, corrections, attachment checks and agenda history',async()=>{
  const db=new PGlite();
- await db.exec(`create role anon; create role authenticated;
- create schema auth; create schema storage;
- create table auth.users(id uuid primary key);
- insert into auth.users values('${alice}'),('${bob}');
- create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;
- grant usage on schema public,auth,storage to anon,authenticated;
- create table storage.buckets(id text primary key,name text,public boolean,file_size_limit bigint);
- create table storage.objects(id uuid default gen_random_uuid(),bucket_id text,name text,metadata jsonb);
- alter table storage.objects enable row level security;
- grant select,insert,update,delete on storage.objects to authenticated;
- create function storage.foldername(text) returns text[] language sql immutable as $$select (string_to_array($1,'/'))[1:array_length(string_to_array($1,'/'),1)-1]$$;
- create function storage.filename(text) returns text language sql immutable as $$select (string_to_array($1,'/'))[array_length(string_to_array($1,'/'),1)]$$;`);
- const migration=await readFile(new URL('../../supabase/migrations/202611120001_semillero.sql',import.meta.url),'utf8');
- try { await db.exec(migration); } catch(e) { console.error({position:e.position,internalPosition:e.internalPosition,internalQuery:e.internalQuery,where:e.where}); throw e; }
+ await createSchema(db);
+ await db.query('insert into auth.users values ($1),($2)',[alice,bob]);
  const user=async id=>{await db.exec('reset role');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id]);await db.exec('set role authenticated');};
  const receive=r=>db.query('select public.receive_seed($1::jsonb) as receipt',[JSON.stringify(r)]);
  await db.exec('set role anon');await assert.rejects(receive(record),/permission denied/);
@@ -57,5 +47,10 @@ test('SQL migration: isolation, immutable reception, idempotency, corrections, a
  await db.exec('set role anon');
  const agenda=(await db.query('select * from public.bulletins')).rows;assert.equal(agenda.length,1);assert.equal(agenda[0].status,'reprogramada');
  await assert.rejects(db.exec('select * from public.bulletin_history'),/permission denied/);
+ await db.exec('reset role');
+ await db.query("insert into public.seed_reviews(seed_id,version,reviewer,role,note) values ($1,1,'Prueba','revisor','Nota')",[seed]);
+ const data = await snapshot(db);
+ assert.ok(Object.values(data).every(rows => rows.length > 0));
+ await verifyRestore({format:'semillero-sql/1',data});
  await db.close();
 });

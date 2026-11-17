@@ -10,7 +10,7 @@ resume.onclick=()=>$('import').click();
 $('import-open').onclick=()=>$('import').click();
 cards[0].querySelector('.card-note').replaceWith(resume);
 export function setView(view){
-  for(const name of ['seed','agenda','mine'])$(`${name}-view`).hidden=name!==view;
+  for(const section of document.querySelectorAll('.view'))section.hidden=section.id!==view+'-view';
   for(const button of document.querySelectorAll('[data-view]')){
     if(button.dataset.view===view)button.setAttribute('aria-current','page');else button.removeAttribute('aria-current');
   }

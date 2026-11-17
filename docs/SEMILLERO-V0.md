@@ -136,6 +136,54 @@ Nueve tarjetas recorridas en navegador a 320×568, 360×640 y 390×844. En la re
 
 Documentación oficial consultada el 2026-11-12: [funciones SQL](https://supabase.com/docs/guides/database/functions), [RLS](https://supabase.com/docs/guides/database/postgres/row-level-security), [OTP](https://supabase.com/docs/guides/auth/auth-email-passwordless), [Storage](https://supabase.com/docs/guides/storage/security/access-control), [límites de correo](https://supabase.com/docs/guides/auth/rate-limits), [respaldos](https://supabase.com/docs/guides/platform/backups). Se utilizan para ingeniería del colector, sin atribuir validación conceptual o pedagógica.
 
+### Temas y actividad de una cita
+
+Coordinación puede incluir estos dos apartados en el texto (`body`) del aviso de Supabase, cada encabezado al inicio de una línea. Debajo de cada uno se admiten varias líneas. El texto anterior al primer encabezado se muestra como descripción. Los avisos anteriores siguen admitiendo texto libre.
+
+```text
+Temas a tratar:
+Dinámica o actividad prevista:
+```
+
+### Calendario dedicado y citas sueltas
+
+La dirección pública de suscripción es `/app/agenda.ics` en el dominio del tablero. Google Calendar y Outlook vuelven a consultarla a su propio ritmo. En el piloto, coordinación registra los encuentros del calendario en `blog/app/encuentros.json`. Los avisos adicionales de Supabase aparecen en el tablero y quedan fuera de la suscripción estática. La descarga por encuentro es una copia puntual.
+
+Quarto ejecuta `node ../scripts/generate-calendar.mjs` antes de renderizar. Para regenerar únicamente el calendario desde la raíz, ejecutar `node scripts/generate-calendar.mjs`. Versionar la salida con la ficha y volver a desplegar en el mismo sitio. Para reprogramar, editar inicio o bloques en la misma ficha, conservar su `id`, incrementar `sequence` y poner en `updated_at` la fecha y hora de la revisión. Para cancelar, conservar la ficha y su horario con estado `cancelada` e incrementar la revisión. Un nuevo encuentro lleva un identificador distinto y comienza con revisión cero.
+
+El parche para directivas individuales se distribuye en `/app/directiva-pwa.patch`. Instrucciones de aplicación y revisión en `plantilla-participantes/README.md`.
+
+### Piloto por arrastre en Netlify
+
+El paquete de prueba enlaza el PPTX servido por el blog del seminario. El generador coteja el archivo publicado con la copia local por SHA-256 antes de preparar la carpeta. Así se evita transferir de nuevo el PPTX de 18 MB en cada despliegue manual. Las presentaciones nuevas deben estar disponibles en el blog para preparar este paquete. Consultar [diagnóstico de subidas manuales detenidas](https://docs.netlify.com/resources/troubleshooting/error-reference/#drag-and-drop-deploy-stuck-uploading-or-in-progress).
+
+### Almacén de coordinación para materiales grandes (P-ME-090)
+
+Coordinación reúne las versiones de clase en [Seminario IIE-3T — Materiales de clase](https://drive.google.com/drive/folders/16xuQsAbpCh7l5GuAEVOe2rrgU027_ZCr). Primera incorporación: presentación introductoria v5 en PPTX, ID de Drive `1GMH3Q4_SV1wn8TYF9SJvaW3Y4u0qFkXY`, 18 074 607 bytes. La consulta posterior identificó el archivo dentro de la carpeta con acceso privado. La ficha del piloto conserva el enlace público ya comprobado del blog. Para servir un material desde Drive a los alumnos, definir la audiencia y verificar el acceso de lectura desde una cuenta participante antes de incorporar el enlace a la ficha.
+
+## Respaldo de datos relacionales y ensayo de recuperación
+
+Desde la raíz de esta rama, instalar las dependencias fijadas con `npm ci --prefix supabase` y `npm ci --prefix tests/semillero`. Usar la configuración privada y el certificado indicados en el procedimiento de conexión. Ejecutar en PowerShell:
+
+```powershell
+$copia = node supabase/backup.mjs --config '<ruta-del-json-privado>' --host aws-1-us-east-1.pooler.supabase.com --user postgres.owqoinfndqzqwiiiexks --ca .local/supabase-ca.crt
+if ($LASTEXITCODE -ne 0) { throw 'No se generó la copia' }
+Get-FileHash -Algorithm SHA256 -LiteralPath $copia
+node tests/semillero/verify-backup.mjs $copia
+```
+
+La exportación lee las cinco tablas en una sola transacción de lectura repetible. Cada ejecución crea un archivo nuevo bajo `private/respaldos/`, excluido de Git. Conservarlo con acceso restringido. El ensayo recrea el esquema en PGlite en memoria, carga las filas y coteja cada una, incluidos acuses, marcas temporales e historial. Usar la huella registrada en la captura para comprobar después la integridad del archivo. Para recuperar el servicio completo hacen falta además las identidades de Auth, los archivos del bucket privado, la configuración del proyecto y el esquema versionado.
+
+### Prueba T009 en dos equipos
+
+Usar Node 22 o posterior en una terminal privada, desde una copia que incluya `supabase/t009.mjs`, cuando estén habilitadas las cuentas y el correo con código. Miguel ejecuta `node supabase/t009.mjs enviar CORREO` con su dirección. Introduce personalmente el código en la terminal. El cliente crea una semilla sintética, obtiene el acuse y recupera el objeto privado. Solo después de cotejar el SHA-256 imprime la ruta exacta. Conservar el objeto durante la segunda prueba y pasar a Octavio esa ruta por privado.
+
+**Prompt para Octavio**
+
+> Ayúdame a comprobar mi parte de T009 en el Semillero. En una terminal interactiva de mi equipo abre el proyecto y prepara el comando `node supabase/t009.mjs contrastar MI_CORREO RUTA_DE_MIGUEL` con mi correo y la ruta exacta del objeto sintético que me dio Miguel. Yo introduciré mi código de correo en la terminal. Usa mi sesión de participante. Comunícame si la sesión fue verificada y qué respuesta HTTP dio Storage para ese objeto. Si la descarga funciona o falla el inicio de sesión, registra ese resultado tal cual. Devuélveme solo el resultado y el estado HTTP.
+
+El programa distingue una denegación de acceso o un objeto oculto de una sesión caducada, un error de red o un error de servidor. El ensayo conserva la semilla, el acuse y el adjunto sintéticos.
+
 ## Opción de correo para el piloto — P-ME-086
 
 Miguel propone Gmail u Outlook sin disponer aún de proveedor SMTP específico. Conectar el buzón al asistente no configura SMTP en Supabase ni transfiere sus permisos. Recomendación preliminar: probar Gmail para este piloto si la cuenta permite contraseña de aplicación y tiene verificación en dos pasos; no se ha elegido ni configurado todavía una cuenta remitente.

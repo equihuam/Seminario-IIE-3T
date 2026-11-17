@@ -16,3 +16,6 @@ renv/activate.R -whitespace
 
 # Salida Quarto: conservar formato generado, sin avisos de espacios finales.
 blog/_site/** -whitespace linguist-generated=true
+
+# iCalendar se distribuye con finales de línea CRLF.
+*.ics -text

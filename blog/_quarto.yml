@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  pre-render: node ../scripts/generate-calendar.mjs
   render:
     - index.qmd
     - empieza-aqui.qmd
