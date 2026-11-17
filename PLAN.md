@@ -328,3 +328,5 @@ Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó e
 
 ## Estado vigente de la consolidación — P-ME-136
 2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.
+
+2026-11-17 · P-ME-149 · Unicidad de identificadores de prompts comprobada por scripts/check_repo.py y el hook de commit; workflow repository-policy preparado para push/PR. Pasaron 16 pruebas Python. Cada equipo debe activar core.hooksPath=.githooks; exigir el check en main requiere configuración del administrador.

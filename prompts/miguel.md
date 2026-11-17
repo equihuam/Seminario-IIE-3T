@@ -1602,3 +1602,11 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 Resuelve la duplicación de P-ME-086–095 conservando los textos originales y la trazabilidad de las referencias. Después haz commit & push para dejar el registro consistente en ambos equipos.
 ```
+
+## P-ME-149 — Comprobación automática de identificadores de prompts
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Agrega una comprobación automática para evitar que volvamos a duplicar identificadores de prompts entre equipos. Intégrala a la revisión del repositorio y haz commit & push.
+```
