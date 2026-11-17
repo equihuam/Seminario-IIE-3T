@@ -1518,3 +1518,11 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 Se ve bien. Hazlo así con vínculo a la biblioteca grupa de  zotero: [https://www.zotero.org/groups/6712171/seminario_iie-t/library](https://www.zotero.org/groups/6712171/seminario_iie-t/library)
 ```
+
+
+## P-ME-132 — Sincronizar con Caahuate
+Fecha de registro: 2026-11-17.
+
+```text
+haz sólo commit & push, para sincronizar con Caahuate
+```
