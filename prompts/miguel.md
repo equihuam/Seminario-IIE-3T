@@ -1526,3 +1526,11 @@ Fecha de registro: 2026-11-17.
 ```text
 haz sólo commit & push, para sincronizar con Caahuate
 ```
+
+## P-ME-133 — Sincronizar carpeta del piloto con Fragaria
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Lo pongo en netlify empujando el directorio que ya tengo Seminario-IIE-3T\apps\\\_pwa-control-clase en Fragaria. Pienso que hace falta hacer pull aquí para ver esa estructura.. En la rama de Miguel. Conserva lo que acabamos de hacer y acrualiza
+```
