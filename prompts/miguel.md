@@ -1510,3 +1510,11 @@ Ya vimos el registro de lecturas.  El flujo lo proponemos así:
 
 Actualiza el formato con esta estrategia.
 ```
+
+## P-ME-131 — Vínculo a la biblioteca grupal en el formato de Lecturas
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Se ve bien. Hazlo así con vínculo a la biblioteca grupa de  zotero: [https://www.zotero.org/groups/6712171/seminario_iie-t/library](https://www.zotero.org/groups/6712171/seminario_iie-t/library)
+```

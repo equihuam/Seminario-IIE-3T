@@ -111,7 +111,11 @@ export function initReadings(getApi, login) {
   findLabel.append(search);
   const catalogStatus = element('p'); catalogStatus.className = 'hint'; catalogStatus.setAttribute('role','status');
   const preview = element('div'); preview.className = 'reading-reference-preview';
-  const source = element('p','Primero incorpora la referencia a Zotero del grupo. Si no aparece, solicita la sincronización del catálogo y pulsa Actualizar lecturas.');
+  const source = element('p','Primero incorpora la referencia a la ');
+  const library = element('a','biblioteca del grupo en Zotero');
+  library.href = 'https://www.zotero.org/groups/6712171/seminario_iie-t/library';
+  library.target = '_blank'; library.rel = 'noopener';
+  source.append(library,document.createTextNode('. Si no aparece, solicita la sincronización del catálogo y pulsa Actualizar lecturas.'));
   source.className = 'hint';
   suggestion.prepend(findLabel);
   suggestion.elements.zotero_key.closest('label').after(catalogStatus,preview,source);

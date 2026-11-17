@@ -4,7 +4,7 @@
 
 Desde P-ME-130 (2026-11-17), la PWA conectada propone lecturas así:
 
-1. Incorporar primero la referencia al grupo Zotero **Seminario IIE-3T**, biblioteca `6712171`.
+1. Incorporar primero la referencia a la [biblioteca del grupo Zotero Seminario IIE-3T](https://www.zotero.org/groups/6712171/seminario_iie-t/library), biblioteca `6712171`. El formulario incluye este mismo vínculo y lo abre en otra pestaña.
 2. En **Lecturas → Sugerir lectura**, buscar palabras del título y elegir una referencia del desplegable. La cita completa y el enlace permiten comprobar la selección; títulos iguales se distinguen por su cita.
 3. Completar **Asunto o pregunta propuestos** y **Dinámica de procesamiento propuesta**. Ambos son obligatorios. Guardar una propuesta no constituye un acuerdo de coordinación ni acredita haber leído la fuente.
 
