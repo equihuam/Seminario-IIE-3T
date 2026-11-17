@@ -308,3 +308,5 @@ Actualización sobre `miguel/semillero-v0`, sincronizada por avance rápido hast
 
 
 Actualización de entrega P-ME-130: formato y catálogo completados; 17 pruebas Node/PGlite y 13 Python correctas, prueba SQL remota revertida y sitio completo de 24 páginas verificado. Paquete de Netlify y HTML portátil listos en output/lecturas-zotero/. El despliegue del piloto permanece pendiente; la rama y PR #15 se actualizan sin fusión.
+
+Entrega P-ME-130: implementación publicada en `origin/miguel/semillero-v0` mediante `6d3e771`; [PR #15](https://github.com/equihuam/Seminario-IIE-3T/pull/15) actualizado. Pendiente desplegar `output/lecturas-zotero/Tablero-Lecturas-Zotero.zip` en el piloto Netlify; el catálogo de Supabase ya está preparado. La actualización de nuevas referencias se documenta al comienzo de `scripts/lecturas/README.md`.
