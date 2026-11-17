@@ -326,3 +326,7 @@ Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó e
 
 ## Estado vigente de la consolidación — P-ME-136
 2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.
+
+## Navegación del blog — P-ME-151 (2026-11-17)
+
+Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Aviso del Semillero actualizado al piloto compartido. Blog regenerado y verificado (24 páginas); navegación comprobada en Edge a 1366 y 390 px. Pendiente: merge del PR por Miguel y comprobación posterior de publicación. La tabla del índice del Semillero conserva un desbordamiento móvil; su HTML es idéntico al de main y queda fuera de este ajuste de navegación.

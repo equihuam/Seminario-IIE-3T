@@ -1556,3 +1556,11 @@ Fecha de registro: 2026-11-17.
 ```text
 Adelante, consolida todo en miguel/semillero-v0, conserva el trabajo del mapa y deja actualizada la carpeta habitual de Fragaria. Verifica y haz commit & push para sincronizar con Cazahuate. Yo hago el merge del PR.
 ```
+
+## P-ME-151 — Reorganizar la navegación del blog y enlazar el Tablero
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Adelante, reorganiza el menú en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Actualiza también el aviso del Semillero, verifica el blog y prepara commit, push y PR. Yo hago el merge.
+```
