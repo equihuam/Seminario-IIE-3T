@@ -330,3 +330,13 @@ Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó e
 2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.
 
 2026-11-17 · P-ME-149 · Unicidad de identificadores de prompts comprobada por scripts/check_repo.py y el hook de commit; workflow repository-policy preparado para push/PR. Pasaron 16 pruebas Python. Cada equipo debe activar core.hooksPath=.githooks; exigir el check en main requiere configuración del administrador.
+
+## Navegación del blog — P-ME-151 (2026-11-17)
+
+Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Aviso del Semillero actualizado al piloto compartido. Blog regenerado y verificado (24 páginas); navegación comprobada en Edge a 1366 y 390 px. Pendiente: merge del PR por Miguel y comprobación posterior de publicación. La tabla del índice del Semillero conserva un desbordamiento móvil; su HTML es idéntico al de main y queda fuera de este ajuste de navegación.
+
+## Tablero v1 aprobado — P-ME-152 (2026-11-17)
+
+Miguel comunica la aprobación conjunta con Octavio para entregar el Tablero a participantes. Rótulo v1 visible en la PWA y aviso del Semillero actualizado; paquete público regenerado en apps/_pwa-control-clase. Se conserva la compatibilidad de los registros existentes. Pendientes de publicación: merge del PR del blog y subida manual de la carpeta habitual al sitio independiente de Netlify.
+
+Actualización P-ME-153 (2026-11-17): incorporado main con el PR #17 a la rama del PR #18 y resueltos los conflictos de registros conservando ambos historiales. Pasaron 16 pruebas Python y la reconstrucción/verificación de 24 páginas. El menú y Tablero v1 permanecen listos para el merge de Miguel.

@@ -33,20 +33,29 @@ website:
     logo-alt: "Seminario IIE-3T: probabilidad, sociedad y ecosistema"
     background: light
     left:
-      - text: Preparar proyecto
-        href: preparar-proyecto.qmd
-      - text: Empieza aquí
-        href: empieza-aqui.qmd
-      - text: Sesiones
-        href: sesiones.qmd
-      - text: Presentaciones
-        href: presentaciones/index.qmd
-      - text: Temas
-        href: temas.qmd
-      - text: Semillero
-        href: semillero/index.qmd
-      - text: Reproducibilidad
-        href: reproducibilidad.qmd
+      - text: Empezar
+        menu:
+          - text: Empieza aquí
+            href: empieza-aqui.qmd
+          - text: Preparar proyecto
+            href: preparar-proyecto.qmd
+      - text: Actividades
+        menu:
+          - text: Sesiones
+            href: sesiones.qmd
+          - text: Presentaciones
+            href: presentaciones/index.qmd
+          - text: Semillero de ideas
+            href: semillero/index.qmd
+      - text: Fundamentos
+        menu:
+          - text: Temas
+            href: temas.qmd
+          - text: Reproducibilidad
+            href: reproducibilidad.qmd
+    right:
+      - text: "Tablero ↗"
+        href: https://dash-seminario-iie.netlify.app/
   page-footer:
     left: "iie-3t · Aprender, modelar y documentar"
     right: "Material de trabajo · versión inicial 0.1"

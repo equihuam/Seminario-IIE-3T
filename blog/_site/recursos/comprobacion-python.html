@@ -135,33 +135,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="../preparar-proyecto.html"> 
-<span class="menu-text">Preparar proyecto</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-empezar" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Empezar</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-empezar">    
+        <li>
+    <a class="dropdown-item" href="../empieza-aqui.html">
+ <span class="dropdown-text">Empieza aquí</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../empieza-aqui.html"> 
-<span class="menu-text">Empieza aquí</span></a>
+        <li>
+    <a class="dropdown-item" href="../preparar-proyecto.html">
+ <span class="dropdown-text">Preparar proyecto</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../sesiones.html"> 
-<span class="menu-text">Sesiones</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-actividades" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Actividades</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-actividades">    
+        <li>
+    <a class="dropdown-item" href="../sesiones.html">
+ <span class="dropdown-text">Sesiones</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../presentaciones/index.html"> 
-<span class="menu-text">Presentaciones</span></a>
+        <li>
+    <a class="dropdown-item" href="../presentaciones/index.html">
+ <span class="dropdown-text">Presentaciones</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../temas.html"> 
-<span class="menu-text">Temas</span></a>
+        <li>
+    <a class="dropdown-item" href="../semillero/index.html">
+ <span class="dropdown-text">Semillero de ideas</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../semillero/index.html"> 
-<span class="menu-text">Semillero</span></a>
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-fundamentos" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Fundamentos</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-fundamentos">    
+        <li>
+    <a class="dropdown-item" href="../temas.html">
+ <span class="dropdown-text">Temas</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../reproducibilidad.html">
+ <span class="dropdown-text">Reproducibilidad</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../reproducibilidad.html"> 
-<span class="menu-text">Reproducibilidad</span></a>
+    <a class="nav-link" href="https://dash-seminario-iie.netlify.app/"> 
+<span class="menu-text">Tablero ↗</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -200,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.</p>
-<div id="eb41e8b2" class="cell" data-execution_count="1">
+<div id="8c16b485" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="op">=</span> [<span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.5</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(<span class="bu">sum</span>(probabilidades) <span class="op">-</span> <span class="fl">1.0</span>) <span class="op">&lt;</span> <span class="fl">1e-12</span></span>

@@ -1618,3 +1618,33 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 Verifica que la comprobación de identificadores haya pasado también en GitHub Actions y que la rama esté lista para retomarla en Fragaria.
 ```
+
+## P-ME-151 — Reorganizar la navegación del blog y enlazar el Tablero
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Adelante, reorganiza el menú en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Actualiza también el aviso del Semillero, verifica el blog y prepara commit, push y PR. Yo hago el merge.
+```
+
+## P-ME-152 — Aprobar el Tablero v1 para participantes
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+El tablero ya lo ví con Octavio y lo damos por aprobado en v1. Márcalo así pata entregarlo a los participantes
+```
+
+## P-ME-153 — Resolver conflictos del PR 18
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+EL PR 
+
+# Organizar el menú y entregar el Tablero v1 aprobado- #18
+
+
+
+Marcó conflictos. Revisa y resuelve
+```
