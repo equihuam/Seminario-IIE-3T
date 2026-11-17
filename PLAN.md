@@ -330,3 +330,7 @@ Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó e
 ## Navegación del blog — P-ME-151 (2026-11-17)
 
 Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Aviso del Semillero actualizado al piloto compartido. Blog regenerado y verificado (24 páginas); navegación comprobada en Edge a 1366 y 390 px. Pendiente: merge del PR por Miguel y comprobación posterior de publicación. La tabla del índice del Semillero conserva un desbordamiento móvil; su HTML es idéntico al de main y queda fuera de este ajuste de navegación.
+
+## Tablero v1 aprobado — P-ME-152 (2026-11-17)
+
+Miguel comunica la aprobación conjunta con Octavio para entregar el Tablero a participantes. Rótulo v1 visible en la PWA y aviso del Semillero actualizado; paquete público regenerado en apps/_pwa-control-clase. Se conserva la compatibilidad de los registros existentes. Pendientes de publicación: merge del PR del blog y subida manual de la carpeta habitual al sitio independiente de Netlify.

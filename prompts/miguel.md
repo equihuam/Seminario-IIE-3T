@@ -1564,3 +1564,11 @@ Fecha de registro: 2026-11-17. Hora de emisión no disponible.
 ```text
 Adelante, reorganiza el menú en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Actualiza también el aviso del Semillero, verifica el blog y prepara commit, push y PR. Yo hago el merge.
 ```
+
+## P-ME-152 — Aprobar el Tablero v1 para participantes
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+El tablero ya lo ví con Octavio y lo damos por aprobado en v1. Márcalo así pata entregarlo a los participantes
+```

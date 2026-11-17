@@ -5,7 +5,7 @@ title: "Semillero de ideas"
 Una pregunta basta para empezar: **¿qué propones explorar y por qué importa?** Comparte tu propuesta en el Tablero, durante el cierre de una sesión o entrégala a la coordinación como texto, usando si quieres la [plantilla de ficha](plantilla.qmd). Esta página reúne las fichas publicadas del seminario.
 
 ::: {#acceso-tablero .callout-note title="Proponer una idea desde el Tablero" icon="true"}
-Entra al [Tablero del seminario](https://dash-seminario-iie.netlify.app/) con tu correo habilitado por la coordinación y el código de acceso que recibirás. Desde «Mi semilla» puedes preparar una aportación, descargarla para tu repositorio y enviarla a la coordinación. Si tu correo aún no está habilitado, solicita el acceso a la coordinación. La recepción no publica automáticamente tu propuesta: antes de incorporarla al blog se acuerdan el contenido y la atribución contigo. El Tablero continúa en fase de prueba con Miguel y Octavio.
+Entra al [Tablero del seminario](https://dash-seminario-iie.netlify.app/) con tu correo habilitado por la coordinación y el código de acceso que recibirás. Desde «Mi semilla» puedes preparar una aportación, descargarla para tu repositorio y enviarla a la coordinación. Si tu correo aún no está habilitado, solicita el acceso a la coordinación. La recepción no publica automáticamente tu propuesta: antes de incorporarla al blog se acuerdan el contenido y la atribución contigo. El Tablero está disponible en su **versión 1, aprobada por Miguel y Octavio para su entrega a participantes**.
 :::
 
 ## Registro de ideas
