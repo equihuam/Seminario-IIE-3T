@@ -95,3 +95,12 @@ Entregable actual: `output/Introduccion-iie3t-redes-bayesianas-v5-dbn-nueva.pptx
 ### Nombre consolidado de v5 (P-ME-011)
 
 Miguel eliminó los archivos intermedios de v5 de `output/` y renombró la última entrega a `Introduccion-iie3t-redes-bayesianas-v5.pptx`. Este es el nombre actual para uso, generación y verificación. Las rutas anteriores se mantienen como historia; no indican archivos todavía disponibles. Los renders y recibos privados conservan sus nombres de construcción. Para reconstruir sin sobrescribir la copia vigente, usar `DECK_FILENAME` con otro nombre.
+
+
+## Figura del mapa incorporada y reproducción
+
+La presentación publicada contiene 17 diapositivas. La figura de IIE y Holdridge ocupa la diapositiva 12. El constructor y el verificador incluyen esta versión. Se conserva el SVG editable, el PNG aprobado y sus metadatos. Procedimiento y límites en [figura-iie-pixeles.md](figura-iie-pixeles.md). Sus P-ME-061–063 corresponden al registro [de mapa-iie-pixeles](../prompts/miguel-mapa-iie-pixeles.md).
+
+Para verificar la copia versionada, ejecutar desde la raíz python presentaciones/verificar-v5.py blog/presentaciones/Introduccion-iie3t-redes-bayesianas-v5.pptx. La regeneración cartográfica requiere los GeoTIFF originales locales y requirements.lock.txt. El ajuste gráfico manual de Miguel se conserva en los archivos aprobados.
+
+Para preparar la imagen original de México usada por el constructor y el verificador, ejecutar primero python presentaciones/recuperar-mapa-original.py. Recupera los bytes del PPTX publicado y verifica SHA-256; el archivo generado en img/ sigue excluido de Git por su tamaño.

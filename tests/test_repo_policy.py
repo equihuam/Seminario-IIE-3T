@@ -20,7 +20,7 @@ class RepositoryPolicy(unittest.TestCase):
         self.assertTrue(issues("blog/_site/draft.pptx", b"x", in_index=True))
 
     def test_private_and_large_files(self):
-        for name in (".Renviron", "data/raw/data.csv", ".env", "slides.pptx", "renv/library/pkg/file"):
+        for name in (".Renviron", "data/raw/data.csv", ".env", "slides.pptx", "renv/library/pkg/file", ".secrets/supabase.json", "blog/_site/.secrets/supabase.json"):
             with self.subTest(name=name):
                 self.assertTrue(issues(name, b"x"))
         self.assertTrue(issues("large.csv", b"x" * (MAX_BYTES + 1)))

@@ -260,3 +260,69 @@ Actualización P-ME-070/B089: entrega del calendario de portada mediante commit 
 Resuelta localmente la exclusión del PPTX generado en blog/_site/presentaciones tanto en .gitignore como en el control del índice. Botón con descarga explícita, cinco pruebas de política correctas y sitio completo reconstruido y verificado. Pendiente incorporar la copia publicable al PR #13 y comprobar descarga remota. La comprobación completa de Python y R pasa fuera del aislamiento de ejecución, aclarando la limitación informada en B088/B089.
 
 Actualización P-ME-072/B091: entrega de la reparación de descarga al PR #13 mediante nuevo commit, incluida la copia PPTX en la salida publicada. Pruebas y render completo correctos (B090); integración en main y verificación en producción pendientes.
+## Semillero · versión 0 — P-ME-079 (2026-11-12)
+
+Implementación en `miguel/semillero-v0` desde origin/main 4db5bcf actualizado por fetch. PWA estática en `blog/app/`: formulario, borrador, exportación JSON/Markdown, OTP, recepción versionada, adjunto privado, acuse y consulta de avisos. Migración Supabase y pruebas SQL aisladas en PGlite; operación en `docs/SEMILLERO-V0.md`. El usuario identifica el proyecto existente `seminario-iie` en P-ME-080; configuración privada pendiente de aportar.
+
+### T009 — Conectar y probar el Semillero v0
+
+- **Estado:** en curso; implementación local, pendiente de conexión al proyecto existente y prueba remota.
+- **Origen:** P-ME-076–080.
+- **Cierre:** migración aplicada al proyecto verificado, dos cuentas de prueba aisladas, envío y reintento con mismo acuse, corrección con original preservado, documento privado cotejado, agenda reprogramable y respaldo verificable. Registrar evidencia real; PGlite no prueba Auth ni Storage remotos.
+- **Entrega:** integrar únicamente por PR aprobado; comprobar `/app/` y el enlace del Semillero en producción después de integrar. Prueba con participantes y elección del plan de servicio pendientes; no poblar calendario a partir de acuerdos históricos sin confirmación.
+
+**Actualización P-ME-081–085/B098:** conectado el proyecto real `seminario-iie` por pooler de sesión y TLS verificado; migración aplicada y prueba SQL transaccional remota correcta, sin datos sintéticos persistentes. API de avisos accesible y versiones privadas protegidas. Nueve tarjetas móviles comprobadas a 320×568, 360×640 y 390×844. Configuración pública preparada; acceso por correo deliberadamente pendiente de SMTP, plantilla OTP y cuentas habilitadas. P-ME-085 autoriza commit/push de la rama para continuar en laptop; no autoriza fusión. Guía de continuación y herramientas administrativas en `docs/SEMILLERO-V0.md`.
+
+**Entrega P-ME-085/B099:** implementación publicada en `origin/miguel/semillero-v0`, commit `95d6058`, con [PR #15 en borrador](https://github.com/equihuam/Seminario-IIE-3T/pull/15) hacia main. Sin integración ni publicación. Continuación en laptop documentada en `docs/SEMILLERO-V0.md`; T009 conserva pendientes de correo, archivo HTTP, respaldo y prueba con participantes.
+
+**Actualización P-ME-087:** coordinación mantiene las fichas pactadas en `blog/app/encuentros.json`. Primera ficha para el 18 de noviembre de 2026, 14:00–15:00 (Ciudad de México), con discusión de integridad ecosistémica, formato de variables de la tarea 0 y dudas operativas. La directiva para los proyectos individuales y su parche conectan la preparación, la sesión y la bitácora con la PWA. Pendientes la distribución a participantes y la prueba de uso con sus repositorios.
+
+**Prueba pendiente en iPhone (P-ME-097).** Octavio probará el tablero publicado. Anotar versión de iOS, navegador, opciones ofrecidas para agregarlo a Inicio y si desde el ícono abre en ventana propia o en una pestaña. Registrar los resultados cuando los comunique.
+
+**Avance de la prueba en iPhone (P-ME-101).** La captura muestra el ícono del tablero en Inicio. Queda por observar si al tocarlo la Agenda abre en una ventana propia o en una pestaña. La versión de iOS y el navegador utilizado siguen pendientes de registro.
+
+**Resultado de la apertura en iPhone (P-ME-102).** Según Octavio, al abrir el tablero desde Inicio se muestra sin apariencia de pestaña. Con la captura de P-ME-101, queda documentada la experiencia de apertura en su dispositivo. Versión de iOS y navegador utilizado para añadirlo a Inicio sin registrar.
+
+**T009 · P-ME-103 (2026-11-12).** Primer respaldo relacional de las cinco tablas del Semillero obtenido por TLS y restaurado en PGlite. Todas estaban vacías en la captura. Ensayo adicional con filas sintéticas en las cinco tablas y nueva comprobación SQL remota correctos (B117). Siguen pendientes el recorrido por correo con dos cuentas y la carga, recuperación y respaldo de los archivos de Storage.
+
+**P-ME-104 — Calendario del seminario.** La suscripción común se publica en `/app/agenda.ics`. La agenda usa las fichas públicas de encuentros del repositorio. Se conserva la descarga individual por ficha. Pendientes el despliegue y la primera suscripción con Google Calendar y Outlook.
+
+**T009 · P-ME-114.** Miguel completó su parte. Esperar el resultado de Octavio al intentar recuperar el adjunto de Miguel desde su propia sesión. Después de confirmar la denegación de Storage, identificar y limpiar los datos de prueba y cargar las semillas publicadas, cotejando cada ficha, su identificador y su autoría. Correo de Daniel pendiente. Contactos en el registro privado local.
+
+Actualización P-ME-115: recibido el correo de Daniel (I006). La carga sigue pendiente del resultado de Octavio.
+
+P-ME-117. Se mantiene Supabase para el acceso de los participantes al Semillero desde la PWA. MariaDB en el NAS queda como opción para uso particular o para grupos con acceso privado.
+
+**Evidencia P-ME-087–089/B101:** captura aportada por Miguel informa sesión de Octavio verificada y descarga ajena fallida (HTTP 400, Object not found). Contraste SQL de solo lectura: sobre el mismo objeto existente, propietario ve un registro y Octavio cero; bucket privado y política por carpeta de autor conservados. Esto respalda aislamiento del metadato, pero no acredita descarga HTTP del propietario ni lectura del código de prueba. El ZIP está en private de la laptop; Miguel aplaza su revisión para Fragaria. Conservar pendiente el control positivo y el cotejo de ruta/huella, sin cerrar T009.
+
+**Cierre de batería P-ME-090/B102:** Miguel confirma que ya realizó el trabajo en Fragaria y que la prueba de Octavio cierra la batería. Se da por cerrado ese bloque de pruebas por confirmación del responsable; no se vuelve a solicitar ni repetir el control pendiente de B101. Se conserva la distinción entre evidencia observada aquí y ejecución comunicada desde Fragaria. Este cierre no equivale a aprobar/fusionar el PR #15 ni a verificar publicación; tampoco acredita por sí mismo los demás compromisos operativos de T009 que no formen parte de esa batería.
+
+**Seguimiento documental P-ME-095/B105:** [issue #16 — revisión en Fragaria de la evidencia de Octavio](https://github.com/equihuam/Seminario-IIE-3T/issues/16), con copia en `docs/tickets/016-prueba-octavio-fragaria.md`. Reúne protocolo, captura, contraste observado y tareas para revisar el ZIP y conciliar los registros disponibles en la laptop. La batería permanece cerrada según Miguel; este ticket conserva la continuidad de la revisión sin publicar archivos privados ni solicitar repetir pruebas.
+
+2026-11-13 · P-ME-118 · GitHub #16. Cerrada la batería de acceso cruzado de T009 para el adjunto probado. Fragaria conserva el acuse de la versión 1 con descarga del propietario verificada por SHA256. El HTML del ZIP de navegador usa la misma ruta y verifica la cuenta distinta. El ticket de oficina documenta la captura de Octavio (HTTP 400 · Object not found) y el contraste RLS sobre el objeto existente. Nombre y huellas en private/t009/conciliacion-16.txt. Próximo paso: respaldo de tablas y adjuntos antes de la limpieza y carga. Las referencias históricas P-ME-086–095 y B100 en adelante se interpretan por procedencia y título cuando sus números coinciden entre oficina y Fragaria.
+
+2026-11-17 · P-ME-129 · El tablero publicado permite sugerir lecturas, debatirlas, registrar acuerdos en Agenda y enlazar la referencia del grupo Zotero. Miguel y Octavio tienen acceso a la ficha de Saltelli. En el piloto se comprobó la casilla «Recordar este equipo» con acceso simulado y el destino de Zotero; la prueba con las cuentas personales queda a los participantes. La rama de entrega al PR #15 es miguel/semillero-v0.
+## Formato de Lecturas a partir de Zotero — P-ME-130 (2026-11-17)
+
+Actualización sobre `miguel/semillero-v0`, sincronizada por avance rápido hasta aa23a21 antes de editar. Las propuestas parten de referencias existentes del grupo Zotero: búsqueda por título y desplegable, con asunto/pregunta y dinámica propuesta. Catálogo privado sincronizado (21 registros) y validación en Supabase; históricos conservados. Migración aplicada y propuesta remota sintética revertida tras verificar metadatos, referencia y dinámica obligatorias. Comprobación visual, paquete de despliegue y entrega por PR #15 en preparación. Sin fusión a main ni publicación automática del piloto Netlify.
+
+
+Actualización de entrega P-ME-130: formato y catálogo completados; 17 pruebas Node/PGlite y 13 Python correctas, prueba SQL remota revertida y sitio completo de 24 páginas verificado. Paquete de Netlify y HTML portátil listos en output/lecturas-zotero/. El despliegue del piloto permanece pendiente; la rama y PR #15 se actualizan sin fusión.
+
+Entrega P-ME-130: implementación publicada en `origin/miguel/semillero-v0` mediante `6d3e771`; [PR #15](https://github.com/equihuam/Seminario-IIE-3T/pull/15) actualizado. Pendiente desplegar `output/lecturas-zotero/Tablero-Lecturas-Zotero.zip` en el piloto Netlify; el catálogo de Supabase ya está preparado. La actualización de nuevas referencias se documenta al comienzo de `scripts/lecturas/README.md`.
+
+
+## Antecedentes conservados de mapa-iie-pixeles
+
+Registro incorporado el 2026-11-17. Los IDs de esta sección se interpretan con prompts/miguel-mapa-iie-pixeles.md y la copia de Fragaria sobre 92a6880. El estado vigente de la consolidación se registra en P-ME-136.
+
+## Figura IIE por píxel — P-ME-061 (2026-10-12)
+
+Preparada en miguel/mapa-iie-pixeles desde main actualizado a 92a6880: SVG editable y PNG derivados de los GeoTIFF originales de IIE 2018 y Holdridge. Detalle con 64 valores reales; resolución y cruce espacial documentados. Generador, metadatos y alcance en presentaciones/figura-iie-pixeles.md. Verificación y revisión visual en B084. Pendientes: valoración docente, catálogo de nombres de clases y eventual incorporación a la presentación. Sin cambio de PPTX ni publicación.
+
+Actualización P-ME-062: figura ajustada por Miguel incorporada como diapositiva 12 en `output/Introduccion-iie3t-redes-bayesianas-v5-mapa-pixeles.pptx` (17 diapositivas). Conservados v5/v5mig originales y SVG/PNG aprobados; constructor y verificador actualizados. La integración al PPTX deja de estar pendiente. Continúan pendientes valoración docente y catálogo nominal de Holdridge. Detalles en B085.
+
+Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó el entregable de 17 diapositivas como `output/Introduccion-iie3t-redes-bayesianas-v5.pptx`. Constructor y verificador actualizados; utilidades de inserción marcadas como históricas con fuente de 16 diapositivas explícita. Los nombres anteriores quedan como registro histórico.
+
+## Estado vigente de la consolidación — P-ME-136
+2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.

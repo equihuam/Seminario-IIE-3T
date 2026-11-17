@@ -1,0 +1,26 @@
+[
+  {
+    "id": "2026-11-18-integridad",
+    "title": "Primera discusión del concepto de integridad ecosistémica",
+    "starts_at": "2026-11-18T14:00:00-06:00",
+    "sequence": 0,
+    "updated_at": "2026-11-13T04:46:20Z",
+    "status": "confirmada",
+    "topics": "¿Qué entendemos por integridad ecosistémica?",
+    "activities": [
+      {
+        "minutes": 45,
+        "text": "Discutir el concepto con apoyo de la presentación introductoria."
+      },
+      {
+        "minutes": 10,
+        "text": "Revisar cómo llenar el formato con las variables propuestas en la tarea 0."
+      },
+      {
+        "minutes": 5,
+        "text": "Atender dudas operativas, incluido el uso de la PWA."
+      }
+    ],
+    "presentation": "https://seminario-iie.netlify.app/presentaciones/Introduccion-iie3t-redes-bayesianas-v5.pptx"
+  }
+]

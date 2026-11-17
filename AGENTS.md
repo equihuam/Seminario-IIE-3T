@@ -98,6 +98,8 @@ La revisión concretada en `docs/REVISION-CONCEPTUAL-CLIMA.md` y la guía `blog/
 
 ## Didáctica y diseño
 
+En textos, presentaciones y aplicaciones del seminario, escribir sin punto final los títulos, subtítulos, cabeceras y epígrafes que aparezcan como encabezados independientes, aunque ocupen varios renglones. Aplicar también esta pauta a las cabeceras de cuadros y tablas. En los párrafos, puntuar según la sintaxis. Conservar los signos de interrogación y exclamación cuando correspondan.
+
 Conectar cada actividad con un objetivo de aprendizaje. Introducir intuición, notación, derivación, ejemplo y ejercicio en una secuencia adecuada al público. Definir símbolos y supuestos antes de usarlos.
 
 El programa es adaptativo. Elegir profundidad, temas y ritmo según intereses expresados y evidencia de comprensión y autonomía técnica; no convertir el plan en un temario rígido. Mantener una apertura común: problema ecológico → contexto, detección y condición latente → variables y relaciones justificadas → incertidumbre y diagnóstico → nodos, arcos y probabilidades de una red bayesiana. La semejanza visual no demuestra causalidad ni determina una red única. Incorporar formalismo y programación gradualmente.

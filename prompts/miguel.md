@@ -937,3 +937,622 @@ Fecha de registro: 2026-10-14. Hora de emisión no disponible.
 ```text
 haz el commit & PR
 ```
+
+## P-ME-076 — Registro local y canal colectivo de aportaciones al Semillero
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas. Se conservan las entidades HTML recibidas.
+
+```text
+Nos gustaría que en el proceso de registrar Aportaciones originales al Semillero ocurrieran dos cosas.&#x20;
+
+1. Llenar el formato de registro de inquietudes que tenemos previsto (cada quién en su repositorio).
+2. &#x20;Generar un canal de envío, quizás mediado por Google drive o como me sugieras, para capturar la propuesta en la base de datos de semillas general del seminario.
+
+
+
+Tuvimos una experiencia muy positiva con un taller en el que generamos un PWA desde Netlify para llenar un formulario individualmente que luego consolidamos en una colección general. Ese PWA incluso podría servir como anuncio de tareas, calendario de sesiones (que ya hemos visto es propensa a variar por coordinación de agendas) y quizás un colector de semillas. ¿Qué piensas?
+```
+
+## P-ME-077 — Recepción computacional y almacenamiento
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas. Registro retrospectivo del mensaje anterior.
+
+```text
+Veo que enriqueciste muy bien la idea y captaste con precisión la idea. El camino que seguimos en mi experiencia previa fue Formulario propio en la PWA → recepción central, que era necesario en ese caso porque no teníamos Internet, solo LAN. En este caso sí podemos considerar acceso a internet y quizás GSheets sea un punto de conciliación adecuado. Incluso podrían ser json o sqlite, pues no asumiríamos mayor interacción personal, podemos privilegiar la funcionalidad computacional.
+```
+
+## P-ME-078 — Consulta sobre Supabase
+
+Fecha de registro: 2026-11-12. Fecha y hora de emisión no especificadas.
+
+```text
+Qué piensas de usar supabase o algo equivalente para hospedar la base de datos?
+```
+
+## P-ME-079 — Implementación del Semillero versión 0
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Estamos de acuerdo. Haz la implementación versión 0 por favor
+```
+
+## P-ME-080 — Proyecto Supabase existente y configuración privada
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible. Respuesta a la consulta sobre proyecto Supabase, URL y clave publicable.
+
+```text
+seminario-iie
+
+Tiene un password. Lo pondré en .secrets en un json. Proponme la estructura que te sirve.
+```
+
+## P-ME-081 — Verificar configuración y host de Supabase
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Está listo. No supe que poner en HOST_DE_CONEXION. Verifica
+```
+
+## P-ME-082 — Ubicación del archivo privado de Supabase
+
+Fecha de registro: 2026-11-12. Respuesta a la consulta de ruta exacta; no se registran credenciales.
+
+```text
+Muy lejos: C:\Users\equih\.secrets
+```
+
+## P-ME-083 — PWA para celular mediante tarjetas
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Pienso que la PWA hay que adecuarla principalmente para su uso con celular. Cuida que se despliegue bien y en forma atractiva en pantallas pequeñas. Considera un flujo que evite scroll, prefiero deslizamiento de tarjetas y/o rotación de cartones
+```
+
+## P-ME-084 — Cadena de conexión al pooler
+
+Fecha de registro: 2026-11-12. La cadena aportada contiene un marcador, no una contraseña.
+
+```text
+Será este el HOST?: postgresql://postgres.owqoinfndqzqwiiiexks:[YOUR-PASSWORD]@aws-1-us-east-1.pooler.supabase.com:5432/postgres
+```
+
+## P-ME-085 — Sincronización y entrega para continuar en laptop
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+al terminar esto haz un pull & push para que pueda retomar el avance en mi laptop.
+```
+
+## P-ME-086 — Agenda y calendarios personales
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Me gusta la propuesta que haces. Mueve Mi semilla a la derecha y Agenda como primer item.
+En agenda vamos a poner un botón para dar oportunidad al usuario de anotar en agenda de Google calendar o Outlook del usuario. Prevé un espacio para anotar el tema o temas a tratar y dinámica/actividad prevista
+```
+
+## P-ME-087 — Ficha pactada y parche para participantes
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Como las fechas se pactarán con antelación, la coordinación si tendrá datos para aportar. Lo podemos hacer desde el repositorio del seminario, así que cuando se genere esa ficha la podemos prellenar. Por ejemplo, la próxima reunión pactada será el 18 de noviembre, de 2 a 3pm. El tema será inicio a discutir el concepto. Dedicaremos tiempo, 45 mins al pptx respectivo. 10 min más para ver el llenado del formato de variables que proponen según tarea 0 y 5 mins para atender dudas operativas, como el uso del pwa. Hay que preparar un patch para la directiva de sus repositorios individuales de modo que el pwa quede vinculado funcionalmente al workflow propuesto y ellos se puedan apoyar con su IA.
+```
+
+## P-ME-088 — Carpeta autónoma de prueba para Netlify
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+para probar el concepto vamos a abrir un directorio apps/_pwa-control-clase para tomar de ahí a netlify. Pon todo lo necesario ahí y lo pruebo yo.
+```
+
+## P-ME-089 — Compactar instrucciones y revisar despliegue interrumpido
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+quizás si las instrucciones se desplegaran al rotar la tarjeta estaría bien, de otro modo siento la pantalla con demasiadas cosas. Si se te ocurre otra forma de compactar dímela.
+
+El deploy falló sin decir nada, lo interrumpí pues pasaron 15 minutos sin lograr la publicación. Algo no está bien. Revisa.
+```
+
+## P-ME-090 — Concentrar archivos grandes en Google Drive
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Sí, los archivos grandes son un problema. Habíamos pensado en usar GDrive como punto de concentración de esos archivos grandes? Si no, convendría hacerlo
+```
+
+## P-ME-091 — Tablero de Trabajo e instalación en el celular
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Ahora sí funcionó en seguida. El texto del parche no es claro, Ellos ya tienen instalada la plantilla. Hay que poner algo como "Para actualizar tu proyecto para usar esta app..." 
+El título de "semillero es limitado" cámbialo a Tablero de Trabajo
+Falta la opción de instalación. Por cierto, he notado que ese tipo de instalación es volátil, de repente desaparece el ícono de mi celular. A qué se debe eso? lo podemos evitar?
+```
+
+## P-ME-092 — Prueba de instalación en Android
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Ya revisé, Chrome si hace los dos tipos de instalación. Edge no lo hace, o no he encontrado como. El mini ícono sí es significstivo.
+```
+
+## P-ME-093 — Puntuación de títulos y encabezados
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Quítale los puntos a los título. Toma nota para aplicar esta regla en general: no punto final en ningún título o encabezado en ningún texto, presentación o app. Solo lo usaremos dentro y al final de párrafos de texto de cualquier tipo.
+```
+
+## P-ME-094 — Fundamento ortográfico de los encabezados
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Aplicaremos formslmente esto:
+Según la [**Ortografía de la lengua española**](https://www.rae.es/ortograf%C3%ADa/uso-del-punto-en-algunos-contextos-espec%C3%ADficos) de la Real Academia Española (RAE), **no se escribe punto final tras los títulos, subtítulos, cabeceras o epígrafes cuando aparecen aislados en un renglón**. [[1](https://www.rae.es/ortograf%C3%ADa/uso-del-punto-en-algunos-contextos-espec%C3%ADficos), [2](https://www.rae.es/libro-estilo-justicia/signos-de-puntuaci%C3%B3n/el-punto/casos-en-los-que-no-se-escribe-punto)]  
+```
+
+## P-ME-095 — Etiqueta del formulario de calendario
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+La frase añadir una cita personal confunde. Debe decir personaliza el registro en tu agenda o algo semejante. 
+```
+
+## P-ME-096 — Alcance de la instalación con Edge
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+**Microsoft Edge en celulares no instala las PWA como aplicaciones nativas en tu colección o cajón de apps debido a restricciones técnicas en Android y iOS.** En su lugar, solo crea un marcador o acceso directo en la pantalla de inicio. [[1](https://learn.microsoft.com/en-us/answers/questions/2386684/edge-android-does-not-truly-install-pwa), [2](https://mspoweruser.com/edge-on-android-will-soon-let-you-install-a-pwa-or-create-shortcuts-for-supported-sites/)]   La versión normal de [**Microsoft Edge para Android**](https://learn.microsoft.com/en-us/answers/questions/2386684/edge-android-does-not-truly-install-pwa) no genera paquetes WebAPK, la  ersión Canary si lo hace, pero no creo tener esa opción para android.
+```
+
+## P-ME-097 — Prueba de iPhone por Octavio
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Octavio hara pruebas con su iPhone.
+```
+
+## P-ME-098 — Chrome como ruta de instalación en Android
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Canary tampoco lo hace. La ruta es Chrome
+```
+
+## P-ME-099 — Corregir la salida hacia Outlook
+
+Fecha de registro: 2026-11-12. Mensajes consecutivos, hora de emisión no disponible.
+
+```text
+El botón de outlook no lleva a ningún lado, el de google bien.
+```
+
+```text
+Probablemente es una verificación de seguridad que no pasa
+```
+
+## P-ME-100 — Descargar la cita de Outlook
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+El boón outlook no hace nada, los otros dos enlaces no funcionan tampoco. El ics perfeco.
+```
+
+## P-ME-101 — Ícono del tablero en Inicio de iPhone
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+En iPhone se ve así
+```
+
+Nota editorial: el mensaje incluía una captura de pantalla de Inicio. Se registra la observación en B115.
+
+## P-ME-102 — Apertura del tablero en iPhone
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Octavio dice que No se ve como pestaña
+```
+
+## P-ME-103 — Retomar la base de datos Supabase
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Vamos a retomar el desarrollo de la base de datos supabase. Tienes toda la información necesaria.
+```
+
+## P-ME-104 — Suscripción al calendario del seminario
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+Nadie lo ha hecho todavís estamos en modo alpha de desarrollo. Me gusta el calendario dedicado y la suscripción simplifica todo, también la necesidad de ofrecer el espacio de personalizaión de la cita. Vamos por ese modelo. Conservaremos el ics para los que prefieran citas sueltas, aunque outlook también se podría suscribir.
+```
+
+## P-ME-105 — Recorrido T009 con dos cuentas
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible. Se omiten los correos de los participantes del registro versionado.
+
+```text
+Sigamos con T009. Prueba el recorrido completo con dos cuentas: entrar con el código de correo, enviar una semilla con un adjunto privado y comprobar que solo quien lo envió puede recuperarlo desde Storage.
+Una cuenta será la mía, la otra la de octaio: [REDACTADO], si se necesita habrá que darle un prompt para que lo pueda hacer el mismo.
+```
+
+Aclaración de Miguel sobre la primera cuenta: [REDACTADO].
+
+## P-ME-106 — Remitente Gmail y aviso de entregabilidad
+
+Fecha de registro: 2026-11-12. Hora de emisión no disponible.
+
+```text
+podemos usar mi cuenta de gmail
+```
+
+```text
+**Check your SMTP provider**
+It looks like the SMTP provider you entered is designed for sending personal rather than transactional email messages. Email deliverability may be impacted.
+
+Por lo demás está hecho
+```
+
+Corrección de Miguel a P-ME-105. Se conserva la dirección corregida en el material privado de la prueba.
+
+```text
+la invitación a Octavio falló el correo está mal, la cuenta correcta es: [REDACTADO]
+No quites el punto intermedio
+```
+
+## P-ME-107 — Facilitar la prueba en el equipo de Octavio
+
+Fecha de registro: 2026-11-13. Hora de emisión no disponible.
+
+```text
+pero mi pregunta es sí el prompt puede tomar el zip y hacer todas las operaciones. No creo que octavio tenga el node instalado o sepa como invocarlo
+```
+
+## P-ME-108 — Botones de acceso y envío en el piloto
+
+Fecha de registro: 2026-11-13.
+
+```text
+Mientras espero a Octavio, quizás hasta mañana, llene una semilla prueba. Llegué al botón de código y no funcionó, luego al de envío y también falló, no acción.
+```
+
+## P-ME-109 — Invitación común en la agenda
+
+Fecha de registro: 2026-11-13.
+
+```text
+Checa que la agenda opere por invitación no por cita personalizada, aunque mantendremos la oferta de ics
+```
+
+## P-ME-110 — Acceso al tablero para consultar los envíos
+
+Fecha de registro: 2026-11-13.
+
+```text
+No puedo entrar a Servicio conectado · entra con tu correo al enviar.
+```
+
+## P-ME-111 — Acceso móvil a las semillas publicadas
+
+Fecha de registro: 2026-11-13.
+
+```text
+Ya funciona muy bien. Vo dos links hasta abajo con letra demasiado pequeña, no convendrá ponerlos arriba o en un lugar más operable? Los veo en la pc pero no en el celular. Eso incluye el acceso a las semillas ya publicadas que en este momento no tengo acceso desde el cel con la PWA, aunque si con el blog que está vinculado en el encabezado
+```
+
+## P-ME-112 — Altura del tablero móvil
+
+Fecha de registro: 2026-11-13.
+
+```text
+En mi celular se corta el fondo del contenido  hay que ajustar el alto e la pantalla
+```
+
+## P-ME-113 — Recuperar una semilla registrada
+
+Fecha de registro: 2026-11-13.
+
+```text
+Hice la recuperación de una semilla enviada, y me lleva al editor de mi semilla, lo que está bien. Lo que no está bien es que me ofrezca enviar una semilla ya registrada
+```
+
+## P-ME-114 — Secuencia para la carga de semillas publicadas
+
+Fecha de registro: 2026-11-13. Correos personales omitidos del historial versionado.
+
+```text
+Parece estar en orden .Solo me falta la verificación de Octavio. Después de eso habrá que limpiar y subir los datos de las semillas que ya están publicadas.  Los correos faltantes son:
+Nohemy: [REDACTADO]
+Daniel: pendiente
+Andrés: [REDACTADO]
+```
+
+## P-ME-115 — Contacto de Daniel
+
+Fecha de registro: 2026-11-13. Correo personal omitido del historial versionado.
+
+```text
+Daniel: [REDACTADO]
+```
+
+## P-ME-116 — Evaluar MariaDB en el NAS
+
+Fecha de registro: 2026-11-13. Identificadores de acceso omitidos del registro versionado.
+
+```text
+Vi que puedo usar mariaDB en mi NAS: Quizás podemos ver si conviene, si llegsramos a rebasar el free tier de supabase
+socket del dominio: [REDACTADO]
+Tilscale ip: [REDACTADO]
+Quick connect: [REDACTADO]
+```
+
+## P-ME-117 — Elección de Supabase para el Semillero
+
+Fecha de registro: 2026-11-13.
+
+```text
+Ya veo la limitación. No le daremos tailscale a todo mundo, así que seguimos atrapados en una ip local para acceso amplio Mejor supabase. Creo que sólo tiene sentido mariaDB para mi uso particular, o situaciones muy limitadas
+```
+
+## P-ME-086 — Opciones Gmail u Outlook para correo de acceso
+
+Fecha de registro: 2026-11-12. Respuesta a la consulta sobre proveedor SMTP; sin credenciales.
+
+```text
+No lo terngo, pero puede ser gmail o outlook, creo que ambos están habilitados para hacerlo a mi nombre
+```
+
+## P-ME-087 — Captura de la prueba de acceso de Octavio
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no especificada; la actualización del entorno recibida señala 2026-11-13.
+
+```text
+La prueba de octavio
+```
+
+Adjunto: captura de pantalla recibida en esta conversación, conservada por la aplicación fuera de Git. Muestra una página titulada «Prueba de acceso de Octavio» y el mensaje «Sesión verificada. Descarga ajena denegada. HTTP 400 · Object not found». La anotación describe la captura; no sustituye revisar el código ni verificar el archivo exacto.
+
+## P-ME-088 — Ubicación indicada del artefacto de prueba
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+es el zip que esta en private
+```
+
+## P-ME-089 — Aplazar revisión del ZIP hasta disponer de la laptop
+
+Fecha de registro según contexto del cliente: 2026-11-12. Fecha de emisión no disponible.
+
+```text
+laptop. Si no está disponible la info lo hago más tarde en Fragaria
+```
+
+## P-ME-090 — Confirmación del cierre de la batería en Fragaria
+
+Fecha de emisión no especificada. Registro de la confirmación recibida en este intercambio; contexto de fecha del cliente y actualización del entorno conservados en P-ME-087.
+
+```text
+Ya está hecho. Lo hice en fragaria. Es el cierre  de la batería de pruebas
+```
+
+## P-ME-091 — Protocolo utilizado para la prueba de acceso de Octavio
+
+Fecha de emisión no especificada. Texto compartido por Miguel como explicación del procedimiento de la batería cerrada en P-ME-090; no se interpreta como encargo de ejecutar pasos en nombre de Octavio.
+
+```text
+Esta es la idea 
+Para probar que un usuario no puede descargar semillas de otros estoy probando con tu cuenta. Yo subí una idea y ahora tu debes intentar bajarla..
+1. Re estoy envíando este zip para que, en tu equipo, hagas clic derecho en el ZIP y elija Extraer todo.
+2. En la carpeta extraída, abre Prueba-Octavio.html con doble clic y pulsa Enviar código a octavio.maqueo@inecol.mx.
+3. Recibirás un correo con un número de código y deberás ponerlo en el campo respectivo en esa página, pulsa Comprobar acceso al adjunto. Envíame copia solo del mensaje que te salga como resultado, incluido el estado HTTP.  El código clave que te llegó por correo no lo debes copiar pues hay que evitar divulgarlo.
+```
+
+## P-ME-092 — Solicitud de pull para contextualizar el proceso
+
+Fecha de emisión no especificada.
+
+```text
+Haz un pul a ver si mejora la contextualización del proceso
+```
+
+## P-ME-093 — Aclaración sobre la rama de trabajo
+
+Fecha de emisión no especificada.
+
+```text
+Sí  pull,  perdón estoy trabajando en una rama alterna no en main
+```
+
+## P-ME-094 — Confirmación de la rama Semillero
+
+Fecha de emisión no especificada.
+
+```text
+Esa es la rama semillero
+```
+
+## P-ME-095 — Ticket para retomar la evidencia en Fragaria
+
+Fecha de emisión no especificada.
+
+```text
+Claro.  Esta bien haz un ticket aquí con la info de la prueba y lo subimos a github para que lo revises en fragaria más tarde
+```
+
+## P-ME-118 — Conciliación del ticket 16 en Fragaria
+
+Fecha de registro: 2026-11-13.
+
+```text
+recibí el mensaje de Octavio en la oficina y Fragaria no estaba disponible. Registré un ticket en GitHub con el resultado da un pull y recupera lo necesario para darle seguimiento
+```
+
+## P-ME-119 — Respaldo, recuperación y carga del catálogo publicado
+
+Fecha de registro: 2026-11-13.
+
+```text
+Sigamos. Haz el respaldo de las tablas y los adjuntos, verifica que se puedan recuperar y después limpia los datos de prueba y sube a Supabase las semillas que ya están publicadas, conservando su autoría.
+```
+
+## P-ME-120 — Probar Lecturas en la PWA con Saltelli et al.
+
+Fecha de registro: 2026-11-13. Adjunto: WIREs Climate Change - 2024 - Saltelli - Bring digital twins back to Earth.pdf. Antecedente: propuesta de Octavio registrada como P-ME-064 en la copia de trabajo de Miguel (rama mapa-iie-pixeles).
+
+```text
+Implementar prueba de concepto con 
+```
+
+## P-ME-121 — Lecturas compartidas en Supabase
+Fecha de registro: 2026-11-13.
+
+```text
+Integra Lecturas con las cuentas y Supabase de la PWA para que Octavio y yo podamos probarla desde nuestros equipos con el artículo de Saltelli.
+```
+
+## P-ME-122 — Ubicación del servicio y del tablero
+Fecha de registro: 2026-11-13. Respuestas de Miguel sobre conexión y publicación.
+
+```text
+C:\Users\equih\.secrets\supabase
+```
+
+```text
+[https://dash-seminario-iie.netlify.app/](https://dash-seminario-iie.netlify.app/)
+```
+
+## P-ME-123 — Verificar la publicación de Lecturas
+Fecha de registro: 2026-11-13.
+
+```text
+Ya subí la carpeta a Netlify. Verifica que en [https://dash-seminario-iie.netlify.app/](https://dash-seminario-iie.netlify.app/) aparezca Lecturas y quede lista para que Octavio y yo probemos la ficha de Saltelli.
+```
+
+## P-ME-124 — Incorporar la lectura propuesta a Zotero
+Fecha de registro: 2026-11-13.
+
+```text
+agrega la lectura propuesta al zotero del grupo
+```
+
+## P-ME-125 — Vincular Lecturas con Zotero
+Fecha de registro: 2026-11-13.
+
+```text
+Implementa los dos cambios en la PWA: vincula la ficha de Saltelli con su registro de Zotero y permite pegar el enlace del grupo al sugerir una lectura. Deja lista la carpeta para subirla a Netlify y probarla con Octavio.
+```
+
+## P-ME-126 — Recordar la sesión en un equipo
+Fecha de registro: 2026-11-13.
+
+```text
+Podemos darle persistencia al registro de un equipo? de modo que no haya que estar Re autenticando a cada rato?
+```
+
+## P-ME-127 — Captura del resultado de Octavio en T009
+Fecha de registro: 2026-11-14.
+
+```text
+Solo para completar el registro te doy la imagen de lo que recibió Octavio de la prueba
+```
+
+## P-ME-128 — Verificar recordar equipo y enlace Zotero en Netlify
+Fecha de registro: 2026-11-14.
+
+```text
+Ya subí la carpeta actualizada a Netlify. Verifica que en el tablero aparezca «Recordar este equipo» y que la ficha de Saltelli abra el registro de Zotero para probarlo con Octavio.
+```
+
+## P-ME-129 — Entregar los cambios del tablero en Git y el PR
+Fecha de registro: 2026-11-17.
+
+```text
+checa si es necesario actualizar git y el pr, si lo es da commit & push, yo hago el merge
+```
+
+## P-ME-130 — Propuestas de lectura a partir de Zotero
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Ya vimos el registro de lecturas.  El flujo lo proponemos así:
+
+1. Cualquier sugerencia de lectura inicia a partir de un registro de referencia ya ingresada a Zotero.
+2. El proponente puede elegirla de un desplegable en donde localizarí la referencia por título
+3. Se mantienen los campos de propuesta de asunto y dinámica de procesamiento
+
+
+
+Actualiza el formato con esta estrategia.
+```
+
+## P-ME-131 — Vínculo a la biblioteca grupal en el formato de Lecturas
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Se ve bien. Hazlo así con vínculo a la biblioteca grupa de  zotero: [https://www.zotero.org/groups/6712171/seminario_iie-t/library](https://www.zotero.org/groups/6712171/seminario_iie-t/library)
+```
+
+
+## P-ME-132 — Sincronizar con Caahuate
+Fecha de registro: 2026-11-17.
+
+```text
+haz sólo commit & push, para sincronizar con Caahuate
+```
+
+## P-ME-133 — Sincronizar carpeta del piloto con Fragaria
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+Lo pongo en netlify empujando el directorio que ya tengo Seminario-IIE-3T\apps\\\_pwa-control-clase en Fragaria. Pienso que hace falta hacer pull aquí para ver esa estructura.. En la rama de Miguel. Conserva lo que acabamos de hacer y acrualiza
+```
+
+## P-ME-134 — Cierre para retomar en Fragaria
+
+Fecha de registro: 2026-11-17. Hora de emisión no disponible.
+
+```text
+haz un commit push para retomar la cabeza del repositorio en fragaria.
+```
+
+## P-ME-135 — Diagnóstico de convergencia entre las copias de Fragaria y Cazahuate
+Fecha de registro: 2026-11-17.
+
+```text
+Hay algún desvío que hay que resolver.  Aquí en fragaria estoy trabajando en la rama miguel/mapa-iie-pixeles pero en cazahuate es miguel/semillero-v0   Ambas deben converger. Revisa por favor. Yo entiendo que mapa-iie-pixeles  podría tener sntecedentes que requiere incorporar semillero-v0, pero a lo mejor como no están en sync, algo no está en su lugar. Verifica y dsme una identificación de posibkes inconsistencias
+```
+
+## P-ME-136 — Consolidar el mapa y el tablero en la carpeta habitual de Fragaria
+Fecha de registro: 2026-11-17.
+
+```text
+Adelante, consolida todo en miguel/semillero-v0, conserva el trabajo del mapa y deja actualizada la carpeta habitual de Fragaria. Verifica y haz commit & push para sincronizar con Cazahuate. Yo hago el merge del PR.
+```

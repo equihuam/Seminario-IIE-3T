@@ -66,3 +66,18 @@ Usar rutas relativas y mantener los datos originales inmutables. No versionar cr
 Pregunta ecológica, diagrama y supuestos; diccionario de datos; entorno reproducible; código; pruebas; resultados con incertidumbre cuando corresponda; interpretación y limitaciones. Si se estima el IIE, citar su definición y explicar cómo se obtiene a partir del modelo.
 
 Inspirada en el enfoque de organización y verificación de [agentic-project-template-v4](https://github.com/equihuam/agentic-project-template-v4), simplificado para el taller.
+## Registro de inquietudes
+
+Para una aportación al Semillero, utiliza [INQUIETUD.md](INQUIETUD.md) o descarga el JSON y Markdown de la aplicación del seminario. Guarda cada aportación en `inquietudes/` de tu repositorio. La aplicación distingue borrador local y envío confirmado; conserva el acuse cuando esté habilitada la recepción. El registro complementa los documentos del proyecto y no exige convertir la inquietud en un proyecto aprobado.
+
+## Aplicar la directiva de la PWA a un repositorio existente
+
+Para un proyecto nuevo, copia `plantilla-participantes/AGENTS.md`. Para uno que ya tenga su propia directiva, descarga [directiva-pwa.patch](../blog/app/directiva-pwa.patch), sitúate en la raíz del repositorio individual y ejecuta, una sola vez:
+
+```sh
+git apply --check --unidiff-zero directiva-pwa.patch
+git apply --unidiff-zero directiva-pwa.patch
+git diff -- AGENTS.md
+```
+
+El parche añade la sección al principio del archivo. Si el repositorio usa otra directiva, pide a tu IA que incorpore esa sección en el archivo vigente conservando tus acuerdos locales. Revisa el diff antes de registrar el cambio.

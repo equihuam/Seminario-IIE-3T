@@ -27,7 +27,7 @@ function tri(s,x,y){const a=node(s,'X',x,y,49,C.x,true),z=node(s,'Z',x,y+230,49,
 
 // 01. Reutilizar la portada aprobada sin alterarla ni tratarla como DAG formal.
 {
- const s=slide('Integridad ecosistémica y diagnóstico',theory+'\nObjetivos: distinguir contexto, detección y condición; explicar una actualización del diagnóstico; reconocer qué se repite por sitio y qué requiere tiempo. Público sin formación numérica formal. Ruta orientativa de 30–40 minutos, adaptable. La diapositiva 12 puede reservarse para una segunda conversación. Portada: presentaciones/img/portada_integridad_redes_es.jpg, ilustración generada y aprobada en P043. Su red es evocativa, no un modelo formal del IIE.');
+ const s=slide('Integridad ecosistémica y diagnóstico',theory+'\nObjetivos: distinguir contexto, detección y condición; explicar una actualización del diagnóstico; reconocer qué se repite por sitio y qué requiere tiempo. Público sin formación numérica formal. Ruta orientativa de 30–40 minutos, adaptable. La diapositiva 13 puede reservarse para una segunda conversación. Portada: presentaciones/img/portada_integridad_redes_es.jpg, ilustración generada y aprobada en P043. Su red es evocativa, no un modelo formal del IIE.');
  const bytes=await fs.readFile(path.join(ROOT,'presentaciones/img/portada_integridad_redes_es.jpg'));
  s.images.add({blob:bytes,contentType:'image/jpeg',alt:'Ilustración existente de integridad ecosistémica y redes',fit:'contain',position:{left:165,top:133,width:950,height:530}});
  text(s,'Seminario IIE-3T',64,675,400,25,19,C.muted);
@@ -134,7 +134,14 @@ function tri(s,x,y){const a=node(s,'X',x,y,49,C.x,true),z=node(s,'Z',x,y+230,49,
  text(s,'Modelo compartido',848,387,365,72,32,C.z,true);
  text(s,'Los valores de entrada\npueden producir\ndiagnósticos diferentes',848,474,365,129,29);
 }
-// 12. Profundización opcional: jerarquía contextual.
+// 12. Figura aprobada: conservar el ajuste manual de Miguel (P-ME-062).
+{
+ const s=p.slides.add();s.background.fill=C.bg;
+ s.images.add({blob:await fs.readFile(path.join(ROOT,'presentaciones/img/iie-2018-pixeles-holdridge.png')),contentType:'image/png',alt:'IIE de México 2018, píxeles y contexto Holdridge; figura ajustada por Miguel',fit:'contain',position:{left:64,top:8,width:1152,height:704}});
+ text(s,'12',1230,673,45,26,18,C.muted);
+ s.speakerNotes.text='Fuentes: presentaciones/img/ie_2018_st_v2.tif y zvh-mx3qw-mexico-Albers.tif. Figura ajustada por Miguel en P-ME-062, método y metadatos en presentaciones/figura-iie-pixeles.md y JSON homónimo. IIE: 250 m; Holdridge: aproximadamente 850 m. Detalle de 64 valores originales, redondeados a dos decimales. Clases 18 y 22 asignadas por vecino más cercano, sin catálogo nominal. El triángulo amarillo indica ampliación, no región ecológica. El rango 0–1 representa un índice sintético, no porcentaje determinista ni probabilidad escalar pura. θ fijo, contexto X y detección Y por píxel; plates de repetición, sin afirmar independencia espacial. No se ejecuta el modelo ni se reconstruye su posterior. Pregunta: ¿deben tener el mismo IIE dos píxeles de la misma clase? Respuesta: no, pueden variar las detecciones y otras covariables.';
+}
+// 13. Profundización opcional: jerarquía contextual.
 {
  const s=slide('Contexto compartido, señales locales',theory+'\n'+tentative+'\nProfundización opcional, antecedente v3 diapositiva 11 y D15. j recorre J zonas o clases; i recorre n_j píxeles de j. Cada píxel pertenece a una sola clase en esta simplificación. X_j es el componente compartido del contexto, otras covariables pueden variar localmente. Las clases pueden ser discontinuas; no se infieren efectos aleatorios ni independencia espacial de la notación. θ reúne parámetros compartidos de observación.');
  box(s,'rect',64,202,587,411,'none',C.x,2);box(s,'rect',88,369,533,186,'none',C.muted,2);

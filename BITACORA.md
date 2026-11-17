@@ -693,3 +693,289 @@ Nueva ejecución de `.venv/Scripts/python.exe scripts/site.py check`: renv consi
 Fecha de registro: 2026-10-14. Prompt: P-ME-075. Autorizados commit, push y apertura de PR hacia main desde miguel/revision-blog-octavio. Fetch confirma base 85cc267 sin nuevos commits; API de GitHub confirma que no hay un PR abierto de esta rama. Se entrega la revisión documentada en B092/B093: calendario excepcional confirmado, ejemplo hipotético corregido, preparación accesible, progresión y niveles de lectura, informe original y TODOs T004–T008.
 
 Se conserva la comprobación completa ejecutada en B093 (23 páginas, R/Python, renv y pip correctos) y la revisión visual acotada de B092. El sitio no cambió desde esa verificación. Antes del commit se seleccionan los registros de esta autorización y se comprueba el índice con scripts/check_repo.py. El espacio final en la última línea del reporte original se conserva para mantener su literalidad; diff --check excluyendo ese original no presenta incidencias. No se autoriza fusión; el PR y el commit remoto permitirán revisar la entrega. El trabajo local de presentación en la carpeta principal permanece separado.
+
+## B095 — Consulta sobre captura local y colectiva del Semillero
+
+Fecha de registro: 2026-11-12. Prompt: P-ME-076. Consultados README, PLAN, entrada y plantilla del Semillero y referencias al registro en plantilla-participantes y docs/aportaciones. El sitio declara que no recibe formularios; la plantilla pública incluye idea, motivación, dos miradas y siguiente paso. No se identificó un formato específico de inquietudes en las rutas examinadas. Se propone un registro original local exportable, recepción privada con acuse, revisión y publicación seleccionada; PWA como acceso común a captura, tareas y calendario. Documentación oficial de Google Forms/Sheets y Netlify Forms consultada para contrastar alternativas. Propuesta conversada, sin implementación ni acuerdos docentes presumidos.
+
+Registro en rama miguel/propuesta-captura-semillero desde main local 4db5bcf; inspeccionados estado y worktrees. Archivos ajenos sin seguimiento preservados. Sin actualización remota, commit, publicación ni pruebas de software; solo cambian los registros de esta consulta.
+
+## B096 — Evaluación preliminar de Supabase para el Semillero
+
+Fecha de registro: 2026-11-12. Prompts: P-ME-077 y P-ME-078. Se propone Supabase como candidato para recepción y almacenamiento central: Postgres, originales en Storage privado y exportación JSON/Markdown al repositorio personal. Consultada documentación oficial de arquitectura, RLS, claves API, pausas y respaldos (https://supabase.com/docs/guides/database/overview, https://supabase.com/docs/guides/database/postgres/row-level-security, https://supabase.com/docs/guides/getting-started/api-keys, https://supabase.com/docs/guides/platform/free-project-pausing, https://supabase.com/docs/guides/platform/backups). Consideraciones: permisos por participante/coordinación, recepción idempotente, conservación de versiones y respaldo separado de archivos. El plan gratuito puede pausarse por baja actividad en siete días; los respaldos de base no incluyen objetos de Storage. Recomendación preliminar; sin creación de servicios, implementación, pruebas, commit ni publicación. Se añade retrospectivamente P-ME-077, omitido en el turno anterior.
+
+## B097 — Implementación local del Semillero v0
+
+Registro: 2026-11-12. Prompts: P-ME-079 y P-ME-080, con antecedentes P-ME-076–078. Fetch confirma origin/main 4db5bcf; rama miguel/semillero-v0 creada desde esa base, preservando los registros de la consulta y los archivos ajenos sin seguimiento. Worktree activo de objetivos de aprendizaje inspeccionado, sin modificarlo. No se modifica el SVG canónico, Rproj, renv ni preferencias del IDE.
+
+Implementados: PWA buildless bajo blog/app, formulario y registro local JSON/Markdown, borrador explícito, importación, OTP para cuentas habilitadas, envío con documento opcional privado, acuse, consulta de versiones y avisos de agenda/tareas. Migración transaccional Supabase con permisos por propietario, recepción idempotente y bloqueo de sobrescrituras, versiones consecutivas, revisiones separadas e historial de avisos. Configurador copia solo URL y clave publicable; .secrets se excluye de Git y del índice permitido. Operación en docs/SEMILLERO-V0.md; plantilla personal INQUIETUD.md y anuncio del piloto en Semillero. Nombre seminario-iie comunicado por Miguel; todavía no existe .secrets/supabase.json al verificar, sin conexión ni escrituras remotas.
+
+Verificaciones observadas: Node 20.10.0, npm y PGlite 0.3.14 bloqueado; npm test en tests/semillero: 8 pruebas correctas, incluida ejecución SQL en PostgreSQL/WASM con roles y auth/storage simulados. Casos: acceso cruzado denegado, anónimo sin recepción, original inmutable por cliente, reintento mismo acuse, conflicto por contenido, corrección consecutiva, adjunto pendiente, historial de avisos y visibilidad pública seleccionada. Pruebas de API con transporte simulado: caída de red no produce acuse, carga repetida verifica huella y OTP no crea cuentas. Estos casos no comprueban Auth ni Storage del proyecto real.
+
+Python 3.12.3 de .venv: unittest discover: 13 pruebas correctas, incluidas proyección pública sin contraseña y rechazo de configuración administrativa. scripts/site.py check ejecutado con R 4.6.0 y Quarto configurado por el proyecto: renv consistente, pip sin dependencias rotas, R/Python reejecutados y 24 páginas esperadas verificadas (23 Quarto y app). Avisos de locale de R; cambios incidentales en recursos y listado de sesiones, y eliminaciones de bibliotecas ajenas restaurados desde HEAD; check_site posterior correcto. No se atribuye la versión Python documentada históricamente a esta ejecución.
+
+Navegador: preparación y guardado de aportación sintética, recuperación tras recarga, envío deshabilitado en modo local; revisión visual móvil a 390 px sin desbordamiento horizontal y escritorio a 820 px. Salida generada /app/ servida en 127.0.0.1:8766, captura en output/semillero-v0/vista.png. No se probaron instalación PWA, trabajo offline ni envío real de correo/documento. Íconos nativos SVG/PNG, generador opcional con Pillow 12.3.0 ya disponible, dependencia específica documentada; sin instalaciones ni cambios a bloqueos editoriales. Npm se instaló con confianza de CA públicas del almacén Windows exportadas a .local, sin desactivar TLS ni modificar configuración global.
+
+Pendientes T009: datos de conexión, inspección y aplicación remota de migración, dos cuentas habilitadas, correo SMTP, verificación de recepción/archivo y permisos en Supabase real, respaldo y prueba con participantes. Sin commit, push, PR, fusión ni publicación. Revisión didáctica/conceptual propia documentada en D29, sin atribuir revisión independiente.
+
+Cierre local B097: índice seleccionado con 215 archivos revisado por scripts/check_repo.py sin incidencias; git diff --cached --check correcto. Nueva ejecución final de unittest discover: 13 pruebas correctas, incluida protección de .secrets también dentro de salida pública. Fuentes de blog/app y salida generada cotejadas byte por byte; SVG canónico sin cambios. .secrets/supabase.json continúa ausente. La vista previa local queda disponible en http://127.0.0.1:8766/app/ para revisión; no es publicación remota.
+
+## B098 — Conexión real de Supabase y adaptación móvil
+
+Registro: 2026-11-12. Prompts: P-ME-081–085. Archivo privado localizado por indicación de Miguel bajo su carpeta .secrets/supabase, fuera del repositorio y leído únicamente para este encargo. No se modifica ese archivo externo ni se copia su contraseña. SupabaseUrl y clave publicable comprobadas contra Auth settings (HTTP 200). ProjectRef del archivo conserva un marcador; el proyecto real owqoinfndqzqwiiiexks se coteja en el panel con nombre seminario-iie y región us-east-1. Host y usuario del pooler de sesión confirmados visualmente en Connect: aws-1-us-east-1.pooler.supabase.com:5432, postgres.owqoinfndqzqwiiiexks. Certificado público descargado desde el enlace de Database Settings a .local; conexión pg 8.16.3 con TLS verificado, sin desactivar validación de certificado ni nombre. No se exponen contraseñas ni claves administrativas.
+
+Inspección SQL inicial: PostgreSQL 17.11, public sin tablas, Storage sin políticas ni bucket originales. Migración 202611120001 aplicada mediante supabase/admin.mjs; lectura posterior de cinco tablas con RLS habilitado. Prueba supabase/verify.mjs sobre la base real: dos identidades sintéticas y registros dentro de una transacción; recepción, mismo acuse al reintentar, conflicto de sobrescritura, corrección consecutiva, aislamiento de propietario y rechazo anónimo correctos. ROLLBACK y lectura posterior comprueban ausencia de esas semillas y usuarios. API REST real: avisos públicos HTTP 200, versiones privadas sin sesión HTTP 401. La prueba SQL no ejecuta entrega de correo ni carga real de bytes por Storage API.
+
+El panel Auth confirma que no hay cuentas habilitadas y que editar la plantilla OTP exige SMTP propio. Se solicita a Miguel proveedor o aplazamiento para la laptop; no se envían mensajes ni se crean cuentas ni credenciales. La PWA refleja base conectada y acceso por correo en preparación; --email-ready solo se usará después de configurar y comprobar SMTP/OTP/cuentas.
+
+Rediseño pedido en P-ME-083: nueve tarjetas para identidad, pregunta, motivación, contexto, documento, condiciones, copia, acceso y envío; siguiente/anterior, reconocimiento de gesto horizontal, foco y teclado, movimiento reducido, agenda y acuses en vistas separadas. La separación de contexto y documento evita sobrecarga en pantalla pequeña. El estado del borrador se conserva entre tarjetas. En navegador: 320x568, 360x640 y 390x844, nueve tarjetas recorridas en cada tamaño; tras ajustes compactos, sin scroll de página ni desbordamiento horizontal, con controles fuera del contenido. Se preserva desplazamiento interno para texto largo, zoom o teclado que reduzca el área útil. No prueba física de gestos ni teclado virtual. Se corrigió la invocación de fetch por contexto del receptor, detectada al consultar agenda desde navegador; agenda real vacía visible tras la corrección, sin fechas inventadas.
+
+P-ME-085 autoriza commit y push para continuar en laptop. git pull --ff-only origin main ejecutado en miguel/semillero-v0: ya actualizado (4db5bcf), sin fusión a main. Dependencia administrativa pg 8.16.3 y su lock se aíslan en supabase/. Guía de continuación, comprobaciones finales y entrega remota en preparación; no se presume publicación de Netlify.
+
+Cierre de B098: npm test final descubre y aprueba 10 pruebas, incluida clasificación de gestos y regresión del contexto de fetch. unittest discover aprueba 13 pruebas; node --check correcto para app, navegación y herramientas administrativas. scripts/site.py check vuelve a ejecutar R/Python, comprueba renv/pip y verifica 24 páginas esperadas. Se restauran únicamente diferencias incidentales de recursos/listado/bibliotecas de salida generadas por esta ejecución; check_site posterior correcto. Nueve tarjetas recorridas a 320x568 tras la adaptación compacta: scroll de página y tarjeta cero para el contenido de prueba; validación impide avanzar sin autoría. Agenda vacía consultada correctamente desde navegador contra Supabase real. No se afirma prueba física de teléfono, gesto táctil real, teclado virtual, instalación PWA ni entrega de correo.
+
+Salida blog/_site/app cotejada byte por byte con fuentes. Configuración pública contiene exclusivamente URL, clave publicable e indicador emailAccessReady=false; contraseña y certificado fuera del contenido publicable. Capturas locales en output/semillero-v0/vista-movil.png y vista-compacta.png, sin incorporarlas al índice. La vista previa 127.0.0.1:8766/app/ sirve la salida consolidada. Se prepara commit/push autorizado, con main sin modificar; la integración y publicación continúan pendientes de PR aprobado.
+
+## B099 — Entrega del Semillero v0 para continuar en laptop
+
+Registro: 2026-11-12. Prompt: P-ME-085. Commit de implementación 95d6058 publicado en origin/miguel/semillero-v0; SHA remoto cotejado mediante git ls-remote. git pull --ff-only origin main había confirmado base actualizada 4db5bcf, y un fetch posterior no muestra commits pendientes de esa base. PR #15 abierto como borrador hacia main y localizado por consulta posterior: https://github.com/equihuam/Seminario-IIE-3T/pull/15. Sin fusión ni publicación de Netlify.
+
+Evidencia de la entrega en B097/B098: 10 pruebas Node/PGlite, 13 Python, comprobación completa del blog (24 páginas), prueba SQL remota con ROLLBACK, API 200/401 y tarjetas móviles en tres tamaños. Índice de 224 archivos sin incidencias; diff --check correcto y contraseña ausente del diff seleccionado. Solo configuración pública viaja con Git. SMTP, plantilla OTP y cuentas permanecen pendientes; el piloto lo indica y deshabilita el acceso por correo. Guía para clonar/actualizar, previsualizar y administrar sin repetir migración: docs/SEMILLERO-V0.md. Archivos ajenos sin seguimiento y worktree de objetivos de aprendizaje conservados.
+
+## B100 — Agenda inicial y citas personales
+
+Registro: 2026-11-12. Prompt P-ME-086. La Agenda abre la PWA, con Mi semilla a la derecha. Los avisos admiten temas y actividad en el texto existente. El formulario permite ajustar los datos de una cita y preparar un enlace de Google Calendar u Outlook web personal. Comprobados la apertura y los campos en el navegador, 11 pruebas Node/PGlite y 24 páginas con scripts/site.py check. Prueba de enlaces con datos sintéticos; guardado en una cuenta personal pendiente de prueba de usuario.
+
+## B101 — Ficha pactada desde el repositorio y directiva individual
+
+Registro: 2026-11-12. Prompt P-ME-087. La ficha de coordinación para el 18 de noviembre alimenta Agenda y el formulario personal desde encuentros.json. Se comprobó en el navegador el inicio 14:00, duración 60, tema y bloques 45/10/5, con enlace al PPTX introductorio v5. Pruebas Node/PGlite: 12 aprobadas. scripts/site.py check: 24 páginas verificadas. El parche se aplicó en un repositorio temporal y conservó su directiva anterior. No se aplicó a repositorios de participantes. Pendientes de distribución y prueba en cuentas personales.
+
+## B102 — Carpeta autónoma para prueba manual en Netlify
+
+Registro: 2026-11-12. Prompt P-ME-088. Generado el piloto desde la salida pública con scripts/prepare_netlify_pilot.py y entregado en apps/_pwa-control-clase de la carpeta principal. Entrada en la raíz, PWA en /app/, presentación local y enlaces al blog público. Verificados recursos por HTTP sirviendo exclusivamente el directorio de entrega, incluidas la ficha, la presentación y el parche. La prueba de despliegue en Netlify queda a cargo de Miguel.
+
+## B103 — Agenda compacta y corrección del paquete por arrastre
+
+Registro: 2026-11-12. Prompt P-ME-089. El paquete anterior incluía un PPTX de 18 074 607 bytes. La guía de Netlify identifica archivos individuales mayores de 10 MB como causa probable de bloqueos de la subida manual. Sin registro del intento cancelado, la causa exacta queda sin confirmar. El generador verifica por SHA-256 el PPTX en el blog y lo enlaza. Paquete regenerado: 20 archivos, 80 502 bytes, máximo 21 511 bytes; todos comprobados por HTTP. Programa y materiales e instrucciones del parche quedan plegados en Agenda. Apertura de las instrucciones y cierre con teclado verificados en navegador. 12 pruebas Node/PGlite correctas y 24 páginas verificadas con site.py check. Pendiente la prueba de despliegue del usuario.
+
+## B104 — Google Drive para materiales grandes
+
+Registro: 2026-11-12. Prompt P-ME-090. ENVIRONMENT.md ya contemplaba un almacén externo. Drive figuraba como posibilidad para recibir semillas en P-ME-076, sin acuerdo previo localizado para archivos grandes. Creada carpeta de coordinación y subido el PPTX v5. Comprobados mediante consulta posterior carpeta de destino, tipo, tamaño y estado privado del archivo. Destino y uso por los alumnos en docs/SEMILLERO-V0.md.
+
+## B105 — Tablero de Trabajo, instalación y actualización de proyectos
+
+Registro: 2026-11-12. Prompt P-ME-091. Miguel confirma el despliegue rápido del paquete anterior. Cambiados encabezado, título y nombre de instalación a Tablero de Trabajo. Las instrucciones orientan la actualización del proyecto existente con el parche. Botón Instalar con diálogo nativo cuando se ofrece y guía manual alternativa. Se conserva el identificador /app/. Se regeneró y cotejó el paquete de despliegue. Pasaron 12 pruebas del proyecto y la comprobación del sitio de 24 páginas. Ayuda, cierre y eventos de instalación comprobados con eventos simulados, pendiente instalación física en teléfono.
+
+## B106 — Ayuda de instalación según la prueba de Miguel
+
+P-ME-092, registrado el 2026-11-12. En el Android de Miguel, Chrome permitió instalar el tablero y crear un acceso directo. En Edge se observó el acceso directo con insignia. La ayuda explica cómo distinguir ambos resultados y verificar la instalación en Ajustes. Texto cotejado en la fuente, el blog generado y la carpeta manual de Netlify.
+
+## B107 — Títulos y encabezados sin punto final
+
+P-ME-093. Se incorporó la regla editorial en AGENTS.md y se retiró el punto final de siete títulos y un encabezado de recuadro del Tablero de Trabajo. Cambios cotejados en fuente, salida del blog y carpeta del piloto.
+
+## B108 — Fundamento ortográfico de la pauta editorial
+
+P-ME-094 precisa B107. AGENTS.md y los criterios de calidad recogen la condición de encabezado independiente. La Ortografía, § 3.4.1.2.1, extiende la regla a títulos que ocupen varios renglones. Las dos referencias quedan enlazadas en los criterios de calidad.
+
+## B109 — Personalización del registro en la agenda
+
+P-ME-095. El desplegable del formulario dice «Personaliza el registro en tu agenda». Etiqueta verificada en la fuente, la salida del blog y la carpeta del piloto.
+
+## B110 — Ayuda para Edge estable en Android
+
+P-ME-096. Se identifica en la ayuda el acceso directo con insignia observado por Miguel en Android con Edge. Canary figura como aplicación aparte en Google Play. La aparición de una opción de instalación en una versión experimental no acredita por sí sola la generación de un WebAPK en el dispositivo del participante.
+
+## B111 — Prueba en iPhone pendiente
+
+P-ME-097. Miguel indica que Octavio hará la prueba en su iPhone. Responsable y observaciones previstas registrados en PLAN.md.
+
+## B112 — Instalación del tablero en Android con Chrome
+
+P-ME-098. Miguel confirmó la instalación con Chrome en su Android. En ese dispositivo, Edge estable y Canary no produjeron la instalación en la lista de aplicaciones. La ayuda del tablero indica abrir la URL en Google Chrome, elegir Instalar y verificar en Ajustes → Aplicaciones. Se cotejó el texto en la fuente, la salida del blog y el paquete para Netlify.
+
+## B113 — Alternativas para abrir la cita en Outlook
+
+P-ME-099. El botón muestra enlaces de navegación para cuentas personales e institucionales y permite descargar un archivo iCalendar con las notas y el horario. La petición de diagnóstico al enlace personal agotó el tiempo de espera. Sin evidencia de un bloqueo de seguridad. Pruebas locales de generación de enlaces y contenido del archivo; guardado en cuenta Microsoft pendiente.
+
+## B114 — Descarga directa de la cita para Outlook
+
+P-ME-100. Miguel confirmó que el archivo .ics funciona y que los dos enlaces web fallan en su prueba. La ficha ofrece la descarga directa en el formulario y Google Calendar. Verificados hora inicial, final y notas editadas en la prueba local y 24 páginas con check_site.py. Paquete local actualizado.
+
+## B115 — Ícono del tablero visible en iPhone
+
+P-ME-101. La captura compartida muestra el ícono verde con el brote en la pantalla de Inicio. Se registró esta observación en PLAN.md. La apertura desde el ícono queda pendiente de comprobación.
+
+## B116 — Apertura desde Inicio en el iPhone de Octavio
+
+P-ME-102. Miguel transmite la observación de Octavio de que el tablero abierto desde el ícono no se ve como pestaña. Se actualizó el estado de la prueba en PLAN.md.
+
+## B117 — Primer respaldo relacional del Semillero y ensayo de recuperación
+
+2026-11-12 · P-ME-103. En miguel/semillero-v0, backup.mjs leyó las cinco tablas del proyecto seminario-iie en una instantánea consistente por TLS. Archivo privado semillero.json, captura UTC 2026-11-13T04:41:09.766Z, SHA256 EE672BA1E57A7652F731177585C4B199B95CCA2677BEF52DD3E214F896EBB77F. verify-backup.mjs regeneró las cinco tablas en PGlite y cotejó cero filas en cada una. git check-ignore confirmó la exclusión de la copia. Con Node y las dependencias fijadas, node --test sobre database.test.mjs, model.test.mjs y calendar.test.mjs pasó 12/12, incluido el ensayo con filas sintéticas en todas las tablas. verify.mjs comprobó en remoto recepción idempotente, corrección, aislamiento, reversión de datos sintéticos y API de avisos/privada (HTTP 200/401). El respaldo cubre datos relacionales; las cuentas, archivos de Storage y entrega de OTP quedan pendientes.
+
+## B118 — Agenda del seminario por suscripción
+
+P-ME-104. Retirado el formulario de personalización. Feed estático con identificador estable por encuentro, revisiones y cancelaciones. Primera sesión del 18 de noviembre a las 14:00–15:00, Ciudad de México. El paquete de Netlify entregó el archivo por HTTP local con estado 200 y tipo text/calendar. Pasaron 12 pruebas Node/PGlite, incluido el cotejo del calendario y la reprogramación y cancelación simuladas. check_site.py comprobó 24 páginas. Verificación en cuentas y publicación pendientes.
+
+## B118 — Precondiciones del recorrido T009 con participantes
+
+P-ME-105, 2026-11-12. La consulta directa al proyecto confirmó cero filas en auth.users y originales con public=false. En Authentication → Emails el panel indica que usa las plantillas predeterminadas y exige configurar SMTP propio para editarlas. La aplicación solicita códigos solo para cuentas existentes. Se identificaron en privado los dos destinatarios. Quedan pendientes la configuración del remitente y de la plantilla con código, el alta de las dos cuentas, los accesos y la prueba HTTP con un archivo sintético.
+
+## B119 — Correo de acceso del piloto
+
+P-ME-105 y P-ME-106. El panel permitió guardar la plantilla «Código de acceso al Semillero IIE-3T» con la variable de código. Supabase informó que envió las dos invitaciones. Una lectura posterior de Auth confirmó ambas cuentas. Al hacer esa lectura aún no constaban inicios de sesión ni acuse de la semilla T009. El aviso del proveedor se refiere a la entregabilidad. La recepción en cada buzón y la prueba con el objeto requieren evidencia de cada participante.
+
+Seguimiento de B119: Auth aceptó la solicitud de código para Miguel (HTTP 200). Gmail devolvió una coincidencia con el asunto exacto del OTP en el buzón destinatario. Se verificó solo la presencia del mensaje. Se abrió PowerShell para que el titular lo introduzca directamente.
+
+Seguimiento T009 (B119). El acuse local de la versión 1 y la marca sha256_verified confirman que Miguel entró por OTP, envió la semilla sintética y recuperó de Storage los bytes originales. Se preparó un ZIP local para el contraste desde la sesión de Octavio con la misma ruta de objeto. Pendiente su resultado HTTP.
+
+Corrección a B119. Miguel informó que la primera invitación a Octavio usó una dirección incorrecta. Se cursó la invitación a la dirección corregida con punto y se verificó su registro en Supabase Auth. Se actualizó el ZIP privado y se cotejó la dirección dentro del archivo comprimido. Queda pendiente la prueba desde la cuenta correcta.
+
+Seguimiento de T009. Para Octavio se preparó un ZIP con un HTML autónomo que solicita el OTP y comprueba el mismo adjunto desde el navegador. Se verificaron la sintaxis de JavaScript y el contenido del ZIP. La prueba con su correo y navegador queda pendiente.
+
+Seguimiento de T009 (P-ME-108). El piloto para arrastre conservaba desactivado el acceso por correo después del acceso OTP de Miguel. Habilitado en la configuración local y el paquete; el formulario explica el requisito de sesión antes del envío e inicializa los controles antes de esperar la agenda. Pendientes el redespliegue por Miguel, la prueba del formulario publicado y el contraste de Octavio.
+
+P-ME-109. Comprobado que el tablero presenta fichas comunes y que la descarga ICS es voluntaria, sin destinatarios. Aclarado en la agenda y el paquete de entrega. La URL de suscripción del piloto en Netlify devolvió página no encontrada antes del redespliegue.
+
+P-ME-110. El estado de conexión parecía una invitación a pulsarlo y la consulta exigía atravesar el formulario de una nueva semilla. Añadidos accesos directos al inicio de sesión desde el estado y desde Mis envíos; desde esta última vista se vuelve al listado al validar el código. Actualizado el paquete local de despliegue.
+
+P-ME-111. Semillas publicadas y Actualizar mi proyecto quedaron debajo de las pestañas del tablero, con áreas táctiles de al menos 44 px. El enlace público lleva a Registro de ideas. Actualizados fuente, salida y paquete del piloto.
+
+P-ME-112. El tablero móvil deja crecer la página con el contenido y reserva espacio al pie para el área segura. En Edge con emulación móvil (390×844, 320×568 y 844×390), la tarjeta de acceso cupo completa y Guardar borrador quedó al alcance al desplazar la página. Pendientes publicación del piloto y comprobación en el teléfono.
+
+P-ME-113. Una versión recuperada conserva su acuse y oculta envío y autorización mientras coincide con la recibida. Al editar se ofrece una nueva versión. En Edge con un registro simulado se verificaron apertura, edición, reversión y cero llamadas de envío al intentar reenviar la original. Pasaron las nueve pruebas del modelo y transporte.
+
+P-ME-114. Miguel comunica que la recuperación parece funcionar. Registrada la secuencia acordada para limpiar y cargar después de comprobar el aislamiento con la cuenta de Octavio. Contactos guardados en private/, excluido de Git. Sin operaciones en Supabase en este paso.
+
+P-ME-115. Completado y cotejado el contacto privado de Daniel para I006.
+
+P-ME-116. Evaluada la alternativa MariaDB para crecimiento futuro. La PWA depende de Auth, permisos por propietario, Storage privado y funciones PostgreSQL. Propuesta: medir base, archivos y transferencia tras cargar las fichas, y evaluar primero el NAS como destino de copias restaurables. Sin medición de consumo ni prueba de conexión al NAS en esta evaluación.
+
+P-ME-117. Miguel optó por mantener Supabase para que los participantes entren con su correo sin incorporarse a la red privada. La decisión cierra la evaluación de MariaDB para este piloto.
+
+## B100 — Opciones de SMTP para el piloto
+
+Registro: 2026-11-12. Prompt P-ME-086. Contrastadas las opciones con documentación oficial de Supabase, Google y Microsoft. Se distingue el acceso del asistente al buzón de la configuración SMTP del servicio. Propuesta preliminar: Gmail si la cuenta admite contraseña de aplicación y verificación en dos pasos; Outlook.com exige OAuth2 y no se presupone compatibilidad directa con usuario/contraseña SMTP. Guía de campos privados añadida a docs/SEMILLERO-V0.md. No se accede al correo, se generan credenciales ni se envían mensajes; no hay decisión de proveedor ni activación del envío. Cambio exclusivamente documental; se conservan las verificaciones técnicas de B098/B099, sin repetirlas ni atribuir nuevas pruebas de correo.
+
+## B101 — Evidencia recibida de acceso de Octavio y contraste de permisos
+
+Fecha de registro: según contexto del cliente 2026-11-12; la actualización del entorno señala 2026-11-13. Prompts: P-ME-087–089. Se recibe captura de «Prueba de acceso de Octavio»: la pantalla informa sesión verificada y descarga ajena denegada, con HTTP 400 y Object not found. No se atribuye a esa captura por sí sola una prueba concluyente de autorización: una ruta inexistente podría producir un mensaje semejante.
+
+Inspección remota exclusivamente de lectura en el proyecto Supabase ya autorizado: bucket originales privado, un objeto y un propietario, dos versiones de semillas (una con referencia a adjunto). La política SELECT sigue limitando lectura a la carpeta cuyo primer componente coincide con auth.uid(). Contraste SQL sobre el mismo objeto existente: cuenta propietaria ve un registro; cuenta de Octavio ve cero. Cuentas distintas; transacción READ ONLY finalizada con ROLLBACK. No se consultó el contenido documental, se enviaron correos ni se modificaron usuarios, objetos o permisos.
+
+Fuentes técnicas contrastadas: documentación oficial de errores Storage (https://supabase.com/docs/guides/storage/debugging/error-codes) y código de errores del servicio (https://github.com/supabase/storage/blob/master/src/internal/errors/codes.ts). Se conserva la distinción entre invisibilidad del metadato por RLS y descarga HTTP de bytes; no se probó la descarga del propietario en este encargo.
+
+Miguel identifica el artefacto como un ZIP en private, conservado en la laptop. Esta copia no contiene private ni ZIPs; se respetan las exclusiones y no se exploran proyectos hermanos. P-ME-089 aplaza la revisión del artefacto hasta disponer de él en Fragaria. Pendiente: revisar ruta y tratamiento de errores del ZIP, cotejar descarga HTTP y huella del mismo archivo para el propietario y confirmar el rechazo con la identidad de Octavio. No se cierra T009 ni se cambian los indicadores de acceso a partir de esta evidencia parcial. Cambio documental; no se repiten pruebas de software que no ha cambiado.
+
+## B102 — Batería de pruebas cerrada por confirmación de Miguel
+
+Prompt: P-ME-090. Miguel confirma que el trabajo ya se realizó en Fragaria y que la prueba de Octavio constituye el cierre de la batería. Se acepta este cierre y queda superado el pendiente de B101 de volver a solicitar o repetir esa revisión. Se conserva la captura recibida y el contraste de permisos observado directamente en B101.
+
+Procedencia: cierre comunicado por Miguel sobre la ejecución en Fragaria; no se atribuye a este equipo una nueva ejecución, revisión del ZIP ni cotejo HTTP que no se hayan realizado aquí. Fetch del remoto al recibir la confirmación no aporta commits nuevos con el artefacto privado; eso no invalida el cierre comunicado ni exige que el ZIP privado se publique. No se cambian indicadores de configuración ni código de la aplicación como consecuencia de este registro.
+
+La batería de pruebas queda cerrada según la confirmación del responsable. La revisión/aprobación del PR #15, su eventual integración y comprobación de publicación son pasos distintos; esta confirmación no autoriza una fusión. Las comprobaciones documentales del índice y la entrega de este registro no se presentan como pruebas adicionales de la PWA.
+
+## B103 — Alcance del protocolo de acceso cruzado aportado por Miguel
+
+Prompt P-ME-091. Miguel aporta el procedimiento enviado a Octavio: un adjunto de la idea de Miguel, página HTML distribuida en ZIP, autenticación con el correo propio de Octavio y comprobación de acceso al adjunto; se solicita compartir únicamente resultado y estado HTTP, excluyendo el código de acceso. Se vincula este protocolo con la captura P-ME-087 y el cierre confirmado en P-ME-090/B102.
+
+El resultado esperado es rechazo de la descarga del adjunto ajeno. La captura comunica ese resultado (HTTP 400, Object not found); el contraste de B101 respalda el aislamiento del metadato del objeto. Alcance documentado: adjunto privado concreto e identidad de Octavio. No se extiende automáticamente a todos los archivos, a la lectura del registro completo de semillas ni a todos los canales de acceso. La batería continúa cerrada conforme a Miguel; no se solicita repetirla ni se ejecutan autenticaciones o envíos en nombre de Octavio. No se guardan códigos de acceso ni se incorporan ZIPs privados al repositorio.
+
+Verificación documental B103: check_repo revisa 224 archivos sin incidencias. diff --check señala un espacio final en la primera línea del texto aportado en P-ME-091; se conserva deliberadamente para registrar literalmente el mensaje. Sin cambios de software ni nuevas pruebas de acceso.
+
+## B104 — Pull y comprobación de ramas remotas para recuperar contexto
+
+Prompts P-ME-092 y P-ME-093. Estado, ramas y worktrees inspeccionados; archivos ajenos sin seguimiento preservados. Ejecutados git fetch origin y git pull --ff-only origin miguel/semillero-v0: ya actualizado en c014a24. Refs remotas cotejadas directamente con git ls-remote --heads origin: solo main (4db5bcf), miguel/objetivos-aprendizaje (f14e07a) y miguel/semillero-v0 (c014a24). Refspec confirma seguimiento de todas las ramas remotas. No hay nuevos commits publicados que permitan recuperar el desarrollo referido desde Fragaria.
+
+Falta identificar la rama alterna y confirmar si ya se publicó en este remoto. No se presume que la ausencia remota implique ausencia de trabajo en la laptop. Sin fusiones, cambios de rama, pruebas nuevas ni modificación de main. Registro local de esta consulta, pendiente de conciliar con la rama que indique Miguel antes de crear otro commit documental.
+
+Actualización B104/P-ME-094: Miguel confirma que la rama alterna es miguel/semillero-v0. Nuevo fetch y pull --ff-only de esa rama: ya actualizada; HEAD y remoto en c014a24, divergencia 0/0. No se recibe contexto adicional desde Fragaria. Se mantiene la distinción entre cambios versionados/publicados y archivos de private excluidos de Git; no se vuelve a solicitar identificar la rama.
+
+## B105 — Ticket documental para retomar la prueba en Fragaria
+
+Prompt P-ME-095. Creado y devuelto por GitHub como abierto el issue #16: https://github.com/equihuam/Seminario-IIE-3T/issues/16. Copia local en docs/tickets/016-prueba-octavio-fragaria.md. Incluye protocolo, mensaje literal de la captura y estado HTTP, contraste SQL de permisos, ubicación del ZIP privado y tareas para conciliar la evidencia ya obtenida en Fragaria. Conserva el cierre de la batería confirmado por Miguel; el ticket es revisión documental posterior, no encargo de repetir pruebas ni de ejecutar una sesión de Octavio.
+
+Sin códigos de acceso, contraseñas, tokens, correos personales ni ZIPs adjuntos al issue. Se mantiene private fuera de Git. Relacionado con PR #15 y T009; no se autoriza fusión. Se incorporan al registro versionable las aclaraciones P-ME-092–094/B104 que estaban locales, junto con el nuevo ticket. No cambian el blog ni el software; solo se comprueba el índice de esta entrega documental.
+
+2026-11-13 · P-ME-118 · GitHub #16. Cerrada la batería de acceso cruzado de T009 para el adjunto probado. Fragaria conserva el acuse de la versión 1 con descarga del propietario verificada por SHA256. El HTML del ZIP de navegador usa la misma ruta y verifica la cuenta distinta. El ticket de oficina documenta la captura de Octavio (HTTP 400 · Object not found) y el contraste RLS sobre el objeto existente. Nombre y huellas en private/t009/conciliacion-16.txt. Próximo paso: respaldo de tablas y adjuntos antes de la limpieza y carga. Las referencias históricas P-ME-086–095 y B100 en adelante se interpretan por procedencia y título cuando sus números coinciden entre oficina y Fragaria.
+
+P-ME-119. Respaldo relacional del proyecto a las 19:34 UTC del 13 de noviembre, restaurado con comparación de filas en PGlite (2 semillas, 2 versiones, 0 revisiones, 0 avisos, 0 entradas de historial). Storage lista un objeto de 59 bytes. Copia del contenido sintético reconstruida a partir del original reproducible y cotejada tras extraer el ZIP con la huella de la versión previamente descargada. Pendiente lectura actual del objeto vía Storage. Se identificaron ambos IDs de prueba y seis fichas en el índice público, con fuentes y autorías en el lote privado. No se han eliminado ni importado filas. El JSON privado disponible contiene acceso PostgreSQL y clave publicable. Para seguir mediante las API administrativas de Storage y Auth se solicitó acceso de servidor.
+
+2026-11-13 · P-ME-120 · Piloto local de Lecturas. Se añadió un servidor de ensayo en scripts/lecturas que usa el tablero de blog/app, SQLite local y el artículo de perspectiva de Saltelli et al. (2024), DOI 10.1002/wcc.915. Se cotejaron autoría, referencia y resumen con la página 1 del PDF adjunto. Pregunta didáctica propia. En Edge, dos contextos separados (390 px y escritorio) completaron propuesta, comentario, acuerdo, recarga y navegación desde Agenda sobre una base temporal. Verificada la ficha inicial en el servidor local 8765. El piloto simula atribución y coordinación. Pendiente valoración del grupo e integración autenticada para uso remoto. Sin despliegue.
+
+2026-11-13 · P-ME-121–122 · Lecturas compartidas. Migración transaccional aplicada al Supabase existente; se verificó la lectura de Saltelli bajo el rol authenticated y los dos UUID de Auth con permiso de coordinación. Tabla de miembros privada, autoría derivada de sesión, un acuerdo por ficha. Trece pruebas Node pasaron, incluido el aislamiento de anónimos y no miembros y el debate entre miembros. Se probó en Edge el acceso por correo del archivo portátil y la denegación HTTP 401 de la API real sin sesión. Los códigos de correo y el recorrido entre equipos quedan a los participantes. Se preparó el paquete de la PWA y el HTML portátil. El sitio dash-seminario-iie respondió 200 con la versión previa. Sin despliegue Netlify. El control completo del blog se detuvo en renv por dependencias ausentes; sin incorporar salida de Quarto.
+
+2026-11-13 · P-ME-123 · Publicación de Lecturas verificada. En Edge, la portada de dash-seminario-iie redirigió a /app/; con el servicio conectado, la pestaña abrió Lecturas y el acceso por correo quedó habilitado. Verificado también /app/#lecturas en una página nueva. Supabase respondió 401 a la consulta anónima. En transacción de solo lectura, ambas identidades de Auth confirmadas vieron la ficha con DOI 10.1002/wcc.915 bajo sus políticas y tuvieron permiso de coordinación. La prueba con códigos de correo e intercambio real corresponde a los participantes.
+
+2026-11-13 · P-ME-124 · Saltelli et al. (2024), Bring digital twins back to Earth, DOI 10.1002/wcc.915. Cotejo de metadatos con Crossref y con la portada del PDF consultada al preparar Lecturas. Búsqueda por DOI, título y Saltelli sin registro coincidente. Alta de UCRDH3KH en Seminario IIE-3T (6712171), colección Seminario (JGFMANF9). Verificados el registro, once autores, DOI y pertenencia mediante dos lecturas de la API web.
+
+2026-11-13 · P-ME-125 · Enlace bibliográfico opcional en Lecturas. Migración 202611130002 aplicada; la ficha existente de Saltelli conserva el DOI y enlaza UCRDH3KH en Zotero. Lectura e inserción temporal probadas en Supabase con los permisos de Miguel y Octavio, con reversión de los ensayos. En Edge se verificó el paquete con API simulada: enlace inicial, rechazo de otro grupo y guardado de propuesta con enlace canónico. Archivos de Lecturas y service worker cotejados por SHA-256 entre fuentes y carpeta de entrega. Preparados apps/_pwa-control-clase y output/Tablero-Lecturas.zip para despliegue manual.
+
+2026-11-13 · P-ME-126 · Recordar este equipo. Casilla opcional al ingresar el código, restauración por navegador y proyecto, renovación al usar la sesión y cierre con alcance local. Pasaron 15 pruebas Node, incluidas rotación concurrente, falla transitoria y revocación. En Edge con API simulada se comprobó recuperación al recargar y eliminación al cerrar sesión y recargar. Carpeta del piloto y ZIP actualizados para Netlify. Pendiente despliegue y comprobación con cuentas reales.
+
+2026-11-14 · P-ME-127 · Miguel aportó la captura de la pantalla de Octavio correspondiente a T009. Mensaje visible: «Sesión verificada. Descarga ajena denegada. HTTP 400 · Object not found». Copia privada cotejada por SHA-256 con el archivo recibido y asentada en private/t009/conciliacion-16.txt como evidencia del ensayo ya cerrado.
+
+2026-11-14 · P-ME-128 · Netlify verificado en Edge. Tras simular el envío del código, la PWA desplegada mostró «Recordar este equipo» y conservó la sesión de ensayo al recargar. Supabase devolvió la ficha Saltelli y UCRDH3KH bajo los permisos de Miguel y Octavio. Con esos datos en el navegador, «Abrir en Zotero» solicitó el registro correcto del grupo en otra pestaña. Sin sesión de Zotero, el sitio redirigió a su formulario Login. Pendiente visualización con las cuentas personales del grupo.
+
+2026-11-17 · P-ME-129 · Entrega del piloto para revisión en PR #15. Quarto reejecutó R y Python y verificó 24 páginas, enlaces y límites de publicación con scripts/site.py check. Entorno renv consistente con sandbox de renv desactivado para esta ejecución. Pasaron 15 pruebas Node y 13 Python. Se prepara la rama del tablero con la PWA regenerada, migraciones, utilidades y registros. La fusión queda a cargo de Miguel.
+
+2026-11-17 · P-ME-130 · Propuestas de Lecturas desde Zotero. Pull por avance rápido de miguel/semillero-v0 hasta aa23a21 antes de editar, conservando archivos ajenos. El formulario reemplaza título, cita, URL y enlace opcional por búsqueda por título y selección obligatoria del catálogo del grupo 6712171. Conserva question como asunto/pregunta; processing es un campo explícito de dinámica propuesta. No se reutilizan los fragmentos históricos ni se alteran acuerdos.
+
+Catálogo de 21 referencias leído mediante GET a Zotero Desktop, sin consultar adjuntos ni escribir en Zotero. La credencial web del grupo no estaba disponible en este equipo; se utilizó la API local ya habilitada tras abrir Zotero instalado. Metadatos en instantánea .local excluida de Git y tabla reading_references accesible solo a miembros de Lecturas. Migración 202611170001 aplicada y sincronización cotejada por lectura posterior. El servidor exige clave activa y dinámica, toma los metadatos y conserva la versión Zotero. Añadir una referencia al grupo exige sincronizar después el catálogo; la fecha y el paso están visibles, sin afirmar actualización automática.
+
+Verificación: 17 pruebas Node/PGlite y 13 Python correctas. Prueba en Supabase real con la identidad SQL de un miembro existente: selección válida, metadatos y versión correctos; clave ausente/desconocida y dinámica vacía rechazadas. Transacción revertida y número de propuestas cotejado, sin conservar el ensayo. Navegador con transporte simulado y referencias ficticias: filtro sin acentos, títulos duplicados, cita de comprobación, guardado de clave/asunto/dinámica y bloqueo sin coincidencias; móvil a 320 px sin desbordamiento horizontal y revisión visual en escritorio. No se enviaron códigos de correo ni se guardaron propuestas reales como ensayo de interfaz.
+
+scripts/site.py check con RENV_CONFIG_SANDBOX_ENABLED=FALSE de esta ejecución: renv consistente, pip correcto, R/Python reejecutados y 24 páginas verificadas. Node 20.10.0 y Python 3.12.3; sin cambios de dependencias. Diferencias incidentales de recursos/listado/bibliotecas generadas restauradas desde HEAD; check_site final correcto. Fuente y salida de la aplicación cotejadas byte por byte; SVG canónico conservado. Carpeta output/lecturas-zotero/netlify, ZIP Tablero-Lecturas-Zotero.zip y HTML portátil Lecturas-IIE.html preparados; módulos del catálogo cotejados con fuentes. Captura de interfaz con datos ficticios en output/lecturas-zotero/formato.png. Fuentes de operación y actualización del catálogo en scripts/lecturas/README.md. Pendientes: actualizar el despliegue manual de Netlify y prueba con sesión personal; no se confunden con la validación SQL ni se ejecuta fusión a main.
+
+Entrega P-ME-130: commit 6d3e771 publicado en origin/miguel/semillero-v0 y SHA remoto cotejado. PR #15 actualizado manteniendo título, base main y autoría del flujo existente; describe selector, catálogo, pruebas y despliegue pendiente. Índice de 264 archivos y diff --check correctos. Paquete ZIP cotejado con los módulos fuente, sin catálogo privado ni credenciales. No se fusionó ni se desplegó en Netlify. La guía de Lecturas presenta primero el flujo vigente y conserva el piloto SQLite como antecedente.
+
+2026-11-17 · P-ME-131 · Vínculo a la biblioteca grupal de Zotero añadido al formulario de Lecturas con la URL indicada por Miguel; abre otra pestaña. Service worker v0-16 y guía actualizados. scripts/site.py check reejecutó R/Python y verificó 24 páginas; comprobación final del sitio y sintaxis JavaScript correctas. Fuentes, salida y módulo del ZIP cotejados; vínculo comprobado también en el módulo incorporado del HTML portátil. Paquete actualizado en output/lecturas-zotero-vinculo, pendiente de despliegue manual. Sin cambios en Supabase ni en Zotero.
+
+
+2026-11-17 · P-ME-132 · Sincronización con Caahuate de miguel/semillero-v0. Incorporados los tres commits remotos hasta d06f464 y conservados ambos registros al resolver los conflictos documentales. La instrucción local se numera P-ME-132 para conservar los identificadores P-ME-130 y P-ME-131 ya publicados.
+
+2026-11-17 · P-ME-133 · Pull por avance rápido de miguel/semillero-v0 hasta 2102183, conservando d06f464 y archivos locales ajenos. apps/_pwa-control-clase no estaba en Git: preparada desde la salida vigente mediante scripts/prepare_netlify_pilot.py para sincronizarla también con Fragaria. Conserva selector Zotero, asunto, dinámica, vínculo grupal y service worker v0-16; recursos públicos cotejados con blog/_site/app y 24 páginas verificadas con check_site. Se incluyen solo archivos públicos de la lista de preparación, sin catálogo privado ni credenciales privadas. Pendiente despliegue manual por Miguel.
+
+2026-11-17 · P-ME-134 · Cierre para retomar en Fragaria. Rama miguel/semillero-v0 comprobada en 5dae3ce, sin cambios pendientes en archivos versionados y alineada con origin tras fetch. Registro de cierre añadido; archivos locales ajenos y paquetes de output conservados sin incorporarlos. El piloto público ya está versionado en apps/_pwa-control-clase.
+
+2026-11-17 · P-ME-135 · Diagnóstico de convergencia. Tras fetch, semillero-v0 coincide con origin en 578ba09. mapa-iie-pixeles (92a6880) es ancestro, con cero commits exclusivos y 22 posteriores en semillero. La carpeta principal conserva nueve archivos versionados modificados y materiales del mapa sin seguimiento. El pull previo actualizó exclusivamente el worktree semillero-preview. La copia apps de la raíz contiene v0-14 y formulario de enlace manual; el worktree contiene v0-16 y reading-catalog.mjs. El PPTX local y el publicado en semillero tienen 17 diapositivas y SHA-256 idéntico; sin embargo, semillero conserva constructor y verificador antiguos, y su verificador falla al exigir 16 diapositivas sobre el PPTX publicado. Los generadores del mapa y las dependencias cartográficas están pendientes de incorporación. P-ME-061–064 identifican textos diferentes en los dos registros. Se requiere reconciliación por adición y procedencia. SVG canónico idéntico. Diagnóstico documental; pendientes consolidación y elección de carpeta habitual.
+
+
+## Antecedentes conservados de mapa-iie-pixeles
+
+Registro incorporado el 2026-11-17. Los IDs de esta sección se interpretan con prompts/miguel-mapa-iie-pixeles.md y la copia de Fragaria sobre 92a6880. El estado vigente de la consolidación se registra en P-ME-136.
+
+## B084 — Figura de IIE por píxel a partir de GeoTIFF originales
+
+Fecha de registro: 2026-10-12. Prompt: P-ME-061. Rama miguel/mapa-iie-pixeles creada desde main actualizado por avance rápido a 92a6880. Figura SVG editable y PNG en presentaciones/img/iie-2018-pixeles-holdridge.*, con generador Python, metadatos/huellas JSON y guía presentaciones/figura-iie-pixeles.md. Mapa nacional real de 2018, ventana de 64 celdas nativas, clases Holdridge 18/22 y esquema de índices anidados con θ global. Paleta propuesta; códigos sin nombres inventados. Se distingue celda IIE de 250 m de la resolución Holdridge aproximada de 850 m. Roles ilustrador y revisor conceptual en esta conversación; sin revisión independiente.
+
+Verificación observada: .venv/Scripts/python.exe presentaciones/crear-figura-iie-pixeles.py concluye con código 0; lectura completa de 30 971 405 celdas válidas del IIE, rango 0–1, 64 valores exactos respecto de la ventana original y 64 clases cotejadas con consultas directas al GeoTIFF Holdridge. SVG XML válido y SVG/PNG menores de 5 MiB. Revisión visual de PNG completo: corregidos rótulo sobre mapa y superposición de encabezados del acercamiento; exportación final inspeccionada sin recortes ni superposiciones. Advertencia inicial al colorear NoData extremo corregida en la copia de visualización; ejecución final sin esa advertencia. La primera prueba de importación de rasterio se adelantó a la finalización de pip y falló por DLL; instalación completada y ejecuciones posteriores correctas.
+
+Dependencias cartográficas instaladas exclusivamente en .venv y registradas en requirements.in/requirements.lock.txt; pip check sin conflictos. Python, GDAL y bibliotecas en el JSON. No se estima nuevamente el IIE, no se valida científicamente el raster ni se recupera su posterior. Originales y SVG canónico preservados. PPTX v4/v5 y blog sin modificar; sin commit, push, fusión o publicación. Pendientes: valoración docente, catálogo nominal Holdridge y eventual incorporación a presentación. No se ejecuta site.py check porque no cambió el blog ni se prepara commit editorial; control del índice existente y revisión de archivos nuevos por separado, sin preparar índice de entrega.
+
+Control final B084: scripts/check_repo.py pasó sobre los 176 archivos del índice existente; los cinco archivos nuevos de la figura pasan por separado la misma política de tamaño y patrones. git diff --check sin errores de espacios; avisos de normalización CRLF/LF. SVG canónico cotejado byte a byte contra HEAD, idéntico.
+
+## B085 — Figura ajustada por Miguel incorporada a v5
+
+Fecha de registro: 2026-10-12. Prompt: P-ME-062. Se conservan SVG y PNG ajustados por Miguel (cuña de ampliación, retirada de «Detalle» y su línea), con huellas en presentaciones/img/iie-2018-pixeles-holdridge-edicion.json. La figura se incorpora como diapositiva 12 completa en output/Introduccion-iie3t-redes-bayesianas-v5-mapa-pixeles.pptx, 17 diapositivas, entre el mapa nacional y los plates anidados. Se preservan v5 y v5mig locales. La fuente v5 se coteja por SHA-256 antes/después, idéntica. El generador cartográfico escribe ahora con sufijo -base para evitar sobrescribir el ajuste manual; el JSON previo documenta los datos, no una regeneración de la edición de Miguel.
+
+Autoría de la nueva diapositiva con Artifact Tool; inserción de sus partes en el paquete original mediante insertar-slide-pptx.py para preservar maestros, objetos y relaciones de las diapositivas previas. Numeración posterior desplazada. Constructor completo y verificador v5 actualizados; el constructor no reproduce otros cambios manuales del PPTX. Notas con procedencia, resoluciones 250/≈850 m, lectura del índice, significado de la cuña y ejercicio. La imagen incrustada es raster; el SVG editable permanece externo. Rótulos pequeños requieren acercamiento para lectura fina en proyección.
+
+Verificaciones: finalizador de integridad, geometría, fuentes e importación completado con recibo en .local/slides-intro/v5-mapa-pixeles/validation.json; 17 renders exportados. .venv/Scripts/python.exe presentaciones/verificar-v5.py pasa: 17 diapositivas/notas, 13 conectores anclados, 3 discontinuos, 3 tablas nativas, posterior [0.8,0.2], imágenes originales y PNG aprobado preservados. Comparación visual computada: once renders idénticos byte por píxel; los cinco posteriores difieren exclusivamente en el rectángulo de numeración. Nueva diapositiva inspeccionada a tamaño completo y montaje general revisado. No se inspeccionó en PowerPoint nativo.
+
+Incidencias resueltas: la relación de imagen del paquete de inserción usaba una ruta absoluta OOXML y se corrigió su resolución; primer intento de finalización sin RUNTIME_NODE_MODULES falló antes de entregar. Configurada la variable, el recibo y los 17 renders se completaron. Node cerró con código 1 después de reportar los productos, sin diagnóstico adicional, igual que en construcciones anteriores; no se presenta ese cierre como código 0. Verificación independiente del PPTX con Python: código 0. git diff --check sin errores (avisos CRLF/LF). Sin cambios al blog, commit, push, fusión ni publicación.
+
+## B086 — Nombre consolidado de v5 después de la limpieza local
+
+Fecha de registro: 2026-10-12. Prompt: P-ME-063. Miguel comunica eliminación de variantes y renombrado del entregable con mapa de píxeles a Introduccion-iie3t-redes-bayesianas-v5.pptx. Comprobado que es la única variante v5 en output y que su SHA-256 coincide con el recibo final de B085. Actualizados nombre por defecto del constructor/verificador, referencia vigente de presentaciones/README y PLAN. Nombres antiguos conservados en entradas históricas. Las utilidades de inserción requieren ahora V5_SOURCE_16 explícito y la fase de preparación rechaza fuentes distintas de 16 diapositivas, evitando tratar la v5 consolidada como fuente anterior.
+
+Verificación: .venv/Scripts/python.exe presentaciones/verificar-v5.py pasa con 17 diapositivas/notas, 13 conectores anclados, 3 discontinuos, 3 tablas y figura aprobada preservada; comparación SHA-256 idéntica a la entrega anterior. git diff --check sin errores, con avisos CRLF/LF. No se modifica el PPTX ni se regenera la figura; no se ejecutan las utilidades históricas de inserción. Sin commit, push o publicación.
+
+## B087 — Propuesta de sección Lecturas para la PWA
+
+Fecha de registro: 2026-11-13. Prompt: P-ME-064. A partir de la sugerencia de Octavio, se propone una pestaña junto a Agenda para sugerir referencias, debatir su pertinencia y acordar una discusión o aplicación vinculada a un objetivo. Se consultaron la navegación local, la pauta de elección del semillero y el destino bibliográfico en Zotero. Pendiente de valoración por el equipo antes de implementar.
+
+2026-11-17 · P-ME-136 · Consolidación del mapa en semillero-v0. Fuentes, figura aprobada, metadatos y dependencias cartográficas incorporados. El registro local de prompts se conserva en prompts/miguel-mapa-iie-pixeles.md; la decisión cartográfica ocupa D31. El verificador actualizado pasa sobre la presentación publicada de 17 diapositivas, preservando figura y originales. El generador cartográfico fue reejecutado en Fragaria con los GeoTIFF locales: 64 valores y clases cotejados, rango 0–1 y salidas base separadas. La imagen original de México se recupera por SHA-256 desde el PPTX publicado. Los originales y las salidas base continúan locales.
+
+Verificación P-ME-136: 17 pruebas Node y 13 Python correctas; scripts/site.py check reejecutó R/Python y verificó 24 páginas y enlaces. El constructor JavaScript pasa comprobación de sintaxis; se verifica el PPTX publicado y se regenera la base cartográfica, sin declarar una reconstrucción completa del PPTX. En la carpeta habitual se conserva un respaldo privado de 47 archivos con huellas y un stash identificado de los cambios originales.

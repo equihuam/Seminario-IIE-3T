@@ -4,6 +4,10 @@ title: "Semillero de ideas"
 
 Una pregunta basta para empezar: **¿qué propones explorar y por qué importa?** Comparte tu propuesta durante el cierre de una sesión o entrégala a la coordinación como texto, usando si quieres la [plantilla de ficha](plantilla.qmd). Este sitio reúne las fichas; no recibe envíos mediante un formulario.
 
+::: {#temporal-app-semillero .callout-warning .marca-temporal title="Piloto de registro · versión 0" icon="true"}
+La [aplicación del Semillero](../app/index.html) permite preparar y descargar una aportación para tu repositorio. El envío central requiere que la coordinación configure Supabase y habilite tu correo; la aplicación indica si está en modo local. La recepción no publica automáticamente tu propuesta. El piloto está pendiente de prueba con participantes.
+:::
+
 ## Registro de ideas
 
 Las primeras cuatro propuestas proceden del coordinador del seminario. Se registraron el 9 de octubre de 2026; las fichas son reformulaciones concisas, con asistencia de IA, de su aportación.

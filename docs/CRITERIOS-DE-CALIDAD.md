@@ -65,3 +65,7 @@ Separar reproducción de la clasificación experta y validación ecológica inde
 Actualización P-ME-041 (2026-10-10): la ficha Zotero v1.3 se adapta a carta con tamaños de letra conservados; el CSS del semillero sigue pendiente fuera de este cambio.
 
 Actualización P-ME-044 (2026-10-10): queda superado el pendiente anterior del CSS del semillero; adaptado a carta y comprobado mediante exportación PDF y revisión visual de las cuatro fichas y la plantilla.
+
+## Puntuación de encabezados
+
+Al revisar un documento, una diapositiva o una pantalla, comprobar que los títulos, subtítulos, cabeceras y epígrafes independientes carezcan de punto final, tanto si caben en un renglón como si se distribuyen en varios. Las preguntas y exclamaciones conservan sus signos de cierre. Acuerdo P-ME-094. [Ortografía de la lengua española, § 3.4.1.2.1](https://www.rae.es/ortograf%C3%ADa/uso-del-punto-en-algunos-contextos-espec%C3%ADficos) y [Libro de estilo de la Justicia, «Casos en los que no se escribe punto»](https://www.rae.es/libro-estilo-justicia/signos-de-puntuaci%C3%B3n/el-punto/casos-en-los-que-no-se-escribe-punto).

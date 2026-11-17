@@ -1,6 +1,7 @@
 project:
   type: website
   output-dir: _site
+  pre-render: node ../scripts/generate-calendar.mjs
   render:
     - index.qmd
     - empieza-aqui.qmd
@@ -14,6 +15,7 @@ project:
     - exploraciones/**/*.qmd
     - presentaciones/**/*.qmd
   resources:
+    - app/**
     - img/Modelo de tres capas.svg
     - img/favicon.svg
     - img/seminario-icono.svg
