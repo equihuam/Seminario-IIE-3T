@@ -16,6 +16,34 @@ SECRET_PATTERNS = [
     rb"\bsk-(?:proj-)?[A-Za-z0-9_-]{32,}\b",
 ]
 
+# Explicitly preserved branch history has its own namespace (see its preamble).
+PROMPT_ARCHIVES = {"prompts/miguel-mapa-iie-pixeles.md"}
+
+
+def prompt_identifiers(name, content):
+    """Return real Markdown entry headings, ignoring comments and code samples."""
+    if not (name.startswith("prompts/") and name.endswith(".md")):
+        return []
+    text = content.decode("utf-8-sig")
+    text = re.sub(r"<!--.*?(?:-->|\Z)",
+                  lambda m: "\n" * m.group().count("\n"), text, flags=re.S)
+    entries = []
+    fence = None
+    for number, line in enumerate(text.splitlines(), 1):
+        marker = re.match(r"^ {0,3}(`{3,}|~{3,})(.*)$", line)
+        if marker:
+            token, rest = marker.groups()
+            if fence is None:
+                fence = token
+            elif token[0] == fence[0] and len(token) >= len(fence) and not rest.strip():
+                fence = None
+            continue
+        if fence is None:
+            heading = re.match(r"^ {0,3}#{1,6}\s+(P(?:-ME-|-OE-)?\d+)\b", line)
+            if heading:
+                entries.append((heading.group(1), number))
+    return entries
+
 
 def is_approved_presentation(p, in_index=False):
     if p.suffix != ".pptx":
@@ -53,6 +81,7 @@ def check_index(root=ROOT):
     entries = subprocess.check_output(["git", "ls-files", "--stage", "-z"], cwd=root).split(b"\0")
     failures = []
     count = 0
+    prompt_locations = {}
     for entry in filter(None, entries):
         meta, name_raw = entry.split(b"\t", 1)
         mode, oid, stage = meta.split()
@@ -70,12 +99,27 @@ def check_index(root=ROOT):
             continue
         content = subprocess.check_output(["git", "cat-file", "blob", oid.decode()], cwd=root)
         failures.extend(f"{name}: {error}" for error in issues(name, content, in_index=True))
+        try:
+            identifiers = prompt_identifiers(name, content)
+        except UnicodeDecodeError:
+            failures.append(f"{name}: registro de prompts debe estar en UTF-8")
+            continue
+        scope = name if name in PROMPT_ARCHIVES else "canonical"
+        for identifier, line in identifiers:
+            key = (scope, identifier)
+            location = f"{name}:{line}"
+            if key in prompt_locations:
+                failures.append(f"{location}: identificador duplicado {identifier}; "
+                                f"primera aparición en {prompt_locations[key]}")
+            else:
+                prompt_locations[key] = location
     if not count:
         failures.append("el índice no contiene archivos")
     if failures:
         print("\n".join(failures), file=sys.stderr)
         return 1
-    print(f"Índice revisado: {count} archivos; tamaño y patrones conocidos correctos.")
+    print(f"Índice revisado: {count} archivos; tamaño, patrones conocidos "
+          "e identificadores de prompts correctos.")
     return 0
 
 

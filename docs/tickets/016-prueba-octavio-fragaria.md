@@ -50,6 +50,8 @@ Esto respalda el aislamiento del metadato por RLS. La captura, por sí sola, no 
 No adjuntar códigos OTP, contraseñas, tokens, ZIPs privados ni documentos originales. No contactar a Octavio ni solicitar acceso a su cuenta como parte de esta revisión.
 
 ## Trazabilidad
+Nota editorial (2026-11-17, P-ME-138): P-ME-087–095 de este ticket corresponden a P-ME-140–148; véase [concordancia](../../prompts/CONCORDANCIA-MIGUEL.md). Se conserva la cita histórica siguiente y no se edita el issue remoto.
+
 `prompts/miguel.md`: P-ME-087–095. `BITACORA.md`: B101–B105. La captura y el protocolo provienen de Miguel; los contrastes SQL se describen en B101; el cierre confirmado, en B102; el alcance del protocolo, en B103. No hay autorización de fusión a main en este ticket.
 
 2026-11-13 · P-ME-118 · GitHub #16. Cerrada la batería de acceso cruzado de T009 para el adjunto probado. Fragaria conserva el acuse de la versión 1 con descarga del propietario verificada por SHA256. El HTML del ZIP de navegador usa la misma ruta y verifica la cuenta distinta. El ticket de oficina documenta la captura de Octavio (HTTP 400 · Object not found) y el contraste RLS sobre el objeto existente. Nombre y huellas en private/t009/conciliacion-16.txt. Próximo paso: respaldo de tablas y adjuntos antes de la limpieza y carga. Las referencias históricas P-ME-086–095 y B100 en adelante se interpretan por procedencia y título cuando sus números coinciden entre oficina y Fragaria.

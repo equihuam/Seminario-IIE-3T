@@ -293,6 +293,8 @@ Actualización P-ME-115: recibido el correo de Daniel (I006). La carga sigue pen
 
 P-ME-117. Se mantiene Supabase para el acceso de los participantes al Semillero desde la PWA. MariaDB en el NAS queda como opción para uso particular o para grupos con acceso privado.
 
+Nota editorial (2026-11-17, P-ME-138): en las tres entradas siguientes de Octavio, P-ME-087–089 → P-ME-140–142, P-ME-090 → P-ME-143 y P-ME-095 → P-ME-148. Véase [concordancia](prompts/CONCORDANCIA-MIGUEL.md).
+
 **Evidencia P-ME-087–089/B101:** captura aportada por Miguel informa sesión de Octavio verificada y descarga ajena fallida (HTTP 400, Object not found). Contraste SQL de solo lectura: sobre el mismo objeto existente, propietario ve un registro y Octavio cero; bucket privado y política por carpeta de autor conservados. Esto respalda aislamiento del metadato, pero no acredita descarga HTTP del propietario ni lectura del código de prueba. El ZIP está en private de la laptop; Miguel aplaza su revisión para Fragaria. Conservar pendiente el control positivo y el cotejo de ruta/huella, sin cerrar T009.
 
 **Cierre de batería P-ME-090/B102:** Miguel confirma que ya realizó el trabajo en Fragaria y que la prueba de Octavio cierra la batería. Se da por cerrado ese bloque de pruebas por confirmación del responsable; no se vuelve a solicitar ni repetir el control pendiente de B101. Se conserva la distinción entre evidencia observada aquí y ejecución comunicada desde Fragaria. Este cierre no equivale a aprobar/fusionar el PR #15 ni a verificar publicación; tampoco acredita por sí mismo los demás compromisos operativos de T009 que no formen parte de esa batería.
@@ -327,6 +329,8 @@ Actualización P-ME-063: Miguel eliminó las variantes anteriores y consolidó e
 ## Estado vigente de la consolidación — P-ME-136
 2026-11-17. La versión canónica de trabajo reúne mapa, presentación publicada de 17 diapositivas y tablero en miguel/semillero-v0. Se conservan los antecedentes locales en prompts/miguel-mapa-iie-pixeles.md y D31. La carpeta habitual de Fragaria pasa a esta rama; el worktree de preparación queda en HEAD separado al completar la entrega. El siguiente paso editorial es la revisión y fusión del PR por Miguel.
 
+2026-11-17 · P-ME-149 · Unicidad de identificadores de prompts comprobada por scripts/check_repo.py y el hook de commit; workflow repository-policy preparado para push/PR. Pasaron 16 pruebas Python. Cada equipo debe activar core.hooksPath=.githooks; exigir el check en main requiere configuración del administrador.
+
 ## Navegación del blog — P-ME-151 (2026-11-17)
 
 Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al Tablero. Aviso del Semillero actualizado al piloto compartido. Blog regenerado y verificado (24 páginas); navegación comprobada en Edge a 1366 y 390 px. Pendiente: merge del PR por Miguel y comprobación posterior de publicación. La tabla del índice del Semillero conserva un desbordamiento móvil; su HTML es idéntico al de main y queda fuera de este ajuste de navegación.
@@ -334,3 +338,5 @@ Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al 
 ## Tablero v1 aprobado — P-ME-152 (2026-11-17)
 
 Miguel comunica la aprobación conjunta con Octavio para entregar el Tablero a participantes. Rótulo v1 visible en la PWA y aviso del Semillero actualizado; paquete público regenerado en apps/_pwa-control-clase. Se conserva la compatibilidad de los registros existentes. Pendientes de publicación: merge del PR del blog y subida manual de la carpeta habitual al sitio independiente de Netlify.
+
+Actualización P-ME-153 (2026-11-17): incorporado main con el PR #17 a la rama del PR #18 y resueltos los conflictos de registros conservando ambos historiales. Pasaron 16 pruebas Python y la reconstrucción/verificación de 24 páginas. El menú y Tablero v1 permanecen listos para el merge de Miguel.
