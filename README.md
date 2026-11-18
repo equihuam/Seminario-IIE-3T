@@ -74,6 +74,7 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 - [Entornos y ejecución](ENVIRONMENT.md): instalación, reproducción, vista previa y controles de Git.
 - [Operación del blog](docs/OPERACION-BLOG.md): incorporación de sesiones y revisión editorial.
 
+- [Tutoriales y ayudas de capacitación](tutoriales/README.md): catálogo transversal de IA agéntica, Git y Zotero; los materiales fuente conservan sus ubicaciones.
 - [AGENTS.md](AGENTS.md): pautas para el trabajo asistido dentro de este proyecto.
 - [Git + IA: colaboración de Miguel y Octavio](docs/COLABORACION-GIT-IA.md): reglas, encargos y ficha imprimible de consulta, fuera del blog.
 - [Plan de trabajo](PLAN.md): estado y próximos entregables.
