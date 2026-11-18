@@ -18,6 +18,18 @@ Este directorio es un **punto de entrada común** para las guías metodológicas
 
 Las tres se complementan; no son equivalentes. Git registra cambios, pero no demuestra por sí mismo que un resultado científico sea reproducible.
 
+## Criterio para incorporar nuevas ayudas
+
+Una ayuda de capacitación puntual debe resolver una tarea concreta y poder utilizarse sin leer toda la documentación del proyecto. Al incorporarla, indicar:
+
+- **Objetivo y público:** qué aprenderá o podrá hacer la persona.
+- **Prerrequisitos y pasos:** herramientas, permisos y secuencia breve, sin presuponer accesos no comprobados.
+- **Resultado verificable:** cómo comprobar que la práctica funcionó.
+- **Fuente canónica y vigencia:** enlace al material editable o mantenido y advertencia cuando una publicación no tenga sus fuentes versionadas.
+- **Límites y seguridad:** qué operaciones requieren aprobación, especialmente escrituras, publicación y acceso a servicios.
+
+Usar preferentemente un subdirectorio por tema, sin imponer que toda ayuda se convierta en un curso extenso. Los manuales técnicos, las normas de operación y las fuentes de Quarto pueden seguir donde están y aparecer aquí mediante enlaces.
+
 ## Uso y mantenimiento
 
 - Los tutoriales transversales nuevos pueden incorporarse como subdirectorios con un `README.md`.
