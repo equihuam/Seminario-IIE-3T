@@ -125,6 +125,21 @@ Una persona inicia una rama y propone una mejora al tutorial; un agente revisa o
 - [Guía de Git + IA del seminario](../../docs/COLABORACION-GIT-IA.md)
 - [Actividad Zotero + IA del seminario](../../blog/recursos/zotero.qmd)
 
+## Integración reproducible de la fuente web
+
+Cuando se disponga del paquete original `antigravity-guia-netlify`, incorporar sus archivos **sin reescribirlos ni sustituirlos por el HTML servido por Netlify**. Mantener la estructura de carpetas y las rutas relativas del paquete bajo `tutoriales/antigravity/web/`, salvo que la inspección de sus referencias exija otra ubicación documentada.
+
+Antes de incorporarlo:
+
+1. Inventariar `index.html`, hojas CSS, scripts JavaScript y recursos necesarios; anotar archivos faltantes y licencias de recursos externos.
+2. Verificar que los enlaces internos y recursos locales resuelvan desde `web/index.html`, sin depender de rutas del equipo donde se produjo.
+3. Abrir la copia local en navegador y comprobar navegación, interacción y legibilidad en escritorio y móvil; registrar qué se probó realmente.
+4. Revisar que no incluya credenciales, tokens, datos privados ni archivos generados innecesarios.
+5. Comparar con el sitio publicado y documentar diferencias; **incorporar la fuente al repositorio no implica desplegarla**.
+6. Actualizar este documento con la procedencia, fecha, archivos incorporados y procedimiento de publicación antes de solicitar integración del PR.
+
+**Criterio de cierre:** fuente original completa versionada, referencias internas verificadas y revisión visual documentada. Si el paquete original no está disponible, conservar este pendiente explícito y no representar el sitio publicado como si sus fuentes estuvieran en Git.
+
 ## Estado de la fuente publicable
 
 El HTML original se produjo en otra conversación de ChatGPT y fue publicado manualmente en Netlify. Para traerlo **completo** al repositorio local, importar la carpeta `antigravity-guia-netlify` de la entrega final original en un cambio adicional. No sustituirla por una recreación parcial ni vincular su actualización al build Quarto hasta definirlo explícitamente.
