@@ -18,6 +18,8 @@ class NetlifyPwa(unittest.TestCase):
         blog = tomllib.loads((ROOT / "netlify.toml").read_text())
         pwa = tomllib.loads((ROOT / "apps/pwa/netlify.toml").read_text())
         self.assertEqual(blog["build"]["publish"], "blog/_site")
+        self.assertNotIn("base", blog["build"])
+        self.assertNotIn("base", pwa["build"])
         self.assertEqual(pwa["build"]["publish"], ".netlify/pwa-public")
         self.assertIn("prepare_netlify_pilot.py", pwa["build"]["command"])
 

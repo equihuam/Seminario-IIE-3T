@@ -5,6 +5,9 @@ Proyecto Netlify: `dash-seminario-iie`. Producción: rama `main`.
 Usar base `/` y **Package directory `apps/pwa`** en Netlify. Este directorio
 contiene la configuración propia del Tablero; sus rutas son relativas a la
 raíz. El `netlify.toml` raíz sigue perteneciendo al blog `seminario-iie`.
+No declarar `base` en ninguno de los dos TOML: se usa la raíz predeterminada.
+El panel del blog también debe tener Base directory vacío; una ruta histórica
+como `blog\_site` deja de estar enmascarada al retirar la base del TOML.
 
 Cada despliegue prepara `.netlify/pwa-public` desde la salida revisada y
 versionada `blog/_site/app/`. Copia únicamente la lista pública del generador,

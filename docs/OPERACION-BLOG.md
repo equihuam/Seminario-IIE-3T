@@ -28,7 +28,7 @@ El proyecto usa ejecución sin congelación para esta base pequeña. Si más ade
 
 Dirección de producción confirmada por Miguel en P-ME-056: **[https://seminario-iie.netlify.app/](https://seminario-iie.netlify.app/)**. Es el destino para las comprobaciones posteriores a la integración de un PR en `main`.
 
-El archivo `netlify.toml` de la raíz fija `base = "."` y `publish = "blog/_site"`. La base es la raíz del repositorio: allí están los entornos, scripts y el SVG original. En el panel de Netlify, eliminar la base incorrecta (`..` o `/opt/build`), dejar Base directory vacío o `.` y Package directory vacío. La salida que se publica es `blog/_site`, nunca la raíz del proyecto ni las fuentes de `blog`.
+El archivo `netlify.toml` de la raíz fija `publish = "blog/_site"` y deja la base predeterminada en la raíz del repositorio. En el panel del blog, dejar Base directory y Package directory vacíos; el comando es `test -f blog/_site/index.html` y Publish directory es `blog/_site`. No usar `blog\_site` como base. Desde P-ME-170 se omite `base` en los archivos TOML para permitir la resolución de la configuración propia de la PWA por paquete. La salida del blog es `blog/_site`, nunca la raíz del proyecto ni sus fuentes.
 
 Por indicación del usuario (P022), se versionan las fuentes, `blog/img/` y la salida completa `blog/_site/`, incluidos HTML, estilos, JavaScript, fuentes tipográficas, imágenes y búsqueda. Netlify no ejecuta R ni Python: el comando `test -f blog/_site/index.html` comprueba que existe la portada y se publica esa carpeta. Las cachés `.quarto`, los cuadernos temporales, entornos, credenciales y archivos voluminosos siguen excluidos.
 
