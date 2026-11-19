@@ -1,6 +1,7 @@
 """Guard separation of the public PWA package from the blog and private files."""
 import importlib.util
 import json
+import re
 from pathlib import Path
 import tempfile
 import tomllib
@@ -49,3 +50,19 @@ class NetlifyPwa(unittest.TestCase):
             self.assertIn(PILOT.BLOG, page)
             self.assertIn("/app/sw.js\n  Cache-Control: no-cache", (target / "_headers").read_text())
             self.assertIn("application/manifest+json", (target / "_headers").read_text())
+
+
+    def test_real_module_imports_and_service_worker_assets_are_packaged(self):
+        app = ROOT / "blog/_site/app"
+        for name in PILOT.FILES:
+            if name.endswith(".mjs"):
+                source = (app / name).read_text(encoding="utf-8")
+                imports = re.findall(r"(?:from\s*|import\s*)['\"](\./[^'\"]+)['\"]", source)
+                for dependency in imports:
+                    with self.subTest(module=name, dependency=dependency):
+                        self.assertIn(dependency[2:], PILOT.FILES)
+                        self.assertTrue((app / dependency[2:]).is_file())
+        shell = (app / "sw.js").read_text(encoding="utf-8")
+        for asset in re.findall(r"['\"]\./([^'\"]+)['\"]", shell):
+            with self.subTest(cached_asset=asset):
+                self.assertIn(asset, PILOT.FILES)

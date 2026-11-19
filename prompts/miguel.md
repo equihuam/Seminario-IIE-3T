@@ -1781,3 +1781,11 @@ Fecha de registro: 2026-11-18. Hora de emisión no disponible.
 ```text
 Aplica la migración en Supabase, verifica que funcione y haz commit y push. Abre el PR para que yo lo revise y haga el merge.
 ```
+
+## P-ME-175 — Verificar publicación del PR 22
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Listo, ya hice el merge del PR #22. Revisa que la actualización se haya publicado correctamente en la PWA.
+```
