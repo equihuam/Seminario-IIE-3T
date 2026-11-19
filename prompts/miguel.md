@@ -1789,3 +1789,38 @@ Fecha de registro: 2026-11-18. Hora de emisión no disponible.
 ```text
 Listo, ya hice el merge del PR #22. Revisa que la actualización se haya publicado correctamente en la PWA.
 ```
+
+## P-ME-177 — Diagnóstico para reiniciar el registro de lecturas
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Queremos hacer un reinicio del registro de lecturas.
+
+1. Dime que está registrado actualmente, si puedes identificar "pruebas" señálalas.
+2. &#x20;Si todo es calificado como "prueba" las podremos borrar para iniciar el PWA en "producción"
+```
+
+## P-ME-178 — Respaldar y borrar las lecturas de prueba
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Confirmo que las cuatro lecturas y sus comentarios son pruebas. Haz un respaldo y bórralos para iniciar el registro en producción, conservando el catálogo de Zotero y los accesos de los participantes.
+```
+
+## P-ME-179 — Ejecutar reinicio y verificar PWA
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Confirmo. Ejecuta ahora el borrado de las cuatro lecturas y sus tres comentarios, conservando el catálogo de Zotero y los accesos. Verifica que el registro quede vacío en la PWA. No hay que modificar nada en Zotero
+```
+
+## P-ME-180 — Entregar registros del reinicio mediante PR
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Haz commit y push de los registros de este reinicio y abre un PR hacia main para que yo lo revise. Conserva el respaldo privado fuera de Git.
+```
