@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Guía introductoria en español para aprender IA agéntica con Google Antigravity: proyectos, roles, prompts, Git, GitHub, colaboración y verificación.">
+  <meta name="theme-color" content="#102c3b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Primeros pasos con IA agéntica y Antigravity">
+  <meta property="og:description" content="Una guía práctica para definir proyectos, coordinar agentes, diseñar prompts y comprobar resultados.">
+  <title>Primeros pasos con IA agéntica y Antigravity</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+ <div class="header-inner">
+  <a class="brand" href="#inicio" aria-label="Ir al inicio"><span class="brand-mark">✳</span><span>IA <strong>en práctica</strong></span></a>
+  <nav class="desktop-nav" aria-label="Navegación principal">
+   <a href="#proyecto">Proyecto</a><a href="#equipo">Agentes</a><a href="#tutorial">Práctica</a><a href="#modalidades">Colaborar</a><a href="#lecturas">Recursos</a>
+  </nav>
+  <div class="header-actions"><button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobileNav"><span aria-hidden="true">☰</span><span class="menu-label">Menú</span></button><button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema">◐ <span>Tema</span></button><a class="small-cta" href="#tutorial">Empezar <span aria-hidden="true">↗</span></a></div>
+ </div>
+ <nav class="mobile-nav" id="mobileNav" aria-label="Navegación móvil" hidden>
+  <a href="#proyecto">Definir proyecto</a><a href="#equipo">Roles y agentes</a><a href="#prompts">Diseñar prompts</a><a href="#tutorial">Tutorial Antigravity</a><a href="#colaboracion">Git y GitHub</a><a href="#modalidades">Tres formas de colaborar</a><a href="#lecturas">Lecturas y recursos</a>
+ </nav>
+</header>
+<main id="contenido">
+<section class="hero" id="inicio" aria-labelledby="hero-title"><div class="hero-grid">
+ <div class="hero-copy"><p class="eyebrow"><span class="eyebrow-dot"></span>GUÍA INTRODUCTORIA · EDICIÓN EN ESPAÑOL</p>
+  <h1 id="hero-title">De conversar con la IA a <em>dirigir un equipo de agentes</em></h1>
+  <p class="hero-description">Una introducción clara y práctica a la inteligencia artificial agéntica, con <strong>Google Antigravity</strong> como entorno de aprendizaje. Empieza por definir un proyecto, aprende a distribuir responsabilidades y utiliza prompts para organizar el trabajo.</p>
+  <div class="hero-buttons"><a class="btn btn-primary" href="#proyecto">Comenzar a leer <span aria-hidden="true">↘</span></a><a class="btn btn-outline" href="#tutorial">Ir al ejercicio práctico</a></div>
+  <div class="hero-meta"><span>◷ 35 min de lectura</span><span>◇ 45–60 min de práctica</span><span>↗ Sin programación previa</span></div>
+ </div>
+ <div class="hero-art" aria-label="Diagrama: una persona coordina un agente que organiza investigación, análisis y revisión">
+  <div class="art-glow"></div><div class="art-title">EL NUEVO FLUJO DE TRABAJO</div>
+  <div class="diagram-node node-human"><span class="node-icon">◎</span><div><strong>Dirección humana</strong><small>Objetivos · criterio · decisiones</small></div><span class="node-badge">01</span></div>
+  <div class="diagram-connector"><span></span></div>
+  <div class="diagram-node node-center"><span class="node-icon">✳</span><div><strong>Agente coordinador</strong><small>Planifica · asigna · integra</small></div><span class="node-badge">02</span></div>
+  <div class="diagram-branches"><span></span><span></span><span></span></div>
+  <div class="diagram-team"><div><span class="team-icon">⌕</span><b>Investigación</b><small>Fuentes</small></div><div><span class="team-icon">▥</span><b>Análisis</b><small>Datos</small></div><div><span class="team-icon">✓</span><b>Revisión</b><small>Calidad</small></div></div>
+  <p class="art-footer">AUTONOMÍA CON LÍMITES · RESULTADOS VERIFICABLES</p>
+ </div>
+ </div></section>
+<section class="intro strip"><div class="strip-grid"><div><span class="section-kicker">01 / COMPRENDER</span><h2>¿Qué cambia con la IA agéntica?</h2></div><div><p>Con un chatbot solemos preguntar y recibir respuestas. Con un agente podemos definir una meta y autorizar una secuencia de acciones: leer archivos, planear, utilizar herramientas, producir entregables y revisarlos.</p><p class="emphasis">La autonomía no reemplaza el juicio humano: amplifica lo que podemos organizar, hacer y verificar.</p></div></div>
+<div class="compare"><div class="compare-card"><div class="compare-heading"><span>↔</span><h3>IA conversacional</h3></div><div class="pill-step">Persona pregunta</div><div class="step-arrow">↓</div><div class="pill-step">IA responde</div><div class="step-arrow">↓</div><div class="pill-step">Persona continúa</div></div><div class="compare-card compare-card-highlight"><div class="compare-heading"><span>✳</span><h3>IA agéntica</h3></div><div class="pill-step">Persona define objetivo</div><div class="step-arrow">↓</div><div class="pill-step">Agentes planifican y ejecutan</div><div class="step-arrow">↓</div><div class="pill-step">Se verifican entregables</div></div></div></section>
+<section class="section" id="proyecto"><div class="section-head"><div><span class="section-kicker">02 / DEFINIR</span><h2>Empieza por el proyecto,<br><em>no por el prompt</em></h2></div><p>Un objetivo bien delimitado reduce ambigüedades, facilita la supervisión y permite valorar si el trabajo está terminado.</p></div>
+<p>Imaginemos que queremos elaborar un diagnóstico ambiental de un parque urbano. Pedir «investiga el parque y haz un informe» deja demasiado a la interpretación. Antes de comenzar, contesta estas cinco preguntas:</p>
+<div class="questions"><div><span>01</span><strong>¿Qué queremos lograr?</strong><small>Caracterizar ambientalmente un parque</small></div><div><span>02</span><strong>¿Qué información tenemos?</strong><small>Fotografías, observaciones y una tabla</small></div><div><span>03</span><strong>¿Qué vamos a entregar?</strong><small>Informe breve y tabla de resultados</small></div><div><span>04</span><strong>¿Qué límites debemos respetar?</strong><small>No inventar datos ni modificar originales</small></div><div><span>05</span><strong>¿Cómo evaluaremos el resultado?</strong><small>Fuentes claras, archivos y método verificables</small></div></div>
+<div class="content-split"><div><h3>El documento fundador</h3><p>Escribe estas decisiones en <code>PROYECTO.md</code>. Un archivo sencillo funciona como referencia común para la persona y los agentes.</p><p>El nombre es una convención útil de organización, no un comando especial de Antigravity.</p><div class="tip"><span>✦</span><p>Una página precisa suele ser más útil que diez páginas ambiguas.</p></div></div><div class="code-card"><div class="code-header"><span><i class="file-dot"></i> PROYECTO.md</span><button class="copy-btn" data-copy="project" type="button">Copiar ↗</button></div><pre id="project"><code># Proyecto: Diagnóstico ambiental de un parque urbano
+
+## Propósito
+Caracterizar las condiciones ambientales del parque,
+distinguiendo datos observados e interpretaciones.
+
+## Materiales
+- Fotografías del parque
+- Tabla de observaciones
+- Documentos de referencia
+
+## Entregables
+1. Informe en Markdown
+2. Tabla de resultados en CSV
+3. Lista de aspectos por verificar
+4. Registro de las actividades realizadas
+
+## Restricciones
+- No inventar datos, referencias ni resultados.
+- No modificar los documentos originales.
+- Pedir autorización antes de eliminar archivos
+  o acceder a servicios externos.
+- Explicar los procedimientos utilizados.
+
+## Criterios de aceptación
+Resultados comprensibles, verificables,
+documentados y reproducibles.
+
+## Responsable
+La persona usuaria revisa los resultados
+y autoriza las decisiones importantes.</code></pre></div></div>
+</section>
+<section class="section tinted" id="equipo"><div class="section-head"><div><span class="section-kicker">03 / ORGANIZAR</span><h2>Diseña tu equipo<br><em>de agentes</em></h2></div><p>Los roles separan responsabilidades, recursos, productos y criterios de revisión. No necesitas crear varios agentes independientes para beneficiarte de esta organización.</p></div>
+<div class="roles-grid"><article class="role-card"><div class="role-icon">✳</div><div class="role-num">ROL 01</div><h3>Coordinador</h3><p>Descompone el objetivo, prepara el plan y reúne los entregables.</p><div class="role-product">→ Plan de trabajo</div></article><article class="role-card"><div class="role-icon">⌕</div><div class="role-num">ROL 02</div><h3>Investigador</h3><p>Examina documentos y antecedentes, y conserva referencias.</p><div class="role-product">→ Resumen con fuentes</div></article><article class="role-card"><div class="role-icon">▥</div><div class="role-num">ROL 03</div><h3>Analista</h3><p>Organiza y procesa datos, distingue evidencia de interpretación.</p><div class="role-product">→ Tablas y resultados</div></article><article class="role-card"><div class="role-icon">✓</div><div class="role-num">ROL 04</div><h3>Revisor</h3><p>Busca errores, omisiones e inconsistencias antes de dar por terminado el trabajo.</p><div class="role-product">→ Informe crítico</div></article></div>
+<div class="note"><strong>Consejo práctico</strong><p>En un proyecto pequeño, un mismo agente puede cumplir varios roles sucesivamente. Aumenta la especialización solo cuando aporte una ventaja real y verificable.</p></div></section>
+<section class="section" id="prompts"><div class="section-head"><div><span class="section-kicker">04 / INSTRUIR</span><h2>El diseño de prompts<br><em>sí importa</em></h2></div><p>Un prompt útil hace explícito qué queremos, con qué recursos, qué no se debe hacer y cómo comprobaremos el resultado.</p></div>
+<div class="prompt-formula"><div><span>01</span><b>Contexto</b><small>¿De qué proyecto hablamos?</small></div><div><span>02</span><b>Objetivo</b><small>¿Qué queremos obtener?</small></div><div><span>03</span><b>Rol</b><small>¿Qué responsabilidad asume?</small></div><div><span>04</span><b>Recursos</b><small>¿Qué herramientas o archivos?</small></div><div><span>05</span><b>Restricciones</b><small>¿Qué no está permitido?</small></div><div><span>06</span><b>Entregables</b><small>¿Qué debe producir?</small></div><div><span>07</span><b>Verificación</b><small>¿Cómo demostrará su calidad?</small></div></div>
+<h3>Tu primer prompt de coordinación</h3><p>Cópialo y adáptalo al proyecto que acabas de definir.</p>
+<div class="code-card wide"><div class="code-header"><span><i class="file-dot"></i> PROMPT · DISEÑO DEL EQUIPO</span><button class="copy-btn" data-copy="promptTeam" type="button">Copiar prompt ↗</button></div><pre id="promptTeam"><code>Actúa como coordinador de un proyecto de análisis ambiental.
+
+Lee primero el archivo PROYECTO.md y utilízalo como referencia.
+
+Propón un equipo con estos roles:
+- Coordinador del proyecto.
+- Investigador documental.
+- Analista de datos.
+- Revisor de calidad.
+
+Para cada rol define:
+1. Responsabilidad.
+2. Materiales necesarios.
+3. Producto que debe entregar.
+4. Criterios de revisión.
+5. Tareas que requieren autorización humana.
+
+Organiza las actividades en una secuencia lógica,
+señalando dependencias y puntos de revisión.
+
+ANTES de ejecutar tareas, presenta el plan de trabajo.
+
+No modifiques originales, no inventes resultados y no
+accedas a servicios externos sin autorización.
+
+Una vez aprobado el plan, guárdalo en PLAN.md y
+mantén un registro de las actividades realizadas.</code></pre></div>
+</section>
+<section class="section tutorial-section tinted" id="tutorial"><div class="section-head"><div><span class="section-kicker">05 / PRACTICAR</span><h2>Tu primer proyecto<br><em>en Antigravity</em></h2></div><div class="exercise-meta"><span>◷ 45–60 min</span><span>◇ Nivel inicial</span><span>⌘ Sin programación</span></div></div>
+<p>Un ejercicio pequeño es suficiente para conocer el entorno, probar una tarea y aprender a verificar los archivos producidos. Los nombres de menús y pantallas pueden cambiar entre versiones.</p>
+<div class="timeline"><article class="timeline-step"><div class="timeline-marker">1</div><div class="timeline-body"><h3>Instala y configura</h3><p>Identifica y registra la variante (aplicación o IDE) y la versión que utilizarás. Los nombres de menús pueden variar. Descarga Antigravity desde su <a href="https://antigravity.google/download" target="_blank" rel="noopener noreferrer">sitio oficial ↗</a>, instálalo e inicia sesión con tu cuenta de Google. Si ofrece perfiles de trabajo, selecciona uno apropiado para tu actividad.</p></div></article>
+<article class="timeline-step"><div class="timeline-marker">2</div><div class="timeline-body"><h3>Crea una carpeta de proyecto</h3><p>Prepara esta estructura y abre la carpeta como proyecto o espacio de trabajo en Antigravity.</p><div class="tree"><span>📁 mi-primer-proyecto/</span><span>├── PROYECTO.md</span><span>├── 📁 datos/</span><span>├── 📁 resultados/</span><span>└── 📁 bitacora/</span></div></div></article>
+<article class="timeline-step"><div class="timeline-marker">3</div><div class="timeline-body"><h3>Presenta el prompt de coordinación</h3><p>Utiliza el prompt anterior. Primero solicita y revisa un plan de trabajo. No apruebes todavía la ejecución indiscriminada de todas las tareas.</p></div></article>
+<article class="timeline-step"><div class="timeline-marker">4</div><div class="timeline-body"><h3>Encarga una tarea pequeña</h3><p>Un inventario de archivos sirve para comprobar que el agente trabaja con materiales reales y reconoce lo que no sabe.</p><div class="code-card"><div class="code-header"><span>PROMPT · INVENTARIO</span><button class="copy-btn" data-copy="promptInventory" type="button">Copiar ↗</button></div><pre id="promptInventory"><code>Revisa los archivos de la carpeta datos/.
+
+Elabora un inventario con nombre, tipo de archivo
+y breve descripción de su posible contenido.
+
+No modifiques los archivos. Cuando no puedas
+conocer su contenido, indícalo explícitamente.
+
+Guarda el inventario en resultados/inventario.md
+y explica cómo lo elaboraste.</code></pre></div></div></article>
+<article class="timeline-step"><div class="timeline-marker">5</div><div class="timeline-body"><h3>Solicita una revisión crítica</h3><p>Contrasta el inventario con los archivos originales y pide que se señalen discrepancias. Una revisión independiente requiere otra persona o un agente separado, encargado explícitamente; identifica quién la realizó.</p><div class="code-card"><div class="code-header"><span>PROMPT · REVISIÓN</span><button class="copy-btn" data-copy="promptReview" type="button">Copiar ↗</button></div><pre id="promptReview"><code>Actúa como revisor del inventario.
+Declara si revisas tu propio trabajo. Cambiar de rol no constituye una revisión independiente.
+
+Contrasta el inventario con los archivos originales.
+Identifica nombres incorrectos, interpretaciones sin
+evidencia, archivos omitidos y afirmaciones que no
+puedas verificar.
+
+Presenta tus observaciones antes de corregir.</code></pre></div></div></article>
+<article class="timeline-step"><div class="timeline-marker">6</div><div class="timeline-body"><h3>Aprueba, documenta y cierra</h3><p>Registra qué se hizo, qué archivos se generaron, qué se verificó y qué quedó pendiente. La persona responsable da la aprobación final.</p></div></article></div>
+<div class="cycle"><span>DEFINIR</span><b>→</b><span>PLANIFICAR</span><b>→</b><span>EJECUTAR</span><b>→</b><span>VERIFICAR</span><b>→</b><span>DOCUMENTAR</span><span class="cycle-return">↻ Repetir y mejorar</span></div></section>
+<section class="section" id="conceptos"><div class="section-head"><div><span class="section-kicker">06 / PROFUNDIZAR</span><h2>Prompt, regla, habilidad<br><em>y bitácora</em></h2></div><p>Dar instrucciones una sola vez no equivale a conservarlas de manera estable. Estas piezas sirven para propósitos distintos.</p></div><div class="concepts-list"><div><strong>Prompt</strong><p>Encarga una tarea específica.</p></div><div><strong>Regla (Rule)</strong><p>Mantiene una restricción o criterio persistente.</p></div><div><strong>Habilidad (Skill)</strong><p>Documenta un procedimiento que se puede reutilizar.</p></div><div><strong>Agente especializado</strong><p>Realiza tareas desde una responsabilidad definida.</p></div><div><strong>Bitácora</strong><p>Conserva decisiones, acciones, evidencia y pendientes.</p></div></div>
+<div class="note"><strong>La diferencia importa</strong><p>«No modificar nunca los datos originales» es una buena candidata a regla permanente. «Validar un CSV y elaborar su informe» puede convertirse en un procedimiento reutilizable. Para cargar instrucciones automáticamente, consulta la sintaxis vigente de la plataforma.</p></div></section>
+<section class="section risks-section tinted" id="errores"><div class="section-head"><div><span class="section-kicker">07 / CUIDAR</span><h2>Tres errores comunes<br><em>al comenzar</em></h2></div></div><div class="risks-grid"><article><span>01</span><h3>Confundir fluidez con confiabilidad</h3><p>Un informe convincente puede contener información inventada. Pide evidencia, fuentes y reconocimiento de incertidumbre.</p></article><article><span>02</span><h3>Delegar demasiado a la vez</h3><p>Si encargas todo en un solo paso, será difícil ubicar errores. Avanza mediante tareas pequeñas y entregables revisables.</p></article><article><span>03</span><h3>Perder el registro de decisiones</h3><p>Las conversaciones pueden fragmentarse. Un proyecto, un plan y una bitácora permiten retomar el trabajo y cambiar de herramienta.</p></article></div><div class="note"><strong>Permisos limitados al empezar</strong><p>Utiliza copias de los datos, carpetas de prueba y aprobación explícita antes de borrar, publicar o acceder a servicios externos.</p></div></section>
+
+<section class="section collaboration-section" id="colaboracion" aria-labelledby="collaboration-title">
+ <div class="section-head"><div><span class="section-kicker">08 / COLABORAR</span><h2 id="collaboration-title">Un proyecto compartido:<br><em>Git y GitHub</em></h2></div><p>Cuando varias personas —y sus agentes— participan en un proyecto, necesitamos saber quién cambió qué, revisar las propuestas y conservar un historial que permita recuperar versiones anteriores.</p></div>
+ <div class="compare git-compare"><div class="compare-card"><div class="compare-heading"><span>⌁</span><h3>Git: historial de versiones</h3></div><p>Es el sistema que registra cambios en los archivos y permite crear ramas, comparar versiones y recuperar trabajo anterior. Funciona en tu computadora, incluso sin conexión.</p><p><strong>Idea para recordar:</strong> Git conserva la historia del proyecto.</p></div><div class="compare-card compare-card-highlight"><div class="compare-heading"><span>◎</span><h3>GitHub: espacio de colaboración</h3></div><p>Es un servicio que aloja repositorios Git y facilita discutir cambios, gestionar permisos y revisar propuestas mediante <em>pull requests</em>.</p><p><strong>Idea para recordar:</strong> GitHub permite compartir y revisar esa historia.</p></div></div>
+ <h3>Las seis palabras imprescindibles</h3>
+ <div class="git-glossary">
+  <div><strong>Repositorio</strong><p>Carpeta con archivos y su historial de cambios.</p></div>
+  <div><strong>Commit</strong><p>Registro de un cambio con un mensaje descriptivo.</p></div>
+  <div><strong>Rama (branch)</strong><p>Línea de trabajo separada para proponer cambios sin alterar inmediatamente la versión principal.</p></div>
+  <div><strong>Push / Pull</strong><p><em>Push</em> envía commits al repositorio remoto; <em>pull</em> incorpora cambios remotos al equipo local.</p></div>
+  <div><strong>Pull request (PR)</strong><p>Propuesta para revisar y, si se aprueba, integrar una rama a otra.</p></div>
+  <div><strong>Merge / Conflicto</strong><p><em>Merge</em> integra trabajos. Un conflicto aparece cuando Git no puede conciliar automáticamente ciertos cambios.</p></div>
+ </div>
+ <div class="git-flow" role="img" aria-label="Flujo de colaboración: actualizar, crear rama, modificar, confirmar, publicar rama, solicitar revisión e integrar."><span>Actualizar</span><b>→</b><span>Crear rama</span><b>→</b><span>Editar</span><b>→</b><span>Commit</span><b>→</b><span>Push</span><b>→</b><span>Pull request</span><b>→</b><span>Revisión y merge</span></div>
+ <div class="note"><strong>Para comenzar sin consola</strong><p>Recomendamos <a href="https://desktop.github.com/" target="_blank" rel="noopener noreferrer">GitHub Desktop</a>: permite crear repositorios, revisar diferencias, hacer commits y publicar ramas con una interfaz gráfica. Crea primero una <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer">cuenta de GitHub</a> con verificación en dos pasos.</p></div>
+ <h3>Práctica guiada · Dos personas mejoran la misma guía</h3>
+ <div class="timeline git-practice">
+  <div class="timeline-step"><div class="timeline-marker">1</div><div class="timeline-body"><h3>Persona A: crea el repositorio</h3><p>En GitHub Desktop: <strong>File → New repository</strong>. Selecciona una carpeta con <code>README.md</code> y <code>PROYECTO.md</code>, escribe un primer commit y usa <strong>Publish repository</strong>. Elige <strong>Private</strong> si el contenido no debe ser público. Invita a la persona B con los permisos necesarios.</p></div></div>
+  <div class="timeline-step"><div class="timeline-marker">2</div><div class="timeline-body"><h3>Persona B: obtiene una copia y crea su rama</h3><p>En GitHub Desktop, clona el repositorio compartido y elige <strong>Current branch → New branch</strong>. Nómbrala <code>mejora-bibliografia</code>. Así mantiene su propuesta separada de la rama principal.</p></div></div>
+  <div class="timeline-step"><div class="timeline-marker">3</div><div class="timeline-body"><h3>Persona B: cambia algo pequeño y lo registra</h3><p>Añade al <code>README.md</code> una referencia de lectura. En GitHub Desktop revisa el panel de diferencias, escribe el mensaje <code>Agrega recurso introductorio de Git</code>, elige <strong>Commit to mejora-bibliografia</strong> y después <strong>Publish branch</strong> o <strong>Push origin</strong>.</p></div></div>
+  <div class="timeline-step"><div class="timeline-marker">4</div><div class="timeline-body"><h3>Persona B: propone; persona A: revisa</h3><p>Abre un <strong>pull request</strong> en GitHub hacia la rama principal. La persona A comprueba el cambio, deja comentarios y, si está conforme, realiza el <strong>merge</strong>. No es obligatorio aceptar una propuesta tal como llegó.</p></div></div>
+  <div class="timeline-step"><div class="timeline-marker">5</div><div class="timeline-body"><h3>Ambas personas actualizan sus copias</h3><p>En GitHub Desktop cambian a la rama principal y utilizan <strong>Fetch origin</strong> y <strong>Pull origin</strong> cuando corresponda. Comprueban que la referencia está incorporada. Para futuros cambios, crean una nueva rama.</p></div></div>
+ </div>
+ <h3>La misma lógica con comandos (opcional)</h3>
+ <p>Estos comandos sirven después de instalar Git y clonar un repositorio al que tengas acceso. Se ejecutan dentro de la carpeta local. Sustituye el nombre de la rama si utilizas otro.</p>
+ <div class="code-card wide"><div class="code-header"><span><i class="file-dot"></i> TERMINAL · FLUJO BÁSICO</span><button class="copy-btn" data-copy="gitCommands" type="button">Copiar comandos ↗</button></div><pre id="gitCommands"><code>git status                         # Revisar cambios; conservarlos antes de cambiar de rama
+ git switch main                    # Ir a la rama principal
+ git pull --ff-only                 # Actualizar solo por avance rápido
+ git switch -c mejora-bibliografia  # Crear nueva rama
+ # Edita README.md y revisa el cambio
+ git diff                           # Inspeccionar diferencias
+ git add README.md                  # Preparar el archivo
+ git commit -m "Agrega recurso introductorio de Git"
+ git push -u origin mejora-bibliografia
+ # Abre un pull request desde GitHub y solicita revisión</code></pre></div>
+ <p class="git-smallprint">Nota: el repositorio puede usar un nombre de rama principal distinto de <code>main</code>. Si <code>git pull --ff-only</code> informa divergencia, detente y revisa los commits con la coordinación; no fuerces la actualización ni crees un merge local en main. Conserva los cambios pendientes antes de cambiar de rama. En el seminario, los cambios se integran a main mediante un PR aprobado.</p>
+ <h3>¿Qué hacemos si aparece un conflicto?</h3><p>Ocurre, por ejemplo, cuando dos personas editan la misma línea de <code>README.md</code> de forma incompatible. No se trata de un fallo catastrófico: Git pide resolver cuál será el contenido final. Se debe conversar con quienes hicieron los cambios, revisar ambos textos, corregir los marcadores de conflicto si los hay y comprobar el resultado antes de registrar la resolución. Evita usar comandos de descarte o sobrescritura sin entender sus consecuencias.</p>
+ <h3>Reglas de colaboración con agentes de IA</h3>
+ <div class="git-rules"><div><b>01</b><p>Una tarea clara por rama; usa nombres descriptivos y cambios pequeños.</p></div><div><b>02</b><p>Antes de aceptar un commit generado por IA, inspecciona las diferencias y ejecuta las verificaciones pertinentes.</p></div><div><b>03</b><p>No permitas que un agente fusione o publique cambios importantes sin autorización humana.</p></div><div><b>04</b><p>Usa <code>.gitignore</code> para excluir archivos locales, temporales y claves. No incluyas contraseñas ni tokens en un repositorio; un repositorio privado tampoco es un almacén de secretos.</p></div><div><b>05</b><p>Documenta decisiones y evidencia en <code>README.md</code>, <code>PLAN.md</code> o una bitácora. La historia de Git no reemplaza la explicación del proyecto.</p></div></div>
+ <h3>Prompt para incorporar Git y GitHub a Antigravity</h3>
+ <div class="code-card wide"><div class="code-header"><span><i class="file-dot"></i> PROMPT · COLABORACIÓN CONTROLADA</span><button class="copy-btn" data-copy="gitPrompt" type="button">Copiar prompt ↗</button></div><pre id="gitPrompt"><code>Actúa como asistente de colaboración de este proyecto.
+
+1. Lee PROYECTO.md y examina el estado de Git sin modificar archivos.
+2. Informa la rama actual, los cambios pendientes y el remoto configurado.
+3. Propón una rama de trabajo para la tarea solicitada y un plan pequeño.
+4. Antes de cada commit, muestra los archivos modificados y resume las diferencias.
+5. Propón mensajes de commit claros y un borrador de pull request con:
+   objetivo, archivos afectados, pruebas y limitaciones.
+6. No publiques, fusiones, borres ramas, reescribas el historial ni uses
+   comandos destructivos sin mi autorización explícita.
+7. No añadas secretos, credenciales, datos personales ni archivos excluidos.
+8. Si encuentras un conflicto, explícalo y presenta opciones antes de actuar.</code></pre></div>
+ <h3>Lecturas recomendadas para aprender GitHub</h3>
+ <div class="resources git-resources">
+  <a href="https://docs.github.com/es/get-started/using-github/hello-world" target="_blank" rel="noopener noreferrer"><span class="resource-label">01 · INTRODUCCIÓN SIN INSTALAR NADA</span><strong>Hola mundo · GitHub</strong><p>Crear repositorio, rama, commit y pull request desde el navegador.</p><span class="resource-link">Abrir guía ↗</span></a>
+  <a href="https://docs.github.com/es/get-started/learning-to-code/getting-started-with-git" target="_blank" rel="noopener noreferrer"><span class="resource-label">02 · PRIMEROS PASOS</span><strong>Comenzar con Git</strong><p>Conceptos y uso práctico de GitHub Desktop para controlar cambios.</p><span class="resource-link">Abrir guía ↗</span></a>
+  <a href="https://docs.github.com/es/get-started/git-basics/set-up-git" target="_blank" rel="noopener noreferrer"><span class="resource-label">03 · CONFIGURACIÓN</span><strong>Configurar Git</strong><p>Instalación, identidad de commits y autenticación.</p><span class="resource-link">Abrir guía ↗</span></a>
+ </div>
+</section>
+<section class="section modes-section tinted" id="modalidades" aria-labelledby="modes-title">
+ <div class="section-head"><div><span class="section-kicker">09 / CONECTAR</span><h2 id="modes-title">Tres formas de colaborar.<br><em>Un proyecto compartido</em></h2></div><p>Colaborar con IA no significa únicamente tener muchos agentes. Conviene distinguir tres planos que se complementan: personas, agentes y reproducibilidad.</p></div>
+ <div class="modes-grid">
+  <article class="mode-card"><div class="mode-symbol" aria-hidden="true">◎</div><span class="mode-tag">01 · PERSONAS</span><h3>Colaboración humana</h3><p>Varias personas acuerdan objetivos, aportan conocimientos, discuten decisiones y revisan contribuciones.</p><p><strong>Herramientas:</strong> GitHub, ramas, pull requests y comentarios.</p><div class="mode-example">Ejemplo: Ana modifica la introducción; Luis revisa y aprueba el cambio.</div></article>
+  <article class="mode-card"><div class="mode-symbol" aria-hidden="true">✳</div><span class="mode-tag">02 · AGENTES</span><h3>Coordinación agéntica</h3><p>Uno o varios agentes realizan tareas delimitadas: investigar, analizar, redactar o comprobar; sus acciones requieren supervisión adecuada.</p><p><strong>Herramientas:</strong> prompts, roles, reglas y revisiones.</p><div class="mode-example">Ejemplo: un agente prepara un borrador y otro identifica afirmaciones sin sustento.</div></article>
+  <article class="mode-card"><div class="mode-symbol" aria-hidden="true">▤</div><span class="mode-tag">03 · REPRODUCIBILIDAD</span><h3>Trabajo verificable</h3><p>Otra persona puede reconstruir qué datos, instrucciones, decisiones y procedimientos condujeron a un resultado.</p><p><strong>Herramientas:</strong> repositorio, README, bitácora, versiones y pruebas.</p><div class="mode-example">Ejemplo: una compañera repite el análisis y obtiene el mismo resultado con los mismos datos y condiciones.</div></article>
+ </div>
+ <div class="mode-insight"><strong>No son sinónimos.</strong><p>GitHub organiza contribuciones humanas, pero no garantiza que un análisis sea reproducible. Un equipo de agentes puede completar tareas sin que haya colaboración humana. Y guardar versiones es necesario en muchos proyectos, pero por sí solo no documenta los datos, dependencias ni decisiones.</p></div>
+ <div class="content-split mode-workshop"><div><span class="section-kicker">EJERCICIO INTEGRADOR · 25–40 MIN</span><h3>Un cambio, tres perspectivas</h3><p>En parejas, trabajen sobre una copia de un proyecto pequeño. Una persona propone un cambio; un agente ayuda a revisarlo; la otra persona lo valida y comprueba que pueda repetirse.</p><ol class="mode-steps"><li><strong>Persona A:</strong> crea una rama en GitHub y mejora un texto o una tabla.</li><li><strong>Agente:</strong> revisa el cambio e identifica supuestos, errores y verificaciones pendientes.</li><li><strong>Persona B:</strong> examina el pull request y decide si acepta el cambio.</li><li><strong>Ambas:</strong> actualizan README y bitácora con lo necesario para repetir el resultado.</li></ol><p class="git-smallprint">No se pide al agente fusionar ramas o publicar contenido automáticamente. Las decisiones de integración son humanas.</p></div>
+ <div class="code-card"><div class="code-header"><span><i class="file-dot"></i> PROMPT · REVISIÓN COLABORATIVA</span><button class="copy-btn" data-copy="promptModes" type="button">Copiar ↗</button></div><pre id="promptModes"><code>Actúa como revisor de una contribución al proyecto.
+
+1. Consulta PROYECTO.md, README y los cambios de la rama.
+2. Explica qué se modificó, por qué y qué archivos afecta.
+3. Señala afirmaciones sin evidencia, riesgos y pruebas faltantes.
+4. Indica qué datos, versiones e instrucciones permiten reproducir el resultado.
+5. Propón comentarios para el pull request y una entrada breve de bitácora.
+
+No modifiques originales, no publiques y no fusiones cambios.
+Presenta primero tus hallazgos para revisión humana.</code></pre></div></div>
+ <div class="mode-check"><strong>Antes de integrar una contribución, comprueben:</strong><ul><li>¿La revisó otra persona?</li><li>¿Se conocen los cambios y las fuentes?</li><li>¿Los resultados se pueden verificar o repetir?</li><li>¿La decisión quedó registrada?</li></ul></div>
+</section>
+<section class="section" id="lecturas"><div class="section-head"><div><span class="section-kicker">10 / EXPLORAR</span><h2>Lecturas y recursos<br><em>para continuar</em></h2></div><p>Comienza con el tutorial guiado y consulta la documentación oficial conforme aparezcan nuevas dudas.</p></div><div class="resources"><a href="https://codelabs.developers.google.com/getting-started-google-antigravity?hl=es-419" target="_blank" rel="noopener noreferrer"><span class="resource-label">01 · TUTORIAL GUIADO</span><strong>Primeros pasos con Google Antigravity</strong><p>Google Developers · Instalación, proyectos e interfaz para principiantes.</p><span class="resource-link">Abrir recurso ↗</span></a><a href="https://antigravity.google/docs/get-started?hl=es-419" target="_blank" rel="noopener noreferrer"><span class="resource-label">02 · DOCUMENTACIÓN</span><strong>Guía oficial de inicio</strong><p>Referencia para configurar el entorno y comenzar a trabajar con agentes.</p><span class="resource-link">Abrir recurso ↗</span></a><a href="https://antigravity.google/docs/rules/" target="_blank" rel="noopener noreferrer"><span class="resource-label">03 · PROFUNDIZACIÓN</span><strong>Reglas e instrucciones persistentes</strong><p>Cómo mantener criterios y restricciones más allá de una tarea individual.</p><span class="resource-link">Abrir recurso ↗</span></a></div><div class="video-link"><div class="video-symbol">▶</div><div><strong>Video complementario en español</strong><p>Búsqueda orientativa sobre creación de aplicaciones con Antigravity. El video concreto, su autoría y fecha están pendientes de verificación; no se presenta como referencia comprobada.</p></div><a href="https://www.youtube.com/results?search_query=Jos%C3%A9+Manuel+Fern%C3%A1ndez+Crear+Aplicaciones+Completas+Google+Antigravity" target="_blank" rel="noopener noreferrer">Buscar video ↗</a></div></section>
+<section class="closing"><span class="section-kicker">IDEA PARA LLEVAR</span><blockquote>La habilidad más importante no es escribir el prompt perfecto, sino aprender a sostener <em>un proceso de trabajo confiable</em> con ayuda de la IA.</blockquote><p>Aprender IA agéntica se parece a aprender a dirigir proyectos: delimitar problemas, distribuir tareas, establecer revisiones y conservar memoria de las decisiones. La tecnología puede ayudarnos a ejecutar; la responsabilidad de interpretar, juzgar y decidir permanece con las personas.</p><a class="btn btn-primary" href="#proyecto">Volver al principio ↑</a></section>
+</main>
+<footer class="footer"><div class="footer-inner"><div><span class="brand-mark">✳</span><strong>IA en práctica</strong><p>Material didáctico introductorio en español · Adaptación para el Seminario IIE-3T, noviembre de 2026. Elaboración y adaptación asistidas por IA; revisión docente pendiente. No se ha asignado una licencia pública de reutilización.</p></div><div><p>Guía independiente de aprendizaje. Google Antigravity es un producto de Google; este material no es documentación oficial ni está afiliado a Google.</p><a href="#inicio">↑ Ir arriba</a></div></div></footer>
+</body></html>

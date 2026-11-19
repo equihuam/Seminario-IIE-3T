@@ -1648,3 +1648,64 @@ EL PR
 
 Marcó conflictos. Revisa y resuelve
 ```
+
+## P-ME-154 — Recepción del ZIP de tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Tutoriales. Alojamiento este zip en tutorials para revisar y luego procesar.
+```
+
+Adjunto: `entrega-codex-seminario-iie-3t-tutoriales-20261118.zip`, recibido en `.codex-attachments/def6bfc2-4126-43ae-80ff-8504b607187f/6279cc55-5f25-403e-b95e-580779bdf87a/`.
+
+## P-ME-155 — Cambio de nombre de la carpeta de tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+renombre tutorials/ a tutoriales/
+```
+
+## P-ME-156 — Verificar congruencia del PR de tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Verifica la propuesta de PR en congruencia con lo que está ahora en tutoriales/ Dime cuando estemos listos para cerrar el PR y asimilar los ajustes que introduce al blog y a los demas componentes del proyecto
+```
+
+## P-ME-157 — Revisar PR 19 y fuentes de tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Revisa esto también:
+Revisa el pull request #19 del repositorio equihuam/Seminario-IIE-3T.
+
+Comprueba primero el estado de mi repositorio local, las ramas, los worktrees y las instrucciones de AGENTS.md.
+
+Quiero incorporar los tutoriales de Antigravity, Git y Zotero sin perder cambios existentes.
+
+Revisa los nuevos materiales y comprueba sus enlaces. Conserva los archivos originales que ya utiliza el proyecto.
+
+Identifica también los archivos fuente del sitio Netlify que todavía faltan incorporar.
+
+No fusiones el PR todavía. Presenta primero un diagnóstico y una propuesta para completar la integración.
+```
+
+## P-ME-158 — Organizar e incorporar las guías tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Haz los ajustes necessrios psra acomodar los cambios que implica la organización con las guías tutoriales en tutoriales/
+```
+
+## P-ME-159 — Guardar y entregar la integración de tutoriales
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+haz el commit + push y actualiza el PR. Espero tu confirmación para hacer el merge
+```
