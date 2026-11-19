@@ -13,6 +13,7 @@ renv/staging/
 renv/cache/
 renv/sandbox/
 .local/
+.netlify/
 .quarto/
 _site/
 _freeze/

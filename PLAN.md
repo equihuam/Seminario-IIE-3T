@@ -364,3 +364,15 @@ Preparado acceso desde Empezar, Preparar tu proyecto y Catálogo temático a una
 Verificación P-ME-163: construcción completa correcta (26 páginas, R/Python), navegación y anclas comprobadas en Edge a 1366/390 px, descargas PDF/SVG idénticas a las fuentes y capturas revisadas. Preparado en la rama de tutoriales; pendiente incorporar la entrega al PR e integrar con autorización para publicar en Netlify.
 
 Entrega P-ME-165: rama miguel/tutoriales-blog desde main 04d986a (PR #19 ya integrado); commit, push y PR nuevo autorizados. Se conserva la salida comprobada en P-ME-163, sin cambios posteriores en sus fuentes. Pendientes: revisión/fusión del nuevo PR y comprobación de producción. Los registros de acceso de participantes quedan separados de esta entrega.
+
+## Despliegue continuo de la PWA — P-ME-168 (2026-11-18)
+
+Verificación incompleta para aceptación: GitHub/main y autopublicación están activos, pero https://dash-seminario-iie.netlify.app/ sirve el blog. El Tablero y la agenda son accesibles en /app/. La configuración de la interfaz mezcla publish apps\_pwa-control-clase con el comando del blog; falta package directory y un netlify.toml propio de PWA. El archivo raíz prescribe publicar blog/_site y tiene prioridad sobre la interfaz (https://docs.netlify.com/build/configure-builds/file-based-configuration/).
+
+Pendiente propuesto: configuración independiente de PWA en su paquete, seleccionar ese package directory en Netlify y usar rutas con /; asegurar regeneración de apps/_pwa-control-clase cuando cambien las fuentes. Aceptación: despliegue desde main abre Tablero en la raíz, conserva enlaces al blog canónico, agenda, manifiesto y service worker correctos; comprobar actualización de una instalación existente. No se aplican cambios durante esta revisión ni se afirma validado el modo offline.
+
+Actualización P-ME-169 (2026-11-18): Site URL de Supabase corregido a https://dash-seminario-iie.netlify.app/app/ y guardado comprobado. Sustituye localhost:3000 para futuros retornos predeterminados. Pendiente prueba de ingreso del participante con código nuevo; coordinar cualquier cambio futuro de ruta con la configuración de Netlify.
+
+## Corrección de despliegue PWA — P-ME-170 (2026-11-18)
+
+Configuración propia en apps/pwa/netlify.toml y generación automática desde blog/_site/app a .netlify/pwa-public. Netlify ya guarda package apps/pwa, build del generador y publish .netlify/pwa-public. Blog raíz sin cambios. Pruebas de aislamiento (2), generación real y site.py check (26 páginas) correctos. Pendiente PR y validación de preview; producción requiere integrar el archivo mediante PR a main y comprobar el dominio. No se ha autorizado ni realizado la fusión en este encargo.

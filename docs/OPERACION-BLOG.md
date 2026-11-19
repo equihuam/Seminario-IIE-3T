@@ -40,6 +40,16 @@ Referencias: [configuración de Netlify](https://docs.netlify.com/build/configur
 
 ## Correcciones editoriales
 
+### Despliegue independiente del Tablero — P-ME-170
+
+El sitio `dash-seminario-iie` usa Package directory `apps/pwa`, base `/` y
+la configuración de `apps/pwa/netlify.toml`. Cada build prepara exclusivamente
+el paquete público desde `blog/_site/app/` en `.netlify/pwa-public`.
+No reutilizar el archivo raíz del blog ni la copia histórica de Drop.
+Véase [operación de la PWA](../apps/pwa/README.md). El blog mantiene su
+configuración raíz y publica `blog/_site`. Integrar ambos mediante PR a main;
+configurar el package en Netlify no sustituye integrar el archivo al repositorio.
+
 Actualizar la versión y describir cambios relevantes en la entrada afectada. Git conserva la historia de fuentes; identificar el commit del material utilizado en cada sesión. Guardar preguntas agregadas del grupo y motivos de adaptación en la bitácora del proyecto, sin copiar allí los prompts completos.
 
 Referencias de configuración: [Quarto Blog](https://quarto.org/docs/websites/website-blog.html), [entornos virtuales](https://quarto.org/docs/projects/virtual-environments.html) y [renv](https://rstudio.github.io/renv/articles/renv.html), consultadas el 2026-10-08.

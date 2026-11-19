@@ -1,0 +1,8 @@
+# Select Package directory apps/pwa in Netlify. Paths use the repository root.
+[build]
+  base = "."
+  command = "python scripts/prepare_netlify_pilot.py .netlify/pwa-public"
+  publish = ".netlify/pwa-public"
+
+[build.environment]
+  PYTHON_VERSION = "3.12"
