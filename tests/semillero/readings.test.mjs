@@ -75,3 +75,59 @@ test('Lecturas comparte el debate entre miembros y reserva el acuerdo a coordina
   await assert.rejects(db.query('select * from readings'),{code:'42501'});
  }finally{await db.close();}
 });
+
+
+test('Edición propia, historial, conflictos y columnas protegidas',async()=>{
+ const db=new PGlite();
+ try {
+  await createSchema(db);
+  for(const file of ['202611130001_lecturas.sql','202611130002_lecturas_zotero.sql','202611170001_lecturas_catalogo.sql','202611180001_edicion_aportaciones.sql'])
+   await db.exec(await readFile(new URL('../../supabase/migrations/'+file,import.meta.url),'utf8'));
+  const a=crypto.randomUUID(), b=crypto.randomUUID();
+  for(const id of [a,b])await db.query('insert into auth.users(id) values($1)',[id]);
+  await db.query("insert into reading_members values($1,'Autora',false),($2,'Coordinador',true)",[a,b]);
+  await db.exec("insert into reading_references(zotero_key,title,citation,source_version) values('AAAAAAAA','Fuente','Cita',1)");
+  const login=async id=>{await db.exec('reset role;set role authenticated');await db.query("select set_config('request.jwt.claim.sub',$1,false)",[id]);};
+  await login(a);
+  const id=crypto.randomUUID(), comment=crypto.randomUUID();
+  await db.query("insert into readings(id,zotero_key,question,processing) values($1,'AAAAAAAA','Original','Discusión')",[id]);
+  await db.query("insert into reading_comments(id,reading_id,body) values($1,$2,'Comentario original')",[comment,id]);
+  let result=await db.query("update readings set question='Corrección' where id=$1 and revision=1 returning revision,edited_at",[id]);
+  assert.equal(result.rows[0].revision,2);assert.ok(result.rows[0].edited_at);
+  assert.equal((await db.query("update readings set question='Obsoleta' where id=$1 and revision=1 returning id",[id])).rows.length,0);
+  await assert.rejects(db.exec("update readings set processing=' '"),{code:'23514'});
+  await db.query("update reading_comments set body='Comentario corregido' where id=$1",[comment]);
+  for(const assignment of ["owner_id='"+b+"'","title='Falsa'","revision=9","zotero_key='BBBBBBBB'"])
+   await assert.rejects(db.exec('update readings set '+assignment),{code:'42501'});
+  await assert.rejects(db.exec("update reading_comments set body=' '"),{code:'23514'});
+  await assert.rejects(db.exec('select * from reading_edit_history'),{code:'42501'});
+  await login(b);
+  for(const table of ['readings','reading_comments'])
+   assert.equal((await db.exec("update "+table+" set "+(table==='readings'?"question='Ajena'":"body='Ajeno'")+" returning *"))[0].rows.length,0);
+  await db.exec('reset role');
+  const history=(await db.query('select * from reading_edit_history order by entry_table')).rows;
+  assert.equal(history.length,2);
+  assert.equal(history.find(r=>r.entry_table==='readings').original.question,'Original');
+  assert.equal(history.find(r=>r.entry_table==='reading_comments').original.body,'Comentario original');
+  await db.query('delete from reading_members where user_id=$1',[b]);
+  await login(b);
+  assert.equal((await db.query('select * from readings')).rows.length,0);
+  await db.exec('reset role;set role anon');
+  await assert.rejects(db.exec("update readings set question='Anónima'"),{code:'42501'});
+ } finally {await db.close();}
+});
+
+test('Cliente rechaza autor ajeno y conflicto, y envía solo campos editables',async()=>{
+ const {saveOwnEdit}=await import('../../blog/app/editing.mjs');
+ const row={id:'entry',owner_id:'author',revision:3};
+ let calls=0;
+ const api={session:{user:{id:'author'}},request:async(path,options)=>{
+  calls++;assert.match(path,/revision=eq.3/);assert.equal(options.method,'PATCH');
+  assert.deepEqual(options.body,{question:'Corrección'});return [{...row,revision:4}];
+ }};
+ assert.equal((await saveOwnEdit(api,'readings',row,{question:'Corrección',owner_id:'forged'})).revision,4);
+ api.session.user.id='other';
+ await assert.rejects(saveOwnEdit(api,'readings',row,{}),/propias/);assert.equal(calls,1);
+ api.session.user.id='author';api.request=async()=>[];
+ await assert.rejects(saveOwnEdit(api,'readings',row,{}),/entrada cambió/);
+});

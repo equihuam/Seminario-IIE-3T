@@ -1,3 +1,4 @@
+import {ownEditor} from './editing.mjs';
 import {setView} from './wizard.mjs';
 import {filterReferences, readingProposal, loadReferences} from './reading-catalog.mjs';
 const groupPath = '/groups/6712171';
@@ -39,7 +40,7 @@ export function initReadings(getApi, login) {
   access.onclick = login;
   const proposal = element('details');
   proposal.append(element('summary','Sugerir lectura'));
-  view.append(element('h1','Lecturas'), element('p','Elige una referencia ya registrada en Zotero y propone el asunto y la dinámica para trabajarla con el grupo.'), access, upcoming, proposal, refresh, status, cards);
+  view.append(element('h1','Lecturas'), element('p','Elige una referencia ya registrada en Zotero y propone el asunto y la dinámica para trabajarla con el grupo. Para corregir una aportación propia, pulsa Editar o haz doble clic sobre su texto.'), access, upcoming, proposal, refresh, status, cards);
   for (const part of [proposal, upcoming]) part.className = 'calendar-panel';
   tab.onclick = () => {setView('readings'); load();};
   refresh.onclick = () => load();
@@ -178,11 +179,22 @@ export function initReadings(getApi, login) {
       line.append(link);
       node.append(line);
     }
-    node.append(element('p','Propuesta · '+row.author),element('h3','Asunto o pregunta propuestos'),element('p',row.question));
-    if(row.processing)node.append(element('h3','Dinámica de procesamiento propuesta'),element('p',row.processing));
-    if(row.excerpt)node.append(element('h3','Fragmento sugerido'),element('p',row.excerpt));
+    const editArea = element('section');
+    node.append(editArea);
+    editArea.append(element('p','Propuesta · '+row.author),element('h3','Asunto o pregunta propuestos'),element('p',row.question));
+    if(row.processing)editArea.append(element('h3','Dinámica de procesamiento propuesta'),element('p',row.processing));
+    if(row.excerpt)editArea.append(element('h3','Fragmento sugerido'),element('p',row.excerpt));
+    if(row.edited_at) editArea.append(element('small','Editada · '+new Date(row.edited_at).toLocaleString('es-MX')));
+    ownEditor(editArea,{row,table:'readings',getApi,onSaved:()=>load('Cambios guardados.'),
+      fields:[['question','Asunto o pregunta propuestos',true],['processing','Dinámica de procesamiento propuesta',!!row.processing],['excerpt','Fragmento sugerido (opcional)',false]]});
     node.append(element('h3','Debate sobre su interés'));
-    for (const comment of row.comments) node.append(element('p',comment.author+' · '+comment.body));
+    for (const comment of row.comments) {
+      const entry=element('section');
+      entry.append(element('p',comment.author+' · '+comment.body));
+      if(comment.edited_at)entry.append(element('small','Editado · '+new Date(comment.edited_at).toLocaleString('es-MX')));
+      ownEditor(entry,{row:comment,table:'reading_comments',getApi,onSaved:()=>load('Comentario actualizado.'),fields:[['body','Comentario',true]]});
+      node.append(entry);
+    }
     if (!row.comments.length) node.append(element('p','Aún no hay aportaciones.'));
     node.append(form('comments','Añadir comentario',[['body','¿Para qué nos serviría leerla juntos?','textarea']], row.id));
     if (row.agreement) node.append(element('h3','Acuerdo del grupo'),element('p',summary(row)));

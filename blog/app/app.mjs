@@ -1,3 +1,4 @@
+import {editShortcut} from './editing.mjs';
 import './install.mjs';
 import {initReadings} from './readings.mjs';
 import {sessionCard} from './session-card.mjs';
@@ -72,7 +73,9 @@ function node(tag,text){const n=document.createElement(tag);n.textContent=text;r
 async function loadMine(){
   const rows=await api.mine();$('submissions').replaceChildren();
   if(!rows.length)$('submissions').append(node('p','Todavía no hay envíos recibidos para esta cuenta.'));
-  for(const row of rows){const el=node('div','');el.className='submission';el.append(node('strong',`${row.original.title} · v${row.version}`),node('p',`Acuse: ${row.receipt_id}`));const open=node('button','Abrir esta versión');open.className='secondary';open.onclick=()=>action(async()=>{if(!confirm('¿Sustituir el formulario por esta versión recibida?'))return;record=content(validate(row.original));receivedRecord=record;receipt={seed_id:row.seed_id,version:row.version,receipt_id:row.receipt_id,received_at:row.received_at};showRecord();showReceipt();persist();});el.append(open);$('submissions').append(el);}
+  const latest=new Map();
+  for(const row of rows)if(!latest.has(row.seed_id) || row.version>latest.get(row.seed_id))latest.set(row.seed_id,row.version);
+  for(const row of rows){const el=node('div','');el.className='submission';el.append(node('strong',`${row.original.title} · v${row.version}`),node('p',`Acuse: ${row.receipt_id}`));const isLatest=row.version===latest.get(row.seed_id);const open=node('button',isLatest?'Editar · nueva versión':'Abrir esta versión anterior');open.className='secondary';open.onclick=()=>action(async()=>{if(!confirm('¿Sustituir el formulario por esta versión recibida?'))return;record=content(validate(row.original));receivedRecord=record;receipt={seed_id:row.seed_id,version:row.version,receipt_id:row.receipt_id,received_at:row.received_at};showRecord();showReceipt();persist();});if(isLatest)editShortcut(el,()=>open.click());el.append(open);$('submissions').append(el);}
 }
 $('refresh').onclick=()=>action(loadMine);
 function agendaNotes(body){
