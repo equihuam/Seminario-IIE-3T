@@ -28,7 +28,7 @@ El proyecto usa ejecución sin congelación para esta base pequeña. Si más ade
 
 Dirección de producción confirmada por Miguel en P-ME-056: **[https://seminario-iie.netlify.app/](https://seminario-iie.netlify.app/)**. Es el destino para las comprobaciones posteriores a la integración de un PR en `main`.
 
-El archivo `netlify.toml` de la raíz fija `base = "."` y `publish = "blog/_site"`. La base es la raíz del repositorio: allí están los entornos, scripts y el SVG original. En el panel de Netlify, eliminar la base incorrecta (`..` o `/opt/build`), dejar Base directory vacío o `.` y Package directory vacío. La salida que se publica es `blog/_site`, nunca la raíz del proyecto ni las fuentes de `blog`.
+El archivo `netlify.toml` de la raíz fija `publish = "blog/_site"` y deja la base predeterminada en la raíz del repositorio. En el panel del blog, dejar Base directory y Package directory vacíos; el comando es `test -f blog/_site/index.html` y Publish directory es `blog/_site`. No usar `blog\_site` como base. Desde P-ME-170 se omite `base` en los archivos TOML para permitir la resolución de la configuración propia de la PWA por paquete. La salida del blog es `blog/_site`, nunca la raíz del proyecto ni sus fuentes.
 
 Por indicación del usuario (P022), se versionan las fuentes, `blog/img/` y la salida completa `blog/_site/`, incluidos HTML, estilos, JavaScript, fuentes tipográficas, imágenes y búsqueda. Netlify no ejecuta R ni Python: el comando `test -f blog/_site/index.html` comprueba que existe la portada y se publica esa carpeta. Las cachés `.quarto`, los cuadernos temporales, entornos, credenciales y archivos voluminosos siguen excluidos.
 
@@ -39,6 +39,16 @@ El error de base proporcionado por el usuario ocurre antes de compilar; no permi
 Referencias: [configuración de Netlify](https://docs.netlify.com/build/configure-builds/overview/) y [publicación Quarto en Netlify](https://quarto.org/docs/publishing/netlify.html), consultadas el 2026-10-08.
 
 ## Correcciones editoriales
+
+### Despliegue independiente del Tablero — P-ME-170
+
+El sitio `dash-seminario-iie` usa Package directory `apps/pwa`, base `/` y
+la configuración de `apps/pwa/netlify.toml`. Cada build prepara exclusivamente
+el paquete público desde `blog/_site/app/` en `.netlify/pwa-public`.
+No reutilizar el archivo raíz del blog ni la copia histórica de Drop.
+Véase [operación de la PWA](../apps/pwa/README.md). El blog mantiene su
+configuración raíz y publica `blog/_site`. Integrar ambos mediante PR a main;
+configurar el package en Netlify no sustituye integrar el archivo al repositorio.
 
 Actualizar la versión y describir cambios relevantes en la entrada afectada. Git conserva la historia de fuentes; identificar el commit del material utilizado en cada sesión. Guardar preguntas agregadas del grupo y motivos de adaptación en la bitácora del proyecto, sin copiar allí los prompts completos.
 

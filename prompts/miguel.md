@@ -1743,3 +1743,19 @@ Fecha de registro: 2026-11-18. Hora de emisión no disponible.
 ```text
 cierto, perfecto. Sigue commit+push+pr
 ```
+
+## P-ME-168 — Verificar despliegue continuo de la PWA
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Agregué continuous integration a netlify para la PWA, así que ahora los push podrán generar actualizaciones sin necesidad de drop. Verifica que esté todo en orden
+```
+
+## P-ME-170 — Separar configuración Netlify de la PWA
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Sí hay que hacer ese ajuste, yo sólo cambipen en la plantilla de configuración del proyecto netlify
+```

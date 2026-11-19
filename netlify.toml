@@ -1,5 +1,4 @@
 # HTML generated and verified locally; Netlify serves the committed output.
 [build]
-  base = "."
   publish = "blog/_site"
   command = "test -f blog/_site/index.html"
