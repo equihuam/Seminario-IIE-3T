@@ -3,6 +3,8 @@ title: "Zotero y tu bibliografía"
 description: "Prepara tus referencias y comprueba una consulta con ayuda del asistente."
 ---
 
+[Todas las ayudas: Tutoriales y fichas](tutoriales.qmd)
+
 Una referencia debe poder recuperarse y revisarse. Usaremos **Zotero para registrar la bibliografía** y aprenderemos a consultarla con ayuda de una **API**: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.
 
 Esta es la segunda parte de [Preparar tu proyecto](../preparar-proyecto.qmd). Reserva **15–20 minutos adicionales** si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste.

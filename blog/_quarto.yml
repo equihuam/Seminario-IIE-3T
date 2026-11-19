@@ -23,6 +23,8 @@ project:
     - recursos/clima-modelo.R
     - recursos/zotero-ia-ficha.svg
     - recursos/zotero-ia-ficha.pdf
+    - recursos/git-ia-ficha.pdf
+    - recursos/git-ia-ficha.svg
     - presentaciones/Introduccion-iie3t-redes-bayesianas-v5.pptx
 website:
   title: "iie-3t · Seminario"
@@ -39,6 +41,8 @@ website:
             href: empieza-aqui.qmd
           - text: Preparar proyecto
             href: preparar-proyecto.qmd
+          - text: Tutoriales y fichas
+            href: recursos/tutoriales.qmd
       - text: Actividades
         menu:
           - text: Sesiones

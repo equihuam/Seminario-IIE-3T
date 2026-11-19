@@ -81,7 +81,7 @@
     "href": "recursos/zotero.html",
     "title": "Zotero y tu bibliografía",
     "section": "",
-    "text": "Una referencia debe poder recuperarse y revisarse. Usaremos Zotero para registrar la bibliografía y aprenderemos a consultarla con ayuda de una API: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.\nEsta es la segunda parte de Preparar tu proyecto. Reserva 15–20 minutos adicionales si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste."
+    "text": "Todas las ayudas: Tutoriales y fichas\nUna referencia debe poder recuperarse y revisarse. Usaremos Zotero para registrar la bibliografía y aprenderemos a consultarla con ayuda de una API: una interfaz por la que un programa solicita información a otro. El asistente puede ayudarte a recuperar datos; tú revisas qué fuente respalda cada afirmación.\nEsta es la segunda parte de Preparar tu proyecto. Reserva 15–20 minutos adicionales si ya tienes Zotero; la instalación o la resolución de problemas puede requerir acompañamiento. Puedes conservar la base agéntica que elegiste."
   },
   {
     "objectID": "recursos/zotero.html#organiza-una-primera-referencia",
@@ -117,6 +117,41 @@
     "title": "Zotero y tu bibliografía",
     "section": "Ficha de consulta: Zotero + IA",
     "text": "Ficha de consulta: Zotero + IA\n¿Qué puedes pedirle al bibliotecario científico y cómo reconocer que la tarea quedó bien? Esta ficha de una página reúne siete casos de uso. Úsala cuando quieras ampliar la primera consulta de esta guía: elige una tarea, completa los campos del encargo y revisa la comprobación sugerida. No necesitas realizar todos los casos para participar en el seminario.\nDescargar la ficha en PDF (carta, una página) · Abrir la imagen SVG ampliable\n\n\n\nFicha «Zotero + IA: del hallazgo a la cita», con siete tareas y sus comprobaciones. El resumen textual aparece a continuación.\n\n\n\n\n\n\n\n\nNotaLos siete casos, en texto\n\n\n\n\n\n\nEncontrar y registrar: buscar fuentes y comprobar obra, versión y colección antes de incorporarlas.\nOrganizar y etiquetar: aplicar criterios acordados; verificar metadatos no equivale a leer el texto.\nLeer y anotar: recuperar comentarios y marcar pasajes; comprobar texto, página y resultado en el lector.\nSintetizar fuentes: comparar argumentos, métodos y límites, indicando qué partes se consultaron.\nCitar al escribir: vincular afirmaciones con fuentes y localizaciones que realmente las respalden.\nGenerar bibliografías: cotejar la lista con las citas del documento y el formato solicitado.\nRevisar y mantener la biblioteca: contrastar adjuntos con metadatos y comprobar enlaces, versiones y claves de cita.\n\nEncargo adaptable: «Actúa como bibliotecario. En [biblioteca y colección], realiza [tarea] con [fuentes] y entrega [producto]. Comprueba tu acceso, declara qué consultaste y verifica los cambios guardados. Si hay ambigüedad, indícala».\n\n\n\nLa ficha orienta el trabajo; la ejecución depende del acceso, los permisos y las herramientas disponibles. En el seminario se ensayaron consultas, incorporación de referencias y anotaciones mediante la API web. No se presenta cada caso como un flujo automático ya validado. Contrasta las interpretaciones con las fuentes y verifica los cambios en Zotero o en tu documento.\nFuentes de apoyo: API local, API web, lector PDF y notas e integración con editores. La ficha es material del seminario, no documentación oficial de Zotero.\nPropuesta de Miguel, desarrollada con asistencia de IA. Versión de trabajo: 10 de octubre de 2026; incluye la ficha de consulta v1.3, imagen ampliable y PDF imprimible.\n\n\n\n\n\n\nAdvertenciaPor acordar\n\n\n\nMaterial pendiente de prueba con participantes."
+  },
+  {
+    "objectID": "recursos/git-github.html",
+    "href": "recursos/git-github.html",
+    "title": "Git y GitHub para tu proyecto",
+    "section": "",
+    "text": "Todas las ayudas: Tutoriales y fichas\nObjetivo: guardar un cambio verificable en tu carpeta y distinguirlo de compartir o integrar una contribución. Esta guía acompaña Preparar tu proyecto. Necesitas Git instalado y una carpeta propia con documentos de práctica; no uses datos sensibles."
+  },
+  {
+    "objectID": "recursos/git-github.html#empieza-en-tu-equipo",
+    "href": "recursos/git-github.html#empieza-en-tu-equipo",
+    "title": "Git y GitHub para tu proyecto",
+    "section": "Empieza en tu equipo",
+    "text": "Empieza en tu equipo\nGit conserva versiones locales. Un commit es una versión registrada de los archivos que seleccionaste. GitHub aloja un repositorio remoto para compartir trabajo; no necesitas una cuenta ni publicar nada en esta primera práctica.\nAbre una terminal dentro de tu carpeta de práctica. Si aún no es un repositorio, ejecuta:\ngit init\ngit status\nEdita una frase en README.md. Examina el estado y selecciona únicamente ese documento:\ngit status\ngit diff\ngit add README.md\ngit diff --cached\ngit commit -m \"Describe el propósito del proyecto\"\ngit log -1 --oneline\ngit status\nEn el primer registro, git diff no muestra el contenido de archivos nuevos sin seguimiento: revísalos en tu editor y confirma lo seleccionado con git diff --cached. Si Git solicita tu identidad o falta la instalación, anota el mensaje y pide acompañamiento. También puedes usar el panel de Git de RStudio u otro editor para revisar y registrar los archivos.\nComprueba: el mensaje aparece en el último commit y README.md ya no tiene cambios pendientes. Otros archivos pueden seguir pendientes; no los añadas para conseguir un estado limpio. Un commit local no es un respaldo en otro equipo."
+  },
+  {
+    "objectID": "recursos/git-github.html#más-adelante-compartir-con-github",
+    "href": "recursos/git-github.html#más-adelante-compartir-con-github",
+    "title": "Git y GitHub para tu proyecto",
+    "section": "Más adelante: compartir con GitHub",
+    "text": "Más adelante: compartir con GitHub\nCuando el grupo acuerde colaborar sobre un repositorio compartido, necesitarás una cuenta y acceso al repositorio. Una rama separa una propuesta de la versión principal, main; un pull request (PR) pide revisar esa propuesta. Push envía commits al remoto; merge integra la contribución tras su revisión y autorización.\nEl recorrido del seminario es: revisar el estado → actualizar main por avance rápido → crear una rama → editar y comprobar → commit → push → PR hacia main → revisión → fusión autorizada.\nAntes de cambiar de rama, conserva y aclara cualquier trabajo pendiente. Si git pull --ff-only informa que no puede avanzar, pide revisar la divergencia: no descartes cambios ni fuerces el envío. Un asistente puede ayudar a preparar la contribución; un encargo de edición no autoriza a fusionarla o publicarla."
+  },
+  {
+    "objectID": "recursos/git-github.html#encargo-para-pedir-ayuda",
+    "href": "recursos/git-github.html#encargo-para-pedir-ayuda",
+    "title": "Git y GitHub para tu proyecto",
+    "section": "Encargo para pedir ayuda",
+    "text": "Encargo para pedir ayuda\nAyúdame a guardar una versión de mi proyecto con Git.\nComprueba la carpeta, la rama y los archivos pendientes.\nExplícame qué cambió y selecciona solo los documentos que acordemos.\nAntes del commit, muéstrame el contenido seleccionado.\nDespués comprueba el último commit y los cambios que siguen pendientes.\nNo publiques, borres archivos ni descartes trabajo ajeno.\nSi falta instalación, identidad o permisos, explica qué falta."
+  },
+  {
+    "objectID": "recursos/git-github.html#ficha-de-consulta",
+    "href": "recursos/git-github.html#ficha-de-consulta",
+    "title": "Git y GitHub para tu proyecto",
+    "section": "Ficha de consulta: Git + IA",
+    "text": "Ficha de consulta: Git + IA\nLa ficha del equipo reúne seis encargos para trabajar con ramas, PR y revisiones. Fue preparada para Miguel y Octavio y se ofrece aquí como referencia ampliada: sus rutas y nombres de rama pertenecen al repositorio del seminario. No son tareas obligatorias para tu primer commit.\nDescargar la ficha en PDF (carta, una página) · Abrir la imagen SVG ampliable\n\n\n\nFicha Git + IA con seis encargos para conservar y revisar el trabajo compartido. El resumen textual aparece a continuación.\n\n\n\n\n\n\n\n\nNotaLos seis casos, en texto\n\n\n\n\n\n\nEmpezar o retomar: comprobar rama, base y trabajo pendiente.\nPreparar y verificar: limitar el cambio y conservar evidencia de las pruebas.\nGuardar y proponer: registrar, enviar y abrir un PR con los archivos revisados.\nRevisar al otro: explicar hallazgos y límites antes de aceptar la contribución.\nResolver un conflicto: comparar ambas aportaciones y conservar su intención.\nIntegrar y cerrar: fusionar con autorización, verificar la publicación cuando corresponda y conservar las ramas activas.\n\n\n\n\nPregunta de comprobación: ¿hacer commit publica tu trabajo en GitHub? Respuesta esperada: no; registra una versión local. Compartir requiere un envío y los permisos correspondientes; integrar mediante un PR es otra decisión.\nLa ficha conserva su edición original v1.2 del 10 de octubre de 2026, incluida la indicación histórica «Material fuera del blog». Su distribución desde esta página se incorpora el 18 de noviembre de 2026 a petición de Miguel. La guía interna completa conserva su ubicación; no es necesaria para esta primera práctica.\nGuía breve desarrollada con asistencia de IA, 18 de noviembre de 2026. La ficha procede de la propuesta de Miguel, desarrollada con asistencia de IA. La revisión editorial no acredita una prueba de aprendizaje con participantes."
   },
   {
     "objectID": "recursos/comprobacion-python.html",
@@ -207,7 +242,7 @@
     "href": "temas.html#reproducibilidad-y-trabajo-científico",
     "title": "Catálogo temático",
     "section": "Reproducibilidad y trabajo científico",
-    "text": "Reproducibilidad y trabajo científico\n\nPrincipios y compromisos.\nZotero y tu bibliografía: registro de fuentes y primera consulta API.\nFicha Zotero + IA: siete casos de uso del bibliotecario, con imagen ampliable y PDF imprimible.\nComprobación del entorno Python.\nComprobación del entorno R."
+    "text": "Reproducibilidad y trabajo científico\n\nTutoriales y fichas: guías web y fichas descargables de Git/GitHub, Zotero e IA agéntica.\nPrincipios y compromisos.\nZotero y tu bibliografía: registro de fuentes y primera consulta API.\nFicha Zotero + IA: siete casos de uso del bibliotecario, con imagen ampliable y PDF imprimible.\nComprobación del entorno Python.\nComprobación del entorno R."
   },
   {
     "objectID": "temas.html#datos-y-guías",
@@ -235,7 +270,7 @@
     "href": "preparar-proyecto.html",
     "title": "Preparar tu proyecto",
     "section": "",
-    "text": "Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar la base agéntica de tu preferencia: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.\nObjetivo: poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos 20–30 minutos para el espacio de trabajo y 15–20 minutos adicionales para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento.\nLos tiempos anteriores son estimaciones para la preparación completa, no un plazo de admisión ni tiempos comprobados con participantes."
+    "text": "Antes del primer encuentro, prepara el lugar donde conservarás tus preguntas, decisiones y resultados. Puedes usar la base agéntica de tu preferencia: la aplicación o entorno con el que trabajas con un asistente capaz de ayudarte a organizar tareas y archivos. El seminario no exige una plataforma ni una suscripción determinada.\nObjetivo: poder iniciar y retomar un trabajo desde documentos que tú puedes leer y revisar, y conservar las fuentes que lo sustentan. Reserva unos 20–30 minutos para el espacio de trabajo y 15–20 minutos adicionales para la práctica bibliográfica si ya tienes Zotero. La instalación y las dificultades técnicas pueden resolverse con acompañamiento.\nTodas las ayudas están reunidas en Tutoriales y fichas: Git/GitHub, Zotero e IA agéntica.\nLos tiempos anteriores son estimaciones para la preparación completa, no un plazo de admisión ni tiempos comprobados con participantes."
   },
   {
     "objectID": "preparar-proyecto.html#crea-una-carpeta-propia-y-copia-la-plantilla",
@@ -249,7 +284,7 @@
     "href": "preparar-proyecto.html#inicia-el-control-de-versiones-local-con-git",
     "title": "Preparar tu proyecto",
     "section": "2. Inicia el control de versiones local con Git",
-    "text": "2. Inicia el control de versiones local con Git\nTe recomendamos inicializar Git en tu carpeta para llevar un control seguro y ordenado de tus avances, decisiones y puntos de recuperación. En esta etapa no se requiere respaldar en GitHub ni en servicios en la nube: el propósito es familiarizarse con el control de versiones en tu propia máquina.\nBasta con abrir una terminal en tu carpeta y ejecutar:\ngit init\ngit add .\ngit commit -m \"Inicio: plantilla documental del proyecto\"\nSi trabajas desde RStudio, VS Code u otro entorno, puedes utilizar su panel visual de Git o pedirle a tu asistente que te ayude a registrar confirmaciones (commits) cada vez que completes un paso o acuerdes un cambio."
+    "text": "2. Inicia el control de versiones local con Git\nTe recomendamos inicializar Git en tu carpeta para llevar un control seguro y ordenado de tus avances, decisiones y puntos de recuperación. En esta etapa no se requiere respaldar en GitHub ni en servicios en la nube: el propósito es familiarizarse con el control de versiones en tu propia máquina.\nBasta con abrir una terminal en tu carpeta y ejecutar:\ngit init\ngit add .\ngit commit -m \"Inicio: plantilla documental del proyecto\"\nSi trabajas desde RStudio, VS Code u otro entorno, puedes utilizar su panel visual de Git o pedirle a tu asistente que te ayude a registrar confirmaciones (commits) cada vez que completes un paso o acuerdes un cambio.\n\n\n\n\n\n\nTipAyuda para Git y GitHub\n\n\n\nConsulta la guía breve de Git y GitHub para guardar tu primera versión local. Incluye una ficha ampliada Git + IA, con imagen ampliable y PDF de una página en formato carta. La colaboración en GitHub se incorpora más adelante."
   },
   {
     "objectID": "preparar-proyecto.html#vincula-el-asistente-con-ese-espacio",
@@ -481,6 +516,41 @@
     "title": "Comprobación del entorno R",
     "section": "",
     "text": "Este cálculo es una comprobación técnica del entorno, sin interpretación ecológica.\n\nprobabilidades &lt;- c(0.2, 0.3, 0.5)\nstopifnot(abs(sum(probabilidades) - 1) &lt; 1e-12)\nresultado &lt;- sum(probabilidades * c(0, 1, 2))\nstopifnot(abs(resultado - 1.3) &lt; 1e-12)\ncat(sprintf(\"R %s · resultado: %.1f\", getRversion(), resultado))\n\nR 4.6.0 &lt;U+00B7&gt; resultado: 1.3\n\n\nEl resultado esperado es 1.3. Las puntuaciones 0, 1 y 2 son arbitrarias y no representan categorías del IIE."
+  },
+  {
+    "objectID": "recursos/tutoriales.html",
+    "href": "recursos/tutoriales.html",
+    "title": "Tutoriales y fichas",
+    "section": "",
+    "text": "Elige la ayuda que necesitas para tu proyecto. Las guías se leen en el navegador; las fichas de Git y Zotero también se pueden descargar en PDF, formato carta y una página. Son apoyos para consultar a tu ritmo, no requisitos adicionales de participación."
+  },
+  {
+    "objectID": "recursos/tutoriales.html#git-y-github",
+    "href": "recursos/tutoriales.html#git-y-github",
+    "title": "Tutoriales y fichas",
+    "section": "Git y GitHub",
+    "text": "Git y GitHub\nPara qué: conservar versiones en tu equipo y, más adelante, proponer cambios a otras personas. Empieza por Git local; GitHub no es necesario para la preparación inicial.\nLeer la guía Consultar la ficha Descargar PDF\nComprobación: puedes identificar qué cambió y localizar el commit que lo guarda. La ficha amplía el recorrido con ramas y revisión de contribuciones."
+  },
+  {
+    "objectID": "recursos/tutoriales.html#zotero-y-tu-bibliografía",
+    "href": "recursos/tutoriales.html#zotero-y-tu-bibliografía",
+    "title": "Tutoriales y fichas",
+    "section": "Zotero y tu bibliografía",
+    "text": "Zotero y tu bibliografía\nPara qué: organizar una referencia, comprobar sus metadatos y consultar la biblioteca con ayuda del asistente cuando exista acceso.\nLeer la guía Consultar la ficha Descargar PDF\nComprobación: identificas biblioteca, colección y obra; distingues los metadatos consultados del texto efectivamente leído."
+  },
+  {
+    "objectID": "recursos/tutoriales.html#ia-agéntica-y-antigravity",
+    "href": "recursos/tutoriales.html#ia-agéntica-y-antigravity",
+    "title": "Tutoriales y fichas",
+    "section": "IA agéntica y Antigravity",
+    "text": "IA agéntica y Antigravity\nPara qué: definir un proyecto, encargar una tarea pequeña y revisar el resultado. Antigravity es una opción; puedes conservar el asistente de tu preferencia.\nLeer el tutorial web Practicar con tu asistente\nComprobación: el asistente indica qué archivos pudo consultar y tú contrastas su resultado con ellos. Este tutorial se publica en un sitio independiente; no dispone aquí de ficha PDF. La versión publicada puede diferir de la adaptación mantenida por el equipo."
+  },
+  {
+    "objectID": "recursos/tutoriales.html#retoma-tu-preparación",
+    "href": "recursos/tutoriales.html#retoma-tu-preparación",
+    "title": "Tutoriales y fichas",
+    "section": "Retoma tu preparación",
+    "text": "Retoma tu preparación\nVuelve a Preparar tu proyecto para situar cada ayuda en el recorrido común, o consulta Reproducibilidad para documentar lo que realmente comprobaste."
   },
   {
     "objectID": "semillero/I001-socioecosistema.html",

@@ -16,3 +16,7 @@ El generador comprueba página única, dimensiones 612 × 792 puntos y límites 
 Actualización P-ME-054: logo aprobado desde `img/identidad/` (vector en SVG y PNG en PDF), recorrido propuesto por Miguel con flechas vectoriales y términos ingleses en cursiva. Los nombres propios y las rutas conservan su función identificadora. Se redistribuyen espacios para conservar una página carta.
 
 Actualización P-ME-055: correcciones de lenguaje de Miguel, nuevo título de reglas y aclaración de autorización: toda integración en main requiere PR. Pie ampliado con redistribución vertical y sin reducir tipografía.
+
+## Distribución desde el blog — P-ME-163
+
+Por petición de Miguel del 18 de noviembre de 2026, el PDF y el SVG originales también se ofrecen como referencia ampliada en `blog/recursos/git-github.qmd`. La página aclara destinatarios y rótulos históricos; la guía interna completa no se publica. Las copias están en `blog/recursos/git-ia-ficha.pdf` y `blog/recursos/git-ia-ficha.svg`. Tras regenerar, copiarlas desde las fuentes indicadas arriba y comprobar igualdad antes de reconstruir el blog.

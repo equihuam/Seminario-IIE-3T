@@ -44,3 +44,7 @@ Esta carpeta se introdujo mediante una rama temática y pull request para revisi
 ## Estado de esta entrega
 
 Catálogo y fuente web organizados el 18 de noviembre de 2026 (P-ME-158). Las guías de Git y Zotero conservan sus fuentes y generadores. El tutorial de Antigravity permanece independiente de Quarto y del Tablero; no se añade automáticamente al menú público del seminario. Integración del PR y publicación de la adaptación pendientes.
+
+## Acceso público a las ayudas — P-ME-163
+
+La página del blog `blog/recursos/tutoriales.qmd` reúne las guías web, fichas y PDF. `blog/recursos/git-github.qmd` es la introducción para participantes; la guía interna Git + IA conserva su función. Las fichas Git PDF/SVG se copian sin modificar desde `output/pdf/git-ia-ficha.pdf` y `docs/ficha-git/git-ia-ficha.svg` a `blog/recursos/`. Al regenerar el original, actualizar ambas copias y verificar igualdad antes de reconstruir Quarto. El PDF es una referencia ampliada del equipo y conserva sus rótulos históricos. Zotero mantiene su página y sus archivos públicos existentes. Antigravity continúa como enlace a un sitio independiente.
