@@ -48,3 +48,4 @@ class NetlifyPwa(unittest.TestCase):
             self.assertNotIn('href="../', page)
             self.assertIn(PILOT.BLOG, page)
             self.assertIn("/app/sw.js\n  Cache-Control: no-cache", (target / "_headers").read_text())
+            self.assertIn("application/manifest+json", (target / "_headers").read_text())

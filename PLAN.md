@@ -376,3 +376,5 @@ Actualización P-ME-169 (2026-11-18): Site URL de Supabase corregido a https://d
 ## Corrección de despliegue PWA — P-ME-170 (2026-11-18)
 
 Configuración propia en apps/pwa/netlify.toml y generación automática desde blog/_site/app a .netlify/pwa-public. Netlify ya guarda package apps/pwa, build del generador y publish .netlify/pwa-public. Blog raíz sin cambios. Pruebas de aislamiento (2), generación real y site.py check (26 páginas) correctos. Pendiente PR y validación de preview; producción requiere integrar el archivo mediante PR a main y comprobar el dominio. No se ha autorizado ni realizado la fusión en este encargo.
+
+Actualización P-ME-170: PR #21 abierto; package PWA apps/pwa y bases de ambos sitios corregidos en Netlify. La declaración base en el TOML raíz impedía seleccionar el paquete; retirada. Blog conserva comando y publish blog/_site. Preview PWA ya sirve entrada al Tablero y recursos correctos. Pendiente aceptación de previews finales e integración autorizada; producción todavía sin actualizar.

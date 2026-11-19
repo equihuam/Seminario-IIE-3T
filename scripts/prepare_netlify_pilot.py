@@ -53,6 +53,7 @@ def prepare(target):
         '<a href="./app/">Abrir el Tablero de Trabajo</a></html>', encoding="utf-8")
     (target / "_headers").write_text(
         "/app/*.mjs\n  Content-Type: application/javascript; charset=utf-8\n"
+        "/app/manifest.webmanifest\n  Content-Type: application/manifest+json; charset=utf-8\n"
         "/app/agenda.ics\n  Content-Type: text/calendar; charset=utf-8\n  Cache-Control: no-cache\n"
         "/app/sw.js\n  Cache-Control: no-cache\n", encoding="utf-8")
 
