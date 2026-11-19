@@ -1759,3 +1759,25 @@ Fecha de registro: 2026-11-18. Hora de emisión no disponible.
 ```text
 Sí hay que hacer ese ajuste, yo sólo cambipen en la plantilla de configuración del proyecto netlify
 ```
+
+## P-ME-173 — Editar aportaciones propias
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Los usuarios me piden habilitar la capacidad de editar entradas que ya han registrado y de su propia autoría. Pienso que podríamos habilitar un "doble click" para lanzar esa opción.
+```
+
+Respuesta a la pregunta de alcance (Lecturas, Semillero o ambas):
+
+```text
+Ambas
+```
+
+## P-ME-174 — Aplicar migración y entregar para revisión
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+Aplica la migración en Supabase, verifica que funcione y haz commit y push. Abre el PR para que yo lo revise y haga el merge.
+```

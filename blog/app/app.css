@@ -94,3 +94,7 @@ button:not(.text-button):not(.tabs button){border:1px solid var(--green);border-
 .reading-proposal textarea{min-height:105px}
 .reading-reference-preview{border-left:3px solid var(--gold);padding-left:12px;overflow-wrap:anywhere;font-size:14px}
 .reading-proposal select{max-width:100%;text-overflow:ellipsis}
+
+.entry-editor label{display:block;margin:16px 0 8px}
+.entry-editor textarea{display:block;margin-top:6px;min-height:100px}
+.entry-editor button{margin:4px 8px 4px 0}

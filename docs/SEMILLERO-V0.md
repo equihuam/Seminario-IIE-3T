@@ -202,3 +202,27 @@ El formulario de sugerencias exige seleccionar una referencia existente del grup
 Catálogo privado para miembros en `reading_references`, leído desde Zotero Desktop sincronizado: 21 referencias incorporadas sin escrituras a Zotero. No se distribuyen metadatos del catálogo en los recursos públicos. La actualización del desplegable tras un alta en Zotero requiere sincronizar el catálogo; la fecha y el paso están visibles en la interfaz. Procedimiento en [scripts/lecturas/README.md](../scripts/lecturas/README.md).
 
 Migración `202611170001_lecturas_catalogo.sql` aplicada al proyecto existente. Las fichas anteriores, sus fragmentos y los acuerdos no se modifican; `processing` almacena las dinámicas nuevas. La propuesta permanece separada de la decisión del grupo. La nueva versión del cliente debe desplegarse con el catálogo ya sincronizado; las solicitudes nuevas sin referencia o dinámica se rechazan también en el servidor.
+
+
+## Edición de aportaciones propias — P-ME-173
+
+Implementación local en `miguel/editar-aportaciones`, pendiente de integración y activación remota.
+
+- Lecturas: botón Editar y doble clic sobre el texto propio. Permite corregir asunto, dinámica, fragmento y comentarios personales, con Guardar cambios y Cancelar. La referencia Zotero, los metadatos, la autoría y los acuerdos permanecen fuera de esta edición.
+- Mis envíos: Editar · nueva versión y doble clic en la versión más reciente de cada semilla. Abre el formulario existente, con confirmación antes de sustituir el borrador. El envío genera una nueva versión; las anteriores no se sobrescriben. Si había adjunto, se debe volver a seleccionar el documento correspondiente, como en el flujo previo.
+- Permisos: RLS limita la actualización a miembros activos que sean autores; los permisos por columna impiden modificar identidad, autoría, referencia o número de revisión. Un coordinador tampoco puede editar aportaciones ajenas por este mecanismo.
+- Concurrencia: Lecturas actualiza solo si coincide `revision`; si otra edición ganó, conserva el texto del formulario y pide actualizar antes de reintentar. No reenvía automáticamente una corrección tras un fallo de red.
+- Historial: `reading_edit_history` conserva la fila anterior, revisión, momento y editor. No se ofrece por la API a participantes; su recuperación queda a administración. No se publica automáticamente ninguna aportación.
+
+### Activación
+
+Aplicar una sola vez `supabase/migrations/202611180001_edicion_aportaciones.sql` al proyecto existente, antes de publicar el cliente. La migración es transaccional, aditiva y falla si sus objetos ya existen; no sustituye registros ni elimina datos. Verificar columnas `revision` y `edited_at`, políticas `edit_own_reading`/`edit_own_comment`, disparadores e historial. Realizar una prueba con dos cuentas o datos sintéticos revertidos: edición propia correcta, actualización ajena sin filas afectadas, identidad protegida y original conservado. La prueba PGlite local no acredita aplicación remota.
+
+Después, entregar fuentes y `blog/_site/app/` mediante PR a main. La PWA se genera desde esa salida al integrar. Comprobar el sitio del Tablero y una instalación existente; no fusionar como parte de un mero encargo de edición. En este equipo no se encontró la configuración administrativa en las rutas documentadas `.secrets/supabase.json` y `.local/supabase-ca.crt`; no se aplicó SQL remoto.
+
+### Verificación local
+
+Node: `node --test tests/semillero/model.test.mjs tests/semillero/database.test.mjs tests/semillero/calendar.test.mjs tests/semillero/readings.test.mjs` (19 pruebas). La suite de Lecturas incluye permisos, historial, conflictos, validación y protección de columnas. Python: `.venv/Scripts/python.exe -m unittest discover -s tests -v` (18 pruebas). Interfaz: Edge con API simulada y datos sintéticos a 390 y 1366 px; botón, doble clic, teclado, cancelación, guardado de propuesta/comentario y reapertura de semilla. Evidencia local en `private/qa-edicion.cjs` y capturas `private/qa-edicion-*.png`, fuera de Git. No se probó envío real ni modo offline.
+
+
+2026-11-18 · P-ME-174 · Migración `202611180001_edicion_aportaciones.sql` aplicada en Supabase, proyecto seminario-iie (owqoinfndqzqwiiiexks), mediante SQL Editor autenticado. Comprobación previa: historial ausente, cero columnas nuevas y cero dinámicas incompatibles. Prueba remota `supabase/verify-editing.sql` correcta: edición propia de propuesta/comentario, revisión concurrente, rechazo de cambios ajenos incluso por coordinación, autoría/metadatos protegidos, validación de dinámica, historial privado con original preservado y denegación anónima. Datos sintéticos revertidos mediante ROLLBACK. Sustituye el pendiente de aplicación remota registrado en P-ME-173. Entrega autorizada por commit/push y PR a main; la fusión queda a Miguel. Verificación de interfaz previa con API simulada; no se acredita todavía uso de esta edición desde la PWA publicada ni instalación/offline.
