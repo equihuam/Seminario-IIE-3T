@@ -340,3 +340,19 @@ Menú reorganizado en Empezar, Actividades y Fundamentos, con acceso directo al 
 Miguel comunica la aprobación conjunta con Octavio para entregar el Tablero a participantes. Rótulo v1 visible en la PWA y aviso del Semillero actualizado; paquete público regenerado en apps/_pwa-control-clase. Se conserva la compatibilidad de los registros existentes. Pendientes de publicación: merge del PR del blog y subida manual de la carpeta habitual al sitio independiente de Netlify.
 
 Actualización P-ME-153 (2026-11-17): incorporado main con el PR #17 a la rama del PR #18 y resueltos los conflictos de registros conservando ambos historiales. Pasaron 16 pruebas Python y la reconstrucción/verificación de 24 páginas. El menú y Tablero v1 permanecen listos para el merge de Miguel.
+
+## Tutoriales recibidos — P-ME-154 (2026-11-18)
+
+ZIP conservado en `tutorials/entrega-codex-seminario-iie-3t-tutoriales-20261118.zip`, con copia verificada por SHA256. Pendientes: revisar su contenido y después acordar el procesamiento. Sin descomprimir ni ejecutar; archivo local excluido de Git por la regla existente `*.zip`.
+
+Actualización P-ME-155 (2026-11-18): la ruta vigente es `tutoriales/entrega-codex-seminario-iie-3t-tutoriales-20261118.zip`. La carpeta ya estaba renombrada al comprobar el encargo; `tutorials/` no existe. SHA256 idéntico al registrado en la recepción. Revisión y procesamiento pendientes.
+
+## Revisión del PR de tutoriales — P-ME-156 (2026-11-18)
+
+PR #19 revisado en 980505d frente a main 20a8836 y a los seis originales locales. Dictamen: todavía no listo para integrar. Fuente web idéntica al ZIP, pero sin seguimiento y bajo tutoriales/tutoriales/antigravity/web/; faltan incorporación al PR, adaptaciones de revisión independiente, Git y encabezados, y comprobación visual. El PR solo cambia tres Markdown y no modifica el blog ni el Tablero. Informe y criterio de cierre en docs/REVISION-PR19-TUTORIALES.md. No se implementan correcciones ni se fusiona.
+
+## Organización aplicada — P-ME-158 (2026-11-18)
+
+Catálogo de tutoriales incorporado localmente desde la propuesta del PR #19 y enlazado en README. Fuentes web reorganizadas en tutoriales/antigravity/web, con respaldo íntegro de los seis originales en private/tutoriales-originales-20261118 y manifiesto SHA-256 original/adaptado. Corregidos revisión independiente, actualización Git por avance rápido, encabezados y referencia de video no verificada. Git y Zotero conservan sus fuentes; blog y Tablero intactos. Comprobaciones locales y de interfaz correctas, incluidos siete botones de copia. Pendientes: entrega de estos cambios al PR #19, revisión docente, integración autorizada y eventual publicación independiente. No se ha ejecutado la práctica en Antigravity.
+
+Actualización P-ME-159 (2026-11-18): entrega de la organización de tutoriales para actualizar el PR #19, conservando sus commits previos. Verificación local de enlaces, huellas, encabezados y política por archivo correcta; evidencia de interfaz en P-ME-158. Sin cambios al blog ni reconstrucción Quarto. Integración a main y despliegue independiente reservados a autorización posterior.

@@ -1,0 +1,32 @@
+[
+  {
+    "archivo": "assets/app.js",
+    "sha256_original": "2c7c9d58983557b618a883baad13cf03d89c3c79c9447f924325ec5a767745f4",
+    "sha256_adaptado": "2c7c9d58983557b618a883baad13cf03d89c3c79c9447f924325ec5a767745f4"
+  },
+  {
+    "archivo": "assets/favicon.svg",
+    "sha256_original": "b4f9843d28f442aa3b1598f599851cb588cf9a8e479d9e0ea3507bd9a44db2a2",
+    "sha256_adaptado": "b4f9843d28f442aa3b1598f599851cb588cf9a8e479d9e0ea3507bd9a44db2a2"
+  },
+  {
+    "archivo": "assets/styles.css",
+    "sha256_original": "b63d8ccba7a40c5064e7b70fc4109d03cbad4174cd3c1a06f49f873f84502335",
+    "sha256_adaptado": "b63d8ccba7a40c5064e7b70fc4109d03cbad4174cd3c1a06f49f873f84502335"
+  },
+  {
+    "archivo": "index.html",
+    "sha256_original": "ede9531fd57ec7a8fe795fca38c13bf32811d19970ed628e344954be662b8063",
+    "sha256_adaptado": "fb8c207362d67f016491d45b139a199c6b7dea7a0d6500dcf10e2b62bbb8d1f6"
+  },
+  {
+    "archivo": "netlify.toml",
+    "sha256_original": "78dd0d574800d7770239ef5642696790353a6537726633a57a2ed2963a9a2199",
+    "sha256_adaptado": "78dd0d574800d7770239ef5642696790353a6537726633a57a2ed2963a9a2199"
+  },
+  {
+    "archivo": "README.md",
+    "sha256_original": "fcb196e7cfe61e3c8633ee719e4f000e0edc644153d9c67a0928052650fefe54",
+    "sha256_adaptado": "fd366a67c32108119d8bb009a693e8e2d0724a6137d478336bade52391d8d4b2"
+  }
+]
