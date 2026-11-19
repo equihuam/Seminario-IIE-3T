@@ -117,3 +117,7 @@ Al enlazar café, iie-teoría o iie-elementals para lectura, usar sus versiones 
 ## Aplicación del Semillero · piloto v0 (2026-11-12)
 
 La implementación de `blog/app/` complementa el procedimiento manual descrito más arriba. Conserva la publicación estática en Netlify; Quarto copia sus recursos a `blog/_site/app/`. La recepción central permanece deshabilitada cuando `config.json` no identifica un proyecto Supabase. Configuración, migración, permisos, respaldos y límites en [SEMILLERO-V0.md](SEMILLERO-V0.md). Una recepción privada no crea automáticamente una ficha pública ni sustituye la confirmación de atribución. La aplicación no introduce un nuevo paso obligatorio para recibir aportaciones por los medios ya acordados.
+
+## Fichas públicas de tutoriales — P-ME-163
+
+`blog/recursos/tutoriales.qmd` reúne las ayudas; Git/GitHub y Zotero tienen guía HTML, imagen SVG y descarga PDF de una página carta. La ficha Git original del equipo se ofrece por petición de Miguel como referencia ampliada desde `blog/recursos/git-github.qmd`, con su procedencia y alcance visibles. Esto autoriza sus copias públicas PDF/SVG; la guía interna completa permanece fuera del blog. Copiar desde `output/pdf/git-ia-ficha.pdf` y `docs/ficha-git/git-ia-ficha.svg` cuando cambie el original; comparar bytes de fuente, copia pública y salida. Conservar los enlaces de Zotero existentes. Añadir páginas nuevas al control de `scripts/check_site.py` y recursos descargables a `_quarto.yml`.

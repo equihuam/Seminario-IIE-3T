@@ -1,0 +1,795 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="8.5in" height="11in" viewBox="0 0 612 792">
+<title>Git + IA: colaboración de Miguel y Octavio</title>
+<desc>Seis encargos con comprobaciones y reglas de conservación del trabajo compartido.</desc>
+<rect x="0" y="0" width="612" height="792" rx="0" fill="#F7F6F0"/>
+<rect x="0" y="0" width="612" height="104" rx="0" fill="#183D3A"/>
+<g transform="translate(500 12) scale(0.15625)">
+  <title>Seminario IIE-3T: probabilidad, sociedad y ecosistema</title>
+  <desc>Propuesta de identificador: tres nodos enlazados, con una distribución de probabilidad, dos personas y una hoja. Los enlaces son simbólicos, no arcos causales del modelo.</desc>
+  <rect width="512" height="512" rx="112" fill="#183D3A"/>
+  <g fill="none" stroke="#86AAA0" stroke-width="13" stroke-linecap="round">
+    <path d="M211 229 L166 301 M301 229 L346 301 M216 354 H296"/>
+  </g>
+  <!-- Distribución: incertidumbre y razonamiento probabilístico. -->
+  <circle cx="256" cy="160" r="91" fill="#DFAD67"/>
+  <path d="M196 186 C221 186 222 129 247 129 C273 129 270 176 290 181 C299 184 307 185 316 186 L316 196 H196 Z" fill="#183D3A"/>
+  <path d="M247 117 V204" fill="none" stroke="#FFF6E6" stroke-width="6" stroke-linecap="round" stroke-dasharray="2 11"/>
+  <!-- Comunidad: dos personas, no un individuo aislado. -->
+  <circle cx="146" cy="354" r="72" fill="#9DC8D5"/>
+  <g fill="#183D3A">
+    <circle cx="128" cy="337" r="13"/>
+    <circle cx="165" cy="337" r="13"/>
+    <path d="M105 384 V368 C105 347 151 347 151 368 V384 Z"/>
+    <path d="M143 384 V368 C143 347 188 347 188 368 V384 Z"/>
+  </g>
+  <path d="M146 366 V384" stroke="#9DC8D5" stroke-width="6"/>
+  <!-- Hoja: referencia al mundo vivo, no definición del ecosistema. -->
+  <circle cx="366" cy="354" r="72" fill="#C4D6AC"/>
+  <path d="M340 378 C324 340 350 322 396 322 C398 363 378 389 340 378 Z" fill="#183D3A"/>
+  <path d="M338 386 L379 343 M354 369 L354 351 M363 360 L380 360" fill="none" stroke="#C4D6AC" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="30" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">SEMINARIO</text>
+<text x="81.003" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> </text>
+<text x="83.505" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">IIE</text>
+<text x="94.512" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">-</text>
+<text x="97.509" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">3T</text>
+<text x="108.012" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> / </text>
+<text x="115.518" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">REFERENCIA</text>
+<text x="174.018" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> </text>
+<text x="176.52" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">PARA</text>
+<text x="202.017" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> </text>
+<text x="204.519" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">MIGUEL</text>
+<text x="239.52" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> </text>
+<text x="242.02200000000002" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">Y</text>
+<text x="248.02500000000003" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2"> </text>
+<text x="250.52700000000004" y="25" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#B7DCD2">OCTAVIO</text>
+<text x="30" y="58" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" font-style="normal" fill="#FFFFFF">Git</text>
+<text x="73.059" y="58" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" font-style="normal" fill="#FFFFFF"> + </text>
+<text x="108.399" y="58" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" font-style="normal" fill="#FFFFFF">IA</text>
+<text x="30" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF">Reglas</text>
+<text x="79.792" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF"> </text>
+<text x="84.24000000000001" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF">y</text>
+<text x="92.24000000000001" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF"> </text>
+<text x="96.68800000000002" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF">procedimiento</text>
+<text x="197.168" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF"> </text>
+<text x="201.616" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF">de</text>
+<text x="219.40800000000002" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF"> </text>
+<text x="223.85600000000002" y="82" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" font-style="normal" fill="#FFFFFF">colaboración</text>
+<text x="30" y="126" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">EL</text>
+<text x="41.502" y="126" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="44.004000000000005" y="126" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">RECORRIDO</text>
+<text x="30" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">Cualquier</text>
+<text x="74.92949999999999" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="77.84849999999999" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">cambio</text>
+<text x="111.68999999999998" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="114.60899999999998" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">inicia</text>
+<text x="138.528" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="141.447" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">con</text>
+<text x="158.373" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="161.292" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">una</text>
+<text x="178.806" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="181.72500000000002" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">copia</text>
+<text x="206.82000000000002" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="209.73900000000003" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="221.41500000000002" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="224.33400000000003" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="247.08750000000003" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="250.00650000000005" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">a</text>
+<text x="255.84450000000004" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="258.7635" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">una</text>
+<text x="276.27750000000003" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="279.1965" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">rama</text>
+<text x="303.1155" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="306.0345" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="317.71049999999997" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="320.62949999999995" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">trabajo</text>
+<text x="352.72799999999995" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="355.64699999999993" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">nueva</text>
+<text x="384.2489999999999" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="390.08699999999993" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">Así</text>
+<text x="405.25949999999995" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="411.09749999999997" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="419.26649999999995" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="422.18549999999993" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">recorrido</text>
+<text x="463.60799999999995" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="466.52699999999993" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">usual</text>
+<text x="491.62199999999996" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="494.54099999999994" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">es</text>
+<text x="505.62899999999996" y="142" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" font-style="normal" fill="#183D3A">:</text>
+<text x="30" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="53.837" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="56.895" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">vigente</text>
+<text x="92.35900000000001" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 96.41700000000002 174.7 H 108.61700000000002 M 105.61700000000002 171.7 L 108.61700000000002 174.7 L 105.61700000000002 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="109.71700000000001" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="112.77500000000002" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">nueva</text>
+<text x="142.73900000000003" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="145.79700000000003" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">rama</text>
+<text x="170.85500000000002" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="173.913" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">propia</text>
+<text x="204.482" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 208.54 174.7 H 220.73999999999998 M 217.73999999999998 171.7 L 220.73999999999998 174.7 L 217.73999999999998 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="221.84" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="224.898" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">cambios</text>
+<text x="265.851" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="268.909" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="274.409" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="277.467" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">pruebas</text>
+<text x="317.21" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 321.268 174.7 H 333.46799999999996 M 330.46799999999996 171.7 L 333.46799999999996 174.7 L 330.46799999999996 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="334.568" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="337.626" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">commit</text>
+<text x="373.068" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 377.126 174.7 H 389.32599999999996 M 386.32599999999996 171.7 L 389.32599999999996 174.7 L 386.32599999999996 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="390.426" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="393.484" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">push</text>
+<text x="417.332" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 421.39 174.7 H 433.59 M 430.59 171.7 L 433.59 174.7 L 430.59 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="434.69" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="437.748" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">PR</text>
+<text x="453.027" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="456.085" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">a</text>
+<text x="462.20099999999996" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="465.25899999999996" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="489.09599999999995" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 493.15399999999994 174.7 H 505.3539999999999 M 502.3539999999999 171.7 L 505.3539999999999 174.7 L 502.3539999999999 177.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="506.45399999999995" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="509.51199999999994" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">revisión</text>
+<text x="547.4069999999999" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="550.4649999999999" y="178" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="30" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">acuerdo</text>
+<text x="69.743" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 73.801 187.7 H 86.001 M 83.001 184.7 L 86.001 187.7 L 83.001 190.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="87.101" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="90.159" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">merge</text>
+<text x="121.333" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="124.391" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">aprobado</text>
+<text x="170.86599999999999" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="173.92399999999998" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">a</text>
+<text x="180.04" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="183.09799999999998" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="206.935" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 210.993 187.7 H 223.19299999999998 M 220.19299999999998 184.7 L 223.19299999999998 187.7 L 220.19299999999998 190.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="224.293" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="227.351" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">comprobación</text>
+<text x="296.431" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="299.489" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="304.989" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="308.04699999999997" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">limpieza</text>
+<text x="348.38399999999996" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<path d="M 352.44199999999995 187.7 H 364.64199999999994 M 361.64199999999994 184.7 L 364.64199999999994 187.7 L 361.64199999999994 190.7" fill="none" stroke="#183D3A" stroke-width="0.8"/>
+<text x="365.74199999999996" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="368.79999999999995" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="392.63699999999994" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="395.69499999999994" y="191" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="400" font-style="normal" fill="#183D3A">vigente</text>
+<text x="30" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">PIDE</text>
+<text x="51.006" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="53.508" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">UNA</text>
+<text x="73.00200000000001" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="75.504" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">ACCIÓN</text>
+<text x="111.0" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="113.502" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">Y</text>
+<text x="119.505" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="122.00699999999999" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">COMPRUEBA</text>
+<text x="181.00199999999998" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="183.504" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">SU</text>
+<text x="196.005" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="198.507" y="211" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">RESULTADO</text>
+<rect x="30" y="220" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="42" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">1</text>
+<text x="48.672" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="55.343999999999994" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Empezar</text>
+<text x="105.36" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="108.696" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">o</text>
+<text x="116.02799999999999" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="119.36399999999999" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">retomar</text>
+<text x="42" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Revisa</text>
+<text x="72.56" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="75.34" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">estado</text>
+<text x="105.36000000000001" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="108.14000000000001" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="113.14000000000001" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="115.92000000000002" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">trabajo</text>
+<text x="146.49" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="149.27" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">pendiente</text>
+<text x="193.19" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="198.75" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Para</text>
+<text x="219.87" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> [</text>
+<text x="225.43" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">objetivo</text>
+<text x="259.89" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">],</text>
+<text x="42" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">crea</text>
+<text x="61.45" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> [</text>
+<text x="67.01" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">autor</text>
+<text x="89.80000000000001" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">/</text>
+<text x="92.58000000000001" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">tema</text>
+<text x="114.81" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">] </text>
+<text x="120.37" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">desde</text>
+<text x="147.61" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="150.39000000000001" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="172.06" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="174.84" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">actualizado</text>
+<text x="225.42000000000002" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">; </text>
+<text x="230.98000000000002" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">si</text>
+<text x="42" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">retomamos</text>
+<text x="92.01" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="97.57000000000001" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">inspecciona</text>
+<text x="150.37" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="153.15" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">la</text>
+<text x="160.93" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="163.71" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">rama</text>
+<text x="186.49" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="189.27" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">existente</text>
+<text x="229.29000000000002" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="42" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="91.10560000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="96.33200000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Rama</text>
+<text x="121.40180000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="124.01500000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">y</text>
+<text x="128.715" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="131.3282" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">base</text>
+<text x="151.7074" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="154.3206" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">correctas</text>
+<text x="192.97340000000003" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">; </text>
+<text x="198.19980000000004" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">cambios</text>
+<text x="233.19600000000003" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="235.80920000000003" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">ajenos</text>
+<text x="42" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">conservados</text>
+<text x="95.2886" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="314" y="220" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="326" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">2</text>
+<text x="332.672" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="339.34400000000005" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Preparar</text>
+<text x="388.70000000000005" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="392.03600000000006" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">y</text>
+<text x="398.7080000000001" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="402.0440000000001" y="243" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">verificar</text>
+<text x="326" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Implementa</text>
+<text x="378.24" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> [</text>
+<text x="383.8" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">cambio</text>
+<text x="416.03000000000003" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">]. </text>
+<text x="424.37" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Revisa</text>
+<text x="454.93" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="457.71" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="465.48999999999995" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="468.2699999999999" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">diff</text>
+<text x="481.6099999999999" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="487.1699999999999" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">ejecuta</text>
+<text x="519.4099999999999" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="522.1899999999998" y="262" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">las</text>
+<text x="326" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">pruebas</text>
+<text x="362.13" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="364.90999999999997" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">pertinentes</text>
+<text x="414.38" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="417.15999999999997" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="422.15999999999997" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="424.93999999999994" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">registra</text>
+<text x="458.28" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="461.05999999999995" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">resultados</text>
+<text x="507.18999999999994" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="512.7499999999999" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Si</text>
+<text x="521.6399999999999" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="524.4199999999998" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">cambia</text>
+<text x="556.6499999999999" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="559.4299999999998" y="274.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="326" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">blog</text>
+<text x="344.9" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="350.46" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">regenera</text>
+<text x="390.47999999999996" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="393.25999999999993" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="398.25999999999993" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="401.0399999999999" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">verifica</text>
+<text x="432.7099999999999" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="435.4899999999999" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">su</text>
+<text x="446.0499999999999" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="448.82999999999987" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">salida</text>
+<text x="474.9499999999999" y="287.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="326" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="375.1056" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="380.332" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Evidencia</text>
+<text x="421.081" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="423.6942" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">real</text>
+<text x="439.36400000000003" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="441.97720000000004" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">de</text>
+<text x="452.43000000000006" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="455.04320000000007" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">pruebas</text>
+<text x="489.00540000000007" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">; </text>
+<text x="494.2318000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">archivos</text>
+<text x="529.2280000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="531.8412000000001" y="304.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">dentro</text>
+<text x="326" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">del</text>
+<text x="338.5396" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="341.1528" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">alcance</text>
+<text x="373.5452" y="316.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="30" y="346" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="42" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">3</text>
+<text x="48.672" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="55.343999999999994" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Guardar</text>
+<text x="102.024" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="105.36" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">y</text>
+<text x="112.032" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="115.368" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">proponer</text>
+<text x="42" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Haz</text>
+<text x="59.78" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="62.56" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">commit</text>
+<text x="94.78" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="97.56" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="102.56" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="105.34" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">push</text>
+<text x="127.02000000000001" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="129.8" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="140.92000000000002" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="143.70000000000002" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">los</text>
+<text x="156.48000000000002" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="159.26000000000002" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">archivos</text>
+<text x="196.49" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="199.27" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">revisados</text>
+<text x="242.06" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="42" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Comprueba</text>
+<text x="94.24000000000001" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="97.02000000000001" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="104.80000000000001" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="107.58000000000001" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">índice</text>
+<text x="134.26000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="137.04000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="142.04000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="144.82000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">abre</text>
+<text x="164.83" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="167.61" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">un</text>
+<text x="178.73000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="181.51000000000002" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">PR</text>
+<text x="195.40000000000003" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="198.18000000000004" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">con</text>
+<text x="214.30000000000004" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="217.08000000000004" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">base</text>
+<text x="238.76000000000005" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="241.54000000000005" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="263.21000000000004" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="268.77000000000004" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">No</text>
+<text x="42" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">lo</text>
+<text x="49.78" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="52.56" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">fusiones</text>
+<text x="89.80000000000001" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="92.58000000000001" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">todavía</text>
+<text x="125.38000000000002" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="42" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="91.10560000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="96.33200000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">Commit</text>
+<text x="128.7056" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">, </text>
+<text x="133.93200000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">rama</text>
+<text x="155.3452" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="157.9584" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">remota</text>
+<text x="187.21120000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="189.82440000000003" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">y</text>
+<text x="194.5244" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="197.13760000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">enlace</text>
+<text x="224.83" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="227.44320000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">al</text>
+<text x="234.7564" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="237.36960000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">PR</text>
+<text x="250.42620000000002" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">; </text>
+<text x="255.65260000000004" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">sin</text>
+<text x="42" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">archivos</text>
+<text x="76.9962" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="79.60940000000001" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">ajenos</text>
+<text x="107.30180000000001" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="314" y="346" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="326" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">4</text>
+<text x="332.672" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="339.34400000000005" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Revisar</text>
+<text x="382.70000000000005" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="386.03600000000006" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">al</text>
+<text x="396.04400000000004" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="399.38000000000005" y="369" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">otro</text>
+<text x="326" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Revisa</text>
+<text x="356.56" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="359.34" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="367.11999999999995" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="369.8999999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">PR</text>
+<text x="383.7899999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> [</text>
+<text x="389.3499999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">número</text>
+<text x="423.2499999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">] </text>
+<text x="428.8099999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">sin</text>
+<text x="441.5899999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="444.3699999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">editar</text>
+<text x="469.3799999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">: </text>
+<text x="474.9399999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">base</text>
+<text x="496.6199999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="502.1799999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">diferencias</text>
+<text x="550.5299999999999" y="388" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">,</text>
+<text x="326" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">pruebas</text>
+<text x="362.13" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="364.90999999999997" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="369.90999999999997" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="372.68999999999994" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">conflictos</text>
+<text x="414.36999999999995" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="419.92999999999995" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Separa</text>
+<text x="452.16999999999996" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="454.94999999999993" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">problemas</text>
+<text x="501.62999999999994" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="504.4099999999999" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">que</text>
+<text x="521.0899999999999" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="523.8699999999999" y="400.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">impiden</text>
+<text x="326" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">integración</text>
+<text x="374.90999999999997" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="377.68999999999994" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="388.80999999999995" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="391.5899999999999" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">sugerencias</text>
+<text x="445.4999999999999" y="413.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="326" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="375.1056" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="380.332" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Hallazgos</text>
+<text x="421.598" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="424.2112" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">con</text>
+<text x="439.36400000000003" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="441.97720000000004" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">ubicación</text>
+<text x="481.68280000000004" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">; </text>
+<text x="486.90920000000006" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">límites</text>
+<text x="514.0658000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="516.6790000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">de</text>
+<text x="527.1318000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="529.7450000000001" y="430.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">lo</text>
+<text x="326" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">verificado</text>
+<text x="366.2226" y="442.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="30" y="472" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="42" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">5</text>
+<text x="48.672" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="55.343999999999994" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Resolver</text>
+<text x="106.032" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="109.368" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">un</text>
+<text x="124.032" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="127.368" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">conflicto</text>
+<text x="42" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Compara</text>
+<text x="83.12" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="85.9" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">ambas</text>
+<text x="115.91" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="118.69" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">aportaciones</text>
+<text x="175.94" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="178.72" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="183.72" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="186.5" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">propón</text>
+<text x="217.63" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="220.41" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">una</text>
+<text x="42" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">combinación</text>
+<text x="98.13" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="103.69" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Conserva</text>
+<text x="146.48" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="149.26" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">su</text>
+<text x="159.82" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="162.6" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">intención</text>
+<text x="202.62" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">; </text>
+<text x="208.18" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">consulta</text>
+<text x="42" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">decisiones</text>
+<text x="89.24000000000001" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="92.02000000000001" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">incompatibles</text>
+<text x="153.15" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="155.93" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="160.93" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="163.71" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">vuelve</text>
+<text x="192.61" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="195.39000000000001" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">a</text>
+<text x="200.95000000000002" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="203.73000000000002" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">verificar</text>
+<text x="238.73000000000002" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="42" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="91.10560000000001" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="96.33200000000001" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Sin</text>
+<text x="109.915" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="112.52820000000001" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">descartes</text>
+<text x="153.27720000000002" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="155.89040000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">automáticos</text>
+<text x="206.56580000000002" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="209.17900000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">ni</text>
+<text x="216.49220000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="219.10540000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">push</text>
+<text x="239.48460000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="242.09780000000003" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">forzado</text>
+<text x="273.44680000000005" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="314" y="472" width="268" height="124" rx="7" fill="#FFFFFF"/>
+<text x="326" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">6</text>
+<text x="332.672" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="339.34400000000005" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">Integrar</text>
+<text x="384.02000000000004" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="387.35600000000005" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">y</text>
+<text x="394.0280000000001" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="397.3640000000001" y="495" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700" font-style="normal" fill="#183D3A">cerrar</text>
+<text x="326" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Integra</text>
+<text x="357.13" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="359.90999999999997" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="367.68999999999994" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="370.4699999999999" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">PR</text>
+<text x="384.3599999999999" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="387.1399999999999" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">acordado</text>
+<text x="428.82999999999987" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="431.60999999999984" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">en</text>
+<text x="442.72999999999985" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="445.5099999999998" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="467.17999999999984" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="472.73999999999984" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Si</text>
+<text x="481.6299999999998" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="484.4099999999998" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">cambia</text>
+<text x="516.6399999999998" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="519.4199999999997" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="527.1999999999997" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="529.9799999999997" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">blog</text>
+<text x="548.8799999999997" y="514" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">,</text>
+<text x="326" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">comprueba</text>
+<text x="376.02" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="378.79999999999995" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">publicación</text>
+<text x="428.81999999999994" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="434.37999999999994" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Actualiza</text>
+<text x="474.94999999999993" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="477.7299999999999" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="499.3999999999999" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="502.1799999999999" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="507.1799999999999" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="509.95999999999987" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">limpia</text>
+<text x="536.0699999999998" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="538.8499999999998" y="526.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">solo</text>
+<text x="326" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">ramas</text>
+<text x="353.78" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="356.55999999999995" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">integradas</text>
+<text x="403.24999999999994" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="406.0299999999999" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">sin</text>
+<text x="418.80999999999995" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="421.5899999999999" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">trabajo</text>
+<text x="452.1599999999999" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="454.9399999999999" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">pendiente</text>
+<text x="498.8599999999999" y="539.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="326" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Comprueba</text>
+<text x="375.1056" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="380.332" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">Revisar</text>
+<text x="412.1886" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="414.8018" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">PR</text>
+<text x="427.8584" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="430.4716" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">y</text>
+<text x="435.1716" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="437.7848" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">worktrees</text>
+<text x="478.5244" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="481.1376" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">antes</text>
+<text x="504.13" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="506.7432" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">de</text>
+<text x="517.196" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="519.8092" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">borrar</text>
+<text x="544.879" y="556.5" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">;</text>
+<text x="326" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">branch</text>
+<text x="354.7358" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> -</text>
+<text x="360.4792" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">d</text>
+<text x="365.7056" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="368.3188" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">y</text>
+<text x="373.0188" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="375.632" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="italic" fill="#4B625F">prune</text>
+<text x="399.6678" y="568.0" font-family="Arial, Helvetica, sans-serif" font-size="9.4" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<rect x="30" y="604" width="552" height="81" rx="7" fill="#E5EFE8"/>
+<text x="42" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">REGLAS</text>
+<text x="79.503" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="82.005" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">QUE</text>
+<text x="101.508" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="104.00999999999999" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">CUIDAN</text>
+<text x="139.00199999999998" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="141.504" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">NUESTRO</text>
+<text x="185.505" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="188.007" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">TRABAJO</text>
+<text x="231.50400000000002" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71"> </text>
+<text x="234.00600000000003" y="624" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" font-style="normal" fill="#167A71">CONJUNTO</text>
+<text x="42" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="63.67" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="66.45" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">estable</text>
+<text x="98.69" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">; </text>
+<text x="104.25" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">ramas</text>
+<text x="132.03" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="134.81" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">miguel</text>
+<text x="164.26" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">/</text>
+<text x="167.04" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">tema</text>
+<text x="189.26999999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="194.82999999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">octavio</text>
+<text x="226.51" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">/</text>
+<text x="229.29" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">tema</text>
+<text x="251.51999999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="254.29999999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">o</text>
+<text x="259.85999999999996" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="262.63999999999993" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">feature</text>
+<text x="293.7699999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">/</text>
+<text x="296.5499999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">tema</text>
+<text x="318.7799999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="324.3399999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Seleccionar</text>
+<text x="376.5799999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="379.3599999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">archivos</text>
+<text x="416.5899999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="419.3699999999999" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">antes</text>
+<text x="443.82999999999987" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="446.60999999999984" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">del</text>
+<text x="459.9499999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="462.7299999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">commit</text>
+<text x="494.9499999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">; </text>
+<text x="500.5099999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">revisar</text>
+<text x="530.5099999999998" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="533.2899999999997" y="641" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="42" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">índice</text>
+<text x="68.68" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="71.46000000000001" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">con</text>
+<text x="87.58000000000001" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="90.36000000000001" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">scripts</text>
+<text x="119.25000000000001" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">/</text>
+<text x="122.03000000000002" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">check_repo</text>
+<text x="173.72000000000003" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="176.50000000000003" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">py</text>
+<text x="187.06000000000003" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="192.62000000000003" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Registrar</text>
+<text x="233.18000000000004" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="235.96000000000004" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="italic" fill="#183D3A">prompts</text>
+<text x="272.08000000000004" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="274.86" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">por</text>
+<text x="289.31" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="292.09" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">autor</text>
+<text x="314.88" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">, </text>
+<text x="320.44" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">bitácora</text>
+<text x="356.01" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="358.78999999999996" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="363.78999999999996" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="366.56999999999994" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">estado</text>
+<text x="396.5899999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="402.1499999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">Conservar</text>
+<text x="448.2699999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="451.0499999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">cambios</text>
+<text x="488.2799999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="491.0599999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">ajenos</text>
+<text x="520.5199999999999" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="523.2999999999998" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="528.2999999999998" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="531.0799999999998" y="653.5" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">excluir</text>
+<text x="42" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">credenciales</text>
+<text x="98.13" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="100.91" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">y</text>
+<text x="105.91" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="108.69" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">datos</text>
+<text x="133.15" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="135.93" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">restringidos</text>
+<text x="187.61" y="666.0" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="30" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="italic" fill="#183D3A">COMMIT</text>
+<text x="70.55" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="73.33" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">guarda</text>
+<text x="106.67" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="109.45" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">localmente</text>
+<text x="161.69" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="167.25" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="italic" fill="#183D3A">PUSH</text>
+<text x="195.03" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="197.81" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">comparte</text>
+<text x="242.82" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="248.38" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="italic" fill="#183D3A">PR</text>
+<text x="262.27" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="265.04999999999995" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">propone</text>
+<text x="305.04999999999995" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">. </text>
+<text x="310.60999999999996" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="italic" fill="#183D3A">MERGE</text>
+<text x="347.28" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A"> </text>
+<text x="350.05999999999995" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">integra</text>
+<text x="383.4" y="703" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" font-style="normal" fill="#183D3A">.</text>
+<text x="30" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">La</text>
+<text x="40.564" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="43.205" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">integración</text>
+<text x="89.6695" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="92.3105" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">en</text>
+<text x="102.87450000000001" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="105.51550000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="126.10200000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="128.74300000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">puede</text>
+<text x="155.15300000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="157.794" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">publicar</text>
+<text x="191.0535" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="193.6945" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="201.0855" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="203.7265" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="italic" fill="#183D3A">blog</text>
+<text x="221.6815" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">: </text>
+<text x="226.9635" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">Te</text>
+<text x="238.05" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="240.691" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">corresponde</text>
+<text x="293.492" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="296.13300000000004" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">comprobar</text>
+<text x="341.53350000000006" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="344.1745000000001" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">Netlify</text>
+<text x="370.5655000000001" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="373.2065000000001" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">cuando</text>
+<text x="404.36650000000014" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="407.00750000000016" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">sea</text>
+<text x="422.3215000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="424.9625000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">el</text>
+<text x="432.3535000000002" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="434.99450000000024" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">caso</text>
+<text x="455.05850000000027" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="460.34050000000025" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">La</text>
+<text x="470.90450000000027" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="473.5455000000003" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">IA</text>
+<text x="482.5230000000003" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="485.1640000000003" y="720" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">ejecuta</text>
+<text x="30" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">exclusivamente</text>
+<text x="95.4645" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="98.1055" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">lo</text>
+<text x="105.49650000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="108.13750000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">autorizado</text>
+<text x="152.49300000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">; </text>
+<text x="157.77500000000003" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">no</text>
+<text x="168.33900000000003" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="170.98000000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">tiene</text>
+<text x="191.57600000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="194.217" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">permiso</text>
+<text x="227.99900000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="230.64000000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="241.204" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="243.845" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">fusionar</text>
+<text x="277.6365" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="280.27750000000003" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">nada</text>
+<text x="301.4055" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="304.04650000000004" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">al</text>
+<text x="311.43750000000006" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="314.0785000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">recibir</text>
+<text x="339.93750000000006" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="342.5785000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">un</text>
+<text x="353.1425000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="355.7835000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">encargo</text>
+<text x="390.10700000000014" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="392.74800000000016" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">de</text>
+<text x="403.3120000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="405.9530000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">edición</text>
+<text x="436.0490000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">. </text>
+<text x="441.3310000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">El</text>
+<text x="449.77650000000017" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="452.4175000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">único</text>
+<text x="475.1225000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="477.7635000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">camino</text>
+<text x="508.3820000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="511.0230000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">a</text>
+<text x="516.3050000000002" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="518.9460000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="italic" fill="#183D3A">main</text>
+<text x="539.5325000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="542.1735000000001" y="732" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">es</text>
+<text x="30" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">mediante</text>
+<text x="69.0735" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="71.7145" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">un</text>
+<text x="82.27850000000001" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A"> </text>
+<text x="84.91950000000001" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="italic" fill="#183D3A">PR</text>
+<text x="98.11500000000001" y="744" font-family="Arial, Helvetica, sans-serif" font-size="9.5" font-weight="400" font-style="normal" fill="#183D3A">.</text>
+<text x="30" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">Guía</text>
+<text x="48.428" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="50.791" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">ampliada</text>
+<text x="85.2755" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">: </text>
+<text x="90.0015" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">docs</text>
+<text x="107.95349999999999" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">/</text>
+<text x="110.31649999999999" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">COLABORACION</text>
+<text x="178.801" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">-</text>
+<text x="181.6315" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">GIT</text>
+<text x="195.801" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">-</text>
+<text x="198.6315" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">IA</text>
+<text x="206.664" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<text x="209.027" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">md</text>
+<text x="220.8335" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F"> | </text>
+<text x="227.7695" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">Material</text>
+<text x="257.9955" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="260.3585" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">fuera</text>
+<text x="279.73" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="282.093" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F">del</text>
+<text x="293.432" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="295.795" y="765" font-family="Arial, Helvetica, sans-serif" font-size="8.5" font-weight="400" font-style="italic" fill="#4B625F">blog</text>
+<text x="30" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">Propuesta</text>
+<text x="66.464" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="68.688" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">de</text>
+<text x="77.584" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="79.808" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">Miguel</text>
+<text x="103.36800000000001" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> / </text>
+<text x="110.04" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">Desarrollo</text>
+<text x="146.488" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="148.712" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">con</text>
+<text x="161.608" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="163.832" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">IA</text>
+<text x="171.392" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> / </text>
+<text x="178.064" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">10</text>
+<text x="186.95999999999998" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="189.18399999999997" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">oct</text>
+<text x="199.85599999999997" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> </text>
+<text x="202.07999999999996" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">2026</text>
+<text x="219.87199999999996" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> / </text>
+<text x="226.54399999999995" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">v1</text>
+<text x="234.99199999999996" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">.</text>
+<text x="237.21599999999995" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">2</text>
+<text x="550" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">1</text>
+<text x="554.448" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F"> / </text>
+<text x="561.12" y="779" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" font-style="normal" fill="#4B625F">1</text>
+</svg>

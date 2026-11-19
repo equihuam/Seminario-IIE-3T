@@ -1,0 +1,39 @@
+---
+title: "Tutoriales y fichas"
+description: "Ayudas para trabajar con IA, conservar versiones y organizar tus referencias."
+---
+
+Elige la ayuda que necesitas para tu proyecto. Las guías se leen en el navegador; las fichas de Git y Zotero también se pueden descargar en **PDF, formato carta y una página**. Son apoyos para consultar a tu ritmo, no requisitos adicionales de participación.
+
+## Git y GitHub
+
+**Para qué:** conservar versiones en tu equipo y, más adelante, proponer cambios a otras personas. Empieza por Git local; GitHub no es necesario para la preparación inicial.
+
+[Leer la guía](git-github.qmd){.btn .btn-primary}
+[Consultar la ficha](git-github.qmd#ficha-de-consulta){.btn .btn-outline-primary}
+[Descargar PDF](git-ia-ficha.pdf){.btn .btn-outline-primary}
+
+**Comprobación:** puedes identificar qué cambió y localizar el commit que lo guarda. La ficha amplía el recorrido con ramas y revisión de contribuciones.
+
+## Zotero y tu bibliografía
+
+**Para qué:** organizar una referencia, comprobar sus metadatos y consultar la biblioteca con ayuda del asistente cuando exista acceso.
+
+[Leer la guía](zotero.qmd){.btn .btn-primary}
+[Consultar la ficha](zotero.qmd#ficha-de-consulta){.btn .btn-outline-primary}
+[Descargar PDF](zotero-ia-ficha.pdf){.btn .btn-outline-primary}
+
+**Comprobación:** identificas biblioteca, colección y obra; distingues los metadatos consultados del texto efectivamente leído.
+
+## IA agéntica y Antigravity
+
+**Para qué:** definir un proyecto, encargar una tarea pequeña y revisar el resultado. Antigravity es una opción; puedes conservar el asistente de tu preferencia.
+
+[Leer el tutorial web](https://antigravity-intro.netlify.app/){.btn .btn-primary}
+[Practicar con tu asistente](../preparar-proyecto.qmd#vincula-el-asistente-con-ese-espacio){.btn .btn-outline-primary}
+
+**Comprobación:** el asistente indica qué archivos pudo consultar y tú contrastas su resultado con ellos. Este tutorial se publica en un sitio independiente; no dispone aquí de ficha PDF. La versión publicada puede diferir de la adaptación mantenida por el equipo.
+
+## Retoma tu preparación
+
+Vuelve a [Preparar tu proyecto](../preparar-proyecto.qmd) para situar cada ayuda en el recorrido común, o consulta [Reproducibilidad](../reproducibilidad.qmd) para documentar lo que realmente comprobaste.

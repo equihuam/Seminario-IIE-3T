@@ -22,6 +22,7 @@ blog/**/*.html
 !/blog/app/index.html
 blog/**/*.pdf
 !/blog/recursos/zotero-ia-ficha.pdf
+!/blog/recursos/git-ia-ficha.pdf
 
 # Salida verificada para publicar desde GitHub en Netlify
 !/blog/_site/

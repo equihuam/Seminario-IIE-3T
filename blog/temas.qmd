@@ -17,6 +17,8 @@ El primer puente conceptual está en [Del esquema a la red bayesiana](empieza-aq
 
 ## Reproducibilidad y trabajo científico
 
+- [Tutoriales y fichas](recursos/tutoriales.qmd): guías web y fichas descargables de Git/GitHub, Zotero e IA agéntica.
+
 - [Principios y compromisos](reproducibilidad.qmd).
 - [Zotero y tu bibliografía](recursos/zotero.qmd): registro de fuentes y primera consulta API.
 - [Ficha Zotero + IA](recursos/zotero.qmd#ficha-de-consulta): siete casos de uso del bibliotecario, con imagen ampliable y PDF imprimible.

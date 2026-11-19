@@ -20,6 +20,8 @@ Para participar aun si necesitas ayuda técnica, trae una **pregunta científica
 Git local, la continuidad con el asistente y Zotero forman parte de la preparación propuesta más abajo. Si alguna configuración te detiene, anota la dificultad y continúa con tu pregunta; no necesitas resolverla para participar. La ficha ampliada de Zotero es opcional; R, Python y la colaboración en la nube se incorporarán cuando el ejercicio los requiera.
 :::
 
+Todas las ayudas están reunidas en [Tutoriales y fichas](recursos/tutoriales.qmd): Git/GitHub, Zotero e IA agéntica.
+
 Los tiempos anteriores son estimaciones para la preparación completa, no un plazo de admisión ni tiempos comprobados con participantes.
 
 ## 1. Crea una carpeta propia y copia la plantilla
@@ -49,6 +51,12 @@ git commit -m "Inicio: plantilla documental del proyecto"
 ```
 
 Si trabajas desde RStudio, VS Code u otro entorno, puedes utilizar su panel visual de Git o pedirle a tu asistente que te ayude a registrar confirmaciones (*commits*) cada vez que completes un paso o acuerdes un cambio.
+
+::: {.callout-tip}
+## Ayuda para Git y GitHub
+
+Consulta la [guía breve de Git y GitHub](recursos/git-github.qmd) para guardar tu primera versión local. Incluye una [ficha ampliada Git + IA](recursos/git-github.qmd#ficha-de-consulta), con imagen ampliable y PDF de una página en formato carta. La colaboración en GitHub se incorpora más adelante.
+:::
 
 ## 3. Vincula el asistente con ese espacio
 

@@ -1717,3 +1717,29 @@ Fecha de registro: 2026-11-18. Hora de emisión no disponible.
 ```text
 podemos hscer un commit push que actualize lo necesario?
 ```
+
+## P-ME-163 — Reunir tutoriales y fichas en el blog
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+en el blog, agrega acceso a los tutoriales u hijas abreviadas (git + github y zotero) creo que hay pdf, no recuerdo si html. Ayudame a servirlos y a ofrecerlos en forms más homogenea. creo que estás algo dispersos. En a+las páginas de preparación aparece un enlace de ayuda para zotero, pero no lo hacemos para git+github, habría que ponerlo.
+```
+
+## P-ME-164 — Confirmar ayuda de Git en la preparación
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+En la sección "
+
+# Preparar tu proyecto" fsltaría agregar un enlace a la ayuda para fit+github, así com ya se hace para zotero ahí mismo
+```
+
+## P-ME-165 — Entregar los accesos del blog mediante PR
+
+Fecha de registro: 2026-11-18. Hora de emisión no disponible.
+
+```text
+cierto, perfecto. Sigue commit+push+pr
+```
