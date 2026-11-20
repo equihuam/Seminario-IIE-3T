@@ -1942,3 +1942,20 @@ Encargo de incorporación y entrega:
 Incorpora esta lista como checklist de revisión con Octavio en la carpeta del ejercicio y súbela al mismo PR, dejándolo abierto y sin fusionar.
 Damelo todo como un html autocontenido
 ```
+
+## P-ME-194 — Enviar el checklist HTML a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Envía también a Octavio el HTML autocontenido del checklist por correo, explicándole que puede marcar los puntos y descargar una copia con sus anotaciones para nuestra revisión conjunta.
+```
+
+
+## P-ME-195 — Versionar el registro del envío del checklist
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos con Octavio.
+```

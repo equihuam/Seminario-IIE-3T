@@ -1112,3 +1112,12 @@ Miguel autoriza commit y push del registro P-ME-191 y de esta instrucción en mi
 ## Checklist de revisión con Octavio — P-ME-193 (2026-11-19)
 
 Preparado ejercicios/tres-bolsas/REVISION-OCTAVIO.html autocontenido y enlazado desde README: seis puntos de revisión, casillas, notas de acuerdos, descarga de copia anotada e impresión carta. Prioriza definición del evento íntegra y distinción respecto al grado Z; conserva supuestos, tres capas, comprobación práctica y acuerdo de cierre. Edge/Playwright local: seis casillas, guardado y reapertura con marcas/notas conservadas, sin errores JavaScript ni desbordamiento a 390 px; capturas de escritorio y móvil revisadas. Primera ejecución de QA falló por ruta ESM de Windows; corregida a file URL, la ejecución completa pasó. Original entregado sin casillas marcadas ni notas de prueba. Cambio fuera del blog, sin alterar análisis R ni PPTX; no se repiten render Quarto ni pruebas numéricas. PR #25 permanece abierto en borrador, sin fusión; cambios ajenos excluidos.
+
+## Envío del checklist HTML a Octavio — P-ME-194 (2026-11-19)
+
+Enviado por instrucción expresa de Miguel, como respuesta en el mismo hilo, REVISION-OCTAVIO.html autocontenido. El correo explica descargar y abrir en navegador, marcar puntos, registrar acuerdos y descargar una copia anotada antes de cerrar; invita a compartirla para revisión conjunta. Recuerda rama miguel/ejercicio-canicas, no main, y PR #25 abierto en borrador sin fusión. Gmail confirmó SENT; lectura posterior de Enviados verificó destinatario Octavio y adjunto HTML de 8558 bytes. Archivo cotejado con la versión Git antes de enviarlo; SHA256 16688c2f130c79b3c5a7a1f7452684160e8542d63d87ad1ac767d76dd8bef1eb. No se acredita recepción ni lectura. Registro local, sin nuevo commit, push o modificación del PR.
+
+
+## Versionado del envío del checklist — P-ME-195 (2026-11-19)
+
+Miguel autoriza commit y push del registro P-ME-194 y de esta instrucción en la misma rama miguel/ejercicio-canicas. Se seleccionan únicamente las entradas nuevas de BITACORA.md y prompts/miguel.md, preservando los cambios ajenos y las ilustraciones locales fuera del índice. PR #25 abierto en borrador y sin fusionar hasta revisión con Octavio. Cambio exclusivo de trazabilidad; no modifica código, materiales ni blog, por lo que no se repiten pruebas R o render. La comprobación del índice se ejecuta mediante el hook del commit.
