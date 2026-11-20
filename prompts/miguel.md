@@ -1925,3 +1925,20 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos el ejercicio con Octavio.
 ```
+
+## P-ME-193 — Checklist autocontenido de revisión con Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+Solicitud previa de la lista, registrada retrospectivamente:
+
+```text
+Prepara una lista breve de los puntos que debemos revisar con Octavio antes de cerrar el ejercicio y fusionar el PR, especialmente la definición de integridad y su diferencia con el grado de condición.
+```
+
+Encargo de incorporación y entrega:
+
+```text
+Incorpora esta lista como checklist de revisión con Octavio en la carpeta del ejercicio y súbela al mismo PR, dejándolo abierto y sin fusionar.
+Damelo todo como un html autocontenido
+```

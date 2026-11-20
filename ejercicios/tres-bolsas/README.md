@@ -2,6 +2,8 @@
 
 Base de trabajo recuperada el 19 de noviembre de 2026 por encargo de Miguel (P-ME-181). Miguel atribuye la idea del juego a Octavio y a él: tres bolsas con distintas combinaciones de canicas de los seis colores de las damas chinas.
 
+Checklist de cierre: [revisión con Octavio en HTML autocontenido](REVISION-OCTAVIO.html), con seis puntos, casillas y espacio para acuerdos. Descargar una copia desde el propio HTML para conservar anotaciones.
+
 ## Variante bicolor de tres capas
 
 Para continuar en otro equipo: [trabajo compartido en la rama del ejercicio](TRABAJO-COMPARTIDO.md). El PR permanecerá abierto hasta resolver la dinámica con Octavio; el PPTX de trabajo se comparte por separado.
