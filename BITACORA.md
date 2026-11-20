@@ -1084,3 +1084,9 @@ Creado borrador local de 12 diapositivas y notas, formas editables de canicas, t
 ## Entrega del ejercicio para Octavio — P-ME-187 (2026-11-19)
 
 Autorizados commit y push del ejercicio y PR abierto hasta resolverlo con Octavio. Preparada guía TRABAJO-COMPARTIDO con rama explícita, actualización ff-only, ejecución R y límites de lo incluido en Git. PPTX original y borrador excluidos; se comparte generador. Se conservan sin integrar registros previos ajenos e ilustraciones concurrentes. Correo previsto como borrador local, sin envío. Main remoto coincide con base 46ab84a y no había PR abierto para esta rama al iniciar. La entrega se deja en borrador, sin fusión ni publicación; identificadores de entrega se informarán al finalizar.
+
+## Cierre de entrega y correo — P-ME-187–188 (2026-11-19)
+
+Commit 8e8834e subido a origin/miguel/ejercicio-canicas; PR #25 abierto en borrador hacia main: https://github.com/equihuam/Seminario-IIE-3T/pull/25. Permanece sin fusionar para resolver la dinámica con Octavio. Índice de 338 archivos comprobado sin incidencias, también por el hook. Se excluyeron los registros anteriores ajenos y las ilustraciones locales.
+
+P-ME-188 autoriza adjuntar materiales fuera de Git. Correo enviado a Octavio con instrucciones de rama y ejecución, enlace al PR y ZIP de 6263881 bytes: PPTX nuevo, 17 antecedentes y nueve archivos de la corrida verificada, más manifiesto y LEEME. Contenido y huellas comprobados antes del envío; Gmail devuelve SENT y lectura posterior confirma destinatario, asunto, nombre y tamaño del adjunto. SHA256 del ZIP: ae495cf498b13d37011d54162e2d1a2338d52d73f934fc44d2e51de04dcf708d. Paquete conservado en private/correos, fuera de Git. No se acredita recepción o lectura por Octavio. Sin fusión, auto-merge ni publicación.

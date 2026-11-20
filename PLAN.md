@@ -419,3 +419,7 @@ Preparado output/bolsas-bicolores/Dinamica-bolsas-bicolores-v1.pptx: 12 diaposit
 ## Entrega para revisión compartida — P-ME-187 (2026-11-19)
 
 Miguel autoriza commit, push y PR abierto hasta resolver el ejercicio con Octavio. Se entrega guía, datos sintéticos, código/pruebas R, procedencia, generador de presentación e instrucciones para recuperar miguel/ejercicio-canicas en otro equipo. PR previsto en borrador hacia main, sin fusión ni auto-merge. PPTX de trabajo, originales, resultados y cambios locales ajenos quedan excluidos. Correo previsto como borrador local, sin envío; compartir PPTX por separado sigue pendiente de acordar. Las pruebas ejecutadas se conservan en VERIFICACION; revisión del índice antes del commit. Sin cambios al blog: no corresponde render Quarto.
+
+## Revisión con Octavio — entrega P-ME-187–188 (2026-11-19)
+
+Ejercicio compartido mediante commit 8e8834e en miguel/ejercicio-canicas y PR #25 abierto en borrador hacia main. Correo enviado y comprobado en Enviados con paquete complementario (PPTX, antecedentes y resultados), instrucciones de rama y R. No hay confirmación de lectura. Pendientes: revisión conceptual conjunta, ejecución en el equipo de Octavio y prueba de la dinámica; mantener PR abierto sin fusionar hasta acuerdo. Los resultados y materiales binarios permanecen fuera de Git; fuente y guía están en la rama. Registros locales ajenos preservados.

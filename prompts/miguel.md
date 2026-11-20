@@ -1884,3 +1884,11 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Se ve muy bien. Es un buen momento para hacer commit+push. Podemos generar un PR que dejaremos abierto hasta que resolvamos el ejercicio con Octavio, quizás haya que enviarle a él un comunicado por mail ayudándolo a tomar el proceso en su propio equipo, sin perder  de vista que estamos trabajando en una rama distinta de main
 ```
+
+## P-ME-188 — Adjuntar materiales excluidos de Git al correo
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+El PPTX y lo que no podamos mantener en git, lo podemos enviar en el correo
+```
