@@ -1099,3 +1099,12 @@ Revisión propia de iie-teoria.qmd §§21.9–21.10 en la ruta autorizada y del 
 ## Probabilidad de integridad incorporada — P-ME-190 (2026-11-19)
 
 La petición convierte la consulta de integridad en resultado principal y conserva grado de condición. Actualizados guía, código/pruebas R, instrucciones compartidas y generador/PPTX v0.2 de 14 diapositivas. Evento exacto contextual 5:5 fijado antes de observar; previa y muestras sin cambios. Quince comprobaciones correctas, ocho CSV idénticos entre corridas y 36 comparaciones previas conservadas. Revisión visual de las 14 diapositivas y gráfico principal; paquete/geometría e importación comprobados, con incidencia de código final 1 documentada y ZIP/huella verificados aparte. Revisión conceptual propia, no independiente; pendiente discusión con Octavio y validación pedagógica. Entrega en el mismo PR #25, abierto en borrador sin fusión. Originales, resultados, PPTX y modificaciones ajenas quedan fuera del commit; fuente de presentación versionada. No se envía correo nuevo.
+
+## Envío del PPTX v2 a Octavio — P-ME-191 (2026-11-19)
+
+Por instrucción expresa de Miguel se envió el PPTX actualizado como respuesta al correo anterior. Mensaje breve: probabilidad posterior del evento 5:5 como resultado principal, grado Z y su incertidumbre conservados; rama miguel/ejercicio-canicas, no main; PR #25 abierto en borrador y sin fusión. Gmail confirmó SENT y la lectura posterior de Enviados verificó destinatario Octavio y adjunto Dinamica-bolsas-bicolores-v2.pptx de 81535 bytes. Huella local cotejada antes del envío: bfe150d8eddeca1df962ec8cc04ea529b8fa56a4a037482f7f11928cdc9eb48b. No se acredita recepción o lectura. Registro local de este envío, sin nuevo commit ni modificación del PR.
+
+
+## Versionado del registro de envío — P-ME-192 (2026-11-19)
+
+Miguel autoriza commit y push del registro P-ME-191 y de esta instrucción en miguel/ejercicio-canicas, PR #25. Se seleccionan únicamente las nuevas entradas de BITACORA.md y prompts/miguel.md; se conservan fuera del índice los cambios ajenos de esos archivos, PLAN.md e ilustraciones locales. PR abierto y en borrador hasta revisión con Octavio, sin fusionar. Cambio exclusivo de trazabilidad: no modifica código, materiales ni blog; no se repiten las pruebas R o el render. La comprobación del índice se ejecuta mediante el hook del commit.

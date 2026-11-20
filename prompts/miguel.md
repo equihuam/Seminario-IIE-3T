@@ -1908,3 +1908,20 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Sí, incorpora la probabilidad de estar íntegro como resultado principal, conservando el grado de condición. Actualiza la guía, el script R y el PPTX, y sube los cambios al mismo PR sin fusionarlo.
 ```
+
+## P-ME-191 — Envío del PPTX actualizado a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Envía a Octavio el PPTX actualizado por correo y explícale brevemente el cambio: probabilidad de estar íntegro como resultado principal, conservando el grado de condición. Recuérdale que seguimos trabajando en la rama del PR, no en main.
+```
+
+
+## P-ME-192 — Versionar el registro del envío a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos el ejercicio con Octavio.
+```
