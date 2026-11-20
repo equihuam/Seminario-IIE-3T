@@ -6,11 +6,11 @@ if(!runtime||!skill)throw Error('Definir PRESENTATIONS_RUNTIME y PRESENTATIONS_S
 process.env.RUNTIME_NODE_MODULES=path.join(runtime,'node/node_modules');
 const {Presentation,PresentationFile}=await import(pathToFileURL(path.join(runtime,'node/node_modules/@oai/artifact-tool/dist/artifact_tool.mjs')).href);
 const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);
-const root=process.cwd(),tmp=path.join(root,'.local/slides-bolsas'),out=path.join(root,'output/bolsas-bicolores');
+const root=process.cwd(),tmp=path.join(root,'.local/slides-bolsas-v2'),out=path.join(root,'output/bolsas-bicolores');
 await fs.mkdir(tmp,{recursive:true});await fs.mkdir(out,{recursive:true});
 const p=Presentation.create({slideSize:{width:1280,height:720}});
 const C={bg:'#FAFAF7',ink:'#18343A',muted:'#52656A',x:'#087E86',y:'#AA6717',z:'#73528C',red:'#CC4848',blue:'#397BC2',yellow:'#EDC747',green:'#408768',white:'#FFFFFF',black:'#30343B'};
-const source='Fuentes: ejercicios/tres-bolsas/GUIA.md v0.1, R/modelo.R y datos/contextos.csv y recetas.csv; P-ME-184–186. Ejemplo sintético, no fórmula del IIE operativo ni entrenamiento TAN. iie-teoria.qmd §§5.1–5.2 y 21.2, SHA256 6CEE34177FB38EB66B20610FA606D84DB9FB36E0426E6CBE8D3582932790B502. Referencia y escala estipuladas en el juego.';
+const source='Fuentes: ejercicios/tres-bolsas/GUIA.md v0.2, R/modelo.R y datos/contextos.csv y recetas.csv; P-ME-184–190. Ejemplo sintético, no fórmula del IIE operativo ni entrenamiento TAN. iie-teoria.qmd §§5.1–5.2, 21.2, 21.9–21.10, SHA256 6CEE34177FB38EB66B20610FA606D84DB9FB36E0426E6CBE8D3582932790B502. Referencia y escala estipuladas en el juego.';
 let serial=0;
 function box(s,g,x,y,w,h,fill='none',stroke='none',lw=0){return s.shapes.add({name:'obj-'+(++serial),geometry:g,position:{left:x,top:y,width:w,height:h},fill,line:{fill:stroke,width:lw,style:'solid'}});}
 function text(s,t,x,y,w,h,size=30,color=C.ink,bold=false){const b=box(s,'textbox',x,y,w,h);b.text=t;b.text.style={typeface:'Arial',fontSize:size,bold,color,wrap:'square',autoFit:'none',insets:0};return b;}
@@ -25,7 +25,7 @@ text(s,'Una dinámica para explorar el modelo de tres capas',64,139,1090,70,33,C
 marbles(s,100,266,5,C.red,C.blue,'Contexto: rojo–azul');
 marbles(s,504,266,5,C.yellow,C.green,'Contexto: amarillo–verde');
 text(s,'¿Cómo está\ncada sistema?',865,290,335,148,40,C.z,true);
-foot(s,'Seminario IIE-3T · Guía de pasos y mecánica · Borrador v0.1');
+foot(s,'Seminario IIE-3T · Probabilidad de integridad y grado de condición · Borrador v0.2');
 }
 {
 const s=slide('Preparar las bolsas y separar los papeles','Duración orientativa total: 60 minutos, divisible en dos sesiones. Diez canicas de cada color permiten reservar material para sustituciones conservando N=10 por bolsa. Coordinación custodia las recetas; revelar después de inferir. La última diapositiva es para coordinación.');
@@ -67,11 +67,29 @@ foot(s,'Ejemplo de registro · Los cortes comparten observaciones; no son répli
 const s=slide('5  Estimar en R antes de revelar','Desde raíz, con Rproj abierto. Ruta Rscript --vanilla comprobada en R4.6.0; el inicio adicional con perfil no terminó. Cambiar nombre de resultados-clase-01 si existe. Modelo considera todas las composiciones posibles, no solo las recetas. No aprende estructura de red ni TAN. No mostrar recetas.csv antes de estimar.');
 text(s,'En la consola de RStudio, desde el proyecto',64,150,1140,50,31,C.x,true);
 text(s,'source("ejercicios/tres-bolsas/simular.R")\nejecutar_ejercicio(\n  salida = "ejercicios/tres-bolsas/resultados-clase-01"\n)',64,232,1150,188,27,C.ink);
-text(s,'El programa simula muestras y estima una distribución de condición',64,459,1100,90,33,C.z,true);
+text(s,'Resultado principal: probabilidad de estar íntegro\nComplemento: grado de condición e incertidumbre',64,459,1100,100,33,C.z,true);
 foot(s,'Guarda tablas, incertidumbre y gráfico · Usar una carpeta nueva para cada corrida');
 }
 {
-const s=slide('6  Leer la incertidumbre, no solo el promedio','Datos: resultados-verificados/comparacion.csv, C2_R2, semilla20261119. Medias .8155132544,.7779620142,.9227336264,.6830329346 para n12,30,60,200. Intervalos[.4,1],[.4,1],[.8,1],[.6,.8]. Verdad Z=.6 y composición3:7. Intervalos centrales discretos95%, no garantía de cubrir cada muestra. Gráfico editable construido con esos valores; se conserva resultado desfavorable.');
+const s=slide('6  ¿Qué significa estar íntegro en el juego?','Evento definido antes de muestrear: K=N/2, equivalente a Z=1. Resultado principal prob_integro=P(K=N/2|muestra,contexto,modelo). Previa uniforme en seis niveles de Z: P(integra)=1/6; alternativa uniforme en once composiciones:1/11. No se fija umbral automático de clasificación. La igualdad exacta tiene masa porque K es discreto; con parámetro continuo requiere otra formulación.');
+item(s,'I','La referencia es 5:5','Íntegra: cinco canicas de cada color del contexto',160);
+item(s,'P','Inferimos la probabilidad de ese evento','Sumamos la masa posterior correspondiente a Z = 1',305);
+item(s,'Z','Conservamos el grado de condición','Describe cuánto se aproxima la composición a la referencia',450);
+foot(s,'P(íntegra) = 0.72 no significa que la bolsa posea 72% de integridad');
+}
+{
+const s=slide('7  Acumular evidencia sobre la integridad','Datos: resultados-probabilidad-v02/resultado_principal.csv, C1_R1, semilla20261119. Probabilidades .453524595339889,.513848599272054,.708737348693332,.873651364702227. Verdad revelada5:5. No hay garantía de crecimiento monótono en otras muestras. Esta probabilidad expresa incertidumbre del evento; las barras de Z no son intervalos para esta probabilidad.');
+text(s,'Bolsa C1_R1 · Referencia real 5:5, revelada al final',64,145,1140,50,30,C.x,true);
+const x0=125,y0=535,w=635,h=300;
+for(let v=0;v<=5;v++){const y=y0-v*h/5;box(s,'rect',x0,y,w,1,'#CFDAD5');text(s,(v/5).toFixed(1),66,y-15,45,30,21,C.muted);}
+const xs=[180,350,520,690],ps=[.453524595339889,.513848599272054,.708737348693332,.873651364702227],ns=[12,30,60,200];
+for(let i=0;i<4;i++){box(s,'rect',xs[i]-22,y0-ps[i]*h,44,ps[i]*h,C.x);text(s,ps[i].toFixed(3),xs[i]-39,y0-ps[i]*h-37,90,30,24,C.ink,true);text(s,String(ns[i]),xs[i]-25,550,70,30,23);}
+text(s,'Extracciones acumuladas',260,592,440,35,23,C.muted);
+text(s,'Con 12 extracciones:\nP(íntegra) = 0.454\nGrado medio = 0.846',820,258,390,150,31,C.z,true);
+text(s,'Son dos preguntas distintas\nsobre la misma posterior',820,461,390,100,27);
+}
+{
+const s=slide('8  Conservar el grado y su incertidumbre','Datos: resultados-probabilidad-v02/comparacion.csv, C2_R2, semilla20261119. Medias .8155132544,.7779620142,.9227336264,.6830329346 para n12,30,60,200. Intervalos[.4,1],[.4,1],[.8,1],[.6,.8]. Verdad Z=.6 y composición3:7. Intervalos centrales discretos95%, no garantía de cubrir cada muestra. Gráfico editable construido con esos valores; se conserva resultado desfavorable.');
 const x0=120,y0=530,w=635,h=325;
 for(let v=0;v<=5;v++){const y=y0-v*h/5;box(s,'rect',x0,y,w,1,'#CFDAD5');text(s,(v/5).toFixed(1),66,y-15,45,30,21,C.muted);}
 text(s,'Condición Z',70,149,250,34,23,C.ink,true);
@@ -83,9 +101,9 @@ text(s,'Punto: media posterior\nBarra: intervalo del 95%\nDiscontinua: verdad de
 text(s,'Con 60 extracciones,\nel intervalo no incluye\nla condición real',830,411,370,143,30,C.z,true);
 }
 {
-const s=slide('7  Revelar y comparar con la receta','Z=2min(K,N-K)/N; N=10; K número del primer color. Escala y simetría convencionales, no categorías expertas ordinales ni porcentajes de integridad ecológica. Revelar tras inferir. La media puede no coincidir con un nivel físico; conservar distribución completa. Comparar p y Z.');
+const s=slide('9  Revelar y comparar con la receta','Z=2min(K,N-K)/N; N=10; K número del primer color. Escala y simetría convencionales, no categorías expertas ordinales ni porcentajes de integridad ecológica. Revelar tras inferir. Comparar prob_integro con indicador real de integridad y posterior Z con grado real. Nueve configuraciones no validan calibración de probabilidades.');
 text(s,'Condición del juego:  Z = 2 × menor cantidad / total',64,148,1130,62,33,C.z,true);
-table(s,[['Composición real','Condición Z'],['5 : 5','1.0'],['7 : 3  o  3 : 7','0.6'],['9 : 1  o  1 : 9','0.2']],64,246,730,300,[460,270],31);
+table(s,[['Composición','Íntegra','Grado Z'],['5 : 5','Sí','1.0'],['7 : 3  o  3 : 7','No','0.6'],['9 : 1  o  1 : 9','No','0.2']],64,246,730,300,[350,180,200],29);
 text(s,'¿La estimación\nse acerca a la verdad?\n\n¿El intervalo\nla incluye?',854,258,350,240,34,C.ink,true);
 foot(s,'Z = 0.6 es un valor de esta escala; no significa «60% de integridad ecológica»');
 }
@@ -112,11 +130,11 @@ foot(s,'Guía y código: ejercicios/tres-bolsas/ · Nueva variante pendiente de 
 for(let i=0;i<p.slides.items.length;i++){const png=await p.export({slide:p.slides.items[i],format:'png',scale:1});await fs.writeFile(path.join(tmp,'slide-'+String(i+1).padStart(2,'0')+'.png'),new Uint8Array(await png.arrayBuffer()));}
 const candidate=path.join(tmp,'candidate.pptx');
 await(await PresentationFile.exportPptx(p)).save(candidate);
-const final=path.join(out,'Dinamica-bolsas-bicolores-v1.pptx');
+const final=path.join(out,'Dinamica-bolsas-bicolores-v2.pptx');
 await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath:final,
 pythonExecutable:path.join(runtime,'python/python.exe'),
 integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),
 layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),
-layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','6','--require-native-table-slide','9','--require-native-table-slide','12'],
-requiredNativeTableOwnerSlides:[6,9,12],fontPolicy:{basis:'design',families:['Arial']},verifyArtifactToolImport:true,receiptPath:path.join(tmp,'validation.json')});
+layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-bullet-geometry','--validate-heading-fit','--require-native-table-slide','6','--require-native-table-slide','11','--require-native-table-slide','14'],
+requiredNativeTableOwnerSlides:[6,11,14],fontPolicy:{basis:'design',families:['Arial']},verifyArtifactToolImport:true,receiptPath:path.join(tmp,'validation.json')});
 console.log(final);

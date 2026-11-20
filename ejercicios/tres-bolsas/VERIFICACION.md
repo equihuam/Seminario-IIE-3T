@@ -39,3 +39,16 @@ En las nueve configuraciones, los intervalos de Z a 200 extracciones incluyen la
 Se verificó el software y la reproducción de este ejemplo sintético. No se ejecutaron las redes Netica históricas, no se editó el PPTX, no se validó científicamente el IIE y no se probó la nueva dinámica con participantes. La afirmación de uso exitoso del PPTX es el reporte de Miguel en P-ME-185 sobre su propósito inductivo anterior.
 
 La guía y el código permanecen fuera del blog. No se reconstruyó Quarto porque no cambiaron sus fuentes ni salidas. La implementación se mantiene en la rama de trabajo del ejercicio, sin commit, push, PR ni fusión en esta entrega.
+
+
+## Actualización v0.2 — P-ME-190
+
+Registro: 19 de noviembre de 2026 (hora local). Resultado principal: prob_integro = P(K=N/2 | muestra, contexto y modelo); se mantienen la posterior y el grado Z. Sin cambios de semilla, previa, referencia o recetas.
+
+Ejecutados con R 4.6.0, desde sesiones nuevas: `Rscript --vanilla ejercicios/tres-bolsas/tests/test-modelo.R` (15 comprobaciones correctas) y `Rscript --vanilla ejercicios/tres-bolsas/simular.R ejercicios/tres-bolsas/resultados-probabilidad-v02`, repetido con salida `resultados-probabilidad-v02-repeticion`. Persisten las cuatro advertencias de locale C.UTF-8; ambas ejecuciones completas terminaron con código 0. No se repitió la prueba del perfil RStudio.
+
+Python de .venv comprobó ocho CSV idénticos byte por byte entre corridas y todos los campos originales de las 36 comparaciones idénticos a v0.1. Muestras y posteriores completas también conservadas. Las tres comprobaciones añadidas cubren probabilidad calculable a mano, complemento/alias, dependencia de la previa sin datos y diferencia entre grado alto y probabilidad baja del evento exacto. El gráfico principal de nueve paneles fue inspeccionado: ejes, etiquetas y leyenda legibles, sin recortes.
+
+La tabla resultado_principal.csv y probabilidad_integridad.png añaden comparación con el indicador real de integridad; el gráfico condicion.png y los intervalos se conservan. El caso desfavorable C2_R2 a n=60 sigue presente. La reproducción de este ejemplo no acredita calibración probabilística, validación ecológica ni prueba en clase. PPTX v0.2: evidencia en presentaciones/bolsas-bicolores.md. Sin cambios al blog; no corresponde regenerar Quarto.
+
+Chequeo adicional solicitado por el flujo del repositorio: `.venv/Scripts/python.exe scripts/site.py check` no completó el inicio de `renv::status()`; se detuvo exclusivamente su árbol de procesos tras varios minutos sin salida. No llegó a render Quarto y no cambió archivos del blog según git status. Este chequeo no se presenta como aprobado. Las ejecuciones R --vanilla del ejercicio sí concluyeron; la limitación del entorno con perfil sigue pendiente.

@@ -92,4 +92,25 @@ comprobar("Diseno imposible rechazado", {
   c <- contextos; c$color_2[1] <- c$color_1[1]
   stopifnot(falla(validar_diseno(contextos, r)), falla(validar_diseno(c, recetas)))
 })
+comprobar("Probabilidad principal: caso manual y alias compatible", {
+  s <- resumir_posterior(estimar_condicion(1, 1, 2))
+  stopifnot(cerca(s$prob_integro, 0.5), cerca(s$prob_no_integro, 0.5),
+            cerca(s$prob_integro, s$prob_equilibrio),
+            resumir_posterior(estimar_condicion(1, 2, 2))$prob_integro == 1)
+})
+comprobar("Evento sin datos depende de la previa, no es 0.5 por defecto", {
+  a <- resumir_posterior(estimar_condicion(0, 0, 10))
+  b <- resumir_posterior(estimar_condicion(0, 0, 10, "uniforme_composicion"))
+  stopifnot(cerca(a$prob_integro, 1/6), cerca(a$prob_integro_previa, 1/6),
+            cerca(b$prob_integro, 1/11))
+  for (x in 0:12) {
+    s <- resumir_posterior(estimar_condicion(x, 12, 10))
+    stopifnot(cerca(s$prob_integro + s$prob_no_integro, 1),
+              s$prob_integro >= 0, s$prob_integro <= 1)
+  }
+})
+comprobar("Condicion alta no equivale a probabilidad alta de equilibrio", {
+  s <- resumir_posterior(estimar_condicion(6000, 10000, 10))
+  stopifnot(abs(s$z_media - 0.8) < 1e-10, s$prob_integro < 1e-10)
+})
 cat(total, "comprobaciones correctas\n")

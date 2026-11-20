@@ -423,3 +423,7 @@ Miguel autoriza commit, push y PR abierto hasta resolver el ejercicio con Octavi
 ## Revisión con Octavio — entrega P-ME-187–188 (2026-11-19)
 
 Ejercicio compartido mediante commit 8e8834e en miguel/ejercicio-canicas y PR #25 abierto en borrador hacia main. Correo enviado y comprobado en Enviados con paquete complementario (PPTX, antecedentes y resultados), instrucciones de rama y R. No hay confirmación de lectura. Pendientes: revisión conceptual conjunta, ejecución en el equipo de Octavio y prueba de la dinámica; mantener PR abierto sin fusionar hasta acuerdo. Los resultados y materiales binarios permanecen fuera de Git; fuente y guía están en la rama. Registros locales ajenos preservados.
+
+## Probabilidad principal de integridad — P-ME-190 (2026-11-19)
+
+Actualizada la guía, el script R y el PPTX v0.2 (14 diapositivas): P(K=N/2 | muestra, contexto y modelo) como resultado principal; grado Z, posterior e intervalo conservados. Quince comprobaciones correctas y ocho CSV reproducidos; resultados antiguos preservados. Presentación revisada visualmente y paquete validado; evidencia e incidencias en VERIFICACION.md y presentaciones/bolsas-bicolores.md. Continuar en miguel/ejercicio-canicas y PR #25 abierto en borrador, sin fusionar. Pendiente revisión con Octavio y prueba con participantes. PPTX local fuera de Git; se versiona su generador.

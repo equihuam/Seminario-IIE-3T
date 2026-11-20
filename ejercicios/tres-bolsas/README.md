@@ -6,7 +6,7 @@ Base de trabajo recuperada el 19 de noviembre de 2026 por encargo de Miguel (P-M
 
 Para continuar en otro equipo: [trabajo compartido en la rama del ejercicio](TRABAJO-COMPARTIDO.md). El PR permanecerá abierto hasta resolver la dinámica con Octavio; el PPTX de trabajo se comparte por separado.
 
-Preparada por encargo P-ME-185: [guía de la dinámica](GUIA.md), [script de ejecución en R](simular.R), [funciones del modelo](R/modelo.R), [datos sintéticos](datos/contextos.csv) y [verificación](VERIFICACION.md). Cruza tres contextos y tres condiciones, simula extracción individual con reposición y estima una posterior discreta de condición. La guía incluye el uso con datos físicos y los límites de la analogía.
+Preparada por encargo P-ME-185: [guía de la dinámica](GUIA.md), [script de ejecución en R](simular.R), [funciones del modelo](R/modelo.R), [datos sintéticos](datos/contextos.csv) y [verificación](VERIFICACION.md). Cruza tres contextos y tres condiciones, simula extracción individual con reposición y estima una posterior discreta de condición. Desde v0.2 (P-ME-190), el resultado principal es P(íntegra | muestra, contexto y modelo), con evento íntegra definido como K=N/2; el grado Z conserva su posterior e intervalo como complemento. La guía incluye el uso con datos físicos y los límites de la analogía.
 
 Miguel informa en P-ME-185 que `Bolsas.pptx` ya se usó exitosamente en clase para sugerir la efectividad de las redes bayesianas como máquinas inductivas. No se usó entonces para evocar el modelo de tres capas. Este antecedente de uso se distingue de la nueva variante, todavía pendiente de prueba didáctica con participantes. El PPTX se conserva intacto.
 

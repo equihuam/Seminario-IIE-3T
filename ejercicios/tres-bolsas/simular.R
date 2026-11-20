@@ -24,6 +24,7 @@ ejecutar_ejercicio <- function(base = "ejercicios/tres-bolsas",
   real <- merge(recetas, contextos, by = "contexto", sort = FALSE)
   real$p_real <- real$k_real / real$N
   real$z_real <- 2 * pmin(real$k_real, real$N - real$k_real) / real$N
+  real$integro_real <- 2 * real$k_real == real$N
   real$k_otro <- real$N - real$k_real
   comparacion <- merge(estimacion$resumen, real, by = c("bolsa", "contexto"), sort = FALSE)
   comparacion$error_z <- comparacion$z_media - comparacion$z_real
@@ -31,6 +32,9 @@ ejecutar_ejercicio <- function(base = "ejercicios/tres-bolsas",
   comparacion$cubre_z <- with(comparacion, z_real >= z_li & z_real <= z_ls)
   comparacion$cubre_p <- with(comparacion, p_real >= p_li & p_real <= p_ls)
   comparacion <- comparacion[order(comparacion$bolsa, comparacion$n), ]
+  principal <- comparacion[, c("bolsa", "contexto", "n", "x", "prob_integro",
+                              "prob_no_integro", "prob_integro_previa", "integro_real",
+                              "z_media", "z_li", "z_ls", "z_real")]
   sensibilidad <- rbind(estimacion$resumen, alternativa$resumen)
   dir.create(salida, recursive = TRUE, showWarnings = FALSE)
   guardar <- function(objeto, nombre) write.csv(objeto, file.path(salida, nombre), row.names = FALSE)
@@ -38,13 +42,18 @@ ejecutar_ejercicio <- function(base = "ejercicios/tres-bolsas",
   guardar(muestras, "muestras.csv")
   guardar(real, "composiciones_reales.csv")
   guardar(comparacion, "comparacion.csv")
+  guardar(principal, "resultado_principal.csv")
   guardar(estimacion$posterior, "posterior_condicion.csv")
   guardar(estimacion$conjunta, "posterior_conjunta.csv")
   guardar(sensibilidad, "sensibilidad_previas.csv")
   dibujar_comparacion(comparacion, file.path(salida, "condicion.png"))
+  dibujar_probabilidad(comparacion, file.path(salida, "probabilidad_integridad.png"))
   fuentes <- c(file.path(base, "simular.R"), file.path(base, "R", "modelo.R"),
                file.path(base, "datos", c("contextos.csv", "recetas.csv")))
   registro <- c("Ejercicio sintetico de bolsas bicolores; no es el IIE operativo",
+                "v0.2: resultado principal P(integra | muestra, contexto y modelo)",
+                "Evento integra: K=N/2 (referencia 5:5 cuando N=10); equivale a Z=1",
+                "Se conserva el grado Z y toda su posterior. No se cambia previa ni muestreo.",
                 paste("Fecha de ejecucion:", format(Sys.time(), tz = "UTC", usetz = TRUE)),
                 paste("Semilla:", semilla), paste("Cortes acumulados:", paste(cortes, collapse = ", ")),
                 paste("RNG:", paste(RNGkind(), collapse = ", ")),
@@ -55,8 +64,34 @@ ejecutar_ejercicio <- function(base = "ejercicios/tres-bolsas",
                 capture.output(print(tools::md5sum(fuentes))), capture.output(sessionInfo()))
   writeLines(registro, file.path(salida, "ejecucion.txt"), useBytes = TRUE)
   message("Resultados guardados en ", normalizePath(salida, winslash = "/"))
-  invisible(list(muestras = muestras, comparacion = comparacion,
+  print(principal[principal$n == max(cortes), ], row.names = FALSE)
+  invisible(list(principal = principal, muestras = muestras, comparacion = comparacion,
                  posterior = estimacion$posterior, sensibilidad = sensibilidad))
+}
+
+dibujar_probabilidad <- function(tabla, archivo) {
+  ids <- unique(tabla$bolsa)
+  columnas <- min(3, length(ids))
+  filas <- ceiling(length(ids) / columnas)
+  grDevices::png(archivo, width = 1800, height = 230 + 520 * filas, res = 150)
+  on.exit(grDevices::dev.off(), add = TRUE)
+  graphics::par(mfrow = c(filas, columnas), mar = c(5.2, 4.7, 3.5, 1), oma = c(3, 0, 3, 0))
+  for (id in ids) {
+    d <- tabla[tabla$bolsa == id, ]
+    d <- d[order(d$n), ]
+    posiciones <- seq_len(nrow(d))
+    graphics::plot(posiciones, d$prob_integro, ylim = c(0, 1), xaxt = "n",
+                   type = "b", pch = 19, col = "#155E75", lwd = 2,
+                   xlab = "Extracciones acumuladas", ylab = "Probabilidad de estar \u00edntegra",
+                   main = paste0(id, " | Receta real: ", d$k_real[1], ":", d$k_otro[1],
+                                 "\nEvento real: ", if (d$integro_real[1]) "\u00edntegra" else "no \u00edntegra"),
+                   cex.main = 0.85)
+    graphics::axis(1, at = posiciones, labels = d$n)
+    graphics::abline(h = d$prob_integro_previa[1], lty = 3, col = "#73528C")
+    graphics::abline(h = as.numeric(d$integro_real[1]), lty = 2, col = "#8F3B1B", lwd = 2)
+  }
+  graphics::mtext("Resultado principal: probabilidad posterior de conservar la referencia", outer = TRUE, side = 3, line = 1, font = 2)
+  graphics::mtext("Puntos: posterior | Punteada: previa | Discontinua: evento real 0/1 | No es grado de condici\u00f3n", outer = TRUE, side = 1, line = 0.5, cex = 0.8)
 }
 
 dibujar_comparacion <- function(tabla, archivo) {

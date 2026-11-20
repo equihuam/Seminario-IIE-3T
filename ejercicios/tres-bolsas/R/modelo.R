@@ -51,9 +51,13 @@ resumir_posterior <- function(ajuste, nivel = 0.95) {
   cola <- (1 - nivel) / 2
   li <- cuantil_discreto(z$z, z$posterior, cola)
   ls <- cuantil_discreto(z$z, z$posterior, 1 - cola)
-  data.frame(z_media = sum(z$z * z$posterior), z_li = li, z_ls = ls,
+  prob_integro <- sum(z$posterior[z$z == 1])
+  data.frame(prob_integro = prob_integro,
+             prob_no_integro = sum(z$posterior[z$z != 1]),
+             prob_integro_previa = sum(z$previa[z$z == 1]),
+             z_media = sum(z$z * z$posterior), z_li = li, z_ls = ls,
              masa_intervalo = sum(z$posterior[z$z >= li & z$z <= ls]),
-             prob_equilibrio = sum(z$posterior[z$z == 1]),
+             prob_equilibrio = prob_integro, # Alias conservado para salidas v0.1
              p_media = sum(a$p * a$posterior),
              p_li = cuantil_discreto(a$p, a$posterior, cola),
              p_ls = cuantil_discreto(a$p, a$posterior, 1 - cola))

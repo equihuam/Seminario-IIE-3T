@@ -50,14 +50,14 @@ Rscript --vanilla ejercicios/tres-bolsas/simular.R ejercicios/tres-bolsas/result
 
 La versión comprobada es R 4.6.0. Si Rscript no está en PATH, usar la ruta de la instalación propia. Solo requiere bibliotecas incluidas en R. La salida debe ser una carpeta nueva; conservar las corridas anteriores. No ejecutar instaladores por defecto ni modificar preferencias globales. Si el inicio del perfil se demora, la ruta `--vanilla` es la comprobada; véase [VERIFICACION.md](VERIFICACION.md).
 
-4. Examinar `comparacion.csv`, `posterior_condicion.csv`, `sensibilidad_previas.csv` y `condicion.png`.
+4. Empezar por `resultado_principal.csv` y `probabilidad_integridad.png`: probabilidad de integridad frente al indicador real. Conservar el análisis del grado Z en `comparacion.csv`, `posterior_condicion.csv`, `sensibilidad_previas.csv` y `condicion.png`.
 5. Comentar en el PR si la mecánica conserva las distinciones conceptuales, si la escala y previas sirven al propósito y si las instrucciones son realizables en clase. Registrar desacuerdos antes de integrar.
 
 ## Qué llega con Git y qué no
 
 Git incluye guía, código, recetas sintéticas, pruebas, manifiesto y generador de diapositivas. Los resultados se regeneran localmente. Los originales de Dropbox tampoco viajan con Git: no son necesarios para ejecutar la nueva variante; ubicación y huellas en el [README](README.md).
 
-El PPTX de trabajo permanece excluido de Git según la política del proyecto. Miguel conserva `output/bolsas-bicolores/Dinamica-bolsas-bicolores-v1.pptx` para compartirlo por separado si se acuerda. No aparecerá al clonar. El generador `presentaciones/crear-bolsas-bicolores.mjs` requiere el runtime de presentaciones de Codex; R por sí solo no genera ese PPTX.
+El PPTX de trabajo permanece excluido de Git según la política del proyecto. Miguel conserva `output/bolsas-bicolores/Dinamica-bolsas-bicolores-v2.pptx` para compartirlo por separado si se acuerda. No aparecerá al clonar. El generador `presentaciones/crear-bolsas-bicolores.mjs` requiere el runtime de presentaciones de Codex; R por sí solo no genera ese PPTX.
 
 ## Continuar sin integrar todavía
 

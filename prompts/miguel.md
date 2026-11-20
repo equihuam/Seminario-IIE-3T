@@ -1892,3 +1892,19 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 El PPTX y lo que no podamos mantener en git, lo podemos enviar en el correo
 ```
+
+## P-ME-189 — Probabilidad de estar íntegro
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Un ajuste conceptual adicional. Qué piensas de agregar la estrategia de estimación de la condición como "probabilidad de estar íntegro".  Creo que el juego se presta para esto con mucha naturalidad.
+```
+
+## P-ME-190 — Probabilidad de integridad como resultado principal
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Sí, incorpora la probabilidad de estar íntegro como resultado principal, conservando el grado de condición. Actualiza la guía, el script R y el PPTX, y sube los cambios al mismo PR sin fusionarlo.
+```
