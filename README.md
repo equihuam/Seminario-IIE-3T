@@ -75,6 +75,7 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 - [Operación del blog](docs/OPERACION-BLOG.md): incorporación de sesiones y revisión editorial.
 
 - [Tutoriales y ayudas de capacitación](tutoriales/README.md): catálogo de Antigravity, Git y Zotero con sus fuentes canónicas.
+- [Ejercicios y dinámicas](ejercicios/README.md): bases de trabajo y antecedentes recuperados, comenzando por el juego de tres bolsas de canicas.
 - [AGENTS.md](AGENTS.md): pautas para el trabajo asistido dentro de este proyecto.
 - [Git + IA: colaboración de Miguel y Octavio](docs/COLABORACION-GIT-IA.md): reglas, encargos y ficha imprimible de consulta, fuera del blog.
 - [Plan de trabajo](PLAN.md): estado y próximos entregables.

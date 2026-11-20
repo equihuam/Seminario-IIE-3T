@@ -1,5 +1,13 @@
 # Fuentes y decisiones
 
+## Variante bicolor de canicas — P-ME-185 (2026-11-19)
+
+Se implementa una dinámica sintética en `ejercicios/tres-bolsas/GUIA.md`, autorizada por Miguel a partir de su propuesta P-ME-184. Contexto conocido selecciona dos colores; referencia 1:1; sustituciones conservan N; la condición del juego se define como Z = 2 min(K, N−K)/N y se estima con muestreo binomial de reposición individual. Se enumeran composiciones finitas, separando magnitud y dirección. Referencia, escala, simetría, previas y cantidades son elecciones didácticas, no fórmula del IIE ni calibración ecológica. Se retiene posterior completa e incertidumbre; el modelo no aprende estructura ni TAN.
+
+Fundamento consultado directamente: `C:/Users/equih/0 Versiones/iie-teoria/iie-teoria.qmd`, §§5.1–5.2 y 21.2; huella SHA256 comprobada en P-ME-183, idéntica a la de la fuente documentada abajo. §5.2 advierte contra reducir mecánicamente la inferencia ecológica a una distancia: la equivalencia entre composición y Z solo es válida por estipulación en este juego. No se modificó ni ejecutó el proyecto fuente.
+
+Antecedente: Miguel informa que el PPTX recuperado ya se usó exitosamente en clase para sugerir la capacidad inductiva de las redes bayesianas, sin el propósito de evocar las tres capas. Se conserva ese reporte y el PPTX intacto; no se infiere de él validación de esta nueva variante. Guía, pruebas y límites de reproducción en `ejercicios/tres-bolsas/VERIFICACION.md`. La implementación queda abierta a revisión docente y prueba con participantes.
+
 ## Fuentes consultadas el 2026-10-08
 
 | Fuente | Estado y uso |
