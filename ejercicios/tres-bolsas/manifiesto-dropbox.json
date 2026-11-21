@@ -1,0 +1,294 @@
+{
+  "fecha_recuperacion": "2026-11-19",
+  "archivos": [
+    {
+      "content_hash": "1d8ad36ab413eb326e3465cea30c3a8331871faaf5c251a1d58e2131cf059bf5",
+      "id": "id:XocqFkwqKhAAAAAAAAARXw",
+      "name": "ecosistemas2.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/ecosistemas2.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/ecosistemas2.xlsx",
+      "size": 565,
+      "client_modified": "2016-11-04T18:56:13Z",
+      "file": {
+        "size": 565
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARXw",
+      "modified_time": "2016-11-04T18:54:23Z",
+      "object_type": "file",
+      "sha256": "a1fa02017c8095895732d88f44932b82219f824e9b59bff2e74b8ecd4e68de0c",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "f51bc8b652e69cdc52fdeff86da3ae3d7624de3bb9c211647e8e2f27255ce898",
+      "id": "id:XocqFkwqKhAAAAAAAAANbQ",
+      "name": "canicas2.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas2.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas2.xlsx",
+      "size": 9792,
+      "client_modified": "2014-05-23T17:23:08Z",
+      "file": {
+        "size": 9792
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAANbQ",
+      "modified_time": "2016-11-03T01:52:21Z",
+      "object_type": "file",
+      "sha256": "33950ee63f70507f6b45b9187f23249c2132975227e0cbe9a98837fee42f2f97",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "556ca93c05957e0a8ed396fa6657260dfc5b22f23d50722c30e6efb5fc144e13",
+      "id": "id:XocqFkwqKhAAAAAAAAARSg",
+      "name": "Bolsas.pptx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/Bolsas.pptx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/Bolsas.pptx",
+      "size": 6090307,
+      "client_modified": "2016-11-04T20:09:53Z",
+      "file": {
+        "size": 6090307
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARSg",
+      "modified_time": "2016-11-04T20:08:32Z",
+      "object_type": "file",
+      "sha256": "5497a1ef1c7a96f02a711350003ebdbfd4e950b6180ebd93d48b320ac68a60bc",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "d05d8b4aa2b04b8450b1a274450cfbf613f9a8affc54764087f659dab69ad279",
+      "id": "id:XocqFkwqKhAAAAAAAAANbw",
+      "name": "RB-Canicas1.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/RB-Canicas1.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/RB-Canicas1.neta",
+      "size": 1273,
+      "client_modified": "2014-05-23T16:41:16Z",
+      "file": {
+        "size": 1273
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAANbw",
+      "modified_time": "2016-11-04T08:21:57Z",
+      "object_type": "file",
+      "sha256": "0befff71dbc85de2643740c5cd55a3faae86bc04e47323143415aea1d04c69e6",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "b01e7032517fb187583b2d7e448138f067e6fb9aedab3a23dc398b227649f435",
+      "id": "id:XocqFkwqKhAAAAAAAAARSQ",
+      "name": "RB-Muestreo canícas (colores).neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/RB-Muestreo canícas (colores).neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/RB-Muestreo canícas (colores).neta",
+      "size": 1612,
+      "client_modified": "2016-02-03T06:22:15Z",
+      "file": {
+        "size": 1612
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARSQ",
+      "modified_time": "2016-11-04T08:21:15Z",
+      "object_type": "file",
+      "sha256": "2f8036ddfa5f427796aa2092b0b1655796974c0e9abb65b516348f6767c780ef",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "b01ce76e8c484ee170ceb6db963a95ad45b715305fa49866cd609fec9f15bf04",
+      "id": "id:XocqFkwqKhAAAAAAAAAOKg",
+      "name": "RB-Canicas3.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/RB-Canicas3.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/RB-Canicas3.neta",
+      "size": 1543,
+      "client_modified": "2016-11-04T08:23:22Z",
+      "file": {
+        "size": 1543
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAAOKg",
+      "modified_time": "2016-11-04T08:23:25Z",
+      "object_type": "file",
+      "sha256": "1faf2b177af6da0c76bea320bb962eff05f927d687dd2bc433688b551b7bd74b",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "4a216b49ff68aad1779915cf8f10db463a810c6a4d844a5e03e552916e661dcb",
+      "id": "id:XocqFkwqKhAAAAAAAAARag",
+      "name": "canicas todos2.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas todos2.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas todos2.neta",
+      "size": 1611,
+      "client_modified": "2016-11-04T19:42:11Z",
+      "file": {
+        "size": 1611
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARag",
+      "modified_time": "2016-11-04T19:40:30Z",
+      "object_type": "file",
+      "sha256": "8ec2cdffffde61caf608d1c5d285a519a0bdac2fca4738766915a099a964e202",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "cdb634329f37ee8f80a43c6e40e2b96ded14047554091e286fa1218101de8d17",
+      "id": "id:XocqFkwqKhAAAAAAAAARbw",
+      "name": "Untitled-2.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/Untitled-2.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/Untitled-2.neta",
+      "size": 1110,
+      "client_modified": "2016-11-04T20:09:39Z",
+      "file": {
+        "size": 1110
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARbw",
+      "modified_time": "2016-11-04T20:08:29Z",
+      "object_type": "file",
+      "sha256": "bf33d280b2741d58ba7ce884dae3f274a2e26131b9638df17553c072f69f5974",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "d5c86c6733cd9aab728370f9f8082bc7cabe1be266fddf74b34756eb364752dd",
+      "id": "id:XocqFkwqKhAAAAAAAAANbg",
+      "name": "RB-Canicas2.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/RB-Canicas2.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/RB-Canicas2.neta",
+      "size": 1655,
+      "client_modified": "2014-05-23T17:26:59Z",
+      "file": {
+        "size": 1655
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAANbg",
+      "modified_time": "2016-11-04T08:21:49Z",
+      "object_type": "file",
+      "sha256": "84ae4aff434bf8c36cb5111741506f059cdc2ca7ebfe6469ca418be11ec1a959",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "c8d39be49110265abe89f65e18d3b5650a4707dddce37efebdfabfa1be9decfb",
+      "id": "id:XocqFkwqKhAAAAAAAAANcQ",
+      "name": "canicas.csv",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas.csv",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas.csv",
+      "size": 880,
+      "client_modified": "2014-08-28T05:00:57Z",
+      "file": {
+        "size": 880
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAANcQ",
+      "modified_time": "2016-11-03T01:52:21Z",
+      "object_type": "file",
+      "sha256": "df2a4a21ed825731abcb7109429367eb132d60a20a4708334b3a5fc66ecfe5bc",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "f440e53f69a5c3a798dfc1a91a5f8838bd1d48af43c5fbcef4835065cbc6d383",
+      "id": "id:XocqFkwqKhAAAAAAAAARSA",
+      "name": "Muestreo canícas.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/Muestreo canícas.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/Muestreo canícas.xlsx",
+      "size": 17396,
+      "client_modified": "2016-11-04T07:42:36Z",
+      "file": {
+        "size": 17396
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARSA",
+      "modified_time": "2016-11-04T07:42:52Z",
+      "object_type": "file",
+      "sha256": "9d9bdf806b6323d355e2f88f4e9f94e799cb9854fb7e216ed683c9007ab0722a",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "763b32b1127202b5619d0ef540e988492c2606ed1c6130373aa7fc09b8fa2447",
+      "id": "id:XocqFkwqKhAAAAAAAAARYQ",
+      "name": "ecosistemas4.csv",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/ecosistemas4.csv",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/ecosistemas4.csv",
+      "size": 902,
+      "client_modified": "2016-11-04T19:20:48Z",
+      "file": {
+        "size": 902
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARYQ",
+      "modified_time": "2016-11-04T19:18:55Z",
+      "object_type": "file",
+      "sha256": "f62a2a56e4d397593c322b26c94ee32d69b8532224070d8e4bec76a742ff79e7",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "e547bb40241292716dc46e6cf65282102bab1a8709b776c5f1d0a187c7063261",
+      "id": "id:XocqFkwqKhAAAAAAAAAOJw",
+      "name": "canicas3.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas3.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas3.xlsx",
+      "size": 9384,
+      "client_modified": "2015-11-05T20:21:21Z",
+      "file": {
+        "size": 9384
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAAOJw",
+      "modified_time": "2016-11-03T01:52:21Z",
+      "object_type": "file",
+      "sha256": "34c448280fdf53851f6af43f633d0c8b099c929ae575f0fd99a797e185bfdbee",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "218d6832f6d7e7dfca5ceca5b9e51bc1499bd396163c563efa4cd4b45ba3f49c",
+      "id": "id:XocqFkwqKhAAAAAAAAARZA",
+      "name": "canicas todos.neta",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas todos.neta",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas todos.neta",
+      "size": 1640,
+      "client_modified": "2016-11-04T19:07:14Z",
+      "file": {
+        "size": 1640
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARZA",
+      "modified_time": "2016-11-04T19:05:24Z",
+      "object_type": "file",
+      "sha256": "54d886df3751a20e89daa430902008dd764d7a7f42eb75715ed62c16b2c1370e",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "4c7824ed2d9d561f8b4332dc1eecd684c57f5e3add6de51f26ccec3dad4b2fc6",
+      "id": "id:0LT0Do2cZxAAAAAAAAAAAQ",
+      "name": "paises.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/paises.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/paises.xlsx",
+      "size": 9948,
+      "client_modified": "2015-11-06T20:06:22Z",
+      "file": {
+        "size": 9948
+      },
+      "file_id": "id:0LT0Do2cZxAAAAAAAAAAAQ",
+      "modified_time": "2016-11-03T01:52:21Z",
+      "object_type": "file",
+      "sha256": "35ccb36598e39cf3742d1a84ed230a1cea62bb88e15dda0289b9ad93fb6af44d",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "abe0528ce08e5aae3c512aa5c3e3185d964d2040cbf5d85e26ae6ae6858e2d85",
+      "id": "id:XocqFkwqKhAAAAAAAAANcA",
+      "name": "canicas.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/canicas.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/canicas.xlsx",
+      "size": 9650,
+      "client_modified": "2014-05-23T16:28:21Z",
+      "file": {
+        "size": 9650
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAANcA",
+      "modified_time": "2016-11-03T01:52:21Z",
+      "object_type": "file",
+      "sha256": "d2ea44ecb134ebf13b2e790ed100ea56382ebb72b059dd7e44b8bdcec97c2b2b",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    },
+    {
+      "content_hash": "39b8c008f50ec9d6d7fbe2a7fcda23fdb2af0a491f5df9a9b2c4d8da7a019e4b",
+      "id": "id:XocqFkwqKhAAAAAAAAARWg",
+      "name": "ecosistemas.xlsx",
+      "path": "ns:1056533613//2015/día 3/Ejercicio canicas/ecosistemas.xlsx",
+      "path_display": "/Curso posgrado/2015/Día 3/Ejercicio canicas/ecosistemas.xlsx",
+      "size": 27608,
+      "client_modified": "2016-11-04T18:35:55Z",
+      "file": {
+        "size": 27608
+      },
+      "file_id": "id:XocqFkwqKhAAAAAAAAARWg",
+      "modified_time": "2016-11-04T18:34:04Z",
+      "object_type": "file",
+      "sha256": "adc58a825537723dcd296ab662184cc1a06a3d27945732eaf4c06902bd60ff7e",
+      "verificacion": "Tamano y content_hash Dropbox coinciden"
+    }
+  ]
+}

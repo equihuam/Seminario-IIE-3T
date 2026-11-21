@@ -1824,3 +1824,138 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Haz commit y push de los registros de este reinicio y abre un PR hacia main para que yo lo revise. Conserva el respaldo privado fuera de Git.
 ```
+
+## P-ME-181 — Recuperar el ejercicio de tres bolsas
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Octavio y yo hemos ideado un juego con tres bolsas que contienen distintas combinaciones de canicas de los 6 colores de las damas chinas
+
+Lo que tenemos está en dropbox en [Curso posgrado](https://www.dropbox.com/home/Curso%20posgrado)[2015](https://www.dropbox.com/home/Curso%20posgrado/2015)[Día 3](https://www.dropbox.com/home/Curso%20posgrado/2015/D%C3%ADa%203)  búscalo y recupéralo como base de trabajo. Abre una carpeta ejercicios/ para alojar este y otras dinámicas que vayan surgiendo
+```
+
+## P-ME-182 — Valorar y proponer dinámica de condición con canicas
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+A partir de ese ejercicio queremos nos propongas una dinámica que capture lo esencial del modelo de tres capas, que lo podamos muestrear, estimar y analizar numéricamente con R para derivar la variable del índice de condición. Imaginamos que podemos proponer que por impulso contextual, las tres bolsas "deberían" tener proporciones iguales de colores. Proponemos también que la presión humana cambia esas proporciones en diversas direcciones, pero todas las alteraciones a la equicolorimetría corresponden a "perdida de integridad". Piensas que esta proposición es congruente con las ideas del modelo de trfes capas, la encuentrass razonablemente evocativa. Sugieres una mejor forma de concebirlo y plantearlo?
+```
+
+## P-ME-183 — Ubicación y acceso de lectura a iie-teoria
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+Archivo señalado: C:\Users\equih\0 Versiones\iie-teoria\_manuscript\iie-teoria-preview.html
+
+```text
+Te refieres a este documento? Está ese y todo lo asociado con esa reflexión en C:\Users\equih\0 Versiones\iie-teoria, al que te otorgo acceso de lectura si lo necesitas.
+```
+
+## P-ME-184 — Construcción contextual de bolsas bicolores
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Otra variante que se me ocurre es iniciar por asginar por turnos dos de los conjuntos de canicas disponibles, así iniciamos con un proceso contextual "constructor de bolsas". Así se armarán bolsas con arreglos de sólo dos colores, equicolorimétricos. Luego, actuaría un "proceso de condición" en el que a las bolsas de cada contexto se les cambia la proporción de colores. Una vez aplicados esos dos proceso seguiría la fase de estimación. Qué piensas de esta idea?
+```
+
+## P-ME-185 — Guía y simulación R de la variante bicolor
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Sí, desarrollemos esta variante. Prepara en ejercicios/ la guía de la dinámica y un script en R para simular el muestreo, estimar la condición con su incertidumbre y compararla con la composición real de las bolsas.  Nota también que tenemos u pptx que ya usamos exitosamente en clase, aunque no para evocar el modelo de tres capas, sólo sirvió para sugerir la efectividad de las redes bayesianas como máquinas inductivas.
+```
+
+## P-ME-186 — Presentación de la mecánica bicolor
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Prepara un pptx de explicación de los pasos y la mecánica.
+```
+
+## P-ME-187 — Entrega en rama y PR abierto para trabajo con Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Se ve muy bien. Es un buen momento para hacer commit+push. Podemos generar un PR que dejaremos abierto hasta que resolvamos el ejercicio con Octavio, quizás haya que enviarle a él un comunicado por mail ayudándolo a tomar el proceso en su propio equipo, sin perder  de vista que estamos trabajando en una rama distinta de main
+```
+
+## P-ME-188 — Adjuntar materiales excluidos de Git al correo
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+El PPTX y lo que no podamos mantener en git, lo podemos enviar en el correo
+```
+
+## P-ME-189 — Probabilidad de estar íntegro
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Un ajuste conceptual adicional. Qué piensas de agregar la estrategia de estimación de la condición como "probabilidad de estar íntegro".  Creo que el juego se presta para esto con mucha naturalidad.
+```
+
+## P-ME-190 — Probabilidad de integridad como resultado principal
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Sí, incorpora la probabilidad de estar íntegro como resultado principal, conservando el grado de condición. Actualiza la guía, el script R y el PPTX, y sube los cambios al mismo PR sin fusionarlo.
+```
+
+## P-ME-191 — Envío del PPTX actualizado a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Envía a Octavio el PPTX actualizado por correo y explícale brevemente el cambio: probabilidad de estar íntegro como resultado principal, conservando el grado de condición. Recuérdale que seguimos trabajando en la rama del PR, no en main.
+```
+
+
+## P-ME-192 — Versionar el registro del envío a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos el ejercicio con Octavio.
+```
+
+## P-ME-193 — Checklist autocontenido de revisión con Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+Solicitud previa de la lista, registrada retrospectivamente:
+
+```text
+Prepara una lista breve de los puntos que debemos revisar con Octavio antes de cerrar el ejercicio y fusionar el PR, especialmente la definición de integridad y su diferencia con el grado de condición.
+```
+
+Encargo de incorporación y entrega:
+
+```text
+Incorpora esta lista como checklist de revisión con Octavio en la carpeta del ejercicio y súbela al mismo PR, dejándolo abierto y sin fusionar.
+Damelo todo como un html autocontenido
+```
+
+## P-ME-194 — Enviar el checklist HTML a Octavio
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Envía también a Octavio el HTML autocontenido del checklist por correo, explicándole que puede marcar los puntos y descargar una copia con sus anotaciones para nuestra revisión conjunta.
+```
+
+
+## P-ME-195 — Versionar el registro del envío del checklist
+
+Fecha de registro: 2026-11-19. Hora de emisión no disponible.
+
+```text
+Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos con Octavio.
+```

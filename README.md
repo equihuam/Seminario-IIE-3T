@@ -75,6 +75,7 @@ Para trabajar habitualmente en RStudio, abrir [Seminario-IIE-3T.Rproj](Seminario
 - [Operación del blog](docs/OPERACION-BLOG.md): incorporación de sesiones y revisión editorial.
 
 - [Tutoriales y ayudas de capacitación](tutoriales/README.md): catálogo de Antigravity, Git y Zotero con sus fuentes canónicas.
+- [Ejercicios y dinámicas](ejercicios/README.md): bases de trabajo y antecedentes recuperados, comenzando por el juego de tres bolsas de canicas.
 - [AGENTS.md](AGENTS.md): pautas para el trabajo asistido dentro de este proyecto.
 - [Git + IA: colaboración de Miguel y Octavio](docs/COLABORACION-GIT-IA.md): reglas, encargos y ficha imprimible de consulta, fuera del blog.
 - [Plan de trabajo](PLAN.md): estado y próximos entregables.
@@ -91,6 +92,12 @@ Las copias locales de las dos fuentes ya fueron consultadas de forma selectiva p
 
 Todo el trabajo de este proyecto se mantiene en `Seminario-IIE-3T/`. Las carpetas hermanas pertenecen a otros proyectos.
 
+
+### Próximos pasos
+
+- Revisión del ejercicio de canicas con Octavio manteniendo el PR #25 en borrador y sin fusionar hasta completar la revisión docente.
+- Verificación pendiente de acceso a adjuntos: comprobación de descarga por parte del propietario con verificación de SHA256 y denegación de acceso a cuentas no autorizadas.
+- Comprobación pendiente de instalación y uso sin conexión de la PWA: pruebas de instalación en iPhone/Android y funcionamiento offline aún no acreditadas.
 
 ## Semillero de ideas
 

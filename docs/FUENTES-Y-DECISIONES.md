@@ -1,5 +1,13 @@
 # Fuentes y decisiones
 
+## Variante bicolor de canicas — P-ME-185 (2026-11-19)
+
+Se implementa una dinámica sintética en `ejercicios/tres-bolsas/GUIA.md`, autorizada por Miguel a partir de su propuesta P-ME-184. Contexto conocido selecciona dos colores; referencia 1:1; sustituciones conservan N; la condición del juego se define como Z = 2 min(K, N−K)/N y se estima con muestreo binomial de reposición individual. Se enumeran composiciones finitas, separando magnitud y dirección. Referencia, escala, simetría, previas y cantidades son elecciones didácticas, no fórmula del IIE ni calibración ecológica. Se retiene posterior completa e incertidumbre; el modelo no aprende estructura ni TAN.
+
+Fundamento consultado directamente: `C:/Users/equih/0 Versiones/iie-teoria/iie-teoria.qmd`, §§5.1–5.2 y 21.2; huella SHA256 comprobada en P-ME-183, idéntica a la de la fuente documentada abajo. §5.2 advierte contra reducir mecánicamente la inferencia ecológica a una distancia: la equivalencia entre composición y Z solo es válida por estipulación en este juego. No se modificó ni ejecutó el proyecto fuente.
+
+Antecedente: Miguel informa que el PPTX recuperado ya se usó exitosamente en clase para sugerir la capacidad inductiva de las redes bayesianas, sin el propósito de evocar las tres capas. Se conserva ese reporte y el PPTX intacto; no se infiere de él validación de esta nueva variante. Guía, pruebas y límites de reproducción en `ejercicios/tres-bolsas/VERIFICACION.md`. La implementación queda abierta a revisión docente y prueba con participantes.
+
 ## Fuentes consultadas el 2026-10-08
 
 | Fuente | Estado y uso |
@@ -207,3 +215,10 @@ Fuente técnica: documentación oficial de Zotero Web API v3, https://www.zotero
 Fecha de registro: 2026-10-12. Se consultan los archivos aportados en presentaciones/img/ie_2018_st_v2.tif y zvh-mx3qw-mexico-Albers.tif. IIE: celdas de 250 m, valores válidos 0–1; Holdridge: celdas de aproximadamente 850 m, códigos sin catálogo nominal aportado. Metadatos, huellas, valores y transformación en presentaciones/img/iie-2018-pixeles-holdridge.json; procedimiento y límites en presentaciones/figura-iie-pixeles.md. No se inspecciona ni ejecuta un modelo entrenado en este encargo.
 
 Se retoma D15: clases j, píxeles i dentro de j, contexto compartido Hⱼ y parámetros globales θ. Las zonas de vida son valores contextuales; los plates indican repetición, no causalidad ni una frontera geográfica por sí misma. Se muestra un esquema de índices sin DAG ni afirmación de independencia espacial. La asignación por vecino más cercano no convierte la resolución de Holdridge en 250 m. La escala sintética 0–1 no se trata como porcentaje determinista ni probabilidad escalar pura. Paleta propuesta; imagen ilustrativa previa no usada como fuente de cartografía. No se recupera incertidumbre posterior de un raster escalar.
+
+
+## D32 — Probabilidad de integridad en la dinámica bicolor (P-ME-189–190)
+
+Registro: 2026-11-19. Miguel solicita probabilidad de estar íntegro como resultado principal y conservar el grado de condición. Referencia consultada: `C:/Users/equih/0 Versiones/iie-teoria/iie-teoria.qmd`, §§21.9–21.10, SHA256 `6CEE34177FB38EB66B20610FA606D84DB9FB36E0426E6CBE8D3582932790B502`. La probabilidad se interpreta como consulta posterior de un evento de integridad, no como porcentaje de integridad poseída ni sustitución de toda la distribución de condición.
+
+Elección didáctica explícita: evento K=N/2, equivalente a Z=1, con N conocido y composiciones discretas. Se conserva la previa uniforme en niveles de Z y sensibilidad a previa uniforme en K; no se añade umbral ni tolerancia. prob_integro pasa a resultado principal y prob_equilibrio queda como alias compatible. Se preserva el grado Z, posterior e intervalo; verdad binaria y grado real se comparan por separado. Estos supuestos son del juego, no una identificación o calibración del IIE ecológico. Guía y PPTX v0.2; pendientes revisión con Octavio y prueba didáctica.
