@@ -1,4 +1,4 @@
-# Primeros pasos con IA agéntica y Google Antigravity
+# Primeros pasos con IA agéntica
 
 Sitio HTML estático, autocontenido y en español para publicar en Netlify Drop. Incluye módulo práctico de colaboración con Git, GitHub y GitHub Desktop (repositorios, ramas, commits, pull requests, conflictos y agentes).
 
