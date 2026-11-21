@@ -93,6 +93,12 @@ Las copias locales de las dos fuentes ya fueron consultadas de forma selectiva p
 Todo el trabajo de este proyecto se mantiene en `Seminario-IIE-3T/`. Las carpetas hermanas pertenecen a otros proyectos.
 
 
+### Próximos pasos
+
+- Revisión del ejercicio de canicas con Octavio manteniendo el PR #25 en borrador y sin fusionar hasta completar la revisión docente.
+- Verificación pendiente de acceso a adjuntos: comprobación de descarga por parte del propietario con verificación de SHA256 y denegación de acceso a cuentas no autorizadas.
+- Comprobación pendiente de instalación y uso sin conexión de la PWA: pruebas de instalación en iPhone/Android y funcionamiento offline aún no acreditadas.
+
 ## Semillero de ideas
 
 Entrada y registro en [blog/semillero/index.qmd](blog/semillero/index.qmd). Cuatro fichas iniciales, plantilla de una página y valoración rutinaria por revisor y didacta. El [espacio de exploraciones](blog/exploraciones/index.qmd) conserva desarrollos y aportaciones vinculados. Protocolo editorial en [docs/OPERACION-BLOG.md](docs/OPERACION-BLOG.md).
