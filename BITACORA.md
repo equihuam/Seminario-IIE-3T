@@ -1050,3 +1050,74 @@ Corrección del respaldo P-ME-178: el primer intento se detuvo antes de borrar p
 ## Entrega documental del reinicio — P-ME-180 (2026-11-19)
 
 Preparación de commit, push y PR hacia main autorizados. Alcance: registros P-ME-177–180 en BITACORA, PLAN y prompts/miguel.md. Se conservan sin incorporar las anotaciones locales anteriores y las ilustraciones sin seguimiento. El respaldo y los SQL administrativos permanecen bajo private/, excluidos de Git. Sin cambios al blog o software; no procede repetir Quarto para esta entrega documental. La fusión queda a revisión de Miguel.
+
+## Recuperación de antecedentes de canicas — P-ME-181 (2026-11-19)
+
+Por encargo de Miguel, localizado Ejercicio canicas en Dropbox y recuperados íntegramente sus 17 archivos en ejercicios/tres-bolsas/originales. Creado catálogo ejercicios/ y guía de procedencia, inventario y límites de lectura. Verificación mediante Python del entorno .venv: 17 tamaños y 17 huellas Dropbox coincidentes; SHA256 individuales en manifiesto. Detectado ecosistemas2.xlsx como CSV conservado sin cambios. Lectura del texto de cinco diapositivas, CSV y cabecera de una red; sin revisión visual, ejecución Netica o recálculo. Originales excluidos de Git; sin cambios al blog, render ni publicación. Rama miguel/ejercicio-canicas desde origin/main actualizado 46ab84a; cambios documentales e ilustraciones anteriores preservados. Pendiente adaptación docente; no se inventaron composiciones ni se eligió red canónica.
+
+Verificación de cierre P-ME-181: git diff --check sin errores; exclusión de originales comprobada; política de scripts/check_repo.py aplicada directamente a los cuatro nuevos archivos documentales sin incidencias. Comprobación del índice existente correcta (324 archivos); los nuevos documentos todavía no están en el índice. Sin commit, push ni PR.
+
+## Valoración de la analogía de canicas — P-ME-182 (2026-11-19)
+
+Revisión conceptual y didáctica propia en la conversación. Consultados README, PLAN, criterios de calidad, FUENTES-Y-DECISIONES y guía del antecedente recuperado. Propuesta: referencia contextual explícita, separar estado verdadero de muestreo y distinguir índice composicional derivado de factor latente generativo. Secuencia candidata de contexto común a referencias distintas; inferencia multinomial–Dirichlet propuesta para R, sin implementar ni probar. Consulta directa del manuscrito no disponible en ../iie-teoria/iie-teoria.qmd; acceso web al render también fallido. El contraste con §§3–5 y 21 se apoya en el mapa de evidencia del proyecto (versión allí registrada 2e3d377), no en una nueva lectura del manuscrito. Se conservan originales, SVG y blog. La propuesta no se registra como acuerdo científico docente.
+
+## Ubicación confirmada del manuscrito — P-ME-183 (2026-11-19)
+
+Miguel indica C:/Users/equih/0 Versiones/iie-teoria y autoriza lectura de su contenido asociado. Comprobados HTML _manuscript/iie-teoria-preview.html (título Modelo de tres capas para la integridad ecosistémica) y fuente iie-teoria.qmd. SHA256 de la fuente: 6CEE34177FB38EB66B20610FA606D84DB9FB36E0426E6CBE8D3582932790B502, idéntico al registro de FUENTES-Y-DECISIONES. Localizadas §5.2 y §21; sin nueva lectura integral ni comprobación de equivalencia completa HTML/fuente. Consulta de HEAD denegada por el entorno; no se atribuye un commit actual. Resuelta la ubicación faltante en P-ME-182. Sin modificaciones ni ejecución en el repositorio fuente.
+
+## Variante bicolor propuesta — P-ME-184 (2026-11-19)
+
+Miguel propone construir bolsas equicolorimétricas de dos colores mediante asignación contextual y alterar después sus proporciones, antes de estimar. Valoración propia favorable: contexto selecciona colores admisibles y referencia 1:1; presión/proceso de alteración modifica composición, condición describe estado resultante y muestreo produce detección. Lectura directa de iie-teoria.qmd §§5.1–5.2 y 21.2 (fuente en C:/Users/equih/0 Versiones/iie-teoria; huella comprobada en P-ME-183). §5.2 advierte que inferir condición no se reduce mecánicamente a distancia: se matiza la propuesta P-ME-182 y se recomienda modelo generativo explícito con magnitud y dirección de alteración separadas. Pendientes: fijar cantidades, niveles, mecanismo, réplica/cruce contexto-condición y escala didáctica. Sin implementación R, pruebas ni modificaciones a la fuente externa.
+
+## Guía y modelo ejecutable de bolsas — P-ME-185 (2026-11-19)
+
+Implementada la variante autorizada en ejercicios/tres-bolsas/: guía conceptual/práctica, recetas sintéticas, módulo R reutilizable, ejecutor y pruebas. El índice es la condición definida por la mecánica del juego, con dirección separada; no se atribuye al IIE operativo ni se afirma entrenamiento de TAN. Se incorporó literalmente el reporte de Miguel sobre uso exitoso previo del PPTX con fin inductivo, distinguiéndolo del propósito actual. Los 17 originales, incluido PPTX, conservan sus SHA256.
+
+Verificación: R 4.6.0 en Windows, Rscript --vanilla; 12 comprobaciones correctas, corrida completa y repetición, siete CSV idénticos byte por byte (1800 extracciones, 36 comparaciones, 216 marginales, 396 estados conjuntos, 72 resúmenes de sensibilidad). Llamada con source en sesión limpia también concluyó y reprodujo los siete CSV. Rechazo de salida existente comprobado sin sobrescritura. PNG final inspeccionado tras corregir recorte inicial de etiquetas; SHA256 y comandos en VERIFICACION.md. Conservado caso C2_R2 a n=60 cuyo intervalo no contiene Z real; sin selección de semilla para ocultarlo. Encabezados, enlaces, exclusiones Git y política por archivo correctos; git diff --check sin errores. No se renderizó el blog porque no cambió.
+
+Límite observado: avisos de locale C.UTF-8 en arranque; R usó C y completó la ejecución limpia. Un intento adicional cargando el perfil del proyecto no terminó y se interrumpió; causa no determinada, sin modificar renv/Rprofile/RStudio. No se acredita arranque del IDE ni prueba con participantes. Archivos y cambios anteriores preservados en miguel/ejercicio-canicas; sin commit, push, PR ni integración.
+
+## PPTX de mecánica bicolor — P-ME-186 (2026-11-19)
+
+Creado borrador local de 12 diapositivas y notas, formas editables de canicas, tres tablas nativas y gráfico vectorial de incertidumbre basado en C2_R2. Se conserva el resultado desfavorable n=60 y se distinguen capas, presión y composición. PPTX histórico no modificado. Revisadas visualmente las 12 diapositivas; recibo de paquete y geometría sin hallazgos e importación comprobada. SHA256 final 14d9baf9f93abd68850257a9611194c4c4b0f926a00a70311109eb2a46eb6669; 71573 bytes. Generador en presentaciones/crear-bolsas-bicolores.mjs y evidencia/incidencias en presentaciones/bolsas-bicolores.md. Fue necesario resolver variable de runtime y elevar la escritura final por enlace denegado; proceso final reportó código 1 pese a generar archivo y recibo, verificados independientemente. No se acredita prueba en PowerPoint nativo o con participantes. Fuera del blog, sin commit/push/PR.
+
+## Entrega del ejercicio para Octavio — P-ME-187 (2026-11-19)
+
+Autorizados commit y push del ejercicio y PR abierto hasta resolverlo con Octavio. Preparada guía TRABAJO-COMPARTIDO con rama explícita, actualización ff-only, ejecución R y límites de lo incluido en Git. PPTX original y borrador excluidos; se comparte generador. Se conservan sin integrar registros previos ajenos e ilustraciones concurrentes. Correo previsto como borrador local, sin envío. Main remoto coincide con base 46ab84a y no había PR abierto para esta rama al iniciar. La entrega se deja en borrador, sin fusión ni publicación; identificadores de entrega se informarán al finalizar.
+
+## Cierre de entrega y correo — P-ME-187–188 (2026-11-19)
+
+Commit 8e8834e subido a origin/miguel/ejercicio-canicas; PR #25 abierto en borrador hacia main: https://github.com/equihuam/Seminario-IIE-3T/pull/25. Permanece sin fusionar para resolver la dinámica con Octavio. Índice de 338 archivos comprobado sin incidencias, también por el hook. Se excluyeron los registros anteriores ajenos y las ilustraciones locales.
+
+P-ME-188 autoriza adjuntar materiales fuera de Git. Correo enviado a Octavio con instrucciones de rama y ejecución, enlace al PR y ZIP de 6263881 bytes: PPTX nuevo, 17 antecedentes y nueve archivos de la corrida verificada, más manifiesto y LEEME. Contenido y huellas comprobados antes del envío; Gmail devuelve SENT y lectura posterior confirma destinatario, asunto, nombre y tamaño del adjunto. SHA256 del ZIP: ae495cf498b13d37011d54162e2d1a2338d52d73f934fc44d2e51de04dcf708d. Paquete conservado en private/correos, fuera de Git. No se acredita recepción o lectura por Octavio. Sin fusión, auto-merge ni publicación.
+
+## Consulta sobre índice probabilístico — P-ME-189 (2026-11-19)
+
+Revisión propia de iie-teoria.qmd §§21.9–21.10 en la ruta autorizada y del modelo R actual. La propuesta encaja con definir un evento de integridad y reportar su probabilidad posterior, distinguiéndola del grado Z y su media. En el juego discreto, evento inicial candidato K=N/2 equivale a Z=1; prob_equilibrio ya calcula su probabilidad. Una región tolerante requeriría acuerdo previo, sin elegirla según resultados. Se propone protagonismo didáctico de esa consulta conservando toda la posterior y Z; no se modificaron código, guía, PPTX ni PR, al tratarse de una valoración conceptual. Caso consultado C1_R1, n=12, x=6: media Z≈0.8458 y probabilidad de equilibrio≈0.4535, evidencia de que no son intercambiables. La probabilidad depende de referencia, modelo y previa; no es porcentaje de integridad ni intensidad de alteración.
+
+
+## Probabilidad de integridad incorporada — P-ME-190 (2026-11-19)
+
+La petición convierte la consulta de integridad en resultado principal y conserva grado de condición. Actualizados guía, código/pruebas R, instrucciones compartidas y generador/PPTX v0.2 de 14 diapositivas. Evento exacto contextual 5:5 fijado antes de observar; previa y muestras sin cambios. Quince comprobaciones correctas, ocho CSV idénticos entre corridas y 36 comparaciones previas conservadas. Revisión visual de las 14 diapositivas y gráfico principal; paquete/geometría e importación comprobados, con incidencia de código final 1 documentada y ZIP/huella verificados aparte. Revisión conceptual propia, no independiente; pendiente discusión con Octavio y validación pedagógica. Entrega en el mismo PR #25, abierto en borrador sin fusión. Originales, resultados, PPTX y modificaciones ajenas quedan fuera del commit; fuente de presentación versionada. No se envía correo nuevo.
+
+## Envío del PPTX v2 a Octavio — P-ME-191 (2026-11-19)
+
+Por instrucción expresa de Miguel se envió el PPTX actualizado como respuesta al correo anterior. Mensaje breve: probabilidad posterior del evento 5:5 como resultado principal, grado Z y su incertidumbre conservados; rama miguel/ejercicio-canicas, no main; PR #25 abierto en borrador y sin fusión. Gmail confirmó SENT y la lectura posterior de Enviados verificó destinatario Octavio y adjunto Dinamica-bolsas-bicolores-v2.pptx de 81535 bytes. Huella local cotejada antes del envío: bfe150d8eddeca1df962ec8cc04ea529b8fa56a4a037482f7f11928cdc9eb48b. No se acredita recepción o lectura. Registro local de este envío, sin nuevo commit ni modificación del PR.
+
+
+## Versionado del registro de envío — P-ME-192 (2026-11-19)
+
+Miguel autoriza commit y push del registro P-ME-191 y de esta instrucción en miguel/ejercicio-canicas, PR #25. Se seleccionan únicamente las nuevas entradas de BITACORA.md y prompts/miguel.md; se conservan fuera del índice los cambios ajenos de esos archivos, PLAN.md e ilustraciones locales. PR abierto y en borrador hasta revisión con Octavio, sin fusionar. Cambio exclusivo de trazabilidad: no modifica código, materiales ni blog; no se repiten las pruebas R o el render. La comprobación del índice se ejecuta mediante el hook del commit.
+
+## Checklist de revisión con Octavio — P-ME-193 (2026-11-19)
+
+Preparado ejercicios/tres-bolsas/REVISION-OCTAVIO.html autocontenido y enlazado desde README: seis puntos de revisión, casillas, notas de acuerdos, descarga de copia anotada e impresión carta. Prioriza definición del evento íntegra y distinción respecto al grado Z; conserva supuestos, tres capas, comprobación práctica y acuerdo de cierre. Edge/Playwright local: seis casillas, guardado y reapertura con marcas/notas conservadas, sin errores JavaScript ni desbordamiento a 390 px; capturas de escritorio y móvil revisadas. Primera ejecución de QA falló por ruta ESM de Windows; corregida a file URL, la ejecución completa pasó. Original entregado sin casillas marcadas ni notas de prueba. Cambio fuera del blog, sin alterar análisis R ni PPTX; no se repiten render Quarto ni pruebas numéricas. PR #25 permanece abierto en borrador, sin fusión; cambios ajenos excluidos.
+
+## Envío del checklist HTML a Octavio — P-ME-194 (2026-11-19)
+
+Enviado por instrucción expresa de Miguel, como respuesta en el mismo hilo, REVISION-OCTAVIO.html autocontenido. El correo explica descargar y abrir en navegador, marcar puntos, registrar acuerdos y descargar una copia anotada antes de cerrar; invita a compartirla para revisión conjunta. Recuerda rama miguel/ejercicio-canicas, no main, y PR #25 abierto en borrador sin fusión. Gmail confirmó SENT; lectura posterior de Enviados verificó destinatario Octavio y adjunto HTML de 8558 bytes. Archivo cotejado con la versión Git antes de enviarlo; SHA256 16688c2f130c79b3c5a7a1f7452684160e8542d63d87ad1ac767d76dd8bef1eb. No se acredita recepción ni lectura. Registro local, sin nuevo commit, push o modificación del PR.
+
+
+## Versionado del envío del checklist — P-ME-195 (2026-11-19)
+
+Miguel autoriza commit y push del registro P-ME-194 y de esta instrucción en la misma rama miguel/ejercicio-canicas. Se seleccionan únicamente las entradas nuevas de BITACORA.md y prompts/miguel.md, preservando los cambios ajenos y las ilustraciones locales fuera del índice. PR #25 abierto en borrador y sin fusionar hasta revisión con Octavio. Cambio exclusivo de trazabilidad; no modifica código, materiales ni blog, por lo que no se repiten pruebas R o render. La comprobación del índice se ejecuta mediante el hook del commit.
