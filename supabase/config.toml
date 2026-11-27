@@ -1,0 +1,4 @@
+project_id = "seminario-iie"
+
+[functions.sync-reading-catalog]
+verify_jwt = true

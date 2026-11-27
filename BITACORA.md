@@ -1050,3 +1050,9 @@ Corrección del respaldo P-ME-178: el primer intento se detuvo antes de borrar p
 ## Entrega documental del reinicio — P-ME-180 (2026-11-19)
 
 Preparación de commit, push y PR hacia main autorizados. Alcance: registros P-ME-177–180 en BITACORA, PLAN y prompts/miguel.md. Se conservan sin incorporar las anotaciones locales anteriores y las ilustraciones sin seguimiento. El respaldo y los SQL administrativos permanecen bajo private/, excluidos de Git. Sin cambios al blog o software; no procede repetir Quarto para esta entrega documental. La fusión queda a revisión de Miguel.
+
+## Sincronización de Zotero desde Lecturas — P-ME-198 (2026-11-27)
+
+El clic explícito sincroniza la biblioteca del grupo por la API web de Zotero y recarga Lecturas. La función de Supabase comprueba membresía y usa su secreto de Zotero solo en el servidor. La migración aplica cada catálogo completo de forma atómica y rechaza versiones obsoletas. Con fallo de sincronización, el botón informa el problema y vuelve a consultar el último catálogo disponible. La consulta real de Zotero devolvió 24 referencias y confirmó NZKM8GX7. Las 21 pruebas Node/PGlite y la prueba con Edge/Playwright y servidor simulado comprobaron acceso, aplicación atómica y selección con éxito y con fallo. Quedan pendientes el despliegue y la comprobación con sesión real.
+
+Quarto regeneró y verificó 26 páginas con sus enlaces. Se conservaron los cambios generados del Tablero en la entrega y se retiraron diferencias incidentales de fecha, zona horaria e identificadores de ejecución en otras páginas. Deno comprobó el punto de entrada de la función con la dependencia HTML fijada.

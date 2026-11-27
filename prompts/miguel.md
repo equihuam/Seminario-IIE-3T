@@ -1824,3 +1824,19 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Haz commit y push de los registros de este reinicio y abre un PR hacia main para que yo lo revise. Conserva el respaldo privado fuera de Git.
 ```
+
+## P-ME-198 — Sincronizar Zotero al actualizar Lecturas
+
+Fecha de registro: 2026-11-27. Hora de emisión no disponible.
+
+```text
+Haz que el botón «Actualizar lecturas» de la PWA también sincronice el catálogo con Zotero, para que las referencias nuevas aparezcan sin tener que actualizarlo a mano.
+```
+
+## P-ME-199 — Activar Supabase y entregar la sincronización mediante PR
+
+Fecha de registro: 2026-11-27. Hora de emisión no disponible.
+
+```text
+Activa la función en Supabase con una clave de solo lectura de Zotero, haz commit y push de la rama y abre el PR hacia main sin fusionarlo. Verifica que el botón funcione en la vista previa.
+```

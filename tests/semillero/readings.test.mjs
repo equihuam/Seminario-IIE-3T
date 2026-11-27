@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {test} from 'node:test';
 import {readFile} from 'node:fs/promises';
 import {PGlite} from '@electric-sql/pglite';
+import {createCatalogSync} from '../../supabase/functions/sync-reading-catalog/handler.mjs';
 import {createSchema} from './schema.mjs';
 import {filterReferences,readingProposal,loadReferences} from '../../blog/app/reading-catalog.mjs';
 
@@ -130,4 +131,80 @@ test('Cliente rechaza autor ajeno y conflicto, y envía solo campos editables',a
  await assert.rejects(saveOwnEdit(api,'readings',row,{}),/propias/);assert.equal(calls,1);
  api.session.user.id='author';api.request=async()=>[];
  await assert.rejects(saveOwnEdit(api,'readings',row,{}),/entrada cambió/);
+});
+
+
+test('La sincronización comprueba membresía y solo envía a escritura una lectura completa de Zotero',async()=>{
+ const page=(rows,version,total)=>Response.json(rows,{headers:{'Last-Modified-Version':version,'Total-Results':total}});
+ const item=(key)=>({key,version:5,data:{itemType:'webpage',title:'Carta abierta',DOI:'10.1000/demo'},bib:'<div>Cita de la carta</div>'});
+ const request=()=>new Request('https://project.example/functions/v1/sync-reading-catalog',{
+   method:'POST',headers:{Authorization:'Bearer member-token',Origin:'https://board.example'}
+ });
+ const env=name=>({SUPABASE_URL:'https://project.example',SUPABASE_ANON_KEY:'anon-key',
+   SUPABASE_SERVICE_ROLE_KEY:'service-key',READING_ZOTERO_API_KEY:'zotero-read-key'})[name];
+ for(const scenario of ['outsider','invalid-session','incomplete','changed-version','success']){
+   let zoteroCalls=0, writeCalls=0;
+   const handler=createCatalogSync(env,x=>x,async(url,options)=>{
+     if(url.endsWith('/can_access_readings')){
+       assert.equal(options.headers.Authorization,'Bearer member-token');
+       if(scenario==='invalid-session')return new Response(null,{status:401});
+       return Response.json(scenario!=='outsider');
+     }
+     if(url.startsWith('https://api.zotero.org/')){
+       zoteroCalls++;
+       assert.equal(options.headers['Zotero-API-Key'],'zotero-read-key');
+       assert.equal(options.method,undefined);
+       if(scenario==='incomplete')return page([],6,1);
+       if(scenario==='changed-version'){
+         if(zoteroCalls===2)return page([item('BBBBBBBB')],7,101);
+         return page(Array.from({length:100},(_,i)=>item(String(i).padStart(8,'0'))),6,101);
+       }
+       return page([item('AAAAAAAA'),{key:'BBBBBBBB',version:5,data:{itemType:'note'}}],6,2);
+     }
+     assert.match(url,/\/apply_reading_catalog$/);
+     assert.equal(options.headers.Authorization,'Bearer service-key');
+     assert.deepEqual(JSON.parse(options.body),{catalog_version:6,catalog_rows:[{
+       zotero_key:'AAAAAAAA',title:'Carta abierta',citation:'Cita de la carta',
+       url:'https://doi.org/10.1000/demo',source_version:5
+     }]});
+     writeCalls++;
+     return Response.json(true);
+   });
+   const preflight=await handler(new Request('https://project.example',{method:'OPTIONS'}));
+   assert.equal(preflight.status,204);
+   const response=await handler(request());
+   assert.equal(response.status,({outsider:403,'invalid-session':401,incomplete:503,'changed-version':503,success:200})[scenario]);
+   assert.equal(response.headers.get('Access-Control-Allow-Origin'),'*');
+   assert.equal(zoteroCalls,({outsider:0,'invalid-session':0,incomplete:1,'changed-version':2,success:1})[scenario]);
+   assert.equal(writeCalls,scenario==='success'?1:0);
+ }
+});
+
+test('La base aplica el catálogo completo de forma atómica y descarta versiones anteriores',async()=>{
+ const db=new PGlite();
+ try{
+   await createSchema(db);
+   await db.exec('create role service_role');
+   for(const file of ['202611130001_lecturas.sql','202611130002_lecturas_zotero.sql',
+     '202611170001_lecturas_catalogo.sql','202611270001_sync_reading_catalog.sql']){
+     await db.exec(await readFile(new URL('../../supabase/migrations/'+file,import.meta.url),'utf8'));
+   }
+   const apply=(version,rows)=>db.query('select apply_reading_catalog($1,$2::jsonb) as applied',[version,JSON.stringify(rows)]);
+   const keys=async()=> (await db.query('select zotero_key,active from reading_references order by zotero_key')).rows;
+   const entry={zotero_key:'AAAAAAAA',title:'Fuente',citation:'Cita',url:'',source_version:9};
+   await db.exec('set role authenticated');
+   await assert.rejects(apply(9,[entry]),{code:'42501'});
+   await db.exec('reset role; set role service_role');
+   assert.equal((await apply(9,[entry])).rows[0].applied,true);
+   assert.equal((await apply(8,[])).rows[0].applied,false);
+   assert.equal((await apply(9,[])).rows[0].applied,false);
+   await assert.rejects(apply(10,[{...entry,zotero_key:'BBBBBBBB'},{...entry,title:''}]),{code:'23514'});
+   await db.exec('reset role');
+   assert.deepEqual(await keys(),[{zotero_key:'AAAAAAAA',active:true}]);
+   await db.exec('set role service_role');
+   assert.equal((await apply(10,[{...entry,zotero_key:'BBBBBBBB'}])).rows[0].applied,true);
+   await db.exec('reset role');
+   assert.deepEqual(await keys(),[{zotero_key:'AAAAAAAA',active:false},{zotero_key:'BBBBBBBB',active:true}]);
+   assert.equal((await db.query('select count(*)::int as count from readings')).rows[0].count,1);
+ }finally{await db.close();}
 });
