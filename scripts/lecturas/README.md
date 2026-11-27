@@ -12,7 +12,37 @@ El servidor exige una clave presente y activa en `reading_references`, y copia t
 
 ### Actualizar el catálogo
 
-El catálogo es una copia de metadatos del grupo, sincronizada por coordinación. No se actualiza automáticamente al añadir un registro en Zotero: **Actualizar lecturas** vuelve a consultar la copia del servidor. La interfaz muestra cuándo se sincronizó. Para incorporar referencias nuevas al desplegable:
+En la PWA, un miembro habilitado pulsa **Actualizar lecturas** para sincronizar
+las referencias del grupo con Zotero y volver a cargar Lecturas. Si Zotero no
+responde o cambia durante la consulta, el formulario conserva el último catálogo
+disponible. El servidor consulta solo registros bibliográficos superiores del
+grupo, excluyendo notas, adjuntos y anotaciones. Las referencias retiradas del
+grupo quedan inactivas y las propuestas históricas se conservan.
+
+#### Activar la sincronización en el servidor
+
+En el proyecto Supabase del seminario, aplicar la migración
+`202611270001_sync_reading_catalog.sql`. Configurar el secreto de Edge Functions
+`READING_ZOTERO_API_KEY` con una clave de **solo lectura** para el grupo
+`6712171`, utilizando el panel de Supabase o un archivo de entorno privado.
+La función usa las variables integradas `SUPABASE_URL`, `SUPABASE_ANON_KEY`
+y `SUPABASE_SERVICE_ROLE_KEY`. La PWA continúa usando únicamente la
+configuración publicable y el token de sesión del miembro.
+
+Desplegar con `supabase functions deploy sync-reading-catalog --project-ref <referencia-del-proyecto>`
+desde la raíz, con la CLI autenticada. La función comprueba la membresía antes
+de consultar Zotero y la base aplica el catálogo completo en una transacción.
+Un clic concurrente que reciba una versión anterior de Zotero no reemplaza
+una más reciente. Validar en el preview del PR con una cuenta habilitada:
+pulsar **Actualizar lecturas**, buscar la carta por título y comprobar la cita
+en el selector. Verificar también que el botón informa el fallo y conserva el
+catálogo cuando no se puede contactar a Zotero.
+
+Fuentes técnicas: [autorización de Edge Functions](https://supabase.com/docs/guides/functions/auth-headers),
+[secretos de Edge Functions](https://supabase.com/docs/guides/functions/secrets) y
+[Zotero Web API v3](https://www.zotero.org/support/dev/web_api/v3/basics).
+
+#### Sincronización administrativa de respaldo
 
 ```powershell
 # Zotero Desktop abierto y sincronizado; solo se lee la biblioteca de grupo.

@@ -43,7 +43,26 @@ export function initReadings(getApi, login) {
   view.append(element('h1','Lecturas'), element('p','Elige una referencia ya registrada en Zotero y propone el asunto y la dinámica para trabajarla con el grupo. Para corregir una aportación propia, pulsa Editar o haz doble clic sobre su texto.'), access, upcoming, proposal, refresh, status, cards);
   for (const part of [proposal, upcoming]) part.className = 'calendar-panel';
   tab.onclick = () => {setView('readings'); load();};
-  refresh.onclick = () => load();
+  refresh.onclick = async () => {
+    const api = getApi();
+    const session = api?.session;
+    if (!session || refresh.disabled) return;
+
+    refresh.disabled = true;
+    status.textContent = 'Sincronizando catálogo con Zotero…';
+    let message = 'Catálogo de Zotero actualizado.';
+    try {
+      await api.request('/functions/v1/sync-reading-catalog', {method:'POST', body:{}});
+    } catch {
+      message = 'No se pudo sincronizar con Zotero. Se muestra el último catálogo disponible.';
+    } finally {
+      try {
+        if (getApi()?.session === session) await load(message);
+      } finally {
+        refresh.disabled = false;
+      }
+    }
+  };
   document.querySelector('[data-view="agenda"]').addEventListener('click', () => load());
 
   function form(path, caption, fields, id) {
@@ -116,7 +135,7 @@ export function initReadings(getApi, login) {
   const library = element('a','biblioteca del grupo en Zotero');
   library.href = 'https://www.zotero.org/groups/6712171/seminario_iie-t/library';
   library.target = '_blank'; library.rel = 'noopener';
-  source.append(library,document.createTextNode('. Si no aparece, solicita la sincronización del catálogo y pulsa Actualizar lecturas.'));
+  source.append(library,document.createTextNode('. Si no aparece, pulsa Actualizar lecturas para sincronizar el catálogo con Zotero.'));
   source.className = 'hint';
   suggestion.prepend(findLabel);
   suggestion.elements.zotero_key.closest('label').after(catalogStatus,preview,source);
