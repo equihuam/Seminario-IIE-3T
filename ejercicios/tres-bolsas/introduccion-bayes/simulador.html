@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Canicas y regla de Bayes · v0.3</title>
+<style>
+*{box-sizing:border-box}body{font:17px/1.55 system-ui,sans-serif;color:#20343a;background:#eef3f2;margin:0}
+main{max-width:1060px;margin:auto;padding:28px 16px}h1{font-size:2rem;line-height:1.2}h2{font-size:1.4rem}h3{font-size:1.12rem}
+nav,.buttons{display:flex;flex-wrap:wrap;gap:8px}button,input,select{font:inherit;max-width:100%;min-width:0}select{display:block;width:100%;margin-top:6px}
+button{cursor:pointer;background:#086c69;color:white;border:1px solid #086c69;border-radius:7px;padding:9px 12px;white-space:normal}
+button.secondary,nav button{background:white;color:#086c69}nav button[aria-current=true]{background:#086c69;color:white}button:disabled{opacity:.55;cursor:default}
+section,.panel{background:white;border:1px solid #cedbd9;border-radius:12px;padding:20px;margin:18px 0;min-width:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px}.grid>*{min-width:0}.bag{border:1px solid #b9ccca;border-radius:10px;padding:12px}
+.balls{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.ball{display:inline-flex;align-items:center;justify-content:center;width:29px;height:29px;border-radius:50%;color:white;font-size:12px;font-weight:bold}.blue{background:#2563a6}.red{background:#c63b43}.dim{opacity:.15}
+.big{font-size:1.65rem;font-weight:700;color:#086c69;overflow-wrap:anywhere}.bar{height:18px;background:#a6b1b5;border-radius:10px;overflow:hidden}.bar span{display:block;height:100%;background:#086c69}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}th,td{padding:7px;border-bottom:1px solid #dce5e3;text-align:right}th:first-child,td:first-child{text-align:left}caption{text-align:left;font-weight:600;margin:10px 0}
+label{display:block;margin:12px 0}input[type=range]{width:100%;accent-color:#086c69}input[type=number]{width:100%;max-width:12em}.note{color:#435b62;font-size:.94rem}.formula{background:#f3f6f5;padding:14px;border-radius:8px;overflow-wrap:anywhere}
+.scroll{overflow:auto;max-height:340px;max-width:100%}.scroll table{min-width:500px}svg{display:block;width:100%;height:auto;min-height:180px}.error{color:#8c1726;font-weight:600}.error:empty{display:none}
+details{margin:16px 0}summary{cursor:pointer;font-weight:600}footer{padding:16px 0} [hidden]{display:none!important}
+:focus-visible{outline:3px solid #986b00;outline-offset:3px}[aria-invalid=true]{border:2px solid #8c1726}
+@media(max-width:400px){section,.panel{padding:14px}main{padding:20px 12px}.big{font-size:1.5rem}}
+</style>
+</head>
+<body><main>
+<header><p class="note">Seminario IIE-3T · Propuesta de Octavio con asistencia de IA · v0.3 · Por discutir con Miguel</p>
+<h1>De las canicas a la regla de Bayes</h1>
+<p>La composición no cambia al observarla: cambia nuestro conocimiento. Bayes <strong>no define la integridad</strong>; actualiza la probabilidad de cumplir una definición establecida antes de muestrear.</p>
+<p>Referencia del juego: N = 10; <strong>A = {K = 5}</strong>. K cuenta el primer color contextual. En rojo–azul, K cuenta <strong>rojas</strong>; B significa observar azul y P(B | K = k) = 1 − k/10.</p></header>
+<nav aria-label="Modalidades"><button data-tab="discover" aria-current="true" aria-controls="discover">1. Descubrir</button><button data-tab="experiment" aria-controls="experiment">2. Experimentar</button><button data-tab="explore" aria-controls="explore">3. Explorar</button><button data-tab="multi" aria-controls="multi">4. Once hipótesis</button></nav>
+
+<section id="discover" aria-labelledby="discover-title"><h2 id="discover-title">1. Descubrir mediante el conteo</h2>
+<p>Elegimos con moneda una bolsa: 5 rojas y 5 azules (A) o 9 rojas y 1 azul (complemento de A <em>solo en este escenario</em>). Una canica se extrae uniformemente. Los 20 resultados bolsa–canica son equiprobables.</p>
+<p>Antes de contar: ¿cuál es la probabilidad de observar azul si conocemos la bolsa? ¿Y de que sea íntegra si observamos azul? Son preguntas distintas.</p>
+<div class="buttons"><button data-evidence="all">Sin evidencia</button><button data-evidence="blue">Observé azul (B)</button><button data-evidence="red">Observé roja</button></div>
+<div class="grid" id="dbags"></div><div id="dresult" aria-live="polite"></div>
+<table><caption>Resultados equiprobables: conteos por bolsa y color</caption><thead><tr><th scope="col">Bolsa</th><th scope="col">Azul B</th><th scope="col">Roja</th><th scope="col">Total</th></tr></thead><tbody><tr><th scope="row">A · 5:5</th><td>5</td><td>5</td><td>10</td></tr><tr><th scope="row">No A · 9:1</th><td>1</td><td>9</td><td>10</td></tr><tr><th scope="row">Total</th><td>6</td><td>14</td><td>20</td></tr></tbody></table>
+<details><summary>Deducir Bayes después del conteo</summary><p>A = bolsa íntegra; B = observar azul.</p>
+<div class="formula">P(A ∩ B) = P(B | A) P(A) = (5/10)(1/2)<br>P(A ∩ B) = P(A | B) P(B) = (5/6)(6/20)<br><strong>P(A | B) = P(B | A) P(A) / P(B)</strong></div>
+<p>La misma probabilidad conjunta se factoriza de dos formas. Esto no invierte una flecha causal. La probabilidad de los datos al suponer una hipótesis se llama <strong>verosimilitud</strong>; al actualizar, obtenemos la <strong>probabilidad posterior</strong>.</p></details></section>
+
+<section id="experiment" hidden aria-labelledby="experiment-title"><h2 id="experiment-title">2. Una bolsa oculta y observaciones sucesivas</h2>
+<p>Una sola elección equiprobable entre las dos bolsas anteriores. Devolver y mezclar después de cada extracción; la bolsa no cambia. La probabilidad actualizada pasa a ser la probabilidad de partida para la siguiente observación.</p>
+<div class="grid" id="ebags"></div><div class="buttons"><button id="start">Seleccionar bolsa</button><button id="draw" disabled>Extraer una canica</button><button id="reveal" disabled>Revelar composición</button></div>
+<p id="status" aria-live="polite"></p><div id="observations" class="balls" aria-label="Colores observados"></div><div id="eresult" aria-live="polite"></div>
+<svg id="chart" viewBox="0 0 600 220" role="img" aria-label="Probabilidad del evento A tras cada extracción; datos en la tabla siguiente"></svg>
+<div class="scroll" tabindex="0" role="region" aria-label="Historial de actualización; desplazar horizontalmente si es necesario"><table><caption>Actualización de P(A)</caption><thead><tr><th scope="col">n</th><th scope="col">Color</th><th scope="col">Previa</th><th scope="col">Posterior</th></tr></thead><tbody id="history"></tbody></table></div></section>
+
+<section id="explore" hidden aria-labelledby="explore-title"><h2 id="explore-title">3. Explorar supuestos y evidencia</h2>
+<p>La referencia sigue siendo 5:5. La otra hipótesis es una composición específica, no el conjunto de todas las bolsas no íntegras. Estos son conteos elegidos, no una secuencia aleatoria.</p>
+<label for="prior">Probabilidad previa de A: <strong id="pv"></strong></label><input id="prior" type="range" min="1" max="99" value="50">
+<label for="alt">Canicas azules en la bolsa alternativa, de 10 (K = 10 − azules)</label><select id="alt"></select>
+<div class="grid" id="xbags"></div>
+<label for="az">Azules observadas: <strong id="av"></strong></label><input id="az" type="range" min="0" max="30" value="0">
+<label for="ro">Rojas observadas: <strong id="rv"></strong></label><input id="ro" type="range" min="0" max="30" value="0">
+<div id="xresult" aria-live="polite"></div><button id="reset" class="secondary">Restablecer valores</button></section>
+
+<section id="multi" hidden aria-labelledby="multi-title"><h2 id="multi-title">4. De once composiciones al grado de condición</h2>
+<p><strong>Cambiamos el espacio de hipótesis, no la regla de Bayes.</strong> Ahora K puede ser 0,…,10. En el binario P(A) = 1/2 por la selección de dos bolsas; aquí depende de la probabilidad asignada a las once composiciones. No trasladamos aquel 1/2.</p>
+<p>Si los seis niveles Z son equiprobables, cada uno recibe 1/6; Z = 1 solo tiene K = 5, y los demás niveles reparten su 1/6 entre dos direcciones: P(K = 5) = 1/6, los demás 1/12. Si las once K son equiprobables, P(K = 5) = 1/11. Ninguna previa es necesariamente neutral.</p>
+<label for="mmode">Modo</label><select id="mmode"><option value="random">Bolsa aleatoria oculta</option><option value="manual">Conteos manuales</option><option value="C1_R1">Diapositiva física 9 · C1_R1</option><option value="C2_R2">Diapositiva física 10 · C2_R2</option></select>
+<label for="mprior">Distribución previa</label><select id="mprior" aria-describedby="prior-help"><option value="z">Z uniforme · P(A)=1/6</option><option value="k">K uniforme · P(A)=1/11</option></select>
+<p id="prior-help" class="note">Direcciones simétricas. Cambiar modo reinicia la serie; cambiar previa reinicia una serie aleatoria. Exportar antes de reiniciar. En reproducción o conteos manuales se conserva la evidencia para comparar previas.</p>
+<div class="buttons" id="mcontrols"><button id="mstart">Nueva bolsa / reiniciar</button><button id="mdraw">Extraer una</button><button id="mreveal">Revelar composición</button></div>
+<div class="buttons" id="mcuts"><button data-cut="12">Hasta 12</button><button data-cut="30">Hasta 30</button><button data-cut="60">Hasta 60</button><button data-cut="200">Hasta 200</button></div>
+<div id="mmanual" hidden><label for="mfirst">Primer color · x (entero de 0 a 10000)</label><input id="mfirst" type="number" min="0" max="10000" step="1" value="0" aria-describedby="manual-error"><label for="msecond">Segundo color · n − x (entero de 0 a 10000)</label><input id="msecond" type="number" min="0" max="10000" step="1" value="0" aria-describedby="manual-error"></div>
+<p id="manual-error" class="error" role="alert"></p><p id="mstatus" aria-live="polite"></p><div id="mballs" class="balls" aria-label="Hasta treinta observaciones recientes"></div>
+<div id="moutput"><div class="grid"><div><h3>Probabilidades posteriores de K</h3><svg id="mkchart" viewBox="0 0 440 220" role="img" aria-label="Probabilidades de composiciones; valores numéricos en la tabla desplegable"></svg></div><div><h3>Probabilidades posteriores de Z</h3><svg id="mzchart" viewBox="0 0 440 220" role="img" aria-label="Probabilidades de niveles Z; valores numéricos en la tabla desplegable"></svg></div></div>
+<div id="msummary" aria-live="polite"></div>
+<p class="note">K cuenta rojo en C1 y amarillo en C2. Z = 2 min(K,10−K)/10; A = {K = 5} = {Z = 1}. El intervalo corresponde a Z, no a P(A).</p>
+<details><summary>Consultar probabilidades como números y no solo colores</summary><p class="note">Las tablas muestran doce cifras significativas; también están redondeadas.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabla de composiciones K"><table><caption>Composiciones K: previa y posterior</caption><thead><tr><th scope="col">K</th><th scope="col">Z</th><th scope="col">Previa</th><th scope="col">Posterior</th></tr></thead><tbody id="kmasses"></tbody></table></div><table><caption>Niveles Z: probabilidad posterior</caption><thead><tr><th scope="col">Z</th><th scope="col">Posterior</th></tr></thead><tbody id="zmasses"></tbody></table></details>
+<h3 id="trajectory-title">Media e intervalo central del 95% según la evidencia</h3><svg id="mtchart" viewBox="0 0 600 280" role="img" aria-label="Punto: media Z; barra: intervalo; línea discontinua: verdad revelada. Datos en la tabla siguiente"></svg>
+<p class="note">Tabla desplazable horizontalmente: usar el gesto lateral o enfocar la región y pulsar las flechas.</p><div class="scroll" tabindex="0" role="region" aria-label="Tabla de resúmenes e intervalos"><table><caption>Resúmenes acumulados (o un único conteo manual)</caption><thead><tr><th scope="col">n</th><th scope="col">x</th><th scope="col">P(A)</th><th scope="col">Media Z</th><th scope="col">ICr 95%</th><th scope="col">Probabilidad contenida</th></tr></thead><tbody id="mtable"></tbody></table></div></div>
+<details><summary>¿Qué significa la probabilidad contenida en el intervalo?</summary><p>Sumamos las probabilidades posteriores de los niveles Z entre los dos extremos, incluidos ambos. Esta suma se llama <strong>masa de probabilidad</strong>. Los extremos son los primeros niveles cuya probabilidad acumulada alcanza 2.5% y 97.5%, respectivamente. En una distribución discreta el intervalo puede contener más del 95%, incluso 100%, o reducirse a un punto.</p>
+<p>Media e intervalo resumen la distribución, pero pueden ocultar huecos o varios picos. Los porcentajes se redondean; un valor mostrado cercano a 100% no elimina el error de modelo ni garantiza acertar. La incertidumbre posterior de una bolsa no es la variabilidad de las muestras de muchos equipos.</p></details>
+<details><summary>Ejemplo ilustrativo: media 0.72 sin probabilidad de integridad</summary><p>Supongamos P(Z = 0.6 | datos) = 0.4 y P(Z = 0.8 | datos) = 0.6; el resto es cero. La media es 0.72, P(A) = 0, el intervalo central nominal del 95% es [0.6, 0.8] y contiene 100% de la probabilidad. 0.72 no es un estado individual de esta escala. Es una distribución hipotética, no una corrida del modelo de Miguel.</p></details>
+<p class="note">Las reproducciones conservan las secuencias archivadas de C1_R1 y C2_R2, no generan nuevas para acertar las diapositivas. Las series tienen reposición y composición fija; las recetas se mantienen ocultas solo con finalidad docente, no como protección frente a inspección del código.</p></section>
+
+<aside class="panel" aria-labelledby="sessions-title"><h2 id="sessions-title">Guardar y reconstruir una sesión</h2>
+<p>Exportar guarda el modo activo, configuración, evidencia y cálculos. La composición verdadera solo se incluye después de revelarla. Una sesión oculta importada permite reconstruir exactamente lo observado, pero no continuar extrayendo ni revelar una verdad que no se exportó.</p>
+<div class="buttons"><button id="export-session">Exportar sesión JSON</button></div><label for="import-file">Importar una sesión JSON v0.3 (máximo 1 MB)</label><input id="import-file" type="file" accept=".json,application/json"><p id="session-message" role="status" aria-live="polite"></p>
+<p class="note">No se envían archivos a un servidor. Los resultados se recalculan al importar; el JSON no autentica quién observó los datos. Guardar varias sesiones permite comparar equipos con igual composición pero muestras diferentes, sin confundir esa variabilidad con la posterior de cada equipo.</p></aside>
+<footer class="note">Ejemplo sintético; no definición ecológica universal ni IIE operativo. Inspiración general: Pearl y Mackenzie (2018), <em>The Book of Why</em>. La adaptación con canicas es propuesta propia de Octavio con asistencia de IA, complementaria al trabajo de Miguel. Localización de los ejemplos en capítulo 3 y páginas concretas pendiente de cotejo del texto. Sin acuerdo docente ni ensayo con participantes.</footer>
+</main>
+<script>
+'use strict';
+const VERSION='0.3', $=id=>document.getElementById(id);
+const archived={"C1_R1": [1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0], "C2_R2": [0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0]};
+const pct=v=>v>0&&v<.00005?'<0.005%':v<1&&v>.99995?'>99.995%':(100*v).toFixed(2)+'%';
+const exact=v=>Number(v).toPrecision(12);
+const contextFor=m=>m==='C2_R2'?{name:'C2',first:'amarillo',second:'verde'}:{name:'C1',first:'rojo',second:'azul'};
+function integer(v,max=10000){return Number.isInteger(v)&&v>=0&&v<=max;}
+function logPower(prob,count){return count===0?0:count*Math.log(prob);}
+// En el binario a,r cuentan azul y rojo; q=P(azul|no A), no p=K/N.
+function posterior(priorA,a,r,q){
+ if(!integer(a,20000)||!integer(r,20000)||!(priorA>0&&priorA<1)||!Number.isFinite(q)||q<0||q>1)throw Error('Parámetros binarios inválidos');
+ const u=Math.log(priorA)+(a+r)*Math.log(.5),v=Math.log1p(-priorA)+logPower(q,a)+logPower(1-q,r);
+ return 1/(1+Math.exp(v-u));
+}
+function quantileDiscrete(values,weights,q){let sum=0;for(let i=0;i<values.length;i++){sum+=weights[i];if(sum>=q)return values[i]}return values.at(-1);}
+function summarizeZ(z){const values=z.map((_,i)=>i/5),lo=quantileDiscrete(values,z,.025),hi=quantileDiscrete(values,z,.975);return {mean:z.reduce((s,v,i)=>s+v*values[i],0),lo,hi,mass:z.reduce((s,v,i)=>s+(values[i]>=lo&&values[i]<=hi?v:0),0)};}
+function multiCalc(x,y,prior){
+ if(!integer(x,20000)||!integer(y,20000)||!['z','k'].includes(prior))throw Error('Conteos o previa inválidos');
+ const before=Array.from({length:11},(_,k)=>prior==='z'?(k===5?1/6:1/12):1/11);
+ const logs=before.map((v,k)=>Math.log(v)+logPower(k/10,x)+logPower(1-k/10,y));
+ const m=Math.max(...logs),weights=logs.map(v=>Math.exp(v-m)),total=weights.reduce((a,b)=>a+b,0),p=weights.map(v=>v/total),z=Array(6).fill(0);
+ p.forEach((v,k)=>z[Math.min(k,10-k)]+=v);
+ return {p,z,prior:before,pi:p[5],...summarizeZ(z)};
+}
+let activeTab='discover',evidence='all',truth=null,draws=[],revealed=false,eStarted=false,eImported=false;
+let md=[],mt=null,mrev=false,mImported=false;
+function activate(tab){activeTab=tab;document.querySelectorAll('[data-tab]').forEach(b=>b.setAttribute('aria-current',String(b.dataset.tab===tab)));['discover','experiment','explore','multi'].forEach(id=>$(id).hidden=id!==tab);}
+document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>activate(b.dataset.tab)));
+function bag(name,blue,filter='all'){return `<div class="bag"><strong>${name}</strong><div class="balls">${Array.from({length:10},(_,i)=>{const c=i<blue?'blue':'red';return `<span class="ball ${c} ${filter!=='all'&&filter!==c?'dim':''}" aria-label="${c==='blue'?'Azul':'Roja'} ${i+1}">${i+1}</span>`}).join('')}</div>${10-blue} rojas : ${blue} azules · K = ${10-blue}</div>`;}
+function result(p,extra=''){return `<p>Probabilidad posterior del evento A</p><div class="big">${pct(p)}</div><div class="bar" aria-hidden="true"><span style="width:${100*p}%"></span></div><p>P(A): ${pct(p)} · P(no A): ${pct(1-p)}</p>${extra}`;}
+function discover(c){evidence=c;const i=c==='all'?10:5,j=c==='all'?10:c==='blue'?1:9;$('dbags').innerHTML=bag('A · 5:5',5,c)+bag('No A · 9:1',1,c);$('dresult').innerHTML=result(i/(i+j),`<p>${i} resultados de A entre ${i+j} compatibles en total.</p>`);}
+document.querySelectorAll('[data-evidence]').forEach(b=>b.addEventListener('click',()=>discover(b.dataset.evidence)));
+function binaryTrajectory(seq){let a=0,r=0;return [{n:0,blue:0,red:0,posterior:.5},...seq.map((c,i)=>{c==='blue'?a++:r++;return {n:i+1,blue:a,red:r,posterior:posterior(.5,a,r,.1)}})];}
+function update(){
+ const trajectory=binaryTrajectory(draws),last=trajectory.at(-1);
+ $('history').innerHTML=trajectory.slice(1).map((t,i)=>`<tr><td>${t.n}</td><td>${draws[i]==='blue'?'Azul B':'Roja'}</td><td>${pct(trajectory[i].posterior)}</td><td>${pct(t.posterior)}</td></tr>`).join('');
+ $('observations').innerHTML=draws.slice(-30).map(c=>`<span class="ball ${c}" aria-label="${c==='blue'?'Azul':'Roja'}">${c==='blue'?'B':'R'}</span>`).join('');
+ $('eresult').innerHTML=result(last.posterior,`<p>${draws.length} extracciones: ${last.blue} azules, ${last.red} rojas. Se muestran las últimas 30 canicas; la tabla conserva todas.</p>`);
+ $('draw').disabled=!eStarted||revealed||eImported||draws.length>=200;$('reveal').disabled=!eStarted||revealed||eImported;
+ $('start').textContent=eStarted?'Nueva partida':'Seleccionar bolsa';
+ $('status').textContent=!eStarted?'Todavía no se ha elegido una bolsa.':revealed?`Verdad: ${truth?'5 rojas : 5 azules (A)':'9 rojas : 1 azul (no A)'}.`:eImported?'Sesión oculta importada: evidencia reconstruida; no se exportó la verdad. Nueva partida para extraer.':'Bolsa seleccionada una sola vez. Composición oculta; máximo 200 extracciones.';
+ const points=trajectory.map(t=>`${55+520*t.n/Math.max(1,draws.length)},${170-140*t.posterior}`);
+ $('chart').innerHTML=[0,.5,1].map(v=>`<text x="5" y="${175-140*v}" font-size="16">${100*v}%</text>`).join('')+`<polyline points="${points.join(' ')}" fill="none" stroke="#086c69" stroke-width="3"/><text x="55" y="205" font-size="16">n = 0</text><text x="570" y="205" text-anchor="end" font-size="16">n = ${draws.length}</text>`;
+}
+function newExperiment(){if(draws.length&&!confirm('¿Reiniciar? Exporta antes si deseas conservar la sesión.'))return;truth=Math.random()<.5;draws=[];revealed=false;eStarted=true;eImported=false;update();}
+function drawExperiment(){if(!eStarted||revealed||eImported||draws.length>=200)return;draws.push(Math.random()<(truth?.5:.1)?'blue':'red');update();}
+function revealExperiment(){if(!eStarted||eImported)return;revealed=true;update();}
+$('start').addEventListener('click',newExperiment);$('draw').addEventListener('click',drawExperiment);$('reveal').addEventListener('click',revealExperiment);
+$('ebags').innerHTML=bag('Hipótesis A',5)+bag('Hipótesis no A',1);
+for(let i=0;i<=10;i++)if(i!==5){const o=document.createElement('option');o.value=i;o.textContent=`${i} azules · K = ${10-i} rojas`;$('alt').append(o)}$('alt').value=1;
+function explore(){const p=+$('prior').value/100,q=+$('alt').value/10,a=+$('az').value,r=+$('ro').value;$('pv').textContent=pct(p);$('av').textContent=a;$('rv').textContent=r;$('xbags').innerHTML=bag('Hipótesis A',5)+bag('Alternativa específica',q*10);$('xresult').innerHTML=result(posterior(p,a,r,q),`<p>Probabilidad de observar azul bajo A: 50%; bajo la alternativa: ${pct(q)}. K siempre cuenta rojas.</p>`);}
+['prior','alt','az','ro'].forEach(id=>$(id).addEventListener('input',explore));$('reset').addEventListener('click',()=>{$('prior').value=50;$('alt').value=1;$('az').value=0;$('ro').value=0;explore()});
+const mode=()=>$('mmode').value,pr=()=>$('mprior').value;
+function isReplay(){return Object.hasOwn(archived,mode());}
+function manualCounts(){const vals=['mfirst','msecond'].map(id=>{const v=$(id).value;const n=Number(v);const ok=v.trim()!==''&&integer(n);$(id).setAttribute('aria-invalid',String(!ok));return ok?n:null});return vals.every(v=>v!==null)?vals:null;}
+function resetMulti(){md=[];mrev=false;mImported=false;mt=isReplay()?(mode()==='C2_R2'?3:5):null;if(mode()==='random'){let u=Math.random();for(let k=0;k<=10;k++){u-=pr()==='z'?(k===5?1/6:1/12):1/11;if(u<=0||k===10){mt=k;break}}}$('mfirst').value=0;$('msecond').value=0;renderMulti();}
+function advance(n){if(mrev||mImported||mode()==='manual')return;while(md.length<n&&md.length<200)md.push(isReplay()?archived[mode()][md.length]:+(Math.random()<mt/10));renderMulti();}
+function bars(id,vals,labels){$(id).innerHTML=[0,.5,1].map(v=>`<text x="0" y="${169-140*v}" font-size="17">${100*v}%</text>`).join('')+vals.map((v,i)=>{const step=375/vals.length,x=58+i*step;return `<rect x="${x}" y="${165-140*v}" width="${step-5}" height="${140*v}" fill="${(i===5)?'#086c69':'#466a8c'}"><title>${labels[i]}: ${pct(v)}</title></rect><text x="${x+(step-5)/2}" y="195" text-anchor="middle" font-size="17">${labels[i]}</text>`}).join('');}
+function multiTrajectory(seq,prior){let x=0;return [{n:0,x:0,...multiCalc(0,0,prior)},...seq.map((v,i)=>{x+=v;return {n:i+1,x,...multiCalc(x,i+1-x,prior)}})];}
+function renderMulti(){
+ const manual=mode()==='manual',counts=manual?manualCounts():[md.reduce((s,v)=>s+v,0),md.length-md.reduce((s,v)=>s+v,0)];
+ $('mmanual').hidden=!manual;$('mcontrols').hidden=manual;$('mcuts').hidden=manual;
+ $('manual-error').textContent=counts?'':'Introduce enteros entre 0 y 10000 en ambos campos; no se redondean ni recortan valores.';$('moutput').hidden=!counts;
+ if(!counts){$('mstatus').textContent='No se ha calculado una posterior con estos datos inválidos.';return;}
+ const [x,y]=counts,n=x+y,d=multiCalc(x,y,pr()),c=contextFor(mode());
+ $('mdraw').disabled=mrev||mImported||n>=200;$('mreveal').disabled=mrev||mImported;document.querySelectorAll('[data-cut]').forEach(b=>b.disabled=mrev||mImported||n>=+b.dataset.cut);
+ $('mstatus').textContent=`${n} extracciones: x = ${x} ${c.first}, n − x = ${y} ${c.second}. `+(manual?'Conteos sin trayectoria observada ni verdad conocida.':mrev?`Verdad: K = ${mt} (${mt}:${10-mt}); Z = ${Math.min(mt,10-mt)/5}.`:mImported?'Sesión oculta importada: trayectoria reconstruida; sin extracción o revelación.':'Composición oculta.');
+ $('mballs').innerHTML=manual?'':md.slice(-30).map(v=>`<span class="ball ${v?'red':'blue'}" aria-label="${v?c.first:c.second}" style="background:${mode()==='C2_R2'?(v?'#806000':'#17623b'):(v?'#c63b43':'#2563a6')}">${v?'1':'2'}</span>`).join('');
+ bars('mkchart',d.p,d.p.map((_,i)=>String(i)));bars('mzchart',d.z,d.z.map((_,i)=>(i/5).toFixed(1)));
+ $('msummary').innerHTML=`<div class="grid"><div>P(A | datos)<div class="big">${pct(d.pi)}</div></div><div>Media posterior de Z<div class="big">${d.mean.toFixed(4)}</div></div><div>ICr central nominal 95% de Z<div class="big">[${d.lo.toFixed(1)}, ${d.hi.toFixed(1)}]</div></div><div>Probabilidad posterior contenida<div class="big">${pct(d.mass)}</div></div></div><p class="note">Valores redondeados. La media puede no coincidir con un nivel posible. La probabilidad contenida es la suma de las masas de los estados del intervalo, no un intervalo para P(A).</p>`;
+ $('kmasses').innerHTML=d.p.map((v,k)=>`<tr><th scope="row">${k}</th><td>${Math.min(k,10-k)/5}</td><td>${exact(d.prior[k])}</td><td>${exact(v)}</td></tr>`).join('');
+ $('zmasses').innerHTML=d.z.map((v,i)=>`<tr><th scope="row">${i/5}</th><td>${exact(v)}</td></tr>`).join('');
+ const full=manual?[{n,x,...d}]:multiTrajectory(md,pr()),ds=full.filter(t=>manual||[0,12,30,60,200,n].includes(t.n));
+ $('mtable').innerHTML=ds.map(t=>`<tr><td>${t.n}</td><td>${t.x}</td><td>${pct(t.pi)}</td><td>${t.mean.toFixed(4)}</td><td>[${t.lo}, ${t.hi}]</td><td>${pct(t.mass)}</td></tr>`).join('');
+ $('trajectory-title').textContent=manual?'Resumen de los conteos manuales (sin trayectoria)':'Media e intervalo central del 95% · puntos: media; barras: intervalo';
+ const xx=k=>55+510*k/Math.max(1,n),yy=v=>215-175*v;
+ $('mtchart').innerHTML=[0,.2,.4,.6,.8,1].map(v=>`<line x1="55" x2="565" y1="${yy(v)}" y2="${yy(v)}" stroke="#dce5e3"/><text x="5" y="${yy(v)+5}" font-size="17">${v.toFixed(1)}</text>`).join('')+(mrev&&!manual?`<line x1="55" x2="565" y1="${yy(Math.min(mt,10-mt)/5)}" y2="${yy(Math.min(mt,10-mt)/5)}" stroke="#9e2730" stroke-dasharray="6 4"/>`:'')+ds.map(t=>`<line x1="${xx(t.n)}" x2="${xx(t.n)}" y1="${yy(t.lo)}" y2="${yy(t.hi)}" stroke="#2563a6" stroke-width="3"/><circle cx="${xx(t.n)}" cy="${yy(t.mean)}" r="5" fill="#086c69"/><text x="${xx(t.n)}" y="240" text-anchor="middle" font-size="16">${t.n}</text>`).join('')+'<text x="310" y="270" text-anchor="middle" font-size="17">Extracciones acumuladas n</text>';
+}
+$('mmode').addEventListener('change',resetMulti);$('mprior').addEventListener('change',()=>mode()==='random'?resetMulti():renderMulti());
+$('mstart').addEventListener('click',()=>{if(md.length&&!confirm('¿Reiniciar? Exporta antes si deseas conservar la sesión.'))return;resetMulti()});
+$('mdraw').addEventListener('click',()=>advance(md.length+1));$('mreveal').addEventListener('click',()=>{if(mImported)return;mrev=true;renderMulti()});document.querySelectorAll('[data-cut]').forEach(b=>b.addEventListener('click',()=>advance(+b.dataset.cut)));['mfirst','msecond'].forEach(id=>$(id).addEventListener('input',renderMulti));
+
+function sessionSnapshot(){
+ const base={schema:1,version:VERSION,modality:activeTab,eventA:'K=N/2',N:10,countConvention:'K y x cuentan primer color; C1 rojo, C2 amarillo',createdAt:new Date().toISOString()};
+ if(activeTab==='discover')return {...base,evidence,configuration:{context:contextFor('C1_R1'),hypothesesK:[5,9],priorA:.5},posteriorA:evidence==='all'?.5:evidence==='blue'?5/6:5/14};
+ if(activeTab==='explore'){const priorA=+$('prior').value/100,blueAlternative=+$('alt').value,blue=+$('az').value,red=+$('ro').value;return {...base,configuration:{context:contextFor('C1_R1'),hypothesesK:[5,10-blueAlternative],priorA,blueAlternative},counts:{blue,red,n:blue+red,x:red},posteriorA:posterior(priorA,blue,red,blueAlternative/10)};}
+ if(activeTab==='experiment'){const trajectory=binaryTrajectory(draws);return {...base,configuration:{context:contextFor('C1_R1'),hypothesesK:[5,9],priorA:.5},started:eStarted,revealed,sequence:[...draws],counts:trajectory.at(-1),trajectory,...(revealed?{truthK:truth?5:9}:{})};}
+ const manual=mode()==='manual',counts=manual?manualCounts():[md.reduce((a,b)=>a+b,0),md.length-md.reduce((a,b)=>a+b,0)];if(!counts)throw Error('Corrige los conteos antes de exportar.');
+ const [x,y]=counts;return {...base,configuration:{mode:mode(),context:contextFor(mode()),prior:pr()},revealed:mrev,counts:{x,n:x+y,second:y},sequence:manual?null:[...md],posterior:multiCalc(x,y,pr()),trajectory:manual?null:multiTrajectory(md,pr()),...(mrev&&!manual?{truthK:mt}:{})};
+}
+function importSession(r){
+ // Validar todo antes de alterar la interfaz. Los cálculos recibidos no se ejecutan ni se confían.
+ if(!r||r.schema!==1||r.version!==VERSION||r.N!==10||r.eventA!=='K=N/2'||!['discover','experiment','explore','multi'].includes(r.modality))throw Error('Formato o versión de sesión no compatible.');
+ const cfg=r.configuration||{};let seq,blue,red;
+ const expectedContext=contextFor(r.modality==='multi'?cfg.mode:'C1_R1');
+ if(!cfg.context||cfg.context.name!==expectedContext.name||cfg.context.first!==expectedContext.first||cfg.context.second!==expectedContext.second)throw Error('Contexto o convención de color no compatibles.');
+ if(['discover','experiment'].includes(r.modality)&&(cfg.priorA!==.5||JSON.stringify(cfg.hypothesesK)!=='[5,9]'))throw Error('La sesión binaria debe usar las hipótesis y previa originales.');
+ if(r.modality==='discover'&&!['all','blue','red'].includes(r.evidence))throw Error('Evidencia inválida.');
+ if(r.modality==='explore'){
+  ({blue,red}=r.counts||{});if(!integer(blue,30)||!integer(red,30)||!integer(cfg.blueAlternative,10)||cfg.blueAlternative===5||typeof cfg.priorA!=='number'||!integer(Math.round(cfg.priorA*100),99)||cfg.priorA<.01||cfg.priorA>.99||Math.abs(cfg.priorA*100-Math.round(cfg.priorA*100))>1e-8)throw Error('Configuración binaria inválida.');
+ }
+ if(r.modality==='experiment'){
+  seq=r.sequence;if(!Array.isArray(seq)||seq.length>200||!seq.every(v=>['blue','red'].includes(v))||typeof r.started!=='boolean'||typeof r.revealed!=='boolean'||(!r.started&&(seq.length||r.revealed))||r.revealed&&![5,9].includes(r.truthK)||!r.revealed&&Object.hasOwn(r,'truthK'))throw Error('Sesión binaria inválida.');
+ }
+ if(r.modality==='multi'){
+  if(!['random','manual','C1_R1','C2_R2'].includes(cfg.mode)||!['z','k'].includes(cfg.prior)||typeof r.revealed!=='boolean')throw Error('Modo o previa inválidos.');
+  if(cfg.mode==='manual'){const c=r.counts||{};if(!integer(c.x)||!integer(c.second)||r.sequence!==null||r.revealed||Object.hasOwn(r,'truthK'))throw Error('Conteos manuales inválidos.');}
+  else {seq=r.sequence;if(!Array.isArray(seq)||seq.length>200||!seq.every(v=>v===0||v===1)||r.revealed&&!integer(r.truthK,10)||!r.revealed&&Object.hasOwn(r,'truthK'))throw Error('Secuencia o verdad inválidas.');if(Object.hasOwn(archived,cfg.mode)&&!seq.every((v,i)=>v===archived[cfg.mode][i]))throw Error('La secuencia no coincide con la reproducción archivada.');if(r.revealed&&((r.truthK===0&&seq.includes(1))||(r.truthK===10&&seq.includes(0))||(Object.hasOwn(archived,cfg.mode)&&r.truthK!==(cfg.mode==='C2_R2'?3:5))))throw Error('Verdad incompatible con los datos.');}
+ }
+ activate(r.modality);
+ if(r.modality==='discover')discover(r.evidence);
+ if(r.modality==='explore'){$('prior').value=Math.round(cfg.priorA*100);$('alt').value=cfg.blueAlternative;$('az').value=blue;$('ro').value=red;explore();}
+ if(r.modality==='experiment'){draws=[...seq];revealed=r.revealed;eStarted=r.started;eImported=r.started&&!r.revealed;truth=r.revealed?r.truthK===5:null;update();}
+ if(r.modality==='multi'){$('mmode').value=cfg.mode;$('mprior').value=cfg.prior;md=cfg.mode==='manual'?[]:[...seq];mrev=r.revealed;mImported=cfg.mode!=='manual'&&!r.revealed;mt=r.revealed?r.truthK:null;if(cfg.mode==='manual'){$('mfirst').value=r.counts.x;$('msecond').value=r.counts.second;}renderMulti();}
+ $('session-message').textContent='Sesión importada: cálculos reconstruidos desde configuración y evidencia; los resultados guardados no se usan como autoridad.';
+ return sessionSnapshot();
+}
+$('export-session').addEventListener('click',()=>{try{const data=sessionSnapshot(),blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=`canicas-bayes-v03-${data.modality}-${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);$('session-message').textContent='Sesión descargada. La verdad solo se incluye si ya fue revelada.';}catch(e){$('session-message').textContent=e.message;}});
+$('import-file').addEventListener('change',async e=>{try{const f=e.target.files[0];if(!f)return;if(f.size>1000000)throw Error('El archivo supera 1 MB.');importSession(JSON.parse(await f.text()));}catch(err){$('session-message').textContent='No se importó: '+err.message;}finally{e.target.value='';}});
+discover('all');update();explore();resetMulti();
+</script></body></html>
