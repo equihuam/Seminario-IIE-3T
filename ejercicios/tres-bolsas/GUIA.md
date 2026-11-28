@@ -14,6 +14,8 @@ Al terminar, cada participante podrá distinguir contexto, presión, estado real
 
 Esta práctica usa un modelo generativo pequeño fijado por reglas y hace inferencia bayesiana exacta por enumeración. No aprende una estructura de red, no entrena TAN ni reconstruye el IIE escalar operativo anclado en juicio experto. Una extensión posterior podría aprender probabilidades con bolsas de entrenamiento y evaluarlas en bolsas nuevas; aquí las probabilidades vienen de la mecánica conocida.
 
+Como puente para introducir la regla de Bayes, usar la [actividad candidata de té, galletas y canicas](INTRODUCCION-BAYES.md) antes de la primera estimación. Puede ocupar 15 minutos del tramo de análisis o retomarse después de la experiencia física, según el grupo.
+
 ## Materiales y preparación
 
 - Tres bolsas opacas reutilizables, canicas de seis colores, tarjetas de contexto y registro de extracciones.

@@ -427,3 +427,8 @@ Ejercicio compartido mediante commit 8e8834e en miguel/ejercicio-canicas y PR #2
 ## Probabilidad principal de integridad — P-ME-190 (2026-11-19)
 
 Actualizada la guía, el script R y el PPTX v0.2 (14 diapositivas): P(K=N/2 | muestra, contexto y modelo) como resultado principal; grado Z, posterior e intervalo conservados. Quince comprobaciones correctas y ocho CSV reproducidos; resultados antiguos preservados. Presentación revisada visualmente y paquete validado; evidencia e incidencias en VERIFICACION.md y presentaciones/bolsas-bicolores.md. Continuar en miguel/ejercicio-canicas y PR #25 abierto en borrador, sin fusionar. Pendiente revisión con Octavio y prueba con participantes. PPTX local fuera de Git; se versiona su generador.
+
+
+## Introducción a Bayes — Aportación de Octavio (P-ME-196, 2026-11-28)
+
+Resguardado `Introduccion_Bayes.pptx` fuera del blog. Incorporada a la guía de la dinámica bicolor una [actividad candidata de 15 minutos](ejercicios/tres-bolsas/INTRODUCCION-BAYES.md) que pasa de los conteos de té y galletas al diagnóstico con dos bolsas. El ejercicio breve fija dos composiciones y explicita la previa; el modelo de la dinámica completa conserva su propia previa y el grado de condición Z. Pendiente que Miguel y Octavio acuerden cuándo usar la actividad y comprueben con el grupo si se distingue la verosimilitud de la posterior.

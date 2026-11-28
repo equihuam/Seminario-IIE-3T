@@ -1959,3 +1959,48 @@ Fecha de registro: 2026-11-19. Hora de emisión no disponible.
 ```text
 Haz commit y push del registro de este envío al mismo PR, conservando los cambios ajenos y dejándolo abierto, sin fusionar, hasta que revisemos con Octavio.
 ```
+
+
+## P-ME-196 — Incorporar la aportación de Octavio al proyecto
+
+Fecha de registro: 2026-11-28. Hora de emisión no disponible.
+
+```text
+Actualiza el proyecto de acuerdo con lo que aportó Octavio. Ya puse su pptx en GDrive, carpeta convenía.
+```
+
+
+## P-ME-197 — Aclarar la diapositiva 11
+
+Fecha de registro: 2026-11-28. Hora de emisión no disponible.
+
+```text
+Podria convenir explicar con detalle en la diapo 11 de donde vienen los números. No veo vínculo al respecto con las diapos previas
+```
+
+
+## P-ME-198 — Versionar el PPTX con el cálculo explicado
+
+Fecha de registro: 2026-11-28. Hora de emisión no disponible.
+
+```text
+Ajusta el pptx de acuerdo con esta sugerencia y agrega un sufijo de versión.  Creo que en este caso será v2
+```
+
+
+## P-ME-199 — Generalizar el ejemplo de la canica azul
+
+Fecha de registro: 2026-11-28. Hora de emisión no disponible.
+
+```text
+La diapo 12 ahora necesita aclaración?  Las dos primeras instancias corresponden con las dos bolsas presentada y el cálculo azul,  pero el caso tres a qué corresponde? Quizás en lugar de poner ese caso hablar de como seré generaliza lo observado.
+```
+
+
+## P-ME-200 — Entrega al PR abierto y a Google Drive
+
+Fecha de registro: 2026-11-28. Hora de emisión no disponible.
+
+```text
+Haz commit y push al pr abierto. Pon la nuevas pptx en GDrive en la carpeta acordada
+```

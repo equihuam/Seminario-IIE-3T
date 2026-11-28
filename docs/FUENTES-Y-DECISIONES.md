@@ -222,3 +222,12 @@ Se retoma D15: clases j, píxeles i dentro de j, contexto compartido Hⱼ y par�
 Registro: 2026-11-19. Miguel solicita probabilidad de estar íntegro como resultado principal y conservar el grado de condición. Referencia consultada: `C:/Users/equih/0 Versiones/iie-teoria/iie-teoria.qmd`, §§21.9–21.10, SHA256 `6CEE34177FB38EB66B20610FA606D84DB9FB36E0426E6CBE8D3582932790B502`. La probabilidad se interpreta como consulta posterior de un evento de integridad, no como porcentaje de integridad poseída ni sustitución de toda la distribución de condición.
 
 Elección didáctica explícita: evento K=N/2, equivalente a Z=1, con N conocido y composiciones discretas. Se conserva la previa uniforme en niveles de Z y sensibilidad a previa uniforme en K; no se añade umbral ni tolerancia. prob_integro pasa a resultado principal y prob_equilibrio queda como alias compatible. Se preserva el grado Z, posterior e intervalo; verdad binaria y grado real se comparan por separado. Estos supuestos son del juego, no una identificación o calibración del IIE ecológico. Guía y PPTX v0.2; pendientes revisión con Octavio y prueba didáctica.
+
+
+## D33 — Introducción a Bayes con té, galletas y canicas (P-ME-196)
+
+Registro: 2026-11-28. Fuente: `Introduccion_Bayes.pptx`, revisión 2, diapositivas 1–14, con procedencia y huella en [Aportaciones originales](aportaciones/README.md#introducción-a-bayes). Se leyó el texto de las diapositivas. Las referencias históricas citadas en el PPTX quedan registradas allí.
+
+Adaptación candidata asistida por IA para conectar el problema de diagnóstico con la regla de Bayes. La diapositiva 4 permite distinguir una verosimilitud de una probabilidad posterior. Las diapositivas 5–9 muestran el cambio de denominador al invertir el condicionamiento. Las diapositivas 10–12 ofrecen un caso de dos composiciones conocidas con una sola extracción. La adaptación explicita el conteo de azules, el mecanismo de selección y el evento de integridad. El ejercicio completo conserva el espacio de composiciones, la previa y las consultas de D32.
+
+La actividad aborda la elección del ejemplo conductor y la progresión del formalismo (preguntas 5 y 6 del diseño pedagógico) y sirve como comprobación oral de comprensión. La secuencia y su duración son candidatas para revisión docente.

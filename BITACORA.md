@@ -1161,3 +1161,28 @@ Fecha de registro: 2026-11-27. Prompt P-OE-006. Octavio acepta recomendaciones y
 Word: dos transiciones ajustadas a «siguiente etapa del ejercicio» y posibilidad de mismo día/encuentros diferentes. PPTX local: cierre probabilístico solicitado, 24 pt y cuadro de 118 pt; texto nativo de 86.4 pt, PNG inspeccionado sin recortes. Word mantiene 16 páginas, página modificada revisada. Solo se editan las partes OOXML de contenido indicadas en VERIFICACION; originales de Dropbox preservados. Huellas actuales: DOCX d5559259904a815e26cce1802c55d72889351674c5b81bc6dcece6c0120431d2; PPTX f1271c8d94501401048a67a563965c12673433e2864d2f456e131f319bd4d065. El PPTX se compartirá por separado; sigue excluido de Git. Simulador v0.3 intacto y resultados de su verificación conservados.
 
 Se prepara entrega de siete archivos: cuatro de la ampliación, guion DOCX y dos registros. Verificar el índice real antes del commit; no incluir evidencias, PPTX ni temporales. README/propuesta actualizados; verificación, procedencia, limitaciones y discusión pendiente en ejercicios/tres-bolsas/introduccion-bayes/VERIFICACION.md. R 4.3.0 difiere del entorno de Miguel, falta ensayo con participantes y cotejo bibliográfico completo. No se renderiza el blog, que no cambió. La entrega para revisión no autoriza fusión ni declara eficacia docente.
+
+
+## Introducción a Bayes con la aportación de Octavio — P-ME-196 (2026-11-28)
+
+Resguardado el PPTX original de Drive y cotejados tamaño, SHA256 e integridad ZIP de la copia. Leído el texto de las 14 diapositivas. Incorporada a la guía de la dinámica bicolor una actividad candidata: condicionamiento con té y galletas, actualización con una canica y sensibilidad a la previa. Revisión conceptual propia de los supuestos de billar y de las dos composiciones. Verificados en Python 3 con fracciones exactas los conteos, posteriores, porcentajes y enlaces de la guía. Pendientes el acuerdo docente sobre el uso y la prueba con participantes. Trabajo local en la rama del ejercicio, fuera del blog.
+
+
+## Puente entre las diapositivas 8–11 — P-ME-197 (2026-11-28)
+
+Añadido a la guía un texto candidato para la diapositiva 11. Conecta el denominador de té y galletas con la probabilidad total de observar azul y deriva ambas rutas desde la selección y composición de las bolsas. El texto propone rotular los colores en la diapositiva 10. El PPTX original queda como fuente.
+
+
+## Introducción a Bayes v2 — P-ME-198 (2026-11-28)
+
+Preparado output/Introduccion_Bayes-v2.pptx. La diapositiva 10 rotula la composición por color; la 11 explica ambas rutas para observar azul y las vincula con el denominador del ejemplo de galletas. Verificados ZIP, XML, límites de las cajas de texto y que solo cambiaron las diapositivas 10 y 11. Huella de la versión v2: d4ba259eb48eaec7d782f5cd263fd89ca55e0f2211504ff51501c9ab5ae96f59. Fuente íntegra cotejada con su huella. Revisión visual pendiente por falta de renderizador PowerPoint en el entorno. Versión local de trabajo fuera del blog.
+
+
+## Introducción a Bayes v3 — P-ME-199 (2026-11-28)
+
+Preparado output/Introduccion_Bayes-v3.pptx. La diapositiva 12 pasa de la comparación de previas a la generalización del ejemplo: más composiciones posibles, muestra con reposición y probabilidad posterior de la composición de referencia. Enlaza con la dinámica en R. Verificados ZIP, cajas dentro de la diapositiva, huella de v2 y que solo cambió la diapositiva 12 respecto a v2. SHA256 de v3: ad170bda1018575558019b365f333d7cadcb89d48daeb60389edf0dd30c4af66. Revisión visual en PowerPoint pendiente.
+
+
+## Entrega de Introducción a Bayes — P-ME-200 (2026-11-28)
+
+Google Drive confirmó las versiones [v2](https://drive.google.com/file/d/1Gou7wkxCidcCkd0yfscMMAR9wE8fnnCI/view) y [v3](https://drive.google.com/file/d/1KAmz133-F4iLJoarh5hEkEY9ryadWE8A/view) en «Seminario IIE-3T — Materiales de clase», con 35 336 y 35 448 bytes respectivamente. La entrega documental parte de d5309f3 e incorpora el material de Octavio ya integrado mediante PR #29. Se mantiene el PR #25 en borrador. La comprobación editorial intentada con scripts/site.py check se detuvo por ausencia de Quarto. Esta entrega no modifica el blog.
